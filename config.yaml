@@ -1,0 +1,58 @@
+
+neo4j:
+  uri: "bolt://localhost:7687"
+  user: "neo4j"
+  password: "admin2025" # Change to your actual password
+  database: "test-db4"
+
+import_files:
+  nodes:
+    - path: "import-Large-Test/ATLAS-docs/triples_csv/triple_nodes_docs_from_json_without_emb_with_numeric_id.csv"
+      id_column: "name:ID"
+      id_property: "name"
+      label_column: ":LABEL"
+
+    - path: "import-Large-Test/ATLAS-docs/triples_csv/text_nodes_docs_from_json_with_numeric_id.csv"
+      id_column: "text_id:ID"
+      id_property: "text_id"
+      label_column: ":LABEL"
+
+    - path: "import-Large-Test/ATLAS-docs/concept_csv/concept_nodes_docs_from_json_with_concept.csv"
+      id_column: "concept_id:ID"
+      id_property: "concept_id"
+      label_column: ":LABEL"
+
+  edges:
+    - path: "import-Large-Test/ATLAS-docs/triples_csv/triple_edges_docs_from_json_without_emb_with_numeric_id.csv"
+      start_id_column: ":START_ID"
+      start_node_property: "name"
+      end_id_column: ":END_ID"
+      end_node_property: "name"
+      rel_type_column: ":TYPE"
+      use_merge_on_rel_numeric_id: true
+      properties:
+        key:
+          numeric_id: "toString(row.numeric_id)"
+        set:
+          relation: "row.relation"
+          concepts: "row.concepts"
+          synsets: "row.synsets"
+
+    - path: "import-Large-Test/ATLAS-docs/triples_csv/text_edges_docs_from_json.csv"
+      start_id_column: ":START_ID"
+      start_node_property: "name"
+      end_id_column: ":END_ID"
+      end_node_property: "text_id"
+      rel_type_column: ":TYPE"
+      properties:
+        set: {}
+
+    - path: "import-Large-Test/ATLAS-docs/concept_csv/concept_edges_docs_from_json_with_concept.csv"
+      start_id_column: ":START_ID"
+      start_node_property: "name"
+      end_id_column: ":END_ID"
+      end_node_property: "concept_id"
+      rel_type_column: ":TYPE"
+      properties:
+        set:
+          relation: "row.relation"

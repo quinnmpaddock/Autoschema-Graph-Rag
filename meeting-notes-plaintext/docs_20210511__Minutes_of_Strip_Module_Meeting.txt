@@ -1,0 +1,70 @@
+# 11/05/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1032179/ 
+### Introduction
+- More EDMS reviews will start today/tomorrow
+- Task force has looked at some documents and site qualification spreadsheet will be updated this week for review
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- Production of the common jigs required in the EC
+ - All is in production
+ - Expected delivery date in 1 month
+ - Will re-confirm date with Oscar
+- Production of R0 and R1 test frames for the EC
+ - Dennis did not yet sign them off
+ - Expect all tested with hybrids by mid next week
+- Production of R2 test frames for the EC
+ - Hybrid has been tested
+ - Module noise is not yet confirmed
+ - Hold “ok” until we know they work ok with modules
+ - Expected in about 4 weeks
+ - Mini display port connector might be supply limited (a month ago it was in good supply, lead time 5 weeks)
+ - RFID - have 18-30 week lead time delay
+ - Sites who make frames should order the RFIDs in that case
+ - PCB makers might still have sufficient local supply, check with them first
+- Production of R3, R4 and R5 test frames
+ - R3 checked with hybrids (R4, 5 still in pipeline)
+ - Final design expected by planned vendor
+ - Check for RFIDs
+- Production of LED bars for the EC
+ - Merged all flexes into one array
+ - Connector is not yet in correct place, need to repair
+### Hybrid QC test coupons
+- Craig: 7 hybrid proposal looks sensible, but needs approval from review office. New coupon-less proposal might be too much of a change
+- Ingo: smaller coupons might be a way out if funding really becomes an issue, but need to make sure everything is consistent with EC
+ - Ashley: will add via chains on tabs to help if there are issues
+- Forest: only one coupon out of 3 that survives, need to test via chains on tabs; but can’t reflow hybrids as many times as hybrids
+ - Ashley: the batch test of 10 cycles on one coupon should be sufficient to qualify a panel, but need to be checked
+- Andy: does it change the amount of hybrids that are marked as failed when a single coupon fails?
+ - Becomes only an issue if two coupons per panel are crossed-out circuits, but need to discuss with manufacturer (and part of procurement document)
+- Bart: cost penalty for priming order
+ - Craig: only an issue if hybrids fail in PRR, otherwise no issue
+ - Tony: might consider to change drop rate
+ - Ashley: can be an issue with QC, so need to look at it; main issue is pull tests
+ - Craig: if pull-test becomes an issue, it’s likely that this will be dropped after pre-production to help (if evidence is good enough to support this)
+ - Ashley: need also look how this is affected by SMD population
+- Forest: the option to have coupons interleaved in hybrid panel has benefits and is not much of an change; we should add these extra QC pieces in
+ - Craig: but then have to change the automated system and also need to make sure this does not affect cost
+ - Ashley: testing these structures is some significant work to do
+- Craig: no disagreement to change to one coupon per array and EC has same proposal
+ - Dennis: happy with this change; but thinks change to small coupons might be a lot of work to implement (even the via chains on hybrid tab)
+ - Craig/Ashley: also not too sure how much change is allowed in the procurement process / hybrid tendering
+- Question for Tony: process to get this through review process
+ - Tony: need to flesh this more out: what are the effects of crossed-out coupons; what changes for LBL; number of vias; how to justify not doing test coupon tests after SMD (reflow at SMD is not more aggressive than the one done for QC; but could consider to leave one coupon on panel instead of doing 5 reflow for QC)
+ - 
+### Star DAQboards - updated!
+- Soo cool: new member in the PCB adapter family - PCIe - module data adapter board
+ - PCIe MDA 
+- Are the PB connections very different
+ - yes
+- Should institutes donate their spare SLVS boards?
+ - Absolutely, that’s why we kept asking to fill out the survey
+ - Will be discussed in Production Planning meeting on Thursday
+### Dummy powerboards for the endcap
+- Jonas: like to get part of orders for 3D printed powerboards, but haven’t looked into doing this ourselves
+ - Luise: have heard from several sites looking into making them, but so far not heard any news
+- Step files for powerboards are available on EDMS with correct shapes and SMD components
+- Carles: they are not cheap, but it would be worth it; will look into how to pay for this
+- Luise: would be good if everyone discuss in their institutes and discuss it on Thursday (similar to procurement of glass sensors)
+### AOB
+- None

@@ -1,0 +1,55 @@
+# 2025-05-27 - Minutes of Strip Module Meeting
+Strip Module Meeting (27 May 2025) · Indico
+### Introduction
+Presenter: Navid
+- No questions
+### Initial QC Results for Barrel Powerboard Panels at Amtech
+Presenter: Anne
+- William: you have seen things with contamination with the pads?
+ - Anne: the contamination in slide 8, we havent confirmed that it is contamination.
+ - William: you havent seen this and built it into modules
+ - Navid: there is a contamination on those pads and standard practice to clean those pads that comes from the pick up tool
+- Bart: do you have any thickness measurements
+ - Anne: the single ones were about 15um thinner and the single ones are thinner
+ - Bart: was it this batch that was measured?
+ - Tony: we could measure one out of each batch
+ - Bart: that would be good
+ - Tony: we can do the measurement as far as we can see they have been consistent, they have been flatter, unless you have your tools set to target 140um you should be fine without doing anything
+ - Bart: we have seen some batch variation, some hard numbers would be good
+- Pavol: does Acetone attack the Kapton
+ - Anne: we only clean the bond pads with acetone
+- Carles: do you clean with IPA after
+ - Anne: no 
+ - Gerrit: shouldn't need to Acetone evaporates
+ - Navid: its not as pure as IPA but should be fine for this
+ - Gerrit: get better acetone
+ - Navid: IPA is generally purer than acetone 
+### Hybrid Burnin GUI Updates
+Presenter: Lukas
+- No questions
+### Cold Noise Paper Update
+Presenter: Luise
+- No questions
+### Hybrid ASIC glue Height spec
+- Peter: did you check the pick up tools to see if you can pick them up
+ - Tony: that should be the same because the total package height is the same.
+ - Peter: we have stand offs in the pick up tool that can get in the way. 
+ - Action to check out of spec hybrids for the vacuum for module production this at RAL and SCIPP
+- Gerrit: What do we do with these bad hybrids
+ - Navid: the to thick hybrids are being held for now
+### QT Progress - Quick update & feedback
+- Bruce: don’t think there is any reason to put this in the web gui
+ - Ingo: there is an option that allows you to point to somewhere but doesnt give you a json
+ - Bruce: maybe the cold jig has a different set up
+ - Vitaly: there might be multiple batches for this, I doubt there 
+ - Alex: we can put this onto the web gui, at SCIPP we use two tabs with the web gui and grafana
+ - Bruce: at RAL we have a similar. It would probably be better to do it in grafana. Probably a good idea to put it in mattermost. Also for the IV scan we could add this, it wasnt there because it wasnt as stable but it should be easy to add it 
+### Pinholes from Bonding Errors at the end of Lifetime
+- Gerrit: Re-bonding is a bad idea, reduces throughput. 8 channels that have a problem just go out. As I understand it in the experiment when the barrel is operational you wont bother with low efficiency strips you will just turn it off. Analysis with low efficiency strips would be a nightmare. At BNL we do not rewire front ends, we have tried this and we do not do this anymore.
+ - Emily: that would solve the problem.
+- Vitaly: This will be found out and you can mask the chanel, in principle it can work either way, the tricky point will be finding them before end of life. Unless you do a dedicated test you won't know. It would be more clear to not re-bond. More importantly the wirebonders would be more sensitised. I have preference for not re-bonding
+- Vialiy: the damage happens when there are no wire, it hides the problem
+- Vitaly: it won't affect the yield
+- Conclusion: do not wirebond channels where the bonder lost the wire and hit the sensor pad without wire. 
+### AOB
+- Request to the module ACs to get the grading system in place soon

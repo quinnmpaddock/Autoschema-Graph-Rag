@@ -1,0 +1,124 @@
+# 15/08/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289852/
+### Introduction
+- Tony: great this worked out
+- Marta: Freiburg is missing on the end-cap module PRR list, is that a mistake?
+ - Mostly to show PPB status, no one in Freiburg cluster is in PPB yet, can add you if needed
+### Timon: marking failed powerboards
+- Tony: if we want to keep the yellow ones, won’t be able to return carrier cards
+ - Timon: understood, not counting on this
+- Andrew: would the ASICs need to be returned to CERN at the end of production?
+ - Timon: yes, all of them have to go back
+ - Timon: who’s gonna check that?
+ - Database
+- Luise: is everyone happy with this plan?
+ - Andy: how many would we have to store?
+ - Timon: 4 out of 1200
+ - Seems manageable
+ - Timon: balancing rework effort and marking
+- Luise: need to update documents
+Need to check with the end-cap people to make sure to keep things consistent
+### ITSDAQ news
+No comments
+### R3 testbeam results
+- William: How cna these modules work so well at low voltages? Any of our modules below 100V has noise going up tremendously but you don’t see this on slide 6. I’d have expected 1200+ e noise 
+ - Yajun: We don’t know why. This R3 doesn’t show this increase of noise. For this one, it’s fine. 
+ - Will: We’ve tested others and have seen it 
+ - Vitaliy: irradiated bulk becomes transparent
+ - Will: OK, I know nothing about S4 but S5 OK… 
+ - Vitaliy: I would not expect high-high noise at 100 V but 0 V is very confusing 
+ - Will: I had long discussions with Luise when we first wanted to test at 150 V and she said, “no you gotta go to 350 V” 
+- Luise: On next investigations – It would be good to see if adding these corner capacitors back on to the hybrids affects the noise (see introduction). It’s safer to do this on modules like this with irradiated sensors than ones fresh from IRRAD. On S11, we’re going to ask Ingo when he’s back from vacation to build a new R3 module with the irradiated sensor
+ - Yajun: Agrees it’s OK 
+- William: 100 uA leakage current: is that current on power supply or current on sensor?
+ - Yajun: I think it’s from the sensor because that’s what we read from the power supply 
+ - William: Drawing 100uA from PS or 200 uA? 
+ - Luise: Actual leakage current 
+ - William: So 200 uA from the actual PS 
+- Vitaliy: amount of current - difficult to make sense of what the noise looks like - would expect it to be more common mode noise like.
+ - Jiri: Two effects we can see. One on LS and irradiated R4 - noise increasing linearly with HV applied. Other is R1, R3 sudden noise increase. I think these are two different effects 
+ - Vitaliy: i guess related – is noise uniform for all channels or is it spikey? 
+ - Jiri: uniform
+ - Vitaliy: So there are some outliers (S6) 
+ - Jiri: But generally uniform increase. Outliers on the edges 
+- Jiri, comment on low noise at 100 V: Temperature in box is ~-50 C really. Perhaps temperature plays a role 
+ - Vitaliy: would believe that at -100V, not at 0V
+ - William: We just tested – noise on module at cold is 5000 or 10000. It’s not much better just because it’s cold 
+- Jiri: If R3 not possible, is R0 possible? What will we do in September testbeam? We don’t have anything to test so it’s hard to think what we will do there 
+ - Luise: R0 a little easier to build than R3. We need to follow up offline. 
+### False Blue Glue test plan
+- Vitaliy: Will you do cold tests as well? Like cold noise tests? 
+ - Luise: Modules currently assembled with False Blue have been cold noise tested and do not show CN. 
+ - Vitaliy: OK, the only other thing is delamination. Cole chat. I thought LBNL saw some signs of delamination with lots of thermal cycles. Will you do something similar here? How will you check for delamination? 
+ - Cole by chat: We only saw this fall-off for blobs of Polaris. (on minis only) 
+ - Luise: Non-destructive sheer tests, then repeatedly test up to that point to see if it weakens. Idea is to check if glue joint worsens with cycles in our climate chamber 
+ - Cole by chat: If the NTCs of the hybrids can be read out, that can act as a proxy for delamination during cycling.
+ - Vitaliy: Ah, explicit mechanical test 
+ - Luise: yes, cold noise covered by module set up build right now 
+- Luise: Could we have a rejected batch of sensors from the Sensor Community? Formal request to come, Vitaliy :) 
+### AMAC HVret measurement problems
+- Timon: isn’t the bias resistor coupled to implant and the ABC is coupled to that implant, so there wouldn’t be a direct connection?
+ - Vitaliy: that’s what a pinhole would do - would connect the two
+ - Vitaliy: Dave’s idea was that there are two ends which are fighting: ABC and AMAC, which are coupled resistively, works if there is a pinhole
+ - Craig: would require a really high resistance?
+ - Vitaliy: bias resistor is order of MOhm
+ - Craig: refer back to slide 3 (numbers
+ - Timon: isn’t it strange to see several at the same time
+ - Emily: yes and why are we the only ones seeing them and why we haven’t seen them before
+ - Timon: could it be cracks? High ohmic cracks?
+ - Emily: these haven’t been tested cold
+- Tony: did all of them have bonding issues which may have caused this?
+ - Emily: not all of them had bonding issues
+ - Tony: could be explained if bonding parameters had to be changed to attach modules
+ - Emily: there were working modules in between
+ - Tony: would never have seen this
+- Andy: isn’t there a pinhole test done by sensors?
+ - Emily: yes, test being done and we have the sensor tests done, but they don’t correlate with this and no pin holes were seen
+ - Andy: could they have pin holes which weren’t caught?
+ - Vitaliy: data is from HPK, if there were additional scratches or problems later, they wouldn’t be in the report
+ - Vitaliy: could try to make this issue ourselves by wirebonding AC and DC pads
+ - Andy: did visual inspection show any scratches?
+ - Emily: may be under bonding or under hybrid
+- Vitaliy; noise plots are useful, but you may want to look at offsets as well, in the fight between amplifiers, would expect this to show up in offsets, whereas noise wouldn’t be affected
+ - Emily: will do
+- William: have seen pinholes in R0 and R3 modules - few questions
+ - Slide 4: how do you know they’re saturating
+ - Emily: they’re not, they may not be accurate, but they’re not saturating
+- William: we see that when we activate the readout, the AMAC readout changes - is there no way to turn off the ABC pre-amplifier?
+ - Emily: can turn off the DCDC
+ - Craig: not sure what low power mode does
+ - Emily: doesn’t turn it off, but changes the power scenario
+ - Craig: might be a useful check
+ - Dave: checked and checked with Jan Kaplon, doesn’t change it
+- Luise: did you do the test with bonds cut between hybrid and sensor before any of the other tests or after?
+ - Emily: very recently
+ - Luise: this can change the module and cause defects that look like pin holes, so might want to pay attention to this module
+### Gamma irradiations of modules with glue on guard ring
+- Luise: will send a module soon
+- Luise: also: please reduce dose to see how low we can get
+ - Jammel: will do
+- Vitaliy: can see glue on guard ring when looking from the side, needs a little more effort, but can be done
+ - BNL: we tried, but difficult to do, because the hybrid is overhanging on the side, also edges of tabs make it harder
+### R3 stencil design
+- Carles: Regarding R0’s, I think there are too many dots. I don’t think so many are needed – half would be enough 
+ - Ben: Agreed 
+ - Carles: Otherwise you are risking {inaudible} 
+- Carles: I am in principle not in favor of all this redesign but removing this big opening would be good. Stuff gets stuck to the big opening. 
+ - Ben: That was our experience as well with plastic squiggees and the big holes as well. We are planning to purse
+- Luise: have you been in touch with Tynan and PEter about the R1 stencils? 
+ - Ben: I got the dimension and spacing for the dots from the R1 from Tynan 
+ - Luise: I thought the dots looked like slightly different. Unfortunately, Peter is on vacation this week so you may have to wait 
+ - Ben: I have their notes. I’ll double-check 
+ - Luise: Concerned about trapping air danger in the middle 
+ - Ben: Are you talking about bubbles that tend to develop on ovals? 
+ - Luise: Squeeze out causing lines to merge together (sketch) and then you have trapped error during gluing 
+ - Ben: Good point… I didn’t really think about that. Maybe I can add some more area 
+ - Luise: There are two ways. Merge from the inside out so you have a known merging point 
+ - Approach 1: 
+ - Approach 2: So far apart that they don’t merge 
+ - Ben: Good point, I wasn’t considering trapping air pockets. 
+- Luise: If you look at power board, hottest points on powerboard are where chips are, linPOL specifically is hottest (and under DC-DC) so that’s where we need the most thermal drain. Please make sure glue ends up rather than air area under these hot spots 
+ - Ben: that’s perfect too. I can adjust our trial stencils in the next day or two. We can also try this on glass sensors to see how this works before we make a production order 
+- Luise: These points motivated the original designs 
+ - Ben: I wondered about the diamond patterns, so this makes perfect sense now. I can tilt or adjust so we get a path for air escape 
+AOB: none. Luise sticks around for office hours

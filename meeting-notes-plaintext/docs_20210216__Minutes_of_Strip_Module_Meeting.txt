@@ -1,0 +1,125 @@
+# 16/02/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/986082/
+### Introduction
+- Database and python 
+ - Is anybody using python 2 instead of 3? There’s a request to drop support for python 2
+ - No objections in the meeting, but Bruce to send out email to make sure people not connected are aware of this
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- Production of stencils for the EC -> rename to “Design and Production of” ….add Liv
+ - Prague cluster will produce but need designs
+ - Still waiting for designs
+ - Oskar connected, confirms that they are waiting for the design
+ - Place task update of this prod task AFTER the update on the design task
+ - Oops, we are missing a design task -> will add design to this task
+- Tendering process for EC hybrids and powerboards
+ - Noone answering…
+ - There is a meeting this Friday to go over the IT documentation and specs. More info then next week
+- Design, finalisation and roll-out of powerboard testing setups
+ - Karol asks: Do we need a review?
+ - Expect design to be updated in mid March
+ - Will do a small run before full production
+ - From schedule perspective a direct large submission would be rather preferred
+ - Sure, but would ask for help from someone to look over the design to ensure small bugs are found
+ - Yes, good, easiest in kicad!
+ - Karol will let know when design is ready for this check out - expect in 4 weeks
+- EC Production of handling frame (foam) for test frames and hybrid panel
+ - Dennis: panels foam is done. For handling frames we need to decontaminate the lab as there is residue from a fire in a nearby lab. 
+ - Fr will ship the foam together with test frames and panels 
+ - Close this task and merge the remains with the test frame task
+### EC module/hybrid discussion summary
+- Verbal summary of yesterday’s EC module excess noise exchange
+- As discussion was so interesting there were no live notes taken but later reconstructed from memory
+- See post on agenda for that summary
+- Sergio: please include schedule impacts and interplay with e.g. loading with this topic as well
+### EC glass sensors
+- Still looking for R0 volunteers
+ - Michael Vansteenkiste from Toronto might be able to take this up!
+### EDMS approval & SQ
+- Followup from ITk week
+- We came to decision to require finalised EDMS docs before site quali can commence, so need to get this signed off in short time now
+- Proposal how to do this in slides
+- What is plan for the colours in the SQ table to include this procedure?
+ - Andy worked through the weekend to get this implemented
+ - Awesome Andy!! Thank you!
+- Is anything already ready now?
+ - No
+ - There are 3 docs which have been rejected and re-submitted, so we are getting close for those
+- Is the cleanroom doc among those 3?
+ - There is a discussion in today’s agenda to get this going
+### Cleanroom document - matters arising
+- Accept industry partners cleanroom standard or do we require them to do continuous monitoring?
+ - No - see discussion below
+- Continuous monitoring?
+ - Gerrit: would be good, since certification is only done on one day
+ - Bart: do we really need this if cleanroom is certified above specs (e.g. ISO 6)?
+ - Gerrit: more worried about little accidents that could happen and don’t affect the yearly certification.What is the issue with continuous monitoring?
+ - If we have continuous monitoring, do we need certification?
+ - No, if monitoring is OK
+ - How are cheap dylos units (500 currency units) calibrated or maintained (deterioration over time)
+ - Even cheaper items might not be sufficient
+ - Bart: for UK need a lot of monitoring and IT infrastructure to cover for all institutes 
+ - Gerrit: a lot of groups have already produced systems that could be copied
+ - What about rooms that are not certified and are not monitored?
+ - Should not happen
+ - Bart: do we really need continuous monitoring when rooms are annually certified
+ - Ingo: have seen from his lab that unauthorized people have entered outside office hours and only spotted from particle counting
+ - Tony: how do you show that room stays clean between certifications?
+ - Luise: do certified cleanrooms not have monitoring? Could reduce monitoring frequency (e.g. every 30min)
+ - Bart: not all do this
+ - Where to monitor in large rooms?
+ - In areas where work is done.
+ - Even in large rooms counters with larger distance will react at same time (although with different particle values)
+ - Tony: there will always be local issues, but monitoring the room should be possible.
+ - Vitaliy: external influence matter (e.g. close to air inlet compared to other areas); what people do inside matters a lot (what the people do). If certification does not cover this, then monitoring is important
+ - Another good example comes up where monitoring saved the items in the room (error during maintenance breaking room quali)
+ - Conclusion: we do NOT accept an annual cleanroom certification as an alternative to continuous monitoring
+ - What about industrial partners?
+ - Our industrial partners have to show to us that we can trust them
+- Monitoring interval
+ - RAL had spec 15 min monitoring interval when cleanroom installed
+ - Fortunately Craig could boost that interval to go to 10 min but there may be cases where this is not possible
+ - Sampling rate inherited from temperature (10min)
+ - Decay times of peaks in particle counts depend on quality of cleanroom
+ - Also cleanroom design and external effects can have an impact
+ - How can this be specified in a general way?
+ - Requirement: capture impacts of strong events. 
+ - Dortmund for ISO7 needs to measure for 2.5min to get statistically significant value
+ - Sampling rate needs to be sufficiently large so that measurements are reasonable
+ - Dylos: records every minute (averaging), but can add up to get longer measurement intervals
+ - Vitaliy: don’t need to monitor all particle sizes. 0.5um is probably sufficient
+ - Leave it at 10min sampling rate, but allow people to make case for their institute if they can’t achieve this.
+- What happens if spike/counts are high?
+ - Ingo: if exceed ISO 7 leave room until better
+ - Andy: are there certain processed that should not be done if particle counts are too high?
+ - All assembly/test related steps (assembly, metrology, testing)
+ - Anything where modules are exposed to the cleanroom air. Store them in ESD storage and wait till cleanroom is restored to required quality
+ - Craig: Do we require/need alarms? Shorter period than one day?
+ - Not much effort to install alarm in Grafana monitoring
+ - What recovery time do we require?
+ - Vitaliy: Depends on cleanroom design
+ - Gerrit: also depends on throughput (modules/day)
+ - What time period with alarm, before stopping assembly?
+ - Felix: Proposal 1 hour
+ - Vitaliy: depending on the step of the process (e.g. gluing or metrology); Covering up and stopping needs to be done reasonably fastPropose: need to finish current step before stopping, then find cause
+ - If monitoring is higher than ISO 7 for more than 30min, stop assembly
+- Would be good to have a RH specification (instead/in addition) to dew point
+ - Would upper limit of 70% be acceptable?
+ - Have RH and dew point requirement and allow either one as limit70% RH or dew point 5K below room temperature
+ - 30-60%: if not within accepted range, need to make case with mitigation strategy
+- Oil sealed pump:
+ - Oil free pumps are much preferred
+ - Need to make sure to have measures in place in case there is an issue with the pump:
+ - Oil Trap, ballast valve & filter are required for oil pumps
+### Assembly documents - matters arising
+- Allow cutting off tabs on hybrid assembly jig:
+ - Marc: can be hard to remove hybrid from panel with double sided tape and tape from top
+ - Craig: has done this in the past; double sided tape probably not necessary
+ - Gerrit: cutting on jig will remove requirement for precision placement on panel
+ - Forest: cutting on jig striking surface with razor blade: recommend to cut on dedicated jig that is not used for gluing
+ - Agreed with proposal
+- Proposal for hybrid metrology on jig
+ - Agreed
+### AOB
+- Hybrid QC doc discussion on Thursday 5PM

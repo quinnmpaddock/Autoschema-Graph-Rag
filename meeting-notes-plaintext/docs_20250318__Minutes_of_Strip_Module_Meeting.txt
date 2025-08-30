@@ -1,0 +1,138 @@
+# 2025-03-18 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1527290/
+### Introduction
+Presenter: Cole Helling
+- Vitaliy: For today’s agenda, will there be a presentation from Bruce about the new hybrid tests?
+ - Bruce: Yes, that’s what the thing is.
+### L4 Updates
+Presenter: Bruce
+- Cole: Would you prefer people send their powering test files to you via the expert egroup?
+ - Bruce: It’s mostly about if it fails and we don’t know why. If it all passes, then that is good. The actual files I’m not sure would be useful at this stage.
+ - Cole: so just if the tests fail
+ - Bruce: yes
+ - Cole: will set up reminders
+ - Bruce: have we tested it on enough end-cap and barrel hybrids to know if it passes or fails
+ - Cole: don’t know about the barrel, but have a lot of data for the endcap and can send some for endcap modules
+ - Bruce: cuts were developed for powerboards, so need to evaluate for modules. Don’t want to do this myself, people should find the differences and then we should decide on whether cuts need to be adjusted
+- Cole: I think it might be helpful to have a list of plots that come out “good” so users can compare to. Could this be added to the documentation?
+ - Bruce: [didn’t catch it]
+- Luise: Do you want us to run these tests and try this? Or is this only for the experts to run?
+ - Bruce: There aren’t enough experts, so in general, as many people as possible.
+ - Luise: So update ITSDAQ and send failed tests
+ - Bruce: I’d propose merging the Power cycling test as is and update ITSDAQ and run things. That should put it into the HBI sequence. I think Ben may have updated the HBI GUI to run this, but it might be waiting for the MR.
+ - Luise: So only for the long term tests, thanks!
+- Vitaliy: For the startup test and the power cycling test. What is happening? Is it just some action of the starting up, but not controlling the hybrids and measuring it as a function of time?
+ - Bruce: This is just the normal slow turnon that goes through a set of AMAC states. It configures the HCCs at some point (not sure where) and clears the reset. It’s basically LPM from the HCCs to the AMAC. It doesn’t set the ABCs, which is the larger source of increased current. But power cycling does this.
+ - Vitaliy: so for startup a command is sent, takes a few seconds to start up and we measure current during that time, is that correct?
+ - Bruce: So each datapoint here (Slide: Startup test) is recording. It’s not doing monitoring, but nothing changes for that. The power cycling one does a few more recordings while on and while off. 
+- Vitaliy: for power cycling slide: what are the units for the AMAC efficiency in the bottom right plot?
+ - Bruce: I’m not sure. I didn’t have time to look it up. I think it might be linked to the presentation on my first slide, the values shouldn’t have changed. The plots here don’t look quite as good as they originally did.
+ - Vitaliy: matters whether it is percentage or some other number - plot doesn’t quite make sense
+ - Bruce: I would presume this is a percentage and the high point is a misread. I can’t see anything particularly wrong.
+ - Vitaliy: thank you!
+- William: We’ve finished the burnin for ⅕ to ⅙ of hybrids without issues. I’m assuming we aren’t going to redo this on already-tested hybrids. What are we expecting to find? What’s the main reason to change? 
+ - Bruce: more data is always good, should do this somewhere in module thermal cycling 
+ - William: There’s more time for the module cycling because fewer have been built. 
+ - Bruce: no, not suggesting to redo the existing tests
+ - William: I don’t quite know how to validate the new one.
+ - Bruce: hoped this would have happened in the past year, but didn’t quite make it into the general code/validation
+ - William: I get it. At some point though, if it didn’t happen in the next year, and we only have a few years left … 
+ - Bruce: have seen occasional problems where not all ground bonds were connected, looked like there was no issue, but would hope that these kinds of tests would be able to pick up on these sorts of issues
+ - William: It was the ground bonds for an ASIC (not properly grounded)
+ - Bruce: And the R3L1 has come up, that too.
+Presenter: Abe
+- No questions
+Presenter: Christoph
+- Luise: Are you also going to look into recovery? Or is this only about breakdowns?
+ - Christoph, if possible, I would also like to look at recovery. Hopefully this would be easy to implement as well.
+ - Luise: Then maybe a friendly reminder to also upload the recovery to the DB.
+ - Chrisoph: Yes please
+- William: How big is a batch? Isn’t that 50-80 sensors?
+ - Christoph: depends on which sensors we’re talking about - usually about 40 sensors
+ - William: Okay. Should we be trying to build a series of modules from a single batch? We have been pulling from the sensor batch at random.
+ - Christoph: happy about any modules and any statistics and IVs. If you have built a bunch of modules from the same batch and experience increased numbers of breakdowns, that would be interesting
+ - William: We are certainly seeing more breakdowns, but we haven’t focused on a single batch
+ - Christoph: Any IVs allow us to perform correlation studies. [more is better]
+ - William: have uploaded them all, will pay attention to uploading them to the right place
+ - Christoph: That would be helpful
+- Vitaliy: There are different stages for the module IVs. There is incoming, reception, etc., are you thinking of looking at all of them?
+ - Christoph: yes, all of them and to see if there are breakdowns occurring more frequently at certain stages, recovering later, any patterns we can find
+ - Vitaliy: Wonderful, thank you.
+Hannah: check slides
+### EndCap Sandia Modules: Cycling to Death
+Presenter: Madison Levagood
+- Luise: Could you add that these modules were built from singular interposed modules in Freiburg.
+ - Madison: Will do
+- Luise: I would like to get all the modules back for thermal imaging so that we can correlate any future changes with potential thermal-mechanical changes
+ - Madison: Can do
+- Luise: do we have similar long-term cycling results for the Sandia-irradiated barrel modules?
+ - Cole: Not that I’m aware of
+ - Luise: This would be worth asking in the TF meeting
+ - Vitaliy: I recall that LBNL was doing long term tests, but I don’t know what the state of that is.
+ - Anne: did a few tests, but not long-term tests
+ - Luise: We can help out with the coldbox if that is needed
+ - Timon: would need to discuss details
+- Vitaliy: Perhaps you already said, but the ABCs that disappeared, did you have a chance to inspect the wirebonds on the backend?
+ - Madison: We did, but there wasn’t anything obvious.
+ - Vitaliy: still looked connected?
+ - Madison: There were markings from the pickup tool, but those were present on other ABCs, so we couldn’t see how that could be the problem.
+ - Vitaliy: are they still sending their fuseIDs
+ - Madison: don’t believe so
+ - Cole: chip number 3 stopped responding completely, but one of the R2 and one of the R4 module chips send the Fuse ID, but otherwise the chip is gone
+ - Vitlaliy: I see. Thank you. Sounds like a variety of symptoms.
+ - Madison: keeping us busy
+- Vitaliy: For the module that consumes higher power when cold. If you bring it up to room temperature, is it normal power?
+ - Madison: you can see it’s a little higher at room temperature, but the big discrepancy is unique to it being cold
+ - Vitaliy: is it reproducible for different temperature cycles?
+ - Cole: repeated it a few times, so the extent changes a bit (40 mA the second time), sort of on the edge, as you can see it wobbles a lot more than it should. For this module, it is inversely related
+ - Vitaliy: sounds like it is strangely unstable
+### Module Damage Caused by Interlock during TC at LBNL
+Presenter: Botho Paschen
+- Cole: This reminds me a lot of the stave issues (transient currents) at BNL - have you been in touch?
+ - Botho: unfortunately there was some miscommunication - handed back the module and the bonds and chip were already removed which made more tests impossible. But yes, in touch with the BNL people
+ - Timon: This is noticeably different than the problem on the stave. This is what is induced by a fast HV transient.
+ - Cole: thought this was similar.
+ - Timon: yes, but on a different line - this is also consistent with some resistor blowing up.
+ - Cole: Okay, thank you
+- Alex: At SCIPP we saw all of these things as well. On slide 3, we also had a situation where after starting TC the humidity, or DP, wasn’t low enough. At the beginning, it was fine, but after ramp down it was within 5C and triggered the interlock, doing the same thing you describe here. It tried to throw the interlock and it was competing with the AMAC IV, where the LV got toggled somewhere in there. I agree with your suggestion that before starting TC, the DP should be low enough and this should be easy.
+ - Cole: for thermal cycling sequence in UK and endcap, it won’t go down to -40 if the dew point isn’t below -40, it’s a very simple check. If this is not present in the US cyclers, it should be implemented.
+- Alex: For the humidity sensors, we’ve been having issues with them recently. Not the humidity, but the temperature is completely wrong. We had to replace one. Another issue seemed to be a loose connection.
+ - Peter: what does ‘completely wrong’ mean in this context?
+ - Alex: It would, for example, show 20C when the others are not. It goes away too. It isn’t consistent.
+ - Peter: that is very different from the failure mode here, where the reading is just ffffffff - gross communication problem. What you report sounds different
+ - Alex: I think it is different, but I wanted to bring it up since it interferes with TC when one temp sensor isn’t working properly. I’m not sure what the solution is.
+- Ankush: For the SHT85, I once gave a presentation and we showed that the 85 did have some issues. 
+- Ankush: WRT to how the US cycling works, I would suggest you get together, figure out what you want in the sequence, and have Mounia implement this. This has already been done in the UK and EC. 
+ - Cole: good idea
+- Tony: Trying to debug this, the only thing to check is if the PS is ramping at the rate you want to in the interlocks. It should be impossible to get transients, the thing to do is to check it. Is this planned?
+ - Botho: yes, definitely.
+- Vitaliy sharing two slides showing a modules with initial high power consumption where a resistor was blown, bond was removed, module worked after replacements
+ - Tony: this was us testing an LBNL module, not sure if that’s random or not, but that’s two.
+- Peter P: The problem is the competition between ITSDAQ and ITSDCS, but there is a safe-mode that can solve this problem. What I thought was the problem, was turning off the LV at ~450V, but perhaps not. It might have told the PS to turn the channel off while it was at that voltage too. I’ll check through the console trace to see if that happened. If so, I’ll add extra protections.
+ - Timon: I had a similar comment: agree with Peter, 11V are the most likely, but we don’t understand why. Do we have any explicit tests of this?
+ - Peter: No, I don’t think it’s been tested. We have been more worried about the GanFET turning off.
+ - Timon: and that should be fine. Only real difference between LV off and HV oscillator off is the high or low end state. Should really not be a huge difference in the GanFET as to what it sees. Wanted to try and put on high voltage and start cycling low voltage and see if we can introduce similar damage. If we see problems, need to actually measure to see if we can see increased voltage on the node. If we do see these problems, that would be worrisome, right?
+ - Peter: Yes. We can protect against some things in software, but not everything
+ - Timon: especially if this is triggered and things ramp down with a delay with respect to each other
+ - Peter: I think we specified a trip delay, but that may not be adequate.
+ - Cole: trip delay on the CAEN?
+ - Peter: For the PSs in the pit, it should have a programmable delay to act later. But not in the test setup.
+ - Timon: would also need to check complete power loss. Put in RC filters. HV would dissipate slowly, but LV could dissipate fast
+- Luise: If Roland or Dennis are here, if this is difficult to do for the Barrel, perhaps we could try it for the EC PBs?
+ - Timon: that would be great
+ - Dennis: I’ll have to check. We’ve switched modules off with HV and they have been fine. [did I hear that right?] 
+ - Timon: but do you recall an actual measurement of the oscillator output voltage?
+ - Dennis: It was more laziness with switching modules on and off.
+ - Timon: I worry about it not happening in extreme cases, but if it triggers the ESD diodes - if there is enough current flowing, it might be enough to blow up [one of the SMD components]
+ - Dennis: I think we would have to test multiple. The zero current scenario, and one where the sensor is sinking a mA or so at 500V. I’m not sure it’s easy to produce both variants. 
+### Discussion: Dots or no Dots for Interposed Modules
+Leader: Cole Helling
+- Ingo: would prefer not to build with little glue dots again
+ - Christian: I understand there is no issue without glue dots
+ - Luise: We haven’t done much assembly without the glue dots, would it be possible to say that if we do see problems without glue dots, do we revisit.
+- Cole: we allow sites to choose whether they want to use glue dots or not
+- Cole: we need to track very carefully who does what, sites will be asked to track this very carefully
+- Luise: I’m not sure if all the loading sites are here, can we make this contingent that if the loading sites see issues, we can consider changing?
+ - Cole: yes
+### AOB
+- none

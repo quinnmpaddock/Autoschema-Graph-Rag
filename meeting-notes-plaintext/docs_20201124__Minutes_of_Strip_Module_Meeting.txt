@@ -1,0 +1,92 @@
+# 24/11/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927529/
+### Introduction (Craig & Ingo)
+- AUW reminder
+- Obsolete file discovered in R1 toolset - this was fixed and a new version with correct set of tool drawings made available in EDMS (old set was declared obsolete)
+### Task tracker items
+- EC hybrids/powerboard tendering Urgent In progress
+ - Hybrids back from Wuerth, lower yield than expected, discussion with W
+ - In process with tender companies expect to receive 1 hybrid type per week 
+ - Powerboards are not yet out
+- R0 tool production Urgent Late
+ - Expect delivery in order of 2 weeks, might be wrapped up before xmas or soon after
+- R3 tool production Urgent Late
+ - Would like to build dummy hybrid/module with prototype tools as final test before launching full production
+ - availability of bushings, pins, lift-legs etc. determine when Toronto can do this
+ - FYI: CraigW ordered pins/bushings. Delivery around mid Dec will then re-distribute - best ask CraigW for direct Ca delivery on reception? → Was discussed and figured without the lift legs and LEDs etc from Marc the pins and bushings done help much. Have asked Craig to send everything to Marc so it comes in one shipment.
+- R4 tool production Urgent Late
+ - Tender released, expect full test set soon 
+ - Tender closes on the 9th
+- R5 tool production Urgent Late
+ - Some R5H1 parts undergoing metrology
+ - Jan 21 for first metrology results
+- UK/China hybrid/module tool production Normal Late
+ - See slides later
+- UK/China powerboard tool production Normal Late
+ - See slides later
+- US powerboard tool production Normal Late
+ - See slides later
+- Shipping readiness (incl import procedure) Normal Late
+ - Compliance letters are nearly fully collected (>70%)
+ - Looking into export licences for all involved countries
+- Barrel hybrid tendering/order Urgent In progress
+ - Tendered objects: tender seems to have stalled, slightly bizarre problem with Grafics, have to qualify changes in manufac process putting the risk on ITk Strips, however funding agency unwilling to let that happen. Ongoing process.
+ - Have prototype parts in hand so covered for now. 
+- Powerboard testing setup roll-out Urgent Late
+ - Waiting for 250 powerboard delivery, a PCB for communication is missing and has been submitted yesterday
+ - Active board about to go out to RAL
+- EC hybrid test-panel finalisation Urgent Late
+ - EDMS review: waiting for response to EDMS comments
+- EC module test frame finalisation Urgent Late
+ - EDMS review: looks like it can be closed and approved
+- EC multiple module box transport box Urgent In progress
+ - Currently trial shipment in Freiburg
+- EC hybrid panel transport box finalisation Normal Late
+ - “Bottom-cover-removal-adjustments” (haha, let Germans write your minutes and this is what you get ;) ) finalised in EDMS
+ - Will forego additional approval round for minimal changes that were done and approve EDMS drawings right away
+- Barrel hybrid panel transport box finalisation Normal Late
+ - Will have to adjust current design slightly to allow for moved holes in pre-production panels
+- Production of bonding and testing jigs Urgent In progress
+ - Oscar was not informed about our way of reporting on the tasks in the module meeting, will inform him, apologies
+- Supply of pins and bushings Urgent In progress
+ - Waiting for delivery
+- Production of module frame cover Urgent In progress
+ - Delays due to relevant person away on holidays at company
+### Update: Barrel Powerboard Picker assembly
+- Is it an issue that pins touch both ENIG surfaces and solder resist surfaces? (difference in height)
+ - You set with reference board and loose pins, then glue them in place in situ, to level to the “perfect” fit
+ - self calibration on one board
+ - does not take into account variability between boards
+- Tolerance on “what?” pins? I missed… 
+ - M6 from McMaster
+ - There might be issues with sliding in the pins in those tolerances
+ - Todd will adjust to allow for better slide
+### Pattern development for hybrid to sensor with robot
+- Consistency of glueing results?
+ - We try to stick to narrow time window currently and pre-dispense as reference
+ - EC at DESY similar work, let's stay in contact
+ - Part of dev takes into account ambient temperature
+ - There is a syringe heater which we will try out
+- What about the relative change in pattern wrt the stencil version?
+ - Should be fine, the stencil version is not very refined (works but has room for optimisation, did not find issues with last version)
+ - Could there be thermal performance issues? Thermistor more or less supported?
+ - Maybe? We do not have studies/data to that effect, there are differences between X and Y hybrids (initially few degrees, but likely mostly due to AMAC trace resistances that were not corrected for)
+ - Is this pattern to become the default for all glue robots?
+ - That is up to each institute, this is primarily for SCIPP
+ - So - there will be different glue patterns for different institutes?
+ - We should use the same patterns across all sites
+ - Changing glue patterns now does not seem intuitive at the current stage of the project, specially as we did not see issues with the current glue pattern yet
+ - Reminder that purposefully injected bubbles did not show any issues in previous studies
+ - there were indeed issues encountered (without being reported) and this change proposal is a reaction to those issues
+- Propose to gather experience with similar glue patterns across pre-prod and then re-align for production
+ - If we can solve this already in final prototyping all the better :)
+### EC Hybrid xy metrology requirements in QC docs
+- Marc started to create design files for modules with proper stackup and heights, which could be the basis of this work
+ - Request to do so came up in last loading session and there seems no one else that drives a 3D module model
+- Code referenced in talk could be a tool to determine the tolerance values
+ - Should work for a previous R0 module, will have to be updated to include up-to-date R0-5Star
+- If including pads stuff gets too slow, so need representation
+### AOB
+- We did not hear from the module EC noise results yet
+ - Can we move the report to the AUW module part on Thursday?
+ - Yes, Dennis will be there and can report whenever, will be a module talk

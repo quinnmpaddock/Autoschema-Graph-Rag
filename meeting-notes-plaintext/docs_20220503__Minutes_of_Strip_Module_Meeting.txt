@@ -1,0 +1,52 @@
+# 03/05/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1154776/ 
+### Introduction
+- W
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- Production of end-cap R0 tools
+- Production of R2 toolset
+- Production of R4 toolset
+- Design, finalisation and roll-out of powerboard testing setups
+- Design, finalisation and roll-out of EC module thermal cycling setup
+- Finalisation of panels for EC hybrid testing
+- Production of R0 and R1 test frames for the EC
+- Production of R2 test frames for the EC
+- Production of R3, R4 and R5 test frames
+- Production of stencils for the EC
+ - No news, waiting for tests in Freiburg
+- PPB Module (ABCStarV1, HCCStarV1, AMACStar) with bPolV6 for irradiation in April
+ - Hybrids are tested and work
+ - Hybs and PB are glued to sensor with minor metrology excursions
+ - Module bonding was finished today
+ - Major issue - we found a bug in the G5 programming and saw the effect too late - for all R0H1 and one ASIC on R0H0 the upper 2 FE bond rows are set in height like the first, so they collide with the lower rows :(((
+ - We wanted to test the module before the meeting but did not yet manage to wake it up (likely due to differences in V0 vs V1 chipsets?)
+ - Made an appointment with Dennis tonight or tomorrow morning depending on timing of the module meeting
+ - If we see shorts in the FE rows (likely) will remove upper 2 rows and attempt to re-bond with correct loops
+### Institute Contributions
+Cambridge
+- Tony: How many bad channels were found with this test? 
+ - Bart: Not so many as we have good yield so far, found correlated failures and think this was contamination on ASIC, could see a row of 9 that looked different than others
+ - Only seen on RowTest, not on bonder feedback?
+ - Yes, but we do not have the PIQC option and have rather loosely set bond criteria
+- Tony: could you provide feedback to me wrt to this topic to decide if we need to keep the FE row visual inspection
+ - Bart: will do, also we found a case where a wire got dragged along and shorted 5-8 bonds, will try to find picture
+- Gerrit: glue mixer saves a lot of time and is well worth the high price
+ - Bart: yes, but our budget cannot support this for all sites
+U of T
+- Urmila: slides 6 is what you uploaded to the DB?
+ - Laurelle: explains the numbers, this is wrt your email? Yes, will contact later
+ - Ingo: cold box: you don’t use isolation pad? Laurelle: just a quick test and with back plexiglass cover on.
+ - Gerrit: slide 5. Tools starting to tilt: we suspend vacuum lines from the top. Also seen in US that it’s no good to use coiled up lines for the pickup lines (use them only for table based tools)
+ - Gerrit: about tools wiggling. Check if pins go deep enough into bushings.
+Next meeting: ? 
+### GUI to upload test data
+- Kenneth asks about the GUI framework.
+- Ingo: will this be merged with the web app? 
+ - Kenneth: will start checking and thinking how to merge
+- Ingo: all shown is for barrel modules. Do you know about anyone interested in covering EC? → No.
+### EC HVTabs - needs and available stock, current status
+- Please check your needs ASAP (or even faster :) ), and provide feedback to Carles 
+### AOB
+- TonyA: At upgrade week we want to talk about descoping options for QC tests. There is a spreadsheet. Please provide feedback if you were asked for some

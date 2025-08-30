@@ -1,0 +1,99 @@
+# 28/11/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1348473/
+### Introduction
+Slide 5
+- Sergio: Not quite sure what the cold cycling developers include?
+ - Luise: Yes, there is an egroup, so nominally, it’s the people in that egroup.
+ - Sergio: Yes, there may be people not in the egroup that should be (will work that out).
+- Abe: We put out the first draft and will implement those comments before sending it out for another round. I just wanted to clear that up.
+ - Luise: To be added on CDS soon.
+- Sergio: If you send the initial paper to the module list, you do the same thing. Everyone who is an author is aware of this?
+ - Luise: Last time we set up a Google doc to edit the authors. Perhaps we will do something similar this time so people can add more people if needed and appropriate.
+ - Abe: sure
+Slide 7
+- John: They are currently testing the SE4445 module. With the autorange fix, it looks better/good
+ - Luise: Thanks, we’ll ask for an update at the end of Testbeam
+ - Tony: Does this mean there is no example of a testbeam module that does not work without this fix? (Triple-negative, assuming this is “Do all testbeam modules show improvement with this fix?”)
+ - John: There are a few older modules with strange noise features. Probably better, but we don’t know about all of them.
+ - Tony: There has been this issue with noise after irradiation. If there is an example where this isn’t solved by the fix, it would be good to know
+ - John: There is another issue, but that looks to be related to something else.
+Slide 8
+- Tony: If we get these kinds of requests, do you also want us to highlight space constraints?
+ - Luise: It’s on our list of “that’s why it’s not as easy as you think” and how adding more activities can actually slow things down.
+ - Gerrit: How does this gel with the US-ATLAS project? We can give an answer, but we’re base-lined. 
+ - Tony: They have the right to ask the question and we should answer it. But that does not mean we have the money for it or the lab-space. I think we will run into space issues first
+ - Andy: To clarify, “if” you had the ability, how would you get 6 additional month’s worth of float?
+ - Gerrit: does this only affect module assembly?
+ - Luise: It’ll come from the loading side as well.
+### News from ITSDAQ/News from sensors
+ITSDAQ
+- Luise: any update on pedestal trim not applied?
+ - Cole: no
+- Luise: [....] has it R3 now?
+ - Cole: Think so, but need to check the code
+ - Ingo: Is this for the assembly?
+ - Luise: yes
+ - Ingo: should be in there. Ben has worked on it. There is something wrong with the R3 and Ben is looking into it, but not sure what is wrong.
+- Vitaliy: Curious why the autorange issue is causing noise.
+ - Cole: Not clear why it is creating excess noise
+ - Vitaliy: It’s a huge increase and would be nice to understand what is going on. Just to be sure there is nothing going on that we don’t know about.
+### Institute contribution: Liverpool + Sheffield
+Sheffield
+- Tony: Slide 4: We looked for suction cups for a long time, so we are surprised we missed this. Could you please send us the part number? 
+ - Theo: Can do this. We have a fair few. Think they are custom made.
+ - Tony: If they are custom made, this would explain a lot. Thank you.
+ - Bart: It is indeed an injection-moulded part specifically made for us. I believe we need to have a very large batch made so that we can share.
+ - Tony: If we could get some samples, could try as well
+- Luise: Two questions, for the pre-heated TB study. Could you collect information on the bow? We thought that this would help with the cracking because the glass transition temperature of the pre-cured TB should be higher. 
+ - Theo: Yes, we can provide the “before” information. For the “after” information, we need to wait until they are at the loading site for them to perform the metrology
+ - Luise: And please remind them to do the bow measurements 
+ - Tony: Were they cycled to +20C?
+ - Theo: All of our modules have been cycled to +20C
+ - Luise: And you said that one had minor CN? 
+ - Andy: Though they [batch] were at +40C but the sensor is bad and it ended up at 50C
+ - Luise: So the problem was just the high temperature?
+- Luise: for glue patterns, it would be good to change as few things as possible while the cracking study is going on. We should only change one thing at a time.
+ - Theo: The dots are a change, but all of the different squares are slight shifts, so this is something that we will keep an eye on.
+ - Luise: If we change the glue pattern, that might change the gap towards the powerboard.
+ - ?: only shortened the squares to add the dots, not changed the position of the squares (especially in relation to distance to powerboard)
+Liverpool
+- Luise: Does this GUI only work for hybrids?
+ - Sven: It just uploads json files, so in principle it could work for anything. This is currently a “stop gap” while Bruce works on a more official version.
+ - Luise: This would be good to combine with the merging script (from Hao Jia) to place hybrid tests on modules. 
+### Thermal cycling update
+Slide 
+- Luise: This is a good idea.
+- Tony: I think we are running a decent chunk of this on a different branch. My question is ….. “If you run the cycle, this is what you see, this is what is missing”. 
+ - Tony: HV stability is now merged into ITSDAQ
+ - Ankush: yes
+ - Tony: What are the differences between Abe’s branch and the current master branch?
+ - Ankush: Main issues would probably be on the ITSDAQ side about what is missing.
+ - Abe: The last version of my temporary branch was hybrid after .. IVs. I think it has everything else
+ - Tony: Once the summary of these proposals are put in, would it be identical and ready to move?
+ - Abe: Everything is definitely ready, you can switch.
+ - Tony: Just trying to understand the difference of what we have now, what is currently in the main branch and what we need to get there
+ - Ankush: So what is the difference wrt to the ITSDAQ side? If we check out the main ITSDAQ branch with cold jig software, would it work right now?
+ - Abe: Don’t know, haven’t tested it
+ - Ankush: Still running off of one of Karol’s branches - not sufficiently familiar with ITSDAQ
+ - Tony: We are seeing some features that we are gathering on the ITSDAQ side (mostly). We would propose to keep running on Abe’s branch until he says otherwise.
+- Luise: Are you planning to add this to the first “stable” release and then we can ask for additional features?
+ - Ankush: Yes. Once we have the release, we can add more features
+ - Luise: We have a bunch of other requests that we are currently collecting and would forward once the release is out
+ - Cole: Little things to implement are easier than adding new tests, so we should wait.
+ - Tony: I think the DCDC-off during the IV scan _has_ to happen now.
+ - Cole: Yes, these should go in, change is still relatively small, agreed
+- Tony: We need to get a notification when to use the official version
+ - Ankush: ITSDAQ and coldjig are relatively unrelated, so can’t really do that - need to be told by ITSDAQ experts
+### Update on powerboard pickup tool pin setting
+Slide 
+- William: How did you determine the “goodness of support” for the bonding? 
+ - Speers: When there is a lack of support, we see poor bonding. That is the main clue. If there is bad support, it’ll move.
+- Carles: The R4/5 PB tools were not adjusted this way. The sites that received them need to know that the pins are glued in. If someone wants to attempt these adjustments, it’s important to note that they are glued.
+ - Pete: Pins for R2 tools were glued in place as well
+ - Carles: Pins were too lose, needed to be glued in afterwards
+ - Pete: You do want some free movement so you can drop them in.
+ - Luise: Think this is the case for the barrel as well and they had to adjust the pins for different flex batches. They were also glued and they had to force the pins out, so this should be possible
+ - Carles: I will not tell my technicians you are touching the pins :).
+ - Luise: We have a big box of flexes, so we can send them out for you to try.
+### AOB
+- No

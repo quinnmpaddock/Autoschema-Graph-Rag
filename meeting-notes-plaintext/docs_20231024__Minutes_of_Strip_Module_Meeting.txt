@@ -1,0 +1,92 @@
+# 24/10/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1336878/
+### Introduction
+Slide 6
+- JJ: tested R3 a bit and noise is a bit high
+ - Luise: to be followed up
+### News from ITSDAQ/News from sensors
+ITSDAQ
+- No update
+Sensors
+Kenny: The analysis (copy and pasted through webapp) has had the normalization moved. This has an effect on the pass/fail, so I have reverted this. This may or may not have a knock-on for barrel modules.
+ - Xavi: Thank you. For everyone, please update your code
+### Institute contribution: LBNL + SCIPP
+#### LBNL
+Slide 6
+- Pete: When you degas this glue, do you observe a lot of gas releasing from the glue?
+ - Sandra: no, because it is inside of a machine we can’t see it
+ - Pete: Ah, of course. Do you use stencils?
+ - Sandra: Yes we use stencil. Initially all three sites used robots, but then we switched to stencils about a year ago (as RAL does).
+#### SCIPP
+Slide 9
+- Vitaliy: For clarification, it’s the magnification that is 1000x.
+Slide 13
+- Pete: is this a function of the glue viscosity - SCIPP is using glue with very little pre-cure time, would it be better with thicker glue?
+ - Tony: it is pre-cured three different times. We want to test how this evolves with time
+ - Vitaliy: use 15-30 minutes waiting time to see if that improves things, didn’t see any obvious differences
+ - Sandra: going to do similar tests at LBL with stencils
+Slide 13
+- Luise: should discuss offline where we want to use this
+ - Tony: yes, that would be good. We can only make 1-2 samples per day
+### Common software storage
+- Luise: There is a lot of code that people have at their local institutes. This is a call to try and get their local, custom code into a central location. 
+ - Luise: not all of scripts should go here, some should go into the database repository if they are database related
+ - Theo: Yes, that’s right. If you aren’t sure, contact us and we will let you know.
+- Kenny: this can also apply to openshift software (that is hosted at CERN)
+ - Theo: Yes, we will try to do the same thing.
+### Hybrid glue weight finalisation
+Slide 
+- William: So I’m happy with this 90% limit, but this average glue coverage expects the flexes to be flat, even when they are not.
+ - Pavol: there are a lot assumptions, including that we use averages for chips
+ - William: It’s just the average. So I’m not sure how much to trust the black line in terms of coverage. I suspect there are bulges under the ASICs.
+ - Pavol: it is possible. I don’t know how flat the hybrids are
+ - William: We’ve looked and we have found 40-50 um dips/mounds
+Procedure Change: 
+ - remove upper hybrid glue weight limit
+ - Change lower hybrid glue weight limit to 90% of nominal weight
+- Ewan: is this glue weight also applicable to glue under powerboards?
+ - Luise: only for ASIC to hybrid glue weights, need to wait for outcomes from simulation task force regarding glue coverage and then translate that into final glue weight requirements
+### Update on delamination tests
+Slide 
+- Sandra: I have a question about the mixing. In our tests, we found that the mixing also has an effect. We see evidence that mixing is an important part of the procedure. Then the pre-curing and curing.
+ - Pete: Yes. We are just following the procedures developed for Polaris
+ - Sandra: just how much you do that
+ - Pete: So we mix by hand in a mixing boat (petri dishes in this case) and then we have a stir stick to agitate for two minutes. And maybe that isn’t long enough.
+ - Sandra: how do you avoid bubbles? Defoaming?
+ - Pete: Yes, it’s viscous enough that it doesn’t release the bubbles very well. I tried a long time ago to use a vacuum chamber to degas some of these glues. 
+ - Sandra: we tried mixing by hand and have seen a lot of bubbles. The machine does it all
+ - Pete: It is difficult. We don’t have a mixing machine, so we cannot try it. I would look at degassing to see if that has an effect and see if mixing for longer or shorter times produces a change.
+ - Luise: after dispensing in stencil with the thin layer you have, if you leave it for a short amount of time the air bubbles will move out of the glue by themselves
+ - Pete: There could be some “micro bubbles”
+- William: you didn’t use bipax of false blue. The glue you have is in a fairly empty container, so already exposed to oxygen
+ - Pete: This is true. That could well be an issue.
+ - William: Would be interesting to see what those do. But certainly we don’t need 3 N to hold our hybrids
+ - Pete: This value is arbitrary
+ - William: is strength really the issue for us? Is it too strong, which causes issues?
+ - Luise: It’s the other way around. The glues that connect better, like TB, has the best CN performance, where FB has the worst. 
+ - William: the breakage stress is worse for better bonding glue
+ - Luise: 
+- Pavol: how do you control the surface area?
+ - Pete: Yes, I have a modified stencil
+ - Pavol: is the surface always the same?
+ - Pete: I’m not sure what you mean
+ - Pavol: you glue two surfaces together, does it always spread the same?
+ - Pete: There is some indication that some of that changes a bit. I put some 130um shims under the hybrid and added a weight. We get pretty good results. But the surface area doesn’t seem to have too much effect on the strength.
+ - Luise: You always use the same stencil to get the same surface area?
+ - Peter: yes, they should be comparable
+- Vitaliy: curious about oxygen prevention bags. Was there any air volume it it at all?
+ - Pete: There was small volume. But basically, it was a large ziplock bag (2”x4”).
+ - Vitaliy: there is an indication that oxygen inhibition does something. We mix glue and put it into syringes afterwards. With this we are mostly preventing oxygen
+ - Peter: yes, we looked into your SQ document on how you do this. We were thinking that if it would be an issue, you should not see it. We could maybe do this as well -> dispensing with a syringe makes it easter, but for this test it does not seem to make a difference
+ - Vitaliy: I would agree. I was just trying to interpret the results
+ - 
+- Luise: If you look at the tiny pockets of hardener (slide 6), which causes a tacky surface from uncured parts
+ - Peter: this cloudiness does not appear as bubbles but more as greasy cloud
+- Luise: These tests are interesting and we will continue them. The thing we should keep in mind is that we did this to decide if we should use True/False blue. We found a short pre-cure time improves the strength (?), but it causes problems with stencilling because of the viscosity of the glue.
+ - Peter: we didn’t cover the actual use. You can use it if the glue is thin, but it is not nice.
+ - Luise: This was the last point to investigate in the discussion for glue choice. So independent of these tests, there is a relatively clear outcome that True Blue is better than False Blue.
+- Luise: is there anyone who wants to use FalseBlue for module assembly (in EC)?
+- Luise: would everyone be happy with changing the default to TrueBlue for module assembly (in EC)?
+ - Resounding agreement 
+### AOB
+-

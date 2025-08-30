@@ -1,0 +1,50 @@
+# 30/06/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927508/
+## Minutes
+### Introduction (Craig & Ingo)
+- None
+### EC testing jigs (Marc & Sergio)
+- Discussion which jig to use for individual module testing: a dedicated module testing jig designed by Marc (with vacuum and HV insert) or a modified version of Sergio’s cold box jig
+- Decision: vacuum not needed (as won’t be used in final module test)
+- Use cold box style jig, where the peltier element part has been replaced by simple cooling block
+- Valencia to get quotes for those jigs (question when tools will be available)
+- DESY design to be on EDMS “in the next weeks” → need to follow up to get more definite date
+- Burn-in panel jig designs not ready yet, Marc has to check with Kambiz about status of panel PCB designs first. Should happen tomorrow → Marc will forward what he learns wrt to timeline after that discussion
+- More pressing issue right now is to get panel PCB designs done, panel jigs will follow after that 
+### Dowel pin tolerances (Masahiro)
+- US can’t achieve tolerances for the holes in a way that prevents dowel pins from getting stuck eventually
+- Sven mentions that this concern was raised too late since the UK has already started producing tools so we can’t change anything anymore
+- Most decisions made years and months ago, why was it not brought up then?
+- US apologizes for that oversight but wants to make clear that we need to find a solution in order to allow successful tool production in the US
+- Prototyping in the US has shown that holes got larger over time until they exceeded specs → claim that steel pins in combination with the aluminium jig and tolerances not doable in order to keep tools within specs
+- Steel instead of aluminium?
+ - Too expensive, if one group changes to steel all would have to and we don’t have the budget for this
+- Changing hole size? Would cause additional at least 3 months delay, we don’t have time for that in our schedule
+- Is increasing the tolerance on the hole size an option? 
+ - Could work, compared to other position tolerances it wouldn’t affect much
+- Changing tolerances would be preferred solution compared to changing design
+- Conclusion:
+ - Tool being manufactured now should be done with updated tolerances:
+ - In barrel that means D8 holes as suggested in meeting
+ - In EC that means whatever tolerance required to get similar slipping clearances as suggested today for D8 in the barrel
+ - In meantime, investigations to be done into bushing-based tooling
+ - Any changes will need to conclude on timescale of 6 months
+ - Note that this would allow barrel to incorporate changes into production tooling
+ - EC plan for tooling being ordered now to be production tooling anyway
+### 
+### Sensor IV (Bart & Vitaliy)
+- Is 550V ok as a reception test for bare sensors at module building sites?
+ - Vitaliy would prefer to stick to 700V 
+ - Not a problem to do that even on module frame
+ - Ingo is very concerned that people might then forget that for a full module they shouldn’t go above 550V
+ - Could software prevent this by having different limits hardcoded?
+ - If it’s anywhere outside of a module box Ingo is not concerned with applying 700V but inside a module box he is afraid it can cause to mix ups and introduce the risk to break modules by powering them too high
+ - Concern about filter capacities getting stressed to the point where they break
+- What do we gain from testing again at 700V? 
+- If we change the BOM and put 1kV capacitor in instead of smaller capacitor, we should be fine
+- Frame was designed for 550V, not 700V
+- No conclusion on reception IV to 550 or 700, to be discussed again...
+### Waffle tools (Scott)
+- Moved to next meeting
+### Bond pulling (Bonding QC group)
+- Moved to next meeting

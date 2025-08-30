@@ -1,0 +1,192 @@
+# 08/08/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289851/
+### Introduction
+Slide 3
+- For DESY Hamburg no problem to receive sensors
+- Need to check for DESY Zeuthen
+- Is there any idea how many sensors?
+ - Luise: not now, will have to be discussed, maybe a few boxes
+- Tony: for US it’s a larger amount of sensors. Also assume groups would not do reception tests
+ - Luise: for EC the numbers are much smaller and for yield estimates the reception tests would be good to do
+ - Luise: for EC amount of sensors at each site is smaller
+ - Luise: need to follow up with Prague how many they want to send
+PRR Follow up
+Slide 2
+- William: which segment on the R3 shows abnormal noise?
+ - Luise: left side, those covered by hybrids
+ - William: and that was discussed at the meeting?
+ - Luise: that was at the PRR
+ - Luise: this was on the very first module. You have done results on the improved design which was much better. We also check the calculated estimation from strip length and coverage
+ - William: will check
+### ITSDAQ news
+- William: we can get a service account for the database?
+ - Cole: yes
+- William: at what time of day do you run this? We have had some time out issues
+ - Cole: run it at any time of day without issues
+- William: talking about turning on power supplies, using a fairly default Keithley which runs into problems when running 
+ - Cole: the plan is to implement shunted tests for thermal cycling
+ - Luise: idea in this case is to run shunted in staged 
+ - Cole: the currently used power supply only provides 1.5A, which is not enough to run a R3 module shunted
+ - Luise: need to have a more in depth discussion
+ - William: we have 20A power supplies, but don’t want to use those
+ - Luise: need to check with the other R3 sites
+- Sven: how long does the database token stay active?
+ - Cole: 30 minutes or so?
+ - Bruce: 30 minutes
+ - Sven: sounds good
+- Sven: what’s the status of the automated ASIC assembly script? Not much documentation available
+ - Bruce: currently working on a script to do this. Have something for RAL hybrids, now need to check for EC (need to get a file from ITSDAQ to do it)
+- Tony: format of long-term test, was this discussed with sensor group since they have something like this and we have some scripts that could be use
+- Tony: also asking about the database format for the HV stability test
+ - Cole: do you mean what kind of tests?
+ - Tony: if we have the same outputs as sensors, can run the same scripts which would be useful
+ - Luise: the formats are different because of environment information; format for storing the current values is the same
+ - Tony: then can run the same analysis code as sensors?
+ - Luise: not necessarily because of the AMAC instability that needs to be folded in. have a QT working on this
+- Luise: slide 8
+ - Cole: have a documentation in git that will discuss what the three forms are. E.g. in this case could also do another one
+ - Bruce: eventually should end up at an almost common format where you only need some information. That isn’t quite working. 
+- Luise: how do I find out what the correct stream mapping is?
+ - Cole: am working on this and need to talk with Bruce/Peter about the correct format. Will be in the official ITSDAQ documentation
+ - Cole: also depends in some cases in which system the hybrid/module is tested (single hybrid, single module, module box, stave/petal)
+ - Luise: note: it’s different for panels and modules for some module types
+- JJ: need to write the stream mapping by ourselves?
+ - Cole: yes, a minimal amount of work will still have to be done the same
+ - Cole: will do our best to automate as much as possible
+ - JJ: because there is a difference between panel and module
+ - Bruce: based on FMC type we should be able to find out how that works
+- Cole in chat: Regarding the documentation for "short/medium/long" form st lines: https://atlas-strips-itsdaq.web.cern.ch/sysconfig.html
+### Update on module vibration reliability testing/Cold noise tests in magnetic field
+### 
+Reliability
+- Luise: are we still planning to move the reliability test to CERN after 2 months?
+ - Matt: yes
+ - Luise: when would this be?
+ - Matt: in the next few weeks
+Cold Noise in Magnetic field
+- Luise: from EC, you only tested R4?
+ - Matt: yes. We had another module, but it did not work
+ - Luise: is it true blue or false blue?
+ - Matt: not sure
+ - Matt: for barrel, tested true blue and flase blue
+ - Peter: EC was false blue
+ - Luise: makes me feel better. We haven’t seen cold noise with this and haven’t seen it in magnetic field that is good
+### EC PB reception testing updates
+- Slide 13
+- Luise: for those with failed communication, did you check the wire-bonds?
+ - Ben: yes, did not see issues
+ - Luise: this is a failure that looks similar to what was seen on the HV mux reliability tests
+Slide 10
+- Luise: it makes sense. The only caveat is that it not change anything for the barrel
+ - Ben: yes. Karol was very optimistic that this is possible
+- Luise: the active board, was this barrel or EC?
+ - Ben: EC
+ - Luise: some of the EC sites received a modified barrel verions
+ - Dennis: no, it is a barrel board
+ - Luise: did you check that all changes work with both types of boards?
+ - Ben: yes, once I am back at Zeuthen
+ - Luise: and people will know what version they have?
+ - Dennis: can provide some information to identify the board types
+- Luise: there is the barrel powerboard reception test guide. We had hoped that there would be a EC version (or an addendum to the barrel). Ben, could you look into this?
+ - Ben: could just use the barrel version and add EC related stuff
+- Luise: slide 4 can this be fixes?
+ - Ben: yes
+ - Dennis: can also fix it for boards that have already been circulated
+ - Luise: is it easy to find the issue?
+ - Ben: use a microscope, it should be possible
+ - Luise: would be good to know what the symptoms are when trying to test a powerboard and which chips to test
+ - Ben: can do this
+- Luise: would be happy to be a beta tester
+ - Ben: can provide instructions to ta contact person
+### Power Cycling Test
+- Luise: last time we discussed this that it would be good to find an indication that we would catch something with this test. Still not at that point?
+ - Marcus: yes, we haven’t seen any problems with hybrids 
+ - Luise: do we gain anything with adding this test? (From the last discussion)
+ - William: haven’t seen any failures so don’t know how to conclude
+ - Tony: what you are looking for is some rate of infant mortality or on the hybrid that we don’t know what it its. Just looking at 36 hybrids will not give use any more information. In past experiments, power cycling was the cause of issues. The question is: does the power cycling cost you anything? Ande here it does not, since the tests time is not affected.
+ - Tony: the number of cycles was based on a power cyle per day in run operation
+ - Luise: wasn’t it mentioned that power cycling would weaken the flex?
+ - Tony: in the past, power cycling was causing issues with vias, but ours are better
+ - Tony: and in other types there was an issue with ASICs, but from a different build
+ - Tony: power cycling would make the most sense to find anything, just running 100h without will not do anything
+ - Luise: still don’t know the boundaries and have not seen any issues
+ - Tony: and for this kind of test you will not see anything by increasing the number of tests with the same hybrids
+ - William: it’s hard to mention what to see. Slight change of parameters could cause issues
+ - Tony: slight changes of parameters will happen also in other tests. It’s up to the community to decide if we want to do the test
+ - Luise: it’s about weakening the components too much by doing this test
+ - Tony: if 3000 cycles will weaken them then it would be a problem anyway
+ - Tony: just test past a reasonable amount of time and if it passed, it’s not a weakness
+ - Tony: think running this test any longer will not do any more benefit
+- Tony: also need to talk about the merger script today
+ - Tony: the original merger would fail the merged test if there is a single failed test
+ - Tony: need to discuss if this is good since we see single failed tests (e.g. from gain blips)
+ - Luise: for the random blips, did you look at the S-curves? Was it a readout issue or have the S-curves moved?
+ - Tony: sometimes it’s from a test that is not completed
+ - Marcus: also was with trim not loaded, or not saved
+ - Tony: have to make a decision about what to do
+ - Luise: problem was that pedestal trim was missing and therefore the response curve failed
+ - Tony: an in some cases the parameters just shifted without knowing why
+ - Luise: we don’t say that hybrids are failing?
+ - Luise: you see missing files, but are there other things as well?
+ - Marcus: yes, sometimes we get blips without missing files. Its hard to see a pattern
+- Luise: missing data files should not fail a hybrid
+- Luise: for data shifted for a period of time, does not sound that this should fail a hybrid but would be good to understand it. Has this been reported?
+ - Bruce: don’t see if we gain anything by looking at what kind of defects have caused this
+ - Tony: we can look at this
+ - Tony: when we have a failed across the board tests, it’s usually the gain that is wrong
+ - Marcus: think this is true. It is usually the gain that fails
+ - Tony: can look at the gain from all the failures and report this back
+ - Tony: don’t think the part is bad, so we need to clean this up. And after turing the computer off, it gets back to normal.
+ - Luise: Mo’s script is not available any more right now, so some are struggling to get the merging done
+ - Tony: Marcuse’s script also returns the list of defects
+ - Ben: Marcus, would you be up to test this with Mo’s script? Think it is somewhere in a ITSDAQ merge request
+ - Tony: but isn’t the one on the left the standard Mo script
+ - Bruce: the only difference is the extra cut.
+ - Bruce: other people should be OK to upload with the failures for now because we need to look at the data
+ - Luise: need a judgement call by looking at the data. Sounds difficult to implement automatically
+ - Tony: don’t know if Marcus has a way to look if last n tests fail
+ - Marcus: no
+ - Tony: it’s another weird case
+ - Tony: if if would fail on the 85th test, Marcus criteria would pass it
+ - Marcus: yes
+ - Tony: could add a flag or something to extend the test run, but this would require a manual intervention
+ - Tony: ideally need to get rid of the issue
+ - Tony: and we are also looking at a module merging script
+ - Bruce: we need more data from cold cycling, but guess we need the uploads first
+ - Tony: working on it, we have a lot of data, just not looked at them
+- Luise: so we use the merger and accept that sometimes the test might fail
+ - Tony: not satisfying weather way.
+ - Tony: propose to use Marcus’s script but then would have to look at data
+ - Tony: it’s in a merge request
+ - Tony: ideally run the script that is pointed at here and run it at other sites
+- Luise: maybe thermal cycling is more robust because the chip sigma is larger and it is less susceptible to fluctuations
+ - Tony: other question is if the gain cut is too tight
+- Luise: circulating it through list and everyone running the same script would be good
+ - Tony: might have to look at files and look for failures
+ - Marcus: just looking at the files and see what failed (low gain/high gain, …)
+ - Tony: thought there is already a script for this
+ - Luise: would also be good to look at the actual S-curves to see if there is a communication issue
+ - Tony: Bruce already helped with this where there is a big offset shift
+ - Bruce: suspicion was temperature
+ - Tony: but not in the way we run the system
+ - Bruce: maybe something that causes the gain to be measured wrong
+ - Tony: also have seen for PRR summaries that we see system going between a couple of clear states
+- William: so can these hybrids be used for modules
+ - Luise: yes
+ - William: think we will be at the same point in a months time
+ - Tony: EC data will be also important to look at
+- William: sounds like we shouldn’t stop and start, since this seems to have caused issues
+ - Bruce: thought you restarted because it caused issue
+ - Tony: yes, that was the reason (system frozen, weird issues)
+ - Marcus: also segmentation faults
+- Luise: do ge the argument to do some power cycling. Maybe do power cycling at SCIPP as a test site (different hybrids) and see if there are any issue
+ - Tony: yes, we can do this but all our boards have been burned-in without cycling
+ - Tony: could do more burn in with the boards because we won’t build at a rate
+ - Luise: would be good, and then come back and see if there are issues.
+ - Tony: don’t think if this would make our live harder
+ - Luise: one concern was the lifetime of the hybrid panel powerboards
+ - Tony: that is a concern, but we don’t know if there is actually an issue
+### R3 module testbeam discussion
+- Postponed to next meeting
+### AOB
+- M

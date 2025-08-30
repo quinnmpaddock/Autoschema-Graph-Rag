@@ -1,0 +1,53 @@
+# 21/07/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927511/
+### Introduction (Craig & Ingo)
+- Endcap hybrids now on EDMS, review will be kicked off soon
+- Endcap power boards need to get checked as well, Craig/Ingo will send out reminder mails
+- Barrel power board was reviewed, need to confirm that most up to date version is the one that got reviewed
+- Barrel hybrids got reviewed, no further detailed review expected
+- Tool drawings for both endcap and barrel are being updated and will get reviewed soon
+### Schedule summary (Craig)
+- Coarse schedule:
+ - Prototyping now until October 20
+ - Pre-prod A October 20 - Feb 21 (including site quali)
+ - Note that during pre-production, all QC steps need to be performed (minus agreed upon steps limited by setup availability: hybrid burn-in, module thermal cycling and powerboard reception tests)
+ - Pre-prod B Feb 21 - Sept 21
+ - PRR Sept 21
+ - Production Apr 22 - Aug 25
+- Do we need final DAQ for systems FDR?
+ - Not sure, testing the hardware rather than firmware, so having final DAQ might not be necessary → to be checked 
+- Assuming that HCCstar and AMACstar available by February, isn’t that too optimistic?
+ - From latest exercise, delay about 1 month compared to current schedule (could be 2 months)
+ - Hard to judge with current uncertainties, might be optimistic, but should still try to stay on current path 
+- What are we doing between end of pre-production and start of production? Risk of loosing expertise during those 6 months?
+ - Break extended to this long duration due to delays (used to be ~3 months)
+ - Might be that building last pre-production parts extends into this break
+- Priming factor for ABCs is mainly getting SEE tests done
+- When do 4 staves for integration tests have to be available at CERN?
+ - Modules build up until July 21, loading after that, delivery to CERN ~end of July
+- Is it envisions that the remainder of pre-production (12 staves) can be smeared out in the time until production?
+ - Potentially yes. But system tests items have to be ready in time for the system test FDR
+ - After that no hard schedule reason to push through the remaining staves fast
+### Suction cups (Jane)
+- Current suction cups are sittings on modules without problems seen, not huge sample size but it’s what we have
+ - Modules handled with silicon suction cups have been irradiated and tested but not in huge numbers
+ - A full test of sensors with residue is a massive undertaking
+- Cups not being anti-static should not be an issue (have never seen one)
+- Should be followed up offline
+ - Craig has contacted company to understand process by which suction cups are made anti-static
+- Would it be possible to irradiate test piece with a lot of visible residue?
+ - Technically yes but would involve significant amount of work
+ - If we want to do this we need to find manpower
+### Cicorel cards (Simon)
+- Gerrit got much cheaper prices than UK, where does difference come from?
+ - Could be due to limited availability 
+- Should not be limited availability since they usually come with the bonders they sell for testing, maybe there’s a new design now?
+ - Not that Simon knows about, should check
+- Gerrit waits for response from Hesse US 
+- Rectangular design preferred? Not clear
+- Should ensure that cards we get are actually optimised for pull testing, not for setting up bonder programs
+- Do we want to make a bulk purchase? → wait for US quote first
+### AoB
+- 130 barrel paper was accepted WITHOUT COMMENTS!!! Party time!
+## Actions
+1.

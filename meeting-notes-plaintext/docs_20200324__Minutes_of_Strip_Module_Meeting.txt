@@ -1,0 +1,72 @@
+# 24/03/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/874227/
+## List of jobs during home-office time
+Item | Responsible
+QC group - metrology | Sven/Matt/Oskar/Alyssa
+QC group - weighing | Jane/Emma/Luise
+QC group - hybrid assembly | William/Hongbo/Sarah
+QC group - module assembly | Karola/Liv/Will
+QC group - electrical test | Nathan/Priscilla/Bob/Martin/Alison/Ruchi
+QC group - wire bonding | Forest/Simon/Carles
+New QC group - visual inspection | 
+Module definition in DB | Matthew + NN
+Tests and Test levels in DB / ITSDAQ (classification cuts) | Matthew + MM
+DB upload power user / tester | Matthew + OO
+DB script development | Matthew + PP
+Spec re-review | 
+QA overviews | 
+Cleaning procedures | 
+Shipping procedures | Carles
+ITk-wide “ideal” cleanroom instructions / e-learning thing / safety course style | 
+Barrel hybrid procurement | Bart/Adrian/Ash
+Barrel powerboard procurement | Timon/Carl
+EC hybrid/powerboard procurement | Ulli/Kambiz/Dennis
+Hybrid layout review on EDMS | Ash/Kambiz
+Powerboard layout review on EDMS | Timon/Dennis
+Tool review on EDMS (incl. tolerance drawings) | Sven/Marc
+Transport box review on EDMS | Craig/Dennis
+Test frame review on EDMS | Ash/Kambiz
+Hybrid crate PCB review on EDMS | 
+Review/summary of DCS boards for setups | 
+Module test peripheral PCBs (power adapter etc.) | 
+Polaris “to bi-pak or not to bi-pak” | Vitaliy/Forest/Luise
+Hybrid/module assembly video instructions | 
+What documentation is required for site qualification? | 
+Burn in software development | Ben
+Module thermal cycling software development | Ankush
+Maintain site qualification survey (link below) | all
+Maintain QC setup survey (link below) | all
+## Minutes
+### Introduction (Craig & Ingo)
+- Table of ideas shown for what could be done during work from home
+- Table live edited during discussion
+- This table will be included in Andy’s general ITk table
+- Link to document list:
+https://docs.google.com/spreadsheets/d/1Wz0AGhhRxJEstdy0W28KCHNPt69i1i2NIaYVqpiiShU/edit?usp=sharing
+- Link to site qualification twiki with surveys:
+https://twiki.cern.ch/twiki/bin/viewauth/Atlas/ITKStripSiteQualification
+### ABC130 paper
+- none
+### US cluster
+- none
+### UK/China cluster
+- none
+### Vancouver cluster
+- none
+### DESY cluster
+- none
+### Freiburg cluster
+- none
+### Valencia cluster
+- none
+### AoB
+- General comment that lots of the missing things are database related
+ - Come to database meetings on Fridays
+ - Look at the how-to guides made by Luise
+- When will tool designs be finalised/ready?
+ - Sven currently finishing designs
+ - Present changes in the next module meeting
+ - EDMS review once things are ready
+- EC/barrel planning meetings being combined - email to follow
+## Actions
+None

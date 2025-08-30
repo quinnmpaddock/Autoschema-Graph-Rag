@@ -1,0 +1,126 @@
+# 18/01/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1109664/
+### Introduction
+- Short HV tabs on both sides of R4?
+ - No opposition
+ - Tony: do the Petal people agree?
+ - Luise: on the Petal side, nothing changes, only how far the tab is under the sensor.
+ - Carles: will see on electrical sensors if there is stress for short tabs
+ - Luise: distance not different than for other module types
+- Vitaliy: curious about yields: how many of them have been reception tested?
+ - Luise: number of powerboards shipped to module sites are for modules. If there are problems, would be good to know what the problems are
+ - Vitaliy: some sites may not have done the reception tests
+ - Luise: maybe need to distinguish between number of powerboards that have been reception tested and failed, and those that have not been tested
+ - Tony: only have a fixed number of sensors to get powerboards for
+ - Luise: also try to track later failures like handling
+ - Craig: is everyone doing reception testing for PPA? Do groups have to reception test, or is it still open for the groups?
+ - Vitaly: assume everything is reception tested
+ - Luise: people should do reception testing
+ - Craig: what’s with groups that have the setup, but no time to set it up? Or are we requiring people to electrically test it?
+ - Luise: difficult to make a statement right now
+ - Bart: where does powerboard testing feature in PPB?
+ - Luise: it’s one of the multi-test systems that can’t be required when systems haven’t been delivered
+ - Bart: but we could end up with groups not having tested it
+ - Luise: would have to split between barrel and EC
+ - Craig: how long would it take all barrel sites to set the system up?
+ - Bart: for UK, probably only RAL that can use it
+ - Tony: need the requirement to start for PPB, otherwise people will not do it. 
+ - Luise: EC can’t do it now because systems are not ready
+ - Tony: would have to do it for barrel to get experience using it
+ - Vitaly: should get going soon with the PPB schedule
+ - Craig: all barrel sites have the system, so we should split the requirementsThere is a difference between bringing it up during PPA (e.g. with a partial panel) compared to not do any module assembly until it is ready
+ - Tony: should have some parts to do tests on them
+- Powerboard reception for barrel should be started to be setup during PPA and is a requirement for PPB
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 18/01/2022: Barrel tasks
+- 25/01/2022: EC tasks
+- 01/02/2022: Barrel tasks
+- 08/02/2022: EC tasks
+- Shipping readiness (incl import procedure)
+Question about how to distribute ASICs which are not pre-irradiated: do they have to be shipped through CERN?
+-> pushed to planning meeting
+- Hybrid crate setup, finalisation and roll-out
+-> no updates
+### Celestica PPA Hybrids
+- Luise: position on wafer and serial number were initially temporary for ASICs that were not in the database
+ - Sven: not retire, but make it non-mandatory
+- Luise: you have a GUI to check where the fuse ID matches the chips, it would be nice to have this in a public place
+ - JJ: yes, but scripts is depends highly on input file
+- Luise: please upload result textfiles since they can be processed, pdfs are quite large, please check before uploading
+ - JJ: result files or json?
+ - Luise: either is fine
+- Luise: if electrical issue is only from configuration, then hybrids could be distributed
+- Luise: total package height in some cases looks close to limit (slide 8). Concerned that where package height is too large, using tools could result in glue issues
+ - William: R3 stay in Toronto, but package height is misleading since the hybrid is not flat on the toolAlso have some spares available
+ - Luise: other people have tried to flatten hybrids when they were bend too much
+ - William: this one was very warped
+ - Vitaliy: if hybrid is warped, need to be careful when gluing onto a module
+ - Tony: when you do pick-and place setting a uniform glue thickness, how does it reference the hybrid?
+ - William: touch down right next to hybrid and machine tries to compensate for issues
+ - Tony: want constant package height for module gluing, but in plots see that ASIC glue thickness is better than package height
+ - In package height scan, the hybrids are not held down, so total package height measurement is not reliable
+ - William: also wire bonding in these areas is problematic because of the bend hybrids and lack of vacuum
+ - Richard: see this problem as well for the wide hybrids. Should we try to screen the hybrids? They are not well sucked down on jigs with vacuum. Maybe makes sense to run metrology on bare hybrids to cherry-pick
+ - William: would ask very bend hybrids to be pulled, but for this batch had no spares to do this
+ - Tony: also see shape on slide 6
+ - William: see shape of jig here, which has mountain/valley. When this is removed, plots are better
+ - Laurelle: adjust total target package height with shape of jig to compensate for that
+ - Luise: would it be possible to get replacement flexes for PPA for those outlier hybrids?
+ - Dennis: not for PPA
+ - William: we also don’t have more ASICs
+ - Luise: could use grade B ASICs
+ - Dennis: can’t just replace PPA hybrids with PPB circuits because of different HCC footprint
+ - Luise: need to see if this results in bad modules
+ - Ingo: if this happens in production, we need to find a way of flatten hybrids
+ - Dennis: it is probably a matter of yield, and SMD population companies are also not happen with non-flat hybrids
+- Tony: slide 13: we saw this kind of chip before and in all cases the tuning was at the tail of the distribution for those and if used the inits from the probing the issues was fixed
+ - William: the chip-by-chip initialization will take longer for the EC
+ - Tony: if chip ids are known, it should be fairly easy to get this done with scripts that are already at hand
+- Andy: do you know what your yield is?
+ - William: 3 out of 60 hybrids have shown issues with the package height / glue thickness
+ - Dennis: at the moment could accept 5%
+ - Andy: would hopefully be better during production
+ - Dennis: have PPB hybrids now at Freiburg, but still not a large number to make yield estimates
+### Single hybrid panel testing
+- Are single panel tests optional?
+ - Single panel tests can be done in the crate.
+ - Proposal accepted
+- William: just uploading only text files is not visually very helpful. Should invest on looking to get the storage space
+ - Luise: there is a request to reduce database storage as much as possible
+ - William: getting text files back out is hard, but for now it would be good to share pdfs with different groups
+ - Tony: we can process the text files and make histograms (have a student working on that)
+ - Luise: advantage of text files is that you can compare results, which can’t be done with pdfs
+ - Luise: could also be stored at a CERNbox for now
+ - Andy: problem is that it’s a lot of data when summarising for all tests
+ - Bruce: having a simpler root file with just the analysis results would be smaller, but that is currently not a priority
+ - Sergio: using CERNbox links is a good plan for storing large data
+ - Richard: there is a common area in CERNbox where these files can be stored?
+ - Luise: no
+ - Richard: not everyone has a CERNbox, so we would need a common area for storage
+ - Luise: this is only a short term solution, there are other storage options currently looked at
+- Failed hybrid replacement:
+ - William: it’s different for barrel or EC with regards to hybrid counting
+- Powerboard position
+ - Craig: default DAQ calibration would not be very accurate compared to calibrated powerboards
+ - Andy: is there a reason why we want to track the powerboards
+ - Craig: it’s more monitoring based
+ - William: have done it informal with current powerboards, but so far not seen anything
+ - Luise: do it during pre-production and then maybe drop it afterwards
+- Database related questions will be addressed by experts next week
+- Andy: is there a conclusion on where to get the firmware from?
+ - Information which firmware to use are from TWiki pages
+- Andy: do people need multiple panels for the burn-in qualification?
+ - Luise: hard to say now, need to wait until we release the step
+- Tony: initialization file: allow larger failure or require those initializations
+ - Luise: hope to have this discussed next week
+- Tony: are extra pieces in document or is there a schedule plan for other info?
+ - Luise: will follow as soon as available
+ - Andy: does the change of the hybrid specification document require an ECR?
+ - Tony: need some version control of documents
+ - Luise: with other specs to be changed, the hybrid specification document will need to be updated
+ - Vitaliy: our question is how to define what a bad channel is (an algorithmic issue)
+### AOB
+- Carles: DAQ board for electrical test setups, there was a spreadsheet with the numbersWe are still missing some of those boards, e.g. module adapter
+ - Luise: postpone to production planning meeting

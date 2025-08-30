@@ -1,0 +1,47 @@
+name:ID,type,concepts,synsets,numeric_id,:LABEL
+Paranormal Military Squad,entity,[],[],0,Node
+briefing room,entity,[],[],1,Node
+Agent Alex Mercer,entity,[],[],2,Node
+projectors,entity,[],[],3,Node
+Operation: Dulce,entity,[],[],4,Node
+Taylor Cruz,entity,[],[],5,Node
+attention,entity,[],[],6,Node
+Alex Mercer,entity,[],[],7,Node
+smile,entity,[],[],8,Node
+details,entity,[],[],9,Node
+Sam Rivera,entity,[],[],10,Node
+transmission logs,entity,[],[],11,Node
+speculation,entity,[],[],12,Node
+compliance,entity,[],[],13,Node
+Jordan Hayes,entity,[],[],14,Node
+struggle,entity,[],[],15,Node
+The thrumming of monitors cast a stark contrast to the rigid silence enveloping the group.,event,[],[],16,Node
+"Agent Alex Mercer, unfailingly determined on paper, seemed dwarfed by the enormity of the sterile briefing room where Paranormal Military Squad's elite convened.",event,[],[],17,Node
+"With dulled eyes, he scanned the projectors outlining their impending odyssey into Operation: Dulce.",event,[],[],18,Node
+"It was Taylor Cruz’s voice, laced with an edge that demanded attention.",event,[],[],19,Node
+"Alex flickered a strained smile, still thumbing his folder's corner.",event,[],[],20,Node
+"The compliance in his tone was unsettling, even to himself.",event,[],[],21,Node
+"Jordan Hayes, perched on the opposite side of the table, narrowed their eyes but offered a supportive nod.",event,[],[],22,Node
+"'Details are imperative. We’ll need your clear-headedness down there, Mercer.'",event,[],[],23,Node
+"A comfortable silence, the kind that threaded between veterans of shared secrets, lingered briefly before Sam Rivera, never one to submit to quiet, added,",event,[],[],24,Node
+"'I’ve combed through the last transmission logs. If anyone can make sense of the anomalies, it’s going to be the two of you.'",event,[],[],25,Node
+Taylor snorted dismissively.,event,[],[],26,Node
+"The words 'counter-productive' seemed to hang in the air, a tacit reprimand directed at Alex.",event,[],[],27,Node
+"Feeling the weight of his compliance conflicting with his natural inclination to leave no stone unturned, Alex straightened in his seat.",event,[],[],28,Node
+"I agree, Agent Cruz. Protocol is paramount,' he said, meeting Taylor's steely gaze.",event,[],[],29,Node
+"It was an affirmation, but beneath it lay layers of unspoken complexities that would undoubtedly unwind with time.",event,[],[],30,Node
+"As everyone began to collect their binders and prepare for departure, a quiet resolve took form within Alex, galvanized by the groundwork laid by their interactions.",event,[],[],31,Node
+"He may have spoken in compliance, but his determination had merely taken a subtler form — one that wouldn't surrender so easily to the forthcoming shadows.",event,[],[],32,Node
+group,entity,[],[],33,Node
+monitors,entity,[],[],34,Node
+Agent Alex Mercer seemed dwarfed by the enormity of the sterile briefing room where Paranormal Military Squad's elite convened.,event,[],[],35,Node
+He scanned the projectors outlining their impending odyssey into Operation: Dulce.,event,[],[],36,Node
+Taylor Cruz asked Agent Mercer if he was having second thoughts.,event,[],[],37,Node
+Alex replied that he was not having second thoughts.,event,[],[],38,Node
+Jordan Hayes offered a supportive nod.,event,[],[],39,Node
+Sam Rivera said he had combed through the last transmission logs.,event,[],[],40,Node
+Taylor Cruz told everyone to focus and not speculate.,event,[],[],41,Node
+Alex agreed that protocol was paramount.,event,[],[],42,Node
+Jordan Hayes displayed a spark of understanding.,event,[],[],43,Node
+The group began to collect their binders and prepare for departure.,event,[],[],44,Node
+Alex's determination took a subtler form.,event,[],[],45,Node

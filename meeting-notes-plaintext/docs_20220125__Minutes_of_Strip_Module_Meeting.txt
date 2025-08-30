@@ -1,0 +1,155 @@
+# 25/01/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1109665/
+### Introduction
+- No discussion
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 25/01/2022: EC tasks
+- 01/02/2022: Barrel tasks
+- 08/02/2022: EC tasks
+- 15/02/2022: Barrel tasks
+- 22/02/2022: EC tasks
+- R0 tool production
+Still being anodised, not sure when they will come back
+(new chip trays and spare R0 tools)
+- R1 tool production
+Second order placed, expect them to be back in 1 - 2 months
+- R2 tool production
+Second batch of module jigs has been anodised
+Working on metrology, need to check anodisation
+- R4 tool production
+Tools are anodised and being assembled, waiting for bushings
+- EC PPA/prototype hybrid order
+Distributed to Canada and assembled
+Waiting for DESY and Scandinavia to get qualified for hybrids to send those out
+- Powerboard testing setup roll-out
+Next powerboard type now available (R2), need panels for other types
+Testing works, but not smoothly for up to 8, fails at some point in the chain
+- Endcap module thermal cycling setup
+There will be an update today
+Waiting for documentation from DESY side, then can send them out
+Then first three can be sent out
+- EC hybrid test-panel finalisation
+Need feedback
+- Production of R0 and R1 test frames
+- Production of R2 test frames
+- Production of R3, R4 and R5 test frames
+Still waiting for frames to be approved for production, then will start production
+- Production of stencils
+Stencil frames: production tricky because difficult to machine without bending, need to follow up
+- Production of LED bars
+	No updates
+- R2�EC glass dummy sensors
+Close this! Done
+- SMD tendering for EC pre-production/production hybrids
+Tender ongoing, as soon as we have a bidder we want, paperwork can be submitted, then CERN order can be placed
+### Hybrid testing database implementation
+- Andy: scripts that use the database interaction, do they live on database or ITSDAQ repo?
+ - Christian: will be on the database repo
+ - Andy: no plan for ITSDAQ GUI to call these?
+ - Christian: no
+- William: get_components.py requires that components are already assembled in database?
+ - Get components is only checking all the parts and children
+ - Script then uses components and fuseIDs to map the child component to component under test
+ - William: it assumes that hybrids are already assembled in the database with the correct children?
+ - Bruce: yes, will expect database assembly to be correct;
+ - Need a check to see if FuseIDs match components in the database
+ - Andy: if there a preference what fuseID is correct? Order of hierarchy?
+ - Bruce: look up which hybrid by HCC, then check the ABC fuseIDs
+ - If wrong, disassemble them and assemble the correct part
+ - Craig: it’s kind of tricky and will probably require some manual intervention since ITSDAQ can’t know the flex ID without user input
+ - ASICs are mapped, but hybrid flex is the difficult bit
+ - Luise: if you have 10 wrong ASICs, than it might be you have the wrong hybrid
+ - Vitaliy: maybe another script to look in the database for the wrong fuse ID to find out what is wrong (and why)
+ - Luise: this is part of the hybrid assembly qualification task
+ - Christian: is it checked during assembly?
+ - Luise: no, it needs electrical tests first and from that a file to compare against the database assembly
+ - Vitaliy: would be good to have something that helps the operator in case something is wrong
+- Luise: most likely will not work for prototype parts because ASICs are not in database?
+ - Christian: yes
+- Luise: is there a way to upload tests even if there are no information about the ASICs?
+ - Christian: need the hybrid assembly serial number to upload something (and need institute location code)
+- Luise: do you keep the name PPA or will you change it?
+ - Christian: currently to distinguish the PPA test from the currently implemented test in the database
+ - Luise: it is possible to use the PPA version throughout production?
+ - Christian: yes, could also delete old tests
+- Luise: on what timescale is it going to be implemented?
+ - Bruce: waiting for me to do some work
+ - Christian: also some json output needs more work
+ - Luise: 2 weeks, 1 week?
+ - Silence
+ - Bruce: try to do it in one week
+ - Luise: do you need anything from groups to help with it? Test data?
+ - Bruce: yes, PPA root files would be useful
+ - William: OK, could provide them (but not time walk)
+ - Craig: full test doesn’t currently include timewalk
+- Luise: mentioned that there would be error messages if something goes wrong. How would they look like?
+ - Christian: they will tell what error happened (e.g. wrong stage, wrong institute, …)Messages printed in terminal and also into a log fileSometimes also get warnings (e.g. wrong database key that will be ignored)
+- Andy: is this going to be scaled up to module loading?
+ - Christian: guess so, but only looked at PPA hybrids
+ - Luise: there is a dedicated discussion for module testing later; loading sites are just doing module tests so should follow same scheme
+- Luise: are you going to update the testing procedure dokument?
+ - Christian: the google dokument?
+ - Luise: yes, update google dokument and then do another EDMS review
+- JJ: upload.py script is compatible with current json files?
+ - Bruce: ITSDAQ will need fixing. Could re-analyse old root files to get correct format
+- William: what when testing at different locations?
+ - Christian: for upload should work, could also get the list for components from multiple institutes
+- 
+- 
+### Discussion of DB questions for single module testing
+- Luise: is testing a module the same as testing a hybrid? Can the module testing procedure document refer to the hybrid dokument for that?
+ - Vitaly: don’t think hybrid and module are similar. Module test should also include bias voltage and might also include more information about the powerboardsTest structure should be different
+- Luise: should there be an additional test for the environmental information?
+ - Bruce: should be header information in result
+- Luise: for module, is the bad channel definition similar to hybrids (are cut’s similar)
+ - Discussed in meeting on Thursday
+ - Vitaly: parameters should be different between hybrid and module
+ - Bruce: X and Y hybrids on a module will have same cuts, but probably not for EC 
+ - Craig: hybrid level, cuts should be the same
+ - Dennis: yes, but not on modules due to different variable
+- Luise: then there would be different tests for hybrids and modules in the database
+ - Vitaliy: yes
+ - Bruce: will have to check on exactly what to do; tests are mostly the same just need some extra information
+ - Luise: need to follow up once we have agreed on hybrid testing
+### Endcap coldbox control PCB
+- Dennis: how many spare crimp contacts can you supply?
+ - Alexander: yes, will supply some
+ - Dennis: make it at least 100 each
+- How much power do you need to power the peltier elements
+ - Roughly 15V and 6A (to be checked)
+ - Geoffrey: polarity switch is rated higher
+ - UK/China (?) using 10 bench power supplies (single channel)
+ - Alexander: design of box between barrel and EC is different so not necessarily compatible
+ - Sergio: 8W of dissipated power is not enough for heating
+- Need to check this to make sure they work!
+- Alexander: do we want to discuss humidity sensor mounting here?
+ - Sergio: probably better to discuss it offlineBut, humidity sensors need to be inside sensor air volume to get a good reading, e.g. using a T adapter
+ - Dennis: wouldn’t it be better to flow air over the sensor?
+ - Sergio: sensor does not fit in tube
+ - Dennis: you have to connect the T to the sensor as well
+ - Sergio: there is an inlet and outlet for the air going to the sensor
+ - Dennis: why can’t the sensor be on the exhaust? Are you concerned about the nitrogen?
+ - William: had the same concerns
+ - Sergio: you assume that the air is warmed up from the module. We are injecting cold air into the system
+ - Dennis: you don’t want the warm air inside of the box
+ - Sergio: dry air that is injected into box is cooled down, if you use exhaust, you are inserting warm air
+ - Dennis: worry with T is the stagnant air that needs time to get to the same humidity value
+ - Alexander: wouldn’t it be turbulent?
+ - Dennis: no, festo is designed not to be turbulent
+ - Sergio: alternative would be a housing inside the ESD foam, but this would have to be done for every single module and the foam would have to be re-worked
+### First module gain correlations
+- Luise: what would be the best way to present own data? Send it to you or should sites to it themselves?
+ - Vitaliy: can set something up to collect the information
+- Luise: are there instructions on how the read out the hybrid NTC?
+ - Vitaly: I don’t have any. Bruce would probably know.
+ - Dennis: 2000 numbers are from ABCs
+ - William: 3 digit numbers are from HCC
+ - Dennis: for hybrid NTC there is a calibration, I can read out the values
+ - Luise: how?
+ - Dennis: use one of the AMAC functions, but not sure which is the official one
+ - Dennis: calibration is not properly done yet, therefore no official instructions
+ - Luise: would be good to invite ITSDAQ experts to explain how to do this
+### AOB
+-

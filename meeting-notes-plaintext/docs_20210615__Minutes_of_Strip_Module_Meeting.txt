@@ -1,0 +1,86 @@
+# 15/06/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1032184/
+### Introduction
+- We congratulate Craig for becoming our next project leader :-)
+- First electrical tool build modules (slides)
+ - William needs the panel jigs of all flavours to bond the hybrids
+ - As soon as sensor batches get ok to be send out, Canada will initiate shipment back and forth to CERN to import them permanently to Canada
+ - Will be followed up offline, but Tony officially requests the release now
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R0 tool production
+ - About to send parts (4 sets of tools) out
+ - to Ca, one set def next week
+ - Other 3 to follow the week after
+ - Other toolsets need further metrology work
+- R1 tool production
+ - Tools have been distributed
+ - Task not yet completed as not all toolsets have been sent yet
+ - Also new RFID tags not shipped with tools
+- R3 tool production
+ - 46 parts sent to Freiburg, should arrive tomorrow
+ - Finished DESY tools, expect ready for delivery by end of this week
+ - LED bars? Mechanical supports come from Freiburg?
+ - Yes, they come from Freiburg
+- R4 tool production
+ - Some pins do not fit the bushings, iterating with company
+ - Pins fit into bushings outside of tool
+ - Positions or angles of holes might be at fault
+ - Rest of metrology looks good
+- EC PPA/prototype hybrid order
+ - Hybrids are cleaned, not yet in DB
+ - RFID spreadsheet is prepared
+ - Ca hybrids for fast track modules are sent
+- Endcap module thermal cycling setup
+ - Work ongoing, progressing
+- Hybrid crate setup, finalisation and roll-out
+ - Further tests have been performed
+ - Cooling works well
+ - Parts for beta testers nearly finished, will send by end of week
+ - Will to to RAL, Liv, Toronto, SCIPP, please send shipping addresses
+ - Fan procurement?
+ - Manufacturer is lacking parts
+ - Ordered from supplier, expect few week delivery time
+- Production of bonding and testing jigs
+ - All in prod
+ - Bonding jigs prioritised
+ - Testing jigs to follow
+ - Stencils are also in prod, should be pushed in prio if possible
+- Production of LED bars
+ - Focussed on hybrids and shipping last week, no progress on LED bars yet, next thing up
+- EC PPA/prototype powerboard order
+ - Order placed for SMD populations, waiting for return of boards
+### Coldjig software scheduling
+- Influx and grafana run where?
+ - Assuming to run on another PC
+- How does data from there end up in DB?
+ - Discussing with Christian Appelt and Bruce Gallop
+ - ITSDAQ will run scripts after test finalisation and upload the data also from the local influx instance
+- Which versions of grafana / influx?
+ - There is a new python influx lib which can talk with 1.8 and 2.0, so we get out of the release catch
+ - Some recommendations?
+ - Not really no strong prefs and lib above gets out out of the 1 vs 2 issue
+ - It is not gonna work for influx 1.7! Need 1.8 at least
+- For the releases - will you inform the module list? And what if things slip?
+ - Yes will send email to module list when new release is made
+ - Maybe add tasktracker items for each of the release versions?
+ - That sounds good!
+### Hybrid Package Height
+- Spec we have is on glue height +-40µm but doesn’t take total package height into account
+- Even with tools specs being +-10µm, operator error can resolve in deviations bigger than 20µm
+- If we only measure glue height (and it is within +-40µm), the total package height might still be off by more than 20µm
+- Tony thinks taking into account measurement uncertainties and biases in measurement, we need to allow larger deviations than 20µm
+- Craig suggestion: Make sure people measure everything during pre-production on assembly jig, allow 40µm deviations, figure out with more statistics if it has to be tightened 
+ - Important to see effects of measuring on panel or on jig (and how this would affect workflow)
+- Kirsten proposal: measure ASIC glue thickness as before, only to stack-up measurement if glue thickness is lower than 80um
+ - Craig: issue is that this only will be measured when something fails, so we will not get enough statistic
+- Gerrit: would be best to do measurements on hybrid assembly jigs and this will not affect flow too much; propose to do measurements in pre-production always on jigs
+ - Maybe do it also on panel and compare results
+- Craig: during pre-production rates are not so high, so can do measurements on hybrid assembly jig
+- Vitaliy: would need to have a special jig to do metrology of multiple hybrids in a single go (e.g. modifies hybrid panel jig)
+- Chose tolerance for pre-production of package height of +/-40um
+- Suggestion Tony: Aim for 20µm, set 40µm as allowed spec
+ - Do measurement both, on jig (required) and on panel (bonus)
+### AOB
+-

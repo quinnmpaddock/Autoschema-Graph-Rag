@@ -1,0 +1,87 @@
+# 2024-06-11 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1401787/
+### Introduction
+Presenter: Luise Poley
+- Tony (sl. 3): I don’t know what you mean by the bond pull tests, what are you planning there?
+ - Luise: In the beginning, when people receive interposed arrays, there should be a bond-pull test on the arrays
+ - Sven: Shouldn’t this be part of the QC that the interposer attachment sites do?
+ - Luise: Yes, but when you get the thing potentially a few months after interposed, you check that there is no contamination that makes bonding harder.
+ - Tony: You have to define the array and other things. The only place we can reasonably do it is the big pads and I’m not sure we’ll catch it here. So I’m not sure what this test can tell us, and it is a lot of effort. We’d want to bond where there is a lot of contamination.
+ - Luise: We can discuss this. This is what came out of the discussion last week. The plan is to reduce this as soon as we determine we don’t need it. 
+ - Tony: Since I don’t know who brought it up, I’m not sure who should speak to it.
+- Sven: What I brought up during ITk week is that we have to do pull tests on arrays after interposer attachment. I agree with the comment that doing this is to verify there is no contamination from creeping oil. It’s difficult. The only pads that are critical are on the power side, which you can’t pull test. And the ASIC lines aren’t indicative if you don’t have a lot of creeping.
+ - Tony: I think it will be throwing a lot of effort if it doesn’t tell you anything. 
+ - Luise: Maybe we postpone this until we know what the assembly process looks like. If there is nothing worrying, we just don’t do it.
+ - Sven: We should also separate this from the current pull tests. I think you are saying this is a different kind of pull test.
+ - Luise: We should then see how the interposing process works with this and if there is not anything worrying, we drop it.
+- Gerrit (sl. 6): is this live already?
+ - Luise: Yes
+ - Gerrit: I don’t see it.
+ - Luise: That may need an institute authority
+ - Gerrit: I’ll check
+ - Carles: It works for me
+ - Gerrit: This could be useful, but if everyone gets an email and it snows us under, it might be a problem. It might be useful to make this into a bulk email that happens say, once a month.
+ - Luise: The problem is that the way this is set up is that it is based on an interval. It’s based on the component type, so we can only set for the test for this component type that it can be every 14 days or once a month
+ - Gerrit: So it’s set to component type..
+ - Luise: And the test type. 
+ - Gerrit: In principle, you get an email for components for the test when it isn’t available? [missed some]
+ - Sven: I’m not sure if it’s each component or a summary. It is triggered by shipments. It’s not triggered by components just sitting at your institute. Luise mentioned that there is a time interval. If you do the test in that interval, you don’t get emails. The DB does send the emails every night once the time interval is reached. You don’t have to subscribe to the email, if you set the flag to off, you don’t get them.
+ - Gerrit: I understand, but it would be good if you have a summary at a regular time. That would be really useful.
+ - Luise: We don’t know exactly what this will look like. In this list, you’d get the AMAC IV reminder. You can try it and see if it can be useful.
+### L4 Updates: ITSDAQ/Sensors/Documentation
+Presenter: Pavol
+- Cole: The goal is to re-arrange this to make sure everything is in the correct folder?
+ - Pavol: yes
+ - Carles loves it
+Presenter: Xavi
+- Sefania (sl. 8): Do you really think that if there is a false reading, such as the Cambridge one, should I retake the IV and waste half an hour?
+ - Xavi: Why half an hour?
+ - Stefania: That’s how long it takes. The algorithm should be able to understand how to skip this.
+ - Carles: I agree, this is clearly an outlier and we should remove it.
+ - Andy: see this quite a lot when the power supply changes resolution
+ - Xavi: From my experience testing sensors from IV, you can see these peaks from time to time. 
+ - Andy: I think it’s to do with the way the HV supply changes resolution
+ - Cole: with the Keithley, it mainly happens at 105 uA, not at a lower range
+ - Andy: doesn’t it happen at 20 V?
+ - Xavi: don’ think this is related to the power supply
+ - Stefania: I’ve seen these false readings a lot, could be many things, but I shouldn’t have to retake it because it’s a perfectly fine IV. 
+ - Xavi: I’ve taken thousands of them and it’s not something that happens every day. We might be able to improve the algorithm, but it may be difficult. 
+ - Carles: If it’s just one point, you never stop the IV from that. So for detecting the early breakdown you persist there and test more times on the same point, is that true?
+ - Tony: Can we let Emily talk?
+ - Emily: I do have, I’m not sure if we reject the AMAC point, but we very well might (or should) and ITSDAQ should reject this point. 
+ - Cole: this should be done in the software
+ - Xavi: yes, you can just remove this point and proceed
+ - Carles: If you remove the point from the data file, that’s not uploadable because it lacks points
+ - Luise: It doesn’t check the distances between points, so it would just be a gap.
+ - Xavi: Just to show these cases, at least for me when I prepare the reports it is confusing because of the incorrect failures.
+- Carles: For the one for IFIC, I’m not sure what happened. We had some problems. For the Noisy IV, it happened to us for some period of time where we accidentally hit the “Filter” button and that caused a noisy readout. 
+ - Xavi: My suggestion is to not upload this IV.
+ - Carles: I’m not referring to IFIC, SFU actually. The one from IFIC is also weird, not sure what to say
+- Luise: The way the process works for most people is taking the IV and using the web app to upload, which has some visualization. If we see the spikes, we can manually edit what we are uploading, so it might be as simple as editing that particular point. For actually modifying the algorithm, we should check with the sensor community since it is similar, and we should keep this consistent.
+ - Step 1: Everyone checks individual things
+ - Step 2: Then we figure out what to do
+- Emily D: At least one problem with the uploader tool for the HV-tab test failures. In September we fixed that. A few of these are pretty old, and it might be because we were using that tool before the bug fix. It would be good to see the list so we can go and see what the problem is.
+ - Xavi: will send the list to check which sensors/modules these are
+- Vitaliy: For Emily, your uploader tool, does it provide visualization and the outcome before upload?
+ - Emily: at BNL, use the same code as the common uploader, don’t have visualization, don’t know whether, at BNL, we’d be able to choose
+ - Vitaliy: At least I have a code that checks the outcome of the tests before upload. It gives you the outcomes so if something is wrong, you can investigate. Whatever tool you use, it’s a good point that people should check the outcome before uploading to the DB so we aren’t uploading confusing data.
+ - Stefania: ITSDAQ does this. When you finish your test, you have a PDF of the tests.
+ - Vitaliy: Why are you talking about ITSDAQ, they are tabbed sensors. Do you use ITSDAQ for that?
+ - Stefania: Yes
+ - Emily: suggestion is probably just to check visualization before uploading
+ - Stefania: Okay.
+ - Vitaliy: One way or another, looking at the results is necessary before you put things in the DB.
+- Vitaliy: need to follow up about outliers - if we want to remove anything, need to be careful to make sure we don’t fix something actually bad
+- Vitaliy: Some IVs, I agree, most are okay. The one on the top right and the one from IFIC, they look a bit suspicious to me. I wonder if the HV connection is bad (intermittent) - this looks like what the curve looks like when there is an intermittent issue
+- Andy: The DB is filling anything, it’s the analysis code before the DB. 
+- Andy: I’d be wary of getting things that are wrong and deleting data when it’s not the sensor's fault.
+ - Xavi: What I do is to obtain the parameters before the upload. I think the best we can do is to check what we are obtaining and see there are strange cases.
+ - Andy: guessing that a point is bad and a power supply failure might be dangerous
+ - Xavi: In this case, I know it’s taking time. To be sure the point of view is to repeat the IV. I know it can take a while, but it’s the only way you can be sure the IV doesn’t really have these outliers. 
+### Group Updates: None This Week (Miscommunication)
+DESY-HH Up Next Week
+### QT Report: Barrel Module Tooling Evaluation
+Presenter: Lei Guo
+- No questions
+### AOB
+Nada

@@ -1,0 +1,37 @@
+# 02/06/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/874237/
+## Minut es
+### Introduction (Craig & Ingo)
+- Nothing
+### HV tab - helper hardware (Forest)
+- Seems that this could be a case of rates etc.
+ - Tool can be useful if needed for throughput
+ - Gluing hooks on does work if can be done in the time
+ - No cases of the hook breaking before the tab
+- Would be useful to understand time saving
+ - Forest will do some example calculations
+### Tool spares discussion (Karola)
+- Should we treat different parts of the toolset differently?
+ - Spare should be a full set to cover if one site goes down and need another site to cover
+ - Would not want to take tools from the site that is down as that would stop them coming up and running
+ - However: might make sense to have less spares for things like weights (which are not likely to get damaged) and more for stencils (which are quite likely to become unusable)
+- Marc has proposed spare numbers for R0 already
+ - Makes sense to look at these numbers and just mimic them?
+ - Production management will update the tables based on these R0 estimates
+ - Have to take into account production cluster and how we would have to redistribute tools if a site goes down
+ - Dennis to add comments to R0 explaining rationale
+- Will be presented next week
+### Shimming (Luise)
+- Be aware of HV-tab when using shims during module assembly steps
+ - Can cut-out parts of the shim to avoid HV-tab, aim to just have on pedestals
+- Noted that this shimming is meant to just be for now
+ - For production, tools and parts should be within spec
+ - Shimming in production is exceptional situation and will need to be discussed case-by-case
+- Should we put shimming into the documents?
+ - Given it is a get out of jail and far from the baseline, it should not go into the documents
+ - Should concentrate on completing the documents for the nominal procedures, this is useful to have in our back pockets
+ - Troubleshooting could go in another document or an appendix (once we have the main body of the QC documents complete)
+### AoB
+- None
+## Actions
+1. Iterate EC spares policy for discussion next week (Dennis/production management)

@@ -1,0 +1,36 @@
+# 25/08/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927516/
+## Minutes
+### Introduction (Craig & Ingo)
+- Ingo and Craig have to ask Kambiz for final EC hybrid height to get tools finished
+### Task tracker items
+- Toolings generally prepared with prelim drawings, all on hold for finished EDMS review / Marc’s re-upload after he is back from leave
+- IFIC can produce tools but previously promised common tools cannot be done (new info: would lead to big delay due to exceeding spending limit / procurement…)
+- Extra order of barrel hybrids should arrive “this side of xmas”
+ - Schedule concern
+ - Cannot be changed, whole procurement could be derailed if we intervened and attempted to get pre-release hybrids in advance…
+ - Cannot get quotes until tender is complete (~1st September)
+ - SMD tender two weeks behind flex tender
+### Barrel powerboard review (Todd)
+- Looks good, after one clarification Sven is happy
+- Will attempt to finalise EDMS review by this Friday with updated drawings
+### HV brick discussion (Craig & Sergio)
+- Question comes about whether this setup would every be used for bare sensor measurements
+ - Depends on how people are thinking about part flow
+ - Would not get away with this kind of power supply for bare sensor IV!!
+ - All about rate (doesn’t make much sense for UK, maybe makes more sense to US - EC rate is generally lower than UK)
+- Any EC sites who would want to use the module thermal cycling for bare sensor IV?
+ - All sites connected don’t complain about using the setup only for module thermal cycling
+- Unfortunately all these things (commercial or homebrew) need to tested for safety etc. and some of them cost a lot so at some point you just have to take a punt!
+### Hybrid panel metrology (Matt G)
+- Y variation in ASICs - would be worth looking at chip numbers (top or bottom of reticule) to see if this comes from dicing variation on the MPW
+ - Discussion on what QC is done on ASIC dicing
+ - In past have done smartscope measurements of physical die size on first batch and then trusted other batches with just a quick check it fits in chip trays
+ - Have been discussions in the past about how to do this QC step but nobody lined up to do full measurement of all ASICs - TBD....
+- Y variation in ASICs - which reference drawing has been used? Cross fiducials moved slightly between hybrid versions so need to check which generation and which drawing and whether they match
+### Tools in the database (Sven)
+- Held to next week
+### Toronto tool update (Karola)
+- Held to next week
+### AoB
+- None

@@ -1,0 +1,19 @@
+# Ignore Log files
+log/
+
+# Ignore all .env files
+.env
+
+# Ignore api tokens
+token.json
+credentials.json
+ATLAScredentials.json
+
+# Ignore original repo
+resources/
+
+# Ignore neo4j server files
+neo4j/app-neo4j-community-2025.03.0/
+
+#ignore other too large files
+import-Large-Test/

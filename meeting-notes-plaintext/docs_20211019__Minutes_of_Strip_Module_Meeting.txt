@@ -1,0 +1,86 @@
+# 19/10/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1084880/
+### Introduction
+- Gerrit: thought the first wafer that gets diced is only for Single Chip Boards and testing, is that not the plan?
+ - Paul: no, need to get them onto hybrids, modules and ideally even on a stave so that we can test the behaviour as quickly as possible
+- William: thought we need to be ready for PPB in February and March - has now been moved to February 25th? 
+ - Sven: yes
+- William: does this mean we should not build these spares?
+ - Sven: no, please build these spares
+ - Karo: has been included in the plans already
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R2 tool production
+Anodisation done, bushings and pins being pressed in, tools should be sent out next week
+Sven: do they fit well? Ingo: not tested yet
+Problem with work flow because all module jigs are bushing pin less yes
+Sven: happy with anodisation? Ingo: yes, but looks different from first batch
+- R4 tool production
+First tool sets were checked and look great, first sets will be sent out within the next few days, order for full production tool order has been placed
+- Shipping readiness (incl import procedure)
+	No news
+- Powerboard testing setup roll-out
+	End-cap: More micro-boards being ready, waiting for jigs, schedule of workshop unknown
+	Barrel: all end-caps have been sent out, z-term tested locally and worked, two panels tested and worked well
+- UK/China module thermal cycling setup
+	Ankush: need to collect IHEP cold jigs, should happen today and should be sent out
+- Production of hybrid panel cover
+	Mohammad: shipment delivered to DESY last week
+	Christian: arrived and looked good, not sure of last box arrived
+	Full order to be given to Toronto later
+- Production of stencils
+	Frames should be delivered at the end of the week, stencils to be shipped out beginning of next week, all flavours
+- SMD tendering for EC pre-production/production hybrids
+[confidential]
+(potentially everything might be sorted out by the end of the year)
+### Module Metrology - Database Implementation
+- No comments
+### R0 stencils at Toronto
+- Sven: is the reduced hole size due to the frame or the screen? 
+ - Seems to be the frame
+ - Marc: frame and stencil could be misaligned, stencils worked well in freiburg
+ - Marc: something to point out to the Prague group: please make sure to align during assembly
+- Sven: if it is an alignment problem between two frames, could it be worth using only one frame?
+ - Marc: yes, nice to have only the top one - mentioned to the Prague group already
+ - Sven: do the same thing for powerboard stencils and they worked well
+ - Marc: did the same thing for R0 stencil tests and worked quite well
+- Karo: what about the spares? Will they be shipped out with the rest of the tools? (have not been distributed yet)
+ - Have to ask Oskar
+- William: should we try to do the hole widening centrally?		
+ - Ben: would prefer to do it by ourselves
+- Jiri: Most likely will ship out stencils not assembled
+ - William: worried about doing the assembly
+ - Marc: use fitting pins in the key holes to align parts; should really consider only using one frame
+ - Carles: extra layer protects holes from accidental glue spill into them
+- Carles: did you weigh the amount of glue that was dispensed using the stencil?
+ - Karo: were planning to measure the glue weight after the whole module had been assembled and the module broke, so don’t know
+ - Will measure after assembling the second one
+ - Carles: suggest to also take a picture of the hybrid backside after assembly to see the area coverage
+### AOB
+- Gabriella: what is the status of chip trays for PPB? Sven is working on it for the barrel, 
+Marc volunteered to make the drawings/models for the endcap, production to be split between Valencia and Freiburg
+- Pre-production sensor distribution plan has been completed, module sites that get sensors from Canada should expect them in the next few weeks
+ - Groups need to qualify for sensor reception as soon as possible
+### PPA Experience at SCIPP¶
+- Ingo: for hybrid rates: is that one hybrid at a time on a jig or is this with six hybrids on a panel?
+ - Tony: gluing one hybrid at a time, while one is curing, previous one is being completed
+ - Ingo: could speed things up by e.g. having more gluing processes in parallel?
+ - Tony: were going pretty fast, not obvious where to speed up more
+ - Forest: could speed up if we didn’t have to keep track of chips and use fuse IDs instead, but had the feeling that, at the end of each day, the time to cure a hybrid and do everything else was well balanced
+- Karo: if you don’t cool down the glue between gluings, don’t need to do pre-heating between steps
+ - Kirsten: use a syringe heater to control the temperature to compensate temperature fluctuations, heats it up to 30 C
+- Richard: did the modification Tony is suggesting by modifying the panel jig, but need to pay attention to avoiding vacuum areas
+ - Karo: do you then put the hybrid back onto the hybrid assembly jig afterwards, no problem to lose alignment, but if not, might lose alignment
+ - Forest: always realign on assembly jig anyway
+ - Tony: if we had pins on the panel jig, could avoid additional alignment step
+- Sven: can be done for panel jigs, but will happen after the other modifications for PPB
+ - Tony: can ask LBL to propose change implementation
+- Lots of discussion about the glue weights - people confused about the plot and its units and what exactly was being measured
+- Luise: it is completely fine to use the “direct” method to get to glue weights, no need to use the indirect method if direct is more reliable
+- Gerrit: assembly slide says “stressfull”, that’s not a good sign for production
+ - Tony: could be because some of the steps have been done for the first time (lots of steps, bookkeeping)
+- Everyone agreeing that we need to drop steps after pre-production
+- Gerrit suggesting that everyone starts writing down how long things take for comparison
+- Ingo suggesting to do the same thing for modules
+- Proposing to trace times and rates in production planning meetings: everyone should ensure to trace things

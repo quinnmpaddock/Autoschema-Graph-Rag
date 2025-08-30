@@ -1,0 +1,106 @@
+# 20/04/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1008271/ 
+### Introduction
+- SQ news: One can now do site qualification for the ASIC handling step
+- Next week is AUW
+ - Will contact dedicated speakers soon
+- Introduction of new procedure document task force to push finalization of documents
+ - Task force meet once a week (Wednesday) 
+ - Go through up to 5 documents per week and discuss issues in meeting
+ - Make decisions on open points, then tidy up documents
+ - EDMS review of documents
+ - 48h if document had already be reviewed several times
+ - 1 week if document was not reviewed
+ - Will inform authors if their document is under review from the task force
+- Database dummy program will start as soon as issue with Executive user privileges in database are solved
+ - Andy discussed ant already with Marek and they are going to work on it
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- Production of R2 toolset Urgent
+ - more progress in local workshop, expect to have all parts machined within ~2 weeks
+ - ramping up metrology (roping in help)
+ - anodisation will follow metrology
+ - will make sure anodisation shop is reminded to cover all round holes
+- Production of R4 toolset Urgent
+ - Have 5 sets of tools, still doing measurements (looking into issues with optical measurements)
+ - Incontact with manufacturer with regards to vacuum pattern and unmasked holes during anodizing
+- Production of R5 toolset Urgent
+ - (task tracker updated)
+ - Tools manufactured and anodized
+ - Some tools rejected
+ - Company will start mounting in 2-3 weeks
+- Production of hybrid and module tools for the US Normal
+ - Just received metrology on ASIC tray and pick-up tool Y after re-machining tools
+ - Need some further look into metrology
+ - Need to check that ASICS fit in chip tray
+- Production of hybrid/module tools for UK/China Normal
+ - All tools back from rework at Liverpool workshop
+ - 7 Pick-up tools re-machined, but forgot HCC vacuum bit
+ - Have enough pick-up tools for each group, so will ship them and ask workshop to have a look again at the wrong pick-up tools
+- Order of hybrids for prototyping and PPA for the endcap Urgent
+ - Prototype hybrids at Freiburg (out of tender)
+- Tendering process for barrel hybrids Urgent
+ - Everything frozen, probably able to release that after AUW
+ - Gerbers need ASIC padrings to be frozen
+ - SMD mounting of hybrid flexes should be relatively straight forward procurement process
+- Tendering process for EC hybrids and powerboards Urgent
+ - Good progress on technical specification and go though review
+ - Delivery plan made based on schedule
+ - Might be a bit too late for start of PPB
+ - Prototype hybrids at Freiburg (out of tender)
+ - Need to discuss about reordering parts
+ - Could be a separate SMD part of tendering
+ - Powerboard part of same tendering, but does not have to be same company as hybrids
+- Design, finalisation and roll-out of powerboard testing setups Urgent
+ - Layout comments on active board received, will be implemented and then start production of boards
+- Design, finalisation and roll-out of module thermal cycling setup to UK/China Urgent
+ - Waiting on control electronics to be assembled
+ - Then test everything to confirm functionality
+ - Star delivery with preliminary software version
+- Design, finalisation and roll-out of module thermal cycling setup to US Urgent
+ - - no report -
+- Hybrid crate finalisation and roll-out Urgent
+ - Have done tests at Zeuthen using dummy parts
+ - Fan system is currently being integrated, software and gui progress well
+ - Hardware might be ready by end of April
+ - Start roll out by mid May
+ - Software available by end of May
+- Finalisation of panels for EC hybrid testing Urgent
+ - TWiki page created with status of tested panels
+- Production of LED bars for the EC Urgent
+- order of powerboards for prototyping and PPA
+ - Part of endcap hybrid order
+### Glue Dispensing
+- What is the room temperature variation?
+ - Within +/-0.5 deg C
+- Room temp is set the day before the measurement, so setup should be well adjusted by the time of the measurement
+- Is 10% variation in volume too tight?
+ - William: even within 15% coverage is good
+ - Also inside of pick-and-place machine environment temperature is not monitored
+- The critical temperature seems to be the dispenser tip temperature
+ - Very expensive units have tip temperature control
+- Situations where you might not be able to glue due to large temp fluc, how often expected?
+ - Happens rarely, correlated e.g. with fires in the vicinity
+ - Jane feels she cannot reliably predict the future :)
+ - About 1% of the time is Vitaliy’s expectation for “rarely”
+- How about cooling rather than heating?
+ - Discussion, technically challenging, adds issues with mixing…
+- Would be good to repeat this measurement with epoxy
+### Reviewing site qualification steps (update)
+- Two weeks, other two weeks if feedback, then maybe another iteration… this could take forever?
+ - Two weeks are the max/deadline, usually we see that this is done more quickly
+ - We however are worried about this too, we might have to tighten this and/or, in some special cases, deliver PPB parts when only a central core of SQ steps are finished at a given site
+- This is going very slowly, can have financial impacts or add big delays on schedule
+- In future might reduce the number of reviewers per step in order to speed up
+ - Right now cycles are fast and 3 reviewers agree, likely as deliverables are well defined. We hope we can continue this, but yes, this could be a way to speed up
+### EC tooling vacuum pattern
+- Proposed simpler vacuum pattern looks like a good alternative for workshops that find it hard to to the original pattern
+- TRIUMF will test proposed pattern on one example tool, will check for burrs and if sensor looks nice and flat when vacuumed down
+ - If positive will use the simpler pattern
+ - Difference: here anodised first, then grooved, for later jigs will be first groove, then anodise
+- [... More discussion not captured ...]
+### [will have to move to next module meet] Metrology Benchmarking Proposal
+- moved...
+### AOB
+- None, out of time

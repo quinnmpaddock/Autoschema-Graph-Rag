@@ -1,0 +1,102 @@
+# 08/06/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1032183/ 
+### Introduction
+- SQ … am too slow
+ - Next to release: Hybrid Visual Inspection, Powerboard Visual Inspection, Sensor Reception
+ - Email will go out when the last remaining database interaction is implemented (probably tomorrow)
+ - Next to be reviewed by task force: Hybrid assembly, Module reception, module assembly and bonding docs
+- ASIC counting update
+- Reminder: all sites to present shipping updates in Thursday’s production meeting
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R2 tool production
+ - Tools done in workshop, so far all metrology passed
+ - One backside was out of spec, can be sealed with additional sealant though
+ - Issue: anodisation workshop didn’t respond to request, tried alternative one but they can’t hard annodise 
+ - Might try different workshop in parallel, will contact Freiburg to investigate who they used
+ - Dennis has already sent information to Martin
+ - Working on rest of metrology, once that’s done continue with anodisation
+ - Will fast track one set for Canada to allow start of prototyping
+- R5 tool production
+ - No major news, company will deliver missing parts soon
+ - All hybrid panel jigs remade
+ - Some module jigs are still being measured
+- Hybrid/power board tendering EC
+ - Finished, on Monday tendering documents uploaded to CERN site
+ - Review has finished
+ - CERN will have to check it before it gets send out
+ - Replies should then come within ~a month
+ - Question: the response that our QC is too strict, where did that come from? → CERN expert
+ - Ash received same feedback for barrel hybrids
+ - Concern that failing QC coupons doesn’t necessarily mean that hybrids are not fine
+ - Ash modified coupons to ensure sufficient plating of vias
+ - Update in a month
+- Powerboard testing setup roll-out
+ - New active boards are being shipped 
+ - Need some time to check them
+ - FPGAs have been ordered and arrived, sufficient stock for production
+ - Karol is working on adapter board
+ - How about EC? Dennis assumes delivery of active boards within a month
+- UK/China module thermal cycling setup
+ - UK cold boxes have been delivered to module testing sites
+- US module thermal cycling setup
+ - Have software for other institutes, are starting to test it
+ - BNL has been doing thermal cycling since over a year, other two groups are starting now
+ - In process of commissioning them now
+ - Update in four weeks
+- EC hybrid test-panel finalisation
+ - Have to increase the hole size on the panels a bit so they don’t get stuck on the panel jigs
+ - Could start EDMS review as soon as updated versions have been uploaded
+ - This only concerns production panel, so should not start EDMS review before all changes have been implemented
+ - Update in 3 weeks
+- Production of hybrid panel cover
+ - Received shipment with missing parts
+ - Cutting is going on, about 40% done
+ - Can pick up partial orders to send out covers needed on shorter time scale
+ - Will start adding inserts now, deliver first covers to Toronto by end of next week
+ - Update in two weeks
+- Production of stencils
+ - PB stencils got deleted and have now a separate entry
+ - Craig kicked off review
+ - Should finish soon
+ - Hybrid stencils got approved on EDMS, production is ongoing
+- Production of module frame cover
+ - Received all frame covers
+ - Karo is preparing list how many covers should go where
+ - If anybody needs some urgently let Christian know
+ - Update in two weeks
+All sites please purchase all the required Nexys and Genesys G2 boards NOW! (global shortage of Si parts makes unavailability, in the near future, likely - see e.g. the MicroZed board (current delivery time: 52 weeks))
+### AMAC current measurement & referencing caps
+- From 1.8k start seeing ADC sampling noise (there is an issue in the slides)
+- Standard deviation is consistent when taking corrections into account
+- Peter doesn’t believe that C17 is between Opamp and ground
+ - Peter has no objection to remove hybrid capacitors
+ - But needs another capacitor between HV-ret and ground
+- Karol: 2 capacitors on powerboard 
+ - Removing C12 accidentally helped a bit
+ - C17 to HV-ref (inputs of Opamp?????)
+- Dave: main recommendation is to remove the hybrid caps
+ - Peter: still 10 counts of noise
+- For PPB barrel powerboard release need to wait for endcap powerboard results because of slightly different capacitor use
+ - Peter: HV-ref and HV-ret should both be coupled to ground plane via a capacitor individually; this is implemented in endcap powerboard, but not barrel
+- Need to know if hybrid BOM change is required
+ - On what timeframe?
+ - Removing the capacitors could potentially require a ECR
+ - Ashley: also need to consider the 2 capacitors from the cold noise issue
+- Change in EC hybrids would only delay shipment by a day or so
+ - Fine to do for Prototyping and PPA parts
+Decision: agreed that hybrid capacitors can be removed (keeping the pads) - ECR to be prepared, Dave to sketch first draft
+Dave to follow up documentation on powerboard capacitors.
+### ASIC counting update
+- Craig: 268 HCC at RAL almost covers EC PPA as well
+ - Count Craig did … missed due to bg noise
+### R0 Metrology
+- Try to do a test with dummy powerboards to see if powerboard tools work
+- Ingo: Optically measuring holes is difficult and sometimes not reliable
+ - Cross-reference with touch probe showed better results, but not feasible to do for all tools
+- William: not doing pin distance measurement, but test all tools fit
+### [move to next week] Hybrid Package Height
+- 
+### AOB
+- none

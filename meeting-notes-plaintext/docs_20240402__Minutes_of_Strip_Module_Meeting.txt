@@ -1,0 +1,55 @@
+# 2024-04-02 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1398259/
+### Introduction
+Presenter: Luise Poley
+- William: What about the single planes shorted to HV on split modules, is this understood and should we go ahead?
+ - Luise: It shouldn’t affect performance since the HV tab will connect this anyways. This should be fixed in future versions, but you should be fine to go ahead with testing the R3s with these frames.
+- Luise: Is there a chance there will be an LS with a wide-gap model?
+ - Sven: Is it sure we need this?
+ - Luise: It’s currently the plan with the HV BD Task Force.
+ - Luise: Any objections?
+ - Sergio: When discussing checking the model, we are not starting an EDMS review? Or does this happen later?
+ - Luise: I say we start a proper review.
+ - Sergio: The files included in these links, they are only step files. No engineering drawings just to be clear.
+ - Luise: Plan is to have these made after models have been confirmed to be correct
+Message from Jaya John for everyone:"If any site finds that they have run out of Category X ABCStars for the bond pull tests, please let Paul and Jaya John know on atlas-upgrade-itk-strip-asics-ac@cern.ch, thanks."
+### L4 Updates: ITSDAQ/Sensors/Documentation
+- No updates today
+### Module Bow After Baking
+Presenter: Pavol Federic
+- Luise: what we would also need in the future is to understand what part of the heating matters. If it’s the PB/hybrid getting to 40C or if the whole thing is what matters, so we have a QT which will look into this.
+ - Pavol: yes, will we have enough modules for this?
+ - Luise: yes, we will get you modules, but it might be worth getting some PPA modules (True Blue).
+ - Pavol: Or if we have some electrically failed modules, we could do that.
+### EndCap Hybrid Surface Quality Issues
+Presenter: Dennis Sperlich
+- William: at ITk Week, Uli reminded me about a plan for holes: locations of holes are now indicated in the database, so that we can map them to bond feet now?
+ - Dennis: Yes, they should be in the DB, Ewan has a tool to visualize it. All the issues I highlighted should be marked in the DB (at least first three I mentioned)
+ - William: but they are marked differently depending on failures?
+ - Dennis: Yes, it should be ID’d as to which problem it is.
+ - William: because some of them should be bondable?
+ - Dennis: I’m not sure if there is this level of detail
+ - William: Do you have statistics on this? How many?
+ - Dennis: currently very flavor-dependent, depending on how strict cuts are applied, up to 40% rejection
+ - William: And does Riccardo have a list or do we need to check them all in the DB to find this?
+ - Dennis: This is something you should coordinate with Julian.
+- Luise: It sounds like we don’t expect Wuerth to solve these issues in the future and have to live with them?
+ - Dennis: It seems this way. What usually happens is “this is bad, please don’t send us these” which would end up meaning the next batch didn’t have the issue but rather had a new issue and the old issue would show up again. They can solve some of these issues, such as discoloration. But at the moment, we keep getting a combination of the variations of the process. We can solve problems with the mixed panels, but there is little we can do but throw away parts.
+ - Luise: There is a suggestion to mask the edges while laser cutting.
+ - Dennis: I don’t think Wuerth can do this, they would have suggested it otherwise I suspect.
+### QT Update: QC Data Reporting
+- Luise: For your criteria, you said we should be able to choose which batch or current location? Just to say, this isn’t something that should be chosen, it should be fixed based on test type. If you give the option to choose either, the results might not be what we want, so we should fix it based on test type.
+- Luise: In the future, are you planning to make these plots that can be downloaded based on selection criteria?
+ - Chufan: yes
+ - Luise: Is this going to be interactive?
+ - Chufan: I don’t believe so.
+ - Luise: Do you know why you opted for a non-interactive version?
+ - William: that is what was in the QT. This is a mid-point though, so we have a few months. We were tasked to use Kenny’s framework, which doesn’t lend itself well to interactive plots.
+ - Luise: I worry it will spiral out if it isn't’. So I think it might be worth rediscussing this.
+ - William: But this is something that can be frozen when it’s not interactive. If it is, there are people clicking different things.
+ - Luise: We have this same issue with Kate’s reporting. For some queries, you can’t choose, but it depends on what you’re reporting. You don’t need options for all the choices.
+ - Ewan: We are going to have a separate json that could let you choose at which report you want to look at. That should solve the issue.
+ - Luise: Okay, I’m just concerned about having all of these plots to sift through. Perhaps we could have a followup chat.
+ - William: We were trying to follow the format of the QT.
+### AOB
+Nope

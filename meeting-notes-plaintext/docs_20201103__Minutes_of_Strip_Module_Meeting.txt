@@ -1,0 +1,70 @@
+# 03/11/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927525/ 
+### Introduction (Craig & Ingo)
+- ntr
+### Task tracker items
+- R1 tool production Urgent Late
+ - 25% doen, next update in 2 weeks
+- R2 tool production Urgent Late
+ - Next update in 2 weeks
+- R5 tool production Urgent Late
+ - New drawing review launched today
+ - Upon approval start production
+ - Next update in 3 weeks
+- US hybrid/module tool production Normal Late
+ - Submitted with outside vendor
+ - Next update in 4 weeks
+- US powerboard tool production Normal Late
+ - Minor design issue to be sorted, see talk today
+ - Next update in 3 weeks
+- EC PPA/prototype hybrid order Urgent Late
+ - Check again in 1 week
+- EC hybrids/powerboard tendering Urgent In progress
+ - Check again in 1 week
+- Endcap module thermal cycling setup Urgent In progress
+ - EDMS review ongoing (some changes will be implemented and 3D models included)
+ - Will close current review in 1 week, relaunch new review afterwards
+ - Discussion with DESY carpentry department for procurement
+ - Next update in 4 weeks
+- UK/China module thermal cycling setup Urgent In progress
+ - Check again in 1 week
+- US module thermal cycling setup Urgent In progress
+ - Thermal cycling of 4 modules went fine
+ - Working on code (valid for UK as well), expect it to be ready soon
+ - Next update in 4 weeks
+- Hybrid crate setup, finalisation and roll-out Urgent Late
+ - Replacement powerboards are currently evaluated
+ - Continue checking panels with hybrid heat loads
+ - Waiting for heat-sinks to be produced in the workshop
+ - New backplane to be due in 2-3 weeks, keep some test objects at Liverpool for evaluation
+ - Ship other hybrid panels to DESY for further tests
+ - Report in module meeting next week
+- Finalisation of barrel hybrid panel Normal Late
+ - Design has been finished, tested successfully with hybrids
+ - Currently undergoing EDMS review
+ - “Final” report next week
+- EC hybrid test-panel finalisation
+ - Check in 1 week
+- Barrel module testframe finalisation Normal Late
+ - Design has been finished
+ - Currently undergoing EDMS review
+ - “Final” report next week
+- Barrel hybrid panel transport box finalisation Normal Late
+ - Hybrid shipment procedure document updated for barrel
+ - Prepare EDMS document with details
+ - Next update in 2 weeks
+See updated comments in individual tasks in the task tracker. 
+### Barrel powerboard EDMS review
+- Change back tolerance of precision holes to group accepted 0.02, redline looser tolerance of 0.05 that would allow LBL to produce these with their preferred vendor that does not commit to 0.02 - make it clear that LBL takes the risk that, if the tools do not fit with others or do not produce modules in spec, the tool has to be redone/reworked
+- To be continued offline
+### Sensor reception tests
+- Picture or no picture for sensors on reception at module site
+ - Have to minimise handling steps, so do inspection in prep for IV curve
+ - Encourage to take images of found defects
+ - Luise prefers to have full image to be able to go back if later defects are found
+- Default appears to be that so far we require local pictures of determined issues, not full object
+- Have a detailed discussion about this in the module QA/QC meeting on 2020-11-05T15:00:00Z
+### Louvain SEE
+- 
+### AOB
+- R4 tool drawings about to go to final final

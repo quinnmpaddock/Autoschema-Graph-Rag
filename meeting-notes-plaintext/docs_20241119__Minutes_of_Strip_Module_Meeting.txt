@@ -1,0 +1,131 @@
+# 2024-11-19 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1474319/
+### Introduction
+Presenter: Luise Poley
+- Luise: Cluster Managers. Can you update the modules by the end of this week?
+ - Carles: Making sure the yields are correct.
+ - Luise: Yes
+ - Bart: By the end of this week? This is ambitious
+ - Luise: Next week is fine if needed.
+ - Bart: What statistics do you want? People are still building modules.
+ - Luise: It could be the day before the review, but we really want the yields to be correct.
+ - Carles: We will try and fix it.
+ - Luise: US?
+ - Chris M: We will push on other sites.
+### L4 Updates
+#### Topic: Production coordination
+Presenter: Abe
+- No comments
+#### Topic: ITSDAQ
+Presenter: Peter
+- If you updated ITSDAQ recently, you may not be running ITSDAQ correctly
+ - Update ITSDAQ! It has been fixed now
+- You can now do split module IVs
+ - Please try it and report if it doesn’t work
+- If you are testing hybrid panels and modules in the same setup, you may end up with wrong naming; the workaround for this is:“Start ITSDAQ once, run auto config, close ITSDAQ and start it again.”
+#### QCD Corner: Episode 8
+Presenter: Cole
+- Andy: there are different numbers of groups in each cluster, so statistics will be different
+ - Cole: yes, plan is to collect data for 100 each and then revisit
+- William: what are we trying to accomplish here - everyone is interposing differently
+ - Luise: this is not about interposer weights, it is about True Blue weights
+ - William: but we have built modules, we know the weights - is the assumption that interposers change them?
+ - Bart: they truly do, we have seen this in the UK
+ - Cole: we are happy to hear other suggestions
+- Bart: We actually almost missed the differences, because we don’t weigh after every step, so we actually had to go back and weigh individually and we would recommend to do that
+ - Luise: suggest we make this a suggestion? To weigh individually for now
+- Ingo: just in general: interposers should only affect dispensing with a stencil, robots should be fine
+ - Cole: true
+ - Ingo: but would really like to not add extra glue steps - only makes sense for stencils
+- Cole: Let's discuss how to descope this: do we drop, do we do this on a batch level, or on a time level?
+ - William: need to look at the glue weights, need to check whether glue is creeping over guard ring, definitely need to keep checking, but doubt the weight tells us something about guard ring contamination
+ - Sven: in favour of either weighing nothing or everything, remembering that you have to do something per time interval is really hard, also all groups are different
+- 12 people in favour of dropping entirely
+- 1 person in favour of keeping it
+- Luise: Is no one worried about insufficient glue support?
+ - Theo: would still want to weigh the final module, would be able to infer from that
+ - Pavol: can not tell amount of glue on module from overall weight
+ - Andy: have never seen too little glue on module
+ - Luise: when we looked into this for the PRR, we saw that there is the occasional outlier, the question is how much it matters
+ - Andy: Was it noise? Or heat?
+ - Luise: noise is more affected by distance, have never seen a correlation between coverage and heat, so this is mainly about mechanical support
+- Cole: goal would be to collect data for 100 modules per cluster and then to descope entirely
+ - Chris: per type
+ - Cole: across all types - when the cluster has reached 100 modules
+- Luise: please add pull tests on different surfaces to list of descoping
+#### Group Update: Dortmund
+Presenter: Marta Baselga
+- Luise: Which recovery methods are you looking into?
+ - Marta: We are letting them sit in storage for a few weeks and retesting. If they are still misbehaving we’ll use the ion blower.
+ - Luise: Sounds good. We usually recommend redoing the IV right after since that sometimes fixes things. The backup slides (today: slide 19) have some advice on what to do about early breakdown.
+#### Visual Inspection GUI
+Presenter: Theo Zorbas
+- Luise: This is meant for people who already do things automatically and no one would need to do more than they need. It’s not going to make people do more.
+- Sven: From a DB management side there is a problem. The main reason is the number of images being uploaded to EOS. We have a limit, especially if it’s a series of small images. The sensor people are putting them into tar balls which is a nicer way of reducing the number of files.
+ - Luise: In the beginning, there was a survey about how many pictures we would take. We assumed the space was allocated already.
+ - Sven: It’s the number of files and not the space. If you put in a lot of small files, it reaches a limit and there is nothing we can do there. If you have multiple defects for the same module, from the DB POV, we’d really prefer you compress them and upload the compressed images as a single file.
+- Vitaliy: I would expect not every module has images. You just take them when you spot them and don’t take the image when you don’t. So I would naively hope the number of images wouldn’t be too large. Creating compressed files instead does seem helpful though.
+ - Sven: I agree with Vitaliy and I wouldn’t expect too many failures. This is the feedback from the DB PRR.
+ - Cole: maybe, if we do this now, we can avoid these problems in the future
+ - Theo: we may not be uploading a whole lot of pictures now, but the GUI may encourage people to upload more, so we should prepare for that
+ - Luise: Would it be possible to tar-ball this and upload one per defect?
+ - Theo: Yes, but I just need to understand what we can do.
+ - Sven: What you see there currently is an artifact of the old storage (see the getBinaryData). Those images were uploaded directly to the DB as binary files. There are currently a lot of issues with that.
+ - Vitaliy: Basically, we had to get going four years ago and EOS was not a possibility and the old method was allowed for us. For us we have more images and need to zip the files.
+ - Theo: how many pictures would be the limiter - we would like the raw image to be accessible. What if we have only four images or so?
+ - Vitaliy: We faced that a few years ago when we were using EOS for backup. So we got warnings.
+ - Cole: let’s start with this and see when we end up with too many images and adjust if we need to 
+#### 10 Steps to Give Your EndCap Module Cold Noise
+Presenter: Luise Poley, Peter Speers, Madison Levagood
+- Vitaliy: Your CN location is in the middle. So by eye it’s next to the shield box. That’s where I expect the vibrational amplitude is the largest. 
+- Vitaliy: It looks to me like you have a cold noise and you have more pickup at cold temperatures from the PB. There is a broad peak. I was wondering if there was anything unusual about the powerboard (too much power, etc) that you measure.
+ - Madison: I didn’t notice anything strange. But we have the data saved and can look back at it.
+ - Vitaliy: NTC temperature for the powerboard and current consumption for the powerboard - is it similar to other powerboards?
+ - Madison: I will take a look at that later today and see if I see anything strange.
+ - Luise: I don’t know if you’re aware, Vitaliy, but we are seeing more pickup from PBs in EC modules.
+ - Vitaliy: I remember the blips and bumps. The CN bump here is broad and the amount of noise when cold is larger than when warm. It looks unusual to me [It’s not unusual to be loved by anyone]
+ - Luise: definitely worth looking into!
+#### Replacing Pins on EndCap Jigs - Drill-Free Method
+Presenter: Michal Dzubera
+- Carles: Great that you can remove the pins without drilling. We also tried channel locks (locking pliers maybe), but it didn’t work. Apart from that, I understand we are hitting the pins. If we can change the part of the pin that is facing the side of the sensor.
+ - Pavol: the question was how good the alignment can be if the pin can rotate in the hole and how much it is shaved off
+ - Carles: Exactly. We would lose precision with the pin as we use because we are degrading it.
+ - Pavol: What I understand is that with the plastic pin, it can be rotated. With PEEK/PEAK, it could be that we don’t have to change it often, but we’ll see.
+- Peter: When you mention cleaning these sensors/halfmoons. What process are you using to do that?
+ - Michal: just blow them clean with nitrogen
+ - Peter: Just compressed air, okay, thank you.
+- Sarah: confused about the material and precision discussion: weren’t there long-term studies done already and didn’t someone say that this material was found to be reliable?
+ - Vitaliy: We used acetol. You are correct, we checked it after 1 year and it was still okay. We didn’t smash anything or abraid on purpose.
+ - Michal: acetal is similar to POM, but you can see that the pin was damaged after about 100 cycles. Really want the PEEK results to see if PEEK stays constant throughout usage, can’t afford a damaged pin to affect the sensor position
+ - Vitaliy: It will be. Anything will wear out including steel. It’s a question of how long (force, material, etc). We had signs of wear, but it didn’t seem to affect the dimensions too much, which is why we thought Acetol is okay. Acetol is easily available.
+- Vitaliy: For copper, it’s not a unique definition. Yours seems to be soft, what alloy is that?
+ - Michal: wanted to show a video, but technical problem. The problem with using copper would be oxygen
+ - Vitaliy: I’m afraid I don’t understand
+ - Michal: We need surface treatment on copper due to oxidation.
+ - Vitaliy: so you used a special copper to avoid oxidation?
+ - Michal: Yes
+ - Pavol: I think he is saying he is afraid of oxidation. If we wanted to use copper we would want some surface treatment. Does it make sense to do more tests with the copper? What I understand is we should use PEEK or Acetal and we should not use copper.
+ - Michal: okay
+- Geoffrey: I think copper is not silicon’s best friend, so we want to avoid it
+ - Pavol: We tried something harder than POM. 
+#### R3 Module Noise Update
+Presenter: Yajun He
+- John: Is it possible to get the Noise Occupancy data?
+ - Luise: We recently started putting these together. Who should we send it to?
+ - Yajun: We have the NO test from the ITSDAQ tests and the TB test with TLU. I haven’t checked the ITSDAQ test yet because I need to think about it more. We haven’t tried to do the pedestal scan with the TLU
+ - John: could check if the ITSDAQ noise occupancy shows the same shoulder
+ - Phillips: You’ll always see a shoulder, but this one is slightly bigger than you’d like. You’re below the pedestal, which will give you unstable results at such low DAC counts. I think the plot on the left in slide 6 is the limit to how well you can do.
+ - John: at low thresholds yes, but at 20 DAQs …
+ - Peter: We tuned the pedestal to 16 anyways. If you got 50% at 20, then that is the pedestal.
+ - John: to me, it looks like too many events where they all fire
+ - Peter: For sure, it’s a collective effect. As it feeds back in it feeds the instability. I think this is a sign of the decoupling of the left half of the module from the right. When the plot blows up in the range above 40 counts, that is an external noise.
+- Luise: Dennis, can you confirm this is the HV filter?
+ - Dennis: Yes. It has the filter
+- Yajun: If I understand Peter correctly. It is what it is …
+ - Peter: there is a systematic difference between the left
+ - Yajun: Okay
+- Luise: One thing we wanted to look at is with the change in the traces on the new frames and how that compares to this, as well as with the petal. I’m not sure if it’s better.
+ - Yajun: may be good to get a module on a new frame into the testbeam
+ - Peter: I doubt it will matter, but we have to try.
+### AOB
+None

@@ -1,0 +1,149 @@
+# 2025-06-03 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1549676/
+### Introduction
+Presenter: Cole
+- Ingo: Do we want to have SE4445 overhang as well?
+ - Luise: It would be useful to differentiate between kapton overhang and SE4445 overhang.
+ - Many agreements
+ - William: Every hybrid has some SE4445
+ - Cole: is that saying you do not want that
+ - William: you can put it there but it will be ticked on 90 percent of the time
+ - Luise: Might be helpful to flag the location in case we see noise peaks
+ - William: it will be along most of the hybrid will be many hours clicking, we can add the category and then figure it out
+ - William: We can try
+- Vitaly: I believe Marcus has seen this in his reports of burn in data, it wasn't often but it was happening 
+ - Cole: Can these be tracked
+ - Vitaliy: He’s working on it, I’ll see if he can show slides
+ - Tony: we definitely built them into modules, a slope like this is not exactly what we saw, we saw more switching back and forth
+ - Tony: That's what I thought, a slope is hard to understand. It had other correlations, most of the ones were two state correlations
+- Cole: if no one has an issue we will use these hybrids and put a comment in the DB if it is seen
+- Everyone agrees that we should not bond things if this happens (slide 6)
+- Ingo: did we decide what we are going to do if we have 8 straight in a row
+- Cole: Would we try to rebond if we loose 8 wires in a row
+- Tony: this is unlikely 
+- Cole: lets let the edge case happen
+- Vitaly: if you have 8 bad channels its a lost module
+- Bart: I thought it was not a given when you bond with a bad tool, not a given?
+- Cole: It's not a guarantee
+- Ingo: you have to bond without wire. 
+- Bart: But it’s not a given that this will result in a pinhole. 
+- Vitaliy: That’s correct, it’s just finding out the exact channels…
+- Bart: if something bad happens the bonder is at full speed this happens on 8 channels 
+- Vitaliy: It’s also that you need to run specialized tests to find the pinhole.
+- Gerrit: I would love to give you a positive answer but we don't want to do this, shipping through BNL was expensive and a lot of effort we don't want to do it.
+ - Cole: I thought I said LBNL, sorry for the misunderstanding
+ - Luise: Would you be happy with ugly modules
+ - Cole: ones with bad metrology would be ideal for this
+ - Luise: If we do have results from the irradiated barrel modules, that would be interesting
+ - Cole: Maybe Abe knows?
+ - Gerrit: there is a stave at Sandia, it will come to BNL then go to RAL
+ - Luise: This is about the individual modules irradiated at Sandia. I think Mounia may have said they could be cycled.
+ - Gerrit: I don't know anything about that
+ - Luise: Mounia at BNL I think said this can be done
+ - Mounia: We did receive the modules, but we have a problem with one of the chillers, so we haven’t started this. 
+ - Cole: How long will the chiller be out for?
+ - Mounia: will take a while
+ - Gerrit: also keep in mind we are in full production
+ - Cole: Okay, then we can arrange to have someone else perform the testing.
+### Updates from the EndCap Powerboard Mass-Tester Firmware
+Presenter: Roland Koppenhofer
+- Update your firmware and software!
+- Luise: There is also a stage now called Failed Test right?
+ - Roland: It’s been there as long as I have been around
+ - Luise: sounds similar to B grade. People will be confused for what to put it failed stage or B grade
+ - Roland: These stages are used by me to mark boards that fail electrical QC and shouldn’t be used for the detector at all.
+ - Luise: Isn't that failed?
+ - Rolan: Maybe I overlooked this. I thought the failed stage was “Failed Tests”, but perhaps I am wrong.
+ - Luise: lets follow up offline 
+- William: We tested PB last week and had HV return, I had a look at the git and it was 2 weeks ago, is version 05 correct? Is there a latest version?
+ - Roland: I’m not sure when Ben uploaded it, but I spoke with JJ yesterday and he said he didn’t use the latest fw. 
+ - William: We’ll update and try again, thanks.
+- Mounia: if one of the tests is missing for one of the cycles do we have to report this? Should we repeat the TC for this cycle?
+### Are Defects Getting You Down?
+Presenter: Shaogang Peng
+- Vitaly: Just to confirm the defects you are showing on slide 4-5 they are from wafer test data?
+ - Shaogang: From wafer data, which has been included (sl. 4). Some channels have failed during the wafer test.
+ - Vitaly: if the bad channels are from the wafer test data its fail, I think site dependance isnt clear its a matter of which chips they are given
+ - Shaogang: Yes, but from this plot, we can do something to improve the module quality (sl. 5). It’s likely some assembly process or [missed it]
+ - Vitaly: the data you are showing is from hybrid or wafer tests.
+ - Shaogang: Single module test
+ - Vitaliy: So sl. 5 is module test, and sl. 4 is the wafer?
+ - Shaogang: It’s both on slide 4, but without wafer data on slide 5.
+ - Vitaliy: The chips are CAT B chips?
+ - Shaogang: yes
+ - Vitaliy: I’m not clear if the defects are due to the assembly.
+ - Cole: CAT B is one or two bad channels
+ - Vitaliy: It’s possibly the power distribution, which is at the edges, so I’m not sure it’s related to assembly.
+ - Cole: I think I have seen this before, we normally see more defects on the edges. 
+ - Vitaly: Marcus has shown similar plots
+- Tony: You also get a middle peak if you squint. If you look at sl.6, at the defect types, the top shows x’s where it’s in the wafer test where you see the failures. The total failures were found on the wafer. The ones that are left are usually high gain or high noise, so it’s as if the edge or middle have different noise and they get picked up by the criteria on the edge of the cut. If you subtract the ones not found by the wafer test, its high gain, followed by high noise. None of which are too worrying, we might just be too tight on the criteria, which is probably fine.
+ - Shaogang: I am not sure if this is in preseries modules.
+ - Tony: So the preseries won’t show so many channels (CAT A). The difference we saw with B grade is that you get slightly more channels, but the rate of extra bad channels was not that different between A and B, telling us B was not degrading.
+ - Shaogang: agrees
+### Update on Ridges in Electrical Testing
+Presenter: Lukas Roscher
+- Tony: This is really good work. For the operating window, you kinda have to know where the ridge is relative to the threshold. Is it at a fC that you’re seeing?
+ - Lukas: Slide 2 
+ - Tony: where is that ridge relative to the operating window. If it’s below, you probably don’t care, if above, then you might [might have that backwards, sorry]
+ - Ben: we havent done this calculation im afraid
+ - Tony: Look where the ridge is and its above or below that
+- Luise: For irradiated modules, I think the proton irradiated modules are being sent back to Germany. If you’re happy to have a module already irradiated and have the cap added after, you might be in luck because they are becoming available soon.
+ - Ingo: That would be good, we would want to add the capacitor
+ - Luise: You can have both for comparison. If you ask the TB people nicely, they can do both (with and without)
+ - Ingo: I think both would be valuable to have
+ - Ben: you just remove the bonds and have it without the capacitor
+ - Vitaliy: I recall the next TB is in July, so this is timely. So we should contact the TB people and ask them.
+ - Ben: We’ll get in touch with them as soon as possible.
+ - Cole: good idea
+- Luise: are you suggesting we make this a permanent change on the modules
+ - Ben: That’s the question, if it’s possible or not. We wanted to give this a go though if it’s feasible.
+ - Luise:looks like a change on the hybrid or the petal?
+ - Tony: Does the hybrid have that capacitor? 
+- Ingo: you need a HV capacitor and they are huge
+- Tony: 
+ - Peter: The ground connection makes the barrel worse.
+ - Ash: You're just closing the loop, you need a HV capacitor. The only way to do this is as shown (page6)
+ - Tony: it would have to be an add-on to the bus tape.
+ - Ash: It’s something that we need to see if there is something to be gained here.
+ - Ingo: the question is whether we can evaluate if this is even possible, we can try to find out if we even can get this in. 
+ - Ash: This is more academic for me, and the outcome was quite surprising.
+- Carles: Checking pictures of a petal, I don’t see any difficulty in doing this. We should check if this is interesting for installation. This is something additional, but I don’t see this as a show-stopper. If we understand the features, we might be able to tolerate them at the module level.
+ - Cole: I agree we can live with this at the module level but this is more of a discussion for what we do with petals or staves
+ - Ash: I’m not sure how you would access the back-side for the sensors on staves.
+ - Ingo: its a curse and blessing because of the long tab
+ - Ash: That’s what I was keen to try out. We’ll wait for the results from TB.
+- Cole: I agree the test beam is probably the best place to test this. 
+- Carles: In the meantime, we could try with the IFIC 1 petal to see if these ridges disappear.
+ - Ingo: Are we using a reversed-geometry cap?
+- Ash: go with what's available
+ - Ash: 1 ohm or less 
+ - Ben: Okay, if it’s …
+ - Ash: If you have the opportunity to try different values, I was thinking up and down by maybe a factor of ten. Should be doable on a module frame.
+ - Ben: yes thats what I was going to suggest, test it on a module frame
+ - Ash: Repeats himself
+ - Ben: If the capacity is \pm 10%, it doesn’t really matter right?
+ - Ash: [same thing basically]
+ - Ben: Let’s follow up offline.
+### Slim Down Your Glue Layer in Five Easy Minutes
+Presenter: Tony Affolder
+- William: The ASICs are low, so the module glue is high. That’s what the tool has to do, but how can you squeeze out?
+ - Tony: It's not the thickness that should be high, the stack up is the same. 
+ - William: Okay, I just don’t see the data on the stackup.
+ - Tony: The issue is that if the stackup is nominal, it would push more on the hybrid, maybe cause vacuum leaks to pull it off the pillar. Which could be a concern with the EndCap due to the flex differences.
+ - Pete S: When you say that your glue heights are high in the ASIC areas, but on the bond areas, they are quite low. Is this normal?
+ - Tony: yeah those are always low
+ - Navid: We see this as well, it’s not held up by vacuum, it’s just flopping.
+ - Tony: We don’t have anything with the HCC out, which would show most of all. We have another six of these, but not as bad. One or two have low values like what is shown. But for the Barrel, lowering it to 50um shouldn’t affect anything. If you allow us to open it up, we could look at the vacuum, glue spread, metrology, but I can’t see how it causes any problems.
+ - Pete: my biggest concern is it causes issues with picking up the hybrids themselves 
+ - Tony: We grabbed them all, nothing. If that’s it, this is what I’d suggest … 50um. And then how we cut knowing this using the data from Liverpool
+ - Navid: I have some slides on this as well. We haven’t made a module yet, but we have a bunch of failures (low) from the thick hybrids. We did try to pick up all of them and have had no issues and have gone through HBI. The package heights are also all the same.
+ - Tony: I think 50 is safe. For the EndCap, maybe it’s different. So the rest of this is understanding how to use the data, which we have a lot of now. I stole Karol’s plots and it matches. 
+- Cole: Navid and I will write this into the documentation, with the lower limit at 40/50, then we will present this next week for approval.
+- Ewan: When you have these lower glue thicknesses, are they across the board? Can you have a significant tilt where the spread can cause problems?
+ - Tony: We get some tilt, but nothing that significant. It’s more a combination of the flatness of the interposing plus the local tooling.
+ - Ewan: Okay, we were worried about this in the EndCap, but …
+ - Tony: There isn’t anything really like that. Occasionally larger, but it was not as pronounced.
+ - Navid: So we say we can use 50um, and next week we’ll compile this and let people know we can drop the spec to 40um [?].
+ - Tony: We build the one that is ultra-thin, but since we changed the stackup, what that meant relative to the fixed metal … it won’t help with the discussion.
+### AOB
+- Never is

@@ -1,0 +1,159 @@
+# 2025-02-25 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1513179/
+### Group Update: Australia
+Presenter: Judith Kull
+- Andy: What is delaying the decision with interposers?
+ - Judith: They are going to try both and see which is easier, I’m not entirely sure.
+ - Cole: they want to pivot if it is easier with one type or the other.
+### Introduction
+Presenter: Cole Helling
+- Nope
+### L4 Updates
+#### ITSDAQ
+Presenter: Peter Philips
+- Cole: For the humidity/temperature, how does it handle the multiple sensors across the testboxes?
+ - Peter: At the moment it takes an average of everything. This was to see what jigs were in use. For the humidity it just makes sense to take an average of everything
+- Ingo: Recently we discussing handling the IVs when a problem occurs
+ - Peter: Still on the todo list
+ - Peter: There are people in the UK complaining of the same thing. If you have one module, not taking it can be very annoying.
+ - Ingo: Yes, takes a long time, especially after the thermal cycles - takes a long time 
+ - Emily: {Endorses for thermal cycling} 
+- Theo: If we can auto look up wafer numbers via the database in IV scan GUI, does this mean we can choose to stop carrying sensor envelopes along with the modules?
+ - Peter: I think it does stop that. To save space in dry storage, we take the covers off when modules arrive, so the traceability is already gone 
+- Tony: How does the improvements Peter propagate into the coldbox problems. We had an issue where the interlock went off during the IV test. 
+ - Peter: The interlock was declared by CJ or the HV supply?
+ - Tony: The CJ system 
+ - Peter: Right, this is where safe mode comes in. If safe mode is triggered, it will kill the processes. Only happens when there’s a new cold jig update to send the command 
+ - Tony: So my question, when is that going to happen? In this logic, if your RH is not where you need it to be, the collision will happen since it’s the first thing that happens while cold. I thought it would be random, but it won’t be. It will be preferred during the IV.
+ - Peter: I thought someone was working on this, but I’m not sure.
+ - Tony: Ankush is here. 
+ - Tony: I think it would be nice. Alex has had some bad days testing it. 
+- Ankush: It is in the works. There are some fixes, but I need to check that they will work not just for one box, but for all of them. It’s just time and how much I can get to. Any volunteers would be appreciated.
+ - Tony: What skill set would the person need?
+ - Ankush: Familiar with the software, running python, comfortable working with hardware. We also need testers as well. We decided to have three different cold boxes… If I test on mine, that doesn’t promise other cold box models will work. BNL has always provided a tester for US boxes. Endcap has more variations (different peripherals). Otherwise, we need to accept that my test is “good enough”. We either test in development or in production. 
+ - Tony: I am sure we will be glad to test it if we were given something, we know how to trigger it so it's easy enough to trigger for us. I don't think anyone on our side has the coldjig software experience.
+### Hybrid Burnin Update from SCIPP
+Presenter: Yoshi Fukikake
+- Peter, S7: That’s what it’s meant to do. For a hybrid, you’d hope that’s zero
+ - Yoshi: Okay thanks 
+ - Vitaliy: Zero has certain limits. What are we looking for? Zero vs non-zero or some limit we want to establish here?
+ - Peter: there is a cut I can't remember the number
+ - Vitaliy: How was the cut established? 
+ - Peter: Carried over from SCT with some tweaks. 
+ - Vitaliy: Um…
+ - Peter: At some point we had the max allowable due to noise, but perhaps we need to re-evaluate that, and even have a module-specific cut.
+ - Vitaliy: I’m just thinking out loud. 
+ - Peter: that's fine
+ - Vitaliy: For the modules this makes fine, but for hybrids probably not. If I see occupancy of hybrids that is non-zero, it’s a sign something went wrong since they should be immune.
+ - Peter: Yes, it’s a sign something went wrong and we actually saw it from “the gods of testing” over the weekend (and we fixed that). A sign of something going wrong is still valuable 
+ - Vitaliy: I agree, I am wondering if someone has seen a well carried test of NO with non zero
+ - Peter: It should be 0 for hybrids by design 
+ - Peter: To first order, if it’s not zero, then something is wrong with the channel masking (spent ages fixing this, should be robust) or a gross error with data (case over the weekend) 
+ - Vitaliy: I was wondering about physical performance. After the fixes, if someone sees non-zero, they should raise their hand.
+ - Tony: does that mean we should change the criteria on a fail
+ - Vitaliy: I would think so.
+ - This will be investigated offline with the ITSDAQ expertsI
+- Cole: you said you had problems with the merging, is this solved or do you need help?
+ - Cole: For the DB?
+ - Yoshi: Yes I am not to familiar with how to do this I could do with some help
+ - Cole: Reach out to me I can help
+- Tony: How long did 20 full tests take?
+ - Y: Roughly 20-21 hours
+ - T: I think this gets us to the data people are targeting. I think this means you need a test to fail twice. And the 30 power cycles haven't broken anything. The HBIPCs are stable. What do we want to do next to descope this. We would like 40 (20?) tests, and 7V. 
+ - Cole: You said 40 did you mean 20?
+ - Tony: 20
+ - Cole: The plan was to take this to 24 for simplification for implementation. Do you agree?
+ - Cole: Is anyone against the 7 volts?
+ - Peter: We said 8 previously.
+ - Tony: anything less is better
+ - Cole: okay 8 sounds good
+ - Vitaly: the lowest to turn on is 6 
+ - Tony: The last one is the number of cycles. 
+ - Peter: We are trying to measure current at every point on the state module, there is no problem doing this lots of times it just means there is lots of data that doesnt get used. 5 per test sequence seems plenty to me 
+- Vitaliy: Peter you are talking about a different test measuring currents during the power cycle?
+ - Peter: If you turn the DCDC on and off, it goes through the state levels. We are in the process of standardizing it with a test that measures the current at each point. So there will be data that checks the data gets received and checked.
+ - Vitaliy: It is certainly looks valuable, i was wondering if anyone has seen the data
+ - Peter: Bruce has posted a pdf for merge requests
+ - Tony: Is this related to the QT from LBNL?
+ - Peter: Yes. We’ll need to get data and check the plots.
+ - Tony: the original reason was we need 3000 to replicate what you would have in 10 years, how many times we turn on and off in the system
+ - Peter: We are not going to get to 3k in a 24-hour test.
+ - Tony: not with the test taking ten minutes, I am okay with doing 5 with just the full test. Now this will have the calibrated AMAC currents. So we could do 5 cycles for 20 hours. 
+ - Peter: I would have to look at the code, it’s likely that something could get through, but the chip should be flagged as high ENC. I think the cases I’ve seen are like that.
+ - Tony: the question is was that tests testing them what dominates the test time
+ - Peter: I’m saying the ENC returned by NO would be distorted by one bad channel. So it’s already telling us something has gone wrong. 
+ - Tony: NO cuts on that so we already catch it that way
+- Vitaliy: Thanks for posting the pdf Bruce. I think things are well-structured, but I don’t understand them. Could we have a presentation soon to see this? We are using the burnin, I would prefer to converge on the new stuff soon. 
+ - Cole: sounds like a good idea
+ - Peter: yes
+### PRESERIES hybrid coverage
+Presenter: Navid Ghorbanian
+- No Questions
+Presenter: Sandra Ciocio
+- Luise: For either navid or Sven, do we understand what causes these differences in these flexes?
+ - Navid: In coverage?
+ - Luise: Yes, is it understood?
+ - Navid: What’s happened with kapton is that we’ve moved to industry, and they aren’t likely being cut to the same tolerance as what we got at RAL. I’m waiting to hear from Sven. The Kapton isn’t that far out, but we probably need to establish what is a failure. For the coverage, my theory is that this is due to the print gap. This is adjustable, so I’m hoping we can get rid of the problem and make it more consistent.
+ - Sven: We reduced that gap to nothing and the coverage is inconsistent. It’s mostly the stenciling process, pressure, how much glue, etc. There is no way to control this so we either get gaps or a lot of seepage and I have no idea how to control this better.
+ - Tony: Does this explain the right/left bias?
+ - Sven: yes, but it’s a bit weird. We see one of the hybrids can have less coverage than another on the same panel. It’s a matter of where the force is applied and it’s not very controllable.
+ - Sandra: It's either the operator or the stenciling. The stencil is okay I guess because it is okay elsewhere.
+ - Tony: Is there anything you can learn from .. the EC adds holes. The Barrel has a full stencil without the gaps. Is there anything that can be learned from the LBNL technique?
+ - Sven: The stencil design is driven by the Tshirt printer, which is under tension and affects the pattern a lot. I don’t know if there is a way to adapt the pattern.
+ - Navid: We could go back a step and try to establish what would be a failure. We don’t know how much coverage is necessary and we have built a lot of modules with bad coverage and haven’t seen any missed FE bonds. But we don’t have any data on those wires. So maybe we want to establish what is a problem and there are things we can do to try to solve this. 
+ - Tony: Agreed. If you’re doing pull tests. FE is something we haven’t done. It would be interesting to see what kind of coverage you need there. From PQIC, it looks fine. Everything else in the system is stiff. Some concern we have from the EC is the edges. The bonds can go further in, but the gap eats up a lot of space there, so the bonds could be weaker. On staves it might be fine, but we should check.
+ - Navid: I did some measurements on that, and for bondability on that end, it’s ~1mm. So you can bond well into the bad and you have 2mm until you’re no longer well supported. That’s what we are doing on staves. Even with TB, it’s where you are likely to have good support. The bigger concern is that with the FEs … the first row of the bonds is 750 um from the edge, which is where we can say we need coverage.
+ - Luise: The reason I’m asking is that for the EC, we have the stitch bonds where you really have to have the coverage out that far. One of the areas we care about is the outer corner, so if you are doing these tests, it would be really helpful for us too.
+ - Tony: The argument we made before is that the flexibility of the hybrids is so different that our tests on these edges will tell you what you need to tell.
+ - Luise: If you’re doing these tests anyway, we would be interested.
+ - Tony: That’s where the kapton is not well controlled. But in the future we should have this solved. If you put bare kapton down on the sensor, you could have bad behavior. That corner could go anywhere and it would tend to want to go down.
+ - JH (chat): I think therefore from EC we were always trying to optimize the coverage up to edges more 
+ - Sven: that’s the side of the hybrid where we have the best TB coverage:
+ - Tony: Those are the motivations
+ - Vitaliy: I agree it’s best to quantify the bonding performance. In terms of solving the issue of coverage, Sergio showed on Friday a better-controlled process. Perhaps there is something from the DESY technique that could help us.
+ - Navid; I think what we need to focus on here is that these are preseires hybrids that need to go into the detector. So we should figure out what to do with bad hybrids. If they are “bad” we should carry out tests with these set aside to see if that will be an issue.
+ - Tony: We were going around and doing tests to 1mm on edge, and they seemed okay. Not FE, but the others. The corner is a different question too. If you look at the FE measurements and anything under 1mm is 62% that we could start using. 
+ - Navid: We should check to see how that will affect the rates. It’s not currently hybrids, but PBs, but we don’t want hybrids to be a problem.
+ - Tony: I don’t think anyone has said they were a problem, but I think we will set them aside and do measurements. Doing the pull test is a good idea, but it may be less important than we think.
+ - Navid: So we will build a module, maybe a dummy, glue it and bond it up with pull tests, then use that to establish a baseline? Then fail if it’s an issue?
+ - Tony: You can take the 2.8 (?).
+ - Navid: Is that reasonable, is everyone okay with it?
+ - Tony: Fine with me. If you look at H2 and look at the corner measurement, the worst two, playing around with it might tell you something.
+ - Navid: If you do it across the FE of one hybrid, that’s a lot of bonds
+ - Tony: I think you’d have to make this into a module. 
+ - Luise: I think the approach sounds good. I think you may need to do this for component types. X/Y hybrids sound good, but we might want to try this on EC hybrids too. Does this mean this will require extra QC going forward or will folks do this by eye? Otherwise it’s a lot of effort.
+ - Navid: I think Sven is doing scans
+ - Sven: Yes, but we don’t have the person power to handle that.
+ - Navid: I think you can catch it by eye
+ - Tony: If you cut on 2.8 that should work. You won’t get a lot of parts with coverage that bad, and when it is, you can see it by eye
+ - Sandra: yes
+ - Tony: With the level of shift we are having, do people worry about the exposed SE4445? Should we take it out? I think it’s yes.
+ - Sven: For the shifted kapton, were those cut out from the arrays?
+ - Sandra: No, we didn’t cut anything
+ - [Cole gets a hand cramp]
+ - Navid: What we’ve said is we won’t use them going forward, right Sven?
+ - Sven: Correct
+ - Navid: We should probably spread the message
+ - Tony: So take them out and not use them? We’ll do that one test on that one part. We’ll make a mechanical and do a pull test on the front. If you can also do a test in the UK, that would be great. The parts sticking out, the number is large relative to the gap between hybrid and PB, that’s the place you’d really care about. Do we need to trim those? Longer term can we put a spec on that?
+ - Sven: we have a spec for that on the standard tabs
+ - Tony: and that is sub mm right? On slide 12 it is bigger than that.
+ - Sven: Yes. It means it didn’t cut well. The problem with these tabs is that we cut them with the interposer side up and it doesn’t always work well. It’s mainly from the interposer design and it’s different than the one Navid made. I’m trying to get that working with the industry partner but it’s taking longer than expected. 
+ - Kirsten: Sven, can you cut it with the interposer down instead?
+ - Sven: not always if we have speepage we cant see it 
+ - Kirsten: Okay. It would cut better if the tab was flat against a surface
+ - Sven: Navid and I had this discussion in the past
+ - Navid: Summary: The particularly bad hybrids will be set aside. There will be tests in the US/UK for FE bonds with bad coverage and then go from there. I feel like the rest of these issues are already in the pipeline.
+ - Tony: For the table on slide 3, we’ll use the green ones now and put the others aside and do the test on the top column H0/2. There shouldn’t be any exposed SE4445, and we’ll cut/trim tabs again on the PB side. Is that right?
+ - Navid: With the exposed SE, do you also mean these pockets?
+ - Tony: I don’t know if you care about the pockets but it’s the misaligned ones, I think it means we have to check there’s no flaps left, as this can cause other problems. 
+ - Sandra: Yeah, we didn’t touch those [?]. Dangerous to touch.
+ - Tony: So we should get those out. If that’s okay, then Sandra can circulate a few complete arrays. That should get us started.
+ - Navid: Ok
+ - Sandra: I removed the ones with the tape so they won’t be used.
+ - Navid: Yes
+- Jan-Hendrik in chat: think therefore from EC we were always trying to optimize the coverage up to edges more
+- Luise in chat: yes and so far, the corners have been looking better! That's why I'm wondering where these variations come from
+- Luise in chat: (and if we could see them as well)
+- Gerrit in chat: The problem is that we, for wire bonding purposes, make complex objects. For large scale wire bonding you need consistency. This is usually accomplished by proper surface quality and support. Not having optimal support in multiple layers underneath somewhere will cause misery and lower yields.
+### AOB
+- Nope

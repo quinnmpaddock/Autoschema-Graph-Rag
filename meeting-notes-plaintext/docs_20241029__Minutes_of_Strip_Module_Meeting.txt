@@ -1,0 +1,226 @@
+# 2024-10-29 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1457266/
+### Introduction
+Presenter: Luise Poley
+- Ingo: We receive hybrids with interposers in the DB. Does this affect those?Luise: which ones? The ones you get now or the flexes you receive in the future?
+ - Ingo: future ones
+ - Luise: future ones will be ready for you, you don’t have to do anything
+ - Ingo: then we have to update our scripts
+- Sven: to be clear, flexes are items, they don’t have children so they can’t have an assembled interposer. 
+ - Luise: Yes, interposed flexes
+ - Ingo: As long as I have flag, I’m happy
+- Roland: Wasn’t the idea to add them to batches too?
+ - Luise: yes, but this will be the case for all objects. This will allow us to find out if the interposer was attached to the flex or the object, this method does this though.
+- Andy: For the failed HCCs, do we think this is a batch issue?
+ - Luise: We are trying to follow up but the relevant people are not around, don't know
+ - Andy: So it could be an electrical problem due to interposing?
+ - Lusie: could be ESD could be bad HCC need to follow up
+- Jaya John, would be about 2nd or 3rd week in January
+ - Luise: Currently, it’s not obvious from the DB if everyone has enough sheets, just let us know if you think you need more.
+- Tony (sl. 6): These are the bonds that are never going to be permanent right? Why are we chasing this?
+ - Luise: because we want to see if something needs to be adjusted like the glue pattern
+ - Tony: For bonds that will be removed and never used again.
+ - Luise: But you’re still going to bond for the petal/stave.
+ - Tony: but you bond further in so that shouldn't matter
+ - Luise: I don’t know if you saw the video from Scott, but even further in on the hybrid it can be bendy, so we wanted to check this out.
+ - Tony: I don't think that would be indicative of what you get. You will have to do pull-tests on dummies. It won't be characteristic at all, the edge ones we know are bad
+ - Luise: Yes, but that’s why this is the best indicator for the area we are interested in. This isn’t mandatory, we just want to follow up on this.
+- Gerrit: I fully agree with what Tony is saying and this is way too much work for us. You are only interested in peels?
+ - Luise: If you find they all break at some low level, that would be worrying too, but this is to assess the quality.
+ - Tony: it's not a question of work, it will give you false results
+ - Gerrit: I agree. I do worry about the work (we have to do metrology and whatnot). The best we can do is pull off the bond wires and see if the feet are left behind.
+ - Luise: any feedback would be appreciated
+ - Gerit: well check this
+- Dennis: I have also seen significant variation pulling the hybrid-to-panel bonds, so there is already significant difference before interposing.
+ - Lusie: I'm not sure we can tell the variation between interposers or not. We see a lot of failures these days we need to see if the bond parameters need to be improved
+ - Tony: If we are concerned with this, we should do dedicated tests on structures. If we are concerned, this is what we should do.
+ - Luise: If anyone has time to build these, this is a suggestion, can anyone build dedicated mechanical structures 
+- William: Just to add to Dennis. We’ve been reporting that Celestica has issues with hybrid-to-panel and have to use a different machine that goes much slower to get it done. We’ve done the best we can, but we are a bit concerned about this.
+ - Luise: That's why we didn't suggest to pull them off the hybrid panel
+ - Tony: LBL is doing mechanical assembly of hybrids, and they might have the throughput to do this. I’ll talk to them and see what they say.
+ - Luise: I don't know if you remember with barrel hybrids they seem to be reliable fine, we are not worried about them in the barrel. The endcap hybrids seem to bend a lot more. It could be because they are more bendy, it's more of a concern.
+ - Tony: For the barrel, we’ll do that and see what we get. 
+- Vitaliy: On this topic, one advantage of Tony’s idea is we can keep doing the bonding since we don’t care about the bonding. Qualitatively, it gives you one parameter.
+ - Lusie: if we can show the bonds further in are always better that would be good
+ - Tony: That’s what we’ll try to do. I’ll talk to Sandra and work on the problem.
+- Vitaly: the other idea is that if the endcap has separate issues that flexes are more bendy, maybe they could use a stiffer interposer.
+ - Gerrit: It wouldn’t help Vitaliy. You can make it as hard as you like, but the hybrid is still floating.
+ - Vitaly: I understand it's not solid by itself. From what Luise mentioned the hybrid and kapton layer were moving in unison. SE4445 could be an issue but with a stiffer interposer it could be reduced.
+ - Luise: Yes, let’s look into this and see if we have a problem.
+- Tony: I tried to look at these to clean them up, but there is no way to copy the serials. Is there a way to highlight and write it down? 
+ - Kenny: If you hover over does it not come up
+ - Kenny: The table at the bottom, you can put some filters
+ - Tony: Okay thanks, there's filters at the bottom
+ - Kenny: yes and in the columns you can filter this too
+ - Tony: okay thanks
+ - Ewan: The tables are sortable, so you can easily find what you’re looking for there.
+ - Luise: Thanks for trying to clean it up.
+- Dennis: Yeah, I think we should do it. I need to think about how, but we should do it.
+ - Luise: should we send these frames to you?
+ - Dennis: yes please send them
+- Graham, you said the AMAC draws the correct amount of power, are you sure it’s not the linPol and the AMAC is still not getting power?
+ - Luise: no probably not, when you turn it on it turns the right amount of power
+ - Dennis: It should be fine.
+ - Graham: thanks
+ - Lusie: what you're seeing is the current is not 0 its the correct amount you normally see there isn't an obvious reason its not working
+ - Karol: Did you try cleaning the DisplayPort ports?
+ - Luise: Yes. The usual cleaning didn’t work.
+### L4 Updates
+#### Production
+Presenter: Abe
+- No questions
+#### ITSDAQ
+Verbal update
+- Keep up to date on ITSDAQ
+- Bruce has been adding some things for logging. This has existed for a while, but there is also a few other interesting things now being logged. I’m also saving the assembly map. That data should be sent to the coldjiglib eventually.
+- We also check if coldjiglib takes too long to reply, so it will print a message to say that the influx server is taking too long. If it’s local, that’s unlikely but that can affect those who host it on the cloud.
+- Cole: the new mapping outcome is saved as a json file in the results?
+- Bruce: in the results directory yes
+- Cole: Do we anticipate and problems with merging
+- Bruce: maybe worth thinking about: if you don’t specify what exactly you want to merge, it could. That’s why we need to think about where and what to save exactly
+- Cole: that does seem like a useful thing
+### QCD Corner: Episode 5
+Presenter: Cole
+- Karol: this was only half the request, the other half was that the test isn’t useful: are we doing additional QC on the substrate or are we testing the wire bonding machine, in which case we would try to distribute substrates more in sync
+ - Cole: okay, it seems this would need more discussion
+ - Gerrit: its nonsense get rid of it, use cicorel cards
+ - Ingo: we went away from cicorel because they were inconsistent
+ - Gerrit: whatever we want to use
+ - Ingo: We can't get them in Europe
+ - Karol: UK also can get good cicorel
+- Luise: we said people can use cicorel or half moons whichever sites prefer
+ - Cole: I would prefer to move it to a different discussion
+ - Lusie: We need to agree what data we need. We were worried about the substrates. Because we now have interposers we probably want to check the surface quality
+- Tony: back to the 50: we have done the data analysis a few times and we don’t get more data from 100 than we get from 50, so can just reduce to 50 now
+ - Cole: if we are talking about only doing 50 now we can make this change now
+- Tony: if you want further descoping we need to discuss this further
+ - Luise: we need to see the data on interposed parts to see if there is any difference
+ - Tony: and then we need to weigh this against pull tests ahead of time and where to put the bonds
+- Andy: In terms of why we are descoping is this so we can follow changes to batch quality or bond quality we are getting through the door.
+ - Gerrit: That's the right question. You should be testing different component batches for component quality. This does not check the machine is functioning properly; it's just a waste of time. It doesn't make sense to check the same batch once a month you will always get the same results
+ - Cole: let’s go through the hands and then move the substrate discussion to next time
+ - Forest: what we left out was that we started these monthly tests because batches weren’t thoroughly tested and that was why institutes started doing them
+ - Luise: a lot of people are doing a lot of work to test these things at many sites. This is just testing at every site. The surfaces are being tested at the QC sites
+Agreement: Descope from 100 pulls to 50 pulls starting today, October 29th, 2024.
+### Group Update: Liverpool and Sheffield
+Presenter: Mitch Norfolk
+- Gerrit: This suction cup. Studies were done by myself and others years ago. None of them work well. We went away from track motion [?], it resulted in silicone coming off. Also, stuff didn’t fit in the holes of the frames. That’s why we did use it and went to FIPA
+ - Mitch: So you throw away the suction cups after using them?
+ - Gerrit: yes
+ - Mitch: we certainly don’t
+ - Gerrit: You can only use DI water. Most other things will destroy the silicone and leave more.
+- Vitaliy: wanted to say the same thing as Gerrit. Fur suction cup noise: do you deionise them before you touch the sensor surface?
+ - Mitch: We just use it randomly.
+ - Vitaliy: you are talking about recovery, I am talking about avoiding the issue: by deionising the cup before touching the sensor
+ - Mitch: No, we don’t do that
+ - Vitaliy: I would recommend it. Doesn’t take a long time.
+- Vitaliy: You mentioned you always had glue on the GR, what is the source? Hybrid or PB?
+ - Mitch: on these two images its the hybrid, I think mainly the hybrid
+ - Vitaliy: So, as I understand, you have the same stencil as all of the UK right?
+ - Mitch: yes, everyone uses the same stencil
+ - Vitaliy: So everyone must have this issue?
+ - Mitch: yes, it is quite a common issue across the UK
+ - Vitaliy: I would imagine then that the solution could be redesigning the stencil to step away from the edge, a few hundred microns maybe would be better than studying how much of a breakdown that could cause.
+- William: regarding the module that was breaking down cold, but fine warm? Does anyone know what that could be?
+ - Gerrit: We’re seeing it also. The thing to do is to look from the side how high the PB and hybrid are from the sensor. From what I’ve seen, they are closer than what I’m comfortable with. There might be silicone oil somewhere, but not necessarily on the surface until TC, where it somehow gets on the guard ring.
+ - William: We have looked for glue on the guard ring but can’t see anything obvious. 
+ - Gerrit: the problem is you can’t silicone oil between hybrid and powerboard
+ - William: It’s the shine and coloration. Okay
+- Luise: for your glue weights: what is your plan? Are you planning to adjust the glue weights?
+ - Theo: We saw this in the past and think the bendiness was the cause. The pin settings on our tools expect some bending, but interposing flattened things out, so if we reset, I think this might fix the problem anyways.
+ - Luise: Has anyone in the UK already reset the PB pins?
+ - Karol: we did it and we still get this
+ - Luise: Okay, so it’s basically under investigation what the cause is?
+ - Karol: yes we need to investigate this
+ - Luise: We’re seeing glue squeeze out and we’re not sure why. It’s for different geometries, so we should coordinate/
+ - Karol: In all our cases the heights look good. We think it's the pattern, in the UK we see it but in the UK they don't in the US because they are using glue robots
+ - Gerrit: We see it too. And that’s a problem
+ - Karol: You use a robot?
+ - Gerrit: Yes, and we see the same thing. We are waiting for the array-level interposers to come in before being too worried. We’ll take the first few months we get to put them in the pickup tool and put them under a scope.
+ - Karol: [missed it]
+ - Gerrit: Not as symptomatic as we have now]
+- Luise: It looks like you do see this squeeze out even if you’re on the low side, did you check this against the weights?
+ - Mitch: I think Bart was going to look into that but we still see it if the glue weights are low
+ - Luise: If you find out, that would be good, because maybe then we just need less glue.
+ - Theo: I think PB1 and PB2 are on the lower end.
+ - Luise: Okay, thank you.
+Presenter: Sven for Liverpool
+- Luise: Regarding the HCC register setting, is there any followup on what is causing this? Is this a particular probing result problem?
+ - Ash: No followup so far. I’m not necessarily concerned but I think Toronto has seen 1-2% of this working.
+ - William: This is the first I’m hearing about it. JJ?
+ - JJ: I have been working with R32. 
+ - Ash: I can put it on MM. But I did burnin with the modified R32 settings and it worked fine, but I don’t want to do this again if I don’t need to
+ - Luise: JJ, can you try these settings and report?
+ - JJ: I don’t have the hybrids in hand now.
+ - Luise: Okay, maybe we’ll check with Toronto.
+### 5 Hacks to Assemble Interposers to Powerboard Arrays
+Presenter: Anne Fortman
+- Cole (about slide 19): You seem to have large clumps of glass beads in some areas. Is that right or is this an optical effect?
+ - Anne: if you move the light a bid, you would see it everywhere. It is where we press down most firmly. They are not clumping there, we are just squeezing more there
+ - Cole: Thats what I was curious about
+- Cole: You had the array placed on paper, how bad was the oil seepage?
+ - Anne: very faint, now that we have reduced the stencil thickness. It improved so much that we can reuse the paper now.
+ - Cole: okay, thank you
+- Karol: when will you ship more PBs to the UK?
+ - Anne: As far as I know, the plan is to send two arrays to the UK after they’ve been tested (electrical and passive TC). The testing is taking longer than we thought to, same for DB. So we don’t have a time yet. 
+ - Karol: this is whats holding us up from making the rFDR staves. 
+- Theo: Going back to slide 19, what is your plan for reintroducing the alignment holes onto the FE of the PBs? I think it was left side.
+ - Anne: the current plan is to not do that for the foreseeable future. Had discussions about how easy it would be to punch out the holes afterwards, but then the glue gets everywhere, especially if we place them on the metal foam of the vacuum jig. Still thinking about it, won’t have holes for the near future.
+ - Theo: And the alignment advice for the module sites, what’s the recommendation?
+ - Anne: we have a guide for aligning PBs on the jig without the alignment holes, its on the interposer drive I can dig it up again
+ - Theo: know these, but may help to circulate them again
+- Gerrit: (Slide number 20) your showing mean and SD, there is a plot. What's the envelope min-max?
+ - Anne: I don’t have the envelope. Are you specifically asking for the whole PB or the range for the SE?
+ - Gerrit: The range for the SE4445. We have certain ranges for the glue thickness too.
+ - Anne: We are seeing 3-50 microns
+ - Tony: It's better than the bare PBs too right?
+ - Gerrit: I couldn't be worse or they’d be folding in on themselves.
+- Luise: it would be good to see in the electrical results if there is still one bad channel in the AMAC
+ - Anne: Yeah, I’ll have Stella send those around when we have them
+- Luise; there is the current stage where you interpose not AMTECH. When will the first PBs that are fully interposed at AMTECH arrive?
+ - Anne: I’m not actually clear on if these 30 more are just interposing at AMTECH and we do the rest. But I’ll let you know.
+ - Tony: That is the plan.
+ - Luise: So the first ones leave in early January or so?
+ - Anne: I think so.
+ - Luise: it would be good to turn them around as soon as possible so taht some of the rPRR have the final process.
+ - Tony: The plan is to use all of them. You’ll need all 30
+ - Luise: I’m worried that if this slips, this will be pushed even later.
+- Luise: The purpose today was to sign off on this today. I think this looks well-developed. We asked Anne to see this and give final comments. If no comments, this is the final process for the near future
+- There are no objections, this is approved.
+### Changing EndCap Module Jig Pins to Plastic
+Presenter: Peter Speers
+- Luise: We got an email from Valencia saying they were struggling with this, so maybe we’ll get feedback from them next week. But then we should send out a survey to see if folks want to do this themselves or centrally.
+- Sarah: More generally, I was wondering about the long-term precision from chaffing of the plastic.
+ - Pete: the barrel has done this, they may have more information
+ - Luise: This was done at UCSC
+ - Vitaliy: We used one of the pins on the HV alignment tab for some time now. It’s marginal after such a long time.
+### Barrel Tool Shimming Guide
+Presenter: Sven Wonsak
+- No questions, very clear
+### rFDR Preparation: Mechanical QC
+Presenter Ewan Hill
+- Karol: I’m confused about the pre/post QC request. I don’t think that will be easy to extract because the differences may come from early hybrids. The vast majority of UK hybrids are interposed at the array level, wouldn’t it be better to focus on those?
+ - Ewan: If I’m given the results, that’s fine by me. I’m trying to say that if a hybrid has been fully assembled, ASICs on, QC stuff, etc., it’s not useful to then analyze the results if you haven’t yet attached an interposer. 
+ - Luise: What you’re saying is correct. What Ewan needs is a way to distinguish them, but you’re right about what to focus on for the review.
+ - Karol: [missed it]
+ - Ewan: I’m happy to do that work if someone can walk me through it, since I don’t know about it
+ - Karol: I’ll send you stuff
+ - Navid: We aren’t attaching at the array level
+ - Sven: It’s a stage.
+ - Navid: Yeah.
+- Theo: thanks Ewan! For bow: are you also collecting the room temperature data and do you normalise the bow data with the temperature?
+ - Ewan: For bow, the tools I have extract the temp. I haven’t tried to temp bow v temperature or any temperature corrections. Might be possible to do later
+- Luise: If we can live with four EC hybrids? That’s all we have and there won’t be more before then
+- Gerrit: You’re saying you don’t have anything from the barrel, so it must be something odd going on. All the modules going on staves do have the bow measured.
+ - Ewan: Bow is fine. It’s …
+ - Navid and Tony: it is about the bow measurements after cycling
+ - Navid: the data has been collected, but not uploaded
+ - Gerrit:f For the US, we have the measurements. If you’re looking at the loading site stage, that might be the problem. I think they are GLUED. I’ll manually go in there and set the stage so that it can be picked up.
+ - Luise: Is that going to work if the test is uploaded at a different stage.
+ - Navid: If a bow test was done at a different site …. [two people talking]
+ - Luise: The modules should arrive in the FINISHED stage at a loading site so that when you do the bow it goes to the FINISHED or AT_LOADING_SITE. Sounds like it’s at the wrong stage. We probably can still use it. Navid, if you could upload it after first uploading the data, that would be great.
+ - For the future, make sure your modules are in the correct stage people
+ - Ewan: if the data is uploaded, we need to catch up on whether data is being misinterpreted as before TC data
+ - Gerrit: Very likely.
+### AOB
+-

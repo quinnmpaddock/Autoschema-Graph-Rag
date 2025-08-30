@@ -1,0 +1,82 @@
+# 26/09/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289857/
+### Introduction
+Slide 
+- No one planning to review R0/1 and R3 stencils again, official sign-off on EDMS now
+### ITSDAQ news
+- Vitaliy: code for IV tests has uncalibrated offsets - is that the case
+ - Cole: no, it calibrates them. It does a calibration and an offset calibration.
+ - Peter: depends on what you mean by uncalibrated offsets.
+ - Peter: it subtracts the offset to calibrate it
+ - Vitaliy: we see non-zero values when doing cold IV
+ - Peter: there is a zero measurement that is taken at 0 V, which is used to subtract it
+ - Vitaliy: but if subsequent readings are not zero?
+ - Peter: need to see the problem
+ - Cole: please send information of the problems so that we can investigate
+ - Vitaliy: feels like a problem, because at the stability test, this offset shows up
+ - Cole: the stability test does not have the offset calibration, it is something that will be added
+ - Peter: need to clarify what you mean where you see the issue (IV scan or stability test)
+ - Vitaliy: see 500 to 600 nA in stability test, IVs at room temperature look fine, IVs at cold temperature start at 100 nA and stay flat
+ - Peter: please send a plot. 0 is a bit artificial, but it sounds like the way we set zero right now is not working cold. Need some more information
+ - Vitaliy: will have Alex send data to itsdaq experts
+### QT report: module summary
+- Luise: if this is uploaded to the database as summary, is there a script to do this or do they need to use the web-app?
+ - Scott: that is something to be discussed
+ - Luise: if there is a script that can do it, that would probably be easiest
+ - Bruce: this is something that is done after all other tests, that is the thinking of the web-app
+ - Luise: in my head, this is more of a summary report for each module, that shows results from all test (to see where a module is bad)
+ - Bruce: keeping tests up to date is a reason to use the web-app
+ - Luise: maybe we can come back to this later
+### QT: end-cap electrical test results
+Slide 
+- Luise: for unbonded channel classification for SS it is probably not feasible to use normal ITSDAQ data (R1 and SS), but rather use Jamse’s specific macro
+- Luise: for spreadsheet values, recently have updated the numbers but they haven’t been moved to the spreadsheet.
+- Luise: some modules have intentionally rotated coils, which look like this.
+- ……
+Slide 15
+- Luise: there are two effects that make noise worse: not using tuned config files or which test setup was used
+ - Sten: all tests are from thermal cycling tests
+ - Luise: then it would be good to know if tuned config files were used
+ - Sten: that was something that was not easy to extract, but we should look into this
+ - Luise: our overall noise should hit the requirements, so this might actually indicate if something went wrong
+ - Dennis: this also looks like a module that had some other issues
+ - Sten: what would be the way forward? Get all serial numbers of failed modules?
+ - Luise: yes, would be good to follow up if people have used tuned config files.
+ - Dennis: also if older powerboards with high noise have been used could explain this
+ - Luise: which module has which powerboard version
+ - Sten: so V4.x in database is not track-worthy?
+ - Dennis: all with V4.x should be good powerboards. If it is V3.y then they are old
+ - Sten: will check
+- Luise: would be good to understand if there are test problems or powerboards causing the issue
+- Vitaly: what is the driving factor for noise cuts?
+ - Luise: look at each module, fluence and how the sensors worsen. Start from nominal, take all different changes into account and extrapolate what the module of this type at the highest fluence would see.
+ - Vitaliy: if you look at R0, R1 & R2 they kind of scale this way, but not R3/R4/R5. Maybe there is a typo in the calculation or something else broken
+ - Vitaliy: we also can’t just increase numbers (cuts)
+ - Luise: you are right, something looks off. There were a few bugs in the overall spreadsheet, so we need to check this again
+ - Dennis: als the R1 (covered/uncovered)
+- Vitaliy: do we also have the numbers from the barrel?
+ - Sten: LS similar to R4/R5; not sure about SS
+ - Vitaliy: if we have numbers for barrel in code?
+ - Sten: ITSDAQ currently only has a global cut
+ - Vitaliy: this might be something to look at
+ - Luise: this is a outcome of the PRR where we noticed that we only have global cuts, but we need type specific cuts
+### QT: Thermal cycling test results
+Slide 
+- Luise: how do we converge here? It looks like there are no trends.
+ - Luise: one thing to look at was maybe disconnected bonds over time
+ - Luise: is there something between warm and cold cycles where you see changes?
+ - Erik: haven’t seen any clear behaviour, but also not looked much into warm test
+ - Luise: from this it looks like we don’t need any additional criteria than passing every test
+### End-cap module metrology II
+Slide 
+- Vitaliy: is unbending the bend powerboards an option?
+ - Laurelle: unsure how easy it would be; haven’t tried it
+ - William: problem is that they have 150 um features and are wire bonded, so bending them is not too feasible
+ - Vitaliy: no, we get them fully assembled and sometimes bend them
+ - William: but ours are more flexible
+ - Vitaliy: might be worth to check
+ - Dennis: major problem is that end-cap powerboards are more irregular than barrel powerboards, they don’t have a major curvature, they bend in all directions
+ - William: whenever you touch the edges, there is a risk of creating issues with bonding
+ - Luise: put the concerning powerboards at a side, but we don’t want to end up with a large number of those not on a carrier. Best is to mark them in the database with the “Too bent to use” flag
+### AOB
+-

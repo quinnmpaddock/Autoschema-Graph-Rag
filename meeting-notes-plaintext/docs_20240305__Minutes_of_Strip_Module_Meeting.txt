@@ -1,0 +1,110 @@
+# 2024-03-05 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1362204/
+### Introduction
+- William: For hybrid pull testing month, are we supposed to use something other than the hybrids we are building with?
+ - Luise: This is half-moons this month. But there is was a sign-up for parts (dedicated failed flexes)
+ - William: And these should be replaced?
+ - Luise: Periodically, yes.
+ - William: We got one in November, but we should probably get another.
+- Andy: What is the potential two modules? 
+ - Luise: There are crack-like signatures.
+- Gabriele: I’m not sure we see the other cracks.
+ - Luise: There should be a talk on Friday where we might have identified a method to find a crack.
+- Vitaliy: I believe what is being tested is half a stave. 
+ - Luise: Yes
+- Gabriele: Just for clarification, I don’t know what you mean by potentially two more cracks. There was nothing shown on Friday that show
+ - Cole: There were some DAQ signatures that suggest there may be two more cracks, but this needs to be checked of course.
+ - The phrase “potentially two more” has been removed from slides to avoid confusion.
+- Bart: In the UK, we are only starting to build a stave similar to the US. I suppose we should use the test pieces to add wide-gap modules to this?
+ - Luise: The loading procedure is different, along with the glue-mixing process, etc. We would like to see what effect the different sites have on these staves.
+ - Bart: On the next stave, if we see a problem on this current stave, I don’t see the point in continuing to build the same way. Shouldn’t we add different mitigations?
+ - Luise: There is still something to learn here. This should probably be discussed in more detail at the task force meeting.
+ - Bart: Should we put the module builds for the UK stave on hold?
+ - Andy: We did have a discussion to change plans with the build based on what we see as we go.
+ - Bart: [expresses worry about burning through production parts]
+ - Gabriele: My comment on statistics. On the older staves, we saw many more cracks. This one we so far only have one stave, so low statistics.
+- Vitaliy (sl. 5): For what we understand, the SCIPP test with the Wuerth PBs, they have similar features if I understand correctly. Were they fabricated at the same time or with the same substrates? (as concave PBs). 
+ - Luise: Dennis couldn’t make the meeting today, but we can follow up. 
+- Tony (sl. 5): When you say weaknesses, do you mean via failures?
+ - Luise: When these coupons were meant to be baked, they burst. So we think maybe there was actually something wrong with this and caused via cracking.
+ - Tony: Okay, then do we actually do these tests on the special barrel Wuerth ones?
+ - Luise: Which ones?
+ - Tony: The coupons
+ - Uli: We always do this.
+ - Tony: Did you QA the barrel ones?
+ - Uli: To my knowledge not in the barrel
+ - Luise: Let’s check on this then.
+- Craig: I wanted to clarify that the PBs we had problems with were so far only associated with the batch that has exploded coupons. Is this correct?
+ - Luise: Cannot say this absolutely, but Dennis should comment so we can be certain. It’s correlated though.
+ - Craig: If they are all tied to the exploding batch, then perhaps this was the signal.
+- Kenny: optional tests have not been included in the web app ye
+ - Luise: Yes, we’ll work on this, please don’t use this right away
+- Carles: This is automatically meant to be set on the stage or does the user need to know if it’s optional?
+ - Luise: It used to not be obvious that a test was optional or mandatory, so now we can mark it as such with an indicator
+ - Carles: So this will be done by the module ACs?
+ - Luise: yes
+### L4 Updates: ITSDAQ/Sensors/Documentation
+#### ITSDAQ
+- Tony: is the stability test included in the merge?
+ - Cole: no, only repeated tests
+- Tony: so how does a module get marked as failed?
+ - Cole: don’t have enough data to pass or fail modules in TC right now
+ - Tony: thought this might be an outcome of the merged data
+ - Cole: will check on it
+- William: how far do you want us to go back? Last summer?
+ - Cole: if it works with data from last summer, please do
+ - William: so you don’t know if it works?
+ - Cole: if it works on six months old, that’s perfect
+- Luise: previous idea was that the end of the module test would be the deciding criterion, so if the module is fine at the end, it’s fine, unless we find trends over time
+ - Tony: thought all the individual tests needed to pass individually and if one failed, the test failed
+ - Cole: need to look into it and see what the pass/fail flag does
+ - Ankush: currently implemented: if any of the tests failed, the overall test failed, but this was written knowing that this is probably too strict
+ - Everyone needs to know that the current way the script is implemented is currently overly strict
+ - Need everyone to collect data so that we can refine these criteria
+ - Tony: ties into question of how reliable these systems are
+- Luise: let’s get an update from the qualification task that looked into it 
+ - Cole: will follow up
+### Group Update: Birmingham and Glasgow
+- Pavol: I have a question about the “magic” spreadsheets. Do they work for the EC?
+ - Andy: No. There is nothing stopping it from working but we would need to set it up.
+ - Luise: Ingo is already working on this. They already have some of the EC-specific problem. Get in touch with Ingo.
+ - Ingo: And Ben
+- Tony: regarding the burn-in crates: are you planning to do this for all the UKC sites?
+ - Juergen: We are only planning to have additional setups at Liverpool, B’ham, and [missed it]
+ - Tony: isn’t that all the UKC sites?
+ - Juergen: There is a longer discussion about HBI (spares and such). That is what we would need. 
+ - Tony: We do have two crates, but we don’t have plans to load them at the same time. A single crate does 60 hybrids a week. Are you planning on 360 hybrids per week?
+ - Juergen: probably not planning on 100% duty cycle
+ - Tony: Are you planning on a 20% duty cycle?
+ - Juergen: They won’t just be run 100% at a time
+ - Tony: It would be good to understand the throughput you need and how many HBIPCs you need. It seems like two crates for the entire country is enough.
+ - Bart: I think the sites, when we go for accelerated SS, there is only one site which exceeds 6 panels per week, but we need this extra redundancy
+ - Tony: Redundancy is good, but there are three sites doing this. THe most is 120, which is two fully-loaded crates, but you are asking for six.
+ - Bart: Yes, and this allows sites with hybrids and modules to run things in batches, so that they can alternate between hybrid and module building (separately). This requires extra capacity to make this up. What is the problem here? We get this is a lot, but it gives us the needed redundancy
+ - Tony: need the powerboards and need to build them, they cost 200 USD per powerboard and need personpower to build them
+ - Tony: This is a factor of 4 on safety
+ - Bart: only when things are working well.
+ - Luise: Maybe it helps to say that the UK has been reshuffling parts for later in production. Maybe we can follow up on this and the new plan soon. Maybe we can take this up online?
+ - Tony: This is a factor of four and for module cycling we don’t even have a factor of two.
+ - Luise: Let’s follow up offline
+- Vitaliy: I remember there was an indication that the UK had the numbers. Bart, you are probably in the process, so soon you will send us the numbers right?
+ - Bart: will do
+ - Vitaliy: once we have the number, will see how many more HBIPCs we can build
+ - Bart: It’s also good to remember that this becomes more critical during SS production. But we can have the discuss about 
+### Reporting Update
+- Carles:: I guess it would be useful to have a time stamp on this on the top of the file so we can quickly see when this data was taken.
+ - Kate: yep, can add that
+- Luise: I think this would be a great thing for development. I think it would be good to save the previous reports with a date stamp.
+ - Kate: This will happen in a future update. Once we get the automated filling done, it will go into the appropriate bucket in the database
+ - Kate: The history of the last week going forward is also going in there
+ - Luise: I also see a lot of Nones in the Brookhaven list. If you could get the MongoDB entries for these, we can probably clean these up as well.
+### Bow After Unpowered Baking
+- Vitaliy: This is a nice study. If I mentally plot bow v temperature, there appears to be a jump. This must mean something.
+ - Pavol: Yeah, we want to measure more points to be sure when the discontinuity happens.
+- Luise: As a reminder, the nominal glass transition of TB is around 100C, but when we measured it, we saw about 52C. Of course, there is a range, so you would expect the onset of the glass transition to be slightly lower than that, so it does make sense you would see this change somewhere between 40 and 50C. The whole study was meant to be a part of the PRR follow-up: Hot Trunk talk regarding passive vs active cooling. This ties into what temperature we should set as a maximum NTC temperature on the module for the various module types. So Pavol kindly agreed to do this on the other side of the module as well (with PB). It also checks if the holding mechanism also has the effect.
+- Luise: The question about if the holding mechanism has an effect is also being studied
+- Luise: There is also the associated effect where pre-heating the glue can affect the glass transition temperature.
+- Vitaliy: I would imagine it would not be difficult to move modules in the car with cooling boxes. This should be relatively easy. 
+ - Regarding glass transition temperature: was wondering if the dominant effect here is the glass transition temperature of Loctite (the hybrid glue) rather than the module glue, because Loctite has an even lower glass transition temperature
+### AOB
+- None

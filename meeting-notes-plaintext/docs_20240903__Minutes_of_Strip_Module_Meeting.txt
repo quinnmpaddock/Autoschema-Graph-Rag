@@ -1,0 +1,150 @@
+# 2024-09-03 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1442751/
+### Introduction
+Presenter: Luise Poley
+- Pavol (sl. 4): Should we send it directly or through CERN?
+ - Luise: Empty cases go straight to Toronto, the instructions are in the backup slides I think [checks for a bit]. Slide 7, very last point.https://docs.google.com/presentation/d/1vH-zeZ0zO4argUMpm5QMcym-n0CzMtOpBeMzd2nKRMw/edit#slide=id.g43e82a22d3a3ac1e_0
+- Carles: For the panels that have faulty hybrids on them. Do we want to detach them from the panel and return or keep them together?
+ - Luise: Please keep them with the panels and return only panels.
+### L4 Updates
+- None today
+### Thermal-Cycling Proposal
+Presenter: Cole Helling
+Shunted tests 
+- Bart: Why do we still keep the shunted test? What’s the rationale?
+ - Cole: While the possibility is low, we want to keep an eye on whether Cold Noise shows up again.
+ - Bart: But this is a case of QC creeping into QA territory, what do you expect to see at -35 degrees?
+ - Cole: But while we don’t know the exact mechanism, we don’t know if it might come back.
+ - Luise: Since we just changed the design, we may want to keep this for another few months and collect more statistics and then re-evaluate.
+ - Cole: Yes, the goal here is to descope.
+ - Bart: Okay, that sounds better.
+- Sergio: How much time would we really save by removing shunted tests?
+ - Cole: About 25-30 minutes.
+ - Tony: Do we need to recheck the timing if we change the temperature from shunting.
+ - Cole: We need to check.
+ - Tony: It’s a good idea to check, but we need to make sure we don’t produce bad data.
+- Ingo: Currently we take a 3pt gain and 10-point response curve right? 
+ - Cole: Yes
+ - Ingo: I am always wondering why we do both a 3-Point Gain AND a Response Curve, with the same test again.
+ - Peter: We take 3PG to mask noisy channels before 10-pt RC. It was a dirty way to go around. I would strongly recommend against making it the basis of checking for cold noise – not enough statistics. We could look at a scheme where bad channel screening is less frequent. But if we drop shunted RC from this cycle, I think there’s a big risk of throwing out the baby with the bath water. Maybe we can replace an unshunted RC with a shunted RC? 
+- Peter: Where does the 12-hour come from? 
+ - Cole: That was the aim for the test, with the goal that there could be a turnover once per day
+ - Sergio: Comes from the starting cycle late in the evening, cycle overnight, and then switch them out the next day. 
+ - Ingo: That was what we planned. If we go 24 hours, we cannot produce 
+ - Peter: But with a shorter time, you could still change once per day
+ - Ingo: [List of how messy module preparation can be for 5 modules and caps off with no-can-do] 
+ - Peter comes back with how you have 4 spare hours if you cycle for 20 hours and that it’s OK for 4 modules 
+ - Cole: let’s get back to topic
+ - Ankush: To me, 12 and 14 hours are the same to me 
+ - Cole: “This is horseshoes and hand grenades, not darts” goal is to come back to 12-ish hours
+Skip intermediate warm tests during cycling
+- Andy, “Take a bigger bite”, S6: the reason why this was considered useful was to test the contraction and expansion of hybrids to check the vias integrity of the flexes.
+ - Cole: The pre-imposed test will test the same temperature and they happen at the beginning and the end. If someone can show data on the warm test going haywire then it's worth it.
+- Sergio: Why don’t we remove the unshunted test at cold temperatures and only do a shunted test?
+ - Cole: No, the time savings are not similar. Are you saying remove the cold tests that happen at the same time as the cold tests? (References where shunted tests happen, S11) Removing the (2) unshunted tests at cold temperatures would be the same time savings as removing the shunted tests. We could do the 1:1 replacement Peter described 
+ - Sergio: I see, understood
+Slide 10+: talk moves on to pass/fail TC criteria 
+- William: The first and last test could fail 15% of the time, too - do we redo them?
+ - Cole: That’s true. Really, we need to know why it failed. If it’s a comms issue (mishandling of software), that’s not a real issue. There are some things we need to handle manually until we figure out how to handle them in s/w.
+ - William: But 15% of the time, the blue ones may fail as well
+ - Cole: I would love to see the data 
+ - William: It’s hard to get. We’re struggling to get this in hybrid burn-in 
+- Luise: I think the stability test we can't say what is a pass or fail so it shouldn't be removed from the list.
+ - Cole: Sorry, I think it’s important to say that the HV stability test at the moment always passes and then we consider it. It’s basically always passed unless current compliance is reached.
+- Luise: I think the first and last test, is it possible to check if there was for example a problem with the pedestal trim and that's why the rest of the tests fail.
+ - Cole: I would be tempted to ask Peter. I’m not sure how well you can tell this 
+ - Peter: No, pedestal trim does not count the number of bad channels, let alone decide if things are well-trimmed. I was thinking yesterday of adding a pass/fail to the pedestal trim which would provide an out. I’m really pissed off when I come in the next day and the whole thing is junk because one module didn’t work properly (implied that it’s a bad pedestal trim) 
+ - Cole: Preach it! I think we should fix these issues at the source. 
+- Luise: I agree that a fraction can fail to be honest. I think the first test can be considered out of all the tests. I think we need the module to work at the end. If the module looks bad at the very end, I think we need to repeat it. 
+ - Cole: I think the question is why do the first test
+ - Peter: if the first test is bad then you don't continue and you save time because you don't start the TC.
+ - Cole: I’m not suggesting we remove it. If we aren’t going to grade that beginning test… 
+- Peter: Missed three slides due to a phone call. I will read the slides and the notes. I’m very concerned we might be cutting a little bit too far. 
+- Ingo: There was an issue with failing IV curves has that been fixed or was it a previous ITSDAQ version
+ - Peter: That depends on the failure - which High-Voltage failure, why, and with HV power supply
+ - Ingo: Keithley and intermediate unreasonable values in the AMAC curve 
+ - Peter: this should have been addressed, there was a communication problem between monitoring and ITSDAQ. Keithley is not a usual test case, but last time we tested it, it was fine.
+ - Ingo: thanks
+### Finalizing UK Tooling Plans
+Presenter: Bart Hommels
+- Luise: sounds totally reasonable, is everyone okay with this?
+ - No comments
+ - Luise: congratulations Bart
+### Update on Interposed (Barrel) Powerboards
+Presenter: Zhirong Zhang (Stella)
+- Cole: Is there a way for institutes to know if it is an ESD issue?
+ - Stella: We don't have a direct way, we can only deduce that it is ESD damage.
+- Luise: Did you really test more powerboards after this ESD protection update?
+ - Stella: Not really we tested two or three panels since our last ESD update, we see 1 or two PB with ESD damage
+ - Luise: Okay
+### Potential Insight into Breakdown Involving Glue on Modules
+Presenter: Jack Osieja
+- William: Struggling to understand the difference between glue on guard ring and not glue on guard ring. I thought all of it was bad, but there seems to be something else going on about how even the mixture is and how well it cures?
+ - Jack: I agree. You can’t get a 100% homogeneous mixture. I’ve tried many times to do exactly as the instructions say, and definitely didn’t get an even mix. It wasn’t the intention of what I said about a bad mix. The components would have to be off by a bit.
+ - Luise: One of the interesting things is the correlation that doesn't make any difference unless there is a defect underneath. All of this could be different on a larger scale. The reason why we see the glue sometimes causes breakdown could be because there is already a defect or contamination.
+ - William: That’s right, there could be a scratch along the edge. But how do people get water on their sensors? That shouldn’t happen.
+ - Luise: This was just done as a test to see if water could cause an effect
+ - William: Okay, fair. So you’re talking about using a vacuum pen. But even then, you shouldn’t be near the edge. 
+ - Luise: Yes but the glue could spread there and anywhere there is a defect and glue, you could get a problem
+ - William: Yeah, I admit there could be a defect there that we wouldn’t spot.
+ - Jack: There could be some sort of correlation between the contamination and glue.
+ - William: I'm struggling to understand how water gets there. Glue can. Other things, like touching it. But I’m not sure what water.
+- Sergio: Going back to this badly cured glue, could this be related to expiration dates of the glue, have you seen any correlation? How do I understand your statement that once the glue is cured, it doesn't cause early breakdown? As far as I understand, if there is glue on the guard band it causes breakdown.
+ - Jack: (slide “hard breakdown over time”) Yes. So I went back to an older slide and you can see that I took measurements every hour. Then did it again 24 hours later from where it was originally mixed. Nothing had changed and had stayed under dry air. Unlikely that caused EB.
+ - Sergio: So your saying if the glue is fully cured there isn't a problem?
+ - Jack: So when I’ve taken the test after fully curing the glue, it seems to go away. The only thing I can pin that on is the curing time.
+ - Ingo: We have seen sensors recovering from just dry air, you have also done IVs. There is some indication that hardening of the glue does improve it but you can't conclude this.
+ - Jack: I can definitely agree with that. In the instances where I used a very bad mix of glue, it broke down early even after a few weeks. I can try this again to confirm.
+ - Ingo: I think the latter is true when you have a bad mix that cures bad.
+- Tony: we saw this with Araldite in the other direction (it got worse when it cured), we saw that glue on the guard ring didn’t improve over time.
+ - Luise: It’s kinda the other way around. The presence of oxygen inhibits the reaction. But I agree, in these situations where it doesn’t cure enough, irradiation may fix that.
+ - Tony: it makes sense that radiation helps, I’m not sure if its worth testing this
+ - Luise: For the samples we can produce where they don’t recover over time, we could use gamma irradiation to see if it solves the problem.
+ - Tony: I agree I don't know if you can do that, in the US the chance of us getting bad mixes is small. From what we have seen if we get glue on the guard band the bad IV doesn't go away. We haven't tested after 20 days though
+ - Luise: Yeah, this is the main question, why some recover and some don’t.
+- Michael: for the tests of glue with scratches. We have always been concerned about scratches around guard ring and bias ring. Did your study involve these different possibilities?
+ - Jack: In terms of a scratch not near the edge/guard rings, I don’t believe that the glue contamination would cause any hard breakdown to occur. Maybe increased leakage current. But when there is no scratch, I haven’t tested it specifically, but I can check. 
+ - Luise: Your totally right this has not been tested on the diode. We need to understand what the difference between module and these diode are.
+ - Jack: Totally fair
+ - Xavi: I should say that in some cases, in sensor production, we saw breakdown from deep scratches that didn’t affect the outer structures. In general, if the scratch is deep and important, you can see early breakdown as well.
+- Pavol: We should always keep the sensors in dry storage. But if we keep it for a half-day on the table, could it create trapped charge from humidity?
+ - Luise: That was the idea of water on the diodes. It’s not humidity, but it helps address the question of how this started.
+ - Pavol: If there is some small scratch that you don’t see, it might perhaps trap charge from humidity. I’m not sure if there should be a test to determine this. If you glue something there, it might trap the charge that can be removed perhaps with ion blowers. Usually if you do it right away (glue immediately after taking sensor out), it is good. But maybe leaving it out a while is not so good.
+ - Jack: for these diodes, they were not outside dry storage for more than 15 minutes.
+ - Luise: that might be useful to follow up on Jack.
+ - Jack: for sure.
+- Tony: I know Vitaliy has a long list, but he’s not here. I’ll have him read your slides and provide feedback. But it would be good to talk with him.
+ - Jack: I will reach out to him
+### Early breakdown on recent R0 and R3 interposer modules
+Presenter: JJ Teoh
+- Cole: have you tried to use the ion lblower? Some of these look like low strip isolation?
+ - JJ: We haven't done that, we don't have an ion blower yet.
+- William: The thing most striking to me is that, for the R0, the cold/warm IVs are the same. So that seems like a smoking gun. The fact that the same current is seen at such different temperatures. I think it’s in the R3 as well. I welcome any suggestions on this.
+- Sergio: As far as I understand, you claim that one possible reason for the R3s is because of the shift in the hybrids. It would be nice, since that is quite simple. What I’m trying to understand is that if there is a chance that the SE4445 from the interposers is causing the issue. Were they immediately used to build modules, perhaps before the SE4445 was fully cured?
+ - William: So they were built and they were made into modules around 10 days later. I wasn't aware there was a limiting time.
+ - Sergio: No, that does sound long enough. I was thinking about 24 hours.
+ - William: yes, that’s one advantage of Celestica, since they are 50 miles away, they have time to cure before they get to us. It doesn’t look like any of it came out of the interposer, but it’s hard to tell.
+- Luise: Question 1: the failure mode of SE4445 is usually a single strip with very high noise - do you see anything like that?
+ - William: the interesting thing is it is all in the away stream.
+ - Luise: the ooze out can crawl really far over the sensors. We have seen it crawl further than that
+ - William: We’ve looked right under the wirebonds, but these examples that JJ is showing (sl. 10), they are centimeters away. It would have to crawl under the hybrid. 
+ - Luise: So far we have seen early breakdown and SE4445 crawling across the sensor but we haven't seen this particular problem. It would be good to try and see ooze out and noise at the same time.
+- Luise: Question 2: can you cycle more to see how the IV evolves?
+ - JJ: For the R3 or R0?
+ - Luise: The R3. It would be interesting to see if it is stable.
+- Luise: We are thinking about having our modules with EB irradiated at BNL with gammas to see if that improves. If you are planning to replace the half, that would be interesting to see.
+ - JJ: Yeah sure
+- Peter: These signals of noise, in the away strips, are very reminiscent of the “sucky cup” noise. Are these handled with rubber suction cups?
+ - JJ: no, don’t think so
+ - William: I’m not sure… the sensors are lifted onto the frame with four suction cups, but they aren’t where the noise we are seeing is I think.
+ - Peter: its worth checking to see if they correlate with the suction cups
+ - William: That one on the bottom right is closest to the suction cups. Would be good to check.
+ - Peter: Yes, the one in the middle doesn’t look like it unless there was a tool. In our case, the suction cups were cleaned with the wrong cleaning fluid and it caused degradation.
+ - William: we have built 20 modules with these things and we only see this now
+ - Peter: Maybe they just cleaned them?
+ - William: I don’t think cleaning is part of the step, but we will ask them.
+- Gerrit: do you clean the backsides of the hybrids before they get glued onto sensors?
+ - William: Capillary-ing down under. Somehow creeping underneath …
+ - Gerrit: yes, and silicone oil is very difficult to remove
+ - William: And that’s why I’m pretty sure they didn’t put alcohol on their suction cups since they don’t likely have it.
+- Sergio: yes, we should discuss this in the task force

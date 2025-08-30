@@ -1,0 +1,36 @@
+# 2025-02-18 - Minutes of Strip Module Meeting
+Strip Module Meeting (18 February 2025) · Indico
+### Introduction
+Presenter: Navid Ghorbanian
+- Vitaly: we have some sensors, that virtually all were exposed to more than 20%, is this specially high humidity?
+- Carles: Loading ACs were writing procedures for module reception, we found the text said to flag modules with high humidity in transit, might have been with high humidity for 3 weeks if the bag was not sealed properly, do we store for a week in dry ambient?
+- Navid: could this cause long term damage?
+- Carles: We don’t want to assemble anything on it until it’s removed right?
+- Vitaliy: if the concern is condensation or frosting then that could be bad. If you have condensation on the surface with the bonds you have a metallic joint with built in potential. You could instigate a reaction with condensation that would ruin the wirebonds
+- Navid: if it happens, should be picked up in the loading reception test?
+- Carles: I never saw anything like this, this is not only related to module reception at loading sites, any where that does QC on modules and so on.
+- Vitaly: I would argue there has to be some time limit. We assemble in ambient conditions so every module will have some exposure at some time
+- Navid: I think this is more if something gets shipped to you and the 20% has triggered, would we still use these?
+- Carles; wouldn’t fail reception test but what do we do next? Do we store in dry cabinet before we test it or do we test it when we receive it?
+- Navid: I think just test when we receive it, I don’t see a reason to wait for it to be dry.
+### L4 Updates
+#### Topic: Module Production Coordination
+Presenter: Abe
+- Gerrit: since these are substantial and costly shippings, will you contact the institute liaison to check the institute is ready to receive, otherwise could be sitting import company or loading dock
+ - Abe: For the previous shipments we checked with the cluster managers, but would be a good idea to implement this
+- Jaya John: The main thing to watch out for is the year end, we have a date that we would not ship past so things don’t end up with stuff being left in warehouses
+ - Abe: ok so maybe we can slightly adjust the Dec/Jan shipment to something that accommodates that
+- Gerrit: I am worried in the US strange things are happening, labs being closed down. Receiving companies being closed down. They will probably be shut down so better to check way before.
+ - Abe: good point, thank you
+- Carles: The endcap sensors, do you have an estimation when the sensors are available to store at CERN?
+ - Abe: I don’t know, maybe Vitaly will comment 
+ - Vitaly: We’ve planned out for next month through to May, should be ok. Some sites would like sensors earlier so we are moving some out of intermediate storage at CERN so more storage is available. My hope is that, finishing within half a year, we would have enough storage or close to that. Will be able to see better in a few months, hope module production will start and sites will have more room in a few months
+ - Carles: we are stocking many sensors for months of production, are we supposed to keep this amount of buffer in sites or should we store a quarterly quantity or something like that?
+ - Vitaly: up for discussion, you have more than a quarter now?
+ - Carles: need to check but I think yes
+ - Vitaly: next quarter you wouldn’t get any then but up for Abe to decide
+### Group Update: LBLN
+Presenter: 
+- Navid: Thanks for the nice presentation, really well detailed
+### AOB
+- None

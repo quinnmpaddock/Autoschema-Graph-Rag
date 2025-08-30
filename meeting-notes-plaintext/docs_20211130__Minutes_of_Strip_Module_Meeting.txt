@@ -1,0 +1,157 @@
+# 30/11/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1084886/
+### Introduction
+- Put link to google document for VI issues into google spreadsheet of all EDMS documents and also add to strip module TWiki page
+ - https://twiki.cern.ch/twiki/bin/view/Atlas/ITKstripsSTARModules#Other
+ - https://docs.google.com/spreadsheets/d/1Wz0AGhhRxJEstdy0W28KCHNPt69i1i2NIaYVqpiiShU/edit#gid=548678230
+ - 
+- Flags:
+ - Also add one for mechanical stress (e.g. bend back flat, …)
+ - Are flags resetted?
+ - Some should always be there (e.g. moisture exposure)
+ - Are schockwatch flags linked to database shipping?
+ - No, and in a single shipment multiple objects can have individual schockwatches
+ - In case of multiple flags, the interface is not obvious. In the we gui, need to provide both otherwise old flag will be removed
+ - Additional: also should have a flag for “cleaning was required”
+ - To be discussed
+- 
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 30/11/2021: Barrel tasks
+- 07/12/2021: EC tasks
+- 14/12/2021: Barrel tasks
+- 11/01/2021: EC tasks
+- SMD tendering for barrel pre-production/production hybrids
+ - Contract has been signed, task is closed
+- Irradiated R5 module for December 2021 Testbeam
+ - Hybrids glued onto sensors today
+ - Vitaliy: IV tests on sensors?
+ - No one from Freiburg here to comment
+### HV tab update
+- SFU will start with elemental analysis of contamination
+- Tony W: circle imprints (slide 8, Kirstin) are from manufacturing process of stacking sheets during lamination
+- Tony W: jagged edges: some days machines work nicely and we don’t see jagged edges, some days they come through with jagged edges - it is not understood
+- Tony W: before we discuss, need to know from chemical analysis what is dangerous and has to be removed, or what can be accepted; and what cleaning process is required
+- Concern at SCIPP: transfer of the contaminant onto other surfaces which are then contaminating everything else
+- Tony W: need to understand better what kind of residue is a problem and what we can live with
+- Tony W: yield currently at 62%, can be done through pre-production, not viable for production. Need to understand which cleaning is needed
+- Ilona saw that SWAJ helped, but not clear how much that improved the yield
+- Kirsten: cleaning can be done and helps but cleaning is not sustainable for production - can Oxford do the cleaning?
+ - Tony: clean one sheet at a time, cleaning each sheet for 30 minutes causes problems
+ - Ingo: believe it was 10 minutes in SWAJ, 10 minutes in DI water
+ - Tony: does this remove only white dust or black gunk as well?
+ - Ingo: black gunk seems to be reduced
+- Tony W: alternative technology to chemical method
+ - Chemical method it probably not suitable for production with the current experience
+ - Look into laser ablation technology
+ - Contacted company in Germany that provides a laser system for this and als send them sample material
+ - Also contacted a Canadian company that can do this in house
+ - Close to TRIUMF, so might be an option to do inspection there instead of shipping it back to UK
+ - SFU/TRIUMF volunteering to test these tabs
+ - DESY might have another machine that could do it
+ - Would be nice to try it as proof of principle
+- Craig: will Oxford play around with the wet chemistry?
+ - Limited amount of options
+ - Laser might be an option, but need to check results first, can’t plan with it yet
+ - Need to fix the wet chemistry process first
+- Forest: don’t want every site to have to do their own cleaning, SCIPP has SWAJ and can test cleaning, but doesn’t seem like a final solution
+ - Tony: just no idea how to improve the process to make them cleaner
+ - Can clean the HV tabs, but don’t seem to be able to improve results
+ - Forest: were there changes between the first and later batches that would explain the different levels of residue? Tony: no
+ - Forest: what’s the cleaning process? Tony: sheets go into ultrasonic bath and rinsed afterwards and dried
+ - Tony A: wasn’t there a proposal to change the process, how often the bath is changed, orientation of sheet, rinse, etc
+ - Forest: could do multiple rinse processes? There are waterspots on the HV tabs, which indicates they weren’t rinsed often enough
+- Forest: asked for spacers to be placed between sheets when they are shipped - please remember to add spacers
+ - Tony A: wanted spacers and stiffener material
+- Luise: is there an interest for groups to have a dedicated meeting to discuss HV tabs (e.g. cleaning)
+ - Tony A: need that viable 
+ - Luise: maybe in 2 weeks after QA/QC meeting so that people have enough time to try this
+- Tony W: currently in process of making more barrel tabs
+ - Tony A: do sites need SCIPP/Cambridge to ship some samples for cleaning tests?
+ - Tony W: should we ship out new batch once they are available or wait until after the discussion?
+ - Bart: would like to have some of the new, but no manpower to look at them right now
+ - Luise: suggest that barrel sites that want some sheets should contact Tony
+ - Tony W: EC tabs need a couple more weeks
+ - Tony W: tempted to hold on to tabs until meeting and then send them out when there is a conclusion
+- Tony: need them in hand a couple of weeks before PPB
+ - Tony W: will send out tabs early next year
+- William: what about EC tabs? Are there enough for PPA?
+ - Ingo: tabs at DESY are for everyone
+- William: would we change to laser ablation (if it works) only for production?
+ - Tony W: if it works will use it as early as possible
+### Curing time studies
+- Tony A: what this means is we can glue one hybrid and one powerboard on a module in one day if you have two shifts or an eight hour day
+- Andy: two hybrids the position was out of spec, but were they bondable?
+ - Tony A: yes
+ - Question might be: can you still bond it on the stave?
+ - Tony A: what we are worried about is glue on the guard ring, wire bonding angle and distance between hybrid and powerboard
+ - Ingo: dominant for barrel, end-cap also has stitch bond question
+ - Craig: in the past have thought that some of these specs might be a bit too tight, might revisit them through pre-production. Stave is less of a concern and item clash on the module will be seen before metrology
+ - Luise: reporting these things will help to evaluate specifications
+ - Tony: flagged as failed, build a module 
+ - Luise: fail metrology, keep assembling
+ - Craig: needs to be flagged in some way that something has failed (e.g. the test) but continue using it
+ - Tony A: could put it in production reports
+ - Craig: yield numbers are based on current specs, but could then later be re-evaluate
+ - Luise: if test is out of spec, the test needs to be failed; if the component is still usable, can continue otherwise need to fail the component
+ - Andy: need to be careful with this when calculating failure modes
+- Tony A: does this lead to issues with tab cutting? 
+ - Forest: cut on panel
+ - Andy: vacuum is terrible on panel
+ - Craig: first dummies on panel and vacuum there was worse, therefore baselined cutting on assembly jig
+ - Forest: matter of preference and no method is perfect
+ - Craig: have seen hybrids moving on jig, might have to wait if we need to re-evaluate specs
+- Craig: important here is that glue curing with reduced vacuum time works
+- 
+### SQ Feedback
+- Bonding requirement: only a cross or a 3 x 3 matrix?
+ - Forest: no, need to stay with matrix; do those 80 wires still make such a difference?
+ - Andy: groups have said it’s quite a lot of bonds already
+ - Forest: look at some of SQ and groups are calling out they are good to bond one square over; part of SQ is showing they can do it, and part is that groups actually did the optimisation
+ - Craig: we say you have to fulfill the specification of the bond, weather the peak is in middle or edge of matrix
+ - Forest: sometimes see peak at edge not in centre
+ - Craig: but as long as we fulfill the specification it is fine
+ - Forest: but that is not optimized
+ - Luise: groups might have reasons on why they chose this point
+ - Forest: yes, but they not always explain it well (or answer questions)
+ - Craig: 
+ - Bob: agree with Forest: if have matrix does not make sense to choose a point at the edge of the matrix, groups need to show they have a plateau and you are sitting in the middle of it
+ - Craig: show this with the matrix, but peak does not necessarily have to be the central value
+ - Craig: does not look like we can agree to reduce matrix to a cross
+- Need to show bond feet: is is sufficient to show this on the cicore card?
+ - Gerrit: what do you want to show?
+ - Luise: there is a requirement to show something
+ - Gerrit: but it depends on substrate and how it is sucked down on every jig
+ - Luise: have already reduced to to show on one substrate, but what object is required?
+ - Gerrit and Forest agree: Cicorel is sufficient
+ - Craig: does it have to be a chicorel, or can it be something else (e.g. hybrid)?
+ - Ingo: might be able to pick any surface to show this
+- Also allow SQ sites to only show they can build one hybrid type per site they are building for the hybrid assembly document
+ - Andy: was ist for stitched & unstitched?
+ - Vitaliy: show similarity so if you show it for one hybrid, can assume you can build other types as well
+ - Luise: good, change it to new requirement.
+Feedback for procedures
+- Run numbers: can we agree on using run numbers as increasing integer, starting by 1
+ - William: how is this for ITSDAQ tests?
+ - Luise: to be discussed for electrical tests
+ - Gerrit: are not date and time of test sufficient for sorting?
+ - Luise: for reporting scripts don’t exist and sorting for run number is potentially easier than having to look up through other test information
+ - Agree to only use increasing integers
+- Shipping feedback about location of humidity indicator cards and desiccant bags:
+ - Vitaliy: agrees that position of the indicators/desiccant is importantInstead could maybe also tape to side of the frames instead of using the channels, but would need to be tested
+ - Luise: would be desirable for groups to start using something like this (and maybe develop something)
+ - Gerrit: a bit concerned about having to build something new and need to find groups to make them
+ - Vitaliy: need to have to avoid condensation at all cost
+ - Gerrit: items shipped in moisture barrier bags stay dry for months
+ - Vitaliy: but also in shipment temperature goes low and can cause condensation
+ - Jonas: do we have any data that shows there is an issue in and outside of the module shipment box?
+ - Vitaliy: yes, in a broken bag a card was flush on the top of the box with the bag and indicator had no path to moist air and did not trigger
+ - Jonas: was there an air path into the module
+ - Vitaliy: yes
+- 
+### Controlled demolition: Tails from the Crypt [Silicon]
+- Postponed to next week
+### 
+### AOB
+- This was Karola’s last meeting and the project will be worse off for it!

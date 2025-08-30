@@ -1,0 +1,135 @@
+# 22/02/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1109670/
+### Introduction
+April Testbeam modules
+- Jiri: are ASICs diced?
+ - Luise: yes
+ - Jiri: need to find out when Prague has the next irradiation
+ - Luise: thank you, if not available need to look at other sites
+- Ingo: could build relatively fast R0 hybrids for it
+ - Luise: testbeam team vaguely preferes R1 module, but if R0 is the only we can get build in time
+ - Dennis: think we should have a working R1 set
+ - John: depends on what is best for review: R0 has worst signal-to-noise so would be more interesting, and also has same fluence as SS
+ - Luise: but it sounds R0 would be better for module PRR
+ - Luise: would tend to R0
+ - John: agrees
+ - Coordinate between DESY Z and Valencia to build the module
+ - Luise: any volunteers for SS module
+ - Sven: if we have the parts, can build the SS module very fast
+ - Tony: need to discuss the powerboard details; don’t think the PPB substrates will not be ready, not sure if that can be pre-irradiated
+ - Dennis: would expect the AMACStar can be irradiated with ASICs
+ - Dennis: just want the pre-irradiation similar to Taiwan (bare ASICs)In this case we don’t need to pre-irradiate on the hybrid
+ - Tony: but for powerboard should be done on the powerboard
+SQ feedback
+- Uli: Some people record videos with sound, which is rather useful others don’t use microphone. Prefere with sound.
+Project news
+- William: after parts have been made for staves/petals or after staves/petals have been assembled/populated
+ - Luise: after you have build your share of the staves/petalls
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 01/03/2022: Barrel tasks
+- 07-11/03/2022 ITk week
+- 15/03/2022: EC tasks
+- 22/03/2022: Barrel tasks
+- Shipping readiness (incl import procedure)
+Australia now has solutions in place to ship modules to Europe
+- Hybrid crate setup, finalisation and roll-out
+Close this one and use the new one
+- Single Hybrid Testing Database Implementation
+Mentioned in introduction
+- Hybrid Burn In Software
+Still some software issues to be debugged
+- Single Module Test Database Implementation
+Current plan: upload test data to individual hybrids, use “on module” stage for module test data, but upload to individual hybrids
+- Multi Module Test
+First end-cap cold box arrived in Zeuthen
+Warwick QT student now working on open questions, specifically for ITSDAQ questions
+- PPB Module for April Irradiation
+Covered in intro
+### 2-part epoxy dispensing at SCIPP
+- No comments/questions
+### End-cap test results
+- Carles: already saw issue with ground screw (reported in the past) and reported to EC cold box group
+ - Luise: should probably be updated in module test document
+ - Carles: I don’t know the final outcome. DESYH investigated further
+ - Ashley: has send some comments by emailWhat is the expected noise?
+ - Dennis: like SS module ~800-900
+ - Ashley: would look at jig that you are grounded properly (also look at HV-filter network on test frame)
+ - Ashley: also have reservations about the connection from frame to jig
+- William: do you have the sense line ground bonds?
+ - Luise: no
+ - Dennis: usually does not recommend sense for LV, there is no real benefit for single modules
+ - William: was talking about the field shaping bonds
+ - Luise: they are there
+ - Ashley: if you just pub bare hybrid on test jig you will not learn anything since they are not sensitive; what surface is the test jig on?
+ - Luise: ESD safe foam
+ - Vitaly: could also try to probe the LV on the hybrid
+ - Dennis could probe on shieldbox for GND and on large pad for LV
+ - Ashley shows plot of noise: it is elevated everywhere equally which indicates common mode coming in from some source (e.g. the jig)
+### Liverpool GUI - ASIC Assembly
+- William: how long does it take once you push “go”
+ - Sven: about 10-20 seconds
+ - William: sometimes get timeouts, then have to fill by hand
+ - Sven: are you using ITK DB?
+ - JJ: yes
+### bPol V6 planning
+- Sven: wouldn’t do more thinflex hybrids with PPB parts: not good for building modules
+ - Forest: tighter gap for curing, probably cured fine but gap is not held at correct height
+ - Tony: not sure if Liverpool wants to build SS modules with their thinflex hybridsWould be interesting to see a LS module build with v4 powerboard at Liverpool and compare to US
+ - Ashley: Y hybrids will always be a close run, should maximize use of X hybrids (build LS module)
+ - Tony: need to use V6 in same way and need to check before PPBMake a v4 and v6 pair at each siteWhat to do after that and with those
+ - Luise: there is a new batch of v6 that is more reliable and one should be used for the test beam
+ - Tony: need one or two from Timons hand-stuffed batch
+ - Luise: LS vs SS: last 2 staves from pre-production would be LS (and most likely to be dropped), so using LS sensors should not be a problem
+ - Tony: even for SS should be fine since we ordered for a more extended pre-production
+ - Tony: would be nice to make 1 more v4 module, and then go for v6If to use the hand-stuffed v6 and put on PPB stave for systems test, they could fail so need to be careful; but would be good to put on a one-off stave
+ - Dennis: one of the test as part of systems test is transient test and requires a stave with v6 modules
+ - Tony: original systems test was v4 only
+ - Dennis: but afterwards there will be v6
+ - Tony:pre-production order for powerboards are all v4
+ - Dennis: thought the second half of PPB was v6
+ - Tony: no, only 100 powerboards ordered
+ - Luise: should we build the v6 modules at SCIPP/Liverpool and then see on how to continue from there
+ - Tony: Timon needs to know how many are required to hand-replace v4 to v6Longer term would need to make enough parts for AMACStar development, but would need to understand where they go first
+ - Ashley: is the coil orientation different between v4 and v6?
+ - Tony: no, they are same. And they will be same in production
+ - Ashely: for the time being suggest to go with v6 since they are used in productionMaybe build another LS type module
+- Sven: for a one-off, could use a thinflex hybrid, just becomes tedious for more than 1
+ - Tony: how about Liverpool uses thinflex for one V4 thin flex module for comparison with SCIPP
+- Plan: Liverpool makes one thin-flex + bPolV4 module for comparison with SCIPP
+- Then: build v6 modules in both places for comparison
+- Then, afterwards, decide based on results if more sensors will be needed
+- Tony: sensor group would prefer to use production sensors for this if possible
+ - US: use production sensors
+ - UK/China: use pre-production sensors
+ - Bart: would it be worth waiting for the new batch of sensors?
+ - Vitaliy: only expected to ship mid April, probably too late
+- Check with systems test people if mixed modules should be made for systems tests!
+- Check with US people needs to set up IVs through AMAC, how many AMACstar modules are needed for that
+### PPB Thinfex Module at SCIPP
+- Dennis: can you try the sensor current and hybrid NTC readout with this?
+ - Jacob: haven’t tested it so far with this setup
+ - Tony: is there any routine for the test?
+ - Dennis: it’s the same syntax, just a slightly different nameShould be in working branch
+ - Tony: don’t have the right configuration for ABCStar so far, waiting for shipment in database
+ - Do we need the configuration for AMACStar?
+ - Dennis: when using an FMC-DP, required functionalities are already there and available
+ - Dennis: for AMAC, planning to make [can we write that in notes] code improvements where e.g. restart is no longer required, need to understand how much database interaction is 
+- Tony: we want to also include unbonded test in IV, for which you need the AMAC
+ - Luise: let’s wait until the functions are there, first develop the unbonded test, then think about how to combine them later
+- Dennis: Did you just run the full test or GUI tests as well?
+ - Jacob: only full test
+ - Dennis: might be good to run the GUI as well since they are in physics mode.
+ - Tony: still surprised by looking at bands and how much they are separated
+ - Dennis: it’s interesting how much lower it is, give that it’s the same ASIC
+ - Tony: don’t have the right configuration, but don’t expect that to make that much of a difference
+ - Ash: if the coil orientation is wrong, field coupling into sensor backside could cause this issue
+ - Tony: could explain it, need to get the correct ASIC configurations to do the final test
+ - Could explain why the very first module was looking so good - maybe that one accidentally had the correct coil orientation
+ - Ash: checked with magnetic probe, indeed looked like the coil orientation could have caused it
+- Tony: know that the hand-stuffed ones have the coil in the right orientation, know for sure for those
+ - Problem: now changing substrate, AMAC etc at once, so mixing different results
+ - Would be good to get magnetic triggering results from those modules to compare to coil orientation
+#### AOB
+- ITk Week next week!

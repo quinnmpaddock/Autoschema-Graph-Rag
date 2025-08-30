@@ -1,0 +1,232 @@
+# 29/11/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1191866/
+### Introduction
+Slide 3
+- Tony: have qualified for PPB-2 on certain parts of SQ, do we need to qualify for the other bits before we can continue?
+ - Luise: yes
+- Andy: is the plan to go to the PRR with modules with various glue heights and glue types?
+ - Luise: yes, we think they are sufficient to demonstrate that we can build modules to the requirements
+- Carles: what would be a good reason to ask for an exception for thermal cycling?
+ - Luise: the question is “why is the site not ready”. If e.g. the cold box melted then parts could be re-routed and an exception can be made. If it is only because site has not spend time looking into the setup, they should better spend time doing this than trying to meet a certain target
+- Andy: do we use the new HV-tabs?
+ - Luise: yes. They have already arrived in the UK
+ - Bart: rather use the new tabs than the old chemically etched
+ - Tony: ours are still stuck in DHL
+Slide 5
+- Carles: is this for the tests or if this is chosen as final option?
+ - Luise: tests for now
+ - Carles: no, was talking about the recommendation. Should ask specific sites to do the tests instead of asking clusters so that we cover all flavours
+ - Luise; unless SE4445 is excluded, sites should start getting used to the glue and how to handle
+ - Andy: is the recommendation to not use glue mixers and de-gasers?
+ - Luise: mixing small quantities [by hand] so far is OK. For larger quantities an automated system is required
+ - Carles: first point is to get the SE4445 homogeneous in the container, which is the reason for mixing
+ - Dennis: first sites should look into mixing the glue by hand
+ - Andy: for production should every site use mixers?
+ - Luise: we first need some experience with small glue quantities, since loading sites mix larger quantities
+ - Bart: but we need to be more looking into a production system. We should baseline mixers for production. But to get everyone accustomed with hand mixing right now seems like a bit of a waste
+ - Luise: you can mix the glue by hand, but don’t leave it unused for a longer time. You also need to use it with the stencil
+ - Bart: for the UK e.g. there is only one site that can do automated mixing. Would do the mixing there and let other sites build with other glue
+ - Luise: but then only that side has experience with the glue
+ - Bart: would be reluctant to spend parts with this glue right now without knowing that glue is used for production
+ - Luise: understand this and the UK can decide to have only RAL use the glue. But then all other sites will not have experience to use the glue with the stencil
+ - Tony: and that is why we decided to have all US sites use the glue (hand mixing)
+ - William: have industry partner to use Polaris, but it would be expensive to get them use SE4445 for now and that does not seem viable
+ - Luise: if you think it is better to not use it right now
+ - William: ideally we have everyone ready after the PRR. agree with Carles that we should pick some people to do certain modules.
+ - Luise: not everyone has to develop stencils. And for gluing, you can also use the existing sensor designs and glue to get ready.
+ - William: when we start with modules, we will have a look
+ - Geoffrey: it is fairly similar for us. We have kind of guaranteed that the final processes will be very similar.
+ - Luise: change for you will be rough since you use a glue dispenser
+ - Andy: if the module PRR is in march, do all groups need to be ready at the PRR to use SE4445?
+ - Luise: yes. You can get around by starting with hybrids first. The plan is to start production directly after PRR
+ - Gerrit; you can’t start production without a proper pre-production with the final parts
+ - Luise: that’s why out of the 3 remaining staves we build approximately 50% with SE4445
+ - Gerrit: glue dispensing for SE4445 also depends on the dispenser type. Some can’t handle the glue
+ - Gerrit: the critical point is the pre-mixing of the individual components of the glue. They need to be mixed really good before combining the two components.
+ - Luise: would be good to have some instructions on how to use SE4445
+ - Matt: currently make slides for this
+ - Andy: could we get COSH instructions for SE4445?
+ - Gerrit: we have to dispose cured glue as chemical wast, so that would be important. You need to check how it is used and how to dispose of it.
+Slide 7/8
+- Bart: received new tabs and quality is very good. They don’t have any database IDs on them. Should this be created by the reception institutes?
+ - Luise: in past they were registered at the reception sites
+ - Bart: OK
+ - Bart: do you require the yield values from the old etched tabs?
+ - Luise: no, don’t have to go back.
+- Bart: do you have a review of the tab production?
+ - Luise: just general: happiness of using them, …
+ - Bart: do sites have to pull tabs to prove that the welding parameters are good to finish the SQ?
+ - Luise; are you asking to redo the SQ?
+ - Bart: no, just if it would be enough to pull 20 tabs to prove parameters are good
+ - Luise: there are two different things: reception only requires to pull 1 tab per sheet.
+ - Luise: for sites that have already used tabs from this, they have already optimized their parameters and they don’t need to do it again. Only sites that have never received the new tabs need to re-optimize their parameters
+Chat
+- Luise; there will be a discussion about pre-heating of trueblue in the cold noise meeting. It is not clear so far if pre-heating is causing more cold noise or not
+### Institute Contributions
+Glasgow
+- William: when you go to thicker glue heights, you stack stencils?
+ - Andy: yes
+ - William: thought you do just one thicker stencil
+ - Andy: had one less stencil than we should, so needed to stick different stencils together
+ - William: but for the powerboard the stencil had to be cleaned?
+ - Andy: no, that was to remove the stencil frame from one side
+- Luise: sensor AC’s asked to provide comparison of UV-cured to no-UV-cured. Do you collect this?
+ - Andy: the data should be in the database
+ - Bart: I think QMUL will have IV before and after UV-curing
+ - Andy: I show IV-s of different modules
+- Pavol: normal stencil is 300um? But we use 250um?
+ - Sven: it depends on the glue patter. This was optimized for use
+ - Pavol: so 250um is good for us
+ - Matt: it was to help with the compression rate
+ - Pavol: if you want double the glue amount, you can’t just double the stencil thickness?
+ - Matt: it is roughly linear, but needs to test this. One part is the fill rate (for us 0.7%) and the compression factor (for us 1.75). Think it is better to have a higher compression factor since a low value has caused issues for us in the past if the part was not flat enough
+From Chat:
+- barrel glue compression ratio: 120 um glue height = 300 um stencil -> ratio of 2.5 -> scale for new desired glue height [280um] and stencil thickness
+- 300 um stencil -> 700 um stencil = 2.33 extra glue weight ratio
+Next week: Lund
+### AMAC IV test
+- Vitaliy: for the IV plots, were they temperature corrected?
+ - Emily: no
+- Vitaliy: in data format: can we add the number of data points per current measurement?
+ - Emily: should be easy to do
+ - Vitaliy: that could be an interesting parameter to record
+- Vitaliy: you said you added the VBD calculator to ITSDAQ, was that verified?
+ - Emily: what was done before was to use a python function. I have now implemented this into ITSDAQ
+ - Emily: tested it on a handful of data, hasn’t been tested extensively
+ - Vitaliy: this is potentially not trivial. We have evaluated different algorithms and used 70 test sensors to evaluate them. Would be interesting to see your test cases and how the algorithm evaluates them
+- Luise: for the breakdown, think we need to have some smoothing in the plot. We need to make sure the noise IV does not get misinterpreted as breakdown
+ - Emily: don’t have many AMAC IV data to do this
+ - Luise: would be good to get more data and verify this. Slide 3 has some spikes that should not be mis-identified as breakdown
+ - Vitaliy: the existing algorithm has some tolerance for this. But the data is slightly different
+ - Luise; would be good to have this for the AMAC IV as well
+ - Vitaliy: don’t necessary want the algorithms to be the same, but want to check that it is working on the data
+ - Emily: have tested it on some AMAC IV data and it was fine. Will test it on all data I have
+ - Luise: as soon as this is in master, we should get more data
+- Luise: for the calibration, it would also be good to record the temperature calibration value
+ - Emily: OK
+ - Luise: think this is for the NTC readout
+ - Emily: don’t know how to access this in ITSDAQ, but can add this
+- Luise: for compliance, you read out the current through AMAC?
+ - Emily: yes
+- Tony: for compliance, does this mean that all power supplies need to be enabled in ITSDAQ for control to do the automated ramp-down
+ - Emily: would not be able to tell you this
+ - Luise: this is a requirement for the cold cycle system
+- Tony: interlock is being set based on the AMAC current - do we need two interlocks?
+ - Emily: the power supply current will be very different. I don’t think that we will be looking at that
+ - Tony: so we will set a wide compliance for the power supply?
+ - Emily: ITSDAQ doesn’t use power supply current, only uses AMAC current for this?
+ - Bart: how easy is it to adjust the 20uA value?
+ - Emily: just a default value, can be changed to 10 uA in GUI
+ - Bart: that’s the HPK spec, but we can set the compliance lower because our sensors are better than expected
+ - Tony: need to have a hard compliance on the power supply if something goes wrong
+ - Theo: can talk about this next week
+- Luise: also use same function from Emily for leakage current stability test at end of cold cycle
+### Discussion points from flex QC review
+Slide 6-8:
+- Stick with current 10% lift-off rate (no request to increase it)
+- Carles: don’t have much experience with new hybrids
+- Luise: can be re-evaluated when people have more parts
+Slide 2-5 (Slide 9-10 for cleaning procedures)
+- Luise: would like if possible for sites to follow known working procedures
+- William (4): our tests show that cleaning didn’t help. If we had better data showing that cleaning close to bonding would help, we could do this, but we don’t see this.
+ - Luise; we still try to understand why for you cleaning doesn’t work
+ - William: but we have limited data showing that cleaning does not work
+- Gerrit: second what William is saying. It’s really a lot of work to clean the circuits. Don’t understand item 2: if items are cleaned and stored properly, they should not degenerate. We don’t have the personpower or resources to do this
+ - Luise; can you get your pull tests to pass without cleaning?
+ - Gerrit: agreement is that Berkeley will do cleaning for all US hybrids
+ - Luise; if that works for the US, than this is fine
+ - Sandra: the cleaning we are talking about is not just for dirt, we talk about cleaning with safewash and brushing with toothbrush and drying. If you see that something is polluting the pads, that could be blown off.
+ - Luise: if cleaning at LBNL is fine for the US, that is fine. Slide 5 is only a proposal for sites that have issues
+ - Tony: that is the experience we have. We haven’t seen any degradation with time. Would be nice to see the data that shows otherwise
+ - Forest: parts have been stored for 4 months. Point 2 of slide 4 is not according to our experience.
+ - Gerrit: localized cleaning will just lead to inconsistencies
+ - Marc: we did see that hybrids got wors when they arrived in Canada
+- Luise: these are not statements that everyone has to follow (slide 4), they are just guidelines that can help
+- Tony: cleaning is necessary from experience
+- Gerrit: are the powerboards cleaned when they are returned after SMD?
+ - Tony: don’t know
+ - Tony: they also don’t have the mask
+ - Gerrit: find this whole thing about cleaning troublesome. We should go to the loading company and ask them to clean the circuits
+ - Dennis: SMD companies are far from cleanrooms
+ - Gerrit: they should clean the circuits and vacuum seal the circuits
+ - Dennis: SMD companies are not set up any more for cleaning.
+ - Gerrit: should talk to Timon to ask what they are doing
+ - Forest: in industry it’s about 50/50 with no clean. The main problem with the hybrids is the peelable mask
+ - Ashley: production circuits will be without peelable mask. And companies in UK are all no-clean exclusively. 
+ - Ashley: the company that got the contract does not do cleaning
+ - Gerrit: could the soldermask be an issue
+ - Ashley: we had circuits without peelable mask processed without issues with solder splash and they are better.
+ - Sandra: drying is very important. We are looking into developing something to do this
+- Luise; what is the plan for the UK? Will Liverpool do the cleaning for all?
+ - Sven: that is not currently the plan, but we haven’t discussed this
+- Luise: what about other clusters?
+ - Ingo: In Zeuthen we have cleaning options, we will have to try
+ - Geoffrey: will have to get in contact with our lab and check this
+- William: We need to find somewhere to clean the circuits and then find the money to pay for this. Celestica is not that place. We should look for somewhere in North-America to find a place to do the cleaning. Very uncomfortable to do it at different sites.
+ - Luise; yes, would be interesting to see how much this would cost. Amtech might be an option?
+- Forest: believe that Simon has some experience with Ultra-sonic bath cleaning and damaging circuits. We should look into this as well.
+ - Forest: maybe try with coupons and see if the cleaning damages the circuits
+ - Sven: barrel coupons are not used in the way shown in the slides
+ - Forest: how can we evaluate the cleaning process?
+ - Forest: don’t know what the actual failure is
+ - Luise: once we know, can find a way of how to test them
+### De-scoping of monthly pull tests
+- Kirsten: can’t descope this - not enough data. A lot of data from one site, not enough data points from other sites, just not enough statistics
+- Forest: monthly tests was a compromise - thought about just using batch based testing, but that could be more work
+ - Especially powerboard testing being left mainly to the vendor is worrying
+ - Shouldn’t just leave it to the vendor
+ - Sven: we do both: we test every batch and we test everything at each institute
+- Tony: some sites have better uniformity than others based on numbers, so quality is different
+ - Tony: goal was to check whether there is a drift of parameters on surfaces, but currently we mainly see scattering
+ - Question: do we gain anything from testing all surfaces?
+ - Kirsten: goal is to check creep on surfaces per surfaces, so you want this per institute and surface
+ - If you have gradual worsening of parameters over time, want to track that
+- Tony: shouldn’t this be handled by batches/reception?
+ - Sven: two separate issues here: batch tests to qualify surfacesSecond: changes in bond machine and creep in wire bonders,
+ - Sven: this should be caught with cicorel card checks, where you should find parameter creep and see these issues, since wedge changes will happen quite frequently over time
+ - Tony: agree, but need to balance this against batch/reception tests, and how it matches against monthly tests
+ - Tony: probably want at least two sites to check surface quality of batches, as a cross-check, to qualify surfaces (Forest confirms), so that issues are caught even if we don’t have monthly pull tests
+- Confusion about the list of batch tests shown here:
+ - Sensor bonding being organised throughout all sites right now
+ - ASICs: done per batch, volunteered to be done by SCIPP
+ - Hybrids and powerboards: done by flex QC sites
+ - 
+- Andy: do we have all the data provided by groups?
+ - Sven: using data shown in the spreadsheet
+ - Andy: could be an indication of the amount of work this requires and sites struggling to do this
+ - Sven: it’s only four objects per month
+ - Andy: which percentage of groups has been able to do this?
+ - Sven: a lot of data has been provided for this study, but a lot of data is still missing, difficult to make a final statement about everything
+- Forest: what’s the conclusion?
+ - Can not descope anything right now
+ - Vitaliy: so everyone does their own tests on every batch every month?
+ - Luise: no, not every batch every month, just every month
+ - Sven: so far, still every substrate every month, would be good to distribute more parts to people to collect more data
+ - Kirsten: yes, more parts would be good
+ - Andrew: so do we descope this or do we keep going forever?
+ - Forest: missed the batch test, but idea was to do batch tests and then each institute 
+- Clarification for sensor question:
+ - Whether we need to test each lot is currently being investigated in a dedicated campaign: https://docs.google.com/spreadsheets/d/1yIFGnY2C4L0U-uaOaegbrGSFJyHTNXFonojFOWM7B4s/edit#gid=0
+ - This is independent of people doing these monthly pull tests at their own institutes
+- Bart: difficult to do with test coupons because of limited bond area space, can not do multiple pulls on coupons
+ - Sven: yes, known problem
+ - Luise: should try to get failed parts out to community
+- Forest: can send tabs to module sites, save powerboard coupons, it’s not impossible, there are some mitigation techniques
+ - Sven: problem is that they undergo thermal tests
+ - Forest: could use tabs
+ - Sven: do have enough hybrids to distribute so that pull tests can be done on hybrids
+- Bart: conclusion is that we continue as is?
+ - Forest: hopefully people will do more pull tests so that we can descope later
+ - Bart: can we divide this into divisions so that not everyone has to do everything
+ - Kirsten: so we spread the batch tests over more institutes
+ - Forest: misunderstanding of what this is: this is for sites to demonstrate that each individual site locally is able to bond this
+ - Bart: have you seen instances of people’s cicorel tests being fine on cicorel and not being fine on powerboard tests
+ - Luise: do not have enough data to do this right now
+ - Bart: in an ideal world, we’d expect everyone to do these
+- Bart: split assignments between sites; e.g. 2 UK sites to monthly powerboard tests, other sites hybrids, others sensors. Do this for other clusters
+ - Luise: instead of monthly pull test
+ - Luise: if we put names against this, it might help. We will look at this
+- Forest: if you want to descope, than everyone should to the tests for the next 4 months, otherwise we don’t get this descoped
+ - Andy: powerboard test coupons are a problem (space)
+- Luise: understand how many parts we can get to sites, then distribute and hopefully distribute in a defined way to make the load easier on people
+### AOB

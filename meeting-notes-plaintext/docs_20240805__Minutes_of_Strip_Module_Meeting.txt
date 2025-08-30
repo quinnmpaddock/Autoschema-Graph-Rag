@@ -1,0 +1,149 @@
+# 2024-08-05 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1442746/
+### Introduction
+Presenter: Luise Poley
+- Luise: [Asked a question of a bullet point on slide 2, I missed the question]
+ - Anne: We are occupied with the interposer modules for now
+- Peter Phillips (sl. 4): I have a correction. We are testing three staves at once in different systems, but not one is half and half SE4445 and Hysol. [Peter enumerates several different staves]
+ - Gabriele: Just to clarify, the RAL and BNL points are referring to the same stave.
+ - Luise: We will update this.
+- Bruce: WHere does this come from? I thought in previous meetings we wouldn’t change the alternative identifier. I suggest it does not change. If we are going to show this slide, it should be a question that requires a lot of agreement to change. If so, let the DB people know. Sorry. The alternative identifier shouldn’t change
+ - Luise: The problem is if it’s not being used for anything we could change it. We will follow up offline
+- Sven: On a side note, if you have or observe any DB issues, please let me know. It would be good to investigate why you think there are problems with the alternative identifiers.
+ - Luise: Okay, we’ll start a conversation about this.
+### QT Progress Update: HV Stability
+Presenter: Judith Kull
+- Vitaliy: You mentioned ten hours, I didn’t understand that. The Sensor groups use 40-hour long tests
+ - Judith: must have misunderstood
+ - Vitaliy: not a big deal, just for completeness
+- Vitaliy: The slide with the current trends. It went fast. Which ones are failing in this plot?
+ - Judith: the ones at the top are failing, may also be included in the plots below
+ - Vitaliy: The ones on top are violating the criteria?
+ - Judith: If using IVar, then yes. The ones below could fail if you used either high std or high average current.
+ - Vitaliy: If I look at the top plot, the lines are pretty stable, so I’m surprised IVar is failing. I’m wondering if there is a numerical issue. The middle plot has weird spikes, so that’s a bit hard to understand as well (bottom too). That I haven’t seen in the sensor QC data, and I’ve looked at all of them. Upward spikes are worrying, downward spikes are … weird. The plots also mirror each other a bit, making me wonder if the tests were performed at the same time. Some readout issue
+ - Judith: Some of these are the same test
+- Vitaliy: some of the graphs show a current trending down, which could be flagged as high deviation, but they are usually passed because it’s just a trend, not a fluctuation
+ - Judith: 
+- Vitaliy: I don’t understand the high leakage current comment. 2 uA isn’t very high. It’s higher than it typically is, but otherwise fine.
+ - Judith: mainly means it’s higher than typical, but could also mask a module that has a high fluctuation. The concern is not a high current but a high fluctuation
+ - Vitaliy: If std [?], I think higher current is an orthogonal variable. 
+- Luise: have you plotted these together with just the sensor current?
+ - Judith: not yet, but I did start looking into it. Not all the modules necessarily have a sensor-stability test
+ - Luise: understood, if you find one, that would be really interesting to compare!
+- Luise: It may be good to start by establishing what leakage current criteria should be. You could have a slope of the curve that could be interpreted as changes but is actually more of a trend. Currently, we are just taking the data and don’t have a pass/fail
+- William: I missed something, I thought these were module IV stability. 
+ - Judith: No, these are module stability tests
+ - William: and Luise suggests comparing them to the sensor stability?
+ - Judith: Yes, so potentially might have a look at it.
+ - William: we are struggling to understand where the 11 R3s come from, we did fewer than that, but maybe DESY also did some
+### L4 Updates
+- Read Hannah’s Minutes
+### Data Merger Status
+Presenter: Cole Helling
+- Luise (slide 6) this was a qualification task by Erik Wallin: to look into whether in addition to passing and failing we also need to check whether there are trends indicating that things are getting worse
+ - Cole: reached out to Erik already; may not need a new qualification task, may be a qualification task that was already done
+- Luise (slide 8): can there be a data visualization step before uploading the results? I.e. test finishes, then the user sees the data before it is uploaded?
+ - Cole: need to discuss with Peter and Bruce, but it is a good idea
+- Bruce: this is work in progress, need to discuss a lot of the details, people should have a look at the merge request and comment and there is a lot of stuff in this merge request, not all of this should go in
+- Bruce: not sure there should be an option to review, rather should make sure that people can rely on the functionality
+ - Luise: we do see cases of people uploading data without checking it, so it would help if people got a very quick visual confirmation before uploading it
+ - Peter: need to make sure that ITSDAQ catches as many problems as possible automatically
+ - Cole: would prefer both: automatic checks in ITSDAQ and visualization for people to look at
+- No objections
+### BNL Uploader Moved to Next Week
+Presenter: Gabriele D’Amen
+### Agreeing on an Interposer Assembly Procedure Moved to Next Week
+### Freiburg Sensor Recovery Experience
+Presenter: Roland
+- Vitaliy: The current scale, it sounds like a normalization difference. The curves are different by a factor of 100 in some cases, so it might not actually normalized
+ - Roland: could be, may need to check
+ - Vitaliy: Sounds good
+- Vitaliy: Jumpy IVs. I’m kind of suspicious it’s a setup issue. I think it was discussed at this meeting at some point. It depends on how your DAQ works. It needs to allow enough settling time for the PS. It’s present for a few plots.
+ - Roland: we have the settling time in our setup, 5-10 seconds? And then only use the last one as the data point. Could be a setup effect, but it looks fine for most of these. We can investigate. Probably we can take one of the spiky IV sensors and repeat the IV
+ - Vitaliy: You can repeat IVs, or have an artificially large resistor to mock this up. It reminds me, when you did initial testing, was it one IV per sensor? Did you re-run any after deionization?
+ - Roland: James says yes
+ - Vitaliy: It’s just that some of the sensors could benefit from repeat IVs. It may not always even need the ion blower.
+ - Roland: [misunderstanding]
+ - Vitaliy: You did a fairly careful analysis here. It would have been simpler after running the initial IVs, to simply re-run the IV immediately. The second can often be better than the first one.
+ - Roland: will check in the database, we uploaded all of them, should be in the database for some of them
+- Vitaliy again: You asked about the origin of the static charge. The packaging in the ESD sheets and envelopes is not as ESD-safe as one would hope. So shipment can lead to these effects. But handling is also important, so it’s good to run a blower.
+ - Roland: okay
+- Somehow still Vitaliy: About if the charge is gone, yeah it’s gone. What gets recovered stays recovered. There were studies of the effects of very small doses of irradiation (ionizing). A few day’s worth in the detector is considered enough, so I don’t think we need to worry about this.
+ - Roland: It seems like the followup question is “How long should we do it for?”. Should we do this for two hours at reception? Looking at the yields it was 95% at 30 minutes, and I think the goal is to make sure we have less than 3% with problems. Is this reasonable, is this wanted by the community?
+ - Xavi: Yes, two hours is too much. What we recommend is to use 10-20 minutes, not much more. I’m surprised you could still recover them after two hours. 
+- Xavi: different ion blowers require different times, your seems to require about five minutes to completely deionise something (based on data from sensor community), would recommend it for about 30 seconds before repeating IVs, and maybe repeating IVs in general. Two hours is too much
+- Xavi: in some plots, you measure more than 10 uA, up to 20 uA, should reduce compliance to 10 uA
+ - Roland: It could be the historical compliance, we’ll check
+- Xavi: you mention you have some IVs with the wrong units in the database; if this is a small number, would be good to reupload, if it’s not too much work
+ - Roland: Should I also delete the wrong ones?
+ - Xavi: yes please
+- I’m gonna put a rule in that one hand, one question. 
+- Luise: For the talk Alvaro is about to give, regarding how many failures … wait, it’ll be interesting. It’ll hopefully show the rate will go down in the future.
+- Luise: For how much we can live with (sl. 13): we need to look into this as well on the module side. For that, we really need you to upload recovery tests to the database. If you recover a sensor, it needs to be added to the database and you say how long you ran the ion blower so that we can later reconstruct the data. I just checked and I don’t see any uploaded yet.
+ - Roland: I was not aware, I will check and upload. Thanks a lot.
+ - Luise: So yes, we are worried and plan to look into this further with another QT
+- Xavi again: Do we need to still leave the sensors in dry storage for several weeks
+ - Luise: There is only a requirement to store them dry and not how long to store them dry.
+ - Xavi: I’m not sure we completely benefit from long periods
+ - Roland: We had to measure other things first, so it took a long time. It was just in our case.
+ - Luise: The original attempt was if it fails, wait a week of it sitting dry. 
+### Is Your Visual Inspection Hiding a Shocking Secret? Discover the Truth Behind the Results from More Than 200 Sensors Visually Inspected at DESY
+Presenter: Alvaro Lopez Solis
+- Xavi: In slide 5, you mentioned that there is a pattern. I can confirm that. The R5 sensors were tested at TRIUMF. I’m preparing a presentation to talk about this soon, but we found during pre-production testing that the metal pins can induce the chips. So we stopped using those jigs. That’s why you see those chips. How many cases from the R5 batch?
+ - Alvaro: I have around 7 or 8. We still have more to test.
+ - Xavi: Okay, it would be good to know the total number. I was thinking that if we see too many from the same batch, and the chips are less than 50um for example, maybe we can talk about making an exception. It’s something we can discuss when we have the total number. 
+ - Alvaro: yes, we should take the IVs for these
+ - Xavi: Yes. It would be interesting to see how the IV looks. The problems with these chips is that maybe the IV is okay, but it might not be alright with the stability.
+- Xavi again: On slide (Doubts if failing or not), it’s true that the strips are not connected, but you can see the metal is damaged, so the passivation is also likely damaged. This is an example of the limit between light and heavy scratches. This should fail. 
+ - Alvaro: okay, will do, thanks
+- Vitaliy: 9000 points. In the cases you see scratches, do you also see chips around the corners or the edges.
+ - Alvaro: some of them, yes. Didn’t fail this one, because it wasn’t always clear
+ - Vitaliy: That’s what we saw in the sensor community. A chip somewhere in the corner can “travel” and that’s the chip that causes scratches.
+- Vitaliy: it’s very nice you tracked locations down to test frames and checked the diode locations, 
+ - Luise: Dennis, the LEDs for EC are plastic right?
+ - Dennis: only epoxy touching the sensor
+ - Vitaliy: That’s good to know, maybe it’s not the test frame placement
+ - Dennis: If the sensor sits on top, there is enough leverage to cause problems. But if it’s next to it, hard to say
+ - Vitaliy: It might be useful for someone to play with half-moons.
+- Vitaliy: wouldn’t expect IVs to show problems for chipped sensors [sharing screen to show why it shouldn’t be a problem: edge is expected to be on high voltage, central area is expected to be on ground, high gradient is expected over guard ring, so chips around the edge shouldn’t actually cause early breakdown
+- 
+- Luise: Just to make sure we agree. Alvaro, you will complete the summary and Xavi, we will do a dedicated test to see how useful the sensors with chips are. Is this correct?
+ - Alvaro: Yes, I will get the rest of the sensors.
+ - Luise: Next step is to do the IVs to convince ourselves we don’t have a problem and then we can run a stability test to see that there is no correlation with chips and perhaps relax the constraints on chip size. Everyone happy with that?
+ - Xavi: We have examples of these chips at TRIUMF. I’m wondering if Vitaliy, do you think if during module assembly, these chips can cause issues with cracking?
+ - Vitaliy: I’d be concerned that the chip is just what we see, but in some cases it could be the tip of the iceberg and hide a crack that will develop later. If we want to build test modules, we could try, if we want to use them later in the detector, we should be careful
+ - Xavi: I think we can resume this conversation when we have the full overview from Alvaro. 
+ - Vitaliy: cracks developing later is a concern, but we haven’t actually seen it, so worth investigating if it can happen
+### Category A and Category B Hybrid Comparison
+Presenter: Marcus Wong
+- Peter Phillips: I want to point out that we’ve been on similar territory before. There is a difference between dead channels and untrimmable channels. It seems like you have the latter. Why? I’m not sure. One possible contribution is that if you go from a batch of chips tested at DAI vs at SCIPP, DAI might have left one [?]. Any channel that has a bad trimmed value could be switched off. The temperature could also play a role, as they would be a lot hotter during burn-in than during ASIC probing. The gain is often a little strange on the ends. We know the gain goes down when it goes colder, so it should go up when it goes up. Interposed hybrids will be hotter because of the extra layer, so it’s quite possible this is a thermal effect and it will be interesting to see the same results with better cooling
+- William: That’s a decent explanation. I was also worried it would be hotter. But you aren’t worried they aren’t trimmable? 
+- William: do you have category A hybrids that have been interposed
+ - Marcus: No, I don’t think we have any plans to interpose CatA right now
+ - Vitaliy: cat A is too precious to use on the first round
+ - William: But it seems like we need to do this
+ - Luise: There is a plan to use the production hybrids that were Cat A, so we should have some available in the not too distant future.
+- Luise: For the plots you’re showing, could you go through and see how many had known bad channels so we can take out the “old” bad channels? On your middle plot of slide (channel failure: relative chip location), take out the already-known bad channels.
+ - Marcus: Repeats 
+ - Luise: Yes. See how many new bad channels there are.
+- Luise: Could you look into what Peter just said and see where your wafers were probed? I think there is a testing location in the DB. Is that correct?
+ - Peter: Yes.
+ - Luise: So it would be good to check if the middle plot is mostly made from DA ASICs and see if they weren’t flagged. Make sense?
+ - Marcus: Yes
+- Vitaliy: For the channels which are untrimmable, is there an easy way to tell?
+ - Peter: if there is a value of -1
+ - Vitaliy: So -1 means untrimmable, and other numbers mean other things?
+ - Peter: The trim values are between 0 and 31, but dead channels are also “not trimmable”
+ - Vitaliy: Right, but how do we distinguish them? 
+ - Peter: will have a think about this, will have to have a look. May already be in the json files
+ - Vitaliy: If you would, that would be useful so we can tel the results better.
+- Vitaliy: Does it make sense to change any values and retry the tests?
+ - Peter: not sure. Was wondering whether these chips were originally tested at 1.2 V digital voltage and if something was done to increase that to 1.25 V. Should bear in mind that the pedestal trim is using a default target determined by testing chips at 20 degrees. These may be trimmable again if we adjust the target slightly, even at elevated temperatures, in case we need to use them in the detector
+ - Cole: Would it make sense to run the full pedestal trim scan to see if those values make sense?
+ - Peter: You can also try it manually, but I suppose you could.
+ - Vitaliy: happy to do that, just tell us what to do
+- Jaya John: Marcus, the wafers that were tested at DAI will be marked as Carlton in the DB.
+ - Peter: if you could just ping me on mattermost and tell me wafer names, then I’d like to have a look at the data myself, and it would be nice to look whether these are wafers that were just worse than others
+ - Marcus: Okay
+### AOB
+- Office hour!

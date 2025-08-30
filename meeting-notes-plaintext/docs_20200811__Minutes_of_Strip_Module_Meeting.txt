@@ -1,0 +1,88 @@
+# 11/08/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927514/
+## Minutes
+### Introduction (Craig & Ingo)
+- Gerrit brings up “the EFuse discussion” (AMAC review questioned EFuse rad resistance)
+ - We should prep a way to deal with this in case we do have a problem
+ - E.g. pull wires at stave loading?
+ - No prob in module cold test, Efuses can still be used there
+ - Paul: there is zero evidence that EFuses are not rad hard enough, don’t go crazy yet!
+ - Ash: is HCC also potentially affected?
+ - Paul: same issue would affect HCC, yes, but let’s see if we do have a problem first and also there should be straight forward mitigation options
+ - Ingo: we did not really test drive the EFuse after irrad, have we?
+ - Craig: no, but we can take TID-ed hybrids and do that first check
+ - Paul: lifetime checks however take longer and are also needed
+ - Tony: we have some confirmation from the person who did the IP for nr of cycles etc that there should not be a lifetime issue
+- Module and sensor specs don’t match with respect to bad channels (1% in modules vs 2% for sensors) → have to change this so it matches
+- Module document specifies wider thickness range than sensor documents, was probably taken from outdated information. Needs to be updated
+- Endcap hybrids in their current version rejected, Kambiz is not connected so will have to be followed up offline. 
+ - Should have dedicated presentation about problems and solutions in next module meeting!
+- Dennis will go through power board comments and check which ones apply to specific type and which ones apply to all of them and implement them accordingly 
+- Barrel tools rejected, Sven will update barrel tools according to comments 
+- Endcap tools: some comments seem more like “rejected” than “accepted with warning”
+ - Marc doesn’t know how to proceed, since every time new things come up
+ - Not clear how to get to final design
+ - First step: copy all comments into common document, sort out all that are not strictly necessary for working tool and reject those
+ - Implement remaining ones and declare result final design
+- Things that got rejected have to be reviewed again, what’s the deadline for that?
+ - Worrisome if new versions are on EDMS later than two weeks from now
+ - Should try have things accepted by the end of this month or latest mid September
+- Barrel power board pickup tool doesn’t match endcap tool why?
+ - Barrel tool follows endcap tool since that design was available first
+ - Not completely true because some changes were made to endcap design later
+ - How to proceed? → should check that final versions are compatible
+ - Problem because hybrid designs not final (R5)
+ - Should target to keep all files belonging to one type in one document
+ - Approve what is there now, reject the whole set once missing designs become available and “re-review” whole set (by basically just looking at new drawings)
+- Task tracker:
+ - Endcap tool production → Karo to send list of names to Craig to add as responsibles
+ - Lot of tasks for modules, but all are important so removing any doesn’t seem sensible
+ - Any tasks missed? No comment, will add link to task tracker to agenda
+ - Have to follow up on tasks somehow, might be too much for module meeting
+ - Reports could be in form of text added to tracker or slides presented in meeting
+### Cicorel discussion (Simon, Gerrit, Karo)
+- Delvotec ones are smaller than Hesse ones, but not limited in supply, about 240 and 280 US$ per piece (5cm by 5cm)
+ - Seems rather expensive (about 10 times more expensive than other quotes)
+- US buys directly from Hesse, no intention to buy anything else
+ - ~21$ per board, delivery time 6-8 weeks
+ - Would they buy for whole US? Yes
+ - Could they buy for all sites? Have to check in kind contributions since whole order quite expensive
+ - UK quote in the middle, about 55 Euro per board
+ - Only 100 boards left though
+ - US to buy for themselves, Endcap and Barrel combine orders?
+ - Has anybody contacted cicorel directly? Not sure how, has been done in the past so there should be a way to do so
+ - Bart will try to dig up old conversation with them
+ - US has very good working relationship with Hesse USA and they insist on getting results from Hesse boards 
+ - Do we have to give feedback to Hesse all the time? Not clear yet
+ - Final decision: figure out if we can order directly from Cicorel, US probably to buy their own boards. To be re-discussed once we get info from cicorel
+### Karo’s discussion wishlist (Karo as herself)
+- QA/QC documents:
+ - Step by step guide nice, but might be too much work
+ - Find new set of people or every institute on their own? Sound less desirable
+ - Could consider full document and having joined google doc with short lists where things that are not as important are removed → live document to be used during pre-production A
+ - Full document is what has to be used for site qualification
+ - If we need shorter versions of documents, we need to find time to get them done
+ - What do we want from short version? Can be printed out and put next to setups for cross-checking what to do
+ - How much detail? Isn’t it site specific?
+ - Suggestion: keep documents as they are, sites to make their own detailed checklists
+ - Would be helpful to have examples from sites as guidelines for others
+ - Collect them on twiki?
+ - QC groups to mail Craig and Ingo to announce when document is ready, put it on EDMS, kick off review, sites can upload detailed checklists to site qualification twiki → Karo will add bullet points for every site to do so
+ - Documents need to include database upload guidelines
+- IV curves
+ - Temperature and humidity requirements don’t match in sensor and module documents, need to make sure this gets adjusted
+ - Some documents lack info wrt temp and humidity 
+ - Have to vote on maximum voltage (500V vs 700V)
+ - Temperature just need to be stable, exact value not important. Correct results to 20C afterwards
+ - Measure temp of jig to get temp? Could just attach NTC to chuck. Should make sure what we plan to do isn’t unnecessary overkill
+ - Luise will look into cleanroom requirements
+ - Karo and Bart to summarise testing requirements wrt humidity
+ - Have to figure out process for how to decide on maximum voltage
+ - What makes the most sense scientifically and what is available? Need to find group of people that can look into this and make a decision based on facts
+ - Vitaliy and Ingo to arrange meeting for this (ITk week? Might be too late)
+ - Situation different for different clusters depending on where the sensor QC takes place → might have different final decision for different clusters
+ - Invite all sites to that meeting so they can give input about eventual limitations at their site
+- Hardware for burn-in and cold box
+ - Need to let sites know what to buy in terms of power supplies etc.
+ - Are missing information from DESY wrt endcap cold box and burn-in hardware
+ - Will discuss what we can in this week’s QA/QC meeting and discuss leftover things in the module meeting next week

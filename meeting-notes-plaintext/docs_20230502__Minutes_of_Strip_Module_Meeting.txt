@@ -1,0 +1,179 @@
+# 02/05/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1253782/
+### Introduction
+Slide 2
+- Tony: Kirsten has working on pull test slides, powerboards are not in cycle
+ - Luise: for EC it’s the same flex and for powerboard they do pull testing on assembled boards
+ - Tony: so it should not be included
+ - Bart: do we need data on powerboards?
+ - Tony: yes
+ - Bart: can provide something
+ - Luise: there is a dedicated powerboard QC talk with pull tests
+ - Craig: we should include it somewhere
+Slide 4
+- Carles: there is some information in the comment and can’t find final version of documents
+ - Luise: will do proper updates for PDRs
+Slide 5
+- Sarah: is this for PPA, or PPB
+ - Luise: it’s important for PPB, but would be good to do it for anything that is in the database
+Slide 7
+- R4/R5 powerboard pick-up tool review: approved and released for production
+- End-cap hybrid test panels
+ - William: try to get Toronto people to look at them
+Slide 8
+- Carles: is this the same docuement that used to have the flow diagram?
+ - Sven: no
+- Ewan: what about flagging objects with double glue weight. Should they also be set to failed?
+ - Luise: if you have double glue thickness and metrology works, you would not set it to failed if the module works. Only if it does not work, it should be set to failed
+### Institute Contributions: 
+Note
+- Vitaliy: (slide 11) impressed that you can squish the shieldbox in such a way
+ - Geoffrey: yes, works if you use a professional vacuum packing machine, the problem was that te height was already maxed out
+ - Vitaliy: always afraid that vacuuming can break the box
+- Vitaliy: slide 13: just fyi: when Matt did his studies, position of the laser on the chip is very important, because being off of bond pads causes issues very quickly
+ - Geoffrey: good comment. Sometimes also the reflection can change. There was also no surface optimisation, parameters could be chosen more stable
+- Luise (slide 10): looks like the jig you use is a different one. Did you make a new one or is it a prototype?
+ - Geoffrey: that is the normal jig
+ - William: yes, that looks like the jig we have shipped
+- Luise (slide 8): looks like you still use Polaris/Epolite?
+ - Geoffrey: that was only done for starting the process and calibrations is fairly similar
+ - Luise: would be good to make transition to new glue since it is different
+ - Geoffrey: it will take time to set up the calibration for the new glue, so we only used the old one for a quick test
+ - Luise: US groups have seen that temperature changes make a difference and they use a heated glue dispenser, which helps
+- William: does your cleanroom just re-arrange their cleanroom from time to time in the middle of the night?
+ - Geoffrey: problem is that a company owns about 90% of the cleanroom and optimise their process flow
+ - Geoffrey: major concern is changes while we are curing modules
+Next meeting: BNL
+### Vibration reliability testing
+Slide 
+- Vitaliy: wondering about something from cold noise email: we have 2 capacitors that vibrate. Do we need both of them for the circuit to work?
+ - Craig: the problem is that micro-cracks can cause closed circuits as well as open, which could cause the entire stave to fail
+ - Dennis: even if it fails open and the bPOL works, the reliability will be severely affected
+ - Dennis: means that bPOL would be less reliable, that’s why we have two capacitors there
+ - Craig: know from layout changes of previous bad reliability circuits from CERN, that bPOL is very sensitive
+ - Dennis: v6 is a bit better, but we can’t quote the CERN reliability any more if one fails
+ - Craig: wouldn’t be comfortable relying on backup capacitor
+ - Vitaliy: not a question of relying on it, just a question of whether we’d still be fine at e.g. a 1% failure rate
+ - Craig: we also need to check on: capacitors on preliminary bPOL modules were different so we need to do this with production parts
+ - Dennis: is it the design with four capacitors on input and output
+- Vitaliy: if capacitors are shorted, that is a problem on the stave?
+ - Craig: short in capacitors shorts the 11V to ground which takes out the whole stave side
+ - Dennis: could be lucky that wire-bonds evaporate or the capacitor explodes
+ - Craig: need to look at EOS DC-DC as well
+- Vitaliy: was this failure mode mentioned in conversation with space people?
+ - Craig: yes
+ - Vitaliy: it is hard to imagine
+ - Dennis: the planes inside the capacitor are a couple of um apart
+ - Craig: worst points of stress on solder, but can also be cracks in body of capacitor itself, which can cause a short
+ - Vitaliy: crack in solder can cause the stress in the capacitor?
+ - Craig: understanding is that there is stress in both solder joint and in body of capacitor, but stress in solder joint is higher and it cracks there first
+ - Dennis: usually see a crack in solder and capacitor edge
+ - Vitaliy: that sounds bad, because the capacitor might also crack for other reason
+ - Dennis: yes, that’s why industry uses capacitors with flexible outside, but these have reliability issues with radiation hardness
+ - Craig: Space people: if there is an alternative to MLCC type 2, they use it, but of course, their requirements are different
+- D
+- Luise: one of the default ways of how space people improve this is making the boards less stiff. This is similar to what we are currently looking at with the EC-stype powerboards
+ - Luise: would be good to discuss with EOS people
+ - Luise: for PRR, do we want to test staves or modules
+ - Craig: modules would be fine. Ideally would like to test a stave. We have one at RAL that needs to go through reliability testing anyway, but not clear how to do the visual inspection because we don’t want to remove the shieldboxes there
+ - Luise: plan for PRR - propose cycling; and try to meet with CERN bondlap to discuss this with them
+ - Craig: any help with this would be much welcome
+ - Craig: can also be module coldbox
+ - William: it is one barrel, one EC?
+ - Craig: yes, it’s design verification not QC. Was proposed to test order 10 capacitors
+ - Craig: could consider 2 modules/year in production to look for shifts, but it is never clear how this affects produced modules
+- Gerrit (chat): why not just do this on a powerboard?
+ - Craig: the mechanical connections are very important. 
+ - Dennis: also need nominal load
+ - Luise: also include a few modules that have not been hand-soldered
+ - Craig: easier in barrel, than in EC
+ - Luise: if we see failures, how do we proceed?
+ - Craig: scary question
+- Ashley: with regards to hand soldering, is this across all circuits?
+ - Craig: yes
+ - Ash: yes, need to feed this back to hybrid assembly house as well
+ - Craig: may be outside our problem range, because space, but this is currently the best we have
+ - Ashley: comments from RAL space would exclude type2 capacitors. What would they use?
+ - Craig: try to replace them with type 1, tantalum or caps with epoxy glue caps
+ - Ashley: tantalum capacitors on powerboards have not shown cold noise, so should we change to that?
+ - Craig: tantalum is bad for radiation hardness reliability
+ - Ashley: surprised they would use them on satelite
+- Luise: this is something crucial to be done before we build modules?
+ - Craig: find it hard to argue building modules without these reliability tests. Would be too risky to build anything without the tests.
+ - Luise: agrees and these tests should be done before building production modules
+ - Craig: will present this in PRR with a potential paper follow-up to show the results before building modules
+ - Tony: what is the timescale for this with respect to do personpower/time?
+ - Craig: probably 1-2 months. If there are people to do this in house or can send people to help it could speed things up (also maybe CERN bondlab)
+ - Craig: optical inspection is also crucial and not confident how to do this in the correct way (need some examples from space group)
+ - Tony: feels like a test of solder quality more than test of vibrations
+ - Craig: maybe could consider doing less thermal cycling but tuning vibration to maximum and see what the effect of that is (e.g. long term testing)
+ - Might want to run one at room temperature and one at cold since we expect brittleness of material to be worse when cold
+ - Craig: know we can increase magnitude of vibrations by factor of 10 with bPOL frequency at -40 degrees for a month or so
+ - Luise: may need to do both: long test for a month and cycling
+ - Tony: concern is that this should also be done for hybrids?
+ - Luise: that is why we would do this on modules
+ - Tony: have never done anything like this in history of HEP. We have done a lot of tests, but should probably also delay production of hybrids
+ - Craig: have tangible examples in HEP of solder reliability where we haven’t done this kind of testing, but would we really be happy to go into production without having done this?
+ - Craig: probably need to decouple things as much as we can - maybe decouple cycling from vibration as proposed there, instead of cycling and vibration, just run for extended amount of time with bPOL at peak vibration has a good argument
+ - Craig: if we have similar vibrations on feast boards that are currently in CMS, that might allow us to conclude that these vibrations are not such an issue
+ - This today is getting feedback from the community, next week we also need to get feedback from the PRR committee, because we don’t want to do these tests and then hear afterwards that we should have done anything else
+ - Tony: it’s a destructive QA test that we can get done. Feast showing anything [vibration] would be good. Then we can argue we are aware of it
+ - Tony: would argue that most feast parts have stiff powerboards and therefore these kind of vibrations
+ - Craig: is that a feeling or a hope? Because end-cap sees a lot less vibration - if FEAST and bPOL vibrations are of same order of magnitude as the end-cap, we’re still unsure about the barrel, but if they vibrate the same as the barrel powerboard, we are probably mostly fine
+ - Craig: if BPOL and FEAST vibrate the same as barrel, we’d be happier, but would still want to do our own reliability testing
+ - Tony: to make it worst as possible, could glue powerboards on something stiff with shunted load and try to peak everything. If it doesn’t fail, that is good.
+ - Craig: what we need to do is different levels of stress, because if we do highest level of stress only, won’t learn much if it fails, need to use different stress levels
+ - Modules on peak and off peak
+ - Hard glued to metal on peak and off peak
+ - Craig: if any of them fail, but not all of them, we learn more about it
+ - Dennis: if we do it on something different than the sensor, do we need vibration measurements again to confirm vibrations?
+ - Craig: yes: the more we divert from module build, the more time we need to invest to quantify module vibration
+ - Should probably start with on peak module vibration and off peak vibration as soon as possible
+ - Tony: should do this as quick as possible because we have resources tied in a quick production start
+ - Craig: this is also arising from questions asked to us by reviewers
+- Vitaliy: because vibrations are muted for hybrid, same reliability questions are less an issue for hybrids?
+ - Craig: specifically for vibration: yes
+ - Craig: if we would consider solder reliability that would become an issue. And as Gerrit mentioned in chat reflow is a standard industry process
+ - Luise: should also include this in the tests. 
+ - Craig: if we put modules into the test, hybrids there need to be checked as well
+ - Craig: that’s why we want to do this on the module level
+ - Vitaliy: has anyone calculated the force in the capacitor by the vibration?
+ - Craig: don’t know, but as soon as we started seeing differences between flexes and trying to calculate mechanics, it became to complicated
+ - Vitaliy: would be good if someone could look into modelling this
+ - Craig: should be able to calculate it order of magnitude-y
+ - 
+### Database - The Way to Production
+Slide 
+- Slide 3: Luise: option 2 looks really good, because if we use batches, we can also use to mark where a module came from!
+- William: when are we going to move the database to the production database version?
+ - Andy: been talking to Marek, it’s not easy, not clear when we’d move, not clear which way we’d move them, should have an offline discussion
+- Bruce: what is needed for the production tracking?
+ - Sven: need an easy way to distinguish between modules, hybrids and powerboards
+ - Dennis: for which kind of reporting?
+ - Sven: for all of them: hybrids, powerboards and modules
+ - Sven: we don’t have an easy way to track production parts, we need to come up with a good way to distinguish between 
+- Bruce: could add a stage “successfully tested pre-production module”
+ - Sven: no, because we need modules to end in certain stages
+- Luise: are you concerned with any of the options Bruce?
+ - Bruce: yes, with all of them
+ - Dennis: we could also find other ways to do this using whether certain components are attached
+### Database Hybrid Test Merging
+Slide 
+- Luise: what do you need? More data?
+ - Hao: have enough data to test. What’s the preferred format for merging this to the database. How do you want to look at this?
+ - Luise: should be similar to the single hybrid tests.
+ - Hao: so dictionary
+ - Bruce: need to go through this and think about the details. There are also some other QTs going on that will use these data.
+ - Luise: idea was to have a test for each ITSDAQ test type but on the module. Idea was to be able to upload test data to the module, instead of the hybrid.
+ - Bruce: just try to think about how this fits together. The different things don’t completely overlap, but need to look at the cases where they do
+- Luise: maybe next step would be to make a R3 module clone to work on this
+- Vitaliy: does this also also work for burn in?
+ - Sven: no, this is for modules
+ - Luise: different task: merging data from different hybrids, compared to merging multiple data from a single hybrid
+ - Bruce: there is already some form of module merging script for cold tests
+ - Matt: have talked in the past with burn-in merging people
+ - Matt: some properties are flattened
+- 
+### Module PRR talk: low strip isolation
+< not enough time to show the talk, feedback should be given by email>
+### AOB

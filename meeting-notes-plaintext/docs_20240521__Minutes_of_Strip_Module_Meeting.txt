@@ -1,0 +1,125 @@
+# 2024-05-21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1401784/
+### Introduction
+Presenter: Luise Poley
+- Sven (sl. 2): You have to enable the reminder emails. They are not automatic.
+ - Luise: So you’re saying people can still ignore them …., thank you for clarifying. I would like to hear if anyone else finds this useful.
+ - Ingo: I think this might be handy.
+ - Luise: We shall try this one component then and give it a trial run.
+- Kirsten (sl. 5): I did this last week. I made a hybrid with coverage that was 1.73-1.8. I stuck it on a panel and wire-bonded it automatically without any issues whatsoever. I’m making slides for the Thursday meeting to show it.
+ - Luise: Thank you.
+- Bart (sl. 5): That’s great news from Kirsten. We should make sure we can ensure good coverage anyways.
+ - Luise: Is everyone happy not looking into this …
+ - Bart: We will look into it if there is a problem. For now, let’s postpone it.
+ - Luise: The concern is that if you find out that you need good coverage.
+ - Luise: This is important for production.
+ - Bart: Ah, I see.
+ - Luise: We need to convince ourselves that we need good coverage or we will have to consider this design change.
+Through lack of disagreement, we plan to proceed with the hybrids we have in hand and NOT consider this design change which moves the bond pads in closer. We will ensure proper coverage.
+- Vitaliy (sl. 6): For item 2, what is the timeline?
+ - Luise: In the EC, PB availability key. PBs are currently being SMD loaded, but we’ll have to wait for that. The module assembly should take two weeks after the PBs arrive.
+ - Vitaliy: What is the timeline for the PB availability. 
+ - Dennis: We are waiting
+ - [Some back and forth about this] … maybe a month
+- Sergio (sl. 6): Once these modules are ready, I would assume we are hoping to use the full coverage glue pattern with SE4445? Or do we want the nominal patterns to get some comparison with the past? I would prefer full coverage.
+ - Luise: I would direct you to the loading community for this question.
+- Sergio (sl. 6): There are also two SE4445 petals that haven’t been tested as thoroughly for cracking. My concern is that if we go and build nominal modules with PPB components, we may use up parts needed for interposers.
+ - Luise: For pt 1, many of the modules have been cycled to excess temperatures, or aren’t ideal builds. We still have people who need to finish PPB.
+ - Sergio: I’m not sure I fully agree. We will always have limited stats. The question is, what is the actual goal? I’m a little concerned. I understand not impeding sites needing to complete PPB, but we need to make sure we have enough components if we have to switch to interposers, which is likely.
+ - Luise: This is not eating into parts. These sites still need to build their allotment of PPB modules.
+ - Sergio: We have enough modules to build these petals?
+ - Luise: This is why we want cluster managers to follow up.
+- Pavol: I just want to confirm we can design the new R2 PB stencil. Do you have any criteria other than it should be continuous?
+ - Luise: Please wait for the simulation so we know what to check for.
+- Dennis: Would it be allowed for PPB modules to be interposed?
+ - Luise: I don’t have an answer now. How do we let people qualify?
+- Vitaliy: To confirm, for pt. 3, we’re talking about one petal at most? Are you talking about more than one?
+ - Luise: We haven’t counted yet, but it should be on the order of one petal.
+ - Vitaliy: I think one petal is probably fine, but more might be a problem.
+- Sergio (sl. 7): I would also add that there is a likely scenario where sites may receive about-to-expire SE4445 unless you go directly to the source. So people should keep this in mind.
+ - Luise: There is also a discussion about how expired the glue can be and still be used.
+### L4 Updates: ITSDAQ/Sensors/Documentation
+Presenter: Xavi
+- Kenny: I think I’ve worked out the problem. The current value uploaded to the DB is not the list of values from the file. It comes from [inaudible]. I will share the screen.
+ - Kenny: The set of values are all 10s to 100s of nA. The webApp is giving you between 0 and 2, since they have been corrected for the temperature and area. The analysis gives you the stability value and I_500V value. I checked and it’s everything but the values that don’t match. The question is what to do with the previous data. So we might be able to write a script to deal with this.[Lots more words, but to the same effect]
+ - Xavi: My main concern was that we weren’t evaluating this correctly for pass/fail. If the breakdown is correct, the problem is less dramatic. Thanks for the clarification.
+ - Kenny: if you give me half an hour, yes, can fix it in time for ITk Week
+ - Xavi: Then what do we do with the previous entries? Can we just have all of them fixed by one person? Might be easier than getting an institute authority from each institute to fix it
+- Andy: When you say it is corrected, does that mean you can retroactively update all of them if you know the temperature? So if you know all these numbers, you can just fix it?
+ - Kenny: Yes, you can just fix it.
+Presenter: Cole Helling
+- Do we want to change the units or not?
+ - Ingo: no, please don’t change it
+ - Won’t change it
+- What would the proposed change be?
+ - Peter: would tune the HCC voltage more stable and more reliable to 1.2, but it’’s currently not working
+ - Tony: That would make the EOS operation more reliable?
+ - Peter: this would be using the information from the database to make it more reliable, which is how it should be done, but it currently doesn’t seem to work reliably
+### Group Update: Toronto/Celestica and Montreal
+Speaker: Laura Veloce and Nghia Nguyen
+- Luise: Melbourne is only starting PPA, so we won’t ship them much. This will take a while
+- Luise (sl. 10): this wasn’t the first one you built, just the first one?
+ - William: Some runs have them, some don’t. 
+ - Ben: we also see this for the modules
+ - William: And we did 10 pull tests and saw this as well. 
+ - JJ: saw similar things in PPB as well
+ - Peter: saw the same problem in PPA and prototyping; it’s one bad slice of data throwing off everything else, it can happen for a variety of reasons and they are difficult to diagnose
+ - William: My take is we need to investigate the testing, but it isn’t about the hardware.
+- Vitaliy: Regarding the same issue, I was wondering if there has been any progress. Marcus checked the extra bad channels compared to the hybrid burn-in. There are some extras, but they are flakey. I understand it may be difficult to debug. We should continue to investigate this so we know what the issue is.
+ - Ben: can you repeat when exactly you see this - only when you check for bad channels?
+ - Vitaliy: For the recent modules, he looked at the “extra” bad channels which may show up in TC compared to HBI. He does see extra, but it’s flakey and only occasionally. 
+ - Tony: The other thing to add is that we are chasing this because they are Cat B ABCs. So there are known bad channels. We traced these through the whole process to figure out why we are seeing extra channels.
+ - Vitaliy: The built-in bad channels from wafer testing are stable. But the others are not
+ - William: but we have some B grade ASICs which are bad, but these are stable, this here is on top of these
+ - Ben: I’ve been doing many tests to see how often I get good data from hybrids. Peter had a suspicion that this could have come from temperatures, so I adjusted the LDO of the HCC, but this didn’t help either. I’m also in touch with Bruce, but we don’t have a conclusive answer yet.
+ - Vitaliy: thank you for elaborating that, you’re saying that if you mask it, you see stable results?
+ - Ben: I still see the flakeyness
+ - William: And we can probably rule out temperature, since this also happens with modules at -35C
+ - Peter: not sure I’d jump to that conclusion.
+- Tony: Is the rate of failures we see with Cat A ASICs? Or is this still related to B-grade ASICs?
+ - William: We stopped using B-grade due to the problems with gel packs. But most of them are PPB and many are A-grade production.
+ - Tony: We should follow up on this then.
+- Tony: metrology: the logic of the cuts is that the more important one is the package height: the package height being too high means that the glue may not even touch the flex, therefore this is the worrying one
+ - Luise: we can not have this discussion here today, let’s follow up offline and prepare a proper discussion
+ - William: It’s a complicated thing. It’s inferred to be the package height if everything is right, but those are assumptions I’m not sure we can make. 
+ - Tony: we should talk about the details, and we can discuss the stackup and what nominal means, but if it is curling up, you would get thinner, not thicker package heights
+ - William: we will discuss offline
+ - Tony: main point being: if you have curl-up, it’s hard to get thinner
+### News from the Powerboard GUI
+Presenter: Ben Bruers
+- Luise: We talked about adding debugging to the fw as well. Has that happened?
+ - Ben: No, that would be a substantial change so it could take a while.
+- Ben: It would be good if we can add these justification for why the test fails. I’ve added an MR.
+### Module Test Uploads: Proposal
+Presenter: Cole Helling
+- Luise: how can people use this amazing function if they want to?
+ - Cole: still debugging, but in the future it will be the function that uploads module test data, using the module serial number and the run number
+- Ingo: how does this handle duplicate test uploads?
+ - Cole: it checks based on run number
+ - [discussion about using time stamps]
+- Luise: Would you like beta-testers?
+ - Cole: Yes, there are easy ways to use this, so if you would like to be a beta tester, please get in touch!
+### Testbeam Data Analysis
+Presenter: Lennart Huth
+- Luise: For irradiation of modules, the plan is to put one interposer module into the CERN irradiation slot in July. So the community already wants this.
+ - Lennart: I would even propose that we also take the module tested beforehand and irradiate it.
+ - Luise: We’ll take that into account.
+### EndCap Module Frame Update
+Presenter: Dennis Sperlich
+- Ingo: Can you point out what remains the same so we don’t break anything?
+ - Dennis: I will ask Kambiz and share it around.
+ - Ingo: thanks!
+- Luise: these were meant for repeated alignment. If you’ve already bonded once, you can move. 
+ - Dennis: I don’t mind either way.
+ - Luise: If there is no objection, we should leave those dots there.
+- Luise: The reason we wanted to show this was that the Toronto team was worried about the shape changing.
+ - Dennis: The last batch had some issues where the two upper lines of the F were merged. The idea is to make these more stable.
+ - William: We don’t use the F’s, we use the circles.
+ - Luise: they were made larger and they were moved?
+ - Dennis: I’m not sure. If you enlarge an F, there is no proper fix point.
+ - Luise: But the dots didn’t move 
+ - Dennis:dots didn’t move
+- Jaya John: Do we need to check in with Geoffrey with Uppsala and Note?
+ - Geoffrey: Doesn’t impact me much at all.
+### AOB
+- None

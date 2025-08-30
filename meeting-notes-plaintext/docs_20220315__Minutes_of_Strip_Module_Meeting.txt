@@ -1,0 +1,84 @@
+# 15/03/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1109672/
+### Introduction
+- Part Release:
+ - PM/AC team needs to be informed if a group is ready to receive parts for PPA/PPB. They then will release the parts (PM team for the number of parts)
+ - Bart: would thought this was more for the cluster manager to decide?
+ - Luise: this is a lot easier for barrel than for ECIn barrel the cluster managers can/will organise part distribution within clusterThis does not work for EC, where parts are distributed across different clusters
+- Visual Inspection:
+ - Vitaliy: might be good to re-take the IV, if it was done only once
+- EC modules:
+ - Andy: did the previous “Frankenstein” modules had high noise?
+ - Dennis: there were higher noise, but not as extreme as Luise. On the test frame the noise was higher than on the petal.
+- GS: what is the news for the availability of ABCStarV1 for PPB?
+ - Craig: first batch of probed ASICs are on route to DA (diced)Arrival from dicing vendor to DA is imminent.Second batch of wafers is to be diced soon
+ - GS: when should the first ASICs arrive at the sites?
+ - Craig: once they arrive, shipping will happen as soon as possible.
+- Tony: review of burn in, does it include the database section as well?
+ - Luise: yes
+- Tony: hybrid test is approved, will this be released soon?
+ - Luise: later in meeting
+- William: is hybrid burn in deployed and available to be used?
+ - Dennis: can confirm that all EC hybrid panels can be run in crate
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 15/03/2022: EC tasks
+- 22/03/2022: Barrel tasks
+- 29/03/2022: EC tasks
+- R0 tool production
+No news
+- R1 tool production
+New tools made and produced, should have improved heights and better fit
+- R2 tool production
+Remaining tools sent out, waiting for sites to confirm they’re happy
+- R4 tool production
+Remaining tools delivered, metrology done, to be sent out
+- Powerboard testing setup roll-out
+No news
+- Endcap module thermal cycling setup
+Being distributed
+- EC hybrid test-panel finalisation
+Review ongoing
+- Production of R0 and R1 test frames
+- Production of R2 test frames
+- Production of R3, R4 and R5 test frames
+Review ongoing
+- Production of stencils
+Prague looking into it
+- PPB Module for April Irradiation
+Dedicated discussion at the end of meeting
+### Institute Contributions
+Glasgow
+- Timon: The failing test is a temperature measurement. There is a fix for some of the tight thresholds, especially the temperature measurement since this can depend on the environment temperature.
+- Vitaliy: outlet to spread the flow of dry air would be good
+- Luise: maybe share design of new module box on a Twiki page if other people want to copy?
+Prague
+- No questions
+Adelaide
+- Not sure if they need a microscope for visual inspection -> yes, need one
+- Luise: would also probably be possible to provide some parts to progress the site qualification
+Next week: BNL, UiO, DESY-Z
+### GUIs for metrology and wire bonding uploads
+- Theo: there is a program that does the analysis for barrel modules, so can be nice to combine the two
+- Kenneth: do you take the test schema from the database, or is it hard coded?
+ - Graham: it is hard coded in the python
+- Luise: the goal is to have an interface that can upload the required raw data files to the database
+ - Graham can help with that part, just send an email
+### Update: hybrid test result upload
+- Luise: beta-testing phase of the database upload for hybrid test into databasWould be nice if groups could try using them and give feedback to Bruce and Christian
+- Luise: when the instructions are ready, will release the step for site qualification
+### Testbeam module planning
+- Luise: need to build several modules for this
+ - 2 modules for irradiation campaign at CERN in MaySS module at Liverpool, R1 module at DESY
+ - Is this doable at DESY-Z?
+ - Carl: should be able to do this
+ - ASICs from Prague, sensor should be in hand, powerboard from Freiburg
+ - SS module at Liverpool
+ - Powerboard from Timon
+- Luise: Also prepare an irradiated R0 module as backup in case the irradiation causes any issues
+ - OK to not pre-irradiate the ASICs
+ - Is there a way to get an irradiated R0 sensor?
+ - Have to find someone to build the irradiated module (maybe Valencia?)
+#### AOB
+- No other business

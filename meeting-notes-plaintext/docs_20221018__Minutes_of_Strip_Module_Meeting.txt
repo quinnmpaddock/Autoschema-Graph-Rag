@@ -1,0 +1,88 @@
+# 18/10/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1191860/
+### Introduction
+Slide 5
+- Bart: do we wait for all institutes before we do descoping?
+ - Luise: no. Use the data to start the descoping process
+- Bart: there are also issues with repeatability of ASIC pull tests
+ - Luise: should be fed back to ASIC group
+Slide 4
+- Carles: R4/R5 powerboards on module are obsolete in the database and they are now separate entities. Should be changed
+ - Luise: yes, will look into it
+ - Dennis: they are also bonded differently
+ - Dennis: the flex is the same, but the AMAC is bonded differently
+- Theo: what is the sensor ATLAS dummy?
+ - Luise: this is a dummy that can be assembled for a mechanical dummy
+ - Luise: do you want this removed as well?
+ - Carles: this was made for the prototype phase, and EC sites still in prototype phase they still need this
+ - Luise: EC needs this, but could be removed for barrel
+ - Hannah: what type of mechanical? Electro-mechanical or pure mechanical
+ - Luise: either
+ - William: hybrids also have both chips be able to attach. Do we keep this?
+ - Luise: some groups still use the V0, so will keep them
+ - William: there are a lot of children for hybrids
+Slide 6
+- Carles: Sergio is OK to send shipments to each site if we can get a list of recipients
+ - Sergio: need a clear list of recipients and numbers for each site
+ - Luise: yes, we can provide this
+ - Sergio: just received notification that package has been shipped to DESY
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 18/10/2022: EC
+- 25/10/2022: Barrel
+- 01/11/2022: EC (Flex QC review)
+- 08/11/2022: Barrel
+- R1 tool production
+ - First emails from people shipping things back received (appreciated), please get in touch
+- Shipping readiness (incl import procedure)
+ - Three year deadline is not as strict as we thought
+- Powerboard testing setup roll-out
+ - Zeuthen has a working setup now
+- Endcap module thermal cycling setup
+ - All cold boxes sent out
+- EC hybrid test-panel finalisation
+ - New set of gerber files produced, numbering on panels changed (match database numbers now), EDMS review expected soon
+ - New round of R5 panels produced and distributed, expected in two weeks
+ - Will have an EDMS review
+ - 2 weeks for new panels means when until they arrive in Freiburg, will time be needed for tests
+ - Expect these can be used for next round hybrid production in Toronto (for four hybrids per panel)
+- Production of R0 and R1 test frames,Production of R2 test frames
+ - Need to understand if blind vias are necessary for noise
+- Production of R3, R4 and R5 test frames
+ - New round produced and sent out to sites who requested them
+ - William: do we expect to be able to make the decision about using new test frames with the limited statistics we have?
+ - Dennis: should be obvious for these very noisy powerboards
+ - William: with the current noise levels, might be difficult to see small improvements
+ - Dennis: might be difficult to see if it is much better or much worse
+ - Luise: should be able to tell when we move modules to petals
+ - Dennis and William: should be able to judge frame then
+- Modules for Test Beam
+ - SS module in Birmingham being wirebonded today
+ - Parts for irradiated R4 module shipped to Vancouver and about to arrive soon
+### Institute Contributions
+Freiburg
+- Luise: for powerboard review, can we get a current status about this?
+ - Dennis: have not heard anything from Peter
+ - Uli: what do we do if there are no comments until Friday?
+ - Luise: will send a reminder and hopefully get some Peter time by end of the week
+ - Uli: we don’t wait for this design to be produced, will Dennis already start changing the other designs?
+ - Dennis: I will start doing it in the same way as the R4/5 design
+ - Luise: R3 are they derived from r4/5?
+ - Dennis: the process itself needs to start over again, but with the latest feedback
+ - Luise: there will be some time before the R3 come out, so that the reviewers have some time
+- Luise: do we want stacked vias for R4/5 ?
+ - Dennis: can decide later, fast tracked is variant 1 and maybe 3 (but probably later)Want stacked vias for validation
+ - Luise: stacked vias will exist already?
+ - Dennis: want to compare against everything else
+ - Luise: for my understanding, there was a stacked via version but then Wuerth said they could not produce this and the design needed to be changed
+- Luise: will send around a reminder email
+- Ashley: will review them tomorrow. Are they on EDMS?
+ - Dennis: no, but link has been send via email
+Next week: Sheffield
+### Halfmoon pull testing (batch-based)
+- Ingo: can you upload the slides?
+ - Luise: yes, I can do this
+- Bart: we did wire-bond pull tests on all batches we received. How is this done since we are also a module assembly site? Do you still want some batch based / shipment based pull tests?
+- 
+### AOB

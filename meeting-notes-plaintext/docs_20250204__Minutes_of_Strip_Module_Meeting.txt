@@ -1,0 +1,136 @@
+# 2025-02-04 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1510425/
+### Introduction
+Presenter: Cole Helling
+Slide about narrow gap modules
+- Carles: regarding narrow gap modules, two points to take into account:
+ - 1) how do people feel about the wide gap? How painful is it?
+ - 2) second discussion is whether we want to have this change for the next interposer petal modules
+ - Luise; I think locally having the wg introduces errors because we need to remember. If we use interposers, going narrow makes sense. If we decide to keep the wide gap for NI, we can improve the method and make it less wonky
+ - Carles: If we go NI, sites will need to make it work, if it would still be painful/annoying, then maybe sites have an opinion to make it easier. Perhaps having a second jig. I’m not sure about the work flow.
+ - Christian Sa: not at full production speed and don’t have a problem with placing spacers, so happy to keep a wide gap for now. Also: if we move back to narrow, we have to be very careful with cutting hybrid tabs, because the ears are close together, so also carries a risk. It may be easier to remove rings, but it will cause other problems
+ - Because this is the end-cap and nothing is ever easy
+ - Cole: Agreement that folks can use narrow gap for iR4/5. For NI, we will use wide gap and will want to improve the process so that it is not likely to cause errors (need to remember pin).
+ - Christian: so we build narrow gap for next interposer modules
+ - Carles: Do we need to run this by the task force? May reduce headroom.
+ - Cole: No way to know the headroom.
+- Luise: About the TF for the folks who couldn’t join the session. There will be a final final final decision meeting at the end of the month. 
+### L4 Updates
+#### Production
+Presenter: Abe Tishelman-Charney
+- Ingo (sl. 11): if you change the ratio of modules, we may have to redistribute tools. If we have to build more of some type, we may need more tools to build in parallel. It’s a complicated calculation, wouldn’t want to change frequently
+Carles: Then have to evaluate when you are wirebonding and how much the tools bend 
+Ingo: If we have to build 3 R1s in parallel, not sure we have enough tools. Might have sufficient spares for asymmetric production but not guaranteed. Have to redo production plan again 
+ - Luise: there should be spares for all of this, so it should be possible to collect the spares. If you know you need X tools.
+ - Ingo: If this ratio is pretty much set in stone…
+ - Luise: this is until the next site becomes available, and should soon stabilize.
+ - Ingo: We’ll see if we can do this at reasonable rate and if not, ask for more tools 
+- Andy: What is the timeline for getting the sites going up for production vs the 3-month push
+ - Abe: Not sure status for each individual site, but idea is to do a 3 month push now with parts that are available.
+ - Cole: Focus on sites that are really ready. We don’t send parts out to sites that aren’t ready, then we don’t run out of parts. 
+- Ben: question about hybrids: are these hybrid pairs or individual hybrids?
+ - Abe: I’ll continue and that should address it 
+ - Ben: makes a difference for us
+ - Abe: it is number of working sets per type
+- By chat, Jaya John: As a cross-check, our rough full-rate calculator from ASICs side had order of 5300 ABCStars each for Toronto and Uppsala per quarter. So Abe’s numbers make sense to me
+ - By chat, William: Yep, that agrees with my calculations (well I get 5200 ABCStars/ 3months in Toronto). That was why I ‘commented’ on the 10k/3 months in Abe’s slides without the caveat that Uppsala would have to be fully up to speed to really be able to digest 10k/quarter. Glad he clarified that this morning.
+- Bart: I’m wondering what happened to these plans. We discussed this at the PMM, with disclaimers and whatnot. For ASICs I see this, sensors maybe, but for the rest, it has no relation to reality for the next half year at least.
+ - Abe: Yeah, I think we need to see how it goes. We will end up shipping parts as they are available/when necessary 
+ - Luise: The idea is that by the time production actually hits, people are getting used to having their components without having to ask. For the hybrids and powerboards where this is at a currently low rate, this is meant to get this to a state where people are happy with it (wanting it each month and not 3, etc.). But this is about exercising the process so we don’t have to figure it out later.
+- Cole: as an old friend used to say, “we only begin when we begin” 
+### Group Update: Vancouver
+Presenter: Archa Rajagopalan
+- Ben: question about SHHH bonds: you said we can’t test it on the carrier card - does that mean there is no pad on the carrier?
+ - Dennis; there’s a pad which isn't connected to anything. It’s more important that it’s tested on hybrid level - signal from HCC, not powerboard. We need to check where HCC writes it before we could even thinking of defining a test on the powerboard 
+ - Ben: Okay, so we should include it in ITSDAQ and do a check there?
+ - Dennis: It can be tested in ITSDAQ, and we should test it before it’s more difficult to do a meaningful test.
+ - Ben: this could probably go into the powering tests
+ - Cole: will follow up
+- Ingo: we saw the same behaviour on a powerboard where there was a powerboard with a cracked resistor
+ - Dennis: might be the transport carrier on the powerboard. We’re trying to fix them, but there are many out there 
+- Vitaliy: thank you for reporting the issues - that is helpful for other peopleQuestion regarding SHHH lines: you advised to check with the SHHH bonds, but you already checked, right?
+ - Cole: For this one, once we talked with experts, the recommendation was to remove the SHHH bond in this case. We’re not recommending that people start pulling bonds whenever 
+ - Vitaliy: all clear, thanks
+ - Ash: Do you understand why the HCC was asserting that line? Because it is a reset for the AMAC
+ - Cole: I do not. 
+ - Dennis: If it was an HCC, it should have shown up on the hybrid tests. My assumption is that it’s a loose bond in the {SHHH/stitch} area. 
+ - Ash: but this is an active low signal or …?
+ - Dennis: more likely to have a loose wire bond somewhere than
+ - Luise: We do try and look for loose bonds at the very beginning of any problems we see 
+ - Dennis: in the lower level of the stitch region, it’s more difficult to spot.
+ - William: What is the outcome?
+ - Cole: No, not until we figure out for sure that it wasn’t a stitch bond problem 
+ - William: but the stitch bands will be replaced if it goes onto a petal
+ - Cole: We would not load this on a petal without knowing exactly the problem. It won’t be loaded except maybe for a mitigation petal
+ - Luise: We had a statement that it would be OK for a mitigation petal 
+ - William: so this would eat into our yield
+ - Cole: Consider this a PSA 
+ - Dennis: I could also see this as a replacement module on some petal 
+ - Cole: Excellent 
+ - William: Is this a go or a no-go?
+ - Dennis: it’s a better replacement for a broken sensor than having a broken sensor
+- Ash: The other problem you encountered was the second HCC communication. You’re suggesting that the termination resistors 
+ - Cole: Not sure what caused this. When I measured, I was getting 3 Ohms across it. 
+ - Ash: Seems like a short 
+ - Cole: So I ripped off the resistor 
+ - Ash: What do you mean? 
+ - Cole: I don’t know if it’s perfect. It was right before ITk Week and I had to give the module back. In ITSDAQ, if you bring up both HCCs before removing the resistor, you do get data in ITSDAQ but things aren’t right. Both HCC configured after removing the resistor meant I could communicate with one HCC. Only symptom we can really point to is low resistance across that resistor.
+ - Luise: it’s interesting that this happened on this R2 and not any other. This one had to be diverted to TRIUMF for bonding, rather than getting bonded in the usual place. Might have been bonded as a repair and not in the traditional order. Good input for the ESD discussion. Bonding order might actually matter. 
+- Vitaliy: More difficult for me to imagine that the resistor would be ESD instead of the chip. Might be interesting to see what remains here - short could be somewhere else. You may want to put another resistor back 
+ - Cole: yes, more will follow now that we are back
+### Are Pin Holes Making Your IV Negative? Follow These 12 Easy Steps
+Presenter: Alex Wang
+- Cole: While I don’t think we are ready to say it should go in TC, I would be useful to have this as a tool in our toolkit. It depends a bit on how frequently these show up
+ - Tony A: I think it’s more something we want to do if we have a negative current/offset in the AMAC. I suggest starting at -1 V. There’s been some chatter that we may be seeing more pin holes recently, and that would be a good thing to understand. Stefania said that they found a couple of modules with these offestes only when loading. Might be good to have a way to catch these earlier 
+ - Alex: the statement about the one module with pin holes - this one is at SCIPP; not sure about other sites
+- Luise: does the test already produce an output file that contains a list of defects and channels? If not, that would be useful to add already.
+ - Alex: Yes, there are two versions of this script. This one (already on ITSDAQ) just tests for pinholes. The other tries to disable ABC voltages one by one. Not yet on ITSDAQ but could be with minimal effort 
+ - Luise; Would be great to set up as a database test
+ - Cole: Would be happy to set it up 
+ - Alex: I can do that 
+- Vitaliy: nice diagnostics and seems to explain this particular module, but it is a statistics of one. We have a few old modules which we don’t use for anything else - would suggest creating intentional pin holes - would be good to add statistics of at least a few more.
+ - Cole: Seems reasonable 
+ - Peter: not conclusive, but in majority of cases - presence of change of sign between 0 and 10 V is indicative of a pin hole. Propose adding a warning that there might be a pinhole and we should run an additional check 
+ - Alex: sounds like a good idea, would be helpful if it could be marked in red and could be flagged in the output file
+ - Peter: I can do red and I can flag problem in the output file 
+- Gerrit: For Vitaliy or anyone else who can give the answer – I tried to look at specifications of the sensors, but HPK doesn’t allow for pinholes of the sensor, so we’d have to live with it anyway. Why would we bother to find them? 
+ - Vitaliy: I’ll try to answer. Yes, pin holes as well as other defects are allowed to make up to 1% of all strips (combined), we are usually much lower than that, and don’t know how many sensors with pin holes we have in hand. Don’t have exact numbers, but numbers should be small. Why do we even care about pin holes - it shouldn’t be a huge problem in itself, but previous experiments saw that pin holes killed a channel or could actually kill a whole chip. Didn’t know if this was going to be a problem on ITk or not, hence the paper. So basically: pin holes were included out of an abundance of caution
+ - Gerrit: So you agree it’s not a problem?
+ - Vitaliy: see Alex’a results - it’s not a problem in itself pre irradiation, but the current gets worse with irradiation. In reality, the problems occur at currents outside the ITk expectations, which is good, but we should be careful
+ - Gerrit: It would be nice to have this in the toolbox but it’s not a test that will be actionable in production 
+ - Vitaliy: don’t completely disagree, but once we see IV with negative values, it is useful to be able to run a test to identify the cause
+ - Forest: I think this is an argument for less rework of missed wires 
+ - Cole: seems fair
+ - Gerrit: we already instruct wire bonders not to rework because it is too risky
+ - Forrest: Yeah yeah 
+ - Vitaliy: I guess depends on number of channels 
+ - Gerrit; If you get that many channels, you want to throw that thing out anyway. there’s something wrong with it 
+- Cole: let’s continue this as a parallel investigation - don’t expect this to be a problem, but should monitor it in production
+- Tony A: I was going to say the same thing. There’s lore that we’re seeing a higher rate of negative channels and we should follow that up. 
+### Discussion Start Point: ESD Protection in Module Assembly
+Presenter: We are legion (Peter I hope)
+- Peter: after discussion with Ingo, found that the bond programme does not start on the ground bonds, but on the signal bonds, which could cause problems if the hybrid is charged to another level.
+- Peter: the first bond should be a ground bond, otherwise there is a potential to discharge through a signal pad which can either lead to immediate damage or longer term damage
+- Looking at the R5 module presented, this could be a similar case to what was found in the barrel powerboard, which also discovered discharge
+- Peter: Suggest to make sure basic measures are implemented:
+ - PCB is grounded to jig before bonding
+ - Bonding jig is grounded to wirebonder
+ - First bond that is placed is the ground bond
+- Forest: describing order of hybrid and powerboard ground bonds
+- Note on how to use these minutes: Cole has asked Bonders to provide a summary with images. Do not treat this as the reference 
+- Luise: Something about not starting with ground bonds first? (bit garbled for me) 
+- Ingo: We have the bond documentation and it’s in a very clear order. If the bond documentation is wrong, we need to correct it. 
+ - Luise: We’ve asked folks to update it. It’s important to understand where we are 
+- Ash: Structure on hybrid PCB should be grounded to wire bonder before doing anything. First bond to die should always be the ground. Everything should always be equalised 
+ - Ash: big concern with the interposers is the added polyimide layer at the back which tends to accumulate charge, so we need to make sure that this layer is discharged
+ - Ash and Sven will check the wire bonding document 
+ - Peter; Part of issue is when bonding not against a copper face 
+ - Ash: yes, that’s what we can do
+- William: points out discrepancy between hybrid bonding document, bond map and what people do in reality
+ - Peter: one of the problems with ESD is that you damage a circuit, but doesn’t damage it to the point of failure - it may fail later
+ - Peter: if you follow the R5 bonding document, nothing is grounded until bond number 196
+ - William: will check
+- Forest: If picky about ESD and grounding, we’d short together while we {something about bonding} and testing. We want grounding through the whole network of different circuits, followed by power, followed by signal 
+- Homework: Identify where the documentation has mistakes, where we want to make changes, and make an outline of where we are and where we want to be 
+- Tony: wire bonding is only the most obvious place - also need to make sure that tools are grounded, deionizers are recommended to be used everywhere but not yet required 
+ - Cole: let’s take this offline

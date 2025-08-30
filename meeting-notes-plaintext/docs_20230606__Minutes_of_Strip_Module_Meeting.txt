@@ -1,0 +1,197 @@
+# 06/06/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289842/
+### Introduction
+Slide 4
+- Tony: where did this packaging happen?
+ - Luise: it's not a split at CERN
+ - Luise: if yours were split manually, you should check
+ - Gerrit: metal parts sticking through rubber suction cups is well known by now. You should always check.
+Slide 7
+- Bruce: please don’t just report to Cole but to the whole mail list
+- Tony: do we then go to releases?
+ - Bruce: we still will need people to test latest releases
+ - Tony: do we have beta-testers for those?
+ - Bruce: we never had this
+ - Bruce: if you don’t want to do any debugging, then that is what the releases are for
+ - Bruce: but we will people to use the latest release and do the debugging
+ - Hannah: should have a list of people to do the debugging
+ - Bruce: if we have sufficient volunteers to do this, then that would be good
+ - Hannah: maybe we should make a list of those beta testers
+ - Luise: would like to first wait until we actually have releases and know more about the timescale of release updates
+ - Tony: if it is dedicated tests, we should do this. The worry is to have different releases giving out different results
+Slide 
+- William: what were the dates for the EC PRR?
+ - Luise: July 10-12
+### Institute Contributions: 
+Argotech
+- Carles: question for module ACs: what is the approach to the extra dots in the stencils? Is it up to the sites or do we need a sign off?
+ - Luise: we do want people to try them and collect feedback. Once a few sites agree that this is beneficial, we can make this the official version
+Next meeting: Dortmund
+### Returning Pelican boxes
+Can we agree on community to not track individual Pelican boxes and rather just ship boxes between sites where needed instead of having to return the exact same box back to the origin.
+The numbers of boxes should be correct, but it would reduce shipping costs.
+- Nghia: as long as the boxes have the correct number of module slots, then that would be OK
+- Carles: it’s not always the case that the boxes have the same number of slots (some with 5, some with 6)
+- Luise: the difference in box value is still cheaper than the shipping. Maybe we could just buy replacement foam and agree that at least the bigger boxes are all “the same”
+- Luise: any objections?
+- Tony: would not all boxes and up at the loading sites?
+ - Luise: in EC the situation is more complicated
+- Michael: would probably at least keep a log of the numbers of boxes and make sure they are not all hold at a single place
+ - William: we have a list of all boxes, but if we get boxes from other sites, that will start to fall appart
+ - Michael: our boxes have a shipping manifest on them for tax reasons
+- Luise: we don’t need to decide to do this today, and if groups want their own box back we can find ways of tracking them (e.g. in the database)
+- Gerrit: someone puts a shipping label on the pelican case, is this shipped without cardboard box?
+ - Luise: no, its just for information
+- William: we have the purchase form in the box to show Canadian customs that taxes were paid, so the database alone would not be sufficient
+### Adding power cycling to burn-in
+Slide 
+- William: been thinking about the results from the 100 tests, are the little ripples in the tests significant? What are we trying to accomplish by doing the 100 h burn-in?
+ - Craig: this is an old question, particularly the 100h from SCT. And when we were discussing this in the past there were also no issues.
+ - Craig; looking at infant mortality does not work because of the temperature we run at. There was always an argument to question why we do it. And one counter-argument was that if we have the setup it will just run.
+ - William: but once we are confident, most of the reasoning for burn-in will fall away
+ - Craig: think that during SCT times the burn-in time was reduced throughout production to 24h
+ - Sandra: yes: reduced it from 100 hours
+ - Tony: went through every experiment and checked for failures in burn-in and the only experiment that saw anything was vias failures in CMS
+ - Tony: proposal is to add this now and stress vias 
+ - William: but this requires a lot of effort
+ - Tony: you still have to run the test to show that the hybrids work
+ - William: we have a lot of issues with the EC hybrids
+- Ashley: would be more comfortable to revisit this after ~6months of production when we have more statistic
+- Ashley: get worried about stress-testing ASICs for power-cycling. Has anyone done forced failures of ASICs from power cycling? How many cycles are required to get an ASIC failure?
+ - Craig: did set up a hybrid panel with first powerboards (with FEAST, back then) to turn off and on for a week or so, and never saw any failures
+ - Tony: in this test Marcus has done 10 000 power cycles
+ - Marcus: did the test with two panels or so
+ - Ash: power cycling is worthwhile exercise, as we are stressing hybrids as well
+ - Tony: question is how many power cycles to add
+ - Ashley: would probably go the aggressive route
+ - William: but we don’t have USB control of the power supply
+ - Craig: powering through DCDC, doesn’t need USB control
+ - Sven: would be useful to keep cycling after power cycling to make sure they didn’t get destroyed
+ - Matt: can do it with pre-production panel
+ - Sven: should be a few panels left that can be used for this test
+ - Marcus to share instructions
+- Luise: so what is the plan
+ - Sven: want to run in aggressive mode for 100 hours and then run for another 100 hours afterwards to make sure they didn’t break during the aggressive mode
+ - Peter: concerned that this will kill the DCDCs. If this is the case, might have to consider getting spare DCDCs for this
+ - Tony: yes, will mostly learn about the system
+### Peels on hybrid flexes
+- Forste: but no reduction in pull strength?
+ - Sandra: no, results in backup
+- Sven: when running the ageing tests, recommended two options: either 14 days at room temperature or shorter solution, but not 2 hours at 90 degrees as done here
+- Sven: probably not related to batches, see rough and smooth surfaces, nothing we can do about it
+- Sven: did another ageing test at room temperature for 14 days and were very happy with the results, so don’t see any problems with using these flexes, Rui approves (also with PRR follow-up)
+- Sandra: how do you explain the difference between pre-production and production? Haven’t seen the surface be so rough before
+- Sven: have seen the same thing in PPB
+- Ash: contacted manufacturer and they say they meet the specs, contacted Rui and he confirms they are fine and there is no need to reject them
+- Sandra: understood, but what do we do with the flexes now, do we just reject them?
+- Sven: QC was done already, this isn’t a concern - free to proceed with room temperature ageing or accelerated ageing, maybe fail the test, but accept the hybrid
+- Sven: could consider modifying the test procedure to include accelerated ageing to get the peels under control
+- Ash: would prefer to do that
+- Luise: set up dedicated meeting with sites involved in flex QC to agree on whether we want to have accelerated ageing as part of pull test procedure
+- Sandra:yes, need to agree on what to do with this test
+- Sven: when you dry hybrids (5 minutes at 90 degrees), how do you ensure that there are no water stains on the surface? Generally a concern if circuits not blown dry
+- Sandra: didn’t see a difference between baking or leaving in dry storage over night
+- Vitaliy: is GPC the production batch number
+ - Sven: yes, delivery batch number
+- Vitaliy: for the affected hybrids, suggestion to modify QC for coupons, but what is the consequence of hybrid assembly sites
+ - Sven: hybrid assembly sites don’t do QC by default, so non-flex-QC sites shouldn’t do them
+ - Vitaliy: would this mean that hybrid assembly sites do the same thing?
+ - Luise: last status was: if the peels fail, can wait for two weeks
+ - Vitaliy: so do we have to?
+ - Sven: flexes passed QC already, so would recommend that you just proceed
+ - Tony: Liverpool tests every array?
+ - Sven: yes
+ - Tony: so we can trust that the flexes are good and it’s at most contamination
+ - Sven: also don’t see an improvement with cleaning
+ - Sandra: so we just do QC, let the test fail, but proceed with flexes?
+ - Sven: need to have a combined discussion with all flex QC sites
+ - Ash: will try to locate test coupons and try to match them up and see if there is a correlation
+ - Ash and Sandra: keep in touch
+- Forest: seems to be a disconnect between QC results and assembly sites - sites will only test limited amount of flexes assuming they’re good, but we know there is variation within a batch
+ - Forest: don’t have an established peel rate, but agree that baking helps
+ - Forest: so how do we agree on what is good
+ - Sven: for monthly pull test, no baking needed, only wait for two weeks, accelerated ageing only done for QC for time reasons
+- Luise: concern with peels is that you did not make a good contact with surface and that there is contamination. Reason to wait for 2 weeks is that the microwelds form and if there is contamination this would not improve.
+ - Forest: fundamental concern is that we do possibly poor bonds where tweaking of parameters could result in good bonds.
+ - Luise: high pull strength at high peel is out issue
+ - Luise: should try to schedule the flex meeting soon to come to a procedural proposal
+ - Ashley: if we encounter high pull and high peel is in general an indicator that it is not surface contamination.
+- Tony: I thought there wasn’t an instance of peels still staying after two weeks?
+ - Sven: yes, seen after one week, but not after two weeks
+ - Ash: saw one single peel
+- William: we also had issues with bonding.
+ - William: maybe hybrid assembly sites should also be present at the meeting
+ - Ashley: have never seen any issues with wire-bonds from assembled hybrids/modules for barrel hybrid flexes
+- Forest: usually places that have a no-stick are hybrids to bias pad of sensor
+ - Ash and Sven: probably bad support under hybrid
+ - Forest: just to make the point that a lot of variation occurs
+### Surprise contribution: results from Wuerth Cold Noise module
+- Luise: how does this compare to same picture of R1 powerboard on barrel module?
+ - Matt: when its scanned at 2MHz other modules are very similar, but this is a very unique scan
+ - Matt: try to get a better scan. 
+ - Luise: this ASIC that has high vibration, does it have a lot of cold noise?
+ - Matt: it has a lot of vibration and it is strange. And there seems to be not a lot of cold noise on it (Y hybrid)
+ - Luise: would be good to compare it with the Chimera module and try side-by-side comparisons
+ - Luise: would it be possible to overlay the vibration picture with the cold noise picture to see if there are correlations
+- Forest: is the capacitor expanding vertically or longitudionally?
+ - Matt: it is expanding upwards (in slide 3)
+ - Forest: what about tombstoning the capacitor and connect the other side with a lead?
+ - Matt: want to see how vibration pass into the module. When scanning from the back it looks like it is punching down
+ - Forest: just an idea
+ - Peter: the problem is that this adds induction to the circuit which causes other issues
+- Ian: might not make a large sense to compare barrel and EC with same DCDC frequency since the resonance frequencies are different
+ - Dennis: should be roughly same dampening as EC powerboards, since the DCDC area is roughly the same
+ - Ian: thinking about comparability between the two end-cap versions
+ - Vitaliy: thought that distance between capacitors is slightly different for barrel ane end-cap
+ - Matt: yes, C4 and C5 are different.
+ - Vitaliy: could be one of the differences
+- Luise: do we learn anything from this for the barrel powerboard re-design? Are there any other changes beside from staggered vias?
+ - Matt: still confused from this
+ - Vitaliy: would be useful to make the capacitor geometry the same (down to mm fraction) since the wavelength is short and that might make a difference
+ - Dennis: not sure if this is the exact same design, have to do an overlay
+- Timon: slide 3 is at -40C?
+ - Matt: no, these are at room temperature
+ - Timon: cold noise results?
+ - Matt: -40C chuck temperature; its a false blue module so we would expect high cold noise
+ - Matt: concern is the high baseline noise
+ - Ian: shunting?
+ - Matt: this is un-shunted
+ - Dennis: would be good to do a shunted test as well to see what we see. For EC we don’t see a higher increase in baseline when shunted
+ - Matt:?
+ - Luise: baseline current on shunted end-cap modules increases, not cold noise
+ - Timon: should get other flexes soon here
+ - Timon: expect the amount of copper in these boards is a lot less and thickness is comparable with EC powerboards
+ - Dennis: done manually in Keyence, can do the same test again for a barrel Wuerth board and compare the two
+ - Timon: worried about general electrical noise being affected by having less copper - unclear from previous results
+ - Dennis: also worried about copper thickness
+ - Ian: can you confirm that the strip ordering is correct?
+ - Matt: will check it (also surprised about high noise on left side)
+ - Ian: looks like the bump on the Y hybrid is there, but only if the order is reversed
+- Tony: 2 other tests that could be done: tuning at peak for reliability test
+ - Matt: worked on it today, some concerns raised by Peter, need to daisy-chain some resistors, more work needed
+ - Timon: what is the rational for this being a showstopper for module?
+ - Luise: the PRR report required some follow-up information
+ - Tony: we want to do the tests before we start making modules
+ - Tony: think the tuning of the module is more important than making a second module
+ - Matt: will focus on the tuning to get vibration tests started
+- Peter: questioning the sanity of tuning the module for the test because it will create a weak point at the resistor chain. It is a dangerous thing to do, but can’t guarantee that modules won’t fail because of this
+ - Timon: could discover this in post-mortem test
+ - Timon: are you sure those will fail first?
+ - Peter: from past experience, this is something that has failed because it is weakening the connection
+ - Luise; thought there was a plan for peak tuned and hand soldered and compare with reference module
+ - Peter: it’s risky
+ - Luise: can’t have tuned to peak without hand-soldered connection which is worrying
+ - Luise: so do this only for 2 modules and leave other 4 as reference
+ - Timon: could assemble parts with exact component value for powerboards without shield boxes.
+ - Timon: but not sure if there are other causes of failure when doing this.
+ - Dennis: if its a mechanically failure we can see it
+ - Timon: but if it is micro-cracks it will be hard to see when trying to un-solder the shieldbox
+ - Luise: bondlab will be closed soon for 2 weeks and we were asked to get this started next monday. We could consider replacing some of the modules later
+ - Matt: think it is hard to do the fine tuning before having the powerboards
+ - Timon: you mean knowing the resistance is not sufficient?
+ - Matt: we wanted to tune the resistance for this specific capacitance?
+ - Timon: do you know which capacitors were used for this?
+ - Dennis: new 25V ones, haven’t been used so far, can send part number
+ - Timon: same ones I’ve been using?
+ - Dennis: probably not
+### AOB

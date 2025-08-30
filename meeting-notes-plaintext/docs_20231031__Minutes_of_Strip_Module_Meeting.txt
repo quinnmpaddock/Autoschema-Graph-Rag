@@ -1,0 +1,165 @@
+# 31/10/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1336880/
+### Introduction
+Slide 3
+- Alex: [see ITSDAQ update]
+- Cole: [HV stability test in database] will be set up this week
+Slide 
+- Gerrit: how do you distinguish between IV measurements and at some point you have no clue what they are
+ - Luise: To first order, timestamps help (show over time). There is also a comment field in IV.
+ - Gerrit: OK, so you should use the comment field for specific notes
+ - Luise: There is also a flag in the DB to specify things other than “stored and waited”
+ - Kenny: there is also the runnumber field
+ - Luise: I think for AMAC IVs, it’s now the ITSDAQ Run number.
+### News from ITSDAQ/News from sensors
+ITSDAQ
+- Peter: there is just a rounding error. That is why the blue dot is not on the line
+- Tony: is this on the main branch so that we can re-analyse our old data?
+ - Cole: it’s not in master yet
+ - Peter: there are a few experimental things in this branch. I will make a cleaner one
+- Tony: have a lot of data we need to re-analyse and upload
+ - Peter: just type NOPlot and use tab to autocomplete to find what needs to be filled there
+- Tony [merging script]: it was tested and the time coding on the measurements looked bad, environmental data looked scrambled. Did Mo look into this?
+ - Alex: time stamp order did not seem to correspond to file order
+ - Cole: this sounds like a globe call code problem, probably just needs an order command
+ - Tony: it just scrambles the correlation with data
+- Abe: should the environmental data be sourced by ITSDCS? [difficult to understand question]
+ - Cole: need to make a better recommendation on how to source their scripts. Either need to have the bash script to overwrite the environment variable or make sure people don’t set them wrong
+- Abe: it was fine with influx set to empty receiver, then I had to rebuild and it worked
+ - Bruce: shouldn’t make a difference for normal AMAC testing, sounds cold box specific
+### Institute contribution: Cambridge/QMUL
+Slide 9
+- Luise: These scripts seem really useful, are these available for others to use? 
+ - Paul: can attach scripts to TWiki that was used to collect scripts
+- Luise [to Bart]: for the question about tracking items: part of the general reporting is also to get the number of usable items (e.g. hybrids that can be used for modules). 
+ - Bart: Sure, thanks
+### Wrap up of current measurement issues on some PPB modules
+Slide 12
+- Vitaliy: 6 comments. First, I believe the ABC Star FE bias from Jan Kaplan was 250 mV.
+ - Dave: No, I contacted Jan and he said 190-300mV
+ - Vitaliy: the reason why it is difficult to use this method is that the shaper has different methods for the DC coupled signal
+ - Vitaliy: [slide 12] pin holes start to matter when sensor current is much higher, sensors irradiated to end of of life fluence don’t have sufficient current, need to go beyond that to be able to see something
+ - Vitaliy [slide 14]: The nasty looking things, they look like corrosion to me. Looks like moisture exposure.
+ - Emily: wire bonder has problems in these areas, was documented during bonding
+ - Vitaliy: Right, so that sort of brings me to the last point. You asked what to do. If pinholes were identifiable, but natively, they are rare. They can happen. You can create them however during assembly. You would only fail the sensor if there were a “massive” number of them.
+ - Vitaliy: actual implication here is for stability tests: if we see AMAC IV current to saturate or oscillate, need to pick a different feedback resistor in the software
+ - Emily: Yes, this can be annoying to implement
+ - Vitaliy: Yes, but you have identified a cause and found a solution.
+- Timon: turning the DCDC off, I can see why it matters for the pinhole discussion. Does it matter in general?
+ - Emily: I know that we’re already considering turning off the DCDC for IVs as it is. What you see is that turning it off clamps the input at 0V (points to slide 6)
+ - Timon: if there is a pinhole, can understand why there is an effect, but if there isn’t a pinhole?
+ - Emily: Yes, there is some noise there from what I’ve heard. So if that’s the case, we wouldn’t see that in our testing save that the current looks a little high.
+- Luise: On the ITSDAQ side, is the mechanism here clear enough to automate (go to different feedback resistors) for the current measurement?
+ - Emily: I’ve only seen this when the current is saturating low
+ - Luise: is this easy to implement?
+ - Peter: It’s half-implemented in a dev branch, but I’m not quite happy with it. There are the pin holes pulling current low, and there is the DCDC causing problems measuring the current when it’s low. And as Dennis showed, with high current on irradiated modules, the feedback can also cause issues. We haven’t quite worked out the best way to handle these.
+ - Peter: suggested to avoid the lowest ranges, but that is a bit of a blunt tool. This also shows the importance to do some measurements with the DCDC on
+ - Luise: You need the DCDC on to find this problem?
+ - Peter: yes
+ - Tony: Do you need a scan or a single point?
+ - Peter: a couple of points should be fine
+ - Peter: might be able to track it to the level of one chip with a method
+- Dave: To conclude, if we see this in the future (via software), do we use the module? Will there be a decision on that?
+ - Luise: maybe it depends on what caused the pinhole. Wrong bonding or a sensor pinhole?
+ - Dave: I don’t know, but I’m sure it’s not a wirebonding issue in this case. The module seems to work fine otherwise. Do we discard it or use it, or decide this later?
+ - Luise: For this particular module, we don’t understand the issue (was it assembly?). Vitaliy, for the pinholes you created in your study, if they exist, they are not technically a problem for passing right?
+ - Vitaliy: Right, the amount of current we are going to see is not enough for this to be a problem.
+ - Luise: so right now with what we know it would not be enough to reject the module
+ - Vitaliy: I would think so. If this happens, maybe the procedure should be for people to check that there aren’t any obvious visual problems. Otherwise, it should be fine
+ - Luise: checking to see if there is another cause (mechanical) apart from pinholes should be a requirement
+ - Dave: Okay, thank you. 
+- Gerrit: For Vitaliy, so we kind of agreed that we accept these modules as “OK”, but Vitaliy is saying that if you inspect the module (quite a bit of work), if there’s a scratch that you should reconsider. What would be the problem if it did have a scratch but was behaving as other good modules do?
+ - Vitaliy: scratches could cause multiple issues
+ - Emily: but it is not showing up in the electrical tests
+ - Gerrit: Exactly
+ - Vitaly: The big scratches, to me, look bad
+ - Gerrit: I’m coming from the part-flow point of view. If we have to check this. The electrical test is the last thing we do and if it works “it works”. Going back through to re-evaluate is a lot of work. 
+ - Vitaliy: understand that this is a lot of work, but some scratches are more severe than others
+ - (If you have issues, you may want to avoid them - Vitaliy)
+- Tony: I think it depends on the rate of this issue. How many of these modules are showing this issue? What fraction is causing problems? If you’re not re-working modules often, then this should be pretty rare.
+ - Emily: There were already some bonding issues before we started. We were seeing nearly 25% (of what?)
+ - Gerrit: We had issues getting it to stick to the ASIC
+ - Tony: It doesn’t matter. You’re reworking both sides and it looks messed up. There’s a reason for it that means you have a higher likelihood of having a problem. It could be that you’re the only ones looking at this, it could be that you’re having an issue with bondability of chips
+ - Gerrit: I think the reworking here is one of the “hot” items. IF you have to rework, it screws up your throughput. Multiple tries on the bond pads is not advisable. 
+ - Gerrit: think we should red-flag this much better for now
+ - Tony: You should look at the rate. See if this correlates. 
+ - Emily: I was looking at this, but it was something like 5-6 modules out of 16 that we had to rework. Two had this problem.
+ - Tony: but how many of the other ones were reworked?
+ - Emily: So it would be 3-4 that needed rework. 
+ - Tony: seems like a fairly high rate
+- Luise: If people want to look for this, what procedure should be used to identify this?
+ - Emily: you should see this when doing an AMAC IV. If you don’t want to do the full IV you can just look at the counts.
+ - Luise: So to ask people to do this, we want to ask people to use an ITSDAQ command that they can run and tell them what to watch out for.
+ - Tony: these are the once where the AMAC IV have a large step in them
+ - Emily: If the DCDC is on, then you’ll see 0 current. If off, then you’ll see your counts around 200, depending on the number of pinholes.
+Command to run in ITSDAQ: AMACStar_readAM(-1,7,0)
+if DCDC is on, count is ~50 (lower than 100). If DCDC is off, count is 200 or higher depending on how many pinholes/pinhole like things you have
+Should be similar for all modules otherwise, check for mechanical problems
+ - Tony: If it’s a warm test, where you’re just checking that the IV is not stuck at 0, then that should be pretty quick. 
+ - Emily: Maybe if you have just one pinhole, after a certain level of pinholes, you may not see this issue at a particular bias.
+ - Tony: at low values you see zero (slide 16)
+ - Tony: do you see this on staves?
+ - Emily: weren’t tracking very thoroughly, but seems to be a recent problem
+ - 
+- Recap: people should look out for this, but in itself it is not a reason to reject a module
+From chat: Matt's paper on the module performance, including the pinhole impact: https://iopscience.iop.org/article/10.1088/1748-0221/16/03/P03037
+### Re-evaluating ITSDAQ cuts per ASIC
+Slide 
+- Tony: In these modules, I assume that the powerboard widths are wider. There’s a physical reason why they are different right?
+ - Sten: yes
+ - Tony: So the outer edges make more sense. I don’t know if you want to make the outer edges wider than the inner section. If it’s the reality, then it’s what we have (it’s geometry). 
+ - Sten: reaching alternative proposal 1: (could treat edge chips different from middle chips)
+ - Tony: If the PB shield has a problem or there is something else, that shouldn’t fail the chip 
+ - Sten: We talked about this, and Jacob’s proposal was to treat them differently
+- William: We did spend a year redesigning the PB, so I think we are stuck there. The problem is we have a lot of parts and very low statistics. If it’s just over 35 ENC, is that really bad in the long run? We are not likely to get high stats anytime soon.
+ - Luise: if you look at one plot with all ASICs you would have to catch several edge cases. If you compare with barrel where we looked at the bump, maybe we should re-evalute how we make the decision for EC
+ - Sten: what point are you making?
+ - Luise: I’m saying it might be safer to allow more variations among different EC modules since they are clearly different. Instead of trying to match the noise to all the different regions of the module, I would agree with widening the cut generally
+ - Sten: Yes, this number of 35 is selected based on this population. I am a bit concerned that if we keep raising the limit, we start to hide things we definitely want to catch. So perhaps we would have to be more aggressive in the first part of the classifier.
+ - William: I agree that we should be careful about loosening the cuts too much on the test.
+ - Luise: One thing that would be good to look at in your tests are PB peaks. If we loosen the cuts to the point that we miss that peak, that would be a problem we want to avoid.
+ - Sten: One problem is that if you have a highly sloped chip, these large peaks wouldn’t be caught.
+ - Tony: I don’t think there is much more you can do. But if you look at the dubious chip vs what we are seeing, you can see that the increases have shape (semi-monotonic). We may have to consider the shape (a rolling average) on the chip, which is very difficult.
+- Luise: Q for B and P. Can there be different cuts for barrel/EC modules per-chip?
+ - Peter: I’m skeptical of this. I don’t understand how the geometry causes a drop off at the edge of the module. The only thing I can think of is that it’s lifting up (unglued). Is that what this is telling us?
+ - Sten: You do see similar behavior in the barrel. The edge strip has fewer strip neighbors, so perhaps there could be a difference?
+ - Tony: but the glue ends on purpose at some distance to the guard ring
+ - Luise: This is an R3, where there is likely a PB, so it’s possible this is causing part of the problem. 
+ - Luise: the cut on chip sigma is that we expect it to be flat?
+ - Peter: the bottom line is, it’s fine to change the way these are analyzed, but we need to understand what shape to accommodate. My preference would be to scale it rather than use a table of cuts.
+ - Luise: then we have a proposal
+ - Sten: There is also the point that we do need some kind of decision on this for the PRR next week.
+ - Peter: Does the theoretical model predict these edges?
+ - Luise: the theoretical model only looks at the hybrid width. It does not cover different strip lengths.
+ - Tony: You could draw a slope/step. 
+ - Luise: There are three different thickness on hybrids, and there are slopes in between, so this would be a lot of work. We _can_, but is this really necessary?
+ - Vitaliy: I would imagine the biggest difficulties is that different sites will have different glue patterns, so it will differ. You would have to account for a varying location of this feature. But it is an extra complication. Maybe just increasing the sigma is enough.
+ - Sten: from this data there are not big problems
+- Luise: can widen the cut based on what module we test. Module specific sigma cut.
+ - Peter: That’s relatively easy. One vs chips is more difficult, but could be done if we really needed it.
+ - Luise: need a few more modules with final modules to get values for each module type and this might change in the future when we have more data for more modules
+ - Sten: That makes sense.
+ - Resounding agreement inferred from silence.
+### Acetal vs. Metal Pins on Assembly Jigs
+Slide 
+- Peter spears: When you’re aligning the sensor, when you say you’re applying vacuum, are you applying lateral force to get it to engage with the pins?
+ - Aware: I don’t think a lot of force was being applied to the pins. But it was definitely held up against the pins before vacuum. And that’s how we do it during module assembly so the module doesn’t shift.
+- Luise: How difficult do you find it to replace the pins?
+ - Kirsten: Had to take the jigs apart and drill a hole from the back to push the pin out.
+ - Luise: So you didn’t have to widen the hole, you could just press it in?
+ - Vitaliy: I think Forest had to modify the jig. The point here is that we would like to use new pins for the production toolset. It’s about finished, but pins haven’t been placed yet, so we can order new ones with the same tolerance, so it should be a drop-in replacement.
+ - Tony: I think he knocked them out and reamed it. When you knock it out, you mess it up slightly, so you have to clean it a bit.
+ - Vitality: I’m not sure if you can do this with the EC jigs easily
+ - Luise: If you are just affecting the production jigs, I don’t see any issues with that.
+ - Sven: No problem. Just have to change the drawings and do another EDMS review.
+ - Vitaliy: I should mention, we were thinking about Delrin originally, but acetal is similar and mechanically similar. 
+ - Luise: I assumed you checked that there is no static charge problem?
+ - Vitaliy: No, we did not check that. I’m not sure how we would check that.
+ - Luise: It’s the only thing I could think that would be a problem, but you’re right, it probably isn’t an issue.
+ - Sven: it’s good it’s a mizumi part, so it should fit into bushings and should match
+ - Luise: Sounds like approval. Sven, would you make the changes to the EDMS drawings? 
+ - Sven: Yes.
+ - Vitaliy: We should also mention that it was Tom Johnson who found them. 
+ - Once again, resounding approval and agreement based on lack of protest.
+### AOB
+-

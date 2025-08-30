@@ -1,0 +1,50 @@
+# 04/05/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1008271/ 
+### Introduction
+- SQ steps for Hybrid reception, module shipping and storage ready for qualification
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+### Endcap Tool RFID 
+- Proposal: change EC RFID tool tags to single layer design to improve readability
+ - Valencia happy to solder them there
+ - Podding changes readability a lot (gets worse)
+ - Other issue is with american frequency. American freqs can’t be used in Europe and the other way round because of spectra usage (mobile, military..)
+### A common test for IV curves
+- Header information: scripts in database to extract all components at current institute into text file and use this as look-up file
+- There is no requirement to immediately upload files directly after the test
+ - Bruce: need to support upload at a later point (even though database access should be available at all times);
+ - Might be more problematic if there are restrictions on the work environment (e.g. from cleanroom)
+ - Vitaliy: QC code is not just for uploading, but also for data inspection and other features
+- Sensor envelope has also the printed serial number below the barcode
+- Vitaliy: SCIPP is not using LabVIEW;
+- Gerrit: item 1 is hard to realize to get all groups using a limited number of measurement software
+- Luise: different output format for sensor IV and module IV. can this be implemented in already existing measurement software?
+ - Vitaliy: yes, SCIPP system can be adapted
+ - Luise: would be good if sensor QC sites could keep using their software for IV measurements by just modifying the output format
+- Vitaliy: groups need to ensure that all groups adhere to certain measurement routines and safety procedures
+- Vitaliy asks Bart: how to UK tests sensors after HV-tabbing
+ - Bart: using Prague code, which includes shut voltage; use same setup for all measurements (HV-tabbed sensors and bare sensors)
+ - Shunt voltage field is already in database for sensor IV test
+ - Would be good to keep in case it is used by some groups
+- Christoph: would be good to define a new test type for IV after HV-tabbing
+ - Bart: should be as close to sensor IV as possible to compare results of module IV with sensor IV
+- Question: does IV of sensor with HV tab belongs to sensor or to module?
+ - Add information in file header as comment
+ - Gerrit: better to have a flag or a new test type
+ - This is not only relevant for test after HV tab, but also when items are shipped
+- Luise: would be good to propose a file header design in next 2 weeks and discuss it
+- Need also ensure to make sure extraction algorithms work for all possible IV measurement output files
+ - Extraction of derived parameters is happening during database upload (for sensor QC)
+ - Luise: would be good to test this to make sure e.g. current is not too noisy for algorithm to find breakdown voltage
+- Need a more complete list of systems people are planning on using
+- Need to check that current systems are compatible with IV file analysis 
+### Waffle Wedges for Tab Bonding
+- Asked community to notify with wedges are used for tab bonding
+ - Mainly waffle tools used
+- Tab will break at 480g (tensile strength)
+- Propose to require using a waffle tool for tab bonding in documentation
+- Recommendation: should to all tab bonding in one session to minimize tool changing
+ - Keeping in mind that there are QC tests required before bonding a tab
+### AOB
+- None, out of time

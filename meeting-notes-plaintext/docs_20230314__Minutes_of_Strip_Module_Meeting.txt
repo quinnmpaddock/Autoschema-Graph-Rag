@@ -1,0 +1,150 @@
+# 14/03/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1253775
+### Introduction
+Slide 3
+- Tony: do we know if it will be on Friday (before AUW) or not?
+ - Luise: no, so far we don’t
+- Tony: for cleaning, we have experience from LBL. Do you want us to report that?
+ - Luise: we are fine so far
+Slide 4
+- Tony: other PRR items 
+ - - Sandia irradiation: we are trying to arrange this. Do you want modules from 2 sites?
+ - Luise: yes, but only if it does not cause delays
+ - What’s the deliverable module whose for the PRR? Do we need all LS staves done?
+ - Luise: your question: if you have build modules for the 1st LS stave, can you build those for the next
+ - Tony: yes
+ - Luise: yes, you can continue
+ - Luise: official deliverables are 8 staves, but if we have less we will still continue with the PRR.
+ - Tony: and SS will only be build when we have a final mitigation?
+ - Luise: yes
+ - Tony: and will continue with 50/50 staves
+ - Luise: you mean mixing on the stave, not 1 stave 1 type, the other stave only the other
+- Ashley: regarding hybrid cleaning, isn’t the only metric their suitability for wire bonding?
+ - Luise: yes
+- Bart: it would be most convenient for us to build one module type first, then the other
+- Bart: looking at the general pull test sheet, it looks good. Do we need more?
+ - Luise: we want every institute to upload results. This is the lightweight descoping
+ - Luise: and for halfmoons we also want to use the data to use them as potential cicorel card replacement
+Slide 10
+- Andy: do we understand if we need different stencils for the different glues
+ - Luise: at the moment not, but we will need to evaluate after groups have gained experience (also about fill factor)
+ - Tony: our experience so far is that we have a higher fill factor. Wicking is slightly different, therefore for the robot we have moved the glue pattern slightly away from the sensor edges. For SE4445 we take some glue out with the stencils we have from LBNL.
+### Institute Contributions: 
+Cambridge
+- Luise: sensor QC is well structured and organised while modules is more individual?
+ - Bart: yes. But also production has started earlier and things are further developed
+ - Luise: sensors have the advantage that sensors come in badges. (Slide 3) is something that comes out of the databas, and it might be nice to have something like this
+ - Ingo: would advertise Dennis’s mixer to remove bubbles in glue
+- Vitaliy: the batch based tool was developed for the approval process where we needed these summaries. It was a relative late development. We managed to insist that everyone is using the same software, while in modules there is a variety of software options to choose from.
+Next meeting: IFIC
+### Sensor reception tests at module sites
+- Vitaliy: its very valuable data and nice to have this compilation. Would be good to present it in a sensor meeting
+- Vitaliy (slide 8): the current unit here can’t be true. Is it nA/cm^2? This is 10-100 times lower than what I expect
+ - Stephanie: yes, it is likely nA/cm^2
+ - Vitaliy: why do you have a current limit at 4?
+ - Stephanie: the plot is in log
+- John: the very light scratches on sensors: we have seen them but they didn’t have an effect on the IV. 
+ - Stephanie: 
+- Carles: we also have data here. At IFIC we inspect all sensors and we are uploading the defects to the database. Do you want sites to report on this in meetings or email?
+ - Vitaliy: it would be nice if you could add your results to Stephanies and make a report on it
+ - Carles: do you prefere showing it in a meeting, or send it via email?
+ - Vitaliy: an email would be nice
+ - Luise: Stephanie has agreed to collect this for EC, so it would be nice if you could send her your observations
+- Tony: a lot of the marks don’t look significant. It would be interesting to see if the marks are correlated with current
+ - Luise: the visual inspection is done on each sensor and you can see that some sensors have the marks without increase IV
+ - Vitaliy: we also see then not frequently and the vast majority of the light scratches don’t have an effect
+ - Tony: would be good to see the rates of this happening as well
+### Hybrid summary test update
+- Vitaliy: from my perspective it would also be useful to show the variable that failed for each test. But to do that you would have to pass the results from the tests and use this. The user has some sort of leverage how to flag a test, so there might be an issue and it would be better to check the results of the test
+ - Luise: I think we have given you a list of crucial parameters to look at. There are a lot of properties in the tests, and not all have a pass or fail and they should be included. We can provide more info about the crucial values and allowed ranges
+ - Sadia: for ASIC metrology for example would I have to get the data from the test?
+ - Luise: yes, we can discuss a set of values.
+ - Luise: we don’t want to have all values in this summary, but a short summary of some values
+ - Sadia: even with crucial parameters, if a test passes then we might not want to see the results
+ - Luise: no, also if the test passes we want the values of some key parameter
+- Theo: one should not need to re-interprete the whole metrology analysis and use the an upload. Recall that defect is only reserved for ITSDAQ?
+ - Bruce: should be a defect
+ - Sven: we haven’t used defects in any other tests and it would require a massive re-write of specification documents to include this
+ - Sadia: haven’t seen any defects in other tests
+ - Luise: should be relatively easy to compare values with the requirement limits
+ - Theo: sounds like would have to re-run the analysis
+ - Luise: no, all the data for the summary should be already in the database. Don’t have to re-calculate it
+ - William: but the tolerances have to be somewhere, and those could be change?
+ - Luise: no
+ - William: but the thickness would be relaxed for example
+ - Theo: it would be nice to see for the metrology test what failed
+ - Luise: you could add anything to the comments that you want. But it should not be necessary
+ - Sven: at ITk week we have received feedback not to modify things that are working now and not all groups will use the same scripts
+- Andy: is the analysis of ITSDAQ and the messages from it ready to go?
+ - Andy: is the ITSDAQ analysis set in stone now?
+ - Bruce: nothing is set in stone as such, but if something is regularly failing that shouldn’t we need to look at it
+ - Andy: know that analysis was done at SCIPP for cuts, is this added to ITSDAQ?
+ - Tony: we have pushed this to ITSDAQ, but not sure if it was moved to the main branch
+ - Tony: also not sure about response curve, where there are things different at different institutes
+ - Hannah: we are looking at this at Lund as well about mis-identified channels.
+ - Tony: we run analysis with a separate script and the results can be different to what ITSDAQ returns
+ - Andy: lot of UK sites don’t pass Noise Occupancy
+- Vitaliy: what William said is correct, that we should need a field for version number or schema of this test, in case there are changes in thresholds.
+- William: we have put all our hybrids up and uploaded the results
+ - Luise: you are not supposed right now to verbally report on why the test has failed. If we want to do is in the way that Theo suggested, we need to think about this in the future on how to do this in a way that does not break anything
+- Andy: it is probably fair to mention that scripts might change during pre-production. If we can optimise for better use, this should be considered
+ - Theo: keeping thing compatible with pre-production might be difficult
+ - Luise: if there is a common script, that would be nice and using the web-app that might be a starting point
+ - Theo: but we won’t make it backwards compatible
+- Luise: we want to restrict this to results up to the “Finished hybrid” stage and ignore the tests in the “On module” stage since they belong to modules
+### Bow dependence on temperature
+- Luise: if we know that the bow changes with temperature, do we really need the bow measurement. It would be good to get other sites to confirm this, which would make a great point for descoping modules
+- Andy: is this the same in the cold box?
+ - Luise: no, the transport frames hold the sensors in place / restrict the bow
+ - Vitaliy: yes, in the past we had vacuum which was not enough to hold a module down
+- Vitliy: regarding the need to measure bow, I thought this was required for them to be available to be mounted
+ - Luise: yes, but it might require a very specific temperature for the bow measurement
+ - Vitaliy: do you need to specify a temperature?
+ - Pavol: the module was glued at the lab temperature it is restrained by the tooling
+ - Vitaliy: we do have the cleanroom spec
+ - Luise: you can have several degrees difference between days
+ - Vitaliy: cleanroom temperature can vary
+ - Luise: we allow 16 - 24 C
+ - Sam: there is the daily allowed variation of +/- 1C
+ - Sven: could also be temperature variation between different rooms in the same institute where measurements are performed
+- Ingo: reason for measuring bow is that modules can be mounted, it’s not of interest for modules
+ - Now find we can impact the bow by changing the temperature
+ - Dennis: we can not change the temperature of every module for loading
+ - Ingo: Gerrit, what are we supposed to do?
+- Gerrit: excessively bent modules have to be rejected
+ - Gerrit: we can’t change the temperature while loading
+ - Luise: does the bow not matter for loading?
+ - Gerrit: roughly correct. Extreme bow will cause an issue, but a couple of 100um is not an issue
+ - Ingo: so the requirement for measuring the bow from the loading sites has gone?
+ - Vitaliy: would need to check with all loading sites
+- Peter: should record the temperature while we are measuring the bow
+ - Luise: would be good to measure temperature while gluing and while measuring the bow
+ - Andy: is it the temperature at beginning of gluing, middle of gluing or end of gluing?
+ - Luise: that should not change for more than +/-1C
+ - Ingo: but we don’t have the requirement of bow any more?
+ - Luise: fairly certain that EC does not have vacuum
+- Gerrit: we have observed that bow changes after thermal cycling
+ - Luise: is it a temperature effect?
+ - Gerrit: no, our metrology system is in a separate temperature controlled environment
+ - Andy: and the change was more than the observed temperature effect?
+ - Luise: and after thermal cycling, is the bow too much for loading?
+ - Andy: does the bow direction not matter?
+ - Gerrit: we see direction with middle lowered and corners lifted
+ - Andy: and you can still glue with such a bow?
+ - Gerrit: yes, because they are flat when we put the module into the glue
+- Luise: good point, but this is something to discuss in the loading meeting
+- Dengfeng: do you change you chuck/plate is affected by the shape of the jig
+ - Pavol: it does not matter because there is no vacuum restricting the module
+ - Pavol: we tried module jig and plastic cards and got the same value for the bow
+ - Luise: we have discussed this before: was important to have a flat jig that does not affect the shape
+ - Pavol: we used a small plastic card at centre of module and got the same results
+- Luise: several options
+ - Try to account for temperature, but not realistic
+ - Or remove bow measurement
+ - Will bring it to the loading people to get their impact
+- Luise: with regards to Stephanies slides, the UV curing mentionis is the UV curing done at sensor QC sites. It is not clear if this setups can be made available at module sites for them to test the UV curing.
+ - Bart: UV curing has a good track record, so has de-ionization which might be easier to do at module sites
+ - Gerrit: you have to be careful with UV curing, de-ionizer is much easier to use
+ - Vitaliy: de-ionizer would also be good to avoid other issues (sensor in test frame is technically floating). The UV curing we use is an off-the shelf item and we can share the details.
+### AOB
+-

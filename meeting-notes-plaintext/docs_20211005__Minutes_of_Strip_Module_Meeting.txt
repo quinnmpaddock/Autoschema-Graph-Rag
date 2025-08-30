@@ -1,0 +1,98 @@
+# 05/10/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1078871/
+### Introduction
+- 
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R0 tool production
+Valencia: tools returned to Freiburg because they didn’t fit, to be repaired. Some parts were sent by Freiburg in replacement.
+Freiburg to compile a list of missing parts and then start making them in the machine shop
+Toronto has not gotten around to sending their parts back, short on hybrid jigs and waiting to receive their spares
+- R2 tool production
+Parts to be shipped back from anodisation, then do metrology, then distribute
+- R4 tool production
+First R4 tools have arrived and are being measured and tested, hopeful to start sending out tools soon
+- Shipping readiness (incl import procedure)
+	No news
+- Powerboard testing setup roll-out
+Dennis is waiting to be told where to send out the other powerboard reception test setups
+- UK/China module thermal cycling setup
+Shipping crates arrived and waiting for shipping paperwork to be completed
+- Production of bonding and testing jigs
+All shipped and distributed, also registered and shipped in the database, spares will be sent out later together with the foils
+Experience from Freiburg: bonding jigs aren’t very flat, difficult to make air-tight, sites please check 
+Please ask Dennis for test frames so that the jigs can be tested
+- Production of hybrid panel cover
+Boxes shipped, currently on hold
+- Production of stencils
+Stencils should be finished next week, should be sent out next week
+Does this include the powerboard stencils? Prague not sure
+- Production of LED bars
+All produced, just not sent out - most sites should have LED bars and will get the rest when they ask for other items
+Toronto saw that an LED burned out -> not good, should last longer, need to keep an eye on early failure rate
+Can send out replacements if being asked
+- SMD tendering for EC pre-production/production hybrids
+No news this week
+### Production Planning Meeting Summary
+- Sites should really qualify for sensor reception!
+- If sites are not qualified for sensor reception, they can’t do it within the required 4 weeks
+### Thin flex qualification summary
+- Timon: how activated are these after proton irradiation? Sven: only minor (below threshold)
+ - Task: follow up with Birmingham about the spectroscopy results
+### HV tab VI summary
+- Question: add reception criteria to HV tab document by authors?
+ - Forest: agrees to do this
+- How is this done in production? Does every site have to do it?
+ - Ideally all VI is done in Oxford, and sites would initially check for shipment damage.
+- Latest batch of HV-tabs have barcode. Would be good to add this to the HV-tab procedure document (serial numbering).
+ - Forest agrees.
+- Was there a discussion about the weld strength? With latest batch it was hard to achieve the target
+ - No
+ - Waffle wedges have currently a long lead time (3 months)
+- With HV-tabs not at final product stage, is this still open for qualification?
+ - If a group has enough tabs without damage they can use them for qualification.
+- There was even some concern about the tab welding criteria. There was an agreement to not change the targets at this point
+ - Groups are encouraged to test using more than 4 welds per tab so see if this improved the pull strength
+ - And maybe also the weld pattern
+- Forest: parameters/ criteria should only be changed after more groups have done full studies and present their results
+ - Bart: no intention to scrap requirements, just also making the point that we need more data
+ - Everyone agrees
+- Bart: are we going to organise another meeting to discuss results from all groups?
+ - Not sure at this point if all endcap sites had enough time for tests.Proposal to look at this again in ~2 months
+ - If groups are short on waffle wedges, please inform your cluster clerk so that community can look into sharing parts
+### End-cap module planning
+- Sergio: it also makes sense to load the V0 (prototype) modules onto a petal, e.g. second side of electrical petal or wait for dummy petal with cooling loops (no electrical brakes)
+ - Craig: second side of current electrical petal would be interesting to follow up (if we can get a slave EOS)
+ - Dennis: slave EOS available, since it was planned to load the second side
+ - Luise: was a plan to use the second side for loading qualification at Freiburg, so they might need another object to do this
+ - Sergio: are going to order parts for one more additional petal core (available in ~6-8 weeks)Could actually load petal in Europe, not in Canada
+ - Luise: agreement to make the prototype parts and to not mix V0 and V1 modules on a petal
+ - Cold test is important with parts
+ - Then can discuss where they go to
+### First results from ABCStarV1 hybrids and modules
+- Luise: hybrids are shown at stage “ASIC attachment”, not “wire bonded”. Is there a reason for this?
+ - Matthew: no. are currently working on implementing test upload for wire bonding testAlso: Auto stage transition is currently not done
+ - Sven: automatic transition currently switched off
+### Testbeam results for Irradiated SS and R0 modules
+- Please send feedback to the testbeam ACs
+### HV tabbing results at QMUL
+- Forest: Great progress. SCIPP found bonding close to edge is a bit different (parameters tuned for centre of tab)
+- Forest: Number of welds can also depend on tool shape (SCIPP tool different than that at QMUL)
+- Forest: Using manual machine has its own risks in terms of setting parameters and potentially repeating them after they had been changed
+- Bart: Idea of nonlinear pattern motivated by failure mode of tab (when welds in line, tab rips apart along the welds)
+- sdsd
+### Screws for EC panels and test frames
+- Carles: If nobody disagrees, sites should buy screws for production parts themselves
+- Sergio: do test frames need screws and washers?
+ - Dennis: no, just need screws
+ - Sergio: need washer in certain position to keep cover in correct position?
+ - Dennis: for cold box, remove top and back cover (foam stays in position), then put top cover back on in cold box
+- Sergio: are all screws metal?
+ - Dennis: for shipping all are steel, for cold box those connecting to metal should be nylon
+- Karola: would be good to have some slides/pictures on how to assemble everything
+ - Dennis agrees to make them
+- Sergio: it would be nice to have a way to remove the bottom cover without having to remove the top cover
+ - Marc: but would have to remove the screws anyway to replace them with nylon
+### AOB
+- no

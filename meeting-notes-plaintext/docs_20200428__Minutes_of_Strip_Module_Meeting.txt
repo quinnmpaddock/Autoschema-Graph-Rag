@@ -1,0 +1,41 @@
+# 28/04/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/874232/
+## Actions carried over
+NONE
+## Minutes
+### Introduction (Craig & Ingo)
+- Craig proposes QC working group discussions next two weeks 
+ - Module and Hybrid assembly and Metrology next week (actually in QC meeting)
+ - Bond pulls, weighing and electrical tests week after
+ - Craig will mail around this proposal
+### Hybrid-sensor gluing at DESY (Will)
+- Storage (temp etc.)
+ - Would be good to get a clear recommendation on how to handle/store etc.
+- Temperature
+ - Note that room temperature makes a big difference when depositing
+- Batch changes
+ - Do you have a sense about whether the appearance of the glue correlates at all with the amount of hardener
+ - We are weighing it anyway so the ratio is correct
+ - Reminder of discussion from a couple of weeks ago that the only way to avoid the issues with bipaks seems to be to mix ourselves
+ - Need to keep an eye on this if changes are seen even with accurate hardener ratios
+ - Could be a chemical composition change!!
+ - All of available information does seem to suggest that the best way to go is to go down the route of buying bottles and mixing ourselves
+ - Bottles to go through chemical composition analysis?
+ - Costs more but gives confidence....
+- Can we buy direct from Polaris rather than over Andover
+ - Polaris not responsive, Andover is distributor
+ - To be investigated (Gerrit)
+### Visual Inspection (Jane)
+- Is this visual inspection or metroloy?
+ - Visual inspection
+- Taking a photo of modules is accepted (to track any damage etc.) but method is up to institutes
+ - Stitching from microscope or a single photo setup such as shown here
+### Gluing stencils for the EC star power-boards (Alessia)
+- Do you know the coverage after compression given that the volume is dependent on stencilling details
+ - Have not measured the coverage after gluing as yet
+ - Glue has been weighed, will be compared to expected calculated values
+### AoB
+- P2UG meeting collides with next Tuesday module meeting
+ - Next Tuesday module meeting is cancelled
+ - First set of 3 QC group updates in Thursday QC meeting
+ - Second set in module meeting in two weeks

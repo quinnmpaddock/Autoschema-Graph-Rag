@@ -1,0 +1,89 @@
+# 2025-04-15 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1527308/
+### Introduction
+Presenter: Navid Ghorbanian
+- Luise: When you say please remove bad data, what do you mean?
+ - Navid: Data that shouldn’t have been uploaded.
+ - Luise: So if there is a bad test, we keep it there?
+ - Luise: I don’t know if this is reasonable.
+ - Christoph: If you noticed that you have unphysical data.
+- William: I’m struggling to know what we would update in Toronto. I think maybe the institute updates have run their course.
+ - Navid: because you’re building now?
+ - William: I just think our update won’t be interesting
+### L4 Updates
+#### Production
+Presenter: Abe
+- Craig: Plan looks good to me. For the IN hybrids for CERN, do we have a list somewhere of what hybrids we expect to come from where? From CERN, they’ve received R0/R5 from IFIC, but I haven’t heard much else.
+ - Abe: I have to check if we have them written down if not we have to check the reporting
+ - Luise: We do know from the general reporting what has been sent around, but we don’t know for sure if they were interposed yet. So folks will check and they we ask them to send them out.
+ - Craig: Ok, cool. It would be good if you can have a look. On the CERN side, first panels should go out to DESY-Z today (will double check email). More will be produced as we go. We have R0 and R5. Dennis sending tools this week, so they should be able to ramp up reasonably quickly 
+ - Abe: Thanks
+- William: Facts overtaking plans, R1 tools are rare, we have 6 R3 interposed hybrids that we built up. Facts on the ground are surpassing our plans, can be burnt in and sent.
+ - Craig: I would say we should start mixing them in. For tools, there is a full set for each type. This should help us keep the rates we laid out.
+ - WIlliam: But we don’t know how the interposing will go at CERN. There were a few problems and we could avoid it. We should consider how many we can singularly-interpose, which is more dangerous and prone to lose parts.
+- Luise: huge shipment of montreal hybrids has been delivered to CERN so they should be flush with hybrids 24 boxes worth
+ - Craig: That’s R0/1/3 right?
+ - Luise: Yes
+ - Craig: So it would be good to confirm where the rest are coming from so we can balance this.
+ - Abe: Agreed, I’ll follow up on that
+- William: The other thing is that we’ll have a few R3s which will make a few petals. What is the plan to back-fill and catch up? I know the answer, but does it really make sense?	
+ - Craig: We may as well get ahead rather than sitting on our hands. I agree it is not ideal, but better to build what we can rather than not build to keep balance. I’m hoping as we get out of this phase, it’ll even out. 
+ - William: I’m not suggesting sitting back. We can talk more about it at ITk Week.
+#### Publications
+Presenter: Hannah
+- The paper from Cambridge completes the circulation on Friday
+### Glue Coverage Problem with Stencils
+Presenter: Pavol Federic
+- Navid: Is this the latest stencil design?
+ - Pavol: yes, I put the files here on slide 9, which are on EDMS. I agreed to put on dots, but the old stencils got us really close to the edge.
+- Navid: Is this assuming the standard TB Precure?
+ - Pavol: Yes, but when you lay down the glue, you have a fixed volume, so if you’re height is too low, it will spread out past the edge onto the edge of the sensor.
+ - Navid: If the glue is pre-cured for les stime, I think it will spread more 
+ - Pavol: Depends on viscosity and parameters. I think it’s not a big difference 
+- Luise: I think you’re correct, we should really change these stencils. I’m not sure if you’re volunteering.
+ - Pavol: I can do some, but it would be ideal if someone could help.
+ - Luise: I think it would be good to check if there is a connection between early breakdown and this. You should be able to also see glue squeeze out between hybrid and PB.
+ - Pavol: I don’t know how many we have on the edge. I don’t know for sure.
+ - Luise:It would be good to agree on how we redesign these stencils before people go and do something.
+ - Pavol: We want to glue next week at Argotech. We want to aim a little higher, say 150um.
+ - Navid: Is anyone against this?
+ - William: Our experience with the pre-cure time. [says a bunch of different times]. Things will spread more or less depending on viscosity. The PB1 heights are ill-defined. With the R3 PBs, we see definite shapes which cause glue to end up in different places. William will give an institute update on this next week
+ - Pavol: [Something about more squeeze out?, bit garbled]
+ - Navid: If you target higher, you’re going to get a higher average. This should reduce the glue squeeze out.
+ - Pavol: The glue thickness is the same, no?
+ - NAvid: If you increase the glue thickness, it will splurge less. Is that right, William? 
+ - William: The glue squeeze out is more dependent on the pre-cure time. Celestica is struggling to get this right.
+- Vitaliy: I’m surprised to see heights as low as 70um. Isn’t the spec 120 \pm 40?.
+ - Pavol: it changed from \pm 40um to \pm 50um.
+- Luise: Can you show one of the stencil patterns we use now? Slide 4. For how to modify these, can we agree that what we will do is to shorten the blob near the PB edge and leave the rest the same? 
+ - 
+ - 
+ - Luise: Does anyone disagree with this change?
+ - William: But then you have less coverage for bonding.
+ - Navid: How important is it? Has it been an issue?
+ - Luise: In the past it was, but now not so much.
+ - William: Not recently 
+ - Navid: Probably better to sacrifice the bonding support for lower glue on the guardrail. If the suggestion is to bring it in, bring it in. 
+ - William: But you can’t predict this with a calculation. 
+ - Luise: I just think it’s safest to pull it in a way and leave the rest as is.
+ - Pavol: We can change the limit, not 70 but 90, but then we have a problem that we have maybe too many failed metrology results. 
+ - William: We have to build higher yields. If they fail for height and pass for HV, I would take it.
+ - Cole: Silently agrees
+ - Andy: What is the height spec? What is that based on? What’s the failure mode?
+ - William: it’s trying to address this squeeze out.
+ - Andy: But what happens if the height is too high?
+ - Luise: Bad glue contact.
+ - Pavol: Heat transfer.
+ - Andy: Do we have a metric for this? 
+ - Luise: its based on pre-production experience
+ - William: But we don’t have any evidence to say heat transfer is too poor when the glue is high.
+ - Andy: What is the evidence? 
+ - Luise: For modules that are good, what height range do they have, and what is the cut? So we put that there because all modules that didn’t have issues were below. We don’t have many as high as 180um. It was just for safety.
+- Luise: We need to agree on who is making the stencils. Pavol, which would you be happy to make yourselves?
+ - Pavol: I have to ask Michal. He’s doing all of this in SolidWorks. We are discussing what is reasonable.
+ - Michal: Just please send me a picture of the adjustment for stencils. Then we can discuss it.
+ - Luise: Pavol, let’s follow up by email to not let this take past Easter.
+### AOB
+- A
+- A
+- a

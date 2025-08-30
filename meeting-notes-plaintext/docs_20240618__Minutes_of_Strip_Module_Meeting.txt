@@ -1,0 +1,234 @@
+# 2024-06-18 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1401788/
+### Introduction
+Speaker: Luise Poley
+- Andy (sl. 2): In terms of metrology, do we need to add another 150 um to the thickness …
+ - Luise: Wait for the discussion at the end
+ - Andy: Okay
+- Sven (sl. 5): I thought it might be good to mention the issues we were told about. When updating all registered components to the database, something broke. That’s the parent-child properties for ASICS, and this affects all components registered up to four days ago when I ran my script. I’m in contact with Marek to try and fix it.
+ - Tony: Should we hold off adding the singulated data information until this is fixed?
+ - Sven: The fix shouldn’t affect anything already assembled and wouldn’t affect any interposers you would assemble now. It only affects if you want to assemble asics to hybrids
+ - William: So that answers my question, we have to stop assembling hybrids in the database and you will let us know when we can catch up?
+ - Sven: Yes, unfortunately
+ - Luise: We should also say there is only one mandatory child-parent relationship. We should try and not set that since it can cause problems later on, but hopefully they are all deleted.
+ - Sven: Currently, you can’t set them. Something went wrong with the naming. But I’m not certain. It’s best to wait till this problem is fixed and things are back to normal.
+ - Luise: thanks for looking into it.
+- Sven: when you say PBs should be tested in the burnin stage, does the system have something in place to deal with this?
+ - Luise: yes
+- William: If physics mode is so important, why don’t we do do all tests in this mode
+- Vitaliy: how do we find the modules that won’t work in the experiment
+- [lost some notes trying to figure out permissions]
+- Nghia: for the hybrid on the burnin slide, we received the hybrid in the wirebonded stage.Is that correct?
+ - Luise: Yes, this is specifically for module sites where the hybrids are delivered, it doesn’t apply to you.
+### L4 Updates
+- None
+### Group Updates: BNL/Brandeis
+Speaker: Shubham Gupta
+- Ben Bruers (sl. 6): Regarding the uploader, what is the difference between this and Kenny’s App?
+ - Shubham: never used Kenny’s app - use the BNL version as an easy interface to database for technicians
+ - Ben: Okay, thanks
+- Luise: Similar question, are you aware of the component overview page, which does something similar. 
+ - Shubham: you’re saying the things in the results section? What we have are plots of the Electrical tests. So if there is data from elsewhere, we can compare them quickly.
+ - Luise: What I mean is that there is another QT out there that did a similar thing
+ - Stefania: I know about the web page, but it wasn’t easy to show the technicians how to use the uploader, which is why we want to not have to show the techs a new way of doing things.[explains how annoying it is to have to teach a bunch of techs and students new things, very understandable]
+ - Luise: Danial might be willing to help combine these things. I would venture a guess this only works for barrel modules, but if we could combine all this together and have something that works for EC modules as well, that would be great.
+ - Stefania: I think this would be great, Daniel, are you willing?
+ - Daniel: Yes, I could give it a go
+ - [Everybody warm and fuzzy]
+- Stefania: We have a student working on software to develop ITSCRACK (Adullah), which we forgot to mention.
+ - Abdullah: We will add this to the slides
+- Vitaliy: In some of the IV plots, you had too little current, I wonder if you are checking for that?
+ - Shubham: plan is to look at Ivs and look for any strange features in the IV
+ - Vitaliy: Just to be clear, I’m talking about the issue when the current amount is too low. I don’t think it’s checked for, but I think it points to a physical problem
+ - Shubham: You are talking about some plots [mentions specific plots]
+ - Vitaliy: certain situations can be dangerous: if current is below a certain threshold, that can indicate problems (up to sparks) and is worth catching
+ - Shubham: I’ll look into that.
+- Tony: You talk about random points high or low, but it’s the first or second. Have you looked at the time ordering to see if it stopped happening?
+ - Shubham: Most of the sensors we saw were late 2022 or 2023, will look into it more to get all the data I can. 
+- Kenny: Can anyone use the app or just people at BNL?
+ - Shubham: Anyone can use this since it’s pulling from the DB. You just need your access codes
+ - Kenny: great, will add it to the list of common tools
+ - Emily: The other tools in this, they might only be usable by BNL people. For uploading for example, it assumes you are BNL. 
+ - Kenny: So uploads might be an issue, but pulling information, that should be usable by everyone.
+ - Shubham: yes 
+- Xavi: thanks for checking the problematic IVs, Shubham! I think you identified the issues
+- Luise: Can you go back to interposer plans? (sl. 3), if you could at some point share what exactly you are doing (glue pattern, etc.) this would be great to share outside of the US meetings
+ - Shubham: Okay I will do this
+ - Stefania: in the interposer meeting is what we thought would be the ideal place
+ - Luise: sounds perfect
+### News from the Hybrid Burn-In GUI
+Speaker Ben Bruers
+- Vitaliy (sl. 5): Regarding HBI PC, I have to correct you. I spoke with Juergen (?) at CERN, but the statement that SCIPP prepared wirebonds is incorrect. Our LBNL colleagues had some boards that were not responsive, it’s not easy. We took it seriously and will try and do the same thing to increase the statistics, which could provide further explanation. We think the region between AMAC and linPol is relatively hot. We have confirmed this (hotter than +40C). The encapsulant has an unknown CTE, but the class of materials it belongs to has a pretty high CTE which may be pulling off some of the wirebonds, explaining failures occurring over time. It impacts the next set. If we have to remove encapsulation, it will be pretty involved. My understanding is that Birmingham did similar things but in a different location. In the infrared images we had, that region was cold, which makes us think that is a different issue. 
+ - Ben: Apologies for misunderstanding, just wanted to bring up the issue so that it was brought up to the collaboration.
+ - Vitaliy: The other comment was about the bulk calls. It sounds like you have great success with them. When I did, I found there were some limits on how many you can ask for at once.
+ - Ben: Do you know how many objects this concerns 
+ - Vitaliy: From memory, it was around 30 something
+ - Ben: Okay, I haven’t faced this issue
+ - Kenny: If you do a bulk call, you should be able to do up to a thousand. I’ve never stressed testing this, but the danger is that you request so much data that it times out.
+ - Vitaly: I was getting time out again, maybe database performance?	
+ - Sven: It also depends on which bulk call you use. Some have a maximum of 1k.
+ - Vitaliy: II think your correct it was fluctuating,
+ - Ben: I haven’t seen the timeouts, I’ve seen calls take 5-10 seconds
+ - Kenny: if it works, don’t change it
+- Luise (sl. 13): I was wondering. It seems that there is a file that already exists? [sorry, I missed this question]
+ - Ben: Is an option if you build new hybrids, you will have to do this once to query data, every time you receive a bunch of panels 
+ - Luise: My point is, if you start and have a timeout and have to restart, is there an option to load the ones you have already downloaded?
+ - Ben: yes that does happen
+ - Luise: I wouldn’t know which ones to replace, so it would be good to mention that
+ - Ben: It's the last one
+- William (sl. 13): So parents are hybrids, grandparents are panels? What are great grand-parents?
+ - Ben: This doesn’t make sense for the hybrid panels but if you have a module on the stave..
+ - William: so, for panels, only parents and grandparents. In the future, the GUI would do all of this just from panel serial number?
+ - Ben: Yes, but that isn’t what this script does. You give it the fuseIDs and it gets the details.
+ - Ben: It gets the configs from the wafer testing. Then download the configs…
+ - William: and then it finds hybrids and panels from the database
+ - Ben: Yes, it can.
+ - William: I’m just wondering how that fixes things in the GUI.
+ - Ben: If you associate a chip to a hybrid first, then you wouldn’t need the panel serial here. If you associate to the panel first, the burnin system can do the association. Otherwise the software will not know where to look.
+ - William: So do we decide one way or the other so there is less confusion
+ - Ben: [chuckles a little]
+ - William: all the answer we need
+- Nghia: On slide 9, for uploading the tests. When we click it, will it merge the burn-in results? Is this available in DAQ version 1?
+ - Ben: I think there was in version 1.2, if you have only done one test this button will not work, only for burn in
+ - Nghia: I also wonder about [?]
+ - Ben: this is possible now, I have merged this planning on a new release at the end of the week
+ - Nghia: That sounds good. If we run burnin and after 70 hours it needs to be restarted, will it be able to merge?
+ - Ben: That doesn’t work correctly at the moment	
+ - Cole: being worked on in merging scripts
+ - Ben: I have nt cached the data yet
+ - Cole: should be using association with run number as for cold jigs, can just give it a series of run numbers and it can find start and stop time
+ - Ben: “only” needs to be implemented
+### Module QA/QC discussion
+- Tony (sl. 2): What language are we using for the PRR? Is this the one after 10+10? Is this the rPRR or rFDR?
+ - Luise: its worse lots of acronyms 
+ - Tony: I couldn’t tell. It would be useful to say how many parts are made. It’s silly, but the naming keeps changing.
+ - Luise: Does this help?
+ - 
+- Tony: You are cycling 100 times in a module box. The question is what you’re testing for. Change in shape, noise, temperature?
+ - Luise: All of them
+ - Tony: The time scale is roughly by November?
+ - Tony: So it doesn’t seem impossible. I thought the module systems set up at LBNL, it does four at a time? 
+ - Tony: The thing you set up to irradiate N units at a time. Was it four?
+ - Alessandra: Yes was 4
+ - Tony: Two modules per would make sense. 
+ - Luise: the plan is to do what we can now and then start getting people to sign up for tasks
+ - Tony; I think the second and the 4th one are being done in the UK, I wanted to make sure we didn’t undercount 
+ - Luise: Yes, it’s complicated
+- Tony: Here, from the stress calculation, they aren’t really any different right? The cycling to death is cycling using the normal values. Then do you put it in a climate chamber?
+ - Luise: I think these are separate things but we should start with -60C
+ - Tony: I thought Cambridge already started this process, so I don’t know what they think.
+- Luise: The main point is we don’t need specific new modules to deal with these tests.
+- [slides being moved around, so all mention of slides is probably pointless now]
+- William: That is modifying the offset (metrology changes), but what about the band (the range)
+ - Luise: yes this is what we need to test for
+ - William: Do we go from 40 um to 60 um? Is that okay?
+ - Sven: It shouldn't really change the module glue thickness, it depends on when you attach the interposer, I agree we need to look at this
+ - William: But singulated ones may have different limits than panelized ones.
+ - Sven: if we go to production parts when we use panels the module thickness will be better controlled, at the moment it will be a bit all over the place
+ - Luise: We are going to start with what we have and check what we can actually achieve and see what requirements need to be loosen.
+ - William: I don’t know either, it’s just what I fear.
+ - Luise: Does this capture that?
+- Vitaliy: Are we doing the contact area measurements?
+ - Luise: this is the additional QC that we need to do
+ - Vitaliy: Ah, okay.
+ - Luise: This is just saying what we need to keep an eye on is the existing QC and how it might change with Interposers
+ - Tony: the wirebond test is to check if there is any more failed bonds due to interposers
+ - Luise: Not yet. Wait for the next slide.
+ - Tony: Okay, I just wanted to make sure this is still the standard QC.
+ - Luise: check bonds are well supported
+- Tony: From what we discussed, the electrostatic check wasn’t useful. The bond-pull test doesn’t check for contamination. Our view is you have to do the VI and see if you see contamination, then I don’t know what we do with it once we see it. Do we reject it?
+ - Ingo: one could do the bond test in the area with contamination?
+ - Tony: yes that’s what you have to do bond near the contamination or away from it
+ - Ingo: Sounds like a smart way. A “guided” pull test.
+ - Sven: do you want to bond on contaminated area during production, you should want to change the wedge if you bond on contaminated areas
+ - Tony: I think you throw them out, but that depends on the rate and level of contaminants we see.
+ - Sandra: We can also put them aside and treat them as possible re-work components if needed.
+- Anne: For all of this QC, we’ll have to treat the array-interposed PBs as a special case, because we’ll have AMTEK do it and they won’t do any QC for us. So they are already bonded and we cannot see the back side anymore without taking them off the panel. So we have to make sure that all the things we need to check are included in the process, which we are still developing.
+- Vitaliy: Are we going to do any imaging based coverage 
+ - Sven: I have a question to Vitaliy’s question. If you deposit your glue on the polyimide, you already have the glue sticking to it, what do you gain?
+ - Vitaliy: On the contact area checks
+ - Sven: Only on the polyimide, you wouldn’t know anything about the contact with the flex, which is more interesting.
+ - Vitaly: well you assume they are related, Annes comment I was wondering if other sites should do it too
+ - Sven: So if we have to do this, do we have fixed criteria to do this inspection? From experience, it’s a nightmare to come up with criteria for any defects.
+ - Vitaly: I would suggest 90% coverage, ever pixels can do it
+ - Luise: Anne, I believe you said you would develop the process. We would want to know what is the range of coverage you’d get from the method. This is something you’d have to derive from looking at the components.
+ - Anne: Need specs to design to what coverage etc., would develop with continuous feedback, redesign of stencil, clean at each time. Make sure the process is well defined so company can follow it 
+ - Luise: My question is what QC you will perform to develop the process
+ - Anne: I don’t understand
+ - Luise: Are you planning to do the coverage check, the alignment check, etc?
+ - Anne: As we develop it we will be checking these things, make sure no spillage and uniform thickness	
+ - Luise: Okay. So out of that process, we should get enough information about our targets going forward.
+ - Anne: yeah by the end of the process we want to know its repeatable 
+ - Luise: Okay. 
+ - Anne: I should also note that things listed as a reception test, we do all this, so it’s incorporated into existing QC anyways. We take a portion of the test coupons and pull those. We can also flip them over and take a look at the back side and see how that is going.
+ - Luise: This will be after reception from the company, and coverage checks, do you know how you are going to check it?
+ - Anne: Not yet
+ - Luise: That would be good to know because that will tell us that the module sites can repeat it. If you can just take pictures and analyze the coverage, that would be super useful.
+ - Anne: is a photo sufficient, we can do that
+ - Luise: how will you get the coverage from a picture?
+ - Vitaly: Pixels are doing it with a picture you just need reference points
+ - Hannah: If we have a clear picture that shows the blob of glue, then you can extract the blob itself. If you send me some pictures, I’m happy to take a look, but it’s not that any generic picture works. You have to have enough contrast so that you can perform some picture wizardry [Cole's words]. You do need a clear picture to convert it to coordinates. But even then we can use it in pixel size and convert to some percentage.
+ - Send some example pictures to Hannah so she can do this!
+ - Anne: I think it would be quite difficult to see the glue coverage through dark kapton
+ - Hannah: It depends. If you have the pictures, I can take a look at them.
+ - Anne: I can send you some examples
+ - Hannah: at slack this was super easy to do because there was a white background
+ - Anne: Okay, so this isn’t quite that.
+ - Hannah: It’s still possible, just depends on what you get in the picture.
+ - Anne: How do we evaluate coverage,we need to know what coverage is acceptable, is air pockets acceptable? We need to know what is acceptable.
+ - Luise: We may need to check the impact of this. We should build something with bad coverage (below 80% for example) and test it.
+ - Tony: We have air pockets in half the hybrids we’ve built. I’m not sure if it’s equivalent, but we have about ten of them.
+ - Luise: these are thin lines at the back of the hybrid
+ - Tony: It’s the middle one between two lines.
+ - Luise: i'm not sure that counts as its not somewhere we need cooling
+ - Tony: Cooling is not going to be an issue because of all the copper and transverse heat movements. I thought the air pockets would trap humidity and that is what some people are worried about.
+		Luise: We should avoid air pockets if we can 
+ - Anne: we would have to modify the design if its not sufficient 
+ - Luise: for weighing, this will have to go to module assembly sites checking coverage and thickness and weighing. This is more than what we want to do in production, this will be reduced eventually. We just want to convince ourselves this works
+ - Sven: When you say weighing at module sites, is that only for PBs?
+ - Luise: yes luckily we have the spread of powerboard weights previously 
+ - Sven: That spread will kill everything else because solder is heavier than anything we glue to it.
+ - Luise: if the interposer weight is more reliable than the solder weight that would be nice
+ - Sven: Just in pure numbers, solder is heavier than anything we glue to PBs, so the spread in that will kill anything in the spread from interposers
+ - Luise: Well get the data out of the weighing that's the point. The only information we will have will be form weighing because we won’t get them from the company?
+ - Tony: But you’ll get the weights anyways when you build modules
+ - Luise: That is exactly what I just said
+- Luise: do we need thickness checks on the powerboards 
+ - Tony: I think a caliper test is very difficult to do on PBs
+ - Luise: Will just have to come out module metrology 
+ - Tony: You do the metrology and you can extract the thickness from it. You can add it to the tables, but it’s already there.
+ - Luise: sure
+- Anne: I’m losing track of what is new and what is existing.
+ - 
+ - In orange
+ - Differences should be seen between slides presented today, vs the slides presented at ITk Week.
+- Vitaliy: these are very nice tests. It’s a good idea to do them on mechanical parts, but they seem to be targeting basic mechanical integrity. I’m wondering about performance in terms of cracking where the Great Grey Goo removes the stress, but after irradiation it may not be as pliable. It would be hard to check this on petals and staves. I’m wandering if we want to do these tests on mechanical parts before and after irradiation. 
+ - Luise: Are you thinking of the test pieces Georgio is making?
+ - Vitaliy: No, whatever pieces you need to measure mechanical modules
+ - Luise: The modulus of the glue itself
+ - Tony: I think they are talking about the test pixels did apparently the elasticity changes by an order of magnitude
+ - Vitaliy: If data exists, that would be good. I haven’t seen the data, and if it doesn’t exist we should obtain it to ensure our decision keeps working at the end of life
+ - Luise: I haven't seen them but erik has them
+ - Tony: Since the elasticity is so different, it isn’t a huge problem. From simulation we can see how much extra stress. Otherwise we’ll need to use a strain gauge.
+ - Vitaliy: If simulation gives the same results when you change the modulus, that’s great. But we want to see how much it changes with strips rather than pixel doses.
+ - Tony: what we could do is ask simulation to check the elasticity of the SE4445 changes with radiation
+ - Craig: I did just dump into the chat the link to the SE4445 irradiation results from the end of May, which I believe are the results being pointed to.
+ - Vitaly: That should be useful
+ - Kirsten: Can someone talk about what objects you want to make these mechanical test pieces out of? Do we have parts, do we have to think about parts? I don’t think we have a lot of mechanical sensors
+ - Tony: that's what I was going to bring up a whole stack up isn’t attractive you need to make full modules to get the full stack of a proper module to get the correct CTE mismatch, you want to see how the PB is connected to the back of the Kapton ext
+ - Luise: It’s exactly what you’re saying. You’d have the interposer stackup with, say, a half-moon and see if the joint weakens with cycling.
+ - The CTE mismatch I don't know, you have to restrict it, the translation would be very difficult 
+ - Luise: So you’ll have to restrict the half-moon.
+ - Tony: And that could be tricky. You can do peel or strain tests. Not sure you want to do strain tests, but peels before and after irradiation with characteristic surfaces. For hybrids, you’d have to do kapton to hybrid because of the solder-resist surface…
+ - Luise: so the idea to bring this question to the interposer meeting:
+ - 
+ - I think we definitely want to do shear and peel but thermally cycling needs better planning
+ - Tony: That’s the thing we need to plan out. Need to talk to the simulation team.
+ - Luise: It could be something with the right geometry and pull it apart.
+ - Tony: to pull it apart you need a way to pull the things off
+ - Kirsten: If I understand this correctly, we don’t yet know what parts we want to use to make these mechanical test pieces. We’ll discuss this more on Thursday?
+ - Luise: if everyone is okay with the plan the idea will be to bring it on thursday 
+ - Kirsten: Okay, but it might come down to using real parts for some of these tests to satisfy ourselves that it works?
+ - Luise: It might.
+ - Tony: I guess for the detail, we don't have any experience with the shear locally, only aluminum has been done, the detail matters, we need someone who knows that
+ - Luise: That's why we will invite the requisite people to the discussion on Thursday so they can be there.

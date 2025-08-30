@@ -1,0 +1,90 @@
+# 2024-02-20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1362202/ 
+### Introduction
+- Vitaliy: The statement about the vibrations is incorrect. It’s a compression wave in the coupling capacitors. It’s also not a theory as a single prediction, but how a compression wave can cause this. In one case, it’s supported by the measurements, but the other two not yet.
+ - Luise: I will correct this, apologies
+ - Vitality: The implants do have some unusual bias dependence, but it’s something we are still working to understand.
+- Sarah: Any EC module or just a specific PB?
+ - Luise: PPB
+ - Dennis: We want the most stats possible. So in principle any PB is fine, as long as you specify
+ - Ingo: Is the branch listed on page 4? (of Dennis’ slides)
+ - Dennis: Yes
+- Sarah: We built our R4 hybrids. They need to be bonded and then we will test.
+ - Luise: On the other ones, there were questions about the correct labeling on the silk screen, so please look out for that and make sure it matches.
+- Luise: Is everyone happy about the proposal on slide 9 regarding the glue tracking in the DB?
+ - Everyone: Silence and agreement!
+- Luise: Is everyone happy about the proposal on slide 10 regarding the bond-wire tracking in the DB?
+ - Everyone: Silence and agreement!
+- Andy: Is this a general strip talk or general ITk?
+ - General strip talk
+- Carles: Are you asking for sites that do the IV on a testframe to put them on testframes and then put the sensors back in envelopes? That seems like a lot of manipulation on sensors.
+ - Luise: Not right now. I would say only test as many sensors as you have frames and leave it that way until you’re ready to build.
+ - Luise: is anyone concerned about relaxing this requirement?
+ - Christian: This is a large number of sensors with a lot of tests to perform, so this will take a long time. So we understand it needs to be done.
+ - Carles: I think we should be getting production frames soon, but we won’t use them at the same rate. We can sample the Hamamatsu boxes in some way, 10-15 per type at IFIC.
+ - 
+- William: We are set up to receive 20 sensors a month. If we get 100, they will be done in 5 months. So we can either do them now, or do some later.
+- William: Okay, it might be 40 per month
+- Tony: We are still testing after tabbing, which is probably a more important test. Worst case it will show problems in tabbing and storage. It seems the tabbing hasn’t been causing too many issues.
+ - Luise: They are on the percent level
+ - Tony: I’d be up for the test after tabbing. After shipping as well.
+ - Luise: Reception test, no repetition, then a post-HV-tabbing test
+- Ingo: So far we can’t show it’s shipping if we don’t test before tabbing
+ - Luise: The idea is to test after tabbing, but not if it’s been 3 months after tabbing, so we wouldn’t see the deterioration after storage.
+### L4 Updates: ITSDAQ/Sensors/Documentation
+- Update from Cole, with some details regarding ROOT version and Alma
+- No questions
+### Group Update: Australia Cluster
+Went first because it’s very late in Adelaide.
+- Short update, not comments
+### Update For Maximum Noise Limit
+(moved from January 30th)
+- Dennis: I would say that we should actually use the cold measurement and not scale the warm measurement with the 10%. The PB peak might change w/ temperature and probably best to use cold temperature directly.
+ - Luise: This was done when the RT single module test was the reference
+- Tony: [missed some]
+ - Dennis: in the end the final decision for loading should be after the cold test. If the warm test already shows you 50 bad channels in a row, you might drop the cold test. The final decision should be after cold test.
+- Vitaliy: In tests Cole and Madison did, which temperatures were used?
+ - Cole: -35C cold and +20C warm
+ - Vitaliy: The SS and LS
+- Discussion (sorry, couldn’t talk and take notes):
+ - The goal is to attempt a two-threshold limit per module. One for RT (to be considered the default by ITSDAQ) and one for cold (defined as -35C on the chuck, always the chuck, never not the chuck).
+ - Some more data will inform the exact numbers, but we can get started with the numbers we have. Radiation levels will be discussed later
+ - General agreement
+### ATLAS QT - DB Reporting
+- Luise: Regarding the future plans, it looks like you are making several correlation plots with specific tests. For example, performance of parent/child etc (last point on sl. 12)
+ - Nihad: There are some examples, but I don’t yet know what would be useful. So I took PPB1 vs bowing (sl. 21). But people can choose the correlation variable.
+ - Luise: Would you be willing to make a few more specific plots if people send you requests?
+ - Nihad: Yes. Just send me suggestions for what would be useful.
+- Ewan: the web app you’re showing: are these being produced on the fly or are these planned to be run repeatedly?
+ - Nihad: Some can be made. There are constant reports, like once a day. 
+ - Kenny: These are so you can make them on demand. But it’s a quick way to grab stats from the DB
+- Pavol: overview shown here to show what exists and can be done already, if there are more requests for plots to make, please get in touch with Nihad and request and plots can be made.
+### LS Module Noise Evaluation
+- Cole: For LS-0005, I believe this is the same module you sent me merged data for. I seem to recall one of your modules losing HV (or HV not being applied). Did you exclude these tests or am I misremembering 
+ - Alex: did exclude that, that’s why some of the numbers in the table were already reduced
+ - Cole: I also think you didn’t lose HV, was just a missed command
+ - Alex: Yes, we updated ITSDAQ
+- Luise: We had already discussed this for the EC that we wanted to loosen the sigma cut and may need to be module dependent. So the idea was to obtain more data to more closely refine this. It seems like your study has done this for us for the LS modules.
+ - Alex: There was one test here that will fail just because of the value of NSigma and not the NSigma cut. 
+ - Tony: proposal would be to loosen the requirement to get rid of known shapes at the edges - what happens if these are features which are unknown? I think these modules didn’t have actual known bad channels?
+ - Alex: Yes, that is correct. For these, we don’t have many bad channels. It should flag any channels above 1k ENC
+ - Tony: These are the things people should look out for, individual noise spikes a few channels together. Tightening up the cut for the allowed noise will help a lot.
+- Alex: so Luise, you think we could loosen the absolute Nsigma requirement (25) to see if that improves it? Can look into that
+ - Luise: Before, we made values because the noise looked flat, but now we see “features” that can put a few patterns in the noise, and we don’t think we should throw away modules for this.
+ - Alex: I can also try increasing the 25 sigma limit (number 3) to see if it solves the issues on slide 6. I haven’t tested it yet.
+- Vitaliy: That point about implementing the proper max noise cuts is important right? It will help catch single outliers and high flat noise.
+ - 
+- Luise: How do we converge? Are you going to expand the value to the other sigma cut?
+ - Alex: Yes, I will check the other values and see what we get.
+ - Luise: Did you apply the noise cuts from the tables?
+ - Alex: No, it’s not in ITSDAQ yet
+ - Luise: If you could apply the cuts from the allowed max (cold or warm) that would be good.
+ - Alex: can do this, but will require some work with the code
+ - Cole: yes, requires work in ITSDAQ - with Autoconfig, know which module type is which, but still needs implementation and check for streams
+ - Alex: can look into it
+ - Luise: can apply the cut in post processing 
+- Alex: I can say we don’t usually see the noise going over 1k ENC. But we will check.
+- Tony: The other step I would suggest is because the final v6 pBols, the only other site that could check these cuts would be LBNL. If other groups that have it, it would be good to check.
+ - Cole and Luise: please do
+#### AOB
+- none

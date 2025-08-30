@@ -1,0 +1,74 @@
+# 17/11/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927528/ 
+### Introduction (Craig & Ingo)
+- None
+### Task tracker items
+- R1 tool production Urgent Late
+ - 70% done, ready to be shipped in ~3 weeks
+ - Re-report 2-3 weeks time
+- R2 tool production Urgent Late
+ - Drawings being done (with delay, holidays..), expect finished next week
+ - Rereport in 2 weeks
+- Barrel hybrid tendering/order Urgent In progress
+ - Reviewing currently CAM data for first thinflex hybrids (not tendered)
+ - No delivery date until approved
+ - For tendering only labelling on circuits (silk screen) should change
+- EC hybrid test-panel finalisation Urgent Late
+ - Comments from Ash
+ - No Kambiz, put up again next week
+- EC module test frame finalisation Urgent Late
+ - EDMS review launched
+- Barrel module testframe finalisation Normal Late
+ - Ash awaiting feedback
+ - Seems UK still has most modules in old frames
+- EC hybrid panel transport box finalisation Normal Late
+ - Not all designs are yet ready but can be finished fast
+ - See slides for production status
+ - Transparent material can be the requested alternative
+ - Marc will update the drawings to drop the bottom (change holes diameter, fix placement of screws)
+- Production of bonding and testing jigs Urgent In progress
+- Production of R0 and R1 test frames Urgent In progress
+- Production of R2 test frames Urgent In progress
+- Production of R3, R4 and R5 test frames Urgent In progress
+- Production of hybrid panel cover Urgent In progress
+- Production of stencils Urgent In progress
+- Production of LED bars Urgent In progress
+- Supply of pins and bushings Urgent In progress
+ - Should arrive next week
+- Supply of miscellaneous EC tool common items Urgent In progress
+ - Most of the things arrived, some are missing
+ - E.g RFID is missing
+ - Should be ready to ship out for xmas
+- Production of module frame cover Urgent In progress
+ - Christian not there today
+- Production of handling frame (foam) for test frames and hybrid panel Urgent In progress
+ - 
+### Visual inspection - summary of discussion in last QC meet
+- Agreed as new baseline
+### Reception testing procedures for sensors 
+- Make sure IV test is identical to sensor site reception IV
+- Fix error in leakage: less than 0.1 muA/cm^2!
+- Clarify: 3 month criterion means that you redo the IV before you use the sensor once it has been in storage for more than 3 months (NOT do IV every 3 months!)
+- Discussion.. Lots of back and forth… 
+- We will have to track during preprod to get a better idea if we will build up piles of potentially bad sensors due to humidity effects or not
+ - Bake out can usually fix the sensors and we currently expect that rather a large set of sensors will need bake out to recover
+ - To be continued
+ - Bart;s impression may be skewed due to long timeframe between initial tests and production by HPK - hopefully things will look better when we do not have such long corona induced wait periods
+- Proposal (no one complained): if a sensor is found to have an early-ish breakdown, it is supposed to be stored in dry storage, with us much air exposure as possible, and re-tested every two weeks for two months, if it does not recover, a bake out shall be attempted
+- This is not the plan for production, but a dedicated study to be performed during pre-production to find a protocol to be used during production, specifically:
+ - Do sensors with humidity issues experience more problems further down the line and should therefore be baked out straight away
+ - What is the recommended dry storage period after seeing a problem
+ - What is the yield loss due to humidity issues
+### Concerns with humidity sensors for the cold box
+- Do not use SHT85 for long 0% measurements
+- Better use HYT939 that continues to measure dew point reliably
+### AOB
+- EC noise tests
+ - Some modules improved by added low impedance path / DC path
+ - R2 did not improve enough (for R2 PB had not yet been glued, but is now, no change)
+ - PB specific localised noise is currently not studied
+ - PBs are of older type without latest fixes
+ - However the HV return path will not be changed on the PB in newer versions
+ - Dennis will provide noise plots and list of changes before AUW to module list
+ - 20 minute slot to be reserved by Tony for AUW
+- PCI panel power/data adaptor PCBs have been tested at Liverpool. Parts for endcap will be shipped to Freiburg, to be distributed from there.

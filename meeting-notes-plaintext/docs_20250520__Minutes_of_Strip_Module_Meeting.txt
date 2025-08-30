@@ -1,0 +1,81 @@
+# 2025-05-20 - Minutes of Strip Module Meeting
+Strip Module Meeting (20 May 2025) · Indico
+### Introduction
+Presenter: Navid
+- Tony: Descoping during ITk week module glue weights	
+ - Navid: will discuss this at a future date
+- Tony: What to do about XY failures in powerboards
+### Hybrid ASIC glue heights
+Presenter: Tony
+- Gerrit: How long did you wait before you pulled the chips off
+ - Tony: Couple days
+ - Gerrit: in principle the UV starts the curing and over time it gets cured, we got this comment from the industry
+ - Tony: in this case the second one was weeks afterwards, so we are not seeing it cure. It is possible there are sections in the middle that are not there. When we built these things with the interposed parts that are failing we are getting in the 50s. Birmingham got into the 40s but we always got in the 50s. 
+- Karol: your spec proposal is conservative why not go lower?
+ - Tony: it is a concern about 40um, the worry about glue on the pads is minimal. I have to ask what they looked like. You can see the glue has gone all over the mod pad and its a pad we use
+ - Karol: the bondpads are fine
+ - Tony: I get worried about the glue going everywhere
+- Simon: You are concerned about the ground bonds. I have not seen one that I haven't been able to bond
+ - Tony: with a lot of glue it will get on the pads
+ - Navid: we will agree on a spec next week. 
+- Navid: I will put this together for next week and we can hopefully agree on a new spec
+- Gerrit: the magic wand might also might warm it up
+ - Simon: in the datasheet it says use the wands
+ - Gerrit: Yes thats what they want you to do
+- Vitaly: to check with Simon do you have and idea for what you are heating them to
+ - Simon: I was tracking this, the plate can get hot when you are doing lots of it
+Presenter: Sven
+- Navid:
+- Vitaly: It seems you have a high degree of cure at 3 minutes exposure. What current are you running at?
+ - Sven: I don't recall but we are using Craigs UV box
+ - Vitaly: I dont know what that is, I can look this up later on
+ - Gerrit: this is an important point. The LEDs age, you can reduce the time to lengthen there life. You can check this. It might be worth checking the aging.
+ - Sven: we are running at 75mA. We are still using the same bars, havent seen any damage or anything. 
+- Navid: Gerrit have you guys looked into the long term of these bulbs.
+ - Gerrit: the main thing is you need to check them off the jig, you need a baseline calibration. Its a lot of work. 
+ - Navid: we are running it for 5 minutes
+ - Simon: 10 minutes
+ - Sven 3 minutes at Max settings
+ - Navid: we should compare and think about how to look into the LED long term stability. 
+### Single PB interposing
+Presenter: Thomas
+- Navid: laser cutting kapton will carbonate the edges and you will get carbon dust everywhere, best option would be go to industry and buy pre-cut
+ - Thomas: We are getting 
+ - Navid: must be a different laser cutter
+ - Timon: of all the different paths to get the kapton 
+- Navid: How soon do you need the UK PBs
+ - Timon: Not urgently 
+ - Karol: We are sending them urgently
+ - Tony: we should get them in place as soon as we can
+- Gerrit: Simon mentioned in the chat that kapton should be good. Depends on the supplier. The suction cups still contaminate the pads meaning we still have to clean the pads anyway
+ - Navid: we have some in the UK that Bart has that doesn’t leave contamination
+ - Bart: They were custom injection molded and dont leave residue.
+ - Gerrit: would be nice to get some of those.
+ - Bart: I will get Sam to quote what another run would be
+ - Gerrit: sounds good
+ - Thomas: Would be good to try these suction cups out
+### QT task Powerboard QC
+Presenter:Zhirong Zhang
+- Karol: ESD failures, with the handling at reception sites would you recommend we do something similar at reception sites
+- Zhirong: I would suggest doing it for everything, we think the damage happened when loading the PB to the panel
+- Timon: its not possible to do this during reception testing, in the recpeiont test there is some path that is ESD protected because it is all bonded. I suspect one of the problems is one of the lines can charge up over time and once we bond it up ESD damage can occur
+- Timon: In experience we have not seen this issue occurring in large quantities we are monitoring for it, I am not sure what you can do in the reception test, you slide the card in
+- Karol: esd bracelets
+- Timon: I don't think that will help
+### Barrel Module Glue Weights Stenciling
+Presenter: Karol and Simon
+- Tony: you could check the coverage by looking at the heights, if they are lower it would be better than the spec. They went to a thinner stencil because of this. 
+- Karol: its an interesting point, I am going to do a calculation, I assume this would be a different answer site to site
+- Tony: coverage was set due to bondability and heat transfer, we havent checked this but we should probably look at the data for heights vs temperature. 
+- Navid: can you have a look at this Karol?
+- Bart: the scatter is quite big
+- Tony: even with the scatter you can probably see the difference. 
+- Bart: the measurement is not easy, the scatter is too big
+- Tony: we tried a lot of heights, 120 was just the best we could get
+- Bart: I agree its probably not that important but its not that easy to measure, its probably not worth looking at
+- Karol: With the coverage, the sensor cracking issue, what we are doing in principle with 60% coverage is building wide gap modules.
+- Tony: we are not seeing the difference, the US sites have the same coverage, its just the same as previously. 
+- Vitaly: I see some glue is dark some is white, which one is cured. 
+- Simon: Its all cured its just come away from the surface
+### AOB
+- Nothing

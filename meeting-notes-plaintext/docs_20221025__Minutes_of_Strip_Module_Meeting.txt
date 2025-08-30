@@ -1,0 +1,108 @@
+# 25/10/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1191861/
+### Introduction
+Slide 2
+- Tony: should we copy the pull tests on half moons from the monthly test google sheet to the half moon google sheet?
+ - Luise: yes please, since there are different people looking into this
+Slide 6
+- Tony: will get an update from Kirsten soon
+- I chat: Kirsten if fine with it
+Slide 7
+- Bruce: not resolved between production resources and production database
+- Bruce: links should work
+- William: links in SQ documents are broken because of the change
+- Ingo: could request to keep the test as an alias for the production database
+- Bruce: need to discuss this in a database meeting when we get there, but something we need to be aware of
+- Luise: mongodb ids in links should still work, just need to change the start of the link
+- William: at times, we got error messages which seemed to be lost
+- Bruce: this should be as transparent as possible, but for the moment concentrate on that it is being worked on and there are migration issues
+- Luise: in the next database meeting, there are a few points we will raise
+- Ingo: my scripts didn’t work intermittently, but work now and links from SQ documents work again as well
+- Bruce: working on fixing ITSDAQ uploads
+Slide 10
+- No objections to proposal for module building
+- John: Build testbeam module with TrueBlue agreed
+ - Ingo: impact by glue should only be detrimental if used for production
+### ask tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 25/10/2022: Barrel
+- 01/11/2022: EC (Flex QC review)
+- 08/11/2022: Barrel
+- 15/11/2022: ATLAS Upgrade Week
+- Single Hybrid Testing Database Implementation
+ - 
+- Hybrid Burn In Software
+ - Ilona working on selection of different panel types
+- Multi Module Test
+ - Barrel sites using their module boxes for cold noise testing,
+ - Endcap sites fixing code for cold boxes
+- Modules for Test Beam
+ - Irradiation campaign being set up at CERN right now,
+ - Modules for DESY campaign being built
+- Glue Studies
+ - Tony: is there a temperature for the aging process? Concern is about glue hardening with age
+ - Luise: in past have seen glue hardens more with irradiation than with aging, not seen a large difference between aged and un-aged
+ - Tony: concern is about glue getting brittle
+### Institute Contributions
+Sheffield
+- 
+Next week: DESY (HH)
+### Update on glue studies
+- Slide 6: Tony: do you mean the coupling capacitance with stip capacitance?
+ - Jack: its the capacitance when applying 10V to the bias, measured to the backside
+ - Tony: and the resistance?
+ - Jack: resistance is the bias resistance
+ - Tony: so you expect ~MOhm and pF?
+ - Jack: yes
+- Slide 10: Ingo: how are the half moons stored, since the current could be a humidity effect?
+ - Jack: everything was stored <10% and stored in dry storage
+ - Ingo: but the sensor might take some time to recover after being exposed to cleanroom
+ - Jack: yes, current can fluctuate a bit with humidity, but capacitance is less affected
+ - Ingo: sounds like it should have recovered by then
+ - Jack: same is followed for all test
+- Slide 14: Luise: we think the variations we see here are only half moon type effects since we only see them on R5 half moon types and it only affects Polaris and Polaris+, so we don’t care
+ - Jack: the resistance scale on this graph is in MOhm and goes to 0.4, but the actual values go to 80MOhm
+### Thermal cycling QC document updates
+Slide 5 
+- Tony: warm up characterization does not indicate a test in the document, do you do one?
+ - Ankush: yes
+ - Tony: is there a reason not to take a test at room temperature at the very end?
+ - Ankush: 20C is uses as reference temperature for all measurements
+ - Tony: how long do we need to sit at 22C to be stable?
+ - Ankush: until all internal components are above dew point of room
+ - Tony: thought document has a set time in it (30min)
+ - Ankush: comment about dew points was about the initial purge at the beginning
+ - Tony: thought we had to have the components sit at that point for a certain amount of time
+ - Ankush: comment about initial purge and wait time after purging: BNL confirmed you only need to wait for 5 minutes before starting
+ - Ankush: Final warm up: HV stability test is supposed to look at the module for 2 hours warm and check current
+ - THEN warm up to 22 degrees to make sure there is no condensation
+- William: full test is 5-10 min for a module, then would it be 1h for 5 modules?
+ - Ankush: was thinking that testing all modules at the same time would take 10min
+ - William: that is not our current experience
+ - Looking for anyone who has experience with testing multiple modules in parallel
+ - Ian: it does take longer, but not four times longer
+ - Tony: thought running multiple modules at the same time would be roughly the same?
+ - Ian: also depends on your network card
+Slide 6: 
+- Gerrit: didn’t look at software, but would it run fully automatic. Then the automated system should take it off?
+ - Tony: what does failure mean?
+ - Ingo: if you can’t supply low voltage, or if there are DAQ errors than it could affect everything
+ - Tony: so if it does not affect anything else just run it
+ - Gerrit: even if it only breaks itself, you could just run it
+ - Luise: if you have a short in the HV, could this affect you other modules?
+ - Luise: if the current goes into compliance, switch it off. If it only is the ITSDAQ test, just continue testing it
+ - Ingo: and if it doesn’t hinder the operation of the other modules by slowing down DAQ
+- Ankush: if there is a power supply failure, you should leave it off. If there are DAQ errors that don’t hinder other modules, leave it on. Do we need tighter definitions?
+ - Luise: if it would trigger the interlock, switch it off. Otherwise leave it on. But if it affects ITSDAQ of all modules (e.g. taking much longer) switch it off as well.
+ - Gerrit: the interlock is dealt with by the power supplies.
+ - Luise: yes, and if it is that we would trust it to switch the module off. 
+ - Tony: what we don’t want is to switch off just because a test failed
+ - Gerrit: these tests will run in most times over night and we don’t want to stop the test of all others since this would cost us time which we don’t have in production
+ - Luise: Propose: the exact handling of errors will be looked at at a later point
+ - Ankush: yes, ok. If is power supply issue we switch it off, if it is ITSDAQ we need to look at it
+- Tony: can we check how many errors something is throwing or whether readout is slowed down in ITSDAQ?
+ - Bruce: in principle, but it does not do it now.
+ - Ingo: also, slowing down usually comes with a lot of errors, so we could have an error counter and use existing ITSDAQ information
+ - Bruce: yes
+### AOB

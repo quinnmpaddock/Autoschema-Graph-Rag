@@ -1,0 +1,212 @@
+# 18/07/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289848/
+### Introduction
+Slide 2
+- Tony: for pull testing data, are there summaries about the outcome from this?
+ - Luise: for hybrids, Forest and Kirste; Halfmoons Archa has presented; so far not someone for ASICs
+ - Tony: and where are the summaries
+ - Luise: in module meetings
+ - Luise: and there are summary plots from Shudong
+Slide 4
+- Vitaliy: glue pattern was unusual, what was it? The transport frame was not present?
+ - Matt: module was irradiated. Glue was done by spreading it through the via holes in the frame (~10% of total area covered by glue).
+ - Vitaliy: and in the cold test, there was no transport frame?
+ - Matt: correct, in test it was allowed to be free
+ - Vitaliy: confirms that cold modules like to flex a lot. But it is not what to expect from a stave
+- Ingo: when we did module simulation, this was something we have seen as well. And the conclusion was to not let modules bow freely
+ - Luise: question is if the glue pattern [on the stave] is sufficient after irradiation
+ - Matt: also noticed that when cold it curved the most, then curved back when heating but not fully
+ - Vitaliy: the residual effect could be from the glue deformation?
+ - Vitaliy: maybe when it curved up the glue is more spread
+ - Matt: tested with shims and looks like module has detached from corners
+Slide 6
+- William: thought we were aiming for July last time. Have we changed the delivery time of the detector?
+ - Luise: we need some deliverables that we will not have (likely) earlier; this is defining the dates for the PRR and October is already full. Mitigation is to start with hybrids and powerboards already and then we can start directly with modules after passing the PRR
+ - Craig: the schedule has been statussed based on Endo of September PRR with 5 months of float. On surface it eats float. That is the reality where we are. If we don’t want to move, then PRR date is mid September.
+ - William: thought we are doing the 2nd and 3rd petal now.
+ - Luise: starting the petals and having system test results are two different things
+ - William: then ATLAS needs to accept that we will likely be late
+ - Luise: this is the result of discussions we have had
+ - Luise: the point of PRR part I was to start hybrids as soon as possible, and we will make sure to get this done
+- Andy: how many hybrids/modules do we need for the glue weight point?
+ - Luise: not clear, especially with the different glue types (and module types)
+Slide 7
+- Ingo: for False Blue if the hybrids/powerboards are detaching, we need some studies for this
+ - Luise: not aware of any EC modules that show the detachment
+ - Matt: have seen detachment on barrel modules. Some could be caused by the pre-cure time (some had long pre-cure time)
+ - Ingo: if we saw detachment with glue, then it should be out
+ - Luise: we should have a larger statistic sample on flex-on-silicon with pre-cure
+ - Dennis: and the pre-curing conditions (room temperature) recorded
+ - Luise: is anyone interested in looking into this?
+ - No answer
+ - William: are we really talking about building barrel and EC modules with different glues?
+ - Luise: false blue is cheaper, easier to buy, higher glass transition temperature.
+ - Luise: also need to look into the HV-breakdown issue
+- Craig: thank everyone for input from module PRR
+### Institute Contributions: 
+RAL
+- Vitaliy: can you comment on where the rubber sheet goes?
+ - Matt: on top of the metal jig between the hybrid panel and jig for hybrid bonding
+ - Vtialiy: thought pliable material like rubber would make it worse for bonding
+ - Matt: idea is that the rubber will provide a better seal when the panel is screwed down and fills the gap
+ - Vitaliy: how thick is it?
+ - Matt: fairly thin
+- Vitaliy: the plot you are showing, what were the pre-cure parameters?
+ - Luise: under same conditions as Matt: mixed bipack in climate chamber at approximately 45C for 15min
+ - Vitaliy: did you have done any other tests for pre-cured True Blue?
+ - Luise: not for this (was specifically for this test)
+ - Matt: we have made 7 or 8 modules during PPB with this method. One of the irradiated Sandia modules was pre-cured
+ - Luise: do any of the early breakdown modules have been pre-cured?
+ - Matt: don’t think there was a clear signal for this
+- Theo: is there any tests done on pre-heated false blue?
+ - Luise: not for this particular test
+ - Could be done, but needs someone with time, equipment and willingness to do it
+Next meeting: Celestica 
+### Module test setup improvements (barrel)
+- Vitaliy: basic idea comes from Peter. This is the implementation from what was discussed in module meetings.
+ - Forest: modification was just because buying shielded connectors was expensice
+- Forest: also: box was tied to building earth, right?
+ - Jacob: yes, that also improved it slightly
+- Luise: improvement from Peter was to tie shield of min-dp to box. Was this done here?
+ - Jacob: yes
+ - Craig: and on inside there isn’t the same setup?
+ - Jacob: yes, this is the inside
+ - Forest: we chose the inside. The tape is a copper shielding tape (tinned)
+- Ashley: do you intend to do the same procedure for your single module test stand?
+ - Jacob: module test stand doesn’t have feedthroughs, so not too easy to do
+ - Ashley: simply cut away the insulation of the coax mini-dp cable and made a connection to the box. Might be worth trying.
+- Ashley: in your single module test stand, your jig is not anodised?
+ - Jacob: don’t believe it is 
+### Plan for paper about cycling to death
+- Luise: is a nice plan. About how many module to include: if you want statistics it’s hard especially because of different EC module types. Might be better to look into trends there
+ - Barrel only paper, then never mind
+- Luise: would be good to include all setups and it probably would have to be an ITk paper.
+- Luise: and once you mention cold noise, you have to be careful otherwise it might spiral
+ - Abe: don’t know if we want to mention it at all or say it’s a separate study
+ - Luise: just mention it is a know issue
+- Andy: is there a way to write the paper without the word “noise” and “cold”
+ - Luise: we have a plan to write a cold noise paper, just not sure when
+ - Luise: not easy to write a paper without mentioning it.
+ - Andy: just need to define what “death” means in the paper
+ - Abe: it would have to be defined there. Basically modules operational with reasonable noise
+ - Hananh: thought there is a definition about change of noise compared to the beginning of the cycle
+ - Abe: yes, can do this
+ - Hannah: another way to avoid cold noise is to use delta noise plots (not showing absolute noise)
+ - Abe: is there a problem to mention cold noise, even without a reference?
+ - Luise: depends on the reviewer
+ - Luise: there will be a talk at TWEPP with proceedings that could be used as reference
+- Vitaliy: plan looks good. I think we are still allowed to write small scale papers (not ITk paper). It might still be an option
+ - Luise: we briefly discussed it with the leadership and it would probably just be the whole module list (not full ITk) but will go through CSD review.
+ - Vitaliy: there is an ITk review, but in cases where work is done in lab by one/few institutes that is allowed
+ - Luise: but for module you need lots of parts from multiple groups
+ - Luise: we try to keep it reasonable, but we should be fair to the community and follow the rules from the leadership
+- Abe: what would be the next step?
+ - Luise: prepare a draft and then it can be discussed (e.g. with leadership about the scale of the authorship list)
+### Hybrid burn-in results with power cycling
+- Ingo: one of the people that might be able is Ben, who is currently not at the lab
+ - Bruce: it was reported by the AMAC, but we haven’t calibrated the current measurements. In principle that is what it is supposed to do.
+ - Bruce: there is also power supply monitoring in influx
+ - Vitaliy: but that is a different thing?
+ - Bruce: it’s not possible to discriminate between hybrids
+ - Paul: this is also the output of the DCDC, while the power supply is the input
+ - Vitaliy: imagine you want to measure the hybrid
+ - Paul: this is what you want. Native ADC in AMAC only measures voltages; feature to measure DCDC output current had to be handled in a special way; there is an external resistor where we measure high side and low side voltage and from the resistance we get the current; output of DCDC scaled by a factor
+ - Vitaliy: who would be in the position to do this work?
+ - Miao: part of my qualification task, working with Bruce on calibration
+ - Miao: DCDCoutHigh and DCDCoutLow is what Paul mentioned (slide 8)
+ - Miao: VDCDC is already calibrated (output voltage)
+ - Vitaliy: what are the units?
+ - Miao: mV
+ - Miao: DCDCoutHigh/Low is not a current, it’s a voltage. Current from this will hopefully soon be there
+- Marcus: DCDC voltage should be 1.3V? Not sure why it is fluctuating
+Slide 10
+- Marcus: wondering why there are occasional crashes (4 x per week) during burn-in
+- Bruce: maybe firmware related (reprogramming)?
+- William: so you haven’t side-lined any of these hybrids because of the jumps?
+ - Tony: no, they are fine. We just don’t know what is causing these jumps
+ - William: so we just accept the hybrids?
+ - Tony: would be good to understand
+ - Tony: and this also happens without the power cycles
+ - Tony: it also affects all hybrids at the same time
+ - William: so we look at what happens after 10% and at the end and if they are comparable the hybrids are fine?
+ - Tony: right now, these jumps are bigger than anything we see otherwise, see it in random runs
+ - Tony: only thing that has been seen so far is missing pedestal trim files
+- Bruce: can people please report these things
+- Vitaliy: Bruce, if I understand you correctly you think the crashes are firmware related. Does Matt know, or do we need to report this to him?
+ - Bruce: difficult to report
+ - Bruce: if it is something that ITSDAQ can’t identify at restart …. ????
+ - Vitaly: are you suggesting something for us to do?
+ - Bruce: not at the moment. Can try to fix the seg fault itself, but need to think about the time out
+ - Vitaliy: they keep happening and should figure out why
+- Tony: goal was to run 200 hours to see if cycling causes damage. Do we now introduce power cycling in standard runs?
+ - William: does this require modification in burn-in?
+ - Marcus: would require 5-10 lines of code
+ - Tony: just turning DCDC off and on, change in main branch
+ - Tony: do we want to do this, or need more tests?
+ - Tony: we also see the jumps in production hybrids. Power cycles are a stronger test of burn-in
+ - Luise: difficult to say. Last time there was concern that it reduces longevity of hybrids
+ - Tony: that’s why we did 200 cycles
+ - Luise: is this urgent?
+ - Tony: will build [production] modules soon, would be nice to do the burn-in for all hybrids in the same way
+ - Luise: do we gain/risk anything by doing this. We don’t have time to do cycling to death
+ - Tony: historically, power cycling was the strain that would break a hybrid, that is why we thought to add this in. We haven’t seen any weaknesses front he power cycling
+ - Luise: last concern was to weed out more hybrids than expected
+ - Tony: it’s a judgment call. There is a chance that a power cycle could break something. Other concern is burn-in weeding out components early.
+ - Luise: we haven’t seen better QC, but also not more failures.
+ - Tony: there is a risk that power cycling could fail parts (not seen) or that it reduces lifetime (also not seen)
+ - Luise: do we have evidence that a short number of power cycles could cause issues?
+ - Tony: its a judgement call. In detector, expect 100 power cycles per year so with this test we exceed this number a lot
+ - Tony: there are 100 power cycles per hour, for 100 hour test
+ - Tony: could push the hybrids outside the life expectancy. Could reduce number of power cycles to be safe
+ - William: but haven’t seen failures, so hard to make a decision
+ - Luise: do you need these hybrids, or can you run the test longer?
+ - Tony: they are for the SS modules, if we loose them that would be a risk
+ - Marcus: they have been in cycling for about 1-2 weeks more (pulled data earlier, but haven’t checked all)
+ - Luise: if we increase the number of cycles a bit more, it could hep to make a decision.
+ - Vitaliy: we could also bump up the number of power cycles?
+ - Marcus: which number to you think off?
+ - Tony: we will gather the data we have and if you cycle too fast there might not be enough time to settle
+ - Luise: would be good to be on the safe side (lifetime or failure)
+- Tony: send Bruce the examples of the jumps, we would like to address this. If other people see similar things, should collect this
+ - Ingo: think Ben has seen similar things
+ - Ingo: might have seen it in [ABC]130 modules as well
+ - Tony: has to be something in the software
+### Module cold cycling observations
+- Vitaliy: for cracked devices, did you do any other checks to find instigators?
+ - Jesse: we have pictures of earlier QC and can check; IHEP module had chip in sensor where the fault line is
+ - Vitaliy: checking the prior history is useful, maybe there was a later impact as well?
+ - Jesse: we don’t record potential impacts, so its hard to trace
+ - Vitaliy: anything else: Debris on test frame, pressing sensor up, etc?
+ - Jesse: that was also recommended to check
+ - Bart: we were looking at the module using it as mirror to spot this and even missed the crack. There was nothing obvious that could be underneath the sensor to distort it
+ - Vitaliy: thinking about small piece of dirt causing local disturbance
+ - Bart: but when you use it to look as mirror to look at ceiling light, you can see even small distortions (e.g. from vacuum holes). Don’t think there was anything obvious
+- Vitaliy: in your thermal cycling, are you ramping the HV up and down
+ - Jesse: yes
+- Vitaliy: any other changes from first to second day
+ - Jesse: (slide 6) on left higher thermal temperature we see breakdown. On right this is gone (left it over night at room temperature)
+ - Vitaliy: don’t understand this: high current at low temperature
+ - Luise: maybe its from the module relaxation Matt has shown before?
+ - Jesse: it was 12 hours between the tests
+ - Vitaliy: could check for relaxation effect by cycling hot first, then going cold and then waiting for a bit before doing anything
+- Gerrit: try to do the same thing in the US
+- Gerrit: you have the table on slide 2, what does Pre-TC HC mean? 
+ - Jesse: there is no hard breakdown until 500 V
+ - Gerrit: by inspecting curves or power cycling notes
+ - Jesse: inspecting the curves
+ - Gerrit: there are no post-cycling curves. Do you have them for comparison?
+ - Jesse: no
+ - Gerrit: in tests, do you look at curves or if compliance is hit?
+ - Gerrit: after cycling the IV curve changes dramatically (in direct sensor IV measurements bypassing the powerboard). You might want to take the modules and do these tests. Even through AMAC should be fine, or removing the bonds and do a bare sensor IV.
+ - Jesse: would be interesting, we could try but some are already packaged
+ - Gerrit: you could also measure the bow, but that is done at loading sites
+ - Gerrit: cracking is interesting because it does not go along the chrystal line
+ - Vitaliy: Gerrit, you have post cycling IV’s, could you present them somewhere?
+ - Gerrit: yes
+ - Theo: Gerrit, do you rebond but keep the front-end bonds?
+ - Gerrit: just bypass powerboard for IV tests, leave return wire on corner of sensor to frame (but still bonded to bias ring)
+- Vitaliy: looking at cracks (slide 18): they seem to be appearing in unexpected locations - something seems to be causing them, but they occur in weird places
+ - Luise: but this is along the bending line? (slide 18, left side)
+ - Gerrit: left only, but right picture is weird
+### AOB
+-

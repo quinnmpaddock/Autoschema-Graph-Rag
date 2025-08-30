@@ -1,0 +1,87 @@
+# 23/03/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1008267/ 
+### Introduction
+- Site qualification for cleanroom standards can now begin
+ - Info on how to quali on the item is attached to agena and also included in email to arrive soon
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R0 tool production
+ - First set of tools assembled
+ - Waiting for missing order of bushings
+ - Marc gone next 2 weeks
+- R1 tool production
+ - No news currently, will give update in 3 weeks
+- R2 tool production
+ - In workshop, some parts of tools came back, more info in 2 weeks
+- EC hybrids/powerboard tendering
+ - Progressing every week with weekly meetings on procurement
+ - Hope to be done in 6 weeks with doc ready
+- UK/China module thermal cycling setup
+ - Missing pi plates, RAL waiting for delivery but customs issues currently, should be en route to RAL today then transferred further
+ - s/w dev ongoing
+- EC hybrid test-panel finalisation
+ - Figure out if dual hybrid test panels need to be respun
+ - R3 test panels do not work reliably with 2 hybrids, some communication issues. Will respin R3 panels. Debugging is problematic due to marginal impedance control, works sometimes, sometimes not… 
+ - Other test panels? Single hybrids
+ - Similar status. We are validating 13 hybrids, powerboards, … 
+ - Does not yet make sense to order prod quantities
+ - If Freiburg knows of any working panel please let Dortmund know so they can go and produce (any, not fixed to R1)
+ - What about panels for burn in crate?
+ - Dennis can provide single panel with 1 hybrid
+ - Also sensors will come back that Zeuthen loaned Fr
+ - Sven: any estimate for how long it will take to figure this out?
+ - Dennis: no
+- Production of the common jigs required in the EC
+ - Sergio sent email with new design for test jig (now on EDMS), as only minor comments we hope to go and approved after module ACs checked it
+ - Oskar is waiting for those final drawings before progressing
+- Production of R0 and R1 test frames
+ - See above (EC hybrid test-panel finalisation), Fr working on validating current frames
+- Production of R2 test frames
+ - See above (EC hybrid test-panel finalisation), Fr working on validating current frames
+ - R2 is closer to being validated, will be the first to finish
+- Production of R3, R4 and R5 test frames
+ - See above (EC hybrid test-panel finalisation), Fr working on validating current frames
+- Production of LED bars for the EC
+ - Majority of work taken on by Tynan now
+ - Tynan has sent Dennis a design for R4, is waiting for validation from Dennis before tackling the other ones
+ - Dennis will have a look at R4 design and give Tynan feedback
+ - Update in 2 weeks
+- Production of module frame cover for EC
+ - Covers have not yet arrived, should arrive end of March
+ - Update in 2 weeks
+- EC PPA/prototype powerboard order
+ - First batch hand populated, bug in footprint for one diode, have to redo pick and place files to hot-fix this for exchange diode
+ - Hope to have them done in 2 weeks
+### HV-Tab Cold Cycling Test
+- Petal is considering to add a spacer/fishing line under tab below sensor to add some free space to allow for compensate of CTE expansion/shrinkage
+ - Maybe consider a wiggle instead
+ - Module folks to get into contact with loading folks to figure out a way to add wriggle room for tab when bonding to core. E.g. fishing line spacer, but dedicated tool probably better
+ - Talk shows that normal mounting might be sufficient, but want to look into how to make it more reliable
+- Will the tab be completely covered in glue or is there a void?
+ - BNL: tab not covered in SE4445
+ - Ingo: tab should not be covered with SE4445
+### Dummy powerboards for gluing tests
+- Printing bend powerboards for barrel sounds like a good idea
+ - Also good to evaluate endcap tools
+- Resin printing in house
+ - Freiburg: hybrids bend a lot in post-curing process; need to get parameters wright
+ - Zeuthen will get online resin printing soon
+ - Canada (who was that?) also has a small printer and would be happy to help
+- Vitaliy: are there metrology results as input to produce bend hybrids?
+ - Karol: currently no plan to do any detailed metrology
+ - Maybe use powerboard pick-up tool to measure it from the bottom to get shape
+### AOB
+- Vitaliy
+ - Long term tests with hybrids and modules, specially for sensor humidity issues
+ - Also long hybrid burn in
+ - Would be very useful, also for module PRR
+ - Use end of PPA or beginning of PPB parts to do this
+ - For SQ DB interaction need to be ready, so having a dedicated module DB meet might be useful
+ - Target to have this in 3 weeks
+- Luise
+ - announcing that we will discuss weighing QC comments in the QA/QC meeting this Thursday
+- Sven
+ - Please send recipient address for hybrid crate electronics to Ash
+ - Email, Phone Nr, Shipping address, Name
+ - One address for european deliveries please, then redistribute

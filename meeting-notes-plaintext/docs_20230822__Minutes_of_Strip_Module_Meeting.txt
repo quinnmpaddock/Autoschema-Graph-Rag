@@ -1,0 +1,175 @@
+# 22/08/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289853/
+### Introduction
+- Ingo: who should register the tools
+ - Luise: those who make the tools. If they are not already registered, the sites using the tools can do it
+- Sensor shipment: no objections of sending them in the proposed way
+- Marta: for stencils, do the frames that we have already not work?
+ - Luise: no, and if we order a new round of screens we also need more stencils (we don’t have enough frames)
+ - Marta: when are the stencils supposed to be ordered?
+ - Luise: all hybrid designs are done. They can be ordered
+- Ingo (glue samples): are the norms also written in the FDR documents
+ - Luise: they are added to the assembly documents for the glue samples and also in the backup of all new Introduction slides
+- Laurelle (batches): for the phase, are those the only options? Or can we split PPB in 2
+ - Luise: its a free text field, so you could enter what you want. As long as the first part is PPB, it should be fine. We have not planned on splitting this further into PPB phases.
+ - Could also add this after the institute name with an additional underscore
+ - Luise: there are also discussions about additional options
+- Tony (sensor shipments): what is the reception requirement. We are going to ship a large number so it is not feasible to reception test all of them
+ - Luise: would be good to test as many as possible. Will also discuss this at ITk week. It’s about how to mark failed sensors.
+ - Luise: test as many as you can, upload to database, set the “failed at reception” flag if they fail
+- William (sensors): so we have to be able to receive 1 months worth of sensors in a month
+ - Luise: there is more discussion at the ITk week. Maybe we can also have a discussion in the Module meeting next week
+ - Luise: while we are limited with part availability for assembly, it is a good time to do a lot of reception
+### ITSDAQ news
+- JJ: autoconfig file from database, how can I make sure it is correct?
+ - Cole: what is the difference?
+ - JJ: the ABC config
+ - Cole: maybe would be good in an email
+ - JJ: the config value for each ABC is different
+ - Cole: would be good to collect the information and sent to mattemost
+ - Bruce: I did tidy som DAQc up when making the change, so maybe there are some other changes now visible
+- Luise: when will people be able to merge their cold cycling?
+ - Cole: don’t know it myself
+ - Bruce: think it is mainly re-thinking how things work and try a few things
+- Tony: it isn’t clear to me how we do the combination (warm and cold together, or separate them)? And since we are not running tests over night, how does the script recognize the different run numbers?
+ - Cole: end-goal will be that you don’t have to separate data. The script should just need to be pointed to a directory
+ - Tony: how is the warm-cold separation done
+ - Cole: this will be related to labelling
+- Tony: if you look at the default sequence, there is no IV and the stability test is not there. But they are not in the sequence. I don’t know how to do the test
+ - Cole: adding AMAC IV to the sequence should be easy
+ - Tony: IV is currently not in standard sequence
+ - Luise: there should be at least one IV at beginning and one at the end
+ - Tony: it is currently not in the sequence, so we need to agree on the sequence 
+ - Luise: had this discussion with Ankush, couldn’t have the discussion then due to holiday. We will try to organize this
+ - Tony: we need to know what to do and where to pull the information from
+ - Luise: will try to get something together for next week
+- Abe: AMAC IVs and automated sequence: are working on implementing this
+- William: second Tony’s comments. ITSDAQ is doing AMAC IVs and tests. But we also want to store current or temperature which is going into influx. We need some what to correlate environment data with tests
+ - Bruce: it is there
+ - William: and AMAC currents?
+ - Tony: is the json for the environmental scrubbing there in Mo’s script?
+ - Bruce: can someone point to this?
+ - Tony: it was in an old version??????
+ - Bruce: the cold jig run?
+ - Tony: yes, all the data is there
+ - Bruce: the script is to do this, its in ITSDAQ.
+- Vitaly: need to think through how the software reacts to problems
+ - Cole: Abe/Rachel are working on this
+ - Vitaliy: interlock action is one thing.
+ - Cole: right now yes, it’s not been implemented
+ - Vitaliy: same thing for electrical test results. 
+ - Cole: may come a bit later
+- Luise: if you use the normal AMAC IV, it ramps down when hitting compliance
+ - Cole: yes for an IV test, but then nothing prevents ITSDAQ from running a test without high voltage
+ - Cole: it’s currently a mix of things
+ - Vitaliy: compliance is another bad outcome worth capturing as well
+- Ben: have produced a new version of hybrid burn in arduino fan version. It will remove some warnings that have been seen in the past
+ - Please update your arduino firmware version
+- Abe: point from Vitaliy was good to bring up, but probably need to run a lot of testing, see what comes up and then implement safety features
+ - Cole: understood
+### DESY-Z/HU glue robot tests
+- Luise: when looking at glue pattern, do you have problems with air trapped in lines (page 14)? The three lines seem to facilitate air trapments
+ - Ingo: we are not concerned. We can try to optimize a bit more
+ - Ingo: we have done studies and have so far not seen that the trapped air causes issues
+ - Luise: as long as we don’t see issues, that is OK
+ - Ingo: not easy to get this done. With true blue we always get the larger dot at the ends of the lines. We can try to reduce the trapped aire
+ - Luise: looks like your true blue is quite thick (long pre-curing). You could try to use less pre-curing (runnier glue) to see if that helps
+ - Ingo: the lines are already starting to merge
+- Luise (page 5): looks like here you might have a gap in a bond area
+ - Ingo: it is bondable, but we will add more support (page 6)
+ - Ingo: true blue pulls back more than polaris
+- Luise: it looks like you have less glue. Is the weight the same?
+ - Ingo: the glue weight is always within tolerance
+ - Ingo: page 16 was furthest out of tolerance, but there were other issues as well (rejected hybrid that was quite bend)
+- Kirsten: wire bonding will be much easier if you connect lines on the front and use three thick lines and instead have shorter thicker lines
+ - Ingo: agree, but that was also the pattern that has shown to create the highest stress on the sensor. It might be involved with breaking the sensor
+ - Ingo: agree that this would be better for bonding
+ - Kirsten: and it would reduce the issue of glue pullback as well
+ - Ingo: we try to stay away from straight long lines because simulations show they have the highest stress
+### Barrel powerboard flatness update
+- Peter: what does this look like when people try to flatten them?
+ - Gerrit: its a nightmare
+ - Kirsten: it is tricky. Forest puts the powerboard on the alignment jig (flat) and if it is bend, he uses a bit of card stock and sticks it under the area where it is bend and then bends it down
+ - Forest: will also hang it off the end of the alignment jig, push it down with a Qtip on a clear spot on the powerboard 
+ - Gerrit: it is not acceptable for production. This takes too much time and the risk is too high. We should discard powerboars like 500-0490. Less experienced people will not be able to easily do the bending
+ - Kirsten: could also set aside anything that doesn’t look flat on the alignment jig
+- Gerrit: what are the SCIPP pins on the pickup tool set to?
+ - Kirsten: they were set a while ago. The first measurements we did were after resetting the pins after a thickness change of the powerboards. We did these measurements for all our tools to see that we get the same results.
+ - Kirsten: these powerboards have the same thickness as those used in PPB
+ - Gerrit: not concerned about overall thickness, but the thickness variation across the powerboard
+ - Gerrit: height difference in powerboards themselves are quite high compared to glue height tolerance
+ - Kirsten: point 2 always measures low because of where it is on the powerboard
+- Pavol: are you able to measure for now all powerboards for production?
+ - Kirsten: this was just for now to check the batch and see how the new bending tool of the vendor looks like. 
+ - Pavol: would be good to measure this as part of the QC. Not sure if this can be done at module sites
+ - Kirsten: no, that is not feasible
+ - Kirsten: there is only one powerboard with a weird twist and this is visible by eye
+ - Kirsten: really bad ones can be seen
+ - Pavol: not easy for us because we use a company for glueing/assembly. They need exact criteria about what to reject
+ - Luise: there is no flatness requirement for powerboards
+ 
+### Update on R3 high noise problem
+- Luise: how sure are you that you have a HV connection at low temperature?
+ - JJ: we see the noise change (slide 3)
+ - William: between -100 and -150 we see some sensitivity of the noise to bias voltage
+ - William: think that tab on left side sensor is pinched more than on the right side of the sensor
+ - Luise; should bring it back to Freiburg to increase the cut-out in the frame
+- William: what is the AMAC measuring when we bypass the powerboard? What is the jump?
+ - Vitaliy: that is a key observation. Worth figuring out where the lines go in the circuit. Not sure what it is
+ - William: we did check the ground return on the powerboard. Next test is to remove it.
+ - Vitaliy: did you check that the hybrid ground and HV return are connected?
+ - William: yes, before and after going cold
+ - William: because it is the away sensor, maybe VDD is drooping? Can this be changed on the noisy hybrid to see if it makes a difference?
+ - Luise: should probably talk about this with dennis
+- Ingo (chat): could be a bad connection in the test frame
+ - William: but the noise is coming when the HV is there
+ - Ingo: but the impact on the HV it looks like it does not get sufficient HV
+ - William: we take the HV directly to the sensor
+ - Ingo: but you still have the frame in between?
+ - William: yes
+ - Ingo: if you use the HV through the frame, there are some vias that could be week and show issues when cooled down. 
+ - William: it happens on 5 R3 modules
+ - Ingo: might be interesting to measure the resistance of the path on the frame at different temperatures (in a climate chamber)
+ - William: JJ, can you show the bypassed noise? Didn’t measure it at 100V, might want to repeat this test
+ - Ingo: as we have seen bad vias, there could be bad vias from population
+ - Ingo: if via is really broken, you would see it. But if it is only weak, could see some form of issue
+ - William: but we see the same on several modules (different frames)
+- Suggestion from Cole in chat: Solder a resistor across the HV in/out and cycle that without a module?
+- Suggestion from Vitaliy: Yes, basically - connect the resistor on the test frame. Might need to do it where the module goes, to account for the on-frame traces and vias.
+- Ingo (slide 6): looks like there is no current going through the sensor
+- Luise: you saw quite a few issues with these powerboards, could there be issues there?
+ - William: some of the components are hand-assembled. We did a visual inspection and room temperature electrical test and it looks good
+ - Luise: the current is through AMAC?
+ - William: we still run the AMAC circuit on the powerboard, but we don’t measure the HV from it (powerboard bypassed)
+ - William: whatever AMAC measures as HV return is not the sensor
+ - Luise: could be that hand soldering affects the AMAC calibration
+ - William: also noise appears
+- Luise: and other modules are fine?
+ - William: yes
+ - Luise: do you have any indication if there are difference between making the modules
+ - William: no
+ - Luise: have you looked at the S-curves? Is it really noise or just the fit not working
+ - Cole in chat: they look like unbiased S-curves
+### Sensor recovery methods used by Sensor QC sites
+- Luise: how well do you understand the cause of the degraded IV after long-term stability?
+ - Ezekiel: not
+ - Vitaliy: likely related to slow surface charge movement. Have seen similar effects on capacitance.
+ - Vitaliy: not worried about the cause
+ - Luise: main concern is that this could appear on modules as well? If we apply HV in the module cold box for a while it could degrade
+ - Vitaliy: and if you apply IV again, the vast majority go back to normal
+ - Vitaliy: the phenomenon occurs on a minority sensors and a majority of those cases get back to normal after IV
+ - Luise: what is the number of sensors that don’t recover?
+ - Vitaliy: probably very small
+ - Ezekiel: can get that number offline
+ - Luise: if we see this on modules as well, it would be good to give out recommendations on what to do
+ - Vitaliy: usual recommendation is just to repeat the IV.
+ - Luise: might want to collect the cases where recovery has helped, building a database of those modules
+ - Vitaliy: some of the recovery methods (ion blower) are easy to acquire. 
+- Gerrit: just focussing on UVA and ionized air, the sensors are then fixed and go back into the same envelope which probably still have charge. So they would charge up again? What should module assembly sites do
+ - Luise: get an ion blower
+ - Gerrit: so the (not yet described) operation procedure is to use a ion blower
+ - Luise: this is mentioned in the reception procedure (wait 1 week, then maybe recover with ion blower)
+ - Luise: would be good to first understand how many sensors are affected instead of just treating all sensors
+ - Vitaliy: sensor QC sites to discharge envelopes and the sensor sheets as well, but the point might still be valid
+### AOB
+- No Comments

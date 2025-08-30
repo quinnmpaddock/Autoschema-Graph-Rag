@@ -1,0 +1,110 @@
+# 06/09/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1191854/
+### Introduction
+- Carles: do you want 4 modules in the cold box?
+ - Luise: yes
+ - Carles: how to report results?
+ - Luise: first need everyone to do the test, then need to look into how to collect the information
+- Carles: what is the cold jig meeting?
+ - Luise: work group working on module thermal cycling
+ - Ankush: cover everything
+- Ingo: would this still fit with the powerboard inside of the envelope?
+ - Luise: it is only 200um
+ - Dennis: depending on which mechanism it is to mitigate the thicker glue, should we not test it rather with the future glue candidate?
+ - Luise: sure, if we know which it is
+ - Dennis: a different glue might behave differently
+ - Luise: UK has already build modules with true blue
+ - Luise: there is some good news: Henkel might be able to sell true blue in larger packages. It this works, we can potentially change to that
+- Tony: cold noise meeting on Thursday, if you have any slides please sento to Tony
+ - Ashley: has sent some slides, but I’m not available for the meeting
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 06/09/2022: Barrel
+- 13/08/2022: EC
+- 20/09/2022: EC
+- 27/09/2022: Barrel
+- Shipping readiness (incl import procedure)
+ - Still waiting for response from CERN about harmonised export codes for petals
+- Powerboard testing setup roll-out
+ - Dennis focused on getting powerboard designs ready
+- Single Hybrid Testing Database Implementation
+ - No news
+- Hybrid Burn In Software
+ - Ilona: script to check for panel type so that parts which needed user intervention are now automated
+- Multi Module Test
+ - Notes on indico
+- Modules for Test Beam
+ - Next testbeam at the end of November, need to wait for powerboards
+- Powerboard bending studies
+ - No news
+- Glue Studies
+ - Halfmoons were irradiated and sent back to TRIUMF for more testing
+### Institute Contributions
+- 
+Next week: 
+### Experience from PPB1 end-cap hybrid assembly
+- Dennis: short in R1 panel, most likely the connector (solder between feet)
+ - Luise: is there any QC done on the panels before they are shipped?
+ - Dennis: no
+ - Luise: can there something be done?
+ - Dennis: this type of short is easy to spot, others are harder
+- Forest: concern on the wire bonding side: have you tried cleaning pads to see if the peel rate improves?
+ - JJ: not quite sure, will have to ask
+ - Forest: is Celestica making the hybrids? Or are they just doing the assembly?
+ - JJ: just the assembly
+ - Forest: up until now, we cleaned all barrel hybrids
+ - Luise: we are in discussion with Freiburg about cleaning all hybrids before they be shipped
+ - Forest: going to 50% deformation to meet the specification need to check that the bond feet are not damaged
+ - JJ: also would be good to compare
+ - Tony: what about the pull tests on the coupons?
+ - Zeuthen did some pull tests on coupons
+ - Ingo: if force is OK and you don’t have any lift-offs, Forest why are you concerned about heel cracking?
+ - Forest: there are a lot of degrees of cracking and 50% of deformation is quite a bit
+ - Ingo: you might not catch the edge cases in the pull tests. 
+ - Forest: pull tests are also in ideal conditions, not like on a real object
+- Vitaliy: believe the heel becomes a weak point when oversqueezing, CMS had this problem and found it can cause problems. Would be good to see how much the bond foot is squashed (compared to specification)
+ - JJ: hope the next batch of hybrids will be better
+ - Ingo: best way forward is cleaning
+ - Luise: want to avoid that everyone has to clean in house
+- Luise (slide 11): we need to agree on wether we want to use hybrids with one or two bad ASICs. Considering the hybrid shortage, we probably have to need those
+ - Ingo: would support this. If ASICs break during production, then we need to stop this, but this looks more like a config issue
+ - Luise: also one panel of each type is send to Freiburg for tests, so they could look at config issues
+ - JJ: how can I make sure its a readout issue?
+ - Dennis: you know for sure if they work. Usually ASICs either work or fail, there should not be a subtle failure
+ - Luise: did you send this errors to the ITSDAQ expert list?
+ - JJ: yes
+ - Luise: if you followed all their advice, its more worrying. Then would send them to Freiburg for expert help. It would be good to also send the config files when doing this.
+- Luise: don’t know what to do about the R5 situation
+ - Dennis: most likely a config issue or bonding
+ - JJ: should we use the hybrid or just wait?
+ - Dennis: if you can, you should wait until I can do some tests. The new panel should not be worse than the old version
+ - Luise: can you look at R5 panel before the last is assembled?
+ - Dennis: yes, if this works for Toronto
+ - Luise: in production we would probably throw out a panel that is not working, but not sure what to do now
+ - Ingo: can panels be tested on a tape testing robot?
+ - Dennis: not really
+ - Ingo: PCBs are tested by manufacturer?
+ - Dennis: yes, so it is most likely something about the soldering
+ - Luise: can we do a test with a powerboard to check for a short?
+ - Dennis: only for power, but not for other features
+ - Luise: if we have instructions on how to do a panel test, we can do it.
+ - JJ: should we move one or two of the problematic hybrids to a different panel?
+ - Dennis: should not make a difference. Would prefer to have a look at them in Freiburg first.
+### Testbeam summary (DESY, August/September)
+- Andy: do you have any idea about the MultiIO board
+ - Jiri: we used previous generation of FE-I4 in June, where we had some issues (buffer size, dead pixel)
+ - John: online monitor worked in most scans we did
+ - Andy: good to see!
+ - John: we did look into this in old runs, if the buffer filled it desynched, and then recovered after 6 
+ - Andy: did you see the cold noise in any other module before?
+ - Jiri: no
+ - John: we also have never done such a detailed ramp
+ - Vitaliy: were the chips on these modules irradiated?
+ - John: no
+ - Dennis: were they on R1?
+ - Jiri: Yes, they were pre-irradiated
+ - Andy: and this is an irradiated sensor?
+ - Jiri, yes all sensors were irradiated
+### AOB
+-

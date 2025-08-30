@@ -1,0 +1,97 @@
+# 04/07/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289846/
+### Introduction
+Slide 7
+- Ingo: would be good to ask the US people by email
+Slide 2
+- Marta: also have Melbourne in pull test list, but they haven’t passed their site qualification step passed and their machine is currently in maintenance
+ - Luise: would be good to mark this in the spreadsheet
+Check with US to confirm flex peel follow-up meeting on July 19
+### ITSDAQ news
+- William: had an issue with readout of R3 modules (16 HCC). To my understanding, this is not possible?
+ - Cole: can’t run 16 HCC with unique addresses
+ - Dennis: SS stave works, on different CCR
+ - Bruce: which FMC?
+ - Cole: FMC DP
+ - Craig: it should work, but not sure if the option is available in the firmware
+### Institute Contributions: 
+DESY Zeuthen
+- Vitaliy: what I see the pattern is many narrow lines. Is that the case or are you depositing dots?
+ - Ingo: we do lines. There are also some dots, but the lines merge most of the time
+ - Vitaliy: are you concerned about bubbles?
+ - Ingo: no, we haven’t seen bubbles so far
+ - Ingo: centre line is thicker than the outer lines. If we make a circumference, then we get bubbles, but so far not with the lines
+ - Vitaliy: have you verified the pattern with glass?
+ - Ingo: yes. At some point we will give a talk in the module meeting about our experience with this
+- Vitaliy: its nice to see the stability, are these data from a single run. If you compare this with a run on another day, do you see the same?
+ - Ingo: yes. We have done many runs and it is very stable, but Hamburg saw variation (probably related to temperature fluctuations), trying to figure out the differences
+ - Vitaliy: we ended up to do another calibration where we do a pre-dispensing
+ - Ingo: we did this so far as well, but it was very consistent so we hope we can drop this in the future
+- Luise: for the electrical testing, think we had working configurations for hybrids. Are you only using the slot on the panel that is working?
+ - Ingo: thought the panel is fixed?
+ - Luise: they are, but you need the correct version of the panel
+ - Ben: think we have the old one (V0)
+ - William: you can test them from command line (without physics mode)
+ - Ingo: forgot about this
+ - Luise: this weirdness we have seen as well, would be good to compare and see if we can figure it out
+- Luise: for PPA modules, for modules where you had issues would recommend to build another one
+ - Ingo: we won’t be able to because of lack of hybrids (no PPA R3 hybrids)
+ - Ingo: we can happily build a mechanical to prove we have sorted it out
+- William (slide 4) what was that failed on the R3H3?
+ - Ingo: lateral offsets
+ - William: would be interesting to see how far off they are
+ - Ingo: we already used the relaxed criteria. It is not much higher than 200um, but nevertheless out of specs
+ - William: did metrology on these and they were all in spec in terms of metrology
+ - Ingo: might be from the pins
+ - Ingo: still hope that this is caused because the bushings are a bit too far into the tool
+ - William: and you only saw it on R3H3
+- William: (memory leak) we have seen something like this after 6h
+ - Ingo: depends on version of burn-in GUI that is being run, because some leaks were fixed in recent versions
+ - William: we did all tests by restarting ITSDAQ after each test, but after an update we get an issue after 96h
+ - Ben: using latest IITSDAQ version, so it should be up to date with ITSDAQ
+ - Bruce: need to look at this
+ - Ben: probably a memory leak in the underlying software that is being used by the software - looking into it
+ - William: built last modules with all the hybrids currently available
+ - Ben: looking into it
+Next meeting: RAL
+### Testbeam update
+- Luise: the R0 and R1 were tested and working, we can send you config files
+- Luise: for the R3, it was moved to the cold box in Hamburg and there it works. Maybe need to test them in test box to see if there are any issues with the hardware (FMC-DP)
+ - Jiri: plan is to bring cold box to DESY testbeam
+ - Jiri: it is working with new ITSDAQ, but probably not with old ITSDAQ that is needed during testbeam
+ - Luise: for September testbeam, we need the R3 module to work
+ - Luise: for November testbeam, we might want to have some time for SS modules (with new powerboards), but we should at least reserve 1 week
+ - Jiri: do you know the activation of the fermilab modules for shipment?
+ - Luise: no, unfortunately not
+ - Jiri: will also try to contact them
+### Category X ASIC mix-ups
+- Luise: should be mark this somehow in the database, so that we can later count how many were affected?
+ - Jaya John: sounds good, can discuss the details offline
+- Ingo: hybrid isn’t assembled with ASICs, but this will happen soon
+### Cold cycling and bow and maybe HV breakdown
+- Vitaliy: the bow change and the glue glass transition chang, should someone look into what else is changing? Glue gap, distribution, powerboard shrinking? Might be possible to measure this
+ - Luise: you mean a full metrology comparison?
+ - Vitaliy: yes. It might be more difficult because of the wire bonds, but might be a good start
+ - Luise: are wire-bonded so comparison before and after are not easy, but maybe need a special metrology program that uses points that are accessible before and after bonding to do a good comparison
+ - Vitaliy: yes, if someone has time that might be worth it
+ - Carles: points for this metrology that don’t interfere with bonds should be clear (also from loading)
+ - Luise: we only do bow measurements before loading, but this would also mean glue heights and component placement which would require additional different points
+- Tony: isn’t the thermal shock independent on the temperature of the module at the time? So the shock at room temperature would be the same as if we do it cold?
+ - Luise: it might be something related to the gradient. Turn on DCDC first and let it warm up is different to just switching everything on
+ - Luise: should do a comparison of hot and warm thermal shock
+ - Tony: have done a lot of room temperature tests, but not sure how this is related to issues
+ - Carles: what should be the way to proceed with already started cycles?
+ - Luise: if you have already started, should not mix and get more statistics. All new starting cycles should go to 20C
+- Bart: coming back to Tony’s question, but it also depends on how the test box is designed. For UK, chiller coolant is always colder and incoming air is cooled by that.
+ - Luise: we currently don’t have much statistics about this
+ - Bart: we have seen (from small number of tests) that there are issues when going warm
+- Any further comments about temperature trust?
+- Bart: not sure why some institutes can read out PTAT and others not
+ - Cole: need to calibrate PTAT first, if it is not calibrated it will not report
+ - Bart: is there a document?
+ - Cole: will look for it, but it will be part of the test sequence
+ - Peter: calibration needs to be done at a known temperature, so not easy how to incorporate this
+ - Bart: can do this at 20C, which should be easy to achieve
+No further objections on reducing the temperature to 20C
+### AOB
+-

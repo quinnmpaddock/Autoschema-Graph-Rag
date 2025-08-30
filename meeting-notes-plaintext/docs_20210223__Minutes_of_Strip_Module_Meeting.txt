@@ -1,0 +1,101 @@
+# 23/02/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1008263/ 
+### Introduction
+- Forest points out that there are >8 week delays between ordering waffle wedge tools and getting them, please plan accordingly
+### HCCStar_v0 counting (again!)
+- New emergency plan for distributing Star ASICs after what is currently in the UK is stuck there due to Brexit-ugliness (please refer to slides for numbers etc) 
+ - Plan does not completely dodge the issues, however gives us a bit more leeway to deal with them
+- BCP schedule (from ITk week): EC PPA starting in July, prototyping in March/April
+- Is there a point at which it would be worth considering probing further wafers at RAL instead of Penn, even with a possible 3 month delay for shipping them somewhere else
+ - Still looking into dicing in UK (e.g. funding for dicing)
+ - 3 months is an estimate, but in worst case it could take longer
+ - HCC probing at RAL could take ~ 2weeks
+- Need to work out how to get chips to US for PPA
+- What about missing fuse IDs for HCCs?
+ - You can get around it with bonded IDs
+ - You can run into issues with getting one of the 4 HCCs of off a wafer that does not work on your hybrid - then debugging becomes a bit more involved
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R0 tool production
+ - Anodisation done, tools will be picked up tomorrow and checked/QCed, assembled thereafter
+- R5 tool production
+ - All the non-anodised parts were measured and were in specs (a few were out of specs in planarity in the whole surface, but for the work surface were OK, so decided to accept them)
+ - Sent back to the company last week.
+ - They have to send them to a second company for anodisation (1w)
+ - We expect to have them anodised this week
+- US hybrid/module tool production
+ - More next week and TT update in 2
+- UK/China hybrid/module tool production
+ - Tool are being reworked and will be back next week, update in 2 weeks
+- US powerboard tool production
+ - 
+- EC PPA/prototype hybrid order
+ - Waiting for further deliveries but are delayed. Some pre-delivery hybrids are stuffed and work
+- Shipping readiness (incl import procedure)
+ - Very important to check your import licence status, please make sure you are prepared to receive and send dual use items! (ASICs)
+- Barrel hybrid tendering/order
+ - Not known yet if thinflex versions do work (on the way)
+ - DuPont continues to be an option, being explored
+- EC hybrids/powerboard tendering
+ - Progressing on documents with biweekly meetings
+- Endcap module thermal cycling setup
+ - Noone present, moved to next week
+- EC hybrid test-panel finalisation
+ - expect to be through in 2 weeks to go ahead with larger order
+- Production of hybrid panel cover
+ - Still waiting on company update. Delays due to person shortage.
+- Supply of miscellaneous EC tool common items
+ - Shipments to 
+ - Canada are at Customs/moving
+ - Spain/DESY-Z still waiting for RFids to be delivered before shipment
+ - Spain can go out end this week
+ - Still waiting for bushings
+- EC PPA/prototype powerboard order
+ - Need to get populated
+### Powerboard storage document - matters arising
+- We expect not more than ~50 PB panels to have to be stored even at the largest sites. They are stackable. We expect to be able to fit this into all sites dry storage.
+- Will Timon ship “by need amount” or “by box arriving from vendor”
+ - Timon would prefer to not repackage and send 50-100 panel sizes, to be broken up/repackaged if sites to not need that much
+- How to schedule reception tests? 30 days? Who tests them when?
+ - Example: RAL receives big box with smaller units inside, Craig breaks them apart and re-distributes.
+ - If you get a closed box from Craig, the 30 days start to count
+- We will have to learn how long the PB testing will take - re-evaluate current rules/30 days during PreProd
+- Need to look at production flow to get some final numbers on how many powerboards will be shipped to where
+- Should powerboards from different batches be used to get indicators if they work?
+ - Might be useful; once they are unpacked this should be easy
+- What to do with reject powerboards
+ - Depends on type of reject and quantity
+ - They can’t be thrown away. Eventually they have to be disposed off at CERN. This will also be explained in the ASIC handling document.
+- Do we only get good ones?
+ - Failed boards should be removed from panels before shipping, but needs to look into this (done by assembly company)
+### Hybrid QC Documents Discussion Summary
+- Andy Blue heroically steps up and volunteers to take over writing / finalising the hybrid reception doc -- Thank you Andy!
+### Hybrid Storage Document - matters arising
+- What happens to items that were (erroneously) exposed to >10% for more than an hour?
+ - It is a best practise item
+ - If not dry they can change shape, so would have to wait for them to dry out again
+ - No catastrophic error foreseen, we should not fail items that have experienced >10% for more than an hour
+ - We can flag a hybrid if it experienced this, so we can go back later and find out if we encountered issues
+ - Time periods of ~days in cleanroom conditions are probably ok
+- Other question is what happens if storage is bad for longer times in general?
+ - Need procedures to ensure that such failures are dealt with / mitigated
+ - Don’t open the door any more
+ - Get repair team in
+ - Find backup solution, e.g. desiccant cartridges
+- Need to make sure there is a flag in the database that can be used if the storage humidity limit was breached
+ - With the possibility to add comments to describe what happened.
+- For sensor storage, they should be in a dry storage cabinet
+ - Need to make sure the recovery rate and dryness is as specified
+- Add a section about longterm storage of hybrids
+- Do hybrids panels have to be stored covered?
+ - Only if one stacks stuff on top or close by?
+ - You could put them into a box
+ - Again kind of best practise / common sense: protect the bonds :)
+### [moved to next week] Module in Database
+### [moved to next week] R1 tooling update
+### AOB
+- For glass sensor order R3, please make sure the order is in sets
+ - Table will be updated and endcap groups will be informed
+- For R4, one sensor for both sides
+- R5, two different designs

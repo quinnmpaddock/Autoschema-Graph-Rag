@@ -1,0 +1,117 @@
+# 28/02/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1253773/
+### Introduction
+Slide 5
+- No objections
+- Craig: do we know if we don’t exceed the 2.5C/min how long the whole cycle takes?
+ - Luise: in EC that is a moving target. Currently working on optimizing system
+ - Carles: is there any evidence that 2.5C is the limit?
+ - Luise: was chosen to be same as stave/petal cooling rate in detector
+ - Carle: but there is no evidence that going faster is a problem? We are struggling to meet the total cycle time and we do go faster at some point
+ - William: but it only goes fast for a few minutes, then it goes slow
+ - Luise; we don’t have evidence for module breaking when going faster, but we do have models that break at cold temperatures
+ - Carle: it changes the objective to either meet the total cycle time or the maximum ramping speed
+ - Bart: if you can reach 6C/min then there is another issue when you can only go 1C/min at the last few points
+ - Bart: the 2.5C/min sounds healthily cautious and there are observations about module bow
+ - Ingo: the ramp rate was from Georg as the fastest ramp rate a module could see in the detector. There were calculations that if you go faster a module could break
+ - Bart: I think this is a good limit
+ - Ingo: if this means we can only do 8 cycles, that might be better than going too fast
+ - Luise: to reach the final temperature is more important than going fast
+ - Craig: is this an optimization problem or just because you are at the limit of what can be done
+ - Luise: we are currently looking at this, especially the last 5C
+ - William: we should not optimise to meet the total time, we should look at reaching the required temperature
+ - Ankush: for US and UK box, if you run at full power you can cycle fast (30min for full cycle). Can the EC do this?
+ - Luise: no
+ - Ankush: for UK/US reaching the lowest required temperature is possible. For EC there are things to look at, e.g. tweaking the peltiers, but this needs to be done carefully. You could also decrease the chiller temperature, or look at the chucks
+ - Luise: this is what we are currently looking at (reducing peltier power to reduce self-heating)
+ - Luise: getting new chiller is not a preferable option (long lead time and requires system change)
+ - Bart to circulate worrying hybrid flex pull test results
+Slide 4
+- Carles: while experts prefer ITSDAQ to support cold turn on, are there instructions on how to do the careful turn-on?
+ - Luise: following this up with experts, instructions will follow at some point
+Slide 2
+- William: we haven’t done pull tests because of limited access to the bonders at Celestica. Are there any other pull-tests we have to do?
+ - Luise: April will be done on ASICs
+ - William: we do this every time we wire-bond
+ - Luise: we have agreed to reduce this to one substrate type per month
+ - Sam: do they have to be production half-moons?
+ - Luise: yes, ideally recent ones
+- Bart: for the hybrid flexes, the results were a bit disappointing. Are there any other cleaning recommendations?
+ - Luise: cleaning recommendations are for safewash. 
+ - Bart: we have done tests without cleaning and the results were not so good. Any other recommendations
+ - Tony: thought the hybrids will be cleaned at Liverpool/LBNL
+ - Sven: in general we don’t clean hybrids for all sites, but the hybrids for those pull tests have been cleaned
+ - Gerrit: do they use tooth-brushes at LBNL?
+ - Tony: yes, that is what Liverpool is doing. 
+ - Sandra: we also use ultra-sonic baths
+ - Gerrit: so it is not just rinsing them with safewash
+ - Sandra: we try ultra-sonic because using the toothbrush is not viable for production
+### Institute Contributions: 
+Adelaide
+- Carles: remember from module meeting that there were talks about how to reduce noise in module setup. One option was to reduce the length of cables for the display-port
+ - Emily: will have a look, but those were the easiest for us to ge
+- Luise: the module you are ging to get from Melbourne is a prototype module?
+ - Emily: yes
+ - Luise: there are some things you can’t do with those. Do you know when you get a pre-production module?
+ - Emily: Melbourne is currently in the process of getting ready to build this (depending on their site-qualification status)
+ - Luise: let us know if there are delays and we can look at getting you another module
+ - Emily: could get a module at ITk week
+ - Luise: will look into it
+LBNL:
+- No comments
+Next meeting: Cambridge
+### Update on ColdJig Qualification task
+- Luise: for requirement of 5 working module in jig, there is no requirement like this in SQ
+- Luise: for requirements of a passed/failed module: to first order a module has passed all tests
+- Luise; does this [merging script] also cover the weird endcap geometry?
+ - Mo: what do you mean
+ - Luise: up to 4 hybrids
+ - Mo: yes, it should be able to do so
+- Ankush: it would be good if anyone in EC could test Mo’s script and give feedback
+ - Luise: Cole?
+ - Cole: yes, sure
+ - Cole to send end-cap cycling data to Mo
+### Update on end-cap bonding document (R3)
+- Luise: this is to inform other people working on R3 that there are changes to look at. Please let people know about this
+ - William: should we go to a higher version on EDMS?
+ - Luise: yes
+- Carles: is this also a problem for R0?
+ - William: haven’t seen it for other module types (R0, R1)
+### Check-in on linPOL reliability testing
+- Sven: do you know how the cooling in the test setup compares to cooling on a module?
+ - Temperature of linPol test should be higher than on module - around 25-26 degrees 
+- Vitaliy: how long do you want to run the test for?
+ - Zhicai: will just keep going
+ - Vitaliy: that will be good
+ - Zhicai: yes, that’s the plan (to keep them running)
+### End-cap powerboard decision
+- Luise: important message for powerboard decision is that none of the R4 and R5 show cold noise
+ - Coles shares some additional slides about the different R4 and R5 versions
+- Dennis: so the noise is mostly due to glue height?
+ - Luise: very likely, since they were manually glued and the glue heights vary a bit
+- Luise: looks like the variants don’t show much differences. Dennis, is there a favourit design?
+ - Dennis: should probably use the one that is closest to barrel: V1 without cross
+ - Dennis: plots show that they are good
+ - Dennis: 4.1 is old capacitor configuration inside shield box (reverse geometry) and is most similar to barrel (apart from staggered vias, which now all EC powerboards have)
+ - Dennis: capacitor has changed after bPOL team recommendation
+ - Luise: are you happy with the results to make a decision?
+ - Dennis: should continue with having all 4 versions for other module types
+ - Dennis: would use V1 for R5 modules
+ - Luise: also need to use this for tools?
+ - Dennis: yes
+ - Luise: goal is also to place an order for a small number of these (concave version of 4.1) for other groups as well
+- Vitaliy: on bottom left plot there are peaks of v4.2 (cross). Is it understood where they come from?
+ - Dennis: from the Sensor. This is the non-covered region of the module and the noise is stable over many runs
+ - Cole: and this module has shown early breakdown
+ - Vitaliy: and how did you mishandle the sensor to get to this point?
+ - Luise: don’t think we mishandled the sensor, but will try UV curing
+ - Dennis: this is as far away from the powerboard as it could be
+ - Luise: we will look into this, but it is not related to the powerboard
+- V4.1 no cross will be the new powerboard for R4 & R5
+- Dennis: Peter did most of the design change for the concave version. Will need to do some final checks
+ - Luise: should we have a EDMS review?
+ - Dennis: would like to have first a review before putting it on EDMS
+- Dennis: Cole, please try testing the module with Strobe Delay from the GUI
+ - Cole: can do, need more information
+### AOB
+-

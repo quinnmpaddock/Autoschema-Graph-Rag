@@ -1,0 +1,106 @@
+# 2023-12-12 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1348478/ 
+Introduction
+- No questions!
+News from ITSDAQ/News from sensors
+- Carles: For the ten minute time, I found an email from Marcella for only 20-30 seconds (with gun). Is there any other experience with the guns/fan-type ion blowers?
+ - Xavi: we use the ion blower, don’t have the gun
+ - Jiri: I would say that this depends on the sensor and the problem it is experiencing. Often, 30 seconds can fix things, but more time is likely better.
+ - Xavi: more time can be better
+ - Carles: We have done this a lot without problems right?
+ - Jiri: can only apply it for 1-2 sensors at a time, therefore don’t use it much
+ - Carles: I am asking if you specifically have applied the gun for longer than 30 seconds without issue.
+ - Jiri: never saw any issues by applying for longer
+ - Carles: Okay
+ - John: Our ion gun and probe station are in different cleanrooms, so our tests haven’t been systematic. But what we have done is check the static charge measurement that has built up on the sensor seconds after using the gun. The values are close to zero. Have been blowing for 10 minutes and haven’t seen any degradation
+- William: I see a lot of sensors sitting on tables for minutes. I’m not sure how we do this systematically. Is this a 1% or 10% effect? This could be very time consuming. 
+ - Xavi: The percentage is dependent upon things like shipping, so this is difficult to say. You can use it when you see issues. 
+ - William: Taking off covers and foam isn’t really “no con” and perhaps it’s better to wait.
+ - Xavi: Waiting helps, but it may not be enough to recover in so many cases.
+ - William: And it can’t come back on a stave/petal?
+ - Luise: We were experiencing nearly 10-15% of failure (in some batches), so we have found this to be very helpful.
+- Bart: In our sensor QC, we run _all_ of our sensors through ten minutes of deionization.
+ - Use a little carousel where all the sensors are exposed together
+ - Another comment. Early batches had a little static, which we saw on the strip tests. So we performed deionization and strip tests with a delay. We found that after 5-6 weeks, they were completely recovered.
+- Vitaliy: I think it is very useful to distinguish between two different scenarios. One is recovery, which is a bit time consuming. Another scenario is preventative. It’s not fixing a problem, but reducing static charge rather. The tools shown by Xavi “promise” that the static charge will be removed in seconds. This will avoid issues caused by users, so it makes sense that everyone uses them.
+- Luise: Regarding the sheets, we know the new ones are better than the old ones. Is it possible to get some boxes of the new sheets on sensors so we can test them? Can we get the part number and order some?
+ - Xavi: I don’t think we have a reference for these sheets, but we should ask the sensor ACs.
+ - Vitaliy: The old and new sheets have the same part number, so this is difficult.
+ - Luise: Could we just ask Hammatsu to send them to us?
+ - Vitaliy: It’s the same for them.
+ - Luise: Can we just ask them to send us two boxes of sheets without any sensors, would this be possible?
+ - Vitaliy: We can ask, but it’s not a “controlled deviation”. No one picks these out on purpose.
+ - Bart: When I deionize the sensors, I deionize the sheets as well. The sheets themselves don’t generate static.
+ - Vitaliy: Did you do a rubbing test on them afterwards?
+ - Bart: Yes
+ - Vitaliy: Interesting
+ - Bart: And this persists for several weeks.
+ - Bart: HPK says they improved them, so it may be a process change, not a material change
+ - Vitaliy: The issue is believed to occur during shipment. (microphone degrading)
+Group update: IHEP + RAL
+- Luise: You said you are limited by the TC setups. Do you know how much more capacity you would need to keep up?
+ - Navid: We would need at least one more box.
+ - Luise: Is that possible, could you get another?
+ - Navid: I’m not sure, it might be.
+ - Bart: It’s not very possible.
+AMAC on modules: Calibration & Monitoring
+- Vitaliy: Do you have an idea of when we might have all of this working “out of the box”?
+ - Miao: with Bruce on leave, things are on hold, but already discussing implementation and hope to get it to work out of the box in January
+ - Vitaliy: It sounds like the remaining steps involve integration?
+ - Miao: I will be implementing them. There has been a lot of change since I began this, so I need to discuss with Bruce how to implement this in the latest code.
+ - Vitaliy: I understand you are the main developer and that you can’t clash with Bruce’s implementation of things. Thanks, I think I understand this better now. 
+ - Miao: shouldn’t disrupt anything, just need to find the right place
+- Paul: Do I understand that you are not using the zero calibration method to get the zeros?
+ - Miao: do you mean for each channel?
+ - Paul: For each channel
+ - Miao: after calibrating each channel individual, there is also the offset calibration
+ - Paul: Okay, so you are doing that.
+- William: (Slide 15) When you turn the DCDC on, you’re doing some measurements there? This whole 1V drop seems to depend on the ‘fluttering’ of the DCDC in the plot above. 
+ - Miao: spikes are probably not real. They occur during the tests [this is seen in TC as well]. The 1V drop _is_ real however.
+ - William: hadn’t realized it was only on one powerboard - see this sometimes on some modules, might be interesting to understand why some have this and some don’t
+ - Miao: We will keep investigating the weird spikes.
+- Luise: There are several parts to what you are doing. You are performing these PB tests to make a module config file? Is that correct?
+ - Miao: Currently, we just have the part that we pull from the powerboard tests
+ - Cole: intention would be to use this with autoconfig
+- Luise: So the idea is to use the PB test to compare the same functions on the module?
+ - Miao: This is an alternative. We can still do it the previous way, which is more accurate (?). This will be used when it is difficult to tune the values while on a module/PB. 
+QT report: Thermal Cycling
+- No Questions
+Issues After Ion Blowing at IFIC
+- Xavi: I did not see these effects when using the blower. It would be good to increase the statistics on this. I’m wondering if you could apply the blower to the bottom of the sensors, but changing factors such as the distance and time. 
+ - Carles: yes, can repeat, can apply to the other segment and expose for a longer time and see if it can be reproduced
+ - Xavi: Sounds good. It shouldn’t be destructive.
+- Vitaliy: Just a couple of questions. I didn’t completely get it. What is the “top stream”.
+ - Carles: Answered it [stream covered by hybrid]
+ - Vitaliy: Okay, thanks
+ - Vitaliy: Does the ion blower require dry air?
+ - Carles: use it for ion blowers
+ - Vitaliy: It might be useful to see how well it works on another object. You can use the static meter to see if this is causing static charge-up as a useful sanity check. 
+- Vitaliy: do you have UV curing bars for hybrid UV glue curing?
+ - Carles: old ones, yes
+ - Vitaliy: They do provide UV light, so this might be useful. I believe Prague did this as a first test before the current UV setups.
+- Cole: Is the current different afterwards?
+ - Carles: It’s the same
+- Luise: It looks like (on slide 6), that part of the sensor is not as affected. Do you believe this is because the sensor was “protected” from the ion blower?
+ - Carles: I don’t see how they are as protected by the PB, but it’s possible.
+ - Luise: It would be good to try and apply the ion gun to that region to see if you can make it behave like the rest of the sensor. It would be good to see if this is something special here.
+- Vitaliy: when you did electric cold tests, what was the bias voltage?
+ - Carles: For the first time, it was -350V. Then it was below, around 280V (maybe 300V in some cases).
+ - Carles: CAEN can’t go too high
+ - Vitaliy: Sounds good.
+QT report: database reporting
+- Luise: I am having trouble finding the pages you are showing from the links you are sharing. 
+ - Shudong: Yeah, the webpages are local, so you are not currently able to access them.
+ - Luise: It would be great to merge this into Kenny’s reporting repo. 
+ - Luise: Is there a function to show this per cluster as opposed to per institute?
+ - Shudong: Currently, you have to select all sites for the cluster individually
+ - Luise: If you look at the top left corner (slide 9), you mention “per cluster”, it would be great if we can use that.
+- Pavol: Can you choose by batch?
+ - Shudong: For PPA/PPB, I did not implement this, as there was no flag to indicate this.
+ - Pavol: There are batches in the DB
+ - Luise: Yes, you can look this up in the DB
+ - Pavol: But perhaps this wasn’t a part of your QT …
+Discussion: adding stiffeners to modules
+Propose to discuss at HV BD TF meeting on Friday
+AOB
+None

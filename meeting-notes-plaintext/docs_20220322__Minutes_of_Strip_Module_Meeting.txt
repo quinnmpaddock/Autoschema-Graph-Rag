@@ -1,0 +1,120 @@
+# 22/03/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1109673/
+### Introduction
+- No spare R4 in Toronto
+- R4 or R5 to Dennis?
+ - Dennis: if R5 is working, would prefer it
+ - Dennis: depends on what is broken, it could be fixed easily. It would be more debugging to get the R4 working
+ - Luise: is anyone building R4 prototype hybrids and could make a spare?
+ - Dennis: don’t know which tools we have, but could probably do it. Tool is at IFIC
+ - Carles: can ship tool back to Freiburg
+ - Dennis: since Celestica only builds the contracted parts, another side should build the spare part
+ - Ashley: split module on petal should have been tested on module frame
+ - Dennis: yes, showed both but frames we currently use were not produced at that time. It was a make-shift panel (neither secure nor flat)
+ - Ashley: but in essence it was a R4 frame?
+ - Dennis: now it is, but not in the past
+ - Ashely: do you know the differences?
+- Irradiation at CERN:
+ - Vitaliy: for EC sensors the sensors are not uniformly irradiated in experiment
+ - Jiri: at irrad, the modules are moved in beam to scan full module, but irradiation should be uniform
+ - Dennis: but since module is at a slight angle, it would be technically possible to get different fluences
+ - Tony: but fluence uncertainty it too high for thisR0 has worst signal-to-noise ratio, therefore it was chosen.
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 22/03/2022: Barrel tasks
+- 29/03/2022: EC tasks
+- 05/04/2022: Barrel tasks
+- Shipping readiness (incl import procedure)
+Last missing letter signed and handed to Craig (Poland)
+- Single Hybrid Testing Database Implementation
+(talk later)
+- Hybrid Burn In Software
+Problems with testing, debugging ongoing
+- Single Module Test Database Implementation
+Same us single hybrid testing for now
+- Multi Module Test
+Working with SCIPP and LBNL on getting cold jig ready, end-cap cold boxes are being sent out, Lund started shipping out control PCBs, QC documentation are completed, sections to be completed for US and end-cap boxes
+Problem: getting a hold of modules, need modules to figure out of problems, otherwise sites have to solve them by themselves
+- PPB Module for April Irradiation
+Covered in introduction
+### Institute Contributions
+UiO
+- Ingo: do you know why the wire bonding jig doesn’t work? It should work with a Delvotec
+-> it is a Delvotec, the problem is a focusing issue, not the mechanical range
+Next week: DESY-Z/Humboldt, Birmingham, Montreal
+### How to upload hybrid test results
+- Luise: for automatic generation of config files, does it only work if all ASICs are assembled?
+ - Bruce: hopefully all ASICs are there
+ - Luise: some hybrids don't’ have their HCC since there were issues
+ - Bruce: at the moment, it complains, but does not stop the script; should checkHopefully the fuseID will be there so it should suggest which HCC to be attached
+- Luise: for the institute, it needs to be the code, not the long name?
+ - Bruce: yes, the short code
+ - Luise: people need to be aware that this is not necessarily the standard abbreviation
+- Andrew: what is the best way to upload test results to the hybrid when they are still in the panel? Should they be disassembled first or can they remain on the hybrid
+ - Bruce: it does not matter, disassembly should only be when removing it to attach it to module afterwards
+ - Sven: doesn’t matter, leave hybrid on panel and associate test results with hybrid while being on the panel
+ - Sven: important point is that the hybrid is in the right stage when trying to upload results to it
+- William: there is a discussion about checking the ASIC ids on hybrids, but there is also an idea of assembling the ASICs at the first readout of a hybrid
+ - Bruce: this is under development, but currently not the standard procedure
+ - Bruce: plan is to make things work for as any people as possible
+ - William: standard flow then would be some test to identify ASICs for assembly
+ - Luise: for now, you assemble the hybrids first and then could use the test results to cross-check it. The automatic assembly is something that might come at some point in the future
+ - William: so you would use the web interface or a GUI for the hybrid assembly
+- Vitaliy: is there a plan to discern between different tests (hybrids, modules, module on stave)?
+ - Bruce: the time at which the test was done helps, as well as in which stage the hybrids is (for reception tests)Christian is looking at a GUI for looking at test results, would be a good place to check what information is available for what
+ - Vitaliy: you want to disambiguate from the timestamp and the state?
+ - Bruce: yes, that is the current plan
+ - Vitaliy: it sounds not completely easy to discern tests
+ - Ingo: one reason is that we don’t want to duplicate things in the database if it can be avoided, we can distinguish between things based on stage and highest parent level
+- Sven: start uploading data, collect results, re-evaluate data attachment plan once more people have exercised the process
+### Sensor/module IVs in different stages
+- Luise: about question where to take the IV: from old meeting notes agreed to take IV with resistor, so for barrel IV should be taken through edge bonds since there is already the resistor in place; for EC it doesn’t matter since the resistor is currently only in cable
+ - Carles: I thought it was related to the HV filter
+ - Dennis: the filter is always in parallel, so it doesn’t matter in terms of leakage
+ - Bart: if you run IV on an empty frame you see very little leakage
+- Andrew: what are the allowed differences in module IV when testing at a module site?
+ - Luise: there are specifications for this in the procedure documents (up to 20% difference for current, breakdown above 500 V)
+ - Andy: so you should download the IV from the database and compare to your measurement?
+ - Luise: yes, currently that is the plan
+ - Bart: and what happens if that is exceeded? Do you trash the part?
+ - Luise: you get in contact with your sensor QC site to understand it, but if the sensor is still in good state it can be used
+ - Andy: have all module sites done this for PPA? E.g. the US?
+ - Luise: no, most end-cap sites don’t have PPA sensors yet
+ - Vitaliy: at SCIPP we did compare things, but not in the shown detail. In one case we found a sensor that behaved differently, but it could be traced back to light leaks in the test box
+ - Also sometimes different power supplies can cause differences
+ - Andey: could storage have an impact and was that studies (especially for long storage?
+ - Bart: The current crop of PPA sensors was in storage for a long time. They will be tested before HV tabbing, which give a better comparison value
+ - Vitaliy: so far have not seen a systematic issue in US between sensor QC and reception
+- Luise: is there a chance that there was increased humidity for your sensor? E.g. during hv tabbing. Maybe this could explain the increase after hv-tabbing? Maybe try to re-take an iv after storage in dry atmosphere
+ - Urmila: humidity is always an issue, but in this case it should be OK (not a humidity problem here)
+### Vancouver sites module building experience
+- Luise: for R2 where you modified the glue pattern, we did the IV afterwards and it didn’t show breakdown
+ - Peter: even though this was done purely, there is some leeway to improve the pattern
+ - Marc: also should take into account that a slight misplacement of the hybrid could improve this, but that is too late now
+ - Peter
+ - Marc: even with the stencil you could get a thicker layer of glue, but getting close to the guard ring becomes more risky
+ - Luise: discussed internal and maybe don’t put dots on edge but rather below bondpads for better support.
+ - Ingo: that is what we tried at Zeuthen
+- Vitaliy: pattern is very interesting. What spacial and volumetric precision do you have?
+ - Peter: haven’t looked at that so far, will do it in the future. This was just a first test. 
+ - Vitality: would be interesting to know
+ - Peter: would like to do 5 or 6 to get some data
+- Forest: would suggest to order more frames do HV tabbing in batches instead of constant changes
+ - Dennis: currently not even sure if the frame design we have is usable
+ - Luise: we are currently talking about 2-4 sensors per type we have to do. But we are looking into speeding the process up
+ - Forest: alternatively tab and store sensors; from experience tabbing takes a lot of time
+### R3 Tool Experience
+- William: we reported last week module that was out of spec
+ - Made dummies before sending out any of the tools and they all were in spec, glued all the bushings in place before sending them out, maybe glue weakened since then?
+ - Uli: didn’t do more than unscrew the backside of one tools to look at it
+ - William: some of the bushings were had fit so that they would work with the pick-up tools
+ - Uli: should I see the loctite in the picture?
+ - William: it was a red liquid when used
+ - Uli: will look in more detail and gently push in the bushings and see if this is a widespread issue
+ - William: we might need something better than loctite if already light force pushes them in
+ - Uli: just to warn people so that they don’t waste good components on these tools
+- Marc: we also just realised that there are 3 threads missing when screwing the LED lights in
+### IV before and after HV tabbing (postponed to QA/QC meeting)
+#### AOB
+- Nothing to discuss

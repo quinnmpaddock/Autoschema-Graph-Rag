@@ -1,0 +1,63 @@
+# 20/10/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927524/
+### Introduction (Craig & Ingo)
+- Nothing to report
+### Task tracker items
+- Please see task tracker web page: 	https://indico.cern.ch/event/927522/contributions/4052501/attachments/2116697/3561815/go
+- R0 tools noone connected, will have to check via email
+- R1 stated in workshop on Monday, should be about 4 weeks work in workshop
+- R2 drawings in workshop, some questions will be answered next week, then prod expected 4ish weeks
+- R3 
+ - tools first prototype set received and anodized, should be able to order production volume in 3-4 weeks from now
+- Discussion: 2D drawings review? Have just very coarse review to look for obvious mistakes but not looking into every small detail or raise any technical discussions again
+- Discussion: Don’t want to wait for one tool set to get reviewed and then start review of others, should do all of them in parallel
+- R4 
+ - awaiting feedback, then quick EDMS. then place order, then 25 days for tender process, at the end of that get prototypes, then start full order. Then 8 weeks (6 weeks mill, 2 weeks annodise, 2 weeks assemble = 10 weeks)
+- R5 
+ - 2d drawings in prep, should be finished tomorrow, then quick EDMS, company has material and is waiting for go-ahead. Then prod depends on parallel work at company, expect about 4 weeks
+- US powerboard prod
+ - Hit little snag, missed one design change
+- Small parts of tools / screws etc?
+ - Will add task (Karo will send email to Craig for good task segmentation)
+ - Screws are about to be ordered
+ - Pins/bushings are getting offers
+ - LED bars are in Fr hands
+- Common order parts?
+ - We need also tasks here and Karo is on top of things. Karo will also send an email for a good task
+- EC module test frame finalisation
+ - No Freiburg, hope that Kambiz can soom give ok for EDMS review round. Some SMDs might not be available in required quantities so might have to change to equiv
+- EC hybrid panels
+ - Should be final, EDMS review can begin
+- Barrel hybrid panels
+ - are final, parts have been received (EDSM did not keep up… we should do an empty EDMS round so it is signed off
+ - Frames should go into US production after EDMS review
+- Barrel module testframe
+ - Same state as hybrid panels, pile available in Liv
+### Discussion of options regarding the tendered hybrids (Dupont vs. Thinflex)
+- Thickness changes DP vs TF?
+ - There is no change, from end user point of view no change
+- It is just the internal core, the adhesive remains the same
+- Thinflex was tested, is core material for EOS, will be in detector, so as qualified as DP
+- Grafics (spelling) thinks TF is 1-to-1 drop in for DP
+- Problem orig started Dec2019, expected to recover March20, did not yet and DP notified Europe wide that delays will continue, new production line expected in Mid 2021
+- Ash would go to TF
+- Bustapes went from DP to Thai-Flex (?) and that material is qualified in the bus tape world
+ - Will check what Grafics wants (and propose Thaiflex as alternative)
+- Will go to TF and keep DP open as fallback in case of issues observed
+### Storage in moisture barrier bags max time
+- Propose to 
+ - have to put items into dry storage after say 5 days after shipment arrived
+ - Short visual inspection to ensure moisture bags arrived intact, nothing obvious is broken
+ - then have time for proper reception for 30 days after shipment arrived
+ - 5 day limit should be valid for all items
+- If storage was to break, keeping items in dry bags could be an emergency storage method
+- Discussion on how to deal with update of storage doc
+### Bonding wedge longevity
+- Looks like significant change after 35000 bonds, will that cause problems?
+ - No this is just Hesse setting the quality of the wedge to a lower level after 35k bonds. No actual change, just a fixed parameter change to notify the user
+- Tools inexpensive and changing doesn’t take too long, change more frequently?
+- Discussion, some folks want to pull test after each module. We can let them do it if they manage prod rates, but will certainly not make it a requirement
+### Effects of thermal cycling on ITk strip modules
+- Some of the excess metrology results could derive from different light conditions and metrology systems
+### AOB
+- none

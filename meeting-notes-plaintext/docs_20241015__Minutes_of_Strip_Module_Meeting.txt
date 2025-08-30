@@ -1,0 +1,69 @@
+# 2024-10-15 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1457264/
+### Introduction
+Presenter: Luise Poley
+- Tony (sl. 5): So the issue there is there are no Y hybrids.
+ - Luise: Yes, they are coming. Tooling is being ordered and they are coming.
+ - Tony: If we are using array-level interposers, that could take away from what we are doing with LS. The single-interposing at LBNL is not up yet.
+ - Luise: Yes, we need to start an email to the PB people. But this is all if the LS modules are done.
+ - Tony: That should be another month or so.
+ - Craig: Tony, I assume that is the case for the US. Bart, I suppose the UK is on a similar time scale. SS modules would be mid November?
+ - Bart: Yes. There is a different crisis to deal with, but I doubt we can do it before mid November.
+ - Tony: [more reason why]
+ - Bart: There are multiple things to fix here, so I would really do one stave at a time. We are looking at iSS, but iLS is more important.
+ - Luise: Just saying it would be nice if we can manage this. We know it isn’t easy.
+ - Bart: [more reason why].
+ - Luise: Sure, thanks
+- Carles (sl. 9): I checked with Vicente. He was not. Would you like me to upload the old data?
+ - Luise: Yes please
+### L4 Updates
+#### ITSDAQ
+Verbal: Peter Phillips
+- Peter: Can’t run 5 or more modules on FMC-DP for TC (can’t have both threads running)
+- Peter: Some people reported with HBI that when you run both threads, you get a lot of read synchronization errors. I will put a call out to report anyone who sees that.
+ - Dennis: For the problem with five modules, does it matter which output is used?
+ - Peter: No, the issue is that internally the multiplexer takes six lines down to four. If you bring in a fifth, things can go wrong.
+- Luise: A few weeks ago, we had a question about using ITSDAQ to distinguish CAT B hybrids (hybrids with CAT B ABCs). Can we agree on what to do there?
+ - Peter: First step is done, Cole did it. The next step will be to get that information onto the ITSDAQ screen. The mildly controversial thing will be what to do with that information or if we should simply present it to the user.
+ - Luise: The plan would be that it would be easy by just looking at the component in the DB. If you first have to run a test, that may be too much work.
+#### Production
+Presenter: Abe
+- No Questions
+### QCD Corner: Episode 4
+Presenter: Cole
+- Ingo: would it still be possible to add the usual information, because we spent a lot of work on setting it up?
+ - Cole: yes, as always, you can continue if you want, this is just making it optional
+- Tony: I thought we were going to descope that we no longer needed to track numbers now?
+ - Cole: Do we need any data to prove that?
+ - Tony: no, just tracking the overall numbers should be okay
+ - Cole: Any objections to changing this now?
+ - [silence]
+ - Luise: so the new proposal is that we stop tracing individual wires now, but keep tracking total numbers of failures and repairs
+ - Cole: yes
+ - Tony: yes
+- No objections
+Cole: Bow Descoping
+- Luise: would argue that if the important thing is the shape of the module before loading, so the important thing is the post cycling bow, so, if we need this information for loading, this may require a measurement post cycling
+ - Cole: makes sense
+ - Tony: workflow wise, this would require bow to be measured at the loading sites
+ - Cole: yes, but for that we really need more data - we will reach out to sites to collect this data
+- Agreement to collect more data before we descope anything
+### Group Update: BNL and Brandeis
+Presenter: Ang Li
+- No comments, no questions
+### An Update on the Visual Inspection GUI
+Presenter: Mitch Norfolk
+- Luise: If you go back to slide 5. The plan is to give people the option. We put in a request to put in a certain amount of data for EOS. The space is there, so in principle, every time you receive an incoming module, you should have the ability to upload it to EOS for the component.
+ - Mitch:Yeah I think thats the first one, thanks
+- Luise: For panel filters, we have a similar problem with PB carriers. You take a picture of the whole carrier, but you want to save it for each PB. We just save the link to the panel picture and use that for each hybrid. I suspect you could do that?
+ - Mitch: Yeah I think in principle, its along the lines of what we were thinking, it cant be done immediately but can be in the works.
+ - Luise: That is what we thought made sense. It’s a picture of the whole thing, so it makes sense to store it there, but we also want it easily linked.
+ - Mitch: in that context would you have half way during production many photos of the carrier over its life
+ - Luise: Yes, Which would also help us to see how often it has been used.
+ - Mitch: I’ll keep an eye out for that it probably sorts the problem
+- Luise: For the defect list, I put the Google spreadsheet in the chat: https://docs.google.com/presentation/d/1rf9AZAH9w-epszs2riRTUvaL_qXEeJ0nBAsjyDiA6ZE/edit?usp=sharing. We thought it best not to give people direct access. So people can currently only comment and once there, Theo has edit access to put it in the correct place to not mess up the formatting.
+ - Mitch: Fantastic
+- Luise: For the defects, slide 6. I think this was up for discussion. If you look at the VI for sensors, there are several different fields for defect location and type. The general proposal going forward is to do this for other components, but not make them mandatory. Since we are now collecting data through this GUI, we can easily store this. This way we can automatically populate all of this information. People can still do it the old-fashioned way. But we wanted to bring this up here and see if anyone objects.
+ - Silence == Agreement
+## AOB
+- Nada

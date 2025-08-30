@@ -1,0 +1,105 @@
+# 03/10/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289859/ 
+### Introduction
+Slide 3
+- Bruce: would expect the ABC130 to stay around. Is there a reason to delete those since this is the test database?
+ - Luise: we were told that the test database would not migrate, but be converted into the production database. We therefore are planning to cleanup everything that we don’t want to move over
+ - Bruce: would be surprised that it should be deleted. Everything that is real should stay
+ - Luise: ABC130 chips were never real in the database (had registered)
+ - Bruce: if we were to upload wafer test data to ABC130 then…
+ - Luise: then you would have to create new ASICs that don’t match with current ASICs
+ - Bruce: thought of database to stay there
+ - Luise: need to have a follow-up discussion about this
+ - Luise: but the ABC130 parts are so old that the database structures don’t match up with what we now use.
+ - Bruce: if it is dummy parts, then this should be deleted, but real parts should stay
+ - Luise: depends on how the database migration happens, but we were told to remove all items that we don’t want to have in the production database version
+### ITSDAQ news
+ITSDAQ update slides
+- Tony: still failing Noise Occupancy despite the test being good
+ - Cole: good to bring this up now. Bruce, do you know what is going on?
+ - Bruce: need to investigate
+ - Cole: OK, will follow this up
+ - Luise: modules are still failing NO test everywhere
+ - Cole: don’t think these are real failures
+ - Tony: may just be a threshold problem
+ - Cole: will look at this soon and communicate an answer
+- Carles: for the network cards: also had problems with a different card that didn’t have an intel chip and ended up buying a new card; didn’t see the bad sequence problem, but saw a timeout problem
+ - Carles: Matt said there is no plan to fix the firmware to handle this
+ - Cole: did he explicitly say intel?
+ - Carles: yes
+ - Cole: do recall that I had testing problems where tests took a long time and swapping network cards helped
+ - Cole: maybe should recommend that everyone has the same network cards (Intel recommended)
+- Comment from Theo: historical status 
+AMAC IV slides
+- Alex showing slides with AMAC IV tests done at SCIPP
+ - Cole: this looks like a more reasonable current at -40C
+- Ashley: always expected the IV taken with DCDC off since this also dumps temperature into the sensor (high current in DCDC)
+ - Ash: what does DCDC off mean - hybrids are still powered? Is DCDC on in low power mode?
+ - Ashley: if the DCDC is on, are they in low power mode?
+ - Cole: DCDC on means full power, but not necessarily configured
+ - Ashley: would be interesting to see the hybrid NTC temperature at DCDC off or on to see if temperature is an issue
+ - Cole: don’t think this is the main issue
+- Vitaliy: when we are really cold, the current should be very low, doesn’t really change between -20 and -40, but it should still be unmeasurably low at low temperatures, so it is unlikely to be just a temperature effect
+ - Vitaliy: not sure why DCDC on or off makes a difference
+ - Tony: would modify the values, but shape would be the same, so it’s an offset problem
+- Luise: can we agree today to do AMAC IVs with the DCDC off?
+ - No opposition
+ - Decision made: AMAC IVs with DCDC off in the future
+### Database interface update
+- Sven: Slide 14: bonding - it’s not necessary to specify hybrid and ASIC location to specify issues, because the bond numbering is universal, so they are not needed
+ - Robbie: so ASIC and row information not needed?
+ - Sven: no, known from the bond number
+- Sven: slide 9: mention that database credentials need to be written into file on the system - can this be avoided? Don’t like to have credentials publicly available on commonly-shared computer
+ - Robbie: good point, can turn this into command-line request for access code
+- Carles: looks useful, how do you plan to use this in production for different modules?
+ - Different for assembly and wire bonding: for assembly, suspect each column will be one module (maybe different tabs for different module types)
+ - Wire bonding needs a table of failures, uses a separate tab for each module
+- Peter: regarding module assembly, when you are attaching a hybrid/powerboard to a module, does it also take care of setting stages correctly and disassembling them from carriers?
+ - Robbie: yes, all handled by the code
+- Theo (slide 5): is it given that we have to use a google spreadsheet to take the data in or can we use another script to put the data into this format (e.g. using google form)? Is that still compatible?
+ - Robbie: would think it is compatible, as long as there is sufficient functionality to get it into the format
+ - Theo: so no one is forced to use the sheet, just convert to sheet
+- Luise: if an EC site would want to use this, how much work would it be to adapt it for different module types?
+ - Robbie: not sure how much work it would be, but from my experience it is fairly easy. It can take some time to work out which cells/rows you need and put this into the right classes. Maybe a week’s work?
+ - Luise: some things are similar to the changes from LS to SS.
+ - Robbie: maybe there might be a way of making this a bit easier and add some features to help with this
+ - Luise: DESY has an interest on doing this, it might be good to get in contact with them (currently holiday in Germany)
+- Andy: it would already be nice to have some functionality that would e.g. show if the glue weights are correct
+ - Robbie: this just something in the google sheet and could be done easily
+### Latest updates for automated thermal cycling
+- Luise: was this possible with the default config branch or did it require changes?
+ - Ankush: currently running on a specialised branch. We are working on merging it into the main branch, but need to check that this does not break anything
+ - Luise: is this currently available to other people (e.g. checking out this branch)
+ - Ankush: would be cautious since things could still break
+- Alex: you mention in the roadmap the specific AMAC IV. Is this not already done?
+ - Karol: it’s just about where the AMAC IV is called within the process. And also where to use fast AMAC IV for ramping
+ - Alex: also, on slide 4 you had the IV before thermal cycling. Is there also a plan to do it afterwards?
+ - Ankush: there was an update that is not in the current diagram. Need to update this diagram
+ - Luise: and the plan is to do a final cold and warm IV after the leakage current testing
+- Luise: and leakage current stability test summary files have been prepared by Cole, so we can start with the database implementation of the test.
+### Delamination tests and glue pattern investigation
+- Luise: (Slide 6) To put this in context. These tests are being done to convince ourselves if we are going to use True or False Blue. We want to include the thermal cycling data before making a final decision. For the glue-dot array pattern, at the HV Breakdown Task Force meeting, it was discussed that one thing to lower stress on glue joints is to have several small glue dots, but there are some potential peel problems.
+- William: don’t know how to interpret the numbers in the table: what is enough?
+ - Regarding difference: not convinced it is much of a difference, just trying to be conservative, want to build up statistics for these tests to check changes from thermal cycling
+- William: razor blade test doesn’t seem to be worrying, since we’re not going to do that?
+ - Peter: this is just to indicate which joint is weaker. I don’t know what is happening and this is just done to understand it.
+ - Peter: we are a bit limited with part availability to do a lot of tests
+ - William: but also in real live we don’t have large forces pulling on hybrids
+ - Luise: concern is the peeling motion we see when thermal cycling. And with regards to the numbers, the tests were just done late last week. There will be more tests based on these results
+ - Peter: we will try to find a consistent and repeatable measurement method so that we can relate samples to each other.
+- Vitaliy: curious to see the effect of the pre-curing time. We don’t have the intention of using stencils (we use robots) and need a certain viscosity of the glue.
+ - Pete: something to be looked at as well, currently don’t have a measurement for that
+### Combined IV tests for split modules
+- Xavi: results look good and makes sense if both of them don’t have breakdown, but what if one of them has an early breakdown
+ - Carles: if one of them has an early breakdown, need to break and repeat individually
+- Xavi: also: temperature: if we accept these combined currents, need to normalise for temperature
+ - Carles: good point
+- Luise: Does anyone see a problem with this approach? I think it makes sense. For the R5, there is a problem with one side isn’t there?
+ - Carles: Previously, we added a strip to the left side.
+ - Luise: It would be good to develop the script and documentation to share
+ - Carles: Yup
+ - Luise: Might be useful to store the combined IV test as well since this is what we will measure for R4 and R5 modules (both sensors combined)
+ - Luise: Any objections? Otherwise, this is canon.
+### Results from recent DESY testbeam campaign
+Speaker not available today
+### AOB

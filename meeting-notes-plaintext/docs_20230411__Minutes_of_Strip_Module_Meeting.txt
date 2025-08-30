@@ -1,0 +1,191 @@
+# 11/04/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1253779/
+### Introduction
+Slide 3
+- Tony: pull together metrology data and Kenny is off until next week. We need people to look at results and check for things that are not measured properly (e.g. from descoping plots)
+ - Tony: we need people to clean up the data that is not correct
+ - Luise: would be good to see how they are out of spec (get a list)
+ - Tony: but we need people to look at the data that is uploaded and check that it is not usable
+Slide 4/5
+- Hanna: Luise, does using the AMAC IV apply for ALL module IVs? (Including eg during thermal cycling)
+ - Luise: don’t think this is currently possible due to mapping issue with using multiple AMACs
+- William: is there a test in ITSDAQ that measures the current?
+ - Luise: you use your module ramp as IV
+ - William: if we run a long test, do we have a way to output the current at different times?
+ - Luise: reading out the current during thermal cycling should at some point be part of ITSDAQ
+ - William: when we have a flaky module, we manually check the current. Is there a way to automate the reading?
+ - Luise: hopefully in the future
+- William: breakdown voltage is set to the max voltage, e.g. 999
+ - Luise: it is a convention
+- William: if you test a single module, you might want to monitor the current
+Slide 6
+- William: R3 modules come back from Celestica in the next couple of days
+- Sven: for IV database upload, is the post-processing done by the script?
+ - Luise: no, this is already done by ITSDAQ
+- Abraham: can we still submit for SQ approval even though some parts are missing (slide 2)
+ - Luise: can already submit and once the missing features are available, this can be checked afterwards
+ - Abraham: even without interlocks in software?
+ - Luise: if you run like this, then yes
+### Institute Contributions: 
+SFU
+- Luise: for the bow measurements, do you know it the temperatures are comparable?
+ - Archa: not comparable, but does not seem to make a huge difference
+ - Luise: would have expected much larger difference
+ - Luise: for the first, the difference is quite high, but for the other onces it looks good
+- William: is that SE4445?
+ - Archa: yes
+ - William: it is not leaching out to the strips
+ - Archa: yes, it is but it’s hard to see
+ - William: you went to 700V, but usually we only go to 550
+ - Archa: yes, we wanted to be sure
+ - William: is this a standard stencil? We have seen issues with bonding
+ - Archa: we added extra glue dots
+ - William: by hand?
+ - Peter: don’t think we have powerboard stencils with dots, we have added them by hand
+ - William: may need to add some dots to R3 powerboard stencils, we have seen bonding problems with not supported powerboards
+ - Luise: we do this for the other hybrids, so it would make sense
+ - William: for R3, problem is more the powerboard
+Next meeting: Liverpool
+### Cold noise meeting inside module meeting
+#### Vibration tests on end-cap modules
+Slide 9
+- Tony: what this shows is that the transducer amplitudes is on the same level as the results at RAL
+ - Matt: yes, it’s the same
+- Luise: what are you going to measure next?
+ - Ian: no concrete plans yet
+ - Luise: was a question to compare old powerboard versions, it would be interesting to see how those vibrate
+ - Tony: Timon was looking at differences of what we have (a vs b has double copper thickness). If we have a vs b parts and see vibration in one, that would be interesting and align with EC
+ - Ian: looking at individual capacitors and how they behave at different frequencies might also be interesting
+ - Ian: also looking into comparing vibration behaviour from different capacitors by themselves and see that it depends on capacitor widths
+ - Idea would be that it can maybe be seen in the ECR, looking for good LCR meter
+ - Matt: do you think that would have a temperature dependance?
+ - Ian: don’t know
+ - Matt: have seen that at 2.1MHz there seems to be a quiet spot
+Slide 3
+- Gabriella: is PPA still the old powerboard?
+ - Ian: yes
+ - Gabriella: why do you still test polaris?
+ - Ian: the modules are fairly old and at that time this was still available
+ - Gabriella: you wanted to do cold tests colder than before?
+ - Ian: weren’t sure if we would see anything, and since we had it here we also tested it with the transducer
+ - Luise: this is also the only EC module in PPB where we have seen cold noise. With the transducer, we wanted to see if it gets worse
+#### 10 facts you won't believe about SMD components on barrel powerboards (the third one will surprise you!)
+Slide 3
+- Ian: do you know how the passivation changed?
+ - Matt: no, it is proprietary
+ - Vitaliy: there is an extra layer, but the Si-Oxide is still there
+ - Vitaliy: not sure how the passivation has something to do with this because of the continuity
+ - Matt: stress from CTE mismatch at the edge of the glue and the standing wave from vibration, combination of both could make it worse?
+ - Vitaliy: both should always be there, not sure how the passivation would matter
+ - Matt: swapping the sensors shows that the passivation makes a difference, but not sure why
+Slide 6
+- Dennis: does the phase change also change the capacitance. Would need to check datasheet
+ - Matt: yes, needs to be measured on the module though
+ - Matt: plan is to use Diamond cold box to test the module cold, currently can’t get lower than 0 degrees, need bigger chiller
+Slide 15
+- Vitaliy: thinking about module to module variability: False blue module showed that noise peaks seem to coincide with vias - maybe variability could be explained by overlap of glue edge with vias
+ - Matt: yes. We only saw 1 module with vias read out where we could say this conclusively
+- Ian: so current theory is that cold noise turn on is not related to glue phase change, but instead to capacitor phase change?
+ - Matt: yes, that is what I’m thinking at the moment
+ - Ian: I think it’s the glue that is undergoing phase change.
+ - Ian: it has been seen that when you apply stress to silicon, you can change the resistivity
+ - Matt: sound like good ideas, for sensor side it seems like passivation layer definitely has piezo-electric effect which is increased for newer sensors, which matches known change of additional passivation layer
+ - Gerrit (chat): SiN
+ - Ian: passivation should be amorphous, so should not see piezoelectric effect
+ - Matt: not sure how to measure it, besides just changing out the sensor. Assume that different strains measured at different temperatures
+ - Ian: thinking about doing IV scans on sensor with transducer
+ - Ian: try to get the equipment together (including a good LCR metre)
+- Jesse: are you planning to repeat vibrometer studies on LS modules to understand why LS modules show less cold noise?
+ - Matt: yes, it’s on the long list of additional tests to do
+ - Matt: maybe missing glue wouldn’t have reflection
+ - Tony: we do see differences in power (shunting)
+ - Matt: agree that it could be from increased power
+- Tony: sounds like there are a few more things which have an impact that we should disentangle
+ - Matt: Understand transmission from glue into sensor: see if different glues lead to less vibration in the sensor
+ - Tony: it it is dampening, going from false blue to something else would have a huge difference
+- Tony: differences between end-cap and barrel: doesn’t seem to map to capacitor, might map to flex?
+ - Difference in copper content might also coincide with changes from ATLAS12 to ATLAS 18 sensor, entangling two issues again
+ - Matt: Slide 3 was a vs b. Also have modules on stave with different PB version, but so far was not able to measure it
+ - Tony: vibrations in caps don’t depend on powerboard being mounted or not, can measure unmounted powerboards directly
+ - Matt: having a bare powerboard might be easier to test, but not available
+ - Matt: might have multiple dampening effects: end-cap powerboards might dampen more, glue might change how much the sensor vibrate
+ - Tony: one is how much the capacitor vibrates, another how much the sensor vibrates
+ - Matt: dampener would be at different point in vibration
+ - Tony: in end-cap we seem to not see capacitors vibrate
+ - Matt: yes, damapened on powerboard directly
+ - Tony: only can see substrate difference (vias and copper thickness). Thought we made powerboards with the company in the past, so maybe could reduce copper thickness
+ - Matt: seems like we’d want to be closer to the end-cap powerboard, maybe reduce the copper content again
+ - Tony: want to look at powerboards, doesn’t need to be working on a module, only need working powerboards
+ - Tony: do you have a 0b module equivalent?
+ - Matt: we have b, but not a
+ - Tony: looks like 2 effects that add up: change of sensor and change of powerboard that add up.
+ - Matt: yes, just as a reminder: this plot for different sensors is False Blue, this is why we may potentially not have seen it in the past
+ - Tony: it would be rare on 12 sensors, and rare on a vs b. 
+ - Tony: seems like the killer difference between powerboards would be a factor 2 in thickness
+ - Matt: what is the difference in the copper layer?
+ - Tony: factor 2, and a has the worse one
+ - Dennis: end-cap powerboard layers are more like 30, are closer to the thicker powerboards
+ - Tony: are the EC not as stiff?
+ - Dennis: EC powerboards are stiffer than barrel powerboards, additional differences in kapton and type of glue that is used
+ - Vitaliy: are you saying the EC powerboards are thicker but more flexible?
+ - Dennis: about the same thickness
+ - Dennis: but copper layer is thicker
+ - Tony: so copper layer is less likely to be the cause? Strange because that should make more of a difference
+ - Dennis: stack-up of polyamide and glue is different
+ - Tony: then barrel powerboard a vs b should be very similar and Wuerth barrel powerboards should be different
+ - Dennis: copper makes it stiffer, but there are other factors, if we want to change only one thing, it is difficult to attribute it to exactly one thing
+- Ashley: Dennis, what do you use for the solder resist? Flexible or stiff?
+ - Dennis: a lacquer
+ - Ash: suggesting that Timon is using a cover layer instead of resist?
+ - Dennis: think Timon is using cover layer
+ - Ash: would mean it’s stiffer
+ - Tony: stiffest thing there is
+ - Ash: would be worth asking Wuerth what they are using
+ - Dennis: can do
+- Tony: when are the Wuerth barrel powerboards supposed to be back?	
+ - Dennis: expect them to be two-three weeks away
+ - Tony: might be able to disentangle effects in about six weeks
+- Matt: not sure if tests would be a real apple to apple comparison, because some modules would be on frame and some would be on stave
+ - Tony: see if we can find something off stave. Don’t remember when v0a was build
+ - Luise: something with early breakdown should work as well.
+ - Tony: need to track them down
+ - Tony: that would mean it could be an easy change at EPEC
+- William: what’s the problem with changing the capacitor?
+ - Tony: it doesn’t do anything
+ - Lots of people: capacitor changes don’t improve cold noise
+ - Tony: tantalum is not usable in production
+### Powerboard pickup tool Update
+Slide 6
+- Sven: how do you lock this in place?
+- Gerrit: don’t think there is a lock on the screw, need to adjust it every time
+- Dennis: so plan is not to put it to a certain setting, but adjust it for each powerboard
+- Gerrit: yes, that is the plan
+- Tom: computer problems
+- Luise: question was if the screw gets locked in place, or if that is needed?
+ - Tom: not needed, thread is enough to hold it in place
+ - Gerrit: locking mechanism just made it worse
+ - Tom: yeah, sometimes
+- Sven: when using the old tools with steel balls at the end, they would sometimes fall out - is there an option to use if without the ball?
+ - Tom: will have a look. Could modify the pin (with grinder) or try to get pins without the balls
+ - Tony: would vacuum down powerboard, then set screw to touch powerboard and then release document? Makes it very feel specific, could introduce more variability than what comes from powerboards?
+ - Tom: glued in pin is not adjustable at all and could cause the powerboard to bend in the centre (pushing powerboard up)
+ - Tony: based on experience we have so far, fixed pins haven’t caused issues. But each batch could be different. But in the past, adjustments have caused more problems
+ - Tom: agree that threaded screws on original pick-up tools were complicated to set. But here it’s only a single pin, which should be easier
+ - Tony: worth trying
+ - Gerrit: could just make adjustable ones and glue them in place if people don’t want adjustability
+ - Gerrit: powerboards are not flat, and we had to hand-shape the most recent powerboards
+ - Tom: still hand-shape every single one, but powerboards still come out with varying heights
+ - Gerrit: still slows us down
+ - Luise: proposal would be to have this adjustable pin, and then give people the option to glue it in place if they don’t want it
+ - Bart: sounds reasonable
+- Luise: is this something the EC would want to consider as well?
+ - Peter: think tab on EC powerboards might not be large enough for this
+ - Dennis: do you have the impression that it would help if we could adjust it?
+ - Peter: would have to adjust it every time?
+ - Dennis: but would it help?
+ - Peter: don’t think this is where our biggest problems are
+ - Luise: would it help to have the option to do this?
+ - Dennis: if you would use a fixed pin from nominal height it might push the powerboard too much away from the tool
+ - Peter: ideally want it on each pin, but that would be too much of a hassle
+ - Peter: agreeing with Dennis: problem could be that pins push powerboard too far away
+### AOB

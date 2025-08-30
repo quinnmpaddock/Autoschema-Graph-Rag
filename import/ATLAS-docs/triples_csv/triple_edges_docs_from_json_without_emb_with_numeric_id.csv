@@ -1,0 +1,399 @@
+:START_ID,:END_ID,relation,concepts,synsets,numeric_id,:TYPE
+Minutes,Strip Module Meeting,recorded,"['noted', 'documented', 'captured', 'logged']",[],0,Relation
+Actions,over,carried,"['moved', 'brought', 'carried', 'held', 'bore', 'transported']",[],1,Relation
+document,coils,written,"['crafted', 'authored', 'composed', 'created', 'penned']",[],2,Relation
+brief,HV tab bonding,watched,"['noticed', 'gazed', 'viewed', 'saw', 'observed']",[],3,Relation
+update,03/02/2020,expected,"['anticipated', 'forecasted', 'predicted', 'supposed', 'projected', 'hoped for']",[],4,Relation
+roll-out,Hybrid crate,planned,"['organized', 'schemed', 'designed', 'arranged']",[],5,Relation
+responsible,Dave/Ankush/Sergio,was,"['happened', 'occurred', 'existed', 'took place']",[],6,Relation
+updates,Craig & Ingo,contacted,"['linked up', 'reached out\ncommunicated', 'connected', 'got through', 'reached', 'made a call', 'interacted', 'contacted', 'made contact', 'got in touch']",[],7,Relation
+meeting,Introduction,held,"['retain', 'hold', 'keep', 'contain', 'possess']",[],8,Relation
+tutorial,uploading test results to the database,given,"['provided', 'presented', 'offered', 'bestowed', 'handed']",[],9,Relation
+You must contact the people listed as responsible periodically.,"Updates could be verbal, email or slides in a meeting",before,"['earlier', 'prior', 'precede', 'lead', 'precedes']",[],10,Relation
+"Updates could be verbal, email or slides in a meeting.",People listed as responsible will be contacted periodically by Craig & Ingo for updates,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],11,Relation
+People listed as responsible will be contacted periodically by Craig & Ingo for updates.,"Updates could be verbal, email or slides in a meeting",because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],12,Relation
+Craig & Ingo will contact the people periodically.,You must contact the people listed as responsible periodically.,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],13,Relation
+Craig & Ingo will contact the people periodically.,"Updates could be verbal, email or slides in a meeting",by,"['indicated', 'sign', 'marked', 'denoted']",[],14,Relation
+The next update expected for HV tab bonding is 03/02/2020.,Jens is responsible for HV tab bonding,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],15,Relation
+The next update expected for Hybrid crate roll-out is 03/02/2020.,Ash is responsible for Hybrid crate roll-out,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],16,Relation
+The next update expected for Module thermal cycling roll-out is 03/02/2020.,Dave/Ankush/Sergio are responsible for Module thermal cycling roll-out,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],17,Relation
+The next update expected for Powerboard mass tester roll-out is 03/02/2020.,Timon/Karol are responsible for Powerboard mass tester roll-out,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],18,Relation
+The next update expected for Barrel hybrid tendering is 03/02/2020.,Bart/Ash are responsible for Barrel hybrid tendering,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],19,Relation
+The next update expected for Barrel powerboard tendering is 03/02/2020.,Carl/Timon are responsible for Barrel powerboard tendering,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],20,Relation
+The next update expected for EC hybrid/powerboard tendering is 03/02/2020.,Uli/Kambiz/Dennis are responsible for EC hybrid/powerboard tendering,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],21,Relation
+The next update expected for EC tooling design/roll-out is 03/02/2020.,Marc is responsible for EC tooling design/roll-out,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],22,Relation
+The next update expected for Barrel tooling design finalisation/roll-out is 03/02/2020.,Sven is responsible for Barrel tooling design finalisation/roll-out,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],23,Relation
+The minutes of the Strip Module Meeting were recorded on 21/01/20.,CERN,is participated by,"['host', 'feature', 'have', 'sponsor']",[],24,Relation
+The minutes of the Strip Module Meeting were recorded on 21/01/20.,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],25,Relation
+The minutes of the Strip Module Meeting were recorded on 21/01/20.,Ingo,is participated by,"['host', 'feature', 'have', 'sponsor']",[],26,Relation
+"Timon, Carl, and Satish were assigned to write a QC document for coils.",Timon,is participated by,"['host', 'feature', 'have', 'sponsor']",[],27,Relation
+"Timon, Carl, and Satish were assigned to write a QC document for coils.",Carl,is participated by,"['host', 'feature', 'have', 'sponsor']",[],28,Relation
+"Timon, Carl, and Satish were assigned to write a QC document for coils.",Satish,is participated by,"['host', 'feature', 'have', 'sponsor']",[],29,Relation
+Jens was responsible for monitoring the HV tab bonding.,Jens,is participated by,"['host', 'feature', 'have', 'sponsor']",[],30,Relation
+The roll-out of the hybrid crate was expected to begin on 03/02/2020.,Ash,is participated by,"['host', 'feature', 'have', 'sponsor']",[],31,Relation
+"Dave, Ankush, and Sergio were responsible for the roll-out of the module thermal cycling.",Dave,is participated by,"['host', 'feature', 'have', 'sponsor']",[],32,Relation
+"Dave, Ankush, and Sergio were responsible for the roll-out of the module thermal cycling.",Ankush,is participated by,"['host', 'feature', 'have', 'sponsor']",[],33,Relation
+"Dave, Ankush, and Sergio were responsible for the roll-out of the module thermal cycling.",Sergio,is participated by,"['host', 'feature', 'have', 'sponsor']",[],34,Relation
+Timon and Karol were assigned to roll out the powerboard mass tester.,Timon,is participated by,"['host', 'feature', 'have', 'sponsor']",[],35,Relation
+Timon and Karol were assigned to roll out the powerboard mass tester.,Karol,is participated by,"['host', 'feature', 'have', 'sponsor']",[],36,Relation
+Bart and Ash were responsible for the tendering of the barrel hybrid.,Bart,is participated by,"['host', 'feature', 'have', 'sponsor']",[],37,Relation
+Bart and Ash were responsible for the tendering of the barrel hybrid.,Ash,is participated by,"['host', 'feature', 'have', 'sponsor']",[],38,Relation
+Carl and Timon were assigned to tender the barrel powerboard.,Carl,is participated by,"['host', 'feature', 'have', 'sponsor']",[],39,Relation
+Carl and Timon were assigned to tender the barrel powerboard.,Timon,is participated by,"['host', 'feature', 'have', 'sponsor']",[],40,Relation
+"Uli, Kambiz, and Dennis were responsible for the tendering of the EC hybrid/powerboard.",Uli,is participated by,"['host', 'feature', 'have', 'sponsor']",[],41,Relation
+"Uli, Kambiz, and Dennis were responsible for the tendering of the EC hybrid/powerboard.",Kambiz,is participated by,"['host', 'feature', 'have', 'sponsor']",[],42,Relation
+"Uli, Kambiz, and Dennis were responsible for the tendering of the EC hybrid/powerboard.",Dennis,is participated by,"['host', 'feature', 'have', 'sponsor']",[],43,Relation
+Marc was assigned to design and roll out the EC tooling.,Marc,is participated by,"['host', 'feature', 'have', 'sponsor']",[],44,Relation
+Sven was responsible for finalizing and rolling out the barrel tooling design.,Sven,is participated by,"['host', 'feature', 'have', 'sponsor']",[],45,Relation
+Craig and Ingo would be in touch with the responsible individuals periodically for updates.,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],46,Relation
+Craig and Ingo would be in touch with the responsible individuals periodically for updates.,Ingo,is participated by,"['host', 'feature', 'have', 'sponsor']",[],47,Relation
+Luise provided a tutorial on uploading test results to the database.,Luise,is participated by,"['host', 'feature', 'have', 'sponsor']",[],48,Relation
+Strip Module Meeting Minutes,appear,will,"['intend to', 'commit to', 'plan to', 'propose to', 'decide to']",[],49,Relation
+google docs,minutes,use,"['employ', 'utilize', 'apply', 'adopt']",[],50,Relation
+action list,important,is,"['equal', 'constitute', 'belong', 'represent', 'exist']",[],51,Relation
+QC groups,add,should,"['require', 'expected', 'necessary', 'must', 'ought']",[],52,Relation
+powerboard mass tester,list,add,"['augment', 'increase', 'append', 'enlarge']",[],53,Relation
+module thermal cycling setup,list,add,"['augment', 'increase', 'append', 'enlarge']",[],54,Relation
+hybrid crate setup,list,add,"['augment', 'increase', 'append', 'enlarge']",[],55,Relation
+Hybrid crate status,do,should,"['require', 'expected', 'necessary', 'must', 'ought']",[],56,Relation
+FMC-DP,trickier,be,"['occur', 'happen', 'be present', 'take place', 'exist']",[],57,Relation
+output buffers,trickiness,cause,"['produce', 'provoke', 'induce', 'initiate', 'lead to', 'trigger', 'prompt', 'create', 'result in']",[],58,Relation
+UV LED driver,no questions,has,"['possess', 'hold', 'own', 'contain', 'have']",[],59,Relation
+DCDC coil order,be run,need,"['require', 'demand', 'necessity', 'obligation']",[],60,Relation
+Uli,sign-off,need,"['require', 'demand', 'necessity', 'obligation']",[],61,Relation
+Didier et al.,sign-off,need,"['require', 'demand', 'necessity', 'obligation']",[],62,Relation
+QC steps,magnet tests,include,"['contain', 'comprise', 'encompass']",[],63,Relation
+QC steps,irradiation,include,"['contain', 'comprise', 'encompass']",[],64,Relation
+QC steps,temperature range,include,"['contain', 'comprise', 'encompass']",[],65,Relation
+QC steps,solder joint,include,"['contain', 'comprise', 'encompass']",[],66,Relation
+QC steps,purchasing components,include,"['contain', 'comprise', 'encompass']",[],67,Relation
+Barrel powerboards,not,should,"['require', 'expected', 'necessary', 'must', 'ought']",[],68,Relation
+Barrel hybrids,not,should,"['require', 'expected', 'necessary', 'must', 'ought']",[],69,Relation
+EC,not,should,"['require', 'expected', 'necessary', 'must', 'ought']",[],70,Relation
+Review office,happy,is,"['equal', 'constitute', 'belong', 'represent', 'exist']",[],71,Relation
+email,volunteers,send,"['dispatch', 'convey', 'forward', 'transmit', 'ship']",[],72,Relation
+QC document,Timon/Carl/Satish,write,"['produce', 'pen', 'author', 'create', 'compose', 'draft']",[],73,Relation
+review office,Tony A,contact,"['get in touch', 'reach', 'reach out', 'connect', 'link', 'touch']",[],74,Relation
+The participants decided to appear in the minutes from next week onwards.,The minutes will appear in this space from next week onwards.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],75,Relation
+Craig introduced the topic of minutes.,Suggestion for minutes - (Bart) suggestion to use google docs for minutes and allow others to help with minuting.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],76,Relation
+Bart suggested using Google Docs for minutes and allowing others to help with minuting.,Phil pointed out that the action list is probably the most important part of all of this.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],77,Relation
+Phil pointed out that the action list is probably the most important part of all of this.,The participants discussed the QC groups.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],78,Relation
+Tony suggested adding a hybrid/module assembly group to the list.,Craig agreed to add this to the list in 3 months or so.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],79,Relation
+Craig agreed to add the hybrid/module assembly group to the list in 3 months or so.,"They discussed the powerboard mass tester, module thermal cycling setup, and hybrid crate setup.",because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],80,Relation
+Ash reported on the hybrid crate status.,Craig suggested doing the same on FMC-DP.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],81,Relation
+Craig suggested doing the same on FMC-DP.,Vitaliy pointed out that it would be bit trickier due to output buffers.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],82,Relation
+Vitaliy pointed out that it would be bit trickier due to output buffers.,They discussed the possible solutions such as back termination.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],83,Relation
+Craig reported on the UV LED driver.,There were no questions.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],84,Relation
+Carl reported on the DCDC coil order.,Barrel (Timon) was happy to sign-off.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],85,Relation
+Barrel (Timon) was happy to sign-off.,Tony and Craig agreed that they would need to run it past Uli for BMBF part.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],86,Relation
+Tony and Craig agreed that they would need to run it past Uli for BMBF part.,They also needed to run it past Didier et al.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],87,Relation
+Tony and Craig agreed that they would need to run it past Didier et al.,This could be done along with the passive components.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],88,Relation
+Dennis agreed that Timon was happy.,Ulli was also happy.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],89,Relation
+Ulli was also happy.,Craig asked about the QC steps.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],90,Relation
+Craig asked about the QC steps.,Satish answered that the QC steps would include magnet tests at Yale and irradiation at BNL.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],91,Relation
+Satish answered that the QC steps would include magnet tests at Yale and irradiation at BNL.,"Carl, Satish, and Timon were tasked with writing a document on the QC steps.",because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],92,Relation
+"Carl, Satish, and Timon were tasked with writing a document on the QC steps.",Tony A was tasked with contacting the review office about coil ordering.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],93,Relation
+Craig assigned tasks to the participants.,The participants agreed on the tasks and the next steps.,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],94,Relation
+Suggestion for minutes to use Google Docs was made by Bart.,Bart,is participated by,"['host', 'feature', 'have', 'sponsor']",[],95,Relation
+Suggestion for minutes to use Google Docs was made by Bart.,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],96,Relation
+Suggestion for minutes to use Google Docs was made by Bart.,Phil,is participated by,"['host', 'feature', 'have', 'sponsor']",[],97,Relation
+"QC groups should be added to the list, including a hybrid/module assembly group.",Tony,is participated by,"['host', 'feature', 'have', 'sponsor']",[],98,Relation
+"QC groups should be added to the list, including a hybrid/module assembly group.",Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],99,Relation
+"Hybrid crate status was discussed, with Craig suggesting doing the same on FMC-DP.",Ash,is participated by,"['host', 'feature', 'have', 'sponsor']",[],100,Relation
+"Hybrid crate status was discussed, with Craig suggesting doing the same on FMC-DP.",Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],101,Relation
+"Hybrid crate status was discussed, with Craig suggesting doing the same on FMC-DP.",Vitaliy,is participated by,"['host', 'feature', 'have', 'sponsor']",[],102,Relation
+UV LED driver was discussed without any questions.,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],103,Relation
+"DCDC coil order was discussed, with Barrel being happy to sign-off.",Carl,is participated by,"['host', 'feature', 'have', 'sponsor']",[],104,Relation
+"DCDC coil order was discussed, with Barrel being happy to sign-off.",Timon,is participated by,"['host', 'feature', 'have', 'sponsor']",[],105,Relation
+"DCDC coil order was discussed, with Barrel being happy to sign-off.",Tony,is participated by,"['host', 'feature', 'have', 'sponsor']",[],106,Relation
+"DCDC coil order was discussed, with Barrel being happy to sign-off.",Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],107,Relation
+"DCDC coil order was discussed, with Barrel being happy to sign-off.",Ulli,is participated by,"['host', 'feature', 'have', 'sponsor']",[],108,Relation
+"DCDC coil order was discussed, with Barrel being happy to sign-off.",Dennis,is participated by,"['host', 'feature', 'have', 'sponsor']",[],109,Relation
+"DCDC coil order was discussed, with Barrel being happy to sign-off.",Satish,is participated by,"['host', 'feature', 'have', 'sponsor']",[],110,Relation
+"QC steps for coil order were discussed, with Satish answering.",Carl,is participated by,"['host', 'feature', 'have', 'sponsor']",[],111,Relation
+"QC steps for coil order were discussed, with Satish answering.",Satish,is participated by,"['host', 'feature', 'have', 'sponsor']",[],112,Relation
+"QC steps for coil order were discussed, with Satish answering.",Timon,is participated by,"['host', 'feature', 'have', 'sponsor']",[],113,Relation
+Email was sent around for volunteers for QC groups.,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],114,Relation
+QC document for coils was assigned to Timon/Carl/Satish to write.,Timon,is participated by,"['host', 'feature', 'have', 'sponsor']",[],115,Relation
+QC document for coils was assigned to Timon/Carl/Satish to write.,Carl,is participated by,"['host', 'feature', 'have', 'sponsor']",[],116,Relation
+QC document for coils was assigned to Timon/Carl/Satish to write.,Satish,is participated by,"['host', 'feature', 'have', 'sponsor']",[],117,Relation
+Review office was contacted about coil ordering by Tony A.,Tony A,is participated by,"['host', 'feature', 'have', 'sponsor']",[],118,Relation
+Minutes,Strip Module Meeting,carry,"['bear', 'hold', 'convey', 'support', 'lift']",[],119,Relation
+Actions,over,carry,"['bear', 'hold', 'convey', 'support', 'lift']",[],120,Relation
+QC document,coils,write,"['produce', 'pen', 'author', 'create', 'compose', 'draft']",[],121,Relation
+QC document,pre-production,bring,"['bring', 'transport', 'move', 'carry', 'transfer']",[],122,Relation
+QC groups,documents,comply,"['conform', 'adhere', 'obey', 'follow']",[],123,Relation
+Updates,Craig & Ingo,give,"['present', 'share', 'impart', 'bestow', 'donate']",[],124,Relation
+Updates,topics,focus,"['prioritize', 'center', 'concentrate', 'emphasis', 'attention']",[],125,Relation
+Instructions,pre-production,need,"['require', 'demand', 'necessity', 'obligation']",[],126,Relation
+FMC-DP,email,send,"['dispatch', 'convey', 'forward', 'transmit', 'ship']",[],127,Relation
+FMC-DP,google doc,update,"['change', 'refresh', 'modify', 'renew', 'revise']",[],128,Relation
+Site Qualification Survey,email,send,"['dispatch', 'convey', 'forward', 'transmit', 'ship']",[],129,Relation
+FDR,documents,start,"['ignite', 'launch', 'commence', 'initiate', 'begin', 'spark']",[],130,Relation
+Electrical tests,Bob,volunteer,"['offer', 'contribute', 'give', 'donate', 'participate']",[],131,Relation
+The meeting minutes were recorded on 14/01/20.,The actions carried over from the previous meeting were discussed.,before,"['earlier', 'prior', 'precede', 'lead', 'precedes']",[],132,Relation
+The actions carried over were to be written down in the minutes.,The meeting minutes were recorded on 14/01/20.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],133,Relation
+People listed as responsible will be contacted periodically for updates.,"Updates could be verbal, email or slides in a meeting.",after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],134,Relation
+"Updates could be verbal, email or slides in a meeting.",The people listed as responsible will be contacted periodically for updates.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],135,Relation
+Dave asked how he should understand a watching brief.,Dave: how do I understand a watching brief?,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],136,Relation
+Craig and Ingo explained that a watching brief requires regular updates.,Dave asked how he should understand a watching brief.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],137,Relation
+Craig and Ingo mentioned that what was not in the list on page 2 was not discussed.,Craig & Ingo: Anything else than in list on page 2?,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],138,Relation
+Bob volunteered for electrical tests.,Bob volunteers for electrical tests,as a result,"['yield', 'outcome', 'consequence', 'effect', 'result', 'lead', 'follow']",[],139,Relation
+The group is supposed to comply with documents provided.,Groups need to comply with documents provided!,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],140,Relation
+QC groups are supposed to bring the group closer to a state with nice instructions for pre-production.,QC groups are supposed to bring us closer to a state where we have those,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],141,Relation
+Karola sent an email with the site quali document.,1. Send site quali document email (Karola),as a result,"['yield', 'outcome', 'consequence', 'effect', 'result', 'lead', 'follow']",[],142,Relation
+Actions carried over 1. Write QC document for coils (Timon/Carl/Satish),Timon,is participated by,"['host', 'feature', 'have', 'sponsor']",[],143,Relation
+Actions carried over 1. Write QC document for coils (Timon/Carl/Satish),Carl,is participated by,"['host', 'feature', 'have', 'sponsor']",[],144,Relation
+Actions carried over 1. Write QC document for coils (Timon/Carl/Satish),Satish,is participated by,"['host', 'feature', 'have', 'sponsor']",[],145,Relation
+Watching brief Item | Responsible | Next update expected HV tab bonding | Jens | 03/02/2020,Jens,is participated by,"['host', 'feature', 'have', 'sponsor']",[],146,Relation
+Hybrid crate roll-out | Ash | 03/02/2020,Ash,is participated by,"['host', 'feature', 'have', 'sponsor']",[],147,Relation
+Module thermal cycling roll-out | Dave/Ankush/Sergio | 03/02/2020,Dave,is participated by,"['host', 'feature', 'have', 'sponsor']",[],148,Relation
+Module thermal cycling roll-out | Dave/Ankush/Sergio | 03/02/2020,Ankush,is participated by,"['host', 'feature', 'have', 'sponsor']",[],149,Relation
+Module thermal cycling roll-out | Dave/Ankush/Sergio | 03/02/2020,Sergio,is participated by,"['host', 'feature', 'have', 'sponsor']",[],150,Relation
+Powerboard mass tester roll-out | Timon/Karol | 03/02/2020,Timon,is participated by,"['host', 'feature', 'have', 'sponsor']",[],151,Relation
+Powerboard mass tester roll-out | Timon/Karol | 03/02/2020,Karol,is participated by,"['host', 'feature', 'have', 'sponsor']",[],152,Relation
+Barrel hybrid tendering | Bart/Ash | 03/02/2020,Bart,is participated by,"['host', 'feature', 'have', 'sponsor']",[],153,Relation
+Barrel hybrid tendering | Bart/Ash | 03/02/2020,Ash,is participated by,"['host', 'feature', 'have', 'sponsor']",[],154,Relation
+Barrel powerboard tendering | Carl/Timon | 03/02/2020,Carl,is participated by,"['host', 'feature', 'have', 'sponsor']",[],155,Relation
+Barrel powerboard tendering | Carl/Timon | 03/02/2020,Timon,is participated by,"['host', 'feature', 'have', 'sponsor']",[],156,Relation
+EC hybrid/powerboard tendering | Uli/Kambiz/Dennis | 03/02/2020,Uli,is participated by,"['host', 'feature', 'have', 'sponsor']",[],157,Relation
+EC hybrid/powerboard tendering | Uli/Kambiz/Dennis | 03/02/2020,Kambiz,is participated by,"['host', 'feature', 'have', 'sponsor']",[],158,Relation
+EC hybrid/powerboard tendering | Uli/Kambiz/Dennis | 03/02/2020,Dennis,is participated by,"['host', 'feature', 'have', 'sponsor']",[],159,Relation
+EC tooling design/roll-out | Marc | 03/02/2020,Marc,is participated by,"['host', 'feature', 'have', 'sponsor']",[],160,Relation
+Barrel tooling design finalisation/roll-out | Sven | 03/02/2020,Sven,is participated by,"['host', 'feature', 'have', 'sponsor']",[],161,Relation
+"People listed as responsible will be contacted periodically by Craig & Ingo for updates (certainly on the date listed, if not before!)",Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],162,Relation
+"People listed as responsible will be contacted periodically by Craig & Ingo for updates (certainly on the date listed, if not before!)",Ingo,is participated by,"['host', 'feature', 'have', 'sponsor']",[],163,Relation
+Dave: how do I understand a watching brief?,Dave,is participated by,"['host', 'feature', 'have', 'sponsor']",[],164,Relation
+Bob volunteers for electrical tests,Bob,is participated by,"['host', 'feature', 'have', 'sponsor']",[],165,Relation
+Site Qualification Survey (Karola) - No questions,Karola,is participated by,"['host', 'feature', 'have', 'sponsor']",[],166,Relation
+FMC-DP Status (Craig) - Send email to Craig if you need a “multi module to nexys” card (aka FMC-DP) by ITk week or afterwards,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],167,Relation
+1. Send site quali document email (Karola),Karola,is participated by,"['host', 'feature', 'have', 'sponsor']",[],168,Relation
+Craig & Ingo,ITk week session,comment,"['offer opinions', 'share thoughts', 'give feedback']",[],169,Relation
+Karola,shipping box survey,present,"['appear', 'show up', 'be there', 'exist']",[],170,Relation
+Bart,Tony W,discuss,"['talk', 'deliberate', 'debate', 'converse']",[],171,Relation
+Sven,Prototype HV tab holder,question,"['query', 'inquire', 'interrogate', 'ask', 'probe']",[],172,Relation
+Sven,test coupon design,copy,"['reproduce', 'duplicate', 'replicate', 'imitate', 'mirror']",[],173,Relation
+Dennis,Kambiz,inform,"['disclose', 'share', 'enlighten', 'notify', 'advise']",[],174,Relation
+Sarah & Kunlin,mechanical hybrids,order,"['sequence', 'arrange', 'organize', 'rank']",[],175,Relation
+Dennis,0.25mm core,check,"['inspect', 'examine', 'test', 'verify']",[],176,Relation
+Jane,UV glue,test,"['try', 'evaluate', 'examine']",[],177,Relation
+Dennis & Marc,EC Tabs,consider,"['think', 'ponder', 'regard', 'analyze', 'view']",[],178,Relation
+Craig & Ingo,ITk week presenters,email,"['contact', 'communicate', 'send', 'message']",[],179,Relation
+The minutes of the Strip Module Meeting were recorded on 28/01/20.,"Actions were carried over from the meeting, including writing a QC document for coils.",because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],180,Relation
+Craig and Ingo will contact the people listed as responsible periodically for updates.,"Updates could be verbal, email, or slides in a meeting.",at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],181,Relation
+Craig and Ingo introduced the meeting.,A comment was made to move weighing and bonding later in the ITk week session.,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],182,Relation
+A shipping box survey was conducted.,A question was raised on whether the survey referred to all shipping options.,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],183,Relation
+A prototype HV tab holder was discussed.,It was useful to save time.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],184,Relation
+Vitaliy commented that a prototype HV tab holder was useful.,The prototype HV tab holder was discussed.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],185,Relation
+Test coupon measurements were taken.,It was confirmed that ASIC lands on test coupons identical to hybrids.,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],186,Relation
+It was confirmed that ASIC lands on test coupons identical to hybrids.,Metal trace variability should not affect shield layer functionality.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],187,Relation
+It was confirmed that metal trace variability should not affect shield layer functionality.,Via chain will remain.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],188,Relation
+It was confirmed that via chain will remain.,The EC is using the same test coupon.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],189,Relation
+Kambiz copied the design of the test coupon as far as Sven knows.,The EC is using the same test coupon.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],190,Relation
+Dennis will make Kambiz aware of the change proposal.,A change proposal was discussed regarding the test coupon.,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],191,Relation
+Mechanical endcap hybrids were discussed.,It was confirmed that a 0.25mm core is okay.,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],192,Relation
+A 0.25mm core was confirmed to be okay.,The tender process is not yet complete.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],193,Relation
+Prague wants to order more mechanical hybrids.,Mechanical endcap hybrids were discussed.,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],194,Relation
+Ordering of mechanical hybrids is not yet closed.,Prague wants to order more mechanical hybrids.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],195,Relation
+Karola will add a link to the google sheet to the EC planning meeting agenda.,Prague wants to order more mechanical hybrids.,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],196,Relation
+A UV and polaris epoxy temperature dependence study was conducted.,It was confirmed that temperature-dependent calibration has been done.,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],197,Relation
+Temperature-dependent calibration has been done.,The study was conducted.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],198,Relation
+A stencil might be more reliable for the UV and polaris epoxy study.,It was confirmed that a stencil might be more reliable.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],199,Relation
+It was determined that glue amounts should be checked by weight.,A question was raised on how to check glue amounts.,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],200,Relation
+Tests for the UV and polaris epoxy temperature dependence were done without hardener.,A study was conducted on the temperature dependence of UV glue.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],201,Relation
+The EC HV tab jig was discussed.,A proposal was made to move all EC tabs to 5mm longer.,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],202,Relation
+It was decided not to move all EC tabs to 5mm longer.,There would be knock-on effects in the cold box design.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],203,Relation
+Forest added an additional talk about wire bonding.,"Items were left for discussion, including wire bonding.",after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],204,Relation
+Craig and Ingo will email the ITk week presenters and upload the minutes to indico.,The minutes of the meeting were recorded on 28/01/20.,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],205,Relation
+Writing a QC document for coils was assigned as an action.,The minutes of the meeting were recorded on 28/01/20.,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],206,Relation
+Craig and Ingo will email the ITk week presenters and upload the minutes to indico.,Writing a QC document for coils was assigned as an action.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],207,Relation
+Craig & Ingo introduced the meeting.,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],208,Relation
+Craig & Ingo introduced the meeting.,Ingo,is participated by,"['host', 'feature', 'have', 'sponsor']",[],209,Relation
+Craig & Ingo suggested moving weighing and bonding to a later session.,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],210,Relation
+Craig & Ingo suggested moving weighing and bonding to a later session.,Ingo,is participated by,"['host', 'feature', 'have', 'sponsor']",[],211,Relation
+Karola asked about the shipping box survey.,Karola,is participated by,"['host', 'feature', 'have', 'sponsor']",[],212,Relation
+Bart showed the prototype HV tab holder.,Bart,is participated by,"['host', 'feature', 'have', 'sponsor']",[],213,Relation
+Vitaliy commented on the usefulness of the HV tab holder.,Vitaliy,is participated by,"['host', 'feature', 'have', 'sponsor']",[],214,Relation
+Sven questioned the test coupon measurements.,Sven,is participated by,"['host', 'feature', 'have', 'sponsor']",[],215,Relation
+Sven clarified the ASIC lands on test coupons.,Sven,is participated by,"['host', 'feature', 'have', 'sponsor']",[],216,Relation
+Dennis confirmed the metal trace variability.,Dennis,is participated by,"['host', 'feature', 'have', 'sponsor']",[],217,Relation
+Kambiz was informed about the change proposal.,Kambiz,is participated by,"['host', 'feature', 'have', 'sponsor']",[],218,Relation
+Kambiz was informed about the change proposal.,Dennis,is participated by,"['host', 'feature', 'have', 'sponsor']",[],219,Relation
+Sarah & Kunlin discussed mechanical endcap hybrids.,Sarah,is participated by,"['host', 'feature', 'have', 'sponsor']",[],220,Relation
+Sarah & Kunlin discussed mechanical endcap hybrids.,Kunlin,is participated by,"['host', 'feature', 'have', 'sponsor']",[],221,Relation
+Sarah & Kunlin discussed mechanical endcap hybrids.,Dennis,is participated by,"['host', 'feature', 'have', 'sponsor']",[],222,Relation
+Dennis confirmed the core thickness.,Dennis,is participated by,"['host', 'feature', 'have', 'sponsor']",[],223,Relation
+Prague wanted to order more mechanical hybrids.,Prague,is participated by,"['host', 'feature', 'have', 'sponsor']",[],224,Relation
+Prague wanted to order more mechanical hybrids.,Karo,is participated by,"['host', 'feature', 'have', 'sponsor']",[],225,Relation
+Jane presented the UV and polaris epoxy temperature dependence.,Jane,is participated by,"['host', 'feature', 'have', 'sponsor']",[],226,Relation
+Jane commented on the stencil reliability.,Jane,is participated by,"['host', 'feature', 'have', 'sponsor']",[],227,Relation
+Dennis & Marc discussed the EC HV tab jig.,Dennis,is participated by,"['host', 'feature', 'have', 'sponsor']",[],228,Relation
+Dennis & Marc discussed the EC HV tab jig.,Marc,is participated by,"['host', 'feature', 'have', 'sponsor']",[],229,Relation
+Dennis suggested moving all EC Tabs to 5mm longer.,Dennis,is participated by,"['host', 'feature', 'have', 'sponsor']",[],230,Relation
+Forest added a talk about wire bonding.,Forest,is participated by,"['host', 'feature', 'have', 'sponsor']",[],231,Relation
+Craig & Ingo were responsible for emailing ITk week presenters and uploading to indico.,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],232,Relation
+Craig & Ingo were responsible for emailing ITk week presenters and uploading to indico.,Ingo,is participated by,"['host', 'feature', 'have', 'sponsor']",[],233,Relation
+"Timon, Carl, and Satish were responsible for writing the QC document for coils.",Timon,is participated by,"['host', 'feature', 'have', 'sponsor']",[],234,Relation
+"Timon, Carl, and Satish were responsible for writing the QC document for coils.",Carl,is participated by,"['host', 'feature', 'have', 'sponsor']",[],235,Relation
+"Timon, Carl, and Satish were responsible for writing the QC document for coils.",Satish,is participated by,"['host', 'feature', 'have', 'sponsor']",[],236,Relation
+Strip Module Meeting,actions,carried,"['moved', 'brought', 'carried', 'held', 'bore', 'transported']",[],237,Relation
+HV tab bonding,update,expected,"['anticipated', 'forecasted', 'predicted', 'supposed', 'projected', 'hoped for']",[],238,Relation
+Hybrid crate roll-out,update,expected,"['anticipated', 'forecasted', 'predicted', 'supposed', 'projected', 'hoped for']",[],239,Relation
+Module thermal cycling roll-out,update,expected,"['anticipated', 'forecasted', 'predicted', 'supposed', 'projected', 'hoped for']",[],240,Relation
+Powerboard mass tester roll-out,update,expected,"['anticipated', 'forecasted', 'predicted', 'supposed', 'projected', 'hoped for']",[],241,Relation
+Barrel hybrid tendering,actions,carried,"['moved', 'brought', 'carried', 'held', 'bore', 'transported']",[],242,Relation
+Barrel powerboard tendering,actions,carried,"['moved', 'brought', 'carried', 'held', 'bore', 'transported']",[],243,Relation
+EC hybrid/powerboard tendering,actions,carried,"['moved', 'brought', 'carried', 'held', 'bore', 'transported']",[],244,Relation
+EC tooling design/roll-out,update,expected,"['anticipated', 'forecasted', 'predicted', 'supposed', 'projected', 'hoped for']",[],245,Relation
+Barrel tooling design finalisation/roll-out,update,expected,"['anticipated', 'forecasted', 'predicted', 'supposed', 'projected', 'hoped for']",[],246,Relation
+DCDC coils,specs,defined,"['describe', 'specify', 'characterize', 'delineate', 'define']",[],247,Relation
+QC boundaries,powerboard performance,acceptable,"['acceptable', 'tolerable', 'suitable', 'permissible', 'valid']",[],248,Relation
+powerboard performance,ATLAS performance specs,led,"['guided', 'headed', 'steered', 'directed', 'managed']",[],249,Relation
+wire,specs,defined,"['describe', 'specify', 'characterize', 'delineate', 'define']",[],250,Relation
+samples,coils,tested,"['analyzed', 'examined', 'assessed', 'evaluated']",[],251,Relation
+production,quantity,evaluated,"['reviewed', 'judged', 'assessed', 'rated', 'critiqued']",[],252,Relation
+quantity,"EC 10,000",evaluated,"['reviewed', 'judged', 'assessed', 'rated', 'critiqued']",[],253,Relation
+overhead,barrel,different,"['vary', 'change', 'divergence', 'contrast', 'disparity']",[],254,Relation
+Barrel module frame,hybrid panel,finalised,"['completed', 'finalized', 'settled', 'finished', 'concluded']",[],255,Relation
+module transport frame,clearance,okay,"['agree', 'affirm', 'confirm']",[],256,Relation
+high voltage connector,single connector,kept,"['retained', 'maintained', 'kept', 'preserved', 'held']",[],257,Relation
+mini display port,labelling,labelled,"['designated', 'marked', 'tagged', 'labeled', 'identified']",[],258,Relation
+ribbing,transport frame,added,"['enlarged', 'increased', 'augmented']",[],259,Relation
+injection moulding company,ribbing,optimised,"['perfected', 'enhanced', 'refined', 'improved', 'maximized']",[],260,Relation
+The minutes of the Strip Module Meeting were taken on 11/02/20.,Actions were carried over at the meeting.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],261,Relation
+Actions were carried over.,The responsible personnel were contacted periodically by Craig & Ingo for updates.,before,"['earlier', 'prior', 'precede', 'lead', 'precedes']",[],262,Relation
+The responsible personnel were contacted periodically by Craig & Ingo for updates.,They were listed as responsible in the meeting.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],263,Relation
+The meeting was introduced by Craig & Ingo.,Nothing was reported from the introduction.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],264,Relation
+Nothing was reported from the introduction.,Satish discussed the DCDC coils.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],265,Relation
+Satish discussed the DCDC coils.,The QC boundaries of the coils were questioned from a powerboard performance point of view.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],266,Relation
+The QC boundaries of the coils were questioned from a powerboard performance point of view.,The specs defined for the coils were not led by ATLAS performance specs.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],267,Relation
+The specs defined for the coils were not led by ATLAS performance specs.,The specs were defined more by what is possible with available wire.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],268,Relation
+10 samples from each 1/50 of production were tested.,Satish questioned the QC boundaries of the coils.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],269,Relation
+500 coils in total were planned to be tested.,10 samples from each 1/50 of production were tested.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],270,Relation
+"The quantity of coils was evaluated by EC 10,000.",The risk of yield numbers changing slightly was considered.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],271,Relation
+"The quantity of coils was evaluated by EC 10,000.","16,000 for barrel makes sense to Dennis but looks like overhead is slightly different.",at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],272,Relation
+"The quantity of coils was evaluated by EC 10,000.",The risk of yield numbers changing slightly is why typically PRR is the point that large numbers get bought.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],273,Relation
+The risk of yield numbers changing slightly is why typically PRR is the point that large numbers get bought.,It is an understood risk to buy everything now.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],274,Relation
+The status of powerboard test crate was discussed.,The introduction by Craig & Ingo was completed.,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],275,Relation
+The barrel module frame and hybrid panel finalisation was discussed.,Clearance on module transport frame for RFID was questioned.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],276,Relation
+Clearance on module transport frame for RFID was questioned.,The clearance was potentially at risk.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],277,Relation
+The module transport frame for RFID should be okay.,Clearance was questioned on the module transport frame for RFID.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],278,Relation
+Craig and Ash will iterate to make sure everything fits together.,The clearance on module transport frame for RFID was questioned.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],279,Relation
+It could be tricky to keep track of all the diodes when placing the sensor/module in the frame.,The diodes need to be placed carefully in the frame.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],280,Relation
+Removing the diodes along one side or the other could be an option.,It could be tricky to keep track of all the diodes when placing the sensor/module in the frame.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],281,Relation
+Gerrit likes the security of all 4 sides.,He prefers to keep the diodes on all four sides of the frame.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],282,Relation
+The high voltage connector could be changed to be on a separate connector.,It could improve safety and compatibility.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],283,Relation
+The pros of keeping the single connector were discussed.,The high voltage connector could be changed to be on a separate connector.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],284,Relation
+The cons of keeping the single connector were discussed.,The high voltage connector could be changed to be on a separate connector.,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],285,Relation
+Labels for the mini display port were provided on the transport frames.,Labels to be included on the PCB silk screen in case of running without transport frame in place.,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],286,Relation
+Ribbing was added to the barrel transport frame.,The injection moulding company optimised the ribbing.,before,"['earlier', 'prior', 'precede', 'lead', 'precedes']",[],287,Relation
+Craig & Ingo gave an introduction for the meeting.,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],288,Relation
+Craig & Ingo gave an introduction for the meeting.,Ingo,is participated by,"['host', 'feature', 'have', 'sponsor']",[],289,Relation
+Satish discussed the DCDC coils.,Satish,is participated by,"['host', 'feature', 'have', 'sponsor']",[],290,Relation
+The quantity of DCDC coils was evaluated.,EC,is participated by,"['host', 'feature', 'have', 'sponsor']",[],291,Relation
+The quantity of DCDC coils was evaluated.,production management,is participated by,"['host', 'feature', 'have', 'sponsor']",[],292,Relation
+Christian gave a status update on the powerboard test crate.,Christian,is participated by,"['host', 'feature', 'have', 'sponsor']",[],293,Relation
+Sven discussed the barrel module frame and hybrid panel finalisation.,Sven,is participated by,"['host', 'feature', 'have', 'sponsor']",[],294,Relation
+The high voltage connector for the barrel module frame and hybrid panel was discussed.,Sven,is participated by,"['host', 'feature', 'have', 'sponsor']",[],295,Relation
+The high voltage connector for the barrel module frame and hybrid panel was discussed.,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],296,Relation
+The high voltage connector for the barrel module frame and hybrid panel was discussed.,Ash,is participated by,"['host', 'feature', 'have', 'sponsor']",[],297,Relation
+The high voltage connector for the barrel module frame and hybrid panel was discussed.,Gerrit,is participated by,"['host', 'feature', 'have', 'sponsor']",[],298,Relation
+The mini display port labelling for the barrel module frame and hybrid panel was discussed.,Sven,is participated by,"['host', 'feature', 'have', 'sponsor']",[],299,Relation
+The mini display port labelling for the barrel module frame and hybrid panel was discussed.,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],300,Relation
+The mini display port labelling for the barrel module frame and hybrid panel was discussed.,Ash,is participated by,"['host', 'feature', 'have', 'sponsor']",[],301,Relation
+The mini display port labelling for the barrel module frame and hybrid panel was discussed.,Gerrit,is participated by,"['host', 'feature', 'have', 'sponsor']",[],302,Relation
+Gerrit discussed the barrel transport frame.,Gerrit,is participated by,"['host', 'feature', 'have', 'sponsor']",[],303,Relation
+The ribbing on the barrel transport frame was optimised.,injection moulding company,is participated by,"['host', 'feature', 'have', 'sponsor']",[],304,Relation
+The risk of yield numbers changing slightly was discussed.,Dennis,is participated by,"['host', 'feature', 'have', 'sponsor']",[],305,Relation
+The risk of yield numbers changing slightly was discussed.,production management,is participated by,"['host', 'feature', 'have', 'sponsor']",[],306,Relation
+The ATLAS performance specs were mentioned.,ATLAS,is participated by,"['host', 'feature', 'have', 'sponsor']",[],307,Relation
+The quantity of samples for testing was discussed.,Satish,is participated by,"['host', 'feature', 'have', 'sponsor']",[],308,Relation
+The quantity of samples for testing was discussed.,EC,is participated by,"['host', 'feature', 'have', 'sponsor']",[],309,Relation
+The powerboard performance was discussed.,Satish,is participated by,"['host', 'feature', 'have', 'sponsor']",[],310,Relation
+The QC boundaries for the DCDC coils were discussed.,Satish,is participated by,"['host', 'feature', 'have', 'sponsor']",[],311,Relation
+The people listed as responsible will be contacted periodically.,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],312,Relation
+The people listed as responsible will be contacted periodically.,Ingo,is participated by,"['host', 'feature', 'have', 'sponsor']",[],313,Relation
+The action items for the meeting were listed.,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],314,Relation
+The action items for the meeting were listed.,Ingo,is participated by,"['host', 'feature', 'have', 'sponsor']",[],315,Relation
+Craig,transport frame,forgot,"['forget', 'overlook', 'lose track', 'neglect', 'misremember']",[],316,Relation
+suction cups,assembly,help,"['assist', 'relieve', 'aid', 'support', 'lend a hand']",[],317,Relation
+suction cups,surface,stick,"['adhere', 'cling', 'stick', 'attach', 'join', 'bond']",[],318,Relation
+DI water,surface,makes,"['create', 'manufactures', 'generates', 'produces']",[],319,Relation
+isoprop,surface,makes,"['create', 'manufactures', 'generates', 'produces']",[],320,Relation
+humidity indicators,box,use,"['employ', 'utilize', 'apply', 'adopt']",[],321,Relation
+dessicant,box,use,"['employ', 'utilize', 'apply', 'adopt']",[],322,Relation
+BPOL v4,BPOL v5,consider,"['think', 'ponder', 'regard', 'analyze', 'view']",[],323,Relation
+BPOL v4,preproduction,commit,"['pledge', 'bind', 'promise', 'vow', 'obligate']",[],324,Relation
+BPOL v5,BPOL v4,validate,"['authenticate', 'confirm', 'prove', 'verify', 'endorse']",[],325,Relation
+Craig,BPOL v4,speak,"['utter', 'verbalize', 'express', 'communicate', 'enunciate']",[],326,Relation
+US,BPOL v4,agree,"['comply', 'assent', 'concur', 'consent']",[],327,Relation
+Dennis,BPOL v4,care,"['concern', 'protect', 'worry', 'nurture', 'look after']",[],328,Relation
+Sion Hongbo will discuss with them to see if we can optimise the ribbing a bit more to improve planarity,Suction cup “hole” dimensions to be updated (mistake by Craig),because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],329,Relation
+Updated versions will be uploaded to EDMS for discussion,Suction cup “hole” dimensions to be updated (mistake by Craig),after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],330,Relation
+Will include discussion of specified suction cups,Updated versions will be uploaded to EDMS for discussion,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],331,Relation
+"Assembly of box with threaded back-plane trickier without screw guidance, risk of sensor moving around whilst you are assembling",Craig forgot that when assembling the box the transport frame is already screwed in place!!,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],332,Relation
+Generally seems to make the assembly nicer,Sticking suction cups,as a result,"['yield', 'outcome', 'consequence', 'effect', 'result', 'lead', 'follow']",[],333,Relation
+Sticking suction cups,Smaller suction cups and correct sized holes do help,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],334,Relation
+Need to investigate the other materials available,Sticking suction cups,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],335,Relation
+"From ITk week, don’t clean with isoprop, just DI water, seems isoprop makes surface stickier",Need to investigate the other materials available,at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],336,Relation
+"How do you use the humidity indicators and dessicant with this box, looks like bag volume and sensor volume connection can be blocked by vacuum sealing","From ITk week, don’t clean with isoprop, just DI water, seems isoprop makes surface stickier",at the same time,"['happen together', 'coexist', 'overlap', 'coincide', 'synchronize']",[],337,Relation
+SCIPP looking at side pocket solution,"How do you use the humidity indicators and dessicant with this box, looks like bag volume and sensor volume connection can be blocked by vacuum sealing",because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],338,Relation
+Also N2 flushed sealing rather than vacuum could be an option,"How do you use the humidity indicators and dessicant with this box, looks like bag volume and sensor volume connection can be blocked by vacuum sealing",because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],339,Relation
+BPOL v4 vs. v5 (we previously committed to v4 for preproduction but could consider v5 if schedule does not change any more,Craig speaks in support of v4 for reasons of schedule risk and previous commitment,after,"['later', 'afterwards', 'next', 'afterward', 'follow']",[],340,Relation
+Craig speaks in support of v4 for reasons of schedule risk and previous commitment,BPOL v4 vs. v5 (we previously committed to v4 for preproduction but could consider v5 if schedule does not change any more,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],341,Relation
+"US agrees with commitment to v4 and would keep baseline as v4 with a few v5 (100) for validation, Dennis doesn’t really care but is happy to stick to v4",Craig speaks in support of v4 for reasons of schedule risk and previous commitment,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],342,Relation
+We will push back on review to stick with v4 for preproduction,"US agrees with commitment to v4 and would keep baseline as v4 with a few v5 (100) for validation, Dennis doesn’t really care but is happy to stick to v4",because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],343,Relation
+There is risk to coupling preproduction to v5 schedule and we have already committed (deliberately) to v4,We will push back on review to stick with v4 for preproduction,because,"['owing to', 'thanks to', 'as a result of', 'due to']",[],344,Relation
+Actions NONE,BPOL v4 vs. v5 (we previously committed to v4 for preproduction but could consider v5 if schedule does not change any more,before,"['earlier', 'prior', 'precede', 'lead', 'precedes']",[],345,Relation
+sion Hongbo will discuss with them to see if we can optimise the ribbing a bit more to improve planarity,sion Hongbo,is participated by,"['host', 'feature', 'have', 'sponsor']",[],346,Relation
+sion Hongbo will discuss with them to see if we can optimise the ribbing a bit more to improve planarity,them,is participated by,"['host', 'feature', 'have', 'sponsor']",[],347,Relation
+Suction cup “hole” dimensions to be updated (mistake by Craig),Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],348,Relation
+Updated versions will be uploaded to EDMS for discussion,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],349,Relation
+Updated versions will be uploaded to EDMS for discussion,EDMS,is participated by,"['host', 'feature', 'have', 'sponsor']",[],350,Relation
+Will include discussion of specified suction cups,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],351,Relation
+Will include discussion of specified suction cups,suction cups,is participated by,"['host', 'feature', 'have', 'sponsor']",[],352,Relation
+"Assembly of box with threaded back-plane trickier without screw guidance, risk of sensor moving around whilst you are assembling",box,is participated by,"['host', 'feature', 'have', 'sponsor']",[],353,Relation
+"Assembly of box with threaded back-plane trickier without screw guidance, risk of sensor moving around whilst you are assembling",sensor,is participated by,"['host', 'feature', 'have', 'sponsor']",[],354,Relation
+"Assembly of box with threaded back-plane trickier without screw guidance, risk of sensor moving around whilst you are assembling",screw guidance,is participated by,"['host', 'feature', 'have', 'sponsor']",[],355,Relation
+Craig forgot that when assembling the box the transport frame is already screwed in place!!,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],356,Relation
+Craig forgot that when assembling the box the transport frame is already screwed in place!!,box,is participated by,"['host', 'feature', 'have', 'sponsor']",[],357,Relation
+Craig forgot that when assembling the box the transport frame is already screwed in place!!,transport frame,is participated by,"['host', 'feature', 'have', 'sponsor']",[],358,Relation
+Generally seems to make the assembly nicer,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],359,Relation
+Sticking suction cups,suction cups,is participated by,"['host', 'feature', 'have', 'sponsor']",[],360,Relation
+Smaller suction cups and correct sized holes do help,suction cups,is participated by,"['host', 'feature', 'have', 'sponsor']",[],361,Relation
+Smaller suction cups and correct sized holes do help,holes,is participated by,"['host', 'feature', 'have', 'sponsor']",[],362,Relation
+"From ITk week, don’t clean with isoprop, just DI water, seems isoprop makes surface stickier",ITk week,is participated by,"['host', 'feature', 'have', 'sponsor']",[],363,Relation
+"From ITk week, don’t clean with isoprop, just DI water, seems isoprop makes surface stickier",isoprop,is participated by,"['host', 'feature', 'have', 'sponsor']",[],364,Relation
+"From ITk week, don’t clean with isoprop, just DI water, seems isoprop makes surface stickier",DI water,is participated by,"['host', 'feature', 'have', 'sponsor']",[],365,Relation
+"From ITk week, don’t clean with isoprop, just DI water, seems isoprop makes surface stickier",surface,is participated by,"['host', 'feature', 'have', 'sponsor']",[],366,Relation
+"How do you use the humidity indicators and dessicant with this box, looks like bag volume and sensor volume connection can be blocked by vacuum sealing",humidity indicators,is participated by,"['host', 'feature', 'have', 'sponsor']",[],367,Relation
+"How do you use the humidity indicators and dessicant with this box, looks like bag volume and sensor volume connection can be blocked by vacuum sealing",dessicant,is participated by,"['host', 'feature', 'have', 'sponsor']",[],368,Relation
+"How do you use the humidity indicators and dessicant with this box, looks like bag volume and sensor volume connection can be blocked by vacuum sealing",box,is participated by,"['host', 'feature', 'have', 'sponsor']",[],369,Relation
+"How do you use the humidity indicators and dessicant with this box, looks like bag volume and sensor volume connection can be blocked by vacuum sealing",bag volume,is participated by,"['host', 'feature', 'have', 'sponsor']",[],370,Relation
+"How do you use the humidity indicators and dessicant with this box, looks like bag volume and sensor volume connection can be blocked by vacuum sealing",sensor volume,is participated by,"['host', 'feature', 'have', 'sponsor']",[],371,Relation
+"How do you use the humidity indicators and dessicant with this box, looks like bag volume and sensor volume connection can be blocked by vacuum sealing",vacuum sealing,is participated by,"['host', 'feature', 'have', 'sponsor']",[],372,Relation
+SCIPP looking at side pocket solution,SCIPP,is participated by,"['host', 'feature', 'have', 'sponsor']",[],373,Relation
+SCIPP looking at side pocket solution,side pocket,is participated by,"['host', 'feature', 'have', 'sponsor']",[],374,Relation
+Also N2 flushed sealing rather than vacuum could be an option,N2,is participated by,"['host', 'feature', 'have', 'sponsor']",[],375,Relation
+Also N2 flushed sealing rather than vacuum could be an option,vacuum,is participated by,"['host', 'feature', 'have', 'sponsor']",[],376,Relation
+Also N2 flushed sealing rather than vacuum could be an option,sealing,is participated by,"['host', 'feature', 'have', 'sponsor']",[],377,Relation
+AoB - BPOL v4 vs. v5 (we previously committed to v4 for preproduction but could consider v5 if schedule does not change any more,AoB,is participated by,"['host', 'feature', 'have', 'sponsor']",[],378,Relation
+AoB - BPOL v4 vs. v5 (we previously committed to v4 for preproduction but could consider v5 if schedule does not change any more,BPOL v4,is participated by,"['host', 'feature', 'have', 'sponsor']",[],379,Relation
+AoB - BPOL v4 vs. v5 (we previously committed to v4 for preproduction but could consider v5 if schedule does not change any more,BPOL v5,is participated by,"['host', 'feature', 'have', 'sponsor']",[],380,Relation
+AoB - BPOL v4 vs. v5 (we previously committed to v4 for preproduction but could consider v5 if schedule does not change any more,schedule,is participated by,"['host', 'feature', 'have', 'sponsor']",[],381,Relation
+Craig speaks in support of v4 for reasons of schedule risk and previous commitment,Craig,is participated by,"['host', 'feature', 'have', 'sponsor']",[],382,Relation
+Craig speaks in support of v4 for reasons of schedule risk and previous commitment,BPOL v4,is participated by,"['host', 'feature', 'have', 'sponsor']",[],383,Relation
+Craig speaks in support of v4 for reasons of schedule risk and previous commitment,schedule,is participated by,"['host', 'feature', 'have', 'sponsor']",[],384,Relation
+Craig speaks in support of v4 for reasons of schedule risk and previous commitment,previous commitment,is participated by,"['host', 'feature', 'have', 'sponsor']",[],385,Relation
+"US agrees with commitment to v4 and would keep baseline as v4 with a few v5 (100) for validation, Dennis doesn’t really care but is happy to stick to v4",US,is participated by,"['host', 'feature', 'have', 'sponsor']",[],386,Relation
+"US agrees with commitment to v4 and would keep baseline as v4 with a few v5 (100) for validation, Dennis doesn’t really care but is happy to stick to v4",BPOL v4,is participated by,"['host', 'feature', 'have', 'sponsor']",[],387,Relation
+"US agrees with commitment to v4 and would keep baseline as v4 with a few v5 (100) for validation, Dennis doesn’t really care but is happy to stick to v4",BPOL v5,is participated by,"['host', 'feature', 'have', 'sponsor']",[],388,Relation
+"US agrees with commitment to v4 and would keep baseline as v4 with a few v5 (100) for validation, Dennis doesn’t really care but is happy to stick to v4",Dennis,is participated by,"['host', 'feature', 'have', 'sponsor']",[],389,Relation
+"US agrees with commitment to v4 and would keep baseline as v4 with a few v5 (100) for validation, Dennis doesn’t really care but is happy to stick to v4",validation,is participated by,"['host', 'feature', 'have', 'sponsor']",[],390,Relation
+We will push back on review to stick with v4 for preproduction,we,is participated by,"['host', 'feature', 'have', 'sponsor']",[],391,Relation
+We will push back on review to stick with v4 for preproduction,BPOL v4,is participated by,"['host', 'feature', 'have', 'sponsor']",[],392,Relation
+We will push back on review to stick with v4 for preproduction,preproduction,is participated by,"['host', 'feature', 'have', 'sponsor']",[],393,Relation
+There is risk to coupling preproduction to v5 schedule and we have already committed (deliberately) to v4,preproduction,is participated by,"['host', 'feature', 'have', 'sponsor']",[],394,Relation
+There is risk to coupling preproduction to v5 schedule and we have already committed (deliberately) to v4,BPOL v5,is participated by,"['host', 'feature', 'have', 'sponsor']",[],395,Relation
+There is risk to coupling preproduction to v5 schedule and we have already committed (deliberately) to v4,schedule,is participated by,"['host', 'feature', 'have', 'sponsor']",[],396,Relation
+There is risk to coupling preproduction to v5 schedule and we have already committed (deliberately) to v4,BPOL v4,is participated by,"['host', 'feature', 'have', 'sponsor']",[],397,Relation

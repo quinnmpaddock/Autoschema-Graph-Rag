@@ -1,0 +1,76 @@
+# 17/08/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1054926/ 
+### Introduction
+- Site Qualification News
+ - Module metrology step is out for review till Friday
+ - This completes all docs except for electrical testing (and small group docs, aka hybrid flex, powerboard flex)
+- Paul has an announcement
+ - Got review board ok for ASICs, submission of chips to fab to happen at end of this week
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R1 tool production
+ - Will come back for rework, sorting out
+ - No meeting called by Richard yet
+ - 2 sites got into contact with Richard directly
+- R2 tool production
+ - Fast Track Ca tools back from anodisation look good so far, bushings inserted today, adhesive curing
+ - Had issues with height metrology, will need to rework some pickup tools before anodisation
+ - Rest of tooling to go to anodisation as soon as Ca tools done
+ - Then reworked pickups as well
+- R3 tool production
+ - Got LEDs for R3 tools, working
+ - Difficulties obtaining working power supply
+ - M3 screw holes have not been tabbed (?) so this needs to be done still
+ - Hybrid panels, there are some vac leaks near hybrids. Installed rubber gaskets a la IFIC and will send design to other sites
+ - In contact with machine workshop to build spares
+ - Would be a good time also to do the HCC pocket size adjustment
+- R5 tool production
+ - All tools delivered and acknowledged. Close task?
+ - Toronto measured and confirmed metrology within 3 microns
+ - Will think about this task as “Feedback on R5 tool” from now
+- Barrel hybrid tendering/order
+ - Received final quotation for production and going through it now
+ - Ash thinks he is approaching the end game
+ - Material issue with DuPont remains but are ok for PP
+ - Hybrids should be available once prod ASICs arrive
+- Endcap module thermal cycling setup
+ - Postponed to talk next week
+- UK/China module thermal cycling setup
+ - All UK cold boxes delivered
+ - Small upgrades at site have been done
+ - Some sites have not yet unboxed, most however have
+ - IHEP one: difficulties obtaining crate for shipment, but all is ready to ship once shipment items have arrived
+- Hybrid crate setup, finalisation and roll-out
+ - Received feedback from beta testers about mechanical optimisations
+ - Plans for parts are now in workshop, will receive material end of Aug followed by production afterwards
+- Production of hybrid panel cover
+ - Aim to ship before end of Aug
+- EC glass dummy sensors
+ - R2 Dortmund order is processed by procurement office, waiting for approval (~a week due to holidays) and then order
+ - After order expect few weeks before delivery plus shipment
+ - R1, R3 from Upsala
+ - Will follow up after meeting, company communication was very difficult and stalled several times
+ - Company claims customs issues
+ - Stuff was paid and company has not delivered for months
+ - Richard will also attempt to provide some more pressure
+ - Previous orders were provided
+### Module PPA and hybrid electrical test
+- REMINDER: RELEASE OF PPA HYBRID COMPONENTS DOES NOT MEAN THE NON-REQUIRED SQ STEPS CAN BE SKIPPED, METROLOGY, BONDING, ELECTRICAL TESTS STEPS MUST ALL STILL BE DONE!!!!
+- Please use the “Full Test” routine from the ITSDAQ menu as the standard test suite to run on everything (update ITSDAQ if menu item is not available)
+- “Full test” is no longer slow, so the previously faster “confirmation test” is now in the past :) 
+### Barrel powerboards for hybrid panels
+- Storage: keep them in the shipping container in dry storage
+- When groups qualify for PPA parts, they should also request the powerboard carriers
+### Module/Sensor handling recommendations
+- Picking up sensors and modules needs to be done from a grounded surface (tools)
+- Should use the ESD sheets from Hamamatsu to handle sensors as much as possible
+ - Otherwise use ESD safe tools
+- Keep a close eye on sensor handling steps, they are a risk to the sensors, so try to reduce after PP
+- If (barrel) module handling tools need to be made from ESD plastik, needs further development
+ - Can easily switch between ESD and non-ESD suction cups though
+### AOB
+- All minutes now visible at:https://drive.google.com/drive/folders/1yvCa8qAFvchv2YjjTv6Z9OJ5AieusgtD?usp=sharing 
+- Craig uploaded metrology json and had to fight changing single quotes to double quotes when using the prod DB upload scripts (double quotes worked)
+ - Matthew: you can generate an example on the fly, I can send command. This should be the current and most recent (might be that the example in the document is slightly outdated)
+ - We should fix the doc also

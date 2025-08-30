@@ -1,0 +1,47 @@
+# 13/04/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1008270/
+### Introduction
+- Worried about progress in EDMS documents
+ - Production management and module ACs will discuss creation of small task force to focus on speeding progress up
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R0 tool production
+ - Some screw holes misaligned, started re-machining
+ - Lena started metrology
+- R1 tool production
+ - University workshop Vac pattern cut in jigs, 4 hours for each tool
+- Production of R0 and R1 test frames
+ - Waiting for confirmation results from Freiburg
+- Production of R3, R4 and R5 test frames
+ - Waiting for confirmation results from Freiburg
+- Production of module frame cover
+ - Raw ESD PMMA delivery delayed according to company. Company estimates delivery of full production in 3rd week of May, first batch of 100 frame covers per type could be shipped earlier if there is urgent need
+ - Report date changed: 2021-04-13 → 2021-05-18
+### Registration of Hybrids and Modules
+- How about training this? 
+ - Anyone can do this with dummy objects in the DB
+ - During Prototyping this has to be followed in order to qualify for PPA
+- Seems desirable to train as much as possible already before receiving real objects?
+ - Yes, as long as one uses dummy objects
+ - We need people to play with the DB, please do this using dummy objects
+ - Even better is to register dummy training objects is to make them part of an own created batch, e.g. “VitaliyTest_001”
+ - Vitaliy does not want everyone to create dummy sensors, but he is happy to create and ship dummy sensors in the DB for everyone
+ - How to get people to train this? 
+ - Rather a lot of exchange… too much to type up…
+ - Luise proposes scheme were week by week a different step is trained by all
+ - Scripts / GUI to do batch tasks do currently not exist and noone is working on them
+ - This is an ideal qualification task
+ - If you decide to work on this please get into contact with the ACs and Production management, so we can make sure the respective topic is not also worked on by others
+### ITSDAQ and Database
+- ITSDAQ will have a fallback mode, if DB query fails one will be able to add the required info manually
+ - Sounds great, network / DB outages should not stop testing dead
+- Status of the json output?
+ - There is a test version, not for general use but fine if you wanna debug
+- Sven will implement tests in the DB according to Bruce$Co’s wishes / specification
+### Tests in Database
+- Long discussion about how IV will look in DB for modules
+ - ACs: ideally identically to what sensors upload
+ - Vitaliy points out there is raw data (current, voltage) and derived data (breakthrough voltage, …)
+### AOB
+-

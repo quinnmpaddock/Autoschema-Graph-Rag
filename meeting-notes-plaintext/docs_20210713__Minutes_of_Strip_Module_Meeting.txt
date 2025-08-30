@@ -1,0 +1,41 @@
+# 13/07/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1054921/
+### Introduction
+- sfd
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R1 tool production
+- R3 tool production
+- UK/China module thermal cycling setup
+- Production of bonding and testing jigs
+- EC PPA/prototype powerboard order
+### RFID in Database
+- From chat:
+ - Run `dmesg -w` when plugging in the reader to explicitely get the port.
+ - Also you can edit udev rules to not have to run the chmod every time.
+ - Also I useful script for figuring out what /dev files correspond to what device: https://unix.stackexchange.com/a/144735
+- William: Having to use to press the button to scan the RFID is probably not ideal, especially when handling delicate objects
+ - Not clear why this is done, might need some more look into the code
+ - Reason: with increased signal strength the reader overheats when running continuously, which is not recommended
+ - Increasing the reading time to 10s could already solve this
+- William: typing the serial number in is error prone, is there something to do it automatically
+ - No way of doing this, might be possible to have a GUI that looks at all components at the institute to allow to pick the correct component; but there is already a question to confirm the component in case of typos or picking wrong components
+- Bruce: there is no way directly to interface the RFID with a web browser
+ - Karol: depends on where the web app runs (on PC it might work)
+- Should all RFIDs use upper case only?
+ - All Windows readings so far have shown upper case, use this as convention
+### PB Test Coupon and Linpol Qualification
+- Ashley: why so large disparity between calculator and measurement?
+ - Calculation based on SEM measurement at random location, distance could be different at different places
+ - A: should have idea of stack-up from fabrication; for some spacing is different from Adhesive thickness or copper thickness?Measurements from hybrid test coupons does not show this level of difference
+- Ashley: thermal cycle profile needs to meet IPC specification from reflow of circuits (1C/sec)
+ - Oven can’t do the recommended rate of change
+ - A: not sure how important it is to follow this profile
+- Ashley: why change in capacitance during heating cycle?
+ - Test done at different days and coupon has been resting in dry cabinet
+ - A: do you do bakeout before the test?
+ - Before cycling coupons are sitting in dry cabinet, but no pre-baking
+ - A: polyimide is hygroscopic and absorbs moisture, which could cause blistering during thermal cycling; recommended to do bakeout before test.
+### AOB
+- nothing

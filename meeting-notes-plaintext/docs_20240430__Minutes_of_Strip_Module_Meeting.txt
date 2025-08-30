@@ -1,0 +1,204 @@
+# 2024-04-30 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1401781/
+### Introduction
+Presenter: Luise Poley
+- Tony (sl. 2): Can we do PB pulling for May?
+ - Luise: Yes, at some point we decided that hybrids and PBs are comparable, but there is no reason it can’t be next month
+ - Sven: Could someone provide barrel PB materials so we can do it?
+ - Luise: I believe so
+ - Bart: It has been a bit late.
+ - Luise: Maybe after the month after next?
+ - Tony: We thought those would have already come.
+ - Bart: It has been delayed. 
+### L4 Updates: ITSDAQ/Sensors/Documentation
+Presenter: Xavi Fernandez-Tejero
+- Christian Sander: I have a question about deionizers. You recommend 10m minutes at 20cm. We are using some flow delaminator on our gun, but it could be quite different if the ionizers are different.
+ - Xavi: refer to Bart: locally use an ion blower/fan, which doesn’t need to be connected to dry air - this deionizer is a bit difficult
+ - Bart: We have a very old one, so it turns out for repeated strip tests after deionization, we needed at least ten minutes. The modern ones have feedback mechanisms which can make it much shorter. It varies depending on the model, but there is no real overdose.
+ - Vitaliy: Regarding ion guns, air flow is more concentrated so time is perhaps smaller. Carlton has been using them, so maybe we should check.
+ - Xavi: will do - this is mostly from experience and mostly based on ion blowers, will follow up
+ - Christian: I am unsure if it is a gun or blower
+ - Carles: Prague also uses a gun
+ - Jiri: We have both. If we are doing recovery, we use the blowers for some defined time. For guns, we use them when returning the sensor back to the envelope to reduce accumulated charge, but we don’t use more than a few seconds since that seems to be enough. For recovery, when charge is perhaps deeper in the surface, we use the blower.
+ - Xavi: We should check, but officially, the minimum time is 10 minutes. Results may vary.
+ - Jiri: you guns are also impractical to apply for 10 minutes
+### Group Updates: LBNL and SCIPP
+Presenter: Shubham Gupta
+- Cole: great to see you are close to thermal cycling SQ
+Presenter: Marcus Wong
+- Luise: When you test your thin hybrids, do you also see any high noise channels like LBNL reported?
+ - Marcus: ?
+ - Luise: They just shared the one high channel noise in the previous talk.
+ - Marcus: In the burnin, it is noticeable from what I’ve seen.
+ - Tony: The question is, do we see additional channels vs probing, but we haven’t checked. We will check those next.
+ - Luise: Then please check :).
+- Luise: You said there was an orientation-dependent thin film.
+ - Vitaliy: I can share it, after questions.
+- Shubham: the noise result shown by LBL were seen on two modules, appeared at -50 shunted only, on the other one it was consistent with the burn-in results
+- Vitaliy shows a slide on wetting angles and how the glue halo follows the hybrid surface scratching lines.
+ - Luise: this is only if you abrade the surface?
+ - Vitaliy: We didn’t spot it in un-abraded surfaces - should check again
+ - Luise: yes please
+### Fixing the EndCap Powerboard Pickup Tools (Again Again Again)
+Presenter: Peter Speers
+- Pavol, responding to Pete on slide 8: Yes, our 300 um shims worked.
+- William: I think we are seeing the opposite with the R3 pickup tool regarding the vacuum ports. They are actually too tall, so I don’t think shimming will work
+ - Pete: this is something we see as well - suction cups have a very narrow tolerance for correct engagement - range is about 500 um, so even a slightly higher surface will cause a problem
+ - William: They have the big vacuum [inaudible].
+ - William: how many have you glued after you made these changes?
+ - Pete: used some dummies to set pins on flexes, to make them more flat
+ - William: My concern is that when they are assembled, they deform a bit so the second one is deformed a little different than the first one.
+ - Pete: hence suggestion to check powerboard on tool after pickup to monitor quality
+ - William: You’ll have to shim everyone a little differently, which doesn’t seem sustainable.
+ - Pete: I want to work on understanding with my pickup tools.
+ - William: So you've built one or two after these?
+ - Pete: built one or two after resetting each
+ - William: then in each of those cases, you’ve tailored each pickup tool to the PB.
+ - Pete: correct
+- Pavol: comment about difference between pads and pins - you quoted 270 microns, but we use the new Freiburg thickness
+ - Pete: Yes, originally, the flex was 270 um.
+ - Pavol: what we have in Prague is what was said in Freiburg. It’s 300um. I checked it on the Keyence when I flipped it upside down and I measured the height of the pins. Then you have more freedom and you don’t need the shims. The suction cups were problematic. But there is more freedom. 
+ - Pete: have seen the same height variation, that’s why we set them against real flexes
+ - Pavol: I think it’s safer to have 300um everywhere and sometimes there is no glue on the guard ring, which is what I’m afraid of most.
+ - Pete: so your approach is to raise up the powerboard slightly to be safe
+ - Pavol: I only did a few modules, and it was fine.
+- Carles: Just to make sure, on slide 7, you just tried to predict if the glue would go okay. 
+ - Pete: correct
+ - Carles: Then in slide 8, you just visually inspect how the caps touch the caps and correct one by one?
+ - Pete: Yes, that’s how I did it. In my experience, I’ve only needed to shim two at most on a particular tool. 
+ - Carles: remember from previous discussion that there was a nominal error in one of the previous versions of the pickup tools requiring 100 micron shims in general under the vacuum cups
+ - Pete: don’t remember - have seen this on R1, R2 and R4 now, need to check R5
+ - Carles: Okay, I think it was for the concave PBs.
+ - Pete: Yeah, I haven’t had one of those to glue in a little while.
+ - Carles: are the difficult 
+ - Pete: I believe these are industry populated
+ - Luise: Yes, these are industry populated
+ - Carles: do we don’t assume this will improve in the future
+ - Pete: That’s what I’m worried about. I think if they are very small gaskets 100-300 um, that should fit within these tolerances. So if we do see slightly larger caps, there should be enough play to not cause problems.
+ - Carles: missed it
+ - Luise: At the beginning, we bought a range of suction cup sizes. So I think there was an attempt to pick the best option, they weren’t selected at random.
+ - Carles: I don’t think they were random, but I wanted to see if we can pick a better one
+### The Interlock Strikes Back
+Presenter: Bart Hommels
+- Cole: Do the NTCs need a voltage divider or is this already inside the interlock box?
+ - Bart: It’s already in the box, so you just need to connect the NTCs.
+- Cole: for the ground bounce thing: can this not be fixed by grounding something else?
+ - Bart: potentially, there may be scope if you fit something on the inside. There is a buffer capacitor on the display, but usually a twiddle of the dial resets the system and it works again?
+ - Cole: will give this a try for the end-cap and communicate
+ - Bart: not planning to build any more, there should already be about 20 in circulation
+ - Bart: happy to answer questions over email, there are a lot of technical details to be solved
+### QC Results from New Barrel Hybrid Batch
+Presenter: Sven Wonsak
+- Vitaliy (sl. 2): 20um thickness each? [missed it] 
+ - Sven: the way it works: we buy a base material that has 20 um copper, which is then etched down to 9 um, which is then built up again. In the past, it was building up to 35 again, but now it is building up again to 25 um
+ - Vitaliy: So basically the difference is in how much they plate back up. You said 25 vs 30um?
+ - Sven: each copper layer individually
+ - Vitaliy: There are a total of four layers, is that correct?
+ - Sven: But the internal layers are not affected by this
+ - Ash: targeting 25 um thickness on all outer layers
+ - Vitaliy: So the target is the same before and after?
+ - Ash: They etch back to 9um and plate back up to make sure there is enough.
+ - Vitaliy: Sounds like a description of process difference.
+ - Ash: the older process had the plating of the outer layers up to 35 um, which made the surfaces worse, the new ones are plated up to 25 um
+ - Vitaliy: So it’s consistent with what Sven said.
+- Luise (sl. 17): How does this compare to the previous batches. This looks good?
+ - Sven: We always had good pull tests. The only difference in the past was peel rate.
+- Sandra: Do you see a difference between the X and Y. That’s what we noticed in the batches we received.
+ - Sven: not really on coupons, they’re both between 11 and 12
+ - Sandra: The 10-11 we find is not a big difference. In the peel rate we found a difference.
+ - Sven: Not really, no. All past peeling save for one, which was most likely a cleaning issue.
+ - Sandra: Yes, we found cleaning helped a lot
+ - Sven: Anything in the top half of the plot is a pass, which is all but one.
+ - Sandra: We see a slight difference in X and Y.
+- Vitaliy: I was thinking about the thickness spread you already had. It sounded significant to the glue thickness spec. I’m wondering how to deal with larger variations.
+ - Sven: that’s the specification in the contract with the manufacturer: +/- 10%
+ - Vitaliy: I’m not saying we should change it, I’m wondering how we deal with it. The batches with more than \pm 20um variation should be flagged. Given the interposer thickness, it perhaps isn’t as important.
+ - Sven: recent change in ASIC glue specification helps, because it relaxes the spec and should compensate for thicker flexes:
+ - Vitality: What if they’re thinner? Then we have less contact area
+ - Sven: It’s all stored in the DB.
+ - Vitaliy: but are there reporting scripts?
+ - Sven: No
+ - Vitaliy: You don’t have reporting scripts?
+ - Sven: No.
+- Luise: Vitaliy, reporting is being worked on, it’s ust taking a while. What has been happening is that the thickness is being taken into account from metrology. So this will be calculated in the future which will help account for coverage in the future.
+ - Sven: This has nothing to do with the ASIC glue thickness.
+- Luise: Regarding descoping. Regarding thickness, what I want is a correlation plot to how the coupon thickness compares to the hybrid thickness.
+ - Sven: shows slide 9
+ - Luise: Ah, I didn’t recognize this. This makes sense and I think this is as good as it will get. I’d imagine the variations are similar and descoping makes sense. It’s up for discussion, but my opinion is that this makes sense.
+ - Luise: For pull tests, I would suggest doing this at a reduced rate. Maybe a tenth.
+ - Sven: What do you want to catch with the pull tests?
+ - Luise: Things like solder splash.
+ - Sven: You don’t catch that with pull testing, you get that from VI. The main argument was contamination, but we now know we have to clean the surfaces.
+ - Sven: You don’t really see anything from these pull tests.
+ - Luise; Is everyone cleaning flexes in the barrel?
+ - Sven: We don’t know, but we have been suggesting this for a year.
+ - Luise: So if we don’t know they have been cleaned, it might still be useful.
+ - Bart: Generally, sites are keen to do steps that will prevent problems like this. If a flex site doesn’t clean and has bad bonding, they are likely to start cleaning.
+ - Luise: Is this true for the US?
+ - Vitaliy: We don’t really like to.
+ - Bart: That’s the question.
+ - Tony: The question here is, how does this relate to reception testing for hybrids? How does this change what we are doing here?
+ - Sven: only the flex sites do this QC. LBNL and Liverpool. We descoped that it’s enough to do thickness measurements before SMD population.
+ - Tony: So for pull tests, we’ll do the same thing?
+ - Sven: They only get arrays, not coupons.
+ - Tony: if there is no benefit of doing both, do we clean and not do the pull tests?
+ - Sven: don’t see the reason for doing pull tests on arrays in the first place - you won’t catch any localized effects anyway
+ - Tony: I agree. But lately we’ve been doing the pulls to determine if the cleaning is necessary or not.
+ - Sven: plan is to use this washing machine and do cleaning on all the circuits
+ - Tony: Right. So then it would be good to receive and do pull tests to see things are as they should be, then stop.
+ - Luise: I would say the same. Do this at a reduced rate and if we see it’s still reliable, we drop it.
+ - Sven: Okay 
+AGREEMENT
+- Tony: Are you expecting us to look at every foot to see if it’s landing or do we indicate there is something there and check if there is a problem?
+ - Sven: do you have a script that reads the data in the database that maps all the issues which has been entered
+ - Tony: I don’t think so.
+ - Sven: So what would change for you? You’re not doing this anyways. No one is looking at it. If no one looks at the data, what’s the point of putting it in? It’s time consuming.
+ - Vitaliy: one thought is that once module production hits, more people will be looking for more things. I would hope this process could be optimized.
+ - Sven: If there is a requirement, we will do it. At the moment, it doesn’t look like anyone is using this data.
+ - William: I don’t understand the significant parts here. We are trying to read the DB, not preemptively. We want to see how the bonds landed. There is no one looking at each bond to see if it lands correctly. 
+ - Sven: You need to check the DB to get this information and give it to the wirebonder.
+ - William: We would then query the DB and send it to Celestica, but first we want to see how big of a problem it is. I don’t quite understand the definition of minor relocations.
+ - Luise: I think there is another mode for how to use the information. To use it after the fact to see if it matches with problems afterwards. It’s still valuable to have if you are trying to track down issues later.
+ - William: This would allow us to look at fewer bonds. It’s not during module building, but hybrid building. At least in the EC. 
+ - Luise: I would agree to only enter VI issues if you see issues. But we still want you to do that.
+ - Luise: [Describes a plan]
+ - Vitaliy: Not an objection, but Sven raised a good point about what to do with interposer. Just to second his point, it’s an important thing to figure out if we chose interposers.
+ - Luise: Perfect,
+- [Cole’s browser crashed]
+- Luise: Is this a reasonable timeline?
+ - Sven: I don’t think you need to build a module with it. In terms of functionality, it’s the same. We should still build a hybrid and test it. But as long as the hybrid works, I don’t see a show stopper that could happen on a module.
+ - Luise: So we verify individually and feed into the production chain as they have been tested?
+ - Luise: I think this will delay when we can place the production order. So this could make hybrids a bottleneck in the future. Would you also want to order normal flexes in the future?
+ - Ash: if we base this on the 9 micron material, this would take at least 3 months before we have them in hand, which means we wouldn’t be able to make a decision within the next three months
+ - Craig: The point on slide 28 is that there could be a problem with wirebond support. I don’t think we have seen actual problems with support. It would probably be good to continue the interposers with the current design with this working in the background and only decide to switch if we do see issues.
+ - Ashley: I think this is reasonable, so that we don’t stall production with this.
+ - Bart: if it would be introducing extra delays, yes, but we should have the material in hand
+ - Sven: the problem with the current interposer modules is that they have nearly 100% coverage of the interposer. So we would want to make something without full coverage to see how that affects wirebonding.
+ - Craig: This is likely to come in parallel.
+ - Sven: We need to force that. 
+ - Luise: This would be you assembling hybrids and then they would need to be wirebonded.
+ - Sven: We could do this with interposers on already-assembled hybrids. I
+ - Tony: It depends on what you’re bonding and how. Some bonds between PBs and hybrids like here. We’ve done tests. We did do a pull test on a hybrid that was interposed and it looked good. The thing to pull on bare hybrids.
+ - Sven: seen in the past problems with wirebonding in this particular area
+ - Craig: We’ve also seen this on the 10-15 SE4445 CN modules. As I recalled, we didn’t have bond issues. I don’t think there were pull tests, but I don’t think anyone reported problems.
+ - Tony: I don’t recall issues on those pads ever. The pattern might be different and we might have more bow there, but I don’t think we’ve had problems between hybrids and PB.
+ - Luise: Ash and sven, it would be good to assemble these interposers in a representative way to check for actual problems. Would you want to do this change in any case or would you only want to do this if you see bonding problems.
+ - Sven: The schedule argument is that you don't want to do the change. The change has additional benefits. Ash also modified some other pads to help. It’s a nice to have and not a must have. If we can get away with current design, I don’t have a problem.
+ - Luise: It would be good to verify this is a problem and then test some of these out. The plan then is to continue with the nominal plan so we don’t have bottlenecks and we can feed this in if we have to.
+ - Ash; my preference is to not try the design. We are probably 3 or 4 months away on the proposed design.
+- William: Why are you not equally worried about the 12 data lines on the edge?
+ - Sven: they are also worrisome, but there is no space there, so we can’t play around there
+ - William: The split modules have tons of bonds on the edges, so I might be worried about that. This is one more reason to worry about interposers.
+ - Sven: this change was based on cracking tests to move the glue further in
+- Gerrit: We have to do a full pre-production with a new design.
+ - Luise; this is my concern too. If the UK wanted to hold up any production until we have this verified. The opinion is that we can verify this on a number of modules and if it works, then we feed it into production.
+ - Gerrit: No, this is a major rerouting which can cause a number of issues. We all agreed that whatever goes in production has to be tested in pre-production first. We can define a number of staves/petals, but it’s still pre-production.
+ - Luise: Are you worried about electrical issues?
+ - Gerrit: Yes
+ - Ash: not worried about electrical problems, I am more worried about having two circuit versions floating around and they would be mixed in production, or do we make a clear cut and we may need to throw away a bunch of hybrids
+ - Craig: From the earlier discussion, it seems everyone agrees. We should run with the current design, and this proposal only becomes the default if we actually find we have actual problems. 
+ - Resounding agreement
+ - Luise: Since the UK is interested in this, could we ask you to assemble a few hybrids with the more representative interposer builds and find out if there are problems?
+ - Ash: Yes, this must be done.
+### AOB
+- None

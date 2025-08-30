@@ -1,0 +1,84 @@
+# 27/10/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927525/ 
+### Introduction (Craig & Ingo)
+- ntr
+### Task tracker items
+- R0 tool production
+ - Tools are in workshop, production started, hybrid jigs are done
+ - Re-report in two weeks
+- EC multiple module box transport box Urgent In progress
+ - Link to designs added to agenda, please give feedback!
+ - Should have review? Probably since first design was rejected by community
+ - Any shipping tests done? No, but no different results expected compared to initial design
+ - Video shows boxes that are not wrapped in ESD bags and has shock sensors attached, this is where problems arose in the past
+ - Have to do this test!
+ - Question: no x-y restriction in new design, wouldn’t that pose a risk? Christian was trying to get the modules to move by dropping etc but so far no problem seen
+ - Could add more foam to both sides of the modules, would increase price but could be done if we see problem
+- R4 tool production Urgent In progress
+ - So far no change request from running EDMS of R4 2d drawings
+ - Please reviewers have a look and approve/comment
+- R5 tool production Urgent In progress
+ - Tynan rejected the R5 tool 2d drawings
+ - Requested changes will be implemented by tomorrow and we do another very short review
+- UK/China powerboard tool production Normal In progress
+ - No updates from the running production
+ - Expect about 2 weeks till notice
+- Barrel PPA hybrid order Urgent Late
+ - Gone out for quotation
+ - Not expecting quote until beginning of November
+ - Will update again in two weeks
+- EC PPA/prototype hybrid order Urgent Late
+ - Order went out, not sure if Würth confirmed yet
+ - Don’t know when Kambiz is back, will put it on agenda again for next week
+- Barrel hybrid tendering/order Urgent In progress
+ - Quotes expected beginning of November
+- Powerboard testing setup roll-out Urgent In progress
+ - USCS still trying out setup
+ - One will be send to RAL soon
+ - Freiburg has one
+ - Travelling DAQ load available early next year
+ - Concern that only Freiburg will have one in EC, any spare active boards available? No, need all for test of crate
+ - Next update? In a month
+- EC hybrid test-panel finalisation Urgent Late
+ - See slides later
+- EC module test frame finalisation Urgent Late
+ - See slides later
+- Finalisation of barrel hybrid panel Normal Late
+ - Transferred 6 hybrids to test panel and could read all
+ - RFid works as well
+- Barrel module testframe finalisation Normal Late
+ - No change since last update
+ - Bart about to build a module on one of the new test frames
+ - Frame works, but was unlucky with the module (powerboard blew up)
+ - Bart investigate what went wrong and will report back
+- DB readiness / doc Low Late
+ - finished
+- EC hybrid panel transport box finalisation Normal Late
+ - Please provide feedback on EDMS review
+ - If no more findings then only minor revisions till final
+- EC single module transport box finalisation Normal Late
+ - Please provide feedback on EDMS review
+ - If no more findings then no further revisions till final
+ - Need to see location of screws etc, which should be included in the two assemblies that Marc has uploaded
+ - Let Marc know if that is not sufficient
+- Barrel hybrid panel transport box finalisation Normal In progress
+ - Basically final, will discuss internally in the Uk if it can be marked as done
+### EC testing frames
+- Result of discussion:
+ - Changing blind via to through vias is accepted
+ - Covering the back with a solder mask is not recommended for thermal reasons
+### Documentation status / plans for the EDMS reviews
+- Readiness is better than 50%
+- Keep xxx for EC hybrid thickness throughout review and fill correct number once we know EC hybrid producer
+ - Keep a list of things that are unknown so far
+### Single module testing at LBNL
+- Is there a connection to earth somewhere in the setup? 
+ - Not clear
+- Might need proper ground connection for Nexys to improve results (as shown in testbeam)
+- Craig to try and draw sketch of best practise connection
+- How was glue applied? Stencil, want to switch to robot for production, not yet done 
+- Should ground chuck to frame because it’s known to help with noise
+- Have to add recommendations for best practice to electrical testing QC document
+### AOB
+- 
+-

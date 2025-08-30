@@ -1,0 +1,93 @@
+# 2025-07-08 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1557983/
+### Introduction
+Presenter: Cole Helling
+- Carles: is there a plan to keep track of why they are failing?
+- Cole: people did not want a complicated grading system
+- Carles: I am not sure people were against having different grades. If it’s about the number of grades, I am 
+- Carles: how are sites going to deal with this, are sites collecting the information for why things are getting to grade B
+ - Cole: we don’t have a way to do this now, we do not why these are grade B this isn't a mystery 
+- Karol: What do you want us to do with the test upload? 
+ - Cole: upload it as it is
+ - Karol: that also gives us some information about why something is Grade B
+ - Cole: yes
+ - William: This discussion clarified the value of uploading the failed tests. You can’t continue working on something that failed the XY deviation, but in a larger context, you could continue work on a module with 8 channels (versus 12 channels) being bad, or early breakdown or something. So the third bullet applies for beyond XY deviations. It's good we are clear on what we should do with modules 
+ - Cole: if the module failed, mark it as failed but if you are still working on it, don’t. We need to make judgement calls here. If you’re trying something to resurrect a module, don’t mark it failed just yet. For example, I think it makes total sense if you're in the middle of deionizing, you don't need to make it a failed test, or I'm sorry, a failed module.
+- William: Do we have a plan for grade B paired split modules?
+ - Cole: We do not at this point
+### L4 Updates
+#### Publications
+Presenter: Hannah
+- No questions 
+### QT Update: Timing Studies
+Presenter: Lukas Roscher
+- William: R3 translation is no longer a critical failure 
+ - Lukas: yes
+ - William: okay
+- Ingo: The quick test, ABC scan, is not very slow. It's the proper one, quote-unquote, that's currently a it slow.
+ - Lukas: Point is somewhat 30 seconds per hybrid in the code box
+- Cole: This was envisioned to be a short test. 
+ - Bruce: some of these we don’t need to do for every hybrid. We can put in the digital test. The 2d scan that is a 3d scan is basically checking that for any bc delay we can find an appropriate delay. For physics we want the bc delay and from this we know what delays to set. As long as we know we can change them we don’t need to check there is a valid value for every hybrid.
+ - Ingo: from the practical view for running TC this doesn’t apply?
+ - Bruce: from the practical point, we want to know which changes in TC. We established previously that there are two values that we can try. If it doesn’t work with one value, we try the other. We need to set up a short scan to check both values and set which ones work
+ - Lukas: This is the usual one, the default, and this one does not work in the code box for endcap modules.
+ - Cole: I thought this does work?
+ - Lukas: often times no
+- Vitaly: I just wanted to follow up on what Bruce said. I agree it would be nice to have a quick scan to re-establish a better timing. But what I'm not clear about is, is this work to be done based on Lukash's development, or it's already in there?
+ - Bruce: we need to evaluate step two and three
+ - Vitaly: needs to be confirmed
+ - Ingo: code exists and needs to be tested
+ - Bruce: which one?
+ - Lukas: ABC delay scan, this doesn’t set up the HCC, it is usually the HCC delays
+ - Vitaly: if ABCs are missing, someone can try magic setting or do ABC scan 
+ - Ingo: no, the plan is this runs auto before TC otherwise you waste a lot of time because the timings aren’t right, this is supposed to deal with it automatically (so we do not need special warm and cold settings) 
+ - Bruce: need to go through this
+ - Citlay: this should run automatically and bruce is supposed to check ti works properly
+- Cole: Page10: Curious what would happen if you have, say, something similar to what you see in the bottom middle plot on slide 10 (as an example). Let's say the island wasn't the largest in that middle area, but instead crossed over the boundaries, you know, across 0 and 15. Is it able to find that island as well? 
+ - Lukas: I concluded it is not worth to do this, people can check this again
+ - Cole: not necessary in 99 percent of cases
+- Cole: if there are any modules out there where people are sure the problem is a delay setting we should try this on it.
+### Reporting Pages Update: Selection in URLs
+Presenter: Ewan Hill
+- William: for the production series, is it easy to find interposed vs non interposed 
+ - Ewan: The reporting won't try to do anything. As soon as you can see what the batch name is, at least being able to read that manually is useful. Otherwise, it's just lost to history.
+ - William: The alternative would just be to erase the Toronto batch, and then we just use our internal documentation to understand it afterwards. We can do something more complicated if people like… I won't object, though.
+ - Navid: I think you have to remove it. You have to use the Sven scripts to remove it from the batch, deleting the batch, I don't think it gets rid of it from the actual module. The batch information stays in the module JSON. Sort of permanently, unless it's marked as deleted.
+ - Luise in the chat: yes, please don't delete the batch :)
+ - William: I wasn't suggesting that we delete the batch. I saw Louise's comment. We have 80 hybrids that are interposed, and they're going to be spread across 10 of our batches in Toronto. I don't think we will write a script that then goes back and looks at the batch and tries to decode which Toronto batch it was based on a subset of the ASCII characters there. We would rather just go back to our initial production batches outside the database. We can leave the batches, the Toronto production batches, there as well, if you want, for the majority of hybrids that didn't get interposed.
+ - Ingo: suggests automating this process - a script to putting the previous batch as an appendix, like you propose here, and have the most recent one in front and be done with it.
+ - Luise: That was my comment. The only place that actually needs this is CERN. They are the only ones who are taking Toronto hybrids and are interposing them and should update the batch. Sven’s script already does 80% of this and CERN should follow up and implement this. Everyone else should look at the batch and see if your batch is correct, and if not, point out to the CERN team that they need to update these batches.
+- Sven added that, while the web interface does not show the batch history appendices, the JSON does. 
+Presenter: Archa Rajagopalan
+- Cole: Thank you, Archa. And I would say that the reporting version of this shipping is now the official version, and the one in my production readiness app is just sort of the initial version. If you find bugs in mine, of course, I'll try to make patches, but any feature requests should go to the reporting team, since we're not developing anymore on the shipping side for my app. I should say this is a very useful tool for people, not just to toot my own horn in here, it's just very useful to make sure that you look through your shipments and have either accepted them or whatnot, because shipments, especially in transit, can mean we don't know where parts are, and in order for us to report properly where parts are, what our inventories are, they need to be accepted at locations. So, please check it out. It doesn't take much effort.
+### QT Closeout: Setting up the EndCap Powerboard QC Infrastructure
+Presenter: Roland Koppenhoffer
+- Scheduled for next week. 
+### QT Update: Hybrid Production at IHEP
+Presenter: Qi Cai
+- Rescheduled to next week. 
+### Discussions: Barrel Module Bow Descoping and Early Breakdown Discussions
+Presenter: Navid
+- No disagreement
+Presenter: Cole
+- Karol: do you think it’s also appropriate to discuss the different treatments for treating early breakdown, and have an actual procedure? 
+ - Cole: this is going to be some subset of it. Take the links here for recommendations. We need to decide what are the ways people do about this
+ - Karol: yes, it would be nice to have a decision tree so that people don’t have to have their own recipes
+ - Cole: Folks are encouraged to share their recipes so we can work towards a standard decision tree 
+- William: People are worried about cycling without foam, but that seems to be the biggest cure we’ve found. We have things that work sometimes. The only trend I have seen is touching the sensor while TC. We have lots of data now showing that lots of these things go on petals and are okay because they are not being touched anymore
+ - Cole: Yes this is under investigation, we always do a pre-check to make sure we don’t get any surprises. In this case, it looked like the foam
+ - William: I just think if you tested it three more times, it would fail
+ - Cole: yes, so we’re trying to get a prescription together 
+- Tony: I think, I mean, some of the issue is that breakdown is not a uniform thing, and it means different things to different people. There is a breakdown description agreed, but where it happens - what voltage it happens, and the steepness of the slope, and the shape - all matter. Especially for causes. I don't know if we need to have a rogues gallery or something where we could show different shapes with different causes. I don't know what the foam ones look like but, locally, we know what a scratch looks like versus other things. And they take different things to repair them (if you can at all).
+- Cole appreciates the smooth transition to his last slide 
+- Tony: There was a taskforce. You need a working group with a few people
+- Cole: Christoph, can you look into this? 
+- Christoph: it is hard to properly quantify this and define a grading system for the breakdown. One thing that might work is in the sensor QC we have these steps where we keep the sensor biased at maximum voltage to see if any that had a soft breakdown would be an easy way to classify this
+ - Cole: we could come up with a more programmatic way of deciding whether it’s a pass or a fail. Sets a goal to share something next week. Christoph agrees to contribute.
+- William: the problem is we are touching them in lots of different ways, we have had studies into glue on guardrings. It seems to be the way we are holding them in modules so it is a module problem, and that’s why we don’t have Tony’s library already. 
+- Tony: In addition to those on-module effects, we need to know the voltage for the EB and the ultimate current, in addition to the slope. And if it's recovering cold. So there's a number of these variables that we could gather. I don’t know the properties of the foam ones you’ve recovered. 
+- William: The problem is in the endcap we have so many different modules, six different shapes of foam, 3 different ways to trench out the foam, so… and we've got 5 modules, not 50.
+- Carles: We had an instance in the petal where a module had EB at 360, we dropped to voltage limit to 300 and it started to have breakdown lower. We started to see the breakdown stabilize so in this case it was a matter of how fast we were ramping up. I was wondering if there is a way we can implement a slower ramp up of IV in case we find out it’s a matter of build stress. 
+ - Cole: Peter isn’t here but I know he has a branch of code that allows you to keep it at a voltage. We know that going slower can help. I think this is very doable so we should add this to the list for things to try. 
+### AOB
+- IFIC4 petal summary - Google Slides

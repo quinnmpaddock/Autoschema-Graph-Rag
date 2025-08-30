@@ -1,0 +1,157 @@
+# 2024-03-26 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1362207/
+### Introduction
+Speaker: Luise Poley
+- Kenny (sl. 7): The webApp doesn’t do this at the moment, but will when updated to the new repository.
+ - Luise: Thank you. 
+- Vitaliy: For clarification about the continuous glue lines, you say “please get in touch to help”, what kind of help are you talking about?
+ - Luise: Most US sites use glue robots, but the UK uses stencils. So we can see if things can change here before we decide to make the change.
+ - Vitaliy: You are covering dispensibility rather than building modules?
+ - Luise: Currently, yes. But eventually we may ask to build modules
+ - Vitaliy: If this were to happen then, it would be good to be able to distinguish which modules have this pattern vs another pattern, which I don’t think is in the DB.
+ - Luise: There is a request to enter which stencil you use. So I think if we did make this change, we would update this in the DB to indicate the pattern
+ - Vitaliy: And that’s an assembly feature in the DB?
+ - Luise: I think it’s a glue-test feature.
+ - Vitaliy: Okay, thank you.
+ - Luise: It’s up for discussion.
+### L4 Updates: ITSDAQ/Sensors/Documentation
+Presenter: Cole Helling
+- Ben: are these the versions from the CERNbox on EDMS
+ - Cole: I only have the versions on EDMS, I don’t have the CERNbox link
+- Luise: why this matters:
+ - Luise: Need to find out if it hasn’t been fixed already - if it hasn’t been, need to agree on how to move forward
+ - Luise: Everyone: test your new modules on new frames to check whether lines are still inverted (see introduction slide)
+ - Dennis: need to start testing with MattRegWrite(49,0), otherwise the FPGA will remember the previous setting
+### Cold AMAC Start Observations
+Presenter: Dennis Sperlich
+- Timon: You’re on a stave here right?
+ - Dennis: No, another AMAC is driving the line, but this is an R3.
+ - Timon: So one AMAC is driving the next one?
+ - Dennis: They behave like on a stave. The OF output from one goes to the other
+ - Timon: So two linPols?
+ - Dennis: Yes. And they also the trace where the linPol gets power from. They are as separated in terms of PBs as possible while still being on a single flex.
+- Vitaliy: Just to clarify, the stave and petal program can use this recipe to avoid the communication problem with the AMACs?
+ - Dennis: yes, Peter verified it on his stave; also know that some hybrid panels sometimes refused to work under slow turn-on, think that modified slow turn-on should help there - have HCC in the right state already
+ - Vitaliy: That’s good to know. That’s why I was asking, since last week there were several questions and suggestions to not investigate these while testing the Hysol structures. 
+- Luise: If you go back to slide (conclusion), so we don’t really know what to do?
+ - Dennis: Yes, this is the issue. I can certainly keep the reset in my code, but this is stupid. I’m not sure how, I think we have to exercise OF significantly more on Petals and Staves to see if they cause issues there. But I’m not sure what we could do in terms of a hardware fix to avoid this issue. It could end up being a DCS fix.
+ - Luise: You said we could cut OFin right?
+ - Dennis: It doesn’t work. I removed OFin to the second AMAC but kept OFout to linPol and it still triggers a communication loss.
+ - Luise: So it can be fixed with resetting, but we want to avoid this.
+ - Luise: Do you see this problem with PBs not working?
+ - Dennis: I tried to see if the low impedance on non-working PBs is the problem, but it doesn’t seem to be the case. Given that I don’t see a voltage drop to begin with on the bad PBs, I doubt the others are worse. 
+ - Luise: So for the 3/10 working, we only see this on the module stage?
+ - Dennis: We can see this on the PB tester. I didn’t check it on the module.
+ - Luise: So we could just not use these then
+ - Dennis; Depending on if this is cold or not.
+ - Ben: currently, when powerboards are reception tested, we reset the second AMAC, if it isn’t working, so we wouldn’t catch it, if it occurs, because it is reset in the software
+ - Dennis: But we can definitely look for it. 
+ - Ben: We can look for it
+ - Dennis: The fw as you use it power cycles the AMAC. It wasn’t necessary. I just sent a new set ID and write registers again
+ - Ben: Right then we can modify that.
+ - Dennis: at least for the statistic of one AMAC we have right now - but it’s really strange - it sends the command and then stays in that stage
+- Timon: This OFin issue, where you saw it breaking, do you think this could be related to the large transients you are seeing from the long transmission line?
+ - Dennis: possibly yes
+ - Timon: why are you adding serious resistance and not a full filter?
+ - Dennis: I could try to add a cap as well
+ - Timon: That would really slow it down, since that can’t supply any current.
+ - Dennis: if I add a capacitor behind the resistor, then current out of first AMAC is still the same, so it will only be determined by resistor. Unsure how this will affect incoming and outgoing current
+ - Timon: I don’t see how it could produce so much current to charge up your capacitor that fast. This OF issue, do you think this is related to the issue you see during startup? Or si this a separate byproduct?
+ - Dennis: It’s similar, which is why I’ve tied this together.
+ - Imkon: because there is no OF involved in the startup procedure, but changing startup procedure seems to improve things
+ - Dennis: My idea was, though not clear, both OFin, reset, and [something] are the same node. Low power enable is much smaller signal. This is why I think they are related. It has trouble driving linPol enable as well. 
+- Paul: it may be interesting to pull the HCC reset bond wire and then check again with the old procedure and see what changes
+ - Dennis: ?
+ - Paul: whatever
+ - Timkon: is this syncrhonous or asynchronous reset?
+ - Paul: It’s mostly a synchronous reset. I think there are a few things that are asynchronous, but very few
+ - Timon: But there is human time between releasing LPM and the reset?
+ - Dennis: yes: old startup procedure has about 3 seconds in between
+ - Timon: So everything should have stabilized. It seems that we can solve this by procedure.
+ - Paul: yes. But this line is pulled in the right direction, it was thought about and done correctly
+ - Timon: You could also try to pull the SHHH line to see if it removes the issue.
+ - Dennis: yes, that would be a hardware fix
+ - Timon: the other thing, the OFin to AMAC, what does it actually do and could there be a bad interplay in the other output lines?
+ - Paul: no, because there is a tiny amount of internal logic in AMAC, which forces the disable of the DCDC, which had to be done, because we were still considering to power AMAC from DCDC, so option had to be there
+ - Dennis: Does it reset all of the registers in AMAC?
+ - Paul: It’s And’ed with the DCDC enable 
+ - Dennis: so it’s not a huge capacitive load
+ - Paul: does not touch any of the AMAC reset trees
+ - Dennis: Then it might be two different thing
+- Paul: one thing that might be interesting, do you have access to the CAL line? On the Test frame?
+ - Denniss: yes, on powerboard tester
+ - Paul: What I would love to know is how much of AMAC isn’t working when you lose communication. This needs to be solved anyway, but there might be additional information here. I would like to set up a test where you set up the interlock on something observable. Whatever is convenient, looking at the CAL input to force the CAL to go out of range and see if the interlock fires to see if the clock is working.
+ - Dennis: is it triplicated lock on AMAC?
+ - Timon: couldn’t you just look at the HV oscillator ooutput
+ - Paul: Good point. If you can probe that, it would be even easier. If you see a clock, I would be tempted to do this anyways.
+ - Stefania: if we decouple the problem: do we know the temperature dependence? Because on staves, we only see the problem when going cold
+ - Dennis: on a stave this is very difficult except the suggestion with SHHH. Even though you have CAL inputs, so technically it works, you can [mumble]. But I understand the stave is a priority. We’ll do as much to test this off a stave as much as possible.
+ - Paul: but it’s a good question, Stefania, should look into temperature dependence. Hard to speculate where it comes from
+ - Timon: if it’s some kind of race condition, then this could be very much temperature dependent.
+ - Paul: yes
+- Paul: other suggestion from last week: look at whether communication problem is caused by hitting compliance for endeavour. It’s unlikely though
+ - Dennis: then why would a reset fix it, it doesn’t make sense
+ - Paul: that’s a good point
+ - Timon: because pumping heats up the module [not sure I heard pumping right]
+ - Dennis: maybe, but HCC reset is such a small current increase
+### Burn-in: Hot Fix to Prevent Fire
+Presenter: Ben Bruers
+- Cole: how easy would it be to add a heat sink to this?
+ - Ben: could stick something on it if you wanted to, not sure how well it works and there is not a lot of space, but you could try
+- Dennis: I think you can just use the Genesys USB power.
+ - Ben: yes, that works, too
+- Alex: The one you said that it almost caught fire, how long did you run this for?
+ - Ben: integrated about 4 months continuously, then there were a few power cycles in a few days, which may not have been great for the HV regulator
+ - Alex: So four months, okay.
+ - Ben: We had the previous one for over a year, and it probably had the same issue.
+ - Alex: that’s about 4 months of continuous running?
+ - Ben: Yes, we did not turn it off when we weren’t operating the setup.
+- Alex: if you lower the voltage to the Arduino, that would not affect the fan speeds, right?
+ - Ben: The fans are controlled by the 12V jack and the arduino just sets the speed.
+- Hongfei: Do we need to cut the trace?
+ - Ben: yes, you can also do that and you can cut off the pin from the arduino, which is probably even faster
+ - Hongfei: Okay. For us, we have camera monitoring 24-hours and remote control for the PS, so we can shut it down. After burnin, we usually shut it down for a bit. 
+ - Ben: that’s good, but it can still happen.
+ - Hongfei: Yes. I see, okay.
+### ASIC Gelpack Inventory
+Presenter: Chainika Chauhan
+- Luise: Maybe for all. The context for this is that in the future, we’ll need to account for where these ASICs are (dual use). One big problem is that if you drop/damage an ASIC, you may not be quick to set this to trashed in the DB, leading to confusion. This will run a check and automatically trash them and set the gel-pack to empty to do the book-keeping for you so this isn’t handled at the end of production. We need a way to start tracing whether gelpaks have been emptied.
+- William: So this is very timely. In our case, if we failed to place an ASIC, we put it back in the gelpack and virtually ship them in the DB
+ - Luise: In reality: the gelpack would or would not have ASICs?
+ - William: We put them back in and would send them back.
+ - Luise: That is good. This is say when it gets destroyed and needs to be accounted for so you don’t need to go through each individual one and trash them. 
+ - William: So we do have a class of chips where we placed them and the hybrid is dead. We should have the placement info, but it would be a bit of a guessing game as to which ASIC is which. So we should trash the hybrid with 9 asics that are shorted?
+ - Luise: That would be failed, but yes. It would be trashed if you stepped on it.
+ - William: We will start doing this in the next week or so.
+ - Luise: don’t send random things back just yet. We will come up with a common plan for doing this.
+ - William: We are getting them from Celestica and will hold onto them then.
+ - Luise: Great. You will be our test site.
+### EndCap Production Hybrid Experience
+Presenter: Ewan Chin Hill
+- Luise: I think it would be good to identify these bent flexes before populating them with ASICs. I think you said flexes behave differently on different jigs, so that might be enough to catch this.
+ - William: We have tried to guess which are the worst. So far I haven’t seen any correlation between metrology failures and our guesses. (sl. 11). Some of these are bent, but there is more variation than we expected. We aren’t going to bend half or a third of them. 
+ - Luise: If you look at your video, it would be to try to place them on the jig and see if they suck down.
+ - William: Three looked like the video, but it’s the larger number with the flag raised we need to avoid. Ironically, the R3 that rocked back and forth, it wasn’t flagged when checking it.
+ - Luise: It looks like Celestica’s vacuum is worse. 
+ - William: We use the same tool in Toronto
+ - Luise: But perhaps not the same vacuum.
+ - William: It’s 0.98 roughly in both places. It’s hard to measure the vacuum in the pick-and-place machine because it distributes the vacuum over four things.
+ - Luise: The second point, I think if you bend them, try and check the integrity of the vias. There has been an email sent out for advice to do thi
+- Pavol: see video in chat: short video of PPB R4H0 rocking hybrid https://cunicz-my.sharepoint.com/:v:/g/personal/30920177_cuni_cz/EVAqp2J983JKiAvbzq8tUBwBka9ZDaKWNaZAtHAuP41TNg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=qhrnMs
+ - Originally, it was okay, but then it looked like this - should we mark this somewhere
+ - Luise: I would say that if we just see vacuum problems, we would want to flag this on hybrids. There may be places with different setups, so perhaps a flag in the DB could help us with this.
+Todo for module ACs: set up flag for hybrid assemblies to mark very bent hybrids
+ - Pavol: The position of the hybrid wasn’t perfect (50um out of spec) and you can’t position the hybrid well with the pins. If this is okay, then we should use it?
+ - Luise: If you can vacuum it down and pass metrology, it’s fine. But if it doesn’t, maybe don’t use this for modules.
+ - Ewan: distinction may be difficult between “is it sucked down well or not” - we don’t really have a good threshold for whether something is vacuumed down well or not
+ - Pavol: If I can pick up the hybrid with the tool without problems, then why not use it.
+ - William: This highlights the issue. We only had two failures in PPB. It highlights also that these things might change over time. I don’t know if this changes over time (possibly drying out?). I don’t know how we control this.
+- Geoffrey: it’s one of the things we wanted: vacuum system, specifically vacuum manifold
+ - Suggest to install a pressure gauge directly at the connection of the hybrid being assembled
+ - William: We showed this to the Celestica folks, but they are reluctant to make modifications. Changes can be very expensive.
+ - I think it was less yesterday :D
+ - Geoffrey: they don’t just want to add …. That’s what Note did.
+ - William: expensive machine, don’t want to just modify it
+ - Geoffrey: Okay, cool.
+ - Ewan: one of the proposed actions was better vacuum, but what if you then just improve your hybrid assembly, but encounter the problem at module sites
+ - Luise: It would be good to compare pickup with tool and jig on the same hybrid. With ASICs already on, it might be easier to pick up than the flex.

@@ -1,0 +1,158 @@
+# 26/07/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1154790/
+### Introduction
+- Luise
+- Where do we trace module issues
+ - Not use the sensor flag
+ - We should also track issues for modules, and how we trace issues
+- What to do with HV-tabbed issues
+ - Depending on if a test was done before HV-tabbing. If no test was done, it’s not clear if this is a sensor issue or something that went wrong during HV-tabbing
+ - With sensors as jumpy, we currently should always test them before HV-tabbing
+ - Vitaliy: whole idea for flag is to count on sensor issues
+ - Decision: only use this flag for sensors, not for HV tabbed sensors
+- Dennis: for follow up order we first need to know that all flexes work (assembled hybrids)
+ - Luise: are you waiting on the R4 and R5 hybrids
+ - D: yes
+- Craig: what about data lines?
+ - Sven: were already correct, only needed to fix the hybrid to powerboard bonds
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 26/07/2022: Barrel
+- 02/08/2022: EC
+- 09/08/2022: Barrel
+- 16/08/2022: EC
+- Shipping readiness (incl import procedure)
+ - Carles is on vacation
+- Powerboard testing setup roll-out
+ - No news
+- Single Hybrid Testing Database Implementation
+ - Andy: couldn’t use the script to assemble ASICs to hybrids because wafer numbers were missing
+ - Sven: yes, updated a while ago: don’t need wafer number and ASIC position in the database anymore
+ - Bruce: script should be updated and working again
+- Hybrid Burn In Software
+ - No new updates, document back for review
+- Single Module Test Database Implementation
+ - Same as hybrids
+- Multi Module Test
+ - Ankush: Issues getting cold enough, using cold boxes to do cold noise tests
+ - First version of production scripts to extract environmental data and merge them with ITSDAQ data, working on improving the ITSDAQ interactions
+- Modules for Test Beam
+ - Two modules in the pipeline: 
+ - R2: sensor is being irradiated, to be sent to Vancouver for assembly
+ - SS module: parts in hand, to be built in Cambridge
+ - Cambridge: sensor in hand is not good
+ - Dennis: is the R2 module with irradiated electrical components? Luise: no, have never seen that this matters
+### Institute Contributions
+- Lund
+ - No questions
+Next week: BNL
+### linPOL lifetime/reliability tests
+- Craig: to summarise the new board that is failing at 80mA is potentially close to phase margin simulations from Stefano, so it’s not too surprising that it is failing, but the difference between failing of the old and new board is not clear
+ - Timon: is it clear to you what phase margin means in terms of reliability?
+ - Craig: no, just if you are closer ot phase margin limit you get more failures
+ - Timon: yes, but don’t understand the mechanism - if we had oscillations, yes we could have an overvoltage, but we don’t see oscillations
+ - Temperature would accelerate it, but 65C is not that much for electronics applications
+ - Dennis: if we are still inside the phase margin and it’s not oscillating it should live forever
+ - Timon: at 65C?
+ - Dennis: yes, it’s a normal process
+ - Timon: Stefano seemed worried about internal temperature of the die being much higher, simulations about glue and heat up of die inside packagingAnd it was not feasible to re-design the whole system for better cooling
+ - Dennis: did he say anything about what he expects for thermal resistance?
+ - Timon in chat: “The thermal resistance of a DFN8 is around 50C/W, therefore the back of the DFN can easily be at 90-95C."
+ - Zhicai: didn’t provide a number, said he needs to do some calculations
+ - Dennis: can you run it at lower input voltage to reduce the temperature in the die?
+ - Timon: but if this is a temperature effect, it should just accelerate the process, but they are still dieing too fast. Would be okay after three years, but this is not even a year in
+ - Timon: would expect some map of localisation matching expected temperature pattern, but they aren’t localised whatsoever
+ - Zhicai: two temperature sensors, one in centre and one in corner and there is a 10C difference
+- Craig: looking at the map, even with lower statistics for 60 and 70 mA, looks like we’re close to a cliff (of failure, at 80 mA), would expect to see at least a few failures at 60 and 70 mA
+ - Craig: when we started the study we chose 80mA because that is the max current allowed for the device
+ - We are now at a point where we have enough AMACStar tested, where current draw is more around 35 mA and the peak from TID is about 85-90 mA, but taking into account the scaling factor for slow, cold irradiation, it is quite significant
+ - Should we kick off another campaign with mostly 60 mA?
+ - Dennis: we need to test, with enough headroom, 60 mA is already pushing it
+ - Craig: no good feeling for what good headroom would be?
+ - Paul: does it not go back to the question that pre-irradiation buys us margin? With pre-irradiation, we don’t need to worry about TID peak
+ - Paul: confusion about phase margin with temperature is expressed as a circle, so you can convert that to “what temperature change can have an effect on the margin”
+- Dennis: would we learn something from looking at the die and diagnosing how they failed?
+ - Paul: not sure what one could look at
+ - Dennis: sometimes one can see if the power transistor has blown out (seen on other chips)
+ - Dennis: if we see something we could get an indicator. 
+- Luise: what are other people who use this chip are doing?
+ - Dennis: there are currently no other users (it was designed for us)
+ - Paul: this design was the first stage of the DCDC
+ - Luise: do we have a comparable situation about to know the parameters for required temperature, current and phase margin?
+ - Luise: Dennis, can you get recommendations from Stefano on where to test the chips?
+ - Zhicai: yes, can do this
+ - Luise: with the knowledge from the AMAC, maybe we don’t need to test at 80mA and 60 or 70mA is sufficient
+- Craig: if we had higher statistics at 60 mA and 70 mA over e.g. six months, that would give us more confidence than the current results
+ - Zhicai: if we change the resistors now, we don’t know if it was damaged when loaded at 80mA
+ - Craig: are there parts to load a new board?
+ - Zhicai: have about two empty boards left, can load a total of 256 linPols
+ - Luise: how many are you testing now?
+ - Zhicai: about 50 each
+ - Luise: think this would be worth looking into
+ - Dennis: would show us 1% failures, are we fine with this?
+ - Craig: another discussion to be had: simulations done with up to 10% module failures, could have up to 10% random failures, so having up to 1% of failures on one component 
+ - Luise: do we need more boards?
+ - Dennis: we can have another 200, if all of them are 70mA and we don’t see any issues in ½ year than we have a <1% effect. If we see 1-2 failures, there is a 1% effect, but what do we do then?
+ - Dennis: with more boards, we could quantify if it is a 1% or 2% effect.
+ - Craig: don’t know the timescale (or money) to get new boards. The question is how much confidence do we need. Since they are also not irradiated, we might need more confidence. What other options do we have compared to linPol. Can we do something in the systems design?
+ - Craig: we can’t wait for 6 months to see if there is a 10% failure to think about risk mitigation
+- Dennis: are these the same capacitors as on the powerboard
+ - Zhicai: have to check
+ - Dennis: could be that capacitors lost too much capacitance and we are now at an unstable phase point
+ - Zhicai: can do the measurement
+ - Paul: that’s a good idea
+- Paul: we do have a built-in mitigation which also shows a problem that was never understood: question if, under high current consumption, running AMAC, would also cause problems
+ - Craig: in terms of risk mitigation, we should look into DCDC powered AMAC. We would be much happier with only using the linPol to switch the DCDC on, and then switch it off unloaded
+ - Paul: can probably do better than that - if we believe the linPol is fine at 60 mA, could run linPol until 50 mA and then switch it off if needed
+ - Craig: how much margin do we have for running the AMAC
+ - Paul: don’t know
+- Luise and Sven to send an e-mail about how to proceed
+### [Provisional] EC Hybrid Discussion
+- Luise: was to be the follow up discussion from last production planning meeting about Toronto hybrid assembly
+- Luise: then to discuss new hybrid order, but from comment from Dennis we also need to wait for tests of all hybrid types
+ - Uli: have some panels where the test coupon measurements have failed. We need to look at these individually to see if the panels are really failed, or if we can relax the specifications a bit
+ - Uli: if they are failed, we will have to discuss this with Wuerth
+ - Luise: it would be good to know the yield factor for the next order by the time we have the R4/R5 results and know the circuits are working
+ - Uli: will need Kambiz back from annual leave to discuss this
+ - Uli: yield depends on the decision we have to do about these panels
+ - Luise: can we get an estimate from Toronto for getting R4/R5 test results? We have an assembly slot next week, and then it takes 2-3 weeks to get test results
+ - Dennis: can clarify that we can talk with Wuerth to star building R0-R3
+ - Luise: will you have a yield by mid August to make a decision about the order
+- Ashley: by the sound of it, you are still at the beginning of the QC?
+ - Uli: no, we have done the QC, but have had some issues
+ - Uli: Kambiz has used specifications based on information from Wuerth and the specification document
+ - Ashley: as long as the resistance measurements comply with IPC class 3, then I would not be too concerned about the actual measurement value
+ - Uli: don’t want to overrule Kambiz, need to wait until he’s back
+ - Ashley: one issue is that IPC specifies minimum plating thickness, but not maximum so this has an effect on the resistance measurementAshley: the company can do a cross section to get the actual copper thickness
+ - Uli: Ashley, could you send us the resistance and capacitance distributions?
+ - Ashley: dropped distribution tests, because changes are so small, you might want to do QA: how long does it take to break the vias (if they are good for 5 reflow cycles, they’re probably good forever)
+ - Ashley: can send some plots with data from Liverpool
+ - Uli: we could also start the QA tests to the breaking point
+- Luise: would it be worth sending some circuits to Liverpool?
+ - Systems are not compatible
+ - Uli: will wait for Kambiz to be back before making any decision
+- Luise: when Carles is back we also need to look into the next hybrid order (and when the circuits would be delivered)
+- Uli: lots of unknown factors, more certainty will mean later assembly dates
+- William: will have to go with the more reliable, later date
+- Uli: makes sense
+To do for Freiburg: look into reflow cycles for reliability tests to complete hybrid QC
+### Hybrid stencil evaluation
+- Luise: how easy would it be to translate this to other stencil types?
+ - Peter: not hard, just need to look at where the additional holes should be.
+ - Luise: since R4 modules will not be bonded for a while, maybe should try with one of the unsplit modules (e.g. R2)
+ - Peter: which one is better, do we want to play safe with 1.75mm distance, or use the 1.25mm distance? 
+ - Luise: I would prefer the safer option
+ - Peter: changing the bond pattern might help as well.
+- Vitaliy: for the distance to bias ring, would the position of hybrid placement matter?
+ - Peter: yes, it would matter, so the safer option would account for it
+ - Vitaliy: 1.75 is distance of centre of dot to edge of hybrid, but what is the distance to the bias ring?
+ - Peter: don’t know right now. We also don’t have a measurement of the dot size after compression, but would like to look at that
+ - Peter: (slide 4) moving dots inward would be an advantage
+- William: I don’t think we added these dots to the PPA modules, but Celestica didn’t have an issue with bonding
+ - Peter: depends on the module type - R4 and R1 were fine, R2 caused a lot of problems, so may be dependent on the module type (R2 was by far the worst)
+ - William: need to check with Celestica about experience for R0 and R3 experience (dots were added for R0, but not for R3)
+ - Peter: exchange pictures if possible
+ - Laurelle: have a picture of the R0 dots before they were glued
+### AMAC IV definition (postponed to next week)
+### Barrel Module Bond Map Review (postponed to next week)

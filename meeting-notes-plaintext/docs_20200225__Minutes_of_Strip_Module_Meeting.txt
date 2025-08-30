@@ -1,0 +1,80 @@
+# 25/02/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/874223/
+## Actions carried over
+NONE
+## Watching brief
+Item | Responsible | Next update expected
+HV tab bonding | Jens | 27/02/2020
+Hybrid crate roll-out | Ash | 02/03/2020
+Module thermal cycling roll-out | Dave/Ankush/Sergio | 02/03/2020
+Powerboard mass tester roll-out | Timon/Karol | 02/03/2020
+Barrel hybrid tendering | Bart/Ash | 17/02/2020
+Barrel powerboard tendering | Carl/Timon | 28/02/2020
+EC hybrid/powerboard tendering | Uli/Kambiz/Dennis | 17/02/2020
+EC tooling design/roll-out | Marc | 02/03/2020
+Barrel tooling design finalisation/roll-out | Sven | 29/02/2020
+- People listed as responsible will be contacted periodically by Craig & Ingo for updates (certainly on the date listed, if not before!)
+- Updates could be verbal, email or slides in a meeting
+## 
+## Minutes
+### Introduction (Craig & Ingo)
+- Upgrade week schedule will come out shortly (being finalised over next day or so)
+- HV tab update (watching brief):
+ - Forest and DESY have found good bond strengths for HV tab on core
+ - Contingent on proper cleaning before attempting (see Forest’s slides)
+- Local support (core and loading) FDR happening Wednesday/Thursday this week
+- Increased noise on stave seen at cold temperature at BNL is under investigation
+ - Some redesign of module/hybrid/powerboard not precluded but investigation needs to continue
+### EC transport box (Dennis)
+- Module has been run with this foam on top
+- Could do with N2 outlet areas?
+ - Need to test how porous it is the first place
+- How is the foam cleaned after cutting?
+ - Doesn’t leave marks if kept clean by not touching
+ - Bare foam not dirty or contaminating
+ - If people touch it how to wash
+ - Not ultrasonic cleaning
+ - DI water cleaning should be okay (a la suction cups)
+- Will Freiburg be able to provide foam etc. for everyone?
+ - Full structure takes 4 mins but time can be saved when doing multiple ones
+ - 1 FTE month of work estimated - not unreasonable
+ - For pre-production, definitely, production, maybe
+### Funny/interesting presentation (Sven)
+- Could use this to rework hybrids by gluing chips on top rather than replacing bad chips
+ - Note that hybrid has to be glued on a sensor before you do this so that the tools work in the hybrid-sensor gluing step
+- Good to know that in principle we can do this!
+ - But not recommended!!
+### QC groups: electrical test (Ruchi)
+- Vitaliy currently writing document defining steps etc. to do IV scans
+- 10V/10s for ramp is needed for current measurements, for “just” ramping faster can be done
+ - 10V/1s suggested and no complaints
+- AMAC testing
+ - Primarily calibration of the AM slope/offsets etc. tests most of the functionality
+ - What about interlocking? Not sure…
+- Confirmation testing
+ - From FDR should do confirmation test at high end of thermal cycle
+ - This is what is done at reception testing
+ - Use trim from database (reception testing) or previously derived one (thermal cycling)
+ - Also need to add a characterisation at end of thermal cycle at 20C for comparison to reception testing (could be done at same time as HV stability)
+- What about double trigger noise or digital tests?
+ - Could well be added
+ - Would need to discuss with chip/DAQ people to understand what is useful on that side
+- How to define bad channels etc.?
+ - Nathan has write up
+ - Possible proposal to include a low bias run to enhance difference between bonded and unbonded channels for characterisation
+ - Need to harmonise over all the places this is written down
+ - <1% is written in the module specs
+- Reception testing
+ - How to know the module that you are testing and relate to module tests
+ - Idea was that DAQ can readout FuseIDs to get configuration/trims etc. from the database
+- Hybrid electrical testing
+ - Ben/Ash hoping to have something to present soon
+ - Should be brought to module meeting for discussion ASAP
+### HV tab bonding (Forest)
+- DESY have seen similar improvement in bonding when cores are properly cleaned
+### AoB
+- Reminder to fill out QC surveys from Karola
+## 
+## Actions
+1. All sites to fill in Karola’s QC survey at:
+https://forms.gle/V2pL8h2GjvhgtMLbA

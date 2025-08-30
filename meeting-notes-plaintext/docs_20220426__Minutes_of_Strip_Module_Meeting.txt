@@ -1,0 +1,118 @@
+# 26/04/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1109678/
+### Introduction
+- William: received some sensors 6 months ago and haven’t opened them. Do they need to do an IV curve?
+ - Luise: should open boxes and move boxes into dry storage
+ - William: are in dry storage
+ - Luise: suspicion is that the issue is because of humidity exposure during transport. If they are stored dry afterwards, that should “heal” the issue
+ - William: we are currently not ready to do the HV-tabbing, and to reduce the handling steps we didn’t to the reception so far
+ - Luise: would be good to do the reception now, since you are fully qualified for it
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 26/04/2022: Barrel tasks
+- 03/05/2022: EC tasks
+- 10/05/2022 - AUW
+- 17/05/2022 - P2UG Review
+- 24/05/2022: Barrel
+- Shipping readiness (incl import procedure)
+ - Montreal got last export license
+ - Vancouver allowed to ship out PP petals
+- Single Hybrid Testing Database Implementation
+ - No news
+- Hybrid Burn In Software
+ - Found that current issues seem related to dependencies to older ITSDAQ systems, being worked out
+- Single Module Test Database Implementation
+ - No news
+- Multi Module Test
+ - Tony: what do we do with the data?
+ - Store results per cycle as results vs cycle array, then use data to find good criteria
+- PPB Module for April Irradiation
+ - Endcap module was just assembled, tomorrow IV will be done and bonding will be started
+ - Barrel module: hybrids were bonded and tested today, module will be assembled tomorrow
+ - Ash: when do they need to be ready? Luise: have no deadline right now
+ - Sven: do we need a powerboard with pre-irradiated ASICs? Luise: yes, it’s being made at LBL
+### Institute Contributions
+DESY-HH
+- Gerrit: cold box is sitting on same frame that the pump & chiller are sitting
+ - Sergio: not exactly, chiller is lifted by rolling table, not in the same frame
+Next meeting: UofT, Cambridge 
+### Anodised Barrel Module Test Jigs
+- Ashley: important to reference the parts together since this has impact on noise and the anodising makes this a bit more challenging
+- Sergio: EC jigs have holes to connect banana plugs. Are they anodised?
+ - Carles: they shouldn’t
+ - Ashley: the issue is that in our design the lower part did not have a ground connection
+- Luise: easier to check for the end-cap jigs, because there is only one jig and we can just connect that the ground screw is connected to one of the inserts use to connect the cooling tubes
+ - Sergio: but you rely on two threaded connections to show this, which might not be as good
+ - Ashley: For the UK jigs, there is a risk that the thread was not properly covered during anodisation
+- Andy: UK does sensor IV on the jig, would that be a problem for sensor IVs?
+ - Ash: no
+- Andy: do we know if this was an accident by the company?
+ - Sven: probably an accident, they probably didn’t read the instructions or this part was missing from the instructions
+- US to check whether they have the same problem (probably not, because the jigs weren’t anodised)
+### Status of the end-cap cold box setup
+- Luise: Might be tricky to find volunteers. Will send this to module list, unless someone right now wants to volunteer. It would also be good to get a better understanding of the technical issues and maybe compare with barrel cold box
+ - Wendy: what is the timescale for these projects?
+ - Luise: goal is that modules for petals build for PPB Phase 2 have been thermally cycled.
+ - Luise: there are modules available now for setting the system up
+ - Sergio: some of the points can be manually bypassed during PPB testing, but this is not feasible for production
+- Sergio: the decision of the position of the humidity sensors was already made?
+- Sergio: polarity switch could be a larger task if coldbox tests show that the coldbox can not operate at 8 Amps max, probably one of the top priorities
+ - Can be done by any institute that have the cold box in hand right now
+ - Alex offering a polarity switch for any institute that will sign up for 
+- Alexander: For the humidity sensor, did we agree to measure on the inlet or outlet?
+ - Sergio: on the outlet
+ - Wendy: we can take over the BNL watchdog PCB
+- Wendy: for end-cap cold box software: requires changes in ITSDAQ to work?
+ - Aleksander: no, should not be needed, unless something went horribly wrong
+ - Ankush: software is set up deliberately to decouple cold box functions from ITSDAQ functions: cold box side can be run entirely without ITSDAQ
+ - What still needs to be done on the ITSDAQ side: setting up for ITSDAQ to start data taking when it gets a message from the coldbox
+ - Can be solved for one system and should then work for all cold boxes
+- Wendy: would like to make this a qualification task for new York postdoc and everyone is very happy about it
+- Cole: thought that issues B and C have already been solved (NTC position). Need to electrically isolate the NTCs and also increase the gap a bit
+ - Sergio: reason why gap is a bit too narrow because this was designed before the final decision of the sensor was taken
+- Aleksander: would be great to take and distribute pictures for others to see
+ - Cole agrees
+- Mohammed: did anyone test commercial PCBs for this?
+ - Alexander: not that I know off, assume that BNL has already distributed them
+ - Ankush: no, haven’t distributed them, wanted something that has all the I2Cs and all the GPIB setups, so it was just easier to make them themselves
+- Sergio: is there any expectation that someone from Lund is coming back to this development?
+ - Alexander: we are not leaving this work, but currently there is a bit of bad timing
+ - Hannah: plan to have discussion at Upgrade Week about who can take on what
+ - Should have that discussion at Upgrade Week
+To be discussed at Upgrade Week and to be decided there
+### LBNL glue robot setup
+- Luise: do you have repeatability tests about the glue amount?
+ - Thomas: have some data and all results in database are within specification
+ - Luise: what about glue seepage and bondability/bond support?
+ - Thomas: no glue seepage and no issues with wire-bonding
+ - Luise: would be good to see the repeatability results
+- Sergio: any other barrel groups using robots?
+ - Vitaliy: yes, all US groups
+### Study on module production rate
+- Mohammad: issue tracking gui - you showed interest in updating this gui; it is not integrated with database or updated for STAR components. Any update on that? We have a new post doc that would be interested in working on that
+ - Zhan: in database should not upload high-resolution pictures. Just need a text output from the program to upload to database
+ - Mohammad: tool is not for uploading photos, just to upload arrays of numbers that will be uploaded to database. Was there any effort in modifying the script?
+ - Zhan: did no work on modifying this script for new hybrids
+ - Mohammad: would be interested in updating this gui, our new post doc just started and will have a look at it
+- Luise: registration of components takes a long time. Did you look at guis that have been made for this in the mean time?
+ - Zhan: it’s not just registering, but also linking the components and upload different results
+ - Luise: there are scripts for some of the tasks, and some universal scripts exist (or matched for specific institutes)
+- Luise: visual inspection you mentioned in bonding jig, is this only available for barrel?
+ - Andrew: it was set up for R0, but for ABC130
+ - Luise: would maybe also help to do the bonding jig for EC, if this is within the scope of the taks
+ - Andrew: don’t think the task was universal
+ - Zhan: only have experience with barrel modules
+### DESY-HH glue pattern
+- Luise: how well are the bondpads supported and how repeatable is the glue distribution?
+ - Did several tests for hybrid glueing and it looked repeatable; only had one mechanical object for modules so needs more work
+- Gerrit: it is really necessary to do a calibration step before glue dispensing, you should do this
+ - Petar: yes we do this, just wasn’t mentioned in slides
+ - Ingo: also do it during dispensing
+ - Petar: and we use the time mode of the glue dispenser that only allows a set time limit for dispensing
+- Vitaly: how similar is this pattern with other groups? Which dispenser are you using? For the powerboard, it seems you are almost making an air pocket. Would that be a concern?
+ - Petar: will send an email to answer the first 2 questionsWe are still developing the process for the powerboard
+ - Vitaliy: my worry may or may not be real, but thermal cycling objects could cause issues with the air pocket
+- Luise: you might encounter issues with the glue pattern in the region of the bonds from hybrid to powerboard. You might have to adjust the pattern slightly
+### AOB
+- Next week module ACs are in AAR meeting. Module meeting will be chaired by Ingo and Carles. Please raise only urgent issues.

@@ -1,0 +1,506 @@
+Name,Type
+side pocket,Entity
+N2,Entity
+Jens,Entity
+irradiation,Entity
+ITk week presenters,Entity
+Strip Module Meeting Minutes,Entity
+hybrid panel,Entity
+Gerrit,Entity
+Hybrid crate status,Entity
+sensor,Entity
+Dave/Ankush/Sergio,Entity
+humidity indicators,Entity
+Tony A,Entity
+no questions,Entity
+tutorial,Entity
+be run,Entity
+Barrel module frame,Entity
+ITk week,Entity
+Sarah & Kunlin,Entity
+box,Entity
+important,Entity
+Barrel hybrids,Entity
+Bob,Entity
+module thermal cycling setup,Entity
+vacuum sealing,Entity
+transport frame,Entity
+Carl,Entity
+Christian,Entity
+roll-out,Entity
+quantity,Entity
+coils,Entity
+Luise,Entity
+"EC 10,000",Entity
+ATLAS,Entity
+Updates,Entity
+purchasing components,Entity
+Barrel powerboard tendering,Entity
+EDMS,Entity
+Phil,Entity
+google doc,Entity
+Ingo,Entity
+brief,Entity
+Vitaliy,Entity
+sealing,Entity
+we,Entity
+Electrical tests,Entity
+hybrid crate setup,Entity
+preproduction,Entity
+do,Entity
+Barrel hybrid tendering,Entity
+trickier,Entity
+Sarah,Entity
+update,Entity
+production,Entity
+over,Entity
+Timon,Entity
+add,Entity
+temperature range,Entity
+Sergio,Entity
+FMC-DP,Entity
+Hybrid crate roll-out,Entity
+production management,Entity
+Karol,Entity
+uploading test results to the database,Entity
+clearance,Entity
+QC document,Entity
+meeting,Entity
+Kambiz,Entity
+QC steps,Entity
+them,Entity
+Dennis & Marc,Entity
+labelling,Entity
+samples,Entity
+trickiness,Entity
+barrel,Entity
+Strip Module Meeting,Entity
+minutes,Entity
+document,Entity
+validation,Entity
+actions,Entity
+Powerboard mass tester roll-out,Entity
+responsible,Entity
+module transport frame,Entity
+Satish,Entity
+Tony,Entity
+overhead,Entity
+Review office,Entity
+single connector,Entity
+US,Entity
+holes,Entity
+Minutes,Entity
+Module thermal cycling roll-out,Entity
+wire,Entity
+isoprop,Entity
+topics,Entity
+CERN,Entity
+sion Hongbo,Entity
+powerboard mass tester,Entity
+screw guidance,Entity
+Bart,Entity
+shipping box survey,Entity
+EC hybrid/powerboard tendering,Entity
+EC,Entity
+FDR,Entity
+assembly,Entity
+Ulli,Entity
+Prague,Entity
+suction cups,Entity
+Sven,Entity
+DCDC coil order,Entity
+Barrel tooling design finalisation/roll-out,Entity
+injection moulding company,Entity
+documents,Entity
+pre-production,Entity
+Instructions,Entity
+UV LED driver,Entity
+ribbing,Entity
+previous commitment,Entity
+mini display port,Entity
+review office,Entity
+sign-off,Entity
+Dennis,Entity
+BPOL v4,Entity
+Craig & Ingo,Entity
+schedule,Entity
+SCIPP,Entity
+list,Entity
+QC boundaries,Entity
+DI water,Entity
+Hybrid crate,Entity
+test coupon design,Entity
+0.25mm core,Entity
+not,Entity
+output buffers,Entity
+specs,Entity
+Jane,Entity
+Karola,Entity
+Kunlin,Entity
+Timon/Carl/Satish,Entity
+dessicant,Entity
+Didier et al.,Entity
+surface,Entity
+Uli,Entity
+action list,Entity
+Ankush,Entity
+AoB,Entity
+updates,Entity
+email,Entity
+sensor volume,Entity
+google docs,Entity
+Barrel powerboards,Entity
+magnet tests,Entity
+vacuum,Entity
+Ash,Entity
+DCDC coils,Entity
+high voltage connector,Entity
+ATLAS performance specs,Entity
+QC groups,Entity
+Craig,Entity
+Actions,Entity
+HV tab bonding,Entity
+volunteers,Entity
+solder joint,Entity
+Forest,Entity
+UV glue,Entity
+EC tooling design/roll-out,Entity
+03/02/2020,Entity
+Prototype HV tab holder,Entity
+BPOL v5,Entity
+EC Tabs,Entity
+Introduction,Entity
+Site Qualification Survey,Entity
+appear,Entity
+mechanical hybrids,Entity
+Marc,Entity
+powerboard performance,Entity
+ITk week session,Entity
+Dave,Entity
+bag volume,Entity
+Karo,Entity
+Tony W,Entity
+happy,Entity
+Tony and Craig agreed that they would need to run it past Uli for BMBF part.,Event
+The participants discussed the QC groups.,Event
+The people listed as responsible will be contacted periodically for updates.,Event
+Craig & Ingo suggested moving weighing and bonding to a later session.,Event
+The next update expected for HV tab bonding is 03/02/2020.,Event
+There were no questions.,Event
+The minutes of the meeting were recorded on 28/01/20.,Event
+It could be tricky to keep track of all the diodes when placing the sensor/module in the frame.,Event
+It was confirmed that a 0.25mm core is okay.,Event
+Marc was assigned to design and roll out the EC tooling.,Event
+"From ITk week, don’t clean with isoprop, just DI water, seems isoprop makes surface stickier",Event
+Updated versions will be uploaded to EDMS for discussion,Event
+You must contact the people listed as responsible periodically.,Event
+The quantity of samples for testing was discussed.,Event
+A proposal was made to move all EC tabs to 5mm longer.,Event
+AoB - BPOL v4 vs. v5 (we previously committed to v4 for preproduction but could consider v5 if schedule does not change any more,Event
+Uli/Kambiz/Dennis are responsible for EC hybrid/powerboard tendering,Event
+Ash is responsible for Hybrid crate roll-out,Event
+"Timon, Carl, and Satish were assigned to write a QC document for coils.",Event
+People listed as responsible will be contacted periodically for updates.,Event
+Suction cup “hole” dimensions to be updated (mistake by Craig),Event
+The actions carried over from the previous meeting were discussed.,Event
+A study was conducted on the temperature dependence of UV glue.,Event
+Carl/Timon are responsible for Barrel powerboard tendering,Event
+Karola will add a link to the google sheet to the EC planning meeting agenda.,Event
+500 coils in total were planned to be tested.,Event
+It was useful to save time.,Event
+Craig agreed to add the hybrid/module assembly group to the list in 3 months or so.,Event
+Marc is responsible for EC tooling design/roll-out,Event
+The diodes need to be placed carefully in the frame.,Event
+Temperature-dependent calibration has been done.,Event
+Barrel hybrid tendering | Bart/Ash | 03/02/2020,Event
+Craig speaks in support of v4 for reasons of schedule risk and previous commitment,Event
+Sven questioned the test coupon measurements.,Event
+Vitaliy pointed out that it would be bit trickier due to output buffers.,Event
+Review office was contacted about coil ordering by Tony A.,Event
+It was decided not to move all EC tabs to 5mm longer.,Event
+The minutes of the Strip Module Meeting were taken on 11/02/20.,Event
+The ATLAS performance specs were mentioned.,Event
+The next update expected for Powerboard mass tester roll-out is 03/02/2020.,Event
+The EC HV tab jig was discussed.,Event
+The QC boundaries of the coils were questioned from a powerboard performance point of view.,Event
+A comment was made to move weighing and bonding later in the ITk week session.,Event
+Jens is responsible for HV tab bonding,Event
+Labels to be included on the PCB silk screen in case of running without transport frame in place.,Event
+People listed as responsible will be contacted periodically by Craig & Ingo for updates.,Event
+A change proposal was discussed regarding the test coupon.,Event
+The EC is using the same test coupon.,Event
+Carl reported on the DCDC coil order.,Event
+UV LED driver was discussed without any questions.,Event
+Craig and Ingo explained that a watching brief requires regular updates.,Event
+"People listed as responsible will be contacted periodically by Craig & Ingo for updates (certainly on the date listed, if not before!)",Event
+Craig agreed to add this to the list in 3 months or so.,Event
+It was confirmed that via chain will remain.,Event
+The module transport frame for RFID should be okay.,Event
+EC hybrid/powerboard tendering | Uli/Kambiz/Dennis | 03/02/2020,Event
+The clearance was potentially at risk.,Event
+Sion Hongbo will discuss with them to see if we can optimise the ribbing a bit more to improve planarity,Event
+Metal trace variability should not affect shield layer functionality.,Event
+Carl and Timon were assigned to tender the barrel powerboard.,Event
+Prague wants to order more mechanical hybrids.,Event
+The participants decided to appear in the minutes from next week onwards.,Event
+The high voltage connector for the barrel module frame and hybrid panel was discussed.,Event
+Need to investigate the other materials available,Event
+It was determined that glue amounts should be checked by weight.,Event
+Actions carried over 1. Write QC document for coils (Timon/Carl/Satish),Event
+The participants agreed on the tasks and the next steps.,Event
+Jane commented on the stencil reliability.,Event
+Ash reported on the hybrid crate status.,Event
+"Timon, Carl, and Satish were responsible for writing the QC document for coils.",Event
+Site Qualification Survey (Karola) - No questions,Event
+"US agrees with commitment to v4 and would keep baseline as v4 with a few v5 (100) for validation, Dennis doesn’t really care but is happy to stick to v4",Event
+Nothing was reported from the introduction.,Event
+The barrel module frame and hybrid panel finalisation was discussed.,Event
+Tony and Craig agreed that they would need to run it past Didier et al.,Event
+Also N2 flushed sealing rather than vacuum could be an option,Event
+The next update expected for EC tooling design/roll-out is 03/02/2020.,Event
+Craig & Ingo introduced the meeting.,Event
+The ribbing on the barrel transport frame was optimised.,Event
+BPOL v4 vs. v5 (we previously committed to v4 for preproduction but could consider v5 if schedule does not change any more,Event
+Craig and Ingo will email the ITk week presenters and upload the minutes to indico.,Event
+QC groups are supposed to bring the group closer to a state with nice instructions for pre-production.,Event
+"Carl, Satish, and Timon were tasked with writing a document on the QC steps.",Event
+Satish questioned the QC boundaries of the coils.,Event
+1. Send site quali document email (Karola),Event
+It was confirmed that ASIC lands on test coupons identical to hybrids.,Event
+"QC groups should be added to the list, including a hybrid/module assembly group.",Event
+A prototype HV tab holder was discussed.,Event
+There would be knock-on effects in the cold box design.,Event
+The specs were defined more by what is possible with available wire.,Event
+A 0.25mm core was confirmed to be okay.,Event
+It was confirmed that temperature-dependent calibration has been done.,Event
+Bob volunteers for electrical tests,Event
+Satish discussed the DCDC coils.,Event
+The meeting was introduced by Craig & Ingo.,Event
+"16,000 for barrel makes sense to Dennis but looks like overhead is slightly different.",Event
+Writing a QC document for coils was assigned as an action.,Event
+Bob volunteered for electrical tests.,Event
+Jane presented the UV and polaris epoxy temperature dependence.,Event
+Clearance on module transport frame for RFID was questioned.,Event
+The minutes of the Strip Module Meeting were recorded on 28/01/20.,Event
+The next update expected for Module thermal cycling roll-out is 03/02/2020.,Event
+Sven clarified the ASIC lands on test coupons.,Event
+"Uli, Kambiz, and Dennis were responsible for the tendering of the EC hybrid/powerboard.",Event
+Barrel (Timon) was happy to sign-off.,Event
+The mini display port labelling for the barrel module frame and hybrid panel was discussed.,Event
+Satish answered that the QC steps would include magnet tests at Yale and irradiation at BNL.,Event
+Dave asked how he should understand a watching brief.,Event
+"Updates could be verbal, email, or slides in a meeting.",Event
+"Items were left for discussion, including wire bonding.",Event
+He prefers to keep the diodes on all four sides of the frame.,Event
+QC groups are supposed to bring us closer to a state where we have those,Event
+Craig & Ingo gave an introduction for the meeting.,Event
+The group is supposed to comply with documents provided.,Event
+Kambiz copied the design of the test coupon as far as Sven knows.,Event
+Dennis will make Kambiz aware of the change proposal.,Event
+Sven was responsible for finalizing and rolling out the barrel tooling design.,Event
+The study was conducted.,Event
+The roll-out of the hybrid crate was expected to begin on 03/02/2020.,Event
+The pros of keeping the single connector were discussed.,Event
+Clearance was questioned on the module transport frame for RFID.,Event
+Craig introduced the topic of minutes.,Event
+FMC-DP Status (Craig) - Send email to Craig if you need a “multi module to nexys” card (aka FMC-DP) by ITk week or afterwards,Event
+"Assembly of box with threaded back-plane trickier without screw guidance, risk of sensor moving around whilst you are assembling",Event
+There is risk to coupling preproduction to v5 schedule and we have already committed (deliberately) to v4,Event
+The tender process is not yet complete.,Event
+A question was raised on how to check glue amounts.,Event
+Craig forgot that when assembling the box the transport frame is already screwed in place!!,Event
+Sarah & Kunlin discussed mechanical endcap hybrids.,Event
+"Updates could be verbal, email or slides in a meeting",Event
+Gerrit discussed the barrel transport frame.,Event
+The people listed as responsible will be contacted periodically.,Event
+"QC steps for coil order were discussed, with Satish answering.",Event
+Barrel tooling design finalisation/roll-out | Sven | 03/02/2020,Event
+Actions were carried over.,Event
+It was confirmed that a stencil might be more reliable.,Event
+The minutes of the Strip Module Meeting were recorded on 21/01/20.,Event
+"DCDC coil order was discussed, with Barrel being happy to sign-off.",Event
+The clearance on module transport frame for RFID was questioned.,Event
+Timon/Karol are responsible for Powerboard mass tester roll-out,Event
+This could be done along with the passive components.,Event
+Test coupon measurements were taken.,Event
+The next update expected for Barrel powerboard tendering is 03/02/2020.,Event
+"Dave, Ankush, and Sergio were responsible for the roll-out of the module thermal cycling.",Event
+Craig assigned tasks to the participants.,Event
+It was confirmed that metal trace variability should not affect shield layer functionality.,Event
+Sven discussed the barrel module frame and hybrid panel finalisation.,Event
+Craig and Ingo introduced the meeting.,Event
+Dennis & Marc discussed the EC HV tab jig.,Event
+Dave/Ankush/Sergio are responsible for Module thermal cycling roll-out,Event
+The risk of yield numbers changing slightly was discussed.,Event
+QC document for coils was assigned to Timon/Carl/Satish to write.,Event
+The responsible personnel were contacted periodically by Craig & Ingo for updates.,Event
+Prague wanted to order more mechanical hybrids.,Event
+Groups need to comply with documents provided!,Event
+Craig & Ingo: Anything else than in list on page 2?,Event
+Module thermal cycling roll-out | Dave/Ankush/Sergio | 03/02/2020,Event
+EC tooling design/roll-out | Marc | 03/02/2020,Event
+The status of powerboard test crate was discussed.,Event
+A question was raised on whether the survey referred to all shipping options.,Event
+The meeting minutes were recorded on 14/01/20.,Event
+Actions were carried over at the meeting.,Event
+Sven is responsible for Barrel tooling design finalisation/roll-out,Event
+They also needed to run it past Didier et al.,Event
+"Updates could be verbal, email or slides in a meeting.",Event
+Dennis suggested moving all EC Tabs to 5mm longer.,Event
+Tony A was tasked with contacting the review office about coil ordering.,Event
+Ribbing was added to the barrel transport frame.,Event
+Craig and Ingo would be in touch with the responsible individuals periodically for updates.,Event
+Craig & Ingo were responsible for emailing ITk week presenters and uploading to indico.,Event
+sion Hongbo will discuss with them to see if we can optimise the ribbing a bit more to improve planarity,Event
+Phil pointed out that the action list is probably the most important part of all of this.,Event
+Tests for the UV and polaris epoxy temperature dependence were done without hardener.,Event
+It is an understood risk to buy everything now.,Event
+Luise provided a tutorial on uploading test results to the database.,Event
+Bart and Ash were responsible for the tendering of the barrel hybrid.,Event
+The cons of keeping the single connector were discussed.,Event
+Craig and Ingo will contact the people listed as responsible periodically for updates.,Event
+Dennis confirmed the core thickness.,Event
+Gerrit likes the security of all 4 sides.,Event
+The high voltage connector could be changed to be on a separate connector.,Event
+Craig suggested doing the same on FMC-DP.,Event
+Craig and Ash will iterate to make sure everything fits together.,Event
+"The quantity of coils was evaluated by EC 10,000.",Event
+The quantity of DCDC coils was evaluated.,Event
+Ulli was also happy.,Event
+It could improve safety and compatibility.,Event
+Craig reported on the UV LED driver.,Event
+"They discussed the powerboard mass tester, module thermal cycling setup, and hybrid crate setup.",Event
+A stencil might be more reliable for the UV and polaris epoxy study.,Event
+Forest added a talk about wire bonding.,Event
+The injection moulding company optimised the ribbing.,Event
+The powerboard performance was discussed.,Event
+The actions carried over were to be written down in the minutes.,Event
+Dennis agreed that Timon was happy.,Event
+Bart/Ash are responsible for Barrel hybrid tendering,Event
+Removing the diodes along one side or the other could be an option.,Event
+People listed as responsible will be contacted periodically by Craig & Ingo for updates,Event
+The risk of yield numbers changing slightly is why typically PRR is the point that large numbers get bought.,Event
+The minutes will appear in this space from next week onwards.,Event
+Sticking suction cups,Event
+Kambiz was informed about the change proposal.,Event
+Suggestion for minutes to use Google Docs was made by Bart.,Event
+Vitaliy commented that a prototype HV tab holder was useful.,Event
+The introduction by Craig & Ingo was completed.,Event
+Suggestion for minutes - (Bart) suggestion to use google docs for minutes and allow others to help with minuting.,Event
+Generally seems to make the assembly nicer,Event
+Hybrid crate roll-out | Ash | 03/02/2020,Event
+They discussed the possible solutions such as back termination.,Event
+10 samples from each 1/50 of production were tested.,Event
+A UV and polaris epoxy temperature dependence study was conducted.,Event
+Will include discussion of specified suction cups,Event
+The next update expected for Barrel hybrid tendering is 03/02/2020.,Event
+SCIPP looking at side pocket solution,Event
+Barrel powerboard tendering | Carl/Timon | 03/02/2020,Event
+Craig asked about the QC steps.,Event
+Karola asked about the shipping box survey.,Event
+Mechanical endcap hybrids were discussed.,Event
+Craig and Ingo mentioned that what was not in the list on page 2 was not discussed.,Event
+Watching brief Item | Responsible | Next update expected HV tab bonding | Jens | 03/02/2020,Event
+A shipping box survey was conducted.,Event
+The QC boundaries for the DCDC coils were discussed.,Event
+Bart suggested using Google Docs for minutes and allowing others to help with minuting.,Event
+"How do you use the humidity indicators and dessicant with this box, looks like bag volume and sensor volume connection can be blocked by vacuum sealing",Event
+Bart showed the prototype HV tab holder.,Event
+Dennis confirmed the metal trace variability.,Event
+Ordering of mechanical hybrids is not yet closed.,Event
+Actions NONE,Event
+"Actions were carried over from the meeting, including writing a QC document for coils.",Event
+Tony suggested adding a hybrid/module assembly group to the list.,Event
+Smaller suction cups and correct sized holes do help,Event
+Craig & Ingo will contact the people periodically.,Event
+The specs defined for the coils were not led by ATLAS performance specs.,Event
+They were listed as responsible in the meeting.,Event
+Jens was responsible for monitoring the HV tab bonding.,Event
+Karola sent an email with the site quali document.,Event
+Forest added an additional talk about wire bonding.,Event
+The next update expected for EC hybrid/powerboard tendering is 03/02/2020.,Event
+Email was sent around for volunteers for QC groups.,Event
+We will push back on review to stick with v4 for preproduction,Event
+The next update expected for Hybrid crate roll-out is 03/02/2020.,Event
+Dave: how do I understand a watching brief?,Event
+Labels for the mini display port were provided on the transport frames.,Event
+Christian gave a status update on the powerboard test crate.,Event
+The action items for the meeting were listed.,Event
+The next update expected for Barrel tooling design finalisation/roll-out is 03/02/2020.,Event
+"Hybrid crate status was discussed, with Craig suggesting doing the same on FMC-DP.",Event
+The prototype HV tab holder was discussed.,Event
+Vitaliy commented on the usefulness of the HV tab holder.,Event
+Powerboard mass tester roll-out | Timon/Karol | 03/02/2020,Event
+Timon and Karol were assigned to roll out the powerboard mass tester.,Event
+The risk of yield numbers changing slightly was considered.,Event
+Via chain will remain.,Event
+expected,Relation
+inform,Relation
+finalised,Relation
+planned,Relation
+speak,Relation
+copy,Relation
+update,Relation
+watched,Relation
+test,Relation
+led,Relation
+need,Relation
+carried,Relation
+consider,Relation
+contact,Relation
+contacted,Relation
+write,Relation
+add,Relation
+defined,Relation
+forgot,Relation
+held,Relation
+should,Relation
+email,Relation
+discuss,Relation
+acceptable,Relation
+volunteer,Relation
+given,Relation
+because,Relation
+stick,Relation
+is participated by,Relation
+recorded,Relation
+be,Relation
+as a result,Relation
+comment,Relation
+before,Relation
+comply,Relation
+was,Relation
+present,Relation
+bring,Relation
+send,Relation
+okay,Relation
+written,Relation
+give,Relation
+agree,Relation
+order,Relation
+use,Relation
+help,Relation
+optimised,Relation
+include,Relation
+labelled,Relation
+commit,Relation
+check,Relation
+question,Relation
+is,Relation
+start,Relation
+makes,Relation
+validate,Relation
+evaluated,Relation
+cause,Relation
+added,Relation
+after,Relation
+tested,Relation
+by,Relation
+care,Relation
+focus,Relation
+has,Relation
+will,Relation
+carry,Relation
+kept,Relation
+different,Relation
+at the same time,Relation

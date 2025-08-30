@@ -1,0 +1,157 @@
+# 02/08/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1154791/
+### Introduction
+- Tony: get some things organized and send around for cold noise tests (google sheets, google drive, TWiki)
+- Tony: have some bPolV6 modules and will test soon. How do we keep track of changes, since all our current data is with v4? And if we see variations with our current v4 tests, do we need to build v6 modules?
+ - Luise: we need some reference modules with v6.
+ - Tony: not sure if we only have 5 v6 modules, we might not have enough statistics to see the effects of improvements
+ - Luise: yes, but Ashley made a good point that we need the v6 modules
+- Tony: the v6 don’t have fuse ids. Can we still use them on the stave?
+ - Timon: would have to pull id bonds
+ - Tony: what about the cold box?
+ - Dennis: should work with the same id, since FMC-DP works differently than a stave (channels are separated)
+- Tony: if the v6 tests we do right now completely remove the cold noise, …
+- William (slide 1/2): we have seen the same issue. Will there be a PPB test?
+ - Luise: this was more a place holder. We don’t need to change the test at the moment for PPB. Not necessarily, but maybe at some point…
+ - William: and we will always use PPA test
+ - Luise: we might then just have to make new tests in the database
+- Cold Noise tasks (slide 10):
+ - - probably also need to sort out priorities of list
+ - 1: Brookhaven will do some tests (first in list)
+ - 2: SCIPP will do some as well (shifting powerboard)
+ - SCIPP: shield test
+ - SCIPP: changing of inductor: can do it, but need the value of the new inductor
+ - 3: Shunt testing: procedure needs to be shared by Brookhaven, then everyone should do this test (it’s easy enough)
+ - 4: need to add on people to do this
+ - 5: want people to cycle tests (everyone); need as many sites as possible to have cold boxes running and do the test (will take some time to do, so probably do it after some other tests)
+ - 7 (elevated temperature): 
+ - 10 (thicker glue layer): Brookhaven - LS
+ - 11 (kapton strip): Brookhaven - LS
+ - 12 (HCC modification): SCIPP
+ - LBNL proposal 1: do on modules with known cold noise? Need to first understand what the test is supposed to show (ESD??)
+ - Tony: can’t test cold noise at high humidity
+ - Vitaly: could drive sensor into breakdown
+ - LBNL proposal 2: 
+ - LBNL proposal 3:
+ - Vitaliy: need to specify which wire-bonds
+ - Luise: needs to be followed up what to test
+ - Ash 1: SCIPP will do this
+ - Ash 2: need to know what to change, then we can do it
+ - Vitaliy (new): add extra shielding layer under hybrid and powerboard to see if that would help
+ - Luise: would need to build a few because of bad statistics of cold noise
+ - Luise: not all tests require to build new modules, some require to do changes on modules with cold noise, others are more data collection/analysis tasks
+- Bart: UK/China cluster can probably build modules for cold noise after the PPB1 modules for the systems test have been done
+- Stefania: also want to do some of the tests on the stave (shunt test)
+ - Stefania: didn’t see cold noise in prototype modules, sol want to test those
+ - Luise: if there are pre-PPB results, would be good to see if EC sees the same with their prototype modules
+ - Tony: the only significant change from prototype to PPB was the powerboard substrate?
+- For EC modules with cold noise, we need the mapping
+- Bart: UK has a fair stack of prototype modules that we can re-test cold
+- 
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 02/08/2022: EC
+- 09/08/2022: Barrel
+- 16/08/2022: EC
+- 23/08/2022: Barrel
+- Endcap module thermal cycling setup
+ - No updates
+- EC hybrid test-panel finalisation
+ - No updates
+- Production of R0 and R1 test frames
+ - 
+- Production of R2 test frames
+ - 
+- Production of R3, R4 and R5 test frames
+ - New versions, to be tested with existing split modules to compare noise performance, need to agree on where they should go
+- Modules for Test Beam
+ - R2 just irradiated, to be sent to Vancouver for assembly, it won’t be a lot of time for assembly, so it should be okay
+ - SS sensor has been irradiated and HV tabbed, it’s still fine, to be assembled now
+ - No pre-irradiation needed
+	
+- R2 and SS
+- R2 sensor just finished irradiation, waiting it to be "cold enough" to be shipped
+- SS sensor tabbed and OK, waiting for X and Y hybrids
+- - where does the SS module to be shipped to?
+- (probably not enough time for pre-irradiation with X-rays)
+- 
+- both modules should be tested before they are shipped to DESY
+- should be shipped directly to DESY (potentially activated material, so need paperwork...) - can be done for SS module- can be slightly more problematic for R2 (need document from Ljubljana)
+- Sensors for R3 and R4 irradiated
+- Glue Studies
+ - Sensor tests mostly completed, to be shipped to Prague for irradiation
+ - Test results to be shown
+### Institute Contributions
+- BNL showed their status at the cold noise meeting
+Next week: SFU
+ - 
+### AMAC IV definition
+- Vitaliy: are the scans automated?
+ - Emiliy: yes
+- Vitaliy: how long does it take to collect 1000 points?
+ - Emily: max 20min for the full IV scan to -550V
+ - Vitaliy: concerned about the sensor staying at the current limit for an extended time
+ - Emily: we have a power supply current limit and the ITSDAQ internal current limit
+ - Vitaliy: you can set up the current limit in the power supply as safety limit. Is this part of the GUI?
+ - Emily: I set the current limit on the power supply manually
+ - Vitaliy: is setting the current limit part of the test or done manually?
+ - Emily: it’s something specific to the power supply
+ - Bart: it depends on what your power supply does, but ITSDAQ does not have the “gentle” ramp-down procedure that the sensor test system uses
+ - Vitaliy: should ensure that there is a ramp-down 
+ - Andy: ITSDAQ just stays at the last voltage before the current limit was reached
+ - Vitaliy: have to put in something that ramps the sensor down when the current limit is reached
+- Vitaliy: is it a single module or a multi-module test?
+ - Emily: only implemented for one module at a time right now
+ - Stefania: thought we were the only institute that does IV in multi-module box. We have a script that can do it and can share it
+ - Luise: that would also be required for cold module tests
+ - Vitaliy: want it for several modules in parallel, it’ll save time
+- Vitaliy: for data format, would prefer to keep the algorithm version. Not clear to me that the default algorithm will work on the data. Would be useful to add also is the number of data points that was acquired (samples for each voltage step). I see the point of the power supply current recording, but not all power supplies are supported by ITSDAQ, so it would need some development
+ - Dennis: but ITSDAQ needs power supply control in the first place for this test to be done
+- Tony: did you temperature correct the IV values?
+ - Emily: no, not for the current tests. Do do this, it would be good to get the AMAC temperature.
+ - Tony: different temperature sensors give you different reliability for the sensor temperature
+ - Andy: should we then compare environmental temperature and AMAC temperature
+ - Tony: sensor IV are done with well known temperature (no heat sources)
+ - Vitaliy: we record the temperature, but don’t do the correction 
+ - Tony: don’t know if you can run the IV without the hybrid running, but that would give the cleanest sensor temperature (no heat source)
+- Luise: RMS stability, you will already have some variation due to the temperature measurement method. Nevertheless, would it still be useful to do the RMS measurement in case there are still some higher fluctuations?
+ - Vitaliy: that sounds like a good idea.
+ - Vitaliy: short stability test at end should be done
+- JJ: do we still need to do the calibration manually?
+ - Emily: can compile all the functions to get ready to run the scan. Ideally this would be included in the GUI, but is not at the moment
+ - JJ: when the power supply reaches the current limit, sometimes it will just stuck and you loose control of the power supply
+ - Emily: have seen this as well
+ - JJ: sometimes was not even able to manually ramp the power supply down
+ - Andy: for 2410 you can set the power supply to manual, but there is also a command line to do it
+ - Bart: but the problem could be that the programme gets stuck
+ - Andy: yes, had to manually change it on the power supply
+ - Dennis: there is also the case where the firmware inside of the powersupply crushes
+ - JJ: how large should the current limits be?#
+ - Emily: I think 70uA is a good power supply limit since you have the majority of the current going through the powerboard resistor
+ - Luise: do you have a limit on the AMAC current?
+ - Emily: we just used the one from the sensor
+ - Luise: for EC we test 2 sensors at the same time, so there needs to be a bit of flexibility to take this into account.
+ - Luise: setting a limit on the AMAC current makes sense, we just need to agree on a value
+ - Tony: that seems quite high for a sensor that was build into a module
+ - Andy: the current script sets it at 20uA higher than the powerboard resistor value
+ - Luise: 20uA for the power supply is sensible because of fluctuations of the powerboard resistor, but if we have better results from the AMAC, could reduce it
+ - Emiliy: need at least 100 measurements per point due to the AMAC current reading fluctuations
+ - Vitaliy: so a few uA as limit would be doable
+ - Andrew: 20uA above powerboard sounds dangerous. Does it not break the sensor?
+ - Vitaliy: don’t have much statistics about breaking the sensors
+ - Sven: but when you see the high current then the module has already a breakdown and is a failed module
+ - Bart: would advise not to use the 20uA offset
+- 
+- Bruce (chat): Quick note on the ALGORITHM_VERSION, the idea is this is not needed because the ITSDAQ version will be put in anyway
+- Andy: would this be a different test?
+ - Emily: yes
+ - Luise: see slide 16, it is a new test in the database
+ - Tony: will this be added to the full test?
+ - Luise: probably not, it would have some issues when running full tests (e.g. you want to do the full test at a lower voltage)
+- Tony: was there an agreement for the current compliance?
+ - Luise: we have an agreed value at 20uA
+ - William: but if some people are concerned about this, we should maybe change this
+ - Luise: 20uA should be the base line but it should be changeable in the GUI
+### Barrel Module Bond Map Review (postponed to next week)
+### AOB

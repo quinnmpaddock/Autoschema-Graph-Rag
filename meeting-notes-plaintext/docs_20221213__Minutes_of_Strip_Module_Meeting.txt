@@ -1,0 +1,119 @@
+# 13/12/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1191868/
+### Introduction
+Slide 4
+- Ankush: Would be good to have central contacts for US boxes and EC boxes
+ - Cole Helling volunteered for EC
+ - Stefania: have a person in mind for that: Abraham Tishelman
+- Tony: can we have a list of things people need to do to qualify?
+ - Ankush: the 3 different cold boxes run differently, need to collect a list
+Slide 6
+- Bart: would be de-ionisation not better (less invasive)?
+ - Luise: will check and report back
+Slide 7
+- William: thought we pre-irradiate to mitigate for the TID bump
+ - Luise: yes, but there is still a small bump
+ - Craig: prepare the detector for a full TID bump as a plan
+ - William: then everything in the experiment should be able to survive the full TID bump, but frame could do less
+ - Craig: just a bit worried about shunt tests
+ - William: have some issues putting down all the bonds for all the tests
+ - Ingo: from past we should not entirely rely to the pre-irradiation, but for tests a reduced number of bonds is fine
+- Andy: how many tools can we submit without knowing the final glue height
+ - Sven: that was already discussed in the past
+ - Andy: and what would have to be changed for a glue height?
+ - Luise; the module assembly jig needs to be re-made
+### Institute Contributions
+TRIUMF
+- Ashley: you have to fine tune each flavour of hybrid for testing?
+ - Luise: not just each flavour, also config files for same hybrid at different setups don’t work
+ - Ashley: that is bizar since barrel hybrids work out of the box
+ - Tony: we did have a first case on Friday where a panel on the single test system didn’t work in the burn-in system (AMAC reading failed)
+ - Luise: AMAC always works, its the HCC/ABCs that fail for us
+ - Ashley: haven’t heard that something like this is necessary for barrel. Concerned about EC hybrids.
+ - Luise: Slide 7 is most concerning
+ - Ashley: which delays are you changing?
+- Tony (glue study): SE4445 bounce also changes with less hardener and it start to fail a low hardener values. True blue looks great
+ - Luise: agrees it looks slightly better
+- Luise shows delay settings
+ - Ashley: could you please email them so I can have a look at this
+ - Luise: yes
+Next week: 
+### Proposal for future pull tests
+Slide 4
+- Bart: never have seen any parameter drift in Forest pull tests. Makes me question the idea of testing the same substrate every month
+ - Luise: this test is not to catch parameter drift, it is more to find if there are issues with you wire-bonding machine
+Slide 6:
+- Forest: rotating hybrids around?
+ - Luise: no, doing different surfaces every month
+ - Forest: it sounds fine
+ - Sven: these are not failed hybrids, they are just a surplus to our PPB needs
+ - Luise: and the plan is to use the ASIC lands, so that they could be used
+- Sam: pull tests on hybrid tabs with bonded ASICs is not good
+ - Sven: plan was to sacrifice hybrids for pull tests since the rate for this is low enough to not affect the quantity of available circuits
+### Module metrology descoping
+Slide 19
+- Andy: might be worth separating PPA and PPB
+- Luise: have already send some comments about secondary effects that should be correlated, e.g. from failed modules
+- Luise: it also might be different for you because you dispense on the sensor?
+ - Tony: we put on sensor, BNL on hybrid backside and LBNL now useless a stencil
+ - Luise: it might be different depending on the method; would like to see the correlation and also need to think about this a bit more
+ - Tony: database and correlation is takes a while
+ - Luise: would also be interesting to see the data where there were vacuum failures
+ - Tony: the vacuum being off the HCC happens everytime. Need to wait for the new tools where this might be fixed. There wasn’t a vacuum failure as such.
+- Andy: in terms of high voltage: need to distinguish between humidity problems and glue problems
+ - Agree with Tony: look at failures and then see where it shows up
+ - E.g. if you try to compare low glue heights with noise: all of the glue heights are low
+- Sven: worried about changing X requirement to +/- 300, there isn’t really a requirement for this, the largest displacement is 150 um shown here, and combined with a +/- 200 um displacement of ASICs allowed on hybrids, you can have a total displacement of 500 um, and we need to look at bondability in these cases
+ - Tony: Can dig it out: there was a rotation on a module, have seen something that bad and it was bondable
+ - Tony: powerboard has the same problem, right? Sven: no, because you don’t have this density of bond wires
+ - Tony: cut on P2? Sven: P2 is problematic, P1 is much better controlled
+ - Flex: keep in mind: there is also flex shrinkage
+ - Tony: if you use 150, 200 or 300, you just remove hybrids
+ - Andy: should we check the failed ones and see if they look okay?
+ - Luise: might be good to look at the tail points by how much the ASICs are misplaced
+ - Tony: if we have misalignment, believe it’s usually the tools not aligned, i.e. an offset, or the hole is not centered perfectly (hole has tolerance), if you use the same holes, have no way of seeing ASIC position on module metrology
+ - Sven: not entirely true: position of hole wrt fiducials is well controlled and under control (measured in flex QC)
+ - Sven: problems can come in if you use different jigs for hybrid assembly and module assembly
+ - Tony: worth having a discussion, did have hybrids with displacement, were bondable
+ - Tony: from data we need to re-think cut strategy and maybe have different cuts for different points.
+- Tony: would you be upset with widening P1 a bit and widening P2 more?
+ - Sven: makes sense to have stricter cut on P1 than P2
+ - Would be interesting to look at end-cap data as well
+- Theo: Slide 30, this should already be in the spec that there is no limit on the low height. It’s in the module metrology document
+ - Tony: didn’t see this, could you please provide this
+ - Luise opened the document: spec is still 80 to 160, but exceptions can be made for lower glue heights, if there is no glue seepage
+ - Theo: if this is automated, how does the user gets informed for this?
+ - Luise: pass with problems, which then requires you to do a visual inspection
+ - William: but in hybrids they are all failed
+ - Andy: if the majority of parts fail, then the targets are too restrictive and need to be changed
+ - Luise: need to wait for the new tools to see if that improves this
+ - Tony: the HCC and the points will still be a problem
+ - Tony: if we do metrology on these points, we need to have look at the points
+- Luise: we can descope during production e.g. for tools since they have changed
+ - Theo: if you make progress towards production, we need to look at failed tests and reduce the number of fails. Pass with problem would be better
+- Luise: have seen breakdowns and need to see if there is a correlation
+ - Tony: if the spec is breakdown, then we need a cut on that
+ - Luise: but then why do we need metrology, if we only look at breakdown
+ - Tony: heights are more important for temperature and electrical performance. And also don’t want to include screw-ups
+ - Luise: all agree that we only want to fail parts that are really failed
+ - Andy: if you see a thin coverage and glue spill, then you see this
+ - Tony: if you have a concern that a thin glue layer might result in a breakdown later in life because of glue on guard ring
+ - Craig: haven’t we had this discussion. We already agree to have this low limit in the metrology document when glue height is lower. So we can use “Pass with problems” for that
+- Ian: can make all of this as complicated as we want, additional/secondary cuts can be included in the evaluation on different points, so as long as this can be handled through code, we’re fine
+ - Theo: older version of software is also an issue since cuts have been updated
+ - Andy: not aware of any hybrid on any module that wasn’t bondable
+ - Luise: Cambridge has observed some bonding issues.
+ - Bart: doesn’t have anything to do with metrology
+ - Andy: assumed it was not an issue with metrology, since it was on ABCs
+ - Bart: it wasn’t a failure related to metrology since neighbouring bonds worked (even with worse angles)
+- Theo: batch flex thicknesses: expected to change in the future
+ - Tony: answer won’t impact the package thickness, only the glue thickness
+ - Theo: do we need to include this in the glue thickness calculation
+ - Tony: should only widen the hybrid glue thickness distribution, need to track actual thicknesses, we may be subtracting the wrong number, but the outcome may be the same
+- Luise: schedule a dedicated meeting
+ - Tony and Andy: sounds good
+ - Tony: can we use hybrid position of +/- 150 um to decide what a tail is
+ - Luise: yes, sounds good
+### Hybrid metrology descoping
+- Postponed to January 10th
+### AOB

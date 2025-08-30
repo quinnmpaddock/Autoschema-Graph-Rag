@@ -1,0 +1,83 @@
+# 29/09/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927521/
+### Introduction (Craig & Ingo)
+- Apologies for the rather harsh tone of some of the exchanges during the module meeting slot of the ITk week. We think that maybe corona, the increased schedule pressure, reviews, ... are slowly getting to us. We have experienced ITk strips as a very collaborative and friendly group of people and are confident that such exchanges will not become the norm - we managed having plenty of critical exchanges with high mutual respect, in a collaborative and friendly manner and intend to keep it that way :)
+### Task tracker items
+We failed to actually update most of the task\s report dates, so this list is somewhat from memory / minutes, apologies. Please bring up reports that are due but were missed here.
+- EC tool review-- prioritise this review if at all possible
+- Pin length is restricted by height of lift legs
+- Order of lift legs has to be put on hold until pin length is decided
+- Can’t be easily changed in tools, so only option is ordering sightly different lift legs
+- Have to be ordered soon, lead time 3-4 weeks (similar to pins)
+- Question about cover for test panels: only listed top covers in order sheet, design has backplane too. Which is right? Design assumes back and top cover, but if we have to save cost one could stack multiple panels and only have one top and one back plane for a stack of hybrid panels
+- Move decision to have both covers or not to production meeting
+- Can tool production start since EDMS review done now?
+ - If there were no changes requested, designs can be considered released
+- What about drawings with tolerances? 
+ - On hold until 3D designs final
+ - Groups are working on them, as soon as they are in a reasonable state they should be uploaded to EDMS and get a review as well
+ - Not trivial amount of work so might take some time
+- R0/1/2/3/4/5 tool production--
+- US hybrid/module tool production--one component is held up: powerboard tool - alignment jig for PB is a little behind and is the only order that has not gone out and will probably be prod in house. Others have gone out and should come back early/mid nov 2020
+- US powerboard tool production--
+- Barrel PPA hybrid order-- see ITk week
+- EC PPA/prototype hybrid order-- see ITk week
+- EC hybrid test-panel finalisation-- see Kambiz email
+- EC module test frame finalisation-- see Kambiz email
+- Finalisation of barrel hybrid panel-- waiting for return of panels, one item long lead time. Arrival middle/end Nov2020
+- Barrel module testframe finalisation-- already received, metrology done, waiting for Ash to sign them off
+- Barrel Powerboard tool production--tools ordered with expected delivery time of 15 working days (19/10/2020); after delivery perform metrology before shipping to institutes.
+### Powerboard reception test setup - distribution/extra orders
+- Question: who takes financial responsibility for endcap order?
+ - Need to wait for barrel sites to finish design first in order to know what cost will occur
+- When will revision of design be done?	
+ - First need to perform a crate test with active boards which should happen at end of the year
+ - PCB design ready before that but would be unproven to work
+ - Current version will not be used in final setups, too many bugs
+- LBNL tries to push design into a “plug and play” direction to make use as easy as possible for all sites
+- Learning curve will be site specific (network issues etc) but should be solvable in short time frames
+- Rough price tag for board after revision? Price depends on size of order, currently paid ~1000$ per board so for first EC order talking about 5-10k roughly
+- Discuss again in a few weeks when design is closer to being final?
+ - Agreed on update in 4 weeks 
+- Do we want EDMS review? 
+ - Would be helpful, but do we have reviewers?
+ - Karol to ask mail to Craig and Ingo so they can create review
+- What about a traveling system?
+ - One traveling system currently planned for BNL, could be send around after they are done
+ - Can we have one barrel and one endcap load traveling around? Or one per continent?
+ - Will be sorted out offline
+ - Also needs power boards to test, barrel sites quite low on those
+ - Doesn’t the system travel with power boards? Dennis can provide 1 or 2 endcap passive boards which could travel with the system so we don’t need to use barrel power boards for this
+- People were surprised that sites needs HV for power board test
+ - Depends on type of testing done with power boards at reception sites
+ - Not yet clear if this would be required or not
+ - Probably dangerous to not test HV prior to loading
+ - Sites that receive power boards would also do module testing so should have HV supplies in hand but might not want to rip apart test setup or carry supply around the lab
+ - Up to sites if they want to buy additional power supply or install splitter at module/sensor testing setup
+ - What are requirements for HV supply? Any kind should work, no high precision or anything needed, HV scan not needed at reception sites (no re-calibration performed)
+ - Communication to power supply? Library from LBNL used, can communicate with a large variety of supplies, can add more if needed
+ - USB or Ethernet should both work, GPIB to USB converters that are proven to work can be recommended if supply only has GPIB
+ - Karol can add list of recommended power supplies to list of recommended hardware (see his ITk week talk)
+ - Have list in hand with recommended power supplies for other setups (thermal cycling etc) but that doesn’t include power board testing yet
+- How long does a reception test take?
+ - Few minutes on average (~5), worst case 20 minutes (for full test so nothing that a reception site usually does)
+ - Bigger power boards (R3-R5 only have 5 per test board, 10 for other types)
+- In module QC there is currently nothing included for power board testing, has to be added! 
+ - Need to confirm that loading hasn’t damaged anything for example
+ - Will bring this up in the next QA/QC meeting
+### Module performance with IFX sensor and follow-up pinhole study
+- Re metal short: were there other sensors from this batch that show the same feature?
+ - We don’t really know, can ask people that have sensors from same batch in hand to check
+ - Won’t use this batch in pre-production anyway
+- Would visual inspection pick up a defect like this? 
+ - QC sites will perform visual inspection, but checking the whole sensor this closely would be too time consuming
+ - High res image will be taken which would allow for closer checks if problem found
+ - Ideally would have trained neural network or similar tool to perform automated image processing
+ - Sensor Strip tests will pick this up and at the latest at module noise we find them
+- Should revisit this in a sensor QC and module QC meeting since we’ve reached 90 minutes
+ - At module level we already discussed this in the past and came to the conclusion that automatic pattern recognition programs (like AI) would be rather unlikely to work due to 
+ - the relatively large amount of variation module to module
+ - multidimensionality (height) and 
+ - small amount of training / tagged data
+### AOB
+- None

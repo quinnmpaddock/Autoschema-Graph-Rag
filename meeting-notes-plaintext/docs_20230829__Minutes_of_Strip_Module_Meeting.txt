@@ -1,0 +1,116 @@
+# 29/08/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289854/
+### Introduction
+Slide 5
+- Gerrit: anyone sending modules to Brookhaven to add a sticker to the box and bag “For irradiation” to distinguish them from modules for stave loading
+Slide 7
+- Vitaliy: logistically it is a complication for sites to use older parts late in production
+- William: what does it mean last items in centre of tracker?
+ - Luise: it’s a barrel comment
+Slide 8
+- Vitaliy: the flag can also be unset, if the sensor recovers later
+Slide 9
+- William: this is a training process? It might go away after a continued test?
+ - Vitaliy: it should go away. From my experience, it does (>90% of time). But in some cases the issue might still be present
+Slide 10
+- Vitaliy: would you have a separate glue sample for DIC?
+ - Luise: mostly operating the module and ensure it is fine. Plan was to put a min-sensor next to the module to track effects. Could also add a glue sample as well
+- Tony: what’s the requirements for the barrel module? Can it have early breakdown?
+ - Luise: should be a perfect module that could be installed in the detector
+ - Tony: could easily send a production module
+ - Luise: let’s wait for the conclusion of the HV-breakdown taskforce
+Slide 11
+- Carles: is this only the pick-up tool or do they also want other tools to check for the matching?
+ - Marc: would expect since I used a master tool set for checking, only the pick-up tool is fine and I will cross-check with other tools we have in Freiburg
+ - Marc: maybe most sensible to just send one at a time so that the other could be used
+- William: is it save to still use the old tools?
+ - Luise: new powerboards interfere with old tools, so old tools can’t be used
+ - Marc: but some groups are still using old powerboards where old tools can be used
+ - Luise: if groups want to use new powerboards, they need to get their tools upgrades ASAP
+### ITSDAQ news
+- No questions/comments
+### Finalising the cold cycling test sequence
+Cole Slides (HV weirdness)
+- William: the currents are the AMAC IVs?
+ - Cole: it’s not an IV, but yes they are AMAC currents
+ - William: this sounds similar to the current jumps we have seen
+ - Cole: but the changes we see are much higher than those
+ - William: if the AMAC jumps into a funny state that could explain current jumps
+ - Cole: this is a genuine increase in the current
+ - Abe: for the high AMAC current, we also see the current increase on the power supply
+ - William: but its still not clear that this current is going through the sensor
+ - Cole: no, needs further investigation
+ - William: and not a current increase
+ - Cole: no
+ - Abe: don’t remember if modules have different noise when this happens
+ - Cole: certainly not see any substantially higher noise
+Luise Slides (IV ramping)
+- Ian: is this IV up/down the actual AMAC IV?
+ - Luise: no, the ramping is faster and does not take IV readings
+ - Ian: from experience, normal IVs take much longer then the times shown there
+ - Cole: this is related to the number of readings for each AMAC and when reading multiple modules this increases the time. Could discuss (offline) to reduce the number of readings from 1000 to 100
+ - Ian: currently need 35min for one AMAC IV
+Slide 4
+- Tony: probably need them
+ - Ingo: 70 minutes are a lot. Remember that the 1000 readings are from an old test done by Craig for optimisation
+ - Luise: even if the tast takes a bit we are still not back to the original time spend
+ - Ingo: need to look on how this can be done
+ - Luise: think the optimisation was done for the previous AMAC version which was less stable. Should re-do it and see if we can reduce the number of readings that are required
+- William: 2C/min to get from -35C to 20C
+ - Luise: nominal rate is 2.5C/min
+ - Ingo: but there are also swings
+ - William: hard to restric the time to those exact values
+ - Cole: it does get better with an update
+- Ingo: speeding up AMAC IV would help
+ - Cole: can do a test
+- Luise: would have 4 complete AMAC IVs in process
+- Vitaliy: thinking about data flow. If someone does it manually after the formal procedure, is it possible to merge the data?
+ - Luise: would you not just upload it as normal AMAC IV after cold cycle?
+ - Vitaliy: don’t know how the cold cycle data is uploaded
+ - Luise: this is why I could prefere to do it later (not clear how the merging works) and just upload it as an additional AMAC IV after the cold cycle
+- Ankush: think we are happy with the proposed changes. Would be good to have this as written request. Would be V0, then add IVs and other optimizations later
+ - Luise: V0 with the 4 IVs or the 2 (slide 4)
+ - Ankush: just 2 IVs???
+ - Luise: would like to have all 4 IVs in V0
+ - Ankush: once this is implemented, might also see other issues that need fixing
+ - Tony: would this V0 also include the stability test?
+ - Ankush: if it is in ITSDAQ, then yes
+ - Tony: not sure what the status is from the merge request
+ - Ankush: we have a cold jig meeting tomorrow where we will discuss it
+ - Tony: we have a couple modules ready for thermal cycling and would like to use the proper procedure
+ - Ankush: will get an update to group after next Tuesdays meeting
+ - Tony: so we can’t run the sequence right now?
+ - Ankush: think so. Need first to check what is ready tomorrow before we can 
+- Tony: also need to check the merging script. Is this in the discussion?
+ - Ankush: there was a QT for a merging script, which exists. We then just need to look into how to push this into the database
+ - Tony: for what I know, the merging script does not work
+ - Tony: also don’t know if the merging script work with multiple runs since we don’t run our box over night
+ - Ankush: we also have three different designs so I am limited in what I can test and other systems have to provide feedback
+ - Luise: Bruce wanted to setup the tests in the database himself. And he did a first that should work and it is very similar to burn-in. The big difference were the environmental data.
+ - Ankush: json files that have the environment data are there, they just need to be pushed to the database
+ - Luise: if database is set up correctly, just need to push the json to the database.
+ - Ankush: is the databas setup to upload the environmental data?
+ - Luise: just need the test to be set up for the environmental data. Will have to check with Bruce
+### Update on HCC delay settings [postponed to next week]
+ 
+### Reporting in the future
+Slide 5
+- Ingo: for dummy components, it’s only if they are in production parts? Not have to do this for all old parts?
+ - Luise: difficult because only introduced batches half way through pre-production. There will have to be some clean-up in the future.
+ - If you already know there are some dummy components, it would be good to delete them
+- Luise: because of cold noise and powerboard issues, we have currently too many weird parts in pre-production to get good yield estimates. Therefore we want to use the first production parts
+- Carles: for example, if a couple of sensors have a chip that would discard them for production but we use them for pre-production. And similar for modules we are not meant to repair parts.
+ - Luise: there are a lot of edge cases and we need to go through them to see how to count them.
+- Vitaliy: if you receive a sensor that is chipped, you set the flag and set it aside not to use it. But if you miss it at reception and find it later, then you flag the module
+ - Carles: if you flag it as failed, you can’t continue with the chain, but at some points we have done this.
+ - Luise: you go through the normal stages and then mark it at the end to fail (when loaded at petal)
+ - Carles: but that won’t help. If the module fails at the HV-tabbing stage and we still use it, we would also fai the hybrids and powerboards
+ - Luise: also just failing modules does not necessarily cover all issues with sensor (e.g. for batches)
+ - Vitaliy: also about counting flexes that would initially not have been used for failed objects (sensors/modules)
+### QT report: end-cap cold box
+- Cole: when it comes to the BNL watchdog board (slide 4) it restarts the raspberry. Will it also restart the coldjig lib in a save state?
+ - Priyanka: this is currently not there in coldjiglib, but needs to be worked on
+### AOB
+- Marcus: updated Arduino burn-in crate we have now no failed tests. This seems to work on our end
+ - Vitaliy: but there is a new feature: spontaneous temperature draws
+ - Marcus: not sure since we don’t see it in the current test

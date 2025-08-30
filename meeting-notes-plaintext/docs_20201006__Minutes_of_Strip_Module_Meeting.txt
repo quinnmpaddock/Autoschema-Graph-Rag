@@ -1,0 +1,79 @@
+# 06/10/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927522/
+### Introduction (Craig & Ingo)
+- Some EDMS reviews are about to start
+- 
+### Task tracker items
+- Please see task tracker web page: 	https://indico.cern.ch/event/927522/contributions/4052501/attachments/2116697/3561815/go
+- test frame finalisation (EC hybrid, EC module, B hybrid, B module)
+ - B module is effectively ready, B hybrid very nearly ready
+ - EC hybrid / module now on EDMS
+ - We will email Kambiz and confirm, report by date to next week, then kick off EDMS review as soon as we have confirmation from Kambiz
+ - Luise: K wanted to get R1 reviewed first taking HV re-routing as focus
+- EC hybrid review
+ - Effectively complete, will mark as approved and task tracker item as complete
+ - Order to go out very soon for PPA
+- EC tool review
+ - complete, will mark as approved and task tracker item as complete
+- EC tool production
+ - Move report date to in 2 weeks
+ - Please look at technical drawings for R4
+- EC PPA hybrid order
+ - Move Report by date in 3 weeks
+- Barrel hybrid tendering
+ - Move Report by date in 3 weeks
+ - Change label to “order”
+ - Ash got more and more Du Pont material warnings, so go for thinflex for coming order and qualify new material
+ - Do not need full irrad quali as material was tested for irrad beforehand
+ - Graphic expressed interest and will come up with quote soon
+- EC hyb/PB tendering
+ - Move Report by date Nov 3rd
+- Multi / Single module transport box finalisation
+ - Report date to in Oct 27th
+ - Frames arrived in the US (BNL) and will be looked at asap, should work with in 3 weeks
+- Cold setups (all)
+ - Move report by date to end Oct / beginning Nov
+- FW/SW
+ - In 4 weeks
+- HV Tab
+ - Next week
+- EC single module transport box
+ - No update, report date to 27/10
+ - For production then
+ - Foam from Freiburg
+ - Plexi from Berlin
+ - Will create new task for production
+- QC Docs
+ - About to move many to EDMS
+ - Few remain with open ends, Craig W on top of things, will get onto it once he is back
+### HV Tab test pulling
+- Simon pulled at right angle and sees >100g pull forces
+- Forest pulled along tab and saw >500g pull forces
+- 90 degrees is more of a peel test
+- Along tab is more of a shear test
+- CraigS: Expected stress is going to be more shear than peel from CTE mismatches during or after cool-down
+ - Carl: module could locally pop off of the SE4445 which could lead also to a peel component
+ - CraigS: yes however due to flatness spec of the module this should be max 100micrometers so it should be small
+ - Adhesive that held the tab locally could break this
+ - We should try to do a calculation of what we expect
+ - Vitaliy did that, and found around 440g, which is a bit close to the 500g. Cold test with a mockup was done (8 HV tabs on half moon with even harsher CTE mismatch and found all tabs survived
+- Much discussion… result: 
+ - might be good to add wriggle to HV tab when installing on core. Method to do so open
+ - Will be good to see results for more realistic setups (bond to sensor backplane on one side and core on other or core-2-core as worst case then thermal cycle
+### Suction cups
+- Agreement that nitrile was not the way to go
+- Some worry in the US about the manufacturing quality of the suction cups
+ - Not seen in the UK supply
+- Worries about AS material left on sensor (either residue or from imperfections in manufacture)
+- Equally well, AS is the “correct” way to go
+ - Need to confirm whether it causes any noise issues
+- Regarding experience with AS suction cups “if it ain’t broke don’t fix it...”?
+- To be revisited next week...
+### EC hybrid panel transport frame
+- Drop cover at back of hybrid transport “box”?
+ - Should be ok, Marc will check with Kambiz
+ - If Kambiz is ok with shipping without back-cover we will drop it
+ - Marc will report back to Karo if this can be dropped from the list of required purchases
+- Marc will also ask Kambiz if frames/panels are final so that we can start EDMS review
+### AOB
+- asd

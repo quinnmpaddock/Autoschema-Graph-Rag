@@ -1,0 +1,41 @@
+# 26/05/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/874236/
+## Minutes
+### Introduction (Craig & Ingo)
+- None
+### To bi-pak or not to bi-pak (the return of the bi-pak?) (Luise)
+- Can we use DSC for site specific QC?
+ - Probably not - preparing samples locally probably has more variation
+- Anybody not want to use bottles?
+ - No complaints
+ - Baseline ordering 3 times during production
+- What about shelf life etc.?
+ - Should be 1 year but may like to evaluate changes with time etc.
+ - Should confirm storage/freezing etc.
+ - Data sheet says open containers should be purged with N2 for storage
+ - Glue should be stored in dry storage solutions!!
+ - Storage with components may need to be avoided
+- Conclusion
+ - we go to bottles, Luise will send instructions
+ - We will evaluate deep freezing polaris
+ - We will check out dry storage gas out / store away from module components
+### EC hybrid/module progress (Dennis)
+- Does the design flaw comment apply to hybrids?
+ - No, some hybrids had to have fixes applied due to routing errors
+ - New batch of hybrids will be made so that those being sent out to EC groups will not need these fixes
+- What is the copper weight difference on powerboards?
+ - R0 asked for 35um on all layers - in end got 28um on outer layers, not sure about inner
+ - Other is 18um or even less (same panel as hybrids)
+- How controlled is the glue thickness?
+ - Not at all - should be measured to compare to noise results
+- Table of capacitance per module to be made for adding results to noise summary plot
+### QC groups: weighing (weighing QC group)
+- Noted that may need to check scale calibrations
+ - Reference weights can be purchased and are not crazy expensive
+- Strong support for weighing lots now to look towards reducing amount of weighing in future
+### QC groups: bond pulling (bond pulling QC group)
+- To 4th June
+### QC groups: electrical test (electrical test QC group)
+- To 4th June
+### AoB
+- None

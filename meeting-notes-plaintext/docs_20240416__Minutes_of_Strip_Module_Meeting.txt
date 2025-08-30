@@ -1,0 +1,132 @@
+# 2024-04-16 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1401779/ 
+### Introduction
+Presenter: Luise Poley
+- Luise: could use some of the modules with inverse bend for these tests, as they won’t go on the stave
+ - Jesse: we’ll discuss it in the UK/C cluster meeting
+- No other questions. 
+### L4 Updates: ITSDAQ/Sensors/Documentation
+- No L4 updates today. 
+### Group Update: Liverpool and Sheffield
+Presenter: Mitch Norfolk for Sheffield, Sven for Liverpool 
+- No questions for Mitch/Sheffield.
+- William: questions about hybrids you assembled and showing hot spots:
+ - William: saw a problem with ASICs meant to be B grade, but were mislabeled X type
+ - Sven: Only have Cat A HCCs. 
+- William: what happened to the ASICs with scratches?
+ - Sven: don’t know what happened
+ - William: our VI might reject this if it finds it
+- Dennis: for pattern cutting: found we could use a pattern cutter, but need to use a sticky mat and fix the tool path to make sure it doesn’t stop all the time, then it worked well - not sure if it works for a whole sheet
+ - Sven: had more success with single hybrids, but noticed that sometimes, lines don’t go all the way through, had to repeat several times
+ - Dennis: yes, easier for single hybrids
+- Luise: glass beads of 150 um diameter sound large - previously discussed 100 um - any chance to change these?
+ - Sven: this is what we got from Birmingham, no smaller beads available, should be fine for proof of principle
+ - Karol: smaller beads have been ordered, should arrive next week
+### Glue Test Plan at LBL for Interposer Materials [moved from last week]
+Presenter: Anne Fortman
+- Vitaliy (slide 3): could you comment on which glue thicknesses you plan to use for these tests?
+ - Anne: thicknesses on modules would be 100 um
+ - Tom: used the same ones here for this test
+- Tony: slide 5: does this mean the two slides move by 5 mm before anything breaks?
+ - Anne: yes
+ - Tony: but does that mean they are separated by 4 mm when they break
+ - Carl: if you do the test after 11 day, it breaks with a smaller displacement, but as you wait for more days, it becomes more elastic and displaces in more of a parallelogram shape
+- Tony: do you have the force curves - how much does it move with applied force?
+ - Carl: have the numbers, need to subtract deformation at pre-bend, read off force every 1 mm; force curve would be somewhat linear, slope represents modulus, data isn’t good enough to draw curves
+- Sven: would it be possible to repeat measurements for aged samples to see if there is a change over time?
+ - Carl: yes, that can be done, already see this effect going from 3 to 5 to 7 days
+ - Luise; question about thermal cycling: planning to do these
+ - Carl: will come up on later slide
+- Vitaliy: what is the failure mode?
+ - Anne: SE4445 usually stays on aluminium and splits off
+- Luise: have you received end-cap material?
+ - Hasn’t been sent yet, need to get them end-cap material
+- Luise: how many samples of each do you have?
+ - Anne: 3-4 of each
+ - Luise: would be good to see how much the samples prepared with the same method vary before comparing different methods
+- Tony: need to discuss Cold Noise modules
+- Tony: need to discuss how long things need to cure before we can use them - overnight was thought to be fine, but may need discussion about how long we need to wait before the interposer can be used
+ - Anne: module assembly will already lead to a delay of several days, which would allow for additional cure
+ - Tony: would be good to add to procedures
+ - Carl: if you are not aware: the only information we have about curing SE4445 is that it should be done at elevated temperatures
+ - Tony: it would be a change of the industrial assembly process and the question whether curing is overnight
+ - Gerrit: what’s the problem with waiting for a week in production
+- Luise: we know that if you elevate the temperature slightly, curing degree improves a lot, so this could be considered for production
+ - Vitaliy: burn-in should take care of it
+ - Question whether it is beneficial to have at a defined point in time
+ - Can of worms that needs to be discussed later on, if it becomes necessary
+- Luise: for irradiation and thermal cycling
+ - Would want thermal cycling done with representative materials to check if it weakens the connection
+ - Tony: irradiation: would want to do something similar with parts and coupons
+ - Carl: should involve Eric and pixel people, who have irradiated SE4445 a lot and will point out it’s not necessary
+ - Luise: if we want this as a production solution, we definitely want irradiations
+ - Carl: then we need to discuss with Sandia and schedule - getting into their schedule can be difficult
+ - Luise: doesn’t have to be Sandia, can also be different facilities
+ - Karol: can offer proton irradiations in Birmingham
+### UK/C cluster speedup plans
+Presenter: Laura Gonella
+- No questions.
+### Discussion: interposers
+Presenters: Luise, Karol Krizka
+- Tony: don’t see how the process works without glass beads - think you need to apply pressure and if you don’t control thickness, it affects coverage
+ - Karol: the idea is that the top plate is heavy and applies pressure. Don’t understand concern about spacer. 
+ - Tony: the glass beads will hold the shape, the stencil won’t - if you don’t use vacuum, you’ll press differently about centre and edges
+ - Karol: don’t want to apply too much pressure. Personally see glass beads working better. But Simon is very experienced so want to try the spacers. 
+- Luise: have you seen glue squeezing out? How easy to ensure 100% coverage? 
+ - Karol: have only made the quick and dirty method - glue squeezeout is pretty bad and it’s not very controlled
+ - With the production method
+- Luise: my question is mainly about gaps in the spacer. Need to avoid gluing to the base plate? Does it go up over the edges of the flexes?
+ - Karol: for us it has been easy to scrape off any excess glue. 
+ - Luise: Dennis has a less dense pattern to help avoid squeeze-out. 
+ - Karol: was planning to use the nominal glue pattern, as this is optimised for that thickness and that shape
+ - Luise: would be good to see results
+- Geoffrey: any fear of glass beads going where not wanted? Very small and not easy to identify. 
+ - Karol: don’t have an answer - hope is they will be included in the glue matrix
+ - Tony: mixing would happen elsewhere and then beads would be included in the glue
+ - Geoffrey: it is a fine powder and can stick to surfaces. 
+ - Gerrit: good point. Used SE 4445 with glass beads at Berkeley inadvertently, early on. 
+ - Luise: they were a problem in the past when on the sensor, need to keep the glue and the glass beads away from the sensor
+ - Tony: need to keep them separate
+Luise’s slides
+- Dennis: not planning to use vacuum
+ - Gerrit: Tom developing a vacuum jig - would love to use this opportunity to make hybrids more flat
+ - Luise: balance between needing a good production method and what else we can correct in the process
+ - Gerrit: maybe balance in between: could use it to fix the HCC edge
+ - Tony: might have to or want to use vacuum to flatten the kapton layer, but even the method pushing down with foam would flatten them
+ - Gerrit: 50 um kapton is very flimsy
+ - Luise: had wanted to keep an eye on this for different assembly methods - maybe we can compare different methods and flatness afterwards
+ - Karol: don’t understand why Dennis prefers vacuum method
+ - Dennis: prefer the second method, but without vacuum
+ - Karol: okay, everyone prefers second option, but pressure based
+ - Dennis: in production, need way more pressure than we currently have. While glue curing, should not have vacuum. 
+- Everyone agrees we don’t want vacuum
+- Sven: want to use the plate we use for panel metrology, which has vacuum - need it to stencil glue - but release it after applying glue
+ - Gerrit: what is problem with vacuum? 
+ - Sven: if we get 64 arrays every two weeks, vacuum chucks are difficult to include during production
+- Gerrit and Sven disagree on this point. 
+- Pencentage of glass beads we want? 
+ - Tom uses 0.2% by weight
+ - Would like to learn about glue behaviour at edges. 
+ - Tony: why do we need 100% coverage
+ - Vitaliy: would want coverage that is larger than the glue layer under the hybrid
+ - Dennis: not even sure if this is strictly necessary
+ - [missed what Vitaliy said]
+ - Gerrit: if there is floppy 50 um kapton, this will already make everything harder to glue - this will make gluing even worse
+ - Tony: would assume 80% or fine and whether it needs to go under all the edges
+ - Gerrit: my worry is that our gluing is already critical - the PCBs are not great, but at least they are all the same
+ - Dennis: completely clear that everything needs to be reasonably reproducible
+ - Dennis: agree with Tony: 80% is much easier than 100%
+ - Luise: can we use the current tests in Birmingham to test what a good target coverage is?
+ - Karol: yes, will do
+ - Dennis: yes, this seems like the way to go
+- Tony: looks like most people are using matching sizes, is that correct?
+ - Karol: yes, that’s we started with because it was easiest
+ - Dennis: also starting with matching size
+ - Dennis and Tony: oversizing makes it hard to realign
+ - Dennis: undersizing might be easier later
+ - Tony: depends on how we want to align
+ - Gerrit: use pins for alignment, can use these
+ - Dennis: could also work with undersizing
+ - Luise: sounds like we target matching size first, with option investigating whether to go smaller - no intention to go oversize
+- Luise: regarding ESD safety: please keep an eye on charge and check for charge-up
+ - Dennis: SE4445 is not conductive either, so it’s not just the kapton we need to check, it’s both

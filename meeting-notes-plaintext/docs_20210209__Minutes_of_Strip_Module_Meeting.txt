@@ -1,0 +1,155 @@
+# 09/02/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/986081/
+### Introduction
+- Thansk for the comments that are coming in for the procedural docs on EDMS! Please keep this up!
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- Barrel hybrid tender
+ - Thinflex is ok! Graphics can support it
+ - Material availability is issue, Graphics wants to pre order. Can be done but leads to more work on the purchaser side
+ - DuPont material still issue. Ash would push advance purchase for whole production lot. Graphic do currently not have any material at hand any more. 
+ - Next update? Adrian has to work official channels first, procuring material first best way most likely but getting it done is difficult. Estimate 2 weeks if Adrian is available
+ - Do we know by then if current prototype with thinflex work? 
+ - What does “work” mean? No time to irradiate for example but not likely that issues would be found in that step (unless they fall apart)
+ - Thinflex is not baseline, Ash doesn’t see advantage in doing this. For pre-production use thinflex, move back to dupont afterwards
+ - Craig: not completely crazy to still irradiate thinflex in case dupont has problems somewhere down the line over the course of production
+ - Couple of weeks of before finalising QC, then SMD attach, then irradiating? Ash: would irradiate small number of test coupons to look for delamination issues, wouldn’t bother irradiate anything with ASICs
+ - Bart hopes we don’t have to change to thinflex halfway through, should try to secure enough dupont material in one go to have enough for full production
+ - Ash: price for full lot way lower than expected
+ - Craig: Lifetime? 
+ - Ash: as long as they remain packaged shouldn’t be an issue. A year plus easily. 
+ - Craig: a year plus doesn’t match with a 3 year production. 
+ - Ash: they’ll most likely purchase as much as they need for lead time, not all the material at once (but we would have a contract to ensure they buy material on time)
+ - Laura: have capacity to irradiate test coupons (but the once we would irradiate are the once that stay on array for SMD population)
+- Burn in update?
+ - Still some issues with bit error rate testing firmware/software interaction
+ - Ship setup to DESY some time next week
+ - Roll out tested unit within a week or so
+ - End of February is general target for roll out
+ - Once crate at DESY, how long will Ben need? 2-3 weeks depending on part availability and lab access, end of March everything should be tested from the cooling perspective
+ - Next update? → 3 weeks
+- Endcap module transport box update
+ - Files were uploaded to EDMS, no comments yet. Please give feedback!
+ - Next step is to ship dummy star modules, but no modules available for the next 2 months or so
+ - Craig to kick of EDMS review
+ - Update beginning of May unless comments are raised on EDMS that require discussion
+- All test frames
+ - Dennis is waiting for customs to clear testframe shipment of first prototype order,, hopes to get them in a week or so, at least 3 weeks until update available
+ - Update second week of March? Yes
+- Production of hybrid panel cover
+ - Have been following up with local vendor, have discussed marking of covers with cut through labels, have send updated files, should receive final sample by next week
+ - Would then present it in module meeting and order production quantity if everything is fine
+ - Update in 2 weeks
+- Endcap tool common items
+ - Canada packages are ready, but haven’t been shipped out yet
+ - For other packages still some parts are missing
+ - When will Canada packages be shipped? Hopefully tomorrow (parts are needed by company who is waiting to continue assembly!!)
+ - When will other parts arrive? Missing a few bushings (about ~100 per type) scheduled to arrive in April, LED boards parts should arrive this week, assemble boards next week
+ - Apart from bushings rest can be shipped out end of next week, so update in 2 weeks reasonable
+- Endcap PPA power board order
+ - Flexes in hand, just need to be assembled
+- Models for new power board and hybrid designs -- can be retired/closed
+ - Wasn’t this retired? Was done for module models for metrology documentation 
+ - Idea was that models would be needed for models of modules but that has been resolved so item can be closed
+- R1 tools
+ - Send some tools for anodization, expect them back soon for metrology 
+ - When will this be done? Next week maybe, not completely certain
+ - Update in 3 weeks
+- R2 tools
+ - Just started EDMS review today, parts that didn’t get comments in the first round were already produced, others will get produced once second review is done
+ - So far just machined parts, anodizing will be done later
+ - Update in 3 weeks
+- Barrel PPA hybrid order
+ - PPA order and tendering is so interlinked, that no additional update makes sense
+ - Should retire both tasks and make a new one with a proper new name
+ - Craig and Sven will discuss offline
+- Thermal cycle setup
+ - Update given during ITk week for all three setups
+ - Next update ~23rd of February for EC, first week of March for UK/China, US update in 3 weeks (will take 1-2 months to be completely operational)
+ - All modules that end up on stave will be thermally cycled no matter if all sites are up or not, in doubt BNL will cycle them since they are up and running
+- Bonding and testing jigs?
+ - Just waiting for final design of test jig, once Sergio updates the files they will be approved straight away and the Czech guys can order them
+ - Update in 4 weeks
+- R0 tools
+ - Are being anodized right now
+ - Hope to get them back next week
+ - Update in 2 weeks
+- R4 tools
+ - First tools produced and company is waiting for parts to assemble them
+ - Enough tools to make hybrids, will be send out early to allow hybrid assembly trials
+ - Afterwards make module tools
+ - Update in 3 weeks
+- US tool production
+ - All parts have serial numbers, are they unique? Yes
+ - Next update when metrology is done
+ - Please request talk slot for longer presentation instead of task tracker updates
+- UK tools
+ - Sven will follow up soon, has to check with company
+ - Update in 2 weeks
+- US power board tools 
+ - Same as other tools already extensively reported on
+- Endcap PPA hybrid order
+ - Are gone for SMD assembly, will update when they are back
+ - Update in 2 weeks
+### Craig - HCCstar V0 counting
+- Timeline should match, we won’t need those 90 chips before the last wafers come back? 
+ - No should work, but could be getting tight. Need to keep an eye on it
+- Do we have time distribution of where parts go when?
+ - Will have to be stored dry but not full site quali needed to receive them
+ - Most chips right now sit in Freiburg, some at RAL, when ABCstars are shipped, send HCCstarsV0 with them
+ - Send RAL stock to Toronto to cover Canada, send stock to Freiburg to cover Europe
+ - Freiburg can cover sites that build their own hybrids, chips in Toronto (is building hybrids for -> the rest of the world!!<-) will cover hybrids for rest of the EC
+ - For immediate future, as soon as Craig sends remaining chips to Toronto that part is covered
+### Dennis - power board updates (postponed from ITk week)
+- Slide 2: bpol reliability have the designers at CERN verified that it’s safe to add resistor?
+ - Have shown plots with resistor added and overshoot was greatly reduced
+ - Ash: Short between vin and GND could be risk, has probably been checked?
+ - Craig: have tested with our chips included for over a month, no issue found
+ - Advice is to put at least a placeholder footprint of 0 Ohm in case we need it (not 100% clear yet if necessary or not)
+ - Next bpol revision also has increased switching time implemented, (will lead to 2% efficiency loss, not clear if absolute or relative loss)
+ - Is within uncertainty that we have in thermal electrical model, asking Graham to be sure 
+ - Will take him a while to find answer if running 2% hotter would be a problem
+ - Main problem of temperature was TID peak, since that’s not an issue anymore it shouldn’t matter
+### Matt - Module Metrology
+- Measure a bare sensor first to verify what distortion you have in your setup?
+ - Just do that to convince one that sensor shape is understood in your setup
+- Need to do metrology pre-wirebonding otherwise shape might get distorted?
+ - Maybe but not required as baseline (some groups were planning to do metrology after bonding)
+- This whole method seems complicated, is it really necessary? Can’t one measure local points that are close to each other?
+ - Variation can locally be non-trivial, failed sometimes for LS and was even worse for SS
+- Was planarity of jig measured?
+ - Yes, bonding jig but not module assembly jig
+ - Will do that next 
+- Frames with HV tab cutout could improve things?
+ - Is already present in frames that Matt used
+ - Why then still distortion due to tab? Because that side is higher, assumption that tab is pushing sensor up
+- Vacuum on frame is not as good as on assembly or bonding jig
+- Vancouver studies with bare sensors for sensor QC showed that soft paper (tissue) improved results in terms of natural shape but here we want flatness
+- Need to distinguish: 
+ - metrology for glue height → vacuum applied for flat surface
+ - Metrology for bow measured → without vacuum to get realistic sensor bow
+- Do we need bow measurements if Vancouver results show that sensor shape is not rigid thing that mainly depends on how you hold it? Not clear if we gain anything from this measurement
+ - Would mean we have to change loading specs, need to look into that more closely later
+- In previous measurements it was seen that power board flex is thinner on one side compared to the other (thicker at shield box), tool should compensate for that
+- Wave form in power board glue thickness seems to match points where tool helds the board down during gluing
+- Do we still have to measure the height of the shield box for z envelope check?
+ - Yes, but trivial measurement
+ - There will be updated specs prepared for integration FDR
+- Where will points on hybrid be measured? Is the stackup leading to different thicknesses towards the edges?
+ - Vacuum only under ASICs, so no vacuum to the edges of the hybrid so they are not held down as well
+ - Usually they fail metrology due to that
+- HCC glue thickness is not a problem because it has been observed that vacuum there was not sufficient, but this should be fixed with new tools
+- Noise and glue thickness under HCC? 
+ - Thickness will always affect noise no matter where ABCs are
+- Might want to relax specs for area of unsupported side of hybrid because noise will not be impacted by floppy other edges so there is no reason to be uber strict
+- Craig: suggestion to loosen spec to be well supported as long as glue is not impacting noise
+ - Loosen spec or not measure there?
+ - Measure there for upper bound, probably don’t care about lower bound
+ - If upper bound too high could get problems with wirebonding
+ - Suggestion to comment on EDMS if we want to get this changed in the specs
+ - Had similar discussion in the past about ASIC glue height (as long as total package height is in spec), will add comment about that on EDMS as well
+- Where to measure? Multiple points and then average?
+ - What people think is in the document doesn’t seem to match what is actually in there, need to check offline 
+### AOB
+- None

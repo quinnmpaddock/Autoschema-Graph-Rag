@@ -1,0 +1,119 @@
+# 19/09/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289857/
+### Introduction
+Slide 9
+- Bart: there is a big difference if a sensor sits at a higher current limit for a long time
+ - Luise: general IV current limit has been updated to 10uA
+Slide 12
+- Sarah: hard to order FalseBlue from Europe
+ - Dennis: we could order, but direct payment to US is troublesome
+ - Pavol: could not pay via invoice, needed to buy via card
+ - Luise: maybe it might be worth finding a distribution site in Europe that has less issues procuring the glue
+- No disagreements with Proposal
+Slide 13
+- Carles: tried to compare new and old R5 stencils, are you sure they are there?
+ - Follow this up offline
+Slide 16
+- Tony: SE4445 from Fermilab does not seem to have noise
+ - Tony: others need bond fixing
+ - Luise: might be interesting to also compare test conditions
+Ingo in chat:
+we tried using the bipack - we found very clearly that the ratio is not consistent either with the one targeted by us nor between bipacks, so we will continue to measure the hardener and epoxy individually
+we cannot get consistent results when using bipacks, whereas we get to within about +-2% with weighed mixing
+just wanted to convey this find (which was new to us) as we are on glues...
+- Luise: try to avoid bipacks
+### ITSDAQ news
+Operation Spotlight
+- Vitaliy: can you create an artificial pinhole in the area you illuminate?
+ - Vitaliy: bond AC pad to DC pad
+ - Cole: can do
+ - Vitaliy: may be an issue that BNL has outlined that it is possible for the front-end amplifier to compete with the AMAC amplifier if there is such a connection. Then the IV test results become weird/questionable. Maybe also noise results might be affected
+ - Peter: two DESY modules at DESY did not show problem, so no pinholes? (ist das was er gesagt hat?)
+ - Vitaliy: would still prefer test to be done, effect on AMAC IV is the only effect measurable after irradiation, because we need to know this
+ - Peter: have a module with a couple dozen artificial pinholes on it
+ITSDAQ Update
+- Tony: the other thing we need is the merging script and what we want to do for the cold cycle upload
+ - Cole: rumour has it that someone from US has uploaded it to the database
+ - Tony: yes, for burnin it is easy; but for thermal cycling there are additional test data that need to be uploaded
+ - Bruce: try to work out burn-in first
+ - Bruce: there was an update last week or so which should fix the merger script for burn-in data
+ - Sven: can confirm that it works (with the test type name)
+ - Bruce: there were two merge requests in parallel
+ - Tony: for the cold box, there is an open discussion of what we want to do/upload and what to merge
+ - Cole: procedure is sorted out and being implemented, finalising procedure in datavase
+ - Tony: we have 4 IVs, do we upload all of them individually or merge them somehow with the cold test data, …
+ - Bruce: don’t think there is something wrong with this
+ - Tony: depends on how the data analysis is done (and how people later want to access the data)
+ - Luise: Mo is also volunteering to help, so we should start an email discussion
+ - Tony: also need to keep the run-number issue in mind [manual runs on several days]
+ - Luise: for merging, most of it is easy?
+ - AMAC IVs can be uploaded individual
+ - Open question about merging cold and warm individually
+ - Tony: for individual IVs you would have to pull them by timestamp
+ - Luise: or use a comment
+ - Tony: there are different ways, just need to converge to a common method
+### End-cap powerboard testing instructions
+Slide 
+- Cole: R2 doesn’t need inversion - but it should, right?
+ - Ben: maybe I got this wrong
+ - Cole: R2 does need the conversion, I’m fairly sure
+ - Dennis: R2 is similar to R3, R4, & R5
+- Roland: page 15, serial numbers won’t be on the shield box, but they will have a serial number sticker on them
+ - Ben: will add that
+- Luise: for database question, do you want to start and email thread to discuss this?
+ - Ben: already started an email thread a while ago. Need to follow this up again
+ - Luise: maybe also talk with Dennis/Karol to see how barrel has done this
+ - Dennis will add other people that need to be added
+- William: question about slide 15: is it the serial number that goes into these boxes or the ID that should go into these boxes
+ - Dennis: should be 28
+ - Dennis: EC powerboard only have 28 on shieldbox. But on carrier next to powerboard is the full serial number on a sticker
+ - William: is there a full database record of the panel? Do we really need to fill in all powerboards by hand?
+ - Ben: yes, can just enter the panel number and then it will fill all the needed information automatically
+ - William: that would be great
+ - Ben: not sure if it works with the powerboard type yet
+ - Dennis: for EC you can put in the ATLAS serial number of the carrier. They also have a QR code with the serial number. This has the powerboard type encoded and would be the most convenient type to do
+ - Ben: need to add this
+ - Dennis: just use the QR handreader.
+ - William: does the Z-turn recognize the QR reader?
+ - Dennis: the interface is a web interface on the computer (not the z-turn)
+ - Ben: Dennis: could you test it with the serial number of the carrier?
+ - Dennis: yes, can also send serial numbers which work
+### Endcap Module Metrology: R0-R5. Preliminary analysis before PRR
+Slide 14
+- Ewan: do we do any metrology on powerboards after assembly?
+ - Dennis: on all recent industry assembled powerboards there will be a pass/fail
+ - Ewan: where?
+ - Dennis: done in Freiburg when they come back from industry
+- Dennis: can comment that newer flexes are also hand populated so flatness is not indicative to industry populated flexes
+ - Luise: Only R4 & R5 are industry populated (latest non-cuvred)
+ - Luise: maybe for new ones, could you add a comment that they were populated in industry?
+ - Dennis: yes, can do
+ - Ewan: (slide 14) outlier is an R4.
+ - Dennis: but even if they were industry populated, the shieldbox was not
+- Pavol: measure all R2 and R4 powerboards before mounting - can send you Prague data if you like for pre/post gluing comparison
+ - Ewan: that would be great. 
+ - Pavol: can confirm that flatness of powerboards is not good and flex height has a large variation
+- Pavol: when we have industry populated powerboards, can we reject powerboards which are out of spec?
+ - Dennis: not many. It is just following the yield table and we will produce this
+ - Dennis: the idea is that for every started module there will be a powerboard distributed and we hope the that the yield for SMD population and assembly are fine
+ - Pavol: and if powerboard is too bad to make a module, should we send it back?
+ - Dennis: there is a yield for powerboard production, so we hope it will be covered by this
+ - Pavol: okay
+ - Dennis: also, QC so far wasn’t good enough 
+- I
+- William: surely we don’t have <100um tolerance on petals. Where does the cut come from?
+ - Luise: envelope comes from EC loading site.
+ - Ingo: this is the upper limit. There is no room there
+ - Dennis: insertion is reasonably tight
+ - Luise: this is supposed to be a hard cut and with new tools/powerboards we should be able to hit this
+ - Ewan: more details on documentation would be good. For barrel the tolerance is based on build-up from known tolerances
+- Luise (PRR related comment): would be good to mark which of those were good and which are out of spec based on old tools and powerboard types
+ - Ewan: this is not a draft for the PRR talk
+ - Luise: hopefully we can get more data for the PRR
+- I
+Slide 3
+- Luise: from database it is not possible to say if the powerboards have the larger coils or not
+ - Dennis: all flexes V4.x have the larger coils
+Second set of slides form Laurelle postponed to next week
+### AOB
+-

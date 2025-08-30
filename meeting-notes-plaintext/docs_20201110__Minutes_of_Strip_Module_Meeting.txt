@@ -1,0 +1,87 @@
+# 10/11/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927527/
+### Introduction (Craig & Ingo)
+- P2UG went as well as we could hope given current delays
+### Task tracker items
+- EC PPA/prototype hybrid order Urgent Late
+ - Expected delivery time 25-30 days, submitted a month ago, so should be coming in these days
+ - Issues encountered in failure analysis: broken vias in x-section views
+ - Will redo sheets with issues, will cause 1-2 weeks delay
+ - Overall thickness 241 micrometers (prod target was 250 +-10%)
+ - Marc had assumed 270 microns
+ - Assembly stuffing will go to other company (local in Fr)
+ - Expect fast turnaround of about 3-4 weeks after having handed the unstuffed hybrids to the “stuffers”
+ - The thinner than expected hybrids will be a problem for tooling
+ - Could try and put shims under hybrids (bad for vacuum, hybrids not flat, difficult and messy)
+ - Could say we just live with 30µm thicker glue layer (doesn’t make difference in bonding, glue amount should be controlled to be sufficient)
+ - Could adjust tool drawings → too much work for short term use (don’t know final thickness yet) - will not do this
+ - Currently hybrids from Wuerth, for PPB and full prod tendering still running
+- EC hybrids/powerboard tendering Urgent In progress
+ - Kambiz filling ID documents for tender
+ - slowed by ongoing noise problem to be solved first
+ - Kambiz focussed also on finalising test frames, getting onto tender again now
+- EC hybrid test-panel finalisation Urgent Late
+ - Finalised and will be uploaded to EDMS for review to start, can go ahead
+- EC module test frame finalisation Urgent Late
+ - Finalised and will be uploaded to EDMS for review to start, can go ahead
+- R0 tool production Urgent Late
+- R3 tool production Urgent Late
+ - Got prototypes back (after initial pre-bushing interaction)
+ - Looks quite good, will do systematic metrology (some measurements up to 5 microns out of tolerance, but that is within measurement precision)
+ - Have 2D drawings on EDMS and review ongoing
+- UK/China hybrid/module tool production Normal Late
+- UK/China powerboard tool production Normal Late
+- Barrel PPA hybrid order Urgent Late
+ - order has gone out end of last week
+ - 30-35 day turnaround and then 2-3 weeks for SMD
+ - expect circuits mid-December at absolute best (probably Jan!)
+- UK/China module thermal cycling setup Urgent In progress
+ - Will deliver 7
+ - One at B’ham
+ - One at RAL
+ - 1 ready for delivery
+ - 2 ready for testing
+ - 2 to be finalised
+ - Ready end of month
+ - Control system to be ready by end of year
+- Hybrid crate setup, finalisation and roll-out Urgent Late
+ - See talk, further questions after talk
+- Barrel hybrid tendering/order Urgent In progress
+ - Ash will chase Adrian
+- Finalisation of barrel hybrid panel Normal Late
+ - 6 hybrids successfully tested
+ - Mech good
+ - EDMS to be approved
+ - Finish task :)
+- Barrel module testframe finalisation Normal Late
+ - Bart to test module in the frame
+ - Hold approval for Bart’s successful test (1-2 weeks)
+- Soft-/Firmware Normal Late
+ - We have to improve this task, it is too undefined, skip report until task improved
+ - Comment by Bruce via Email:
+ - I think Matt and I tend to be more reactive about things going wrong rather than do too much planning, but would it be useful to have this as a note of what needs to be done in terms of sw/fw for module production? The major thing I know about still to be done is smoother integration with the production database. Others should feel free to comment.
+- HV Tab finalisation and production Normal Late
+ - Missing comments on updated HV tab version
+ - Need experience using this tab
+ - Prod has started
+ - Finish this task and reawake if we find problems
+- Supply screws and vacuum connectors Urgent In progress
+ - Everything is in transit to Freiburg
+ - Close task
+- Supply of pins and bushings Urgent In progress
+ - Craig W got component list from Marc
+ - Criag W will place order ASAP, tomorrow if possible
+### Quick update on UK tools and focus on database registration for tools (Sven)
+- Operator needs to be careful not to slide sensor over positioning pins since they only stick out slightly from the module jig 
+- Precision holes were plugged during annodisation, other holes are fully annodised
+### 
+### Hybrid Burn-in crate status - PB Replacement and operation with dummy loads (Ash)
+- Vitaliy needs PB carrier assemblies and thinks if he can use the COTS PB from Ash instead
+ - Ash thinks the COTS one cannot easily be used outside the hybrid test crate (did I get that right?)
+ - The PB shortness will last through PPA
+ - Rather tight for next few months, then slightly better for PPA
+ - With sites not running full burn in crates we should manage
+ - PPB will then see sufficient PBs (depends on when AMAC arrives, plus some time to make the 750 PBs with the new AMAC)
+### AOB
+- Testbeam: there is space for a DUT in the testbeam as petal is unlikely to arrive
+ - Petal will very likely not be ready in time any more by this point in time

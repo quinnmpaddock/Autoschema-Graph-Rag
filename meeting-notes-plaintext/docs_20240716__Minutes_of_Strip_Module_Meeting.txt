@@ -1,0 +1,37 @@
+# 2024-07-16 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1431650/
+### Introduction
+Presenter: Luise Poley
+- Ingo (sl. 9): If we have to measure this, we want to do it in as few places as possible for work flow right?
+ - Lusie: The number we are putting in is geometrically defined. It’s probably something folks should think about if they can easily achieve. But is everyone happy with the 150?
+ - Sven: Do we really need to specify this for the barrel as well? It doesn’t really matter.
+ - Luise: We should check with the loading people just in case. If you move them too far out, the tabs can interfere.
+ - Sven: I haven’t heard anything. We at Liverpool aren’t worried about it.
+ - Luise: If we only need to specify this in a more narrow case, that’s fine, we should just think about this.
+ - Luise: Can folks take a look at this and see if they are happy with this proposal?
+ - William: We triggered this by not having Celestica not cut this close enough. I agree with Ingo on not knowing how to specify this. We can cause damage by cutting too short. 150um was doable once. 
+ - Luise: The idea would be to take a picture of what it should look like (how much overhang) and if it’s more than that, maybe cut it shorter. The document just says “cut as short as possible”. We want to agree on a guideline so we can include a picture and say “this is what it should look like”.
+ - Decision to come in two weeks. Everyone do your homework. 
+### L4 Updates
+- None Today
+### Group Updates: Vancouver Cluster
+Presenter: Archa Rajagopalan
+- Perfectly clear, no comments
+### Small-Scale Paper: Bow and Thermal Cycling
+Presenter: Luise Poley
+- Pavol: EC and Barrel or both?
+ - Luise: Both. If you want your data about your bow measurements in there, if you’re interested, it would be great there.
+ - Pavol: Great, I’ll stay after the meeting
+### Hybrid Tab Cutting Tool
+Presenter: Ben Crick
+- Peter Speers: This looks great. I think we will ask for the designs. Have you tried this on a loaded hybrid yet?
+ - Ben: no, haven’t tried it on a loaded hybrid, but the hybrid is very easy to take out, the tabs are difficult to get out
+ - Pete: I was just curious how the vacuum actually holds the populated hybrid. They are sometimes in a funny shape.
+ - Ben: vacuum holds them well, with the caveat that one row of vacuum holes need to be removed, but remaining holes will secure it well enough. First attempt was to make an adapter jig for panel jig, but that did not work well enough, need to move hybrids
+- Vitaliy: Just so people know, there was a tool by Tom Johnson, he might be persuaded to show his.
+ - Ben: Yes. This design is mildly cumbersome due to a “no blade exposed” requirement.
+- Luise: If you need help with the EDMS upload, let us know.
+ - Cole: missed the chance to set it up like a guillotine
+ - Ben: we tried and it didn’t work as well
+### AOB
+- Nada!

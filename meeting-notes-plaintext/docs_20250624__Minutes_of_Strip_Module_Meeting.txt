@@ -1,0 +1,126 @@
+# 2025-06-24 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1557981/
+### Introduction
+Presenter: Cole
+- No questions
+### Bug Fixes in Reporting Tests Pages
+Presenter: Ewan Hill
+- No questions
+### EBD Mitigations at Toronto
+Presenter: JJ Teoh
+- Vitaliy: Residue from suction cups, we see it all the time in the barrel. The residue is there, I don't know when the last time it caused an issue. By itself we see it on every module. If you don't see an issue now you might not see it.
+ - Craig: The time we do see when this residue is a problem, is that in the past, we tested ESD-safe residue that caused problems. Be aware of that if you get tempted.
+ - Vitaly: we typically use silicone, ESD safe might be slightly conductive that causes the issue
+ - Craig: Exactly. We tried them in the past but it turned out it wasn’t a good idea.
+ - William: We went through this a year or so ago, so we got similar ones.
+ - Vitaliy: Most people know, but it’s good to mention that if someone is keen on cleaning them, don’t use alcohol or it will cause fusing and make it worse.
+- Vitaly: charge up on teflon I wonder where its coming from cooling lines? Is the box electrically grounded?
+ - Cole: the cooling lines are all grounded, they are running ethylene glycol so I am not worried about it
+ - William: there is more charge up when the teflon is free, but it’s still worrying.
+ - JJ: when you touch the teflon it can pick up a charge from you.
+ - Vitaliy: I could see how some charge could be acquired. You can pick up a few kV from moving around, but 20kV is a bit surprising.
+ - William: we do have a grounded cleanroom floor but sometimes it says we are not grounded, we try and stay grounded when touching the box
+- Christoph: Regarding the IVs, were you able to follow up on what Vitaliy said last week about consecutive IVs? To see if that somehow mitigates the EBD. Even running two consecutive IVs can improve IVs to some degree.
+ - JJ: I did it in previous study when I did continuous IV when cold and it doesn't not show early BD
+ - Christoph: Okay
+ - William: We’ve also done the 500V test at the end of TC and some still show EBD. So the results are perhaps mixed.
+ - Christoph: Sounds a bit like how it is with sensors. Sometimes it works just fine out of the box, and sometimes we have to try multiple recovery methods to see any improvement.
+ - William: We did that with the module. The ten cycles didn't break down the first or last time. There's another recipe that does two IVs
+ - Christoph: thanks!
+ - Vitaly: for you reference Botho and Alex have been running that
+- Bart: Back to the suction cups, just note, the UK/US uses “feepa” [?] cups. We’ve recently been trying a different supplier, and they leave less residue and less noise. They cost more, but we are going for the ‘vac motion’ ones.
+ - William: We have been using feepa and have looked into vac motion. We are not looking to make too many of these frames for only a few flavours.
+ - Bart: If you need a few, let me know and we could put you into our order.
+- Gerrit: The vac-motion thing triggered me. We wanted to use them because feepa wasn’t available. VM is no good. They were dirty, shedding, poor tolerances, etc. Hopefully they have cleaned up. We don’t have much sticking to the silicone cups anymore, after we stopped the excessive cleaning. At BNL, we found it was more effective to just throw them away rather than trying to clean them.
+ - Bart: the difference is in the UK we ship the modules in the frames, the vac motion does have bad tolerance but we put them in with a o ring to fit them properly. 
+ - Gerrit: Okay, just make sure to check for shedding/marks/etc.. 
+ - Bart: We could discuss further offline.
+ - Gerrit: It was eight years ago.
+ - William: in the endcap we see pink foam haze on the module no matter what we do. It seems if you want to hold the modules down you are going to see some sort of noise
+ - Cole: I am surprised yo do not see good success with the trenching of the foam, there is lots of evidence that this works
+ - Ingo: we have seen some evidence it has worked
+ - Cole: What are you using to cut it?
+ - William a hot knife
+ - Cole: we are using a soldering iron, it works pretty well, we should follow up off line for trenching methods
+- Tony: It seems like really good progress. The last review we saw, the rate wasn’t great. Is there a summary of the sites that have gone over this to see how it’s going?
+ - William: its moving fast we have done 4 modules las week 
+ - Tony: it would be good to see a summary of this
+ - Cole: We have managed to recover a lot of our early breakdown. There are a few edge cases.
+ - Tony: it would be good to see what places have done what and have a generic overview of what is going on
+- Ankush: If there is a desire to double the IV scans, I can put that in. For the future, if you message me directly, or in the MM groups, I can do something.
+ - JJ: I think we should test it before release
+ - Ankush: Sorry, I must have missed it. 
+ - William: We’ve done it sometimes, but we haven’t seen an obvious effect. We’d need to come up with a method for QC.
+ - Tony: It would be useful to have a toggle to switch between. Making it easy for some sites to do this that dont have the capability to do it themselves
+ - William: We heard about this last week and we weren’t aware of how serious this is. Maybe we should enshrine it in our procedures. If it’s that important.
+- Cole: if we implement something like this we should test it first. Peter has got a merge incoming that will shut off modules that have EB to continue testing the other modules. After this is working we can look into implementing this
+ - Ankush: At the moment.
+ - Cole: if sites are not comfortable doing it they should not do this
+ - Ankush: I can put instructions that say if you do this and break the cold box it is your financial burden 
+- Peter: I’ve commented on this double-IV, I think it would be better to catch this before TC and try to run slower. This might be more time-efficient.
+ - Cole: I have also tried this and it can be successful 
+### Discussion: Module Grading
+Presenter: Tony Affolder
+- Bart: Did you run any cuts on the difference between two fiducials being out? 
+ - Tony: No I did not check to see if there is bad data
+ - Bart: Okay, that could pollute your data a bit.
+ - Tony: That’s possible, but you should see it in the scatter. If it’s off on one, it would be off on the other. The plots match (sl. 4), if you subtract the X’s, you get something within 40um of each other, so it looks solid.
+ - Bart: you’re looking at 98% yields, and we are letting a few more percent slip, but this looks good.
+- William: if they are both working electrically you could half your yield loss by going to 500um 
+ - Tony: That’s true
+ - William: If you have a reason not to do it …
+ - Tony: it’s a feel really. It’s pathological. They aren’t passing at 600um.
+ - William: you want to be away from he gaussian tail. 
+ - Tony: And it’s hard to see if it’s Gaussian. I don’t disagree, it’s somewhere between 400-500um. That’s what I get from this.
+ - William: i will reiterate my comment this is all of the data we will get for the endcap 
+ - Tony: I don’t disagree, especially with all the types. People have asked for changes over time, but that is difficult too. From what we see, you need 50-100 pieces to dig that out.
+ - William: Ewan didnt want to show the data in the endcap because there isnt enough data. 
+ - Cole: this will be just the cut for the barrel not the endcap
+ - William: this kind of data will be difficult to prove in the endcap 
+ - Tony: You can use this to inform process. Where this all started, was not wanting groups sitting 250-500 on every part. So you need to do something to keep track of this. You can use this to see if something is wrong with a site’s progress.
+ - William: There is some evidence of rotation from stencils, but we only have two or three out of ten. If they work electrically though, I don’t see an issue with this.
+ - Tony: yeah we had one rotation here, we think someone cleaned the backside off and there was rotation from it.
+- Sven: For flexes, they get metrology on the fiducials, and they are much less than the 100um stretch or shrinkage. The other is that 500um is something I wouldn’t use. This would allow the PB/Hybrid to sit on top of each other. I wouldn’t make a spec that could in theory would allow things like that.
+ - Cole
+ - Sven: how can you justify a spec that allows for stuff to stick on top of eachother 
+ - Tony: If you do that and change the cuts down to 300, we are throwing away 7 [?]% of our parts. 
+ - Sven: 400-450 is fine, 500 is not.
+ - Craig: if we had a two step process I would be worried about a 500um gap, but since we are checking at the end I wouldnt be so worried 
+ - Tony: we aren’t metrologizing between the two. You could make a requirement that the distance is above some minimum. You could do it, but from our experience, no one has closed the gap.
+- Andy: I guess a lot of the specs here were based on bondability. Are we at the point where we can get feedback from the loading sites. Is that possible?
+ - Tony: We are loading some of these out-of-spec modules.
+ - Gerrit: We start loading thursday
+ - Tony: The US ones are mostly X powerboards, but the UK ones will have the hybrid deviations.
+ - Navid: The only worry is that if the hybrid is covering the tab, we wouldn’t be able to tab bond it.
+ - Tony: It would have to be over 500um to be off the sensor.
+ - Navid: We have seen this before on prototype staves.
+- Ingo: worrying about the spec where they overlap. We could add a visual inspection test they would allow for these cases that Sven is talking about 
+ - Cole: I am against setting a spec for this 
+ - Ingo: We do have VI, and if you have overlap, we’d just fail it.
+ - Tony: they shouldn't be correlated enough
+ - Cole: So we should see this 1s throught the detector 
+- William: For the loading folks, clearly in the EC, we know we have to be careful about overhang for the EC. We could also just do VI and see if that is enough to make the cut different. I would endorse the idea of using VI to catch things.
+- Navid: So the hybrid XY failures, we do expect this to get better over time. There is now a tool that allows for easy release of hybrids. We’ve started using it at RAL and we think it’s better.
+ - Tony: The hybrid Y will be slightly worse than the X, but those should be closer together.
+Presenter: Cole Helling
+- William: you got the cuts wrong I think for asymmetric 
+ - Cole: yes you are right
+- A
+- Karol: How do we treat these in the DB?
+ - Cole: not sure, if we want them to go in the detector thats a pass, if we hold the module till the end of production 
+ - Karol: For immediate needs is what I mean. If it is grade B, do we mark it as passed?
+ - Navid: Yes, these are going to go on core. But they do need a flag so we know which ones are grade B.
+ - Cole: yes I agree, we should
+ - Karol: it would be good to add it explicitly in the slides. When I say passed failed not the results of the test. Then you can decide whether its grade B or not 
+- A
+- Tony: what does in agreement mean 250um to 500 for grade B
+ - Cole: 
+ - Tony: should we loop through 
+- Cole: 
+- Tony: 
+- Cole: it is possible we do not shift the spec and just call grade B loadable 
+- Navid: so we are going to add a flag for grade B
+ - Karol: pixels are using grading, I dont know if its worth checking what they are using 
+ - Navid: guess its down to reporting
+ - Katherine: anything thats in the general json file not inside the test 
+ -

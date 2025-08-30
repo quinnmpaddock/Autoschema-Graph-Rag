@@ -1,0 +1,69 @@
+# 02/03/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1008264/ 
+### Introduction
+- HCCStar size will have to grow (due to triplication)
+ - Looks like we also have to adjust the hybrids alongside, we will attempt to come up with an answer to ASICs as to what max size can be accompanied and what the minimal changes to tools might be
+ - Timescale of 2 weeks to have a final answer
+- EC config files (.det files): keep up to date ones in ITSDAQ and reference in procedural docs
+ - Twiki to be updated with additional table for EC data streams on FMC-DP
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R1 tool production
+ - There will be presentation from Richard later
+- R2 tool production
+ - A large part of weights, plates etc machined
+ - Delay due to Corona case, currently leading to unclear scheduling in local workshop
+ - Update in 2 weeks
+- R3 tool production
+ - See slides by William
+ - Some tools fine-sanded to get closer to specs, looks good
+ - To be sent to anodising soon
+ - Expect to be done early April
+- R4 tool production
+ - Will start assembling this week
+ - Manufacturer did already finish 5 of each toolsets
+- Barrel PPA hybrid order
+ - We will close this task and report on the PPB / production tendering
+- Endcap module thermal cycling setup
+ - Noone present, move to next week and re-poke
+- UK/China module thermal cycling setup
+ - Getting ready to order parts for all boxes control after successful tests
+ - Import to UK is slow (sigh)
+- US module thermal cycling setup
+ - dev-boxes are running and experiences are positive
+ - Using old software, waiting for update to new version (from Ankush)
+- Hybrid crate setup, finalisation and roll-out
+ - All backplanes present, few tested with errors, working on 
+ - Some delays as work is needed for hybrids (HCCStar size change)
+ - About to get dummy setup sent to DESY for final fan setup tests
+### US tools update
+- Y picker out of spec too tall or too short? 
+ - they are too short
+- Vitaliy had observed issues with X picker in spite of being in spec
+- Can we relax the xy tolerance for the alignment pins on the PB alignment tool? Is it too tight?
+ - Sounds like we could to some degree boil this one down
+- Discussion about how EC can insert pins to the required precision
+ - Barrel plans to use real powerboard
+ - EC should prepare using a specially machined dummy PB counter or use 300um gauges. To be followed up offline.
+ - Pins are a slip fit so can be adjusted once proper EC thicknesses are known
+- US plans to use hybrid jig for module gluing alignment
+ - EC is mostly planning to pick up from panel, so precision is required there
+ - Hybrid sites need to make sure they understand the pick-up process at all the module sites they are feeding and vice-versa
+### R1 tooling update
+- Current status of R1 tools shown, things of note for possible discussion/follow-up
+ - Grooves not machined
+ - QR codes rather than RFID
+- QR codes easier to use locally but RFID can be sent with tools if required
+ - This is minimum requirement
+### Module in Database
+- Discussion about which sensors (as listed in the DB) to use for modules
+ - ATLAS18
+ - There should not be a mechanical type -> Sven will sort out with Vitaliy offline
+- Sven will add tests to different stages when they are properly implemented
+- How are test frames identified in the database? → RFID tags (on latest barrel frames)
+- Who takes the action to put the module frames into the DB?
+ - Also brings up the question who can increment “cycles used” as currently only person who first entered them can change this
+ - Potentially needs more thought/discussion from everyone
+### AOB
+- None

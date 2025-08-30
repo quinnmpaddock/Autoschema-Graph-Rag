@@ -1,0 +1,57 @@
+# 25/05/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1032181/ 
+### Introduction
+- EDMS
+ - Module VI and … were approved
+ - Kicked off Hybrid review for wider HCCStar, light touch
+ - HVtab and module assembly were called in for review
+- Weighing und module VI will open next week
+- Hybrid and PB VI and Hybrid assembly will follow the wek after
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R2 tool production
+ - Only two more items left to be CNCed
+ - Reference plane was used wrongly in workshop, which complicates metrology, iterations with workshop, might be there are some out of reference plane
+ - Not anodised yet
+- R4 tool production
+ - First re-worked items to arrive these days
+ - Will test with mechanical parts
+ - Will send out a sub-set of all tools to all sites
+ - Metrology setup is currently broken, waiting for spare part
+- R5 tool production
+ - All rejected tools re-received, two had to be re-re-jected
+ - RFID tags are being changed to new ones, much better readable
+ - Building first dummy modules
+ - Spacers missing for PB pickup tools found in Zeuthen and sent to us
+- US module thermal cycling setup
+ - SW status - provisional PI image was exchanged
+ - BNL box can cycle
+- Production of R0 and R1 test frames
+ - Australia waiting for go-ahead from Dennis
+ - Data works, but waiting for first module
+ - Try to have all these tasks reported in 4 weeks
+- Production of LED bars for the EC
+ - Bo progress for bars
+ - Pbus PCB that goes into tools has been sent, Sweden and Zeuthen have not received parts and are next
+All sites please purchase all the required Nexys and Genesys G2 boards NOW! (global shortage of Si parts makes unavailability, in the near future, likely - see e.g. the MicroZed board (current delivery time: 52 weeks))
+### ABCStarv1 Classification
+- Noone present, maybe did not realise talk was moved to today from last week?
+### Powerboard test setup MicroZed shortage and HV discussion
+- Support proposed update No 1: all powerboard reception sites need a power supply capable of 550V
+- Can groups have a PC with Centos7 as a backup?
+ - Not clear
+- Craig: Also need to look for other DAQ on how to proceed with Centos 7, which will stop support during production
+- Gerrit: why not use raspberry pi?
+ - Karol: have looked at it
+ - Gerrit: speed might be an issue
+ - Dennis: USB behaviour is relatively bad, would not use for burn-in
+### Image metrology
+- Forest: using wire-bonder for z measurement, could damage wires
+ - Richard: our wire-bonder uses optical measurement, not touch
+- Ingo: lens corrections might become important when using this
+ - Richard: can be covered and calibrated using a smartscope measurement
+- Richard: use this method as fast feedback for industrial production at Canada or Upsala
+ - Canada: will use standard metrology since it is fast enough
+### AOB
+- none

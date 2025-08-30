@@ -1,0 +1,92 @@
+# 29/06/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1032186/ 
+### Introduction
+- Apart from some banter on the football EM nothing to report
+- I lied:
+ - Hybrid bonding and Module bonding docs in final EDMS short review and will be approved in coming days
+ - Next week HVtab and hybrid metrology to follow
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R0 tool production
+ - Metrology about to wrap up
+ - To be sent out this week
+ - Spares to remain in Freiburg
+ - In parts these are failed parts to be remade
+ - Expect 4 weeks at least for having complete spares set of good tools available
+- R3 tool production
+ - Tools to Freiburg, DESY and Upsala sent
+ - These are all that are to be sent
+ - Few tools (to remain in Ca) to be optimised still, dummy modules being built for testing
+ - About done with tools :)
+ - Expect to wrap up next week with final tools
+- R4 tool production
+ - Company is reworking, have identified problem with hole positioning
+ - Company has to drill out bad holes larger then insert metal and drill proper hole
+ - Currently waiting for company “done by” date
+- Hybrid crate setup, finalisation and roll-out
+ - all parts for beta setups finished and will be shipped this week
+ - talk about cooling next week
+ - Production of full setup will begin once beta testers reported back
+- EC hybrid test-panel finalisation
+ - Postponed to next week due to test beam in parallel right now
+- EC multiple module box transport box
+ - Waiting for mechanical bonded module for final shipping test
+ - Current box model in in Ca, waiting for return or time in workshop to build a new one (workshop currently overbooked)
+ - HH to build a mechanical module for the shipping tests
+- Production of bonding and testing jigs
+ - See task tracker… 
+- Production of LED bars
+ - Postponed to next week due to test beam in parallel right now
+- EC PPA/prototype powerboard order
+ - SMD population at company, slower progress than usual
+ - Company should stay open over summer holidays
+ - Also Freiburg should be covered for reception tests
+### ITSDAQ Updates
+- Json file - does it also have a run number?
+ - The json file uses the ITSDAQ runnumber that is also stored in the var directory
+ - Run number increments locally at each test station independently
+ - Test data uploaded to DB includes both the local run number and given test station, which allows to cross correlate with local additional data
+- This way the runnumbers for a given module, passing though different test stations, will not be sequential
+ - Yes, it is a number for the test stand, not for the module
+- One could also have a sequential run number for each module
+ - Yes, but with test stand + local run number this works too and needs no additional external DB query
+ - One can time order the tests using the DB time info
+- In prod there might be the need to upload data later (if network issues exist for example)
+ - Yes, ITSDAQ is to create the json file with all required info, which can then be uploaded right away or later if needed
+- Will ITSDAQ need a DB connection to do this automated work?
+ - To be sorted, but will need some DB info and will sort how to best do this
+- Andy: maybe query DB once a week to download required data?
+ - Depends if you create hybrids or modules - once hybrid is already registered this could work
+- When will this feature be available?
+ - Working on some issues right now, then will get back to implementing the json output and adjust DB if needed
+ - Is structure for the tests in DB already defined? For strobe for example?
+ - Strobe might not change, but FUSEids addition and SW tag / git info / FW version will require some additions
+ - For 3pt gain needs per strip info added
+### HV tabbing and SQ requirements
+- Discussion about which parameters to aim for
+ - 300g/500g seems a lot, is it really required?
+ - Is better for module mounting, the higher this is
+- Do we need more sites to show that these parameters are achievable before we go for site quali with these target parameters?
+- Bart: has anyone looked at sensor performance with these settings in terms of damages?
+ - SCIPP has build 4 modules with this and has not seen any sensor damage
+- Conclusion: leave 300g as target for SQ, might change when more sites start getting experience
+ - We should add strain relief to petal / stave
+ - We will do dip tests to see if this is required, might show that we do not need such high shear strength
+- Page 8: ±200 microns is for stave/petal mounting, so should not be released
+ - Position is harder to obtain for barrel with current jigging
+ - Bart has developed a 3D printed helper tool to improvements
+- SQ deliverables
+ - Did you include pre and post tabbing IV test?
+ - Yes! Is included also including DB upload
+ - DB actions are on page 13 of talk, please check
+### R5 tooling metrology
+- Toronto and Vancouver sent separately please and spares to Toronto
+- Tested all tools for relative fit as well
+### Metrology Update
+- Page 12: do not key but rely on everyone to stick with what order is defined in metrology document
+- 
+### [move to next week] Tuning channel classification criteria for the ABCStar chipset
+- 
+### AOB
+- none

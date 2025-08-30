@@ -1,0 +1,127 @@
+# 05/07/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1154786/
+### Introduction
+- Vitaliy: for US PPB2 was going to start with LS modules, so maybe we should start with a small amount to look into the cold noise issue
+ - Luise: the question is if the cold noise is not there or was just so far not observed
+ - Vitaliy: there is an indication that for SS modules if you go cold enough you can see it for all modules. There might be a similar behaviour for LS modules. 
+ - Gerrit: we only will find out when we build a significant amount of LS modules to gain statistic
+ - Luise: why was it not observed for LS modules / not tested as cold?
+ - Vitaliy: the system wasn’t cold enough and the resent tests were done to temperatures even lower than nominal
+ - Robert: what is cold enough? -34C
+ - Luise: document currently specifies -35C on NTC. But there are currently some discussions ongoing
+ - Robert: when we should test the R0/R3 cold, what does that mean?
+ - Luise: to coldbox temperature
+ - Vitaliy: don’t see how we can get an overview without a representable number of LS modules
+ - Craig: apart from very general statements, it is hard to know to which degree we don’t see it on LS modules and to which degree we see it on SS modules. It would be good to have a current overview
+ - How many modules have shown cold noise at which temperature
+ - Gerrit: the LS modules were build a while ago and not tested in the currently well developed cold boxA lot of R&D has been postponed to wait for final parts, but we are now also in pre-production
+ - Craig: totally agree, but at the moment there is no good overview. Should have something very soon (next week) to have a discussion on how to proceed
+ - Luise: there are modules that have to be build for special purposes and we might have to build some to investigate this issue, but we can not just continue with production rate without having a better understanding of the issue
+ - Bart: it seems to be a much wider issue than the latest version of powerboard. How much merit would there be of testing PPA modules cold?
+ - Luise: a lot
+ - Bart: UK does not have PPB modules, but a lot PPA modules that could be tested
+ - Gerrit: in PPA modules in US there should be modules available somewhere
+ - Craig: we need to follow up to get a summary next week
+- Carles: there was an option to get the glue pre-heated?
+ - Luise: yes, there is an order number to do that
+ - Carles: could you please send this around?
+ - Luise: yes
+- Carles: about use of R2 or R3 powerboard: meant for modules for petals that go into systems test, or do we continue using them for rest of production?
+ - Luise: question is if they are good enough to be used for productionThis is currently the plan for a small number of modules to evaluate the modules and a back-up plan if we don’t find the issue with the standard modules/powerboards
+ - Dennis: still don’t have powerboards in hand so can’t release them.
+ - Luise: thought they are ready?
+ - Dennis: no, shieldboxes are missing. Could make some with old shieldboxes, but after shieldbox there is also AMAC gluing/bonding and testing to be done
+ - Luise: just need a small number to evaluate the design reasonably quickly
+- 
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 05/07/2022: EC
+- 12/07/2022: Barrel
+- 19/07/2022: EC
+- 06/07/2022: Barrel
+- R1 tool production
+ - Have the new tools been produced? No one connected to confirm
+- Endcap module thermal cycling setup
+ - Work ongoing
+- EC hybrid test-panel finalisation
+ - Panels are fine and progressing
+- Production of R0 and R1 test frames
+ - Postponed until decision made
+- Production of R2 test frames
+ - Postponed until decision made
+- Production of R3, R4 and R5 test frames
+ - Postponed until decision made
+- Production of stencils
+ - Improved stencil versions have been distributed, but still some issues observed:
+ - R3 PB stencils don’t fit on the tool
+ - Others fit now
+ - Metrology done? Not yet
+- Powerboard bending studies
+ - No one knows anything
+- Glue Studies
+ - Sensor tests in progress
+ - Dortmund working on lap joints
+ - Slow progress
+### Institute Contributions
+- NBI
+ - No questions
+- RAL
+ - Luise: thank you for doing these glue studies
+ - Luise: for PPB1 do you build SS modules?
+ - Matt: will start with LS modules
+ - Luise: would also be good to include an X-Y measurement for the short curing time studies
+ - Matt: will be easier to do with real modules, but will do it
+ - Ingo: for X-Y difference check could to a high-res image comparison might be possible
+ - Matt: will be easier once we have a real module
+ - Matt: didn’t see any visual movement with respect to etched line on glass
+ - Vitaliy: what we did for X-Y stability was to glue a perspex sheet and hang it vertically. It is then easy to spot if the sandwich is position stable
+ - Matt: after 2h the glue is not hard, can still indent sample next to module
+Next week: Melbourne & Celestica
+### End-cap bonding schematics
+- Page 8:
+ - Luise: marks come from probing, so will not be able to reduce them. Would only be able to avoid those spots for bonding
+ - Sergey: and it is not clear if the marks cause issues
+ - Luise: Forest reported recently that marks have a worse bond connection?
+ - Forest: currently inconclusive experience with chips. Generally, small probe maks seem small and not worried about those; but some recent have been larger and am more worried about those
+ - Luise: can feed this back to probing sites at least
+ - Ingo: size might also be helpful. If the hole size is similar to wire size, that could become an issue
+ - Forest: even some form of monitoring of the scrub marks could give an indicator about the probe tip wearing down or the force being too large
+ - Peter: would be very important to know which chip the issues this was seen. Usually marks ~15um but if larger could have been from repeated probing during prototyping. Only long storage could cause it to have used more pressure which should result in longer marks.
+ - Forest: could provide a picture that caught my attention
+ - Luise: Peter would need ASIC ID as well?
+ - Luise: what should be collect:
+ - Peter: wafer ID
+ - Vitaliy: mentioned guard ring in slides, but probably meant bias ring (guard ring has no opening for bonding)
+- Page 3: 
+ - Vitaly: it’s not guard ring but bias ring
+ - Luise: point at correct pad, but naming it wrong
+- Page 9
+ - Luise: this should be fixed for future test-frame versions
+ - Dennis: at some point this pad will just go away
+ - Ingo: so say: as long as this pad is there it needs to be bonded in this way
+- Page 10:
+ - Luise: can take pictures at SFU
+- Page 11:
+ - Sven: use a bondmap from bondmaps already available
+- Sergay: how to keep track of changes for different chip sets
+ - Dennis: PPB should be the default for the document and any other chip versions should be in the appendix
+ - Luise: most should be fairly similar, only HCC needs some updates
+- Luise: on slide 5 there was a question of the number of bonds between hybrid and powerboard. Did anyone check that the number of bonds is sufficient for the module types?
+ - Sergey: checked it for version 2.0, but need to check it again
+- Luise: removed section for HV-tab welding. Was there something added to wire-bond the HV-tab?
+ - Sergey: already have 3 wire-bonds for HV. Maybe need to follow it up
+ - Luise: if those are the 3 bonds from HV-tab to the pad, then this is sufficient
+- Forest: when you bond the sensor bias bonds, they are done before the bonds next to it the bond-foot and wedge get close to each other. Which is the order of those?
+ - Sergey: they go last
+- Vitaliy: when the powerboard is connected, is the ground and power connected first or not? Would be better to connect them first for ESD safety
+ - Sergey: is this from powerboard to test frame or hybrid?
+ - Vitaliy: from powerboard to test frame
+ - Sergey: we bond to test frame first and then bond to hybrid for each module. We start with power bonds, then signal bonds
+- Craig: Forest comment triggered something. Are the shaper bonds for each ASIC included?
+ - Luise: the field shaping bonds? Are they included?
+ - Sergey: yes, they are there
+ - Vitaliy: don’t they go to the hybrid?
+ - Craig: no, to the ASICs. These are the bonds we never test if they are present, so is part of visual inspection to check that they are there.
+### AOB
+- Luise: currently have some issues. Just want to say that there are a lot of people working on them and would like to thank everyone involved in it.

@@ -1,0 +1,70 @@
+# 10/08/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1054925/ 
+### Introduction
+- Site Qualification News
+ - module assembly goes live now
+ - all other steps are out apart from 
+ - electrical test (to come in future) and 
+ - module metrology which the SQ doc task force will be looking at this week
+- sasd
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R4 tool production
+ - company will remake
+ - plan to be done this week with manufac
+ - then send to anno
+ - ready for delivery by end of August
+- Powerboard testing setup roll-out
+ - new FPGA board had some issues
+ - all other parts have arrived
+ - FW and SW is tagged and ready to ship
+ - small USB connection issue might need quick check
+- Production of bonding and testing jigs
+ - Karo heard from Oscar:
+ - bonding jigs should have started shipping
+ - testing jigs to follow
+- Production of EC stencils
+ - R0 and R1 started production
+ - ready for shipping this week
+ - rest to follow order of a week later
+- Please open task for EC glass dummy sensors
+ - R0 and R4 sent
+ - R1, 3 and 5?
+ - Scan has paid but company drags out delivery
+ - Dortmund will report next week
+ - Created new task, still need to add proper list of people
+### First star hybrid results from Toronto
+- Ash: PCIe connector panels are used?
+ - yes
+- What about hybrids that have too high glue weight but no disturbing squeeze out
+ - They pass according to doc
+ - Mark as passed in DB but please add comment that the glue weight is above pass value and they pass on this special clause
+- Bendy EC hybrids, hard to suck down
+ - Likely caused by hybrid release option from flex array - barrel found that the retainer with pips (rather than laser cut allround and small thin layer left) is better for suppressing bending
+ - We need to check with Kambiz to please follow barrel example
+ - Is bendiness everywhere?
+ - Yes, stronger in HCC area, but small stats
+- Finish R1H0 first now to fulfill Celestica contract while waiting for other toolsets
+- 
+### Module Assembly: Vacuum
+- Sarah: what if it got bumped after removing pickup tool after 6 hours?
+ - There could be some xy position variance but unclear
+ - In theory this could happen but if there are no earthquakes we do not expect this
+- If we could use this option we could glue hybrids in the morning and add the PB overnight, which could speed up things nicely
+- Glue does not seem to be moving in xy seeing how hard it already is after 6 hours
+- How can we ensure that this is safe?
+ - Maybe do a slightly cruder test using glass slides and show that the positions are the same when cured 6 or 24 hours?
+ - We could also do shear tests and prove that the shear does not change between 6 and 24 hour cure?
+ - A bit indirect though
+- This method has been used in prototyping when time was tight, but we did not get the relevant metrology
+- Discussion if this would run against the 8 hour work day if we tried to glue hybrids in the morning and PB at the end of the day
+### Tool Discussion
+- Issue seems tied to anodisation in bushing holes
+- Discuss here how to solve
+ - Toronto took bushings out, very carefully with the use of a micrometer, work down the outer diameter and reinsert
+- Richard will send out working tools and sites can return non-working tools for fixing
+### AOB
+- Pa
+- sd
+-

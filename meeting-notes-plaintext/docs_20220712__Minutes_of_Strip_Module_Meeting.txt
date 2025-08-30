@@ -1,0 +1,83 @@
+# 12/07/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1154787/
+### Introduction
+- No comments
+### 
+### Barrel Cold Module Noise
+- Ingo (slide 2): is the single dot of low noise an unbonded channel?
+ - Tony: yes, that is done on purpose
+- Ingo (slide 8): did you check if it matches with a pick-up tool?
+ - Tony: yes, and it does not match. Also the pick-up tool suction cups are larger
+ - Ingo: does it align with the vacuum pattern on the HV-tab tool?
+ - Tony: no
+- Bart: how do the engraved strip sensor channels lign up with the measurement channel numbers?
+ - Vitaliy/Bart: The numbering would match with the Y-type hybrid
+- Ingo: why do you not think it is sensor based?
+ - Tony: across different batches and sites, it is possible but less likely
+ - Bart: but we have seen some sensor issues around channel number 300
+ - Vitaliy: can’t match it to data in sensor tests. Issues show up cold, where interstip issues should be better at lower temperature. Also, can’t match it up with strip based issues
+ - Bart: do you see odd and even effects?
+ - Tony: no
+ - Possible issues: condensation (but checked in box), stress (but would match with glue pattern), transistor speed (didn’t see when looking for this)
+- Vitaly (slide 11): don’t think gamma irradiation is a good idea and data with glue cure only at high doses
+- Paul: did you try to play with the shunts in the ABC to see if this can make it worse by increasing the power draw?
+ - Tony: don’t know, but people changed the input voltage into bPol and that didn’t show anything conclusive
+ - Dennis: could also disable one hybrid electrically (without removing bonds)
+- Tony: would be good to see if the noise is clean
+ - John K.: not all above the threshold, but small clusters
+ - Tony: take events of a chip and check
+ - Tony: see if noisy channels are correlated; might also look at magnetic triggering
+ - John: had some noise on irradiated modules, but don’t know if that gets better when testing them warm (not done)
+- Tony: probably need
+- John: does it always show up on both segments under the hybrids?
+ - Tony: not, see slide 10 sometimes it only shows up on one hybrid or the other or both
+ - Tony: need to check if it is correlated between the two hybrids or not
+- Peter: there are ways of looking into event bursts
+ - Tony: would be good to see if there is anything correlated with the phase of the DCDC
+ - Peter: should be possible to do an a stave
+- Peter: don’t agree that it does not correlate with glue pattern
+ - Tony: glue is everywhere, but noise (slide 8) not in certain areas
+ - Peter: the bottom area is probably the coldest end of the module (furthest away from DCDC and HCC) but also the region where the thermal CET should be smallest (top and bottom of sensor nearly same temperature)
+ - Tony: difference between stave and single module test will give some indication about mechanical strain causing the issue (suction cups,)
+ - Peter: but basic CTE is still there
+ - Peter: what is the variation of the concavity of the sensors?
+ - Tony: ~20um, most modules very similar only few with higher/lower values
+ - Peter: would be good to look at this, especially into those that are on the edge of the distribution
+### 
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 12/07/2022: Barrel
+- 19/07/2022: EC
+- 26/07/2022: Barrel
+- 02/08/2022: EC
+- Shipping readiness (incl import procedure)
+- Powerboard testing setup roll-out
+- Single Hybrid Testing Database Implementation
+- Hybrid Burn In Software
+- Single Module Test Database Implementation
+- Multi Module Test
+- Modules for Test Beam
+- Powerboard bending studies
+### Institute Contributions
+- Celestica
+ - No comments
+- Melbourne
+ - Vitaliy: when ordering Polaris, did you specify it is the approved version and not the new one?
+ - James: it was definitely Polaris
+Next week: Liverpool
+& BNL, SFU, QMUL, NOTE, LU
+### Avoiding sensor low isolation at module sites
+- Carles: sensors from Prague come with hand written labels (up/down) should we check that those labels are correct?
+ - Xavi: don’t know for other institutes, but at Vancouver we have them without labels. But you should check with or without labels
+- Vitaliy: the main point is to avoid charged up sensors before you pick them up with vacuum tools. Some sites started to use de-ionizing blowers to remove the charge up
+### EC Stencil Experience in Freiburg
+- Carles: Is the rotation also present in the steel sheet design?
+ - Uli: don’t think so (have checked the designs with Marc)
+ - Carles: are you planning to make enough frames of these stencils for everyone?
+ - Uli: will make enough stencils frames for the whole lost set and CNC machined so they should be flat
+ - Uli: yes, for all sites. If someone from Prague can tell us the correct number, we can do this, but we are currently planning on making 5 sets.
+ - Carles: will check this offline
+### barrel powerboard flatness measurements (postponed)
+### AOB
+- No comments today

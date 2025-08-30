@@ -1,0 +1,83 @@
+# 23/05/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1253785/
+### Introduction
+Slide 3
+- William: we are not going back to change PPA/PPB if they don’t have this?
+ - Luise: we don’t, but you can. It’s mainly for going forward
+- Theo: If we want to make a module batch, do we need a hybrid/powerboard batch?
+ - Luise: you can have the module in one batch and the hybrid in a different batch. The database does not care
+ - Theo: can hybrids be batch-less and I just make a module batch?
+ - Luise: yes
+Slide 5
+- Theo: document stated 1V/s, which is slow
+ - Luise: difference is that if you want to measure the IV, you need to ramp slower and have a settle time
+ - Luise: if you only want to ramp, it can be done faster
+- Tony: are we rolling this out now for PPB2 modules? We are currently doing the ramping manually which would be impossible
+ - Luise: how are you doing the raming now?
+ - Tony: by hand with the front-screen of the Caen
+ - Luise: if you can ramp with 10V/10s manually, can you ramp it faster?
+ - Tony: yes, but you would need someone physically sit there to do the raming all the time, but right now we have things automated
+ - Peter: working on ITSDAQ implementation for the automated raming
+ - Tony: so we can’t roll this change out until the remote/automated power supply control is available
+ - Peter: can look at the cycles
+Slide 8
+- Tony: we don’t have the actual thing for the thermal cycling test, what do we do?
+ - Luise: you can just upload a single test
+Slide 9
+- Theo: have been doing testing in barrel with cold box and think we have seen this as well
+ - Ashley: I have tested a hybrid panel today and didn’t see any errors today
+ - Ashley: I have doing it from the command line and didn’t see any issues
+ - Ashley: will try update ITSDAQ and try it again
+ - Peter: look at the HCC phase settings (offline), that is the likely issue
+ - Bruce: don’t run the phase scan, this could also cause the issue.
+ - Peter: if you run the phase scan, you need to re-flush the firmware
+ - Ashley: would it be the same with a 3PT gain from command line
+- Andy: Is it written down what the difference between physics mode and counter mode is?
+ - Bruce: not as such, but counter mode uses the counters in the ASICs, while physics mode is what we actually want to use
+### Institute Contributions: 
+NBI
+- —- cancelled today
+Next meeting: Argotech
+### Monthly pull test discussion
+Slide 14
+- Luise: do you think we should standardize what we do in case of issues? Is there a judgment call what to do?
+ - Forest: it can be, e.g. if most wires fail in a certain region. It’s hard to know what happens if there are no comments that are added to the data
+ - Luise: so if the test fails, people should try to get the parameters changed to improve the data
+ - Forest: don’t necessarily want to recommend changing parameters all the time, but want to ensure that when assembling something from a batch the batch should be tested first and if it fails need to look into it (without changing bond parameters)
+ - Forest: could happen that after change fo parameters, you are suddenly overbonding
+ - Luise: maybe as recommendation to clean and try at a different location, but also comment on what is see.
+ - Forrest: worth it to also upload failed results and comment on that
+- William: when you differentiate between source and destination, it’s both on a hybrid?
+ - Forest: yes
+ - Forest: looking at the tendency of the failure mode, we’re still comfortably available from our lowest pull strength level (even at 3 sigma), but when you have a source break, that goes close to the allowed minimum sigma, so it’s an indicator to maybe do further investigation
+ - William: what do you think is the difference between source break to destination break (or source peel to destination peel)?
+ - Forest: at a very small level, the bonding process is different. Source only have a small wire tail, while at destination have a large wire on both ends
+ - William: but empirically, the numbers are pretty much the same within uncertainties
+ - Forest: we are doing pretty good. Tried to separate directions to pay attention to (slide 6)
+- William: looking forward to what happens for sensor to sensor or ASIC to ASIC bonds, which seem to be more reliable
+- Kirsten: (about re-testing) one of the options is cleaning and then re-testing on hybrid flex. If we are talking about production batches of hybrids and flexes, unless you have a very good suspicion that the flex was not treated correctly, I don’t think cleaning it and re-testing should be the first go-to option because this would imply that all production parts need to be cleaned.
+ - Luise: would use it as diagnostic tool to see that there is actual contamination
+ - Kirsten: agree, but it should be further down the list of things to try
+ - Forest: 1st go do a different location on same sample; if fails 2nd go to a different flex from same batch; only then might want to check cleanliness
+ - Luise: shouldn’t be too strict here, sites should use good judgement
+ - Kirsten: also should compare with other sites that use the same batch to filter out local issues
+ - Forest: can we have a human readable batch number in the google document?
+- William: if you wander into a bad place on the coupon, it could be that the hybrids are bad. Need to be very careful
+ - Forest: yes. In industry would just pull a piece out of the batch and test it. If it fails, do some more tests, but if pass then it should be good (e.g. from a one-off failure)
+ - Luise: this is an evolving process
+### Cold breakdown in module cycling and stave testing
+Slide 
+- Andy: are we looking for something that could cause breakdown or things that cause breakdown?
+ - Theo: right now just look at everything
+ - Luise: need to build up information
+ - Andy: do we also track the opposite (e.g. glue on guard ring that does not cause breakdown)
+ - Andy: and are there any other things apart from breakdown that are quantified (e.g. number of cycles)?
+ - Theo: we track number of cycles and in spreadsheet also can comment on the symptoms of breakdown.
+### Batch reporting
+- Luise: the UK will soon need to be able to update batch information for modules that were registered in one batch but were then moved to a different batch - could you add a function that allows to update batch information, please?
+ - Kenny: yes, have something in mind already
+- Luise: there are few talks on how features work, do you have a collection about this anywhere?
+ - Kenny: will try to collect this in itkdocs
+### End-cap module metrology update
+- No specific questions
+### AOB

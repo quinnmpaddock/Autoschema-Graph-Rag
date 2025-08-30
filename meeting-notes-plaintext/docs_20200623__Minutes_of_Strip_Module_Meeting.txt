@@ -1,0 +1,34 @@
+# 23/06/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927507/
+## Minutes
+### Introduction (Craig & Ingo)
+- Reminder that there will be two discussions in the planning meeting tomorrow:
+ - PPA timing (please fill in spreadsheet if you have been asked to do so and haven’t done so yet)
+ - Barrel test frame numbers
+### Cleanrooms and silicon detectors (Gerrit)
+- Facemask and coverall vs. labcout comments to be added to the google document for the document to be updated
+- All of this is for a minimum requirement, local rules for eg. ISO-5 must be followed if required
+- Reminder of the cleanroom twiki where info on gloves/masks etc. should be collected
+ - https://twiki.cern.ch/twiki/bin/viewauth/Atlas/StripUpgradeCleanroom
+### Bond pulling summary (Carles, Forest & Simon)
+- If array QC jigs to be used for pull testing, need to understand whether everyone has a pull tester which can take these jigs
+ - Unclear how this might work in EC
+ - Array QC jig has to be used as this is the only jig which applies vacuum to the jig itself
+- Cicorel vs. “homebrew” cicorel
+ - Given Cicorel is known standard, hesitancy to go to “homebrew” cicorel as reference
+ - Price thought to be something like factor 2 but not significant on scale of a module
+- A summary table of all the bond tests was also uploaded but not discussed
+ - Send comments to Carles, Forest & Simon
+ - Will be discussed in the next meeting
+### Database structures (Sven)
+- Craig failed to take notes during this discussion
+- Lot’s of discussion on whether there should be anything more than PASS/FAIL
+ - Having secondary “ALMOST PASS” levels could open a can of worms
+ - Even if something is FAIL expectation is to keep the object in storage, if necessary, “CLOSE FAIL” cases can be found in the database later, especially given the stage at which FAIL occurred will also be known
+- Discussion did not come to full consensus but seemed that nothing was being discussed that would require structural changes to the database, just possibly adding stage definitions to the system so ended the discussion
+ - Please have a look at the slides and think through stages etc. and how they could work
+### End-cap testing jigs discussion
+- Ran out of time (sorry)
+ - Will be discussed next week
+### AoB
+- None

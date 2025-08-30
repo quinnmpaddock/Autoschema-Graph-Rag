@@ -1,0 +1,61 @@
+# 2024-08-19 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1442749/
+### Introduction
+Presenter: Luise Poley
+- Vitaliy (sl. 6): When you say four petals and staves, you mean four of each right?
+ - Luise: Yes 
+- Chris (sl. 6): How coherent are the timelines between the staves and petals?
+ - Luise: Currently they look good. We should have the first petal and stave nearly around the same time, with the second one arriving a bit later due to August. We’ll also be able to spread this over more loading sites soon. Currently, it looks like we can keep them together, but let’s see how the next few months go.
+ - Luise: We won’t delay one for the other though.
+- Tony (sl. 8, Metrology with Interposers): We’ve been trialing this on our internal webpage, we forgot the shield box height. We are getting close to crossing (or are) the maximum height.
+ - Luise: Ah yes, I forgot the SB height, I have some email from the integration people, I will get that number. They may be able to “give” us a little more headroom. Added to the list
+- Sven (sl. 8): We should also start thinking about the QC steps needed for array-level objects, since they may not be able to do or upload the details.
+ - Luise: We do need to do this, should we add this to the discussion at ITk Week?
+ - Tony: Unless you know what the QC is at the site making them and the site receiving them, it makes this difficult. I don’t know if ITk week is too late and it could cause a delay. 
+ - Bart: It would be a bit late, and Navid is away this week. I think we should prepare for this discussion soon.
+ - Luise: Shall we start it next week?
+ - Agreement to start it next week.
+### L4 Updates
+#### Sensors
+Presenter: Xavi Fernandez-Tejero
+- Abe: Is there any worry about static charge buildup after installation?
+ - Xavi: don’t have data for that, may need to check
+ - V: We are collecting some data and we haven’t seen it so far. Also, physically it doesn’t make sense charge would appear from nowhere. We’ve seen that low-dose irradiation on both sensors and modules cause this to disappear very quickly. The ionization creates free charge
+ - Abe: makes sense, thanks
+- John K: As you know, HPK has used two different styles of these sheets, is this the newer or older style of sheets?
+ - Xavi: this is with the older style of sheets (the bad ones), they had high static charge upon arrival
+ - John: Okay yeah, that’s what we’ve seen. Do you think this will be needed with the newer sheets?
+ - Xavi: I’m not sure I understand
+ - John: do module sites still need these if they have the new sheets? Or is that just easier than have module sites check which sheets they have
+ - Xavi: The recommendation is that if you can, it’s always better, despite being time consuming. Typically you only need to do this as-needed.
+- Xavi, added to the chat:
+ - Paper from sensor community showing that very low gamma irradiations (equivalent to a few days in working conditions) mitigates static charge issues, i.e. early breakdown and low interstrip isolation
+ - https://doi.org/10.22323/1.448.0026
+- Vitaliy in chat:One consequence of the static charge presence is that it's beneficial to use an ionizing blower before making any physical contact with the sensor. (I know I said it before many times, but "sic transit my mantra")
+#### L4 ITSDAQ Update: Bruce
+- Bruce: had asked about powering tests two weeks ago, if anyone has done that, please report
+ - Cole: haven’t done them, but would love to try them; are they in the test menu?
+ - Bruce: yes
+ - Cole: Yes, and they are very fast, right?
+ - Bruce: yes
+ - Cole: please everyone try the new powering tests
+### Five Things You Did Not Know About Untrimmable Channels on Interposed Cat B Hybrids!
+Presenter: Marcus Wong
+- Luise (sl. X): I was wondering, one suggestion was to run a full trim range to see if the trim levels were different between hybrids and modules. It might explain the differences seen (trim target better for modules), did you happen to look into it?
+ - Marcus: We did not.
+ - Luise: That might be useful.
+ - Marcus, did you say a trim range test.
+ - Cole: in the list of tests, there is a Full Trim test
+ - Tony: The issue is we don’t have any more GradeB hybrids that haven’t been turned into modules.
+ - Luise: There will be more.
+ - Tony: Okay
+ - Luise: It might be useful to see this in case the target.
+- Tony: a couple of statements:
+ - If we look at the rate of failed channels, it is very much the same for Cat A and Cat B, which is good, but the shape is slightly different, Jacob looked into this a while ago and you could see similar peaks. We see some variation, because the gain is slightly different in different areas of the chip, and it is due to the power distribution on the chip, and it is kind of expected
+ - We talked to Peter and he wanted to check if there is something going wrong with the trimming and he will look into it when he is back
+- Cole (sl. 8): For the right plot, on the ends of the chips, do you happen to know which chips these are? Are they the chips on the end of the hybrid?
+ - Marcus: I’m not sure actually, I’ll check.
+ - Cole: that might be useful to check, could be that these are just chips on the ends of the hybrids, next to guard ring
+ - Marcus: I see
+### AOB
+-

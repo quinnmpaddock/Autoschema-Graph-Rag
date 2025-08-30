@@ -1,0 +1,102 @@
+# 09/03/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1008265/ 
+### Introduction
+- RAL might have found a way to ship wafer faster than anticipated (in 1-2 weeks)
+- Tony A. gives update about HCC size increase
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+- R0 tool production
+ - Back in workshop for final assembly of pins
+ - Missing bushings expected to arrive in next days
+ - When first set is ready, do metrology and build a test object
+ - Not easy to estimate about when tools are ready for distribution
+- US hybrid/module tool production
+ - Shipped tools that need re-machining
+- UK/China hybrid/module tool production
+ - Tools expected back from rework today to RAL
+ - After shipping to Liverpool, do final inspection of reworked features
+ - Need to modify pick-up tools to fix design issue
+ - Next report in 3 weeks
+- US powerboard tool production
+ - Report next week
+- EC PPA/prototype hybrid order
+ - Most are SMD populated, reordered some types to get full PPA quantities
+ - Hybrids need to be cleaned (water spots after manufacturer cleaning); will be done at Freiburg
+ - Plan for assembly vendor to do cleaning? Yes, if they can do without water spots. Need further discussion with vendor.
+ - Barrel has opted for no-clean process because this is now industry standard
+ - 3 weeks for sending them out
+- Shipping readiness (incl import procedure)
+ - Tasktracker updated by Carles
+ - No triangle shipping, need to check impact for all countries 
+ - All shipments might need to go through CERN
+ - So far all countries checked (China, Canada, Spain) answered question about “what counts as modification” with a statement that assembling hybrids/modules would fall under modification of material and therefore prevent temporary import/export schemes (currently getting double checked in Canada)
+ - Need to get this checked for every country involved
+- Barrel hybrid tendering/order
+ - Discussion between Ashley and Graphic about copper thickness of inner layers
+ - Need to wait for QA of thinflex circuits with thinner copper process.
+ - A few weeks until decision can be made
+ - Gerrit: would this affect the mechanical stability?
+ - Graphic thinks the thinner copper will result in better circuit
+ - Availability of raw material is the critical part for PPB hybrid production, not specification
+ - (delivery issues with Dupont)
+- EC hybrids/powerboard tendering
+ - Weekly meetings to discuss progress
+- Endcap module thermal cycling setup
+ - First EDMS review still open
+ - Couple of missing drawings and couple of clarifications required
+ - Sergio: close review, update drawings and open again (either to accept it or for short review)
+ - DESY workshops 
+ - Outsource machining
+ - All DESY workshops had been temporarily closed; back open, but large backlog -> try to push boxes priority
+ - Have to finish few manufacturing drawings (very soon)
+ - New update in 1 month
+ - Gerrit: need electrical brakes in plumbing to jigs but need to be careful that they don’t leak at low temperature
+ - Not sure if needed because full box is floating
+ - Grounding in peltier-based boxes is different than for non-peltier boxes
+ - Want to isolate chiller from box
+ - Endcap cold-box design allows for breaks outside of box if required
+ - William: do modules need to fulfill noise specs in cold box
+ - Craig: yes, so far all tests show that it is possible; need to see after first tests how the noise behaves
+- EC hybrid test-panel finalisation
+ - Re-ordered R2 arrived today
+ - R3 testing in progress, looks mostly OK
+ - Karola: Dortmund need to spend money soon, so would be good to get feedback when they can order the parts
+- Production of bonding and testing jigs (EC)
+ - Waiting for design of test jigs from Sergio -> less than 2 weeks probably
+- Production of R0 and R1 test frames
+ - Update in 2 weeks
+- Production of R2 test frames
+ - Update in 2 weeks
+- Production of R3, R4 and R5 test frames
+ - Update in 2 weeks
+- Production of hybrid panel cover
+ - Order additional pieces because of threaded inserts?
+ - Some holes are close to edges, which increases risk when push-fitting inserts
+ - Gerrit: tested lots of inserts and all pushed parts damaged the polycarbonate. Only heat-fitted inserts worked reliably.
+ - Should try test pieces with different hole sizes to find best match
+ - Timeline for final delivery?
+ - First parts need to be ready in 6-8 weeks
+ - Full set has more time
+- Production of stencils (EC)
+ - Liv not in meeting
+- Production of LED bars for the EC
+ - Issue with LED PCBs not fitting in jigs
+ - Working on design update and Re-ordered
+- EC PPA/prototype powerboard order
+ - Flexes in hand, go to SMD population
+ - Next update in 2 weeks
+### Long-Term Humidity Study (Vitaliy)
+- Assumption that modules will be in dry storage, but not during assembly
+ - Stave assembly done in 2 days without dry storage, but can be longer if issues arise (up to approximately a week)
+ - Might have to look into how to mitigate longer exposure during assembly
+- William: Is there a plan to do tests with keeping modules dry (e.g. to check for other impacts on modules)	
+ - Preproduction sensors have been kept dry for a long time
+ - Some experience across community with modules from prototype phase
+ - More concern about modules than for sensors about dry storage impac
+ - This test particularly to look for sensors, not modules
+### EC ASIC Misalignment (Luise/Sergey)
+- Fiducials are not aligned to sensor position (or sensor position is not aligned to fiducials)
+- ASIC centres are aligned to centre of landing pad
+ - Kambiz will provide dimensions of fiducials with respect to landing pad centre
+### AOB
+- None

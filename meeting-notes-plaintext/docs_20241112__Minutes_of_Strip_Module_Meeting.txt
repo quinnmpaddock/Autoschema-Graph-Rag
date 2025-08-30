@@ -1,0 +1,113 @@
+# 2024-11-12 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1474318/
+### Introduction
+Presenter: Luise Poley
+- Karol (sl. 5): Do we believe that the necessary information is in the DB and we can query it? Or do people not upload data to the DB?
+ - Luise: We’re still figuring out what is important, but we are not sure if all of the right information is available.
+ - Luise: Are you volunteering?
+ - Karol: Only if it’s in the DB.
+ - Luise: Maybe we can talk offline then about it.
+- Luise asks if folks are happy to use +700V to denote when breakdown doesn’t occur.
+ - Tony: Does that mean you want us to go back and fix these or is this for the future?
+ - Luise: For the future.
+ - Considerable silence that assumes we all agree to 700V.
+### L4 Updates
+- None Today
+### Update on R3 Noise Studies
+Presenter: Yajun He
+- Cole: it looks like you have a powerboard peak there, but it it is the widest I have ever seen
+- Luise: Do you know which test frame this is?
+ - Yajun: I’m not sure. I don’t think it’s for this specific test frame. We had another module with the same feature.
+ - Luise: Are both frames red?
+ - Yajun: Yes
+ - Luise: There is a blue version and that changes the right/left connections for HV. Dennis, can you comment?
+ - Dennis: The main difference was the direct connection vs wirebonded HV connection. I’m not sure anything else changed [missed a bit]
+ - Dennis: The frame doesn’t have the cutout in the back.
+ - Luise: There were two generations of red ones, I think we may have to pay attention.
+ - Dennis: If HV is connected it should be fine. I think at some point we added a few things, and now it doesn’t need wirebonds. In terms of noise performance, I can’t think of what could have changed. There is a HV filter covered by foam I think.
+ - Luise: Yajun, can you check?
+ - Yajun: Yes
+- Luise: Do we see this in the ColdBoxes?
+ - Yajun: The middle and right plots are in the CB with and without grounding screws.
+ - Ingo: In the TB setup, if you don’t properly ground the module, you get extra noise.
+ - Yajun: in the testbeam, we have the grounding screw, but we don’t have the aluminum layer on the back of the module
+ - Peter: I think this might be the wrong direction. The reason the ground screw is important is because the plate has a large stray capacitance. But in TB, we don’t because we need to put the beam through. So if it’s not there, I don’t think that is responsible for the noise. More likely you need an outside layer and you need to reference all cables that enter (or their shields). That’s the usual way to treat EC noise in the single-module readout. 
+ - Yajun: But why is it only for half of the module?
+ - Peter: essentially the power entry on one side is good and decoupling is better, and the chance of higher noise on the left side is higher
+ - Dennis: This is also what we’ve seen in the past. The left is more sensitive with the right one, so this is consistent.
+ - Peter: The metal chuck may help attenuate some of the signal from the DCDC, but that’s a different situation.
+ - Luise: Yajun, we have something written up somewhere and we’ll send that along.
+- Michael: Just about the test frame version: I think there was a change in the ground sense line, that might also be something to check. It was a very narrow trace on the old frames which terminated roughly on the ground screws in the past, which has been fixed on the new frames
+ - Dennis: I do recall … it wasn’t completely stupid, but that may have changed too.
+ - Michael: probably good to confirm what that change was
+### QCD Corner: Episode 7
+Presenter: Cole
+- Tony: for yields: allow 97 or 98%, otherwise it’s 1
+- Tony: how far back are we talking about - 100 means the US will be faster and the end-cap will be longer. Can we just go back through all the history?
+ - Cole: want to use interposer parts, so please use interposer parts
+ - Tony: 100 per site means hundreds, that will take a while
+ - Luise: how about 100 per cluster?
+ - Tony: yes, that would be similar to metrology
+ - Cole: I can live with that
+ - Karol: what kind of analysis can we do with 100 parts, that would be good to inform the discussion
+ - Sven: 100 isn’t many, we’ve built 60 hybrids in the UK for the past staves
+ - Tony: not per site
+ - Sven: with pre-series, that is 100s more, per site
+ - Luise: let’s use the 100 per cluster to check in again and see if we want more data to make decisions?
+ - Cole: sounds good
+- Karol: Do we still need to weigh the ASICs?
+ - Cole: wait until next slide
+ - Karol: no disagreement, but can we ensure everyone uses the same data, can you please circulate the target weights?
+ - Luise: need to clean up the hybrid weight data and exclude the outliers, will get it done
+- Ewan: how do the 100 hybrids translate to endcap numbers
+ - Cole: can not request 100 per type
+ - Luise: Do you want 20 per type? Or 100 independent of type?
+ - Cole: 100 independent of type
+ - Laurelle: should have mixed panels to work with soon, so should get these numbers soon
+- Tony: I want to bring up the pull-test for various substrates.
+ - Tony: Can volunteer Forest
+ - Luise: happy to discuss for the end-cap
+ - Bart: let us know and we can help
+ - Tony: We just need people to agree. 
+### Group Update: The DESYs
+Presenter: Kunlin Ran
+- Luise: For the Hamburg glue patterns. For this particular petal, where we want to have no little glue dots, we don’t want to risk it. We’d prefer these modules could be built again without them. Do you have the components?
+ - Christian Sanders: From our side, we have all of the material to build 2 R2s and an R4.
+ - Luise: The other petal will start cycling this week. So if something cracks this week it will make the decision easier. We could say wait a bit, but it seems worth it to build these parts now.
+ - Sanders: There are some bonding issues so we have to optimize the PB gluing patterns. Might be able to start as early as next week.
+ - Luise: Let’s check in then in case things change in the meantime.
+- Luise: The glue pattern on slide 4 (bottom right) looks like it all merged together. According to the simulation, this is kinda bad when paired with SE4445. The other thing is to try to avoid this merging into one line.
+ - Sarah: We’ve seen for sure that on the yellow it spreads less. So I think the one with glass is an exaggerated case. The pattern doesn’t look much different than the R2.
+ - Luise: If you think this is just the materials, then okay. We just want to avoid this.
+ - Sarah: On the top left it looks close to the guard ring. I’m sure the spread is less, but I think we should convince ourselves more.
+### Wire Bond Test Descoping: Test Format Proposal
+Presenter: Laurelle Veloce
+- Sven: Instead of merging those two entries, we could consider dropping the entries from frame to module. We don’t learn much there.
+- Sven: For the Open Channel Search, we can also probably drop this as part of the wirebond test.
+ - Luise: Currently we aren’t too sure yet. There is also an unbonded classification in ITSDAQ, which isn’t very reliable yet. Until we can be sure it won’t misclassify in the 3PG/RC, I’m not sure we should fully trust that.
+ - Sven: If there is uncertainty, we shouldn’t necessarily rely on it.
+ - Luise: We had said that people should be able to use the existing code if they want to do that. I think we should allow folks to use the original code, so that all the fields we propose now should be made optional.
+ - Are people okay with keeping the existing fields and making new ones optional so we don’t break things.
+ - Laurelle: Yeah, that’s what I am thinking too.
+ - Luise: I agree with Sven that we don’t need the second box (Module Wire Bond Tests slide). If they can’t be repaired, the module fails.
+ - Laurelle: The question might be why it failed. 
+ - Luise: It could also be a comment though when you set the module to fail.
+ - Laurelle: I suppose it’s a matter of what is convenient.
+- Forest: from a standpoint of handing things to Celestica and getting things back, if you hand a module to Celestica and all the bonds fail on the frame, you would probably want to mark the frame as bad and add them a new frame, but maybe we don’t to necessarily keep this in the database
+- Cole: agreeing with keeping field structure that allows people to continue with their existing code, so this will be the plan
+- We had a vote to decide on open question
+ - Do we need fields for failed temporary bonds: decision is no
+- Changes to be made
+### Discussion: Future of Powerboard Tooling
+- Luise: Last week, we wanted to know if there was any noticeable difference between interposed and non-interposed PBs. There isn’t much of a change. It looks like the temporary methods people have been using are pretty good and comparable to the past.
+ - Does anyone disagree with this? Do we need better temporary solutions?
+ - Silence
+- Luise: For tool modification. Tom agreed to make a new drawing for the Barrel PB Jig. This seems to be solved unless anyone has any objections. Drawings will come from LBNL and made for the future UK tools.
+ - Is anyone unhappy with this?
+ - Silence
+- Tony: Did Tom get us a draft yet?
+ - Luise: No, but we can now check in with him.
+ - Bart: Are there any issues shipping the PBs?
+ - Tony: We’ve shipped quite a few without failure. So it seems fine.
+### AOB
+- Nope

@@ -1,0 +1,100 @@
+# 2024-10-08 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1457263/
+### Introduction
+Presenter: Luise Poley
+- Slide 8: Luise asks if anyone has issue with CATX
+ - [Silence]
+- Sven (sl. 9): Just wanted to make it clear. The batch limit is still 1k at the moment. It hasn’t yet gone through the full set of changes.
+ - Luise: But it will be right?
+ - Sven: Perhaps, but there is a process it has to go with.
+ - Luise: Apologies, I’ll take that back for now.
+- Karol: Do you want this to be retroactive? Do you want us to back-date this on already-built interposer objects?
+ - Luise: Yes, sorry, this is inconvenient.
+ - Karol: It might be difficult if the modules aren’t at site anymore.
+ - Sven: That shouldn’t matter.
+ - Karol: And for this, it’s iPPC?
+ - Luise: Yes. It will be very helpful for those putting together information for slides.
+- Sven (sl. 12): What do you do if the outlier is based on, for example, a missing weight or something that went wrong? Not an error in the data when putting it in the DB, but in the measurement. Do you still put in the number?
+ - Luise: Interesting question. Can you get in touch with a specific example and we will see if we can get around that problem. We may have to remove the tests if they are ridiculous or change something somewhere.
+### L4 Updates
+#### Sensors
+Presenter: Xavi
+- No questions, all clear
+#### ITSDAQ
+Presenters: Bruce and Peter
+- Module type specific noise cuts are being implemented, merge request up and inviting comments
+- Cole: Quick question Bruce, did you happen to merge the MR fixing the HVStability serial numbers? 
+ - Bruce: Yes
+ - Cole: Thanks. I think folks should update, this will make sure the correct serial numbers will be applied to HVStability tests
+Verbal updates from Hannah and Abe. See the minutes under the L4 updates.
+### QCD Corner: Episode 3
+Presenters: Luise Poley (IVs), Cole Helling (glue samples)
+- Gab: Just to clarify, the regional request was slightly more complex than this. It was not just the post-tabbing, but basically covering the entire reception testing IV. I don’t know if that is a separate discussion or if that request is a different request.
+ - Luise: I don’t have the original request in front of me.
+ - Gab: Will share it. [update once shared]
+- Tony: I think it matched what Luise wrote actually [chuckling ensues]
+- Tony: I think this sounds good, if Xavi results can give us the 2% number, we just need to clean up BNL.
+- Please let us know if you plan to drop the reception.
+- Gerrit: I can guarantee you that the reception test will be dropped. It will break the whole flow of parts. The only test that will be done is after HV Tabbing.
+ - Gerrit: These things also have to be based in reality and based in production
+ - Ingo: Why are you fighting this?
+- Andy: Slightly related. Was the plan to always take it to 700V for sensors, or would we drop it later?
+ - Vitaliy: For the bare (tabbed) it is 700V. For modules it’s 500V because of the PB. Is that your question?
+ - Andy: Yes, because we still do HV-tabbed IVs to 700V and wondering if we should continue. The time saved is not large and most of the time it’s person-time.
+- Glue sample preparation:
+ - Tony gives a thumbs up for proposal
+ - Tony: we assume people will look at the sample a day after mixing to make sure the mix worked out
+### Group Updates: York/Toronto/Montreal/Celestica (East Canada)
+Presenter: Laurelle Veloce
+- Cole: Just to clarify slide 9, did that setting work for the module (HCC) in that picture?
+ - William: yes it did. Turns out every other hybrid, bonds are crossed properly, but we still need the unintuitive setting
+ - Peter: I’m sorry, but that makes no sense. The bonds would have to have shifted after the test.
+ - William: That’s possible. They pass through the Celestica test, and they pass them onto us if they don’t work so maybe.
+- Luise: For the hybrid that lost communication, with 5/9 ASICs. You tried different delay settings already?
+ - William: We did last night.
+ - Luise: During cold cycling?
+ - William: At RT.
+ - Luise: Worth checking for ESD damage. We’ve had communication failures and Cole spotted something on one that might be ESD.
+ - William: Maybe Cole could give me some idea of what the damage looked like.
+- Luise: For the picture on slide 10, sometimes we see little blobs of SE4445 come off of the interposer edge. So if you can check if this is SE4445 or a glass bead, that may help.
+ - William: We looked carefully, but the streak is starting away from the bond-wires. It’s not clear they are correlated, but this module has at least 6 of these streaks and they don’t seem to have come from the hybrids.
+- Luise: Montreal, did you have a chance to look at if this is a lot of failures over many tests or over one?
+ - Ethan: On slide 22, the criteria accounts for this. It compiles a bunch of channels that have failed consistently. A hybrid fails if more than 1% of channels fail, and if more than 15% of tests fail… it fails.
+ - Luise: But which was it?
+ - Ethan: I’m not sure I understand.
+ - Luise: Because it’s a percentage, you could have a few individual failures, or it has one big failure. 
+ - Ethan: 
+- Vitaliy: regarding the glue spot: it could be an oil drop (any oil drop), does not necessarily have to be SE4445, could be related to a dry airline that is supposed to filter out oil, but does not do so reliably. Had to install an extra filter in the dry air line, could be related to that
+ - William: This is our first iModule, and we did a lot of other modules that went through the same dry air, and several iModules later that didn’t. These dots look to be the size of glass beads, and we even found them on foam. The interposing took place a good distance away. We already have a lot of filters, but we will look into it.
+ - Vitaliy: it was hard for us to resolve because the effect was intermittent, and had to be checked for a long time. But see your point: if you find glass beads, that sounds like a different problem and more related to interposers.
+ - William: When we see this again, we’ll dig deeper. Thanks.
+### IV and Stability of Sensors with Chips out of Specification (>40 um)
+Presenter: Xavi
+- Vitaliy: Very nice study. Good to see these results. I think we should also say thank you to the DESY team who found the chipping in a very thorough set of VIs. It was very helpful. 
+- Vitaliy: From physics, if you have chipping on the edge at this level, it doesn’t go into the GR region. In principle, it should not really affect electrical performance as we don’t have a high field. The real concern is if there is a hidden crack, which is nearly impossible to see. If the limit is 40um, then that may be too strict as your results show, but that is the hidden concern.
+ - Xavi: We see the chips on the surface, but it’s difficult to know what happens in the bulk. Like in slide 6, where you can see some kind of fracture. Difficult to identify and can evolve into a larger chip.
+### Falsely-Flagged Unbonded Channels on R1 Modules.
+Presenter: Madison Levagood
+- Luise: Great to see this, as we suspected this problem might happen. This is why the OCS test was made, since the R1 and SS have the shortest strips. Nice to see this confirmed, but it means we might need to rethink how we flag unbonded channels.
+ - Madison: Absolutely. They are passing the OCS, but the RCs are causing the failures.
+- Vitaliy: Frankly this looks like a bug actually. In the noise plot the scatter covers the high and low range. It doesn’t seem like an algorithm problem.
+ - Cole: if you go to the backup slides, you can see that these values are scattered randomly over the different channels, sometimes it is in the center of the module, sometimes elsewhere, so this smells like a bug
+ - Tony: please contact the other experts (Jacob, Erik, etc)
+ - Madison: will do
+ - Cole: This is mostly a PSA to let people know that you might get a failed R1, but it is actually fine, it is just flagging channels as unbonded wrongly. 
+In that case, please consult the experts and have the Open Channel Search results ready as well
+### Split Test Frame Orders: Reception Test Status
+Presenter: Michael Vansteenkiste
+- Luise: Does anyone need their frames registered in the DB. That’s the question right Michael?
+ - Michael: yes, that's what we need to know
+ - Luise: please speak up if you need them.
+### AOB
+- We wanted to ask if people have been using the HVStability data, it seems a lot of people are having trouble merging data. Can we see a show of hands to indicate if you have attempted to use the script. [two whole hands]
+- For the people who haven’t, are you waiting for updates? Could we ask you to give it a try and report back so that this can be debugged properly?
+ - Bruce: I think we have more changes on the way. So it might not be right to do this yet.
+ - Luise: Do you have enough feedback about what current problems are?
+ - Bruce: Problems with existing situation, no. But we can look, we do have some ideas.
+- Pavol: I have a question about the metal pins for EC jigs. Are we doing this now?	
+ - Luise: We are at the stage where some folks want to look into this, come up with a good procedure, and discuss how to organize the logistics. If you want to give it a try, great. But it’s not worked out yet.
+ - Pavol: Okay, thank you.
+ - Luise: If you look into it and find a good way, we can come back to this in a week or two.

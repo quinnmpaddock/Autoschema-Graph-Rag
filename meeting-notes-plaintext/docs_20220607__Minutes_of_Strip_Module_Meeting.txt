@@ -1,0 +1,78 @@
+# 07/06/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1154782/
+### Introduction
+- Agreement on the database uploads suggestion ( for metrology and wire bond pull tests: remove the file upload as a test parameter and upload as an attachment instead (like we do for IVs))
+- Descoping wirebonding test. Andy: What are we looking for? Luise: what do we gain from filling in the test. See: 
+1- Are people filling in correctly? Are they not filling in the test and then discovering problems in the electrical testing?
+2- Uploaded correctly with no problems many times? Then, if there are not problems (at least usually) is this test useful?
+3- people filling in with no problems but then 1)?
+- HV tabs:
+ - Forest: Is the review before parts? Do we receive parts before the review? Luise: Review only before the testing but only for the EC
+ - Tony: statement about everything done before ppb2. Do we need to process the thermocycling the data? Luise: only having the data to do the analysis.
+ - HV tabs: need to be checked because the sheets will have different laser parameters in different areas
+- Conversation about the cold noise. Gerrit: if not in a coldbox, since the cold noise appears before the freezing temp. Any setup that can cold modules down to a reasonable temp can be used to study the problem. Bart: Almost comissioning the setups in the UK. Luise: the point communicated: people really need to set up the coldboxes soon.
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+	Update from Ankush
+- Luise: possible to merge data files of coldbox and burnin:
+ - Ankush: yes, keeping that in mind, going to present the plan at the burn-in meeting
+- Sergio: how’s the representation of the end-cap in these coldbox meetings?
+ - Ankush: generally lower than barrel, but key people are joining the meetings (Priyanka and Hannah)
+ - Priyanka’s work should benefit everyone, but people using different hardware may need additional support
+ - Ankush: tried to make it as easy as possible to run on all different setups
+- 14/06/2022: Barrel
+- 21/06/2022: EC
+### Institute Contributions
+- Argotech
+ - Slide 4. You are out of specs in some cases. I recommend practising more before you continue building to gain repeatability. 
+ - R2 PB glued to the transpor frame. Normal? Luise: NO! Maybe related to the outlier.
+ - Andy: what do you use to apply the glue on the stencil? Pavol: plastic card. Andy: not using hamamatsu plastics anymore, use stiffer material
+ - Vitaliy: waiting a given time of curing before applying the glue? Pavol: Yes.
+ - Vitaliy: how flat is the PB? 
+ - Vitaliy: gap under PB?: Pavol: metrology soon.
+ - Luise: how long do you wait after mixing? Pavol: 10 minutes. Luise: recommended to wait at least 20 minutes, wait longer to get the glue thicker
+ - Carles: did anyone else see glue squeeze out under the R2 powerboard? Vancouver: no. Carles: did you set the pins on the powerboard pickup tool correctly? Pavol: yes
+- SCIPP
+ - Postponed	
+### End-cap module test update
+- Meeting tomorrow 4PM CERN time
+ - https://indico.cern.ch/event/1166985/
+- John Keller: Difference in strips lengths playing a role? Luise: they do, but not justifying that difference.
+- Sergio: Is there any obvious difference from R3 wrt the others? Luise: Asked the question but no response yet. 
+- Gerrit: hand assembled with spacers, did you check the gap? Peter doesn’t have the metrology. Very difficult to measure the R3 PB. Luise: spacers of at least 120um under PB.
+### Strip Database Reporting
+- Luise: would it be possible to also use information about whether a test failed to distinguish between good or bad components instead of just stages?
+ - Conor: can probably be added
+ - Luise: need to think about how to do this without adding 15 if-statements
+### True Blue experience in the UK
+- Sergio:
+ - Wondering if the shear strength of the glue is affected by giving it more pre-curing time
+ - Should test that
+ - Luise: yes, should ask to make lap joints under same conditions
+- Luise:
+ - Do we have other experiences suggesting different pre-cure times
+ - No
+- Tony: how much working time do we have after the 75 minute pre-mixing?
+ - Matt: can play with that
+ - Ingo: would assume it’s better than Polaris
+ - Andy: documentation says 1 hour
+- Bart: tried to put Polaris and Epolite on slides and poked it with a stick and found that True Blue needs more pre-curing, but then cures more quickly than Polaris, true Blue sets much quicker afterwards
+- Could look into freezing True Blue
+ - Matt: haven’t thought about it, can look into it
+- Sergio: how did you store the glue?
+ - Matt: packaging says room temp
+- We have a recommendation for how to use True Blue: 75 minute pre-wait 
+- Ingo: before recommending a four-hour wait time, we might want to check x-y alignment as a function of time
+### Testbeam update: resynchronisation
+- Andy: is this a problem that only occurs in testbeam or is this a module problem that only shows up in testbeam?
+ - Jens: only seeing it in end-cap modules
+ - Andy: is this only because we’re running fast?
+ - Jens: we’re not even running very fast
+- Jens: worried because we see this in the R5, but only one HCC
+ - Andy: both streams?
+ - Jens: yes
+- 
+### IV test comparison (postponed to next week)
+### AOB
+-

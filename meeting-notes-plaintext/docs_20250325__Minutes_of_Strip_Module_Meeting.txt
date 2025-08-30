@@ -1,0 +1,115 @@
+# 2025-03-25 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1527304/
+### Introduction
+Presenter: Cole Helling
+- William: what changed with the endcap metrology?
+ - Luise: These are the updated PB and Hybrid shapes, where a few may have changed slightly. It should now match what you see on your recent modules.
+ - William: I will have to find someone who can interpret that 
+- Marta: Do the drawings have interposed sides
+ - Cole: these are not showing the z coordinate so not necessary 
+ - Luise: These were made before the models were made, so the Z coordinate doesn’t include interposers
+ - Marta: that was my perception 
+ - Luise: this is primarily about the distances between fiducials
+ - Marta: there will be another review on the interposed heights?
+ - Luise: These drawings are just for the X/Y positions, so there is no need to update them for interposers.
+ - Marta: thanks
+- Carles: I think it would be useful to have the nominal thicknesses, otherwise, where will they be?
+ - Luise: they have been updated in the assembly documents where we assumed people would look. We are looking for someone to do documentation. We thought the assembly documents would be enough
+ - Carles: Just to document in the same folder where the drawings are would be okay. The nominal thickness like this … etc. If it’s in the assembly doc, that’s fine.
+- Carles: Do you want us to go back to modules tested in the past for collection of early breakdown 
+ - Cole: it would be great if people filled this this in there isn't much in there
+ - Carles: are you interested in modules before gluing wirebonding ext
+ - Cole: all stages
+### L4 Updates
+Presenter, Production Management: Abe 
+- Carles: What is the situation with the stock of non-interposed PBs. I think they are rare because most were interposed.
+ - Luise: Do you mean existing or to be distributed.
+ - Carles: the ones that need to be distributed already exist right?
+ - Luise: There are some that were already distributed for IN. There are 10-20 petals-worth between type available, so they are roughly equivalent.
+ - Carles: There will be some at least
+ - Luise: enough for a handful of petals
+### Group Update: BNL & Brandeis
+Presenter: No Show
+### New Coldjiglib
+Presenter: Ankush Mitra
+- Cole: Why are we skipping the AMAC calibration at the start when skipping pre-TC?
+ - Ankush: this happens at every temp anyway
+ - Cole: the PTAT calibration gets erased after the cold turn-on in the nominal sequence. Here it will actually stay calibrated (which isn’t a bad thing).
+ - Ankush: I wasn't aware that happened.
+ - Cole: Can the experts please fix this?
+- JJ: Great to see this. For Safe Mode, after updating, do we need to test this manually? 
+ - Ankush: Endcap cold box?
+ - JJ: Yes, EC. 
+ - Ankush: Unfortunately, I haven’t had any EC volunteers to update and verify the code. So if you could update and provide feedback it would be very helpful.
+ - Alex: you could start TC do something to trigger the box and see if it shuts down properly
+ - JJ: And the interlock is fine right?
+ - Ankush: I put instructions on MM on how to test it out. Any other EC people are encouraged to give it a go and provide feedback.
+ - JJ: thanks
+- JJ: For the TC sequence diagram, can you put it in the Wiki? The one there is outdated I think.
+ - Ankush: that is possible try I will have to get around to doing that
+### Grounding-Optimized EndCap Bonding Order
+Presenter: Luise Poley
+- Luise (slide 5): are these bonds the correct ones (i.e. ground)?
+ - Dennis: I’m not sure
+ - Luise: I’ll find out and update this document
+- Luise (slide 6): If anyone thinks we should ground on the HCC-side (we do not), please speak up now, or we will use the bonding through the PB to Hybrid.
+ - No one disagrees
+- Luise (Slide 7): Does anyone really need this?
+ - William: We have about 100 programs we need to change about 5 per module. What is the evidence of problems? We have built a lot of hybrids which don't have an issue. This will be a lot of work. Is it really worth it?
+ - Luise: If I understand correctly, doing this incorrectly leads to ESD damage that may not show up til later. This is why we aren’t fully convinced.
+ - William: We’ve been producing hybrids for over a year, but I think trying to change this will cause more confusion than fixing problems.
+ - Ingo: they use Delvotec don't they?
+ - William: Hesse. We may use a Delvotec to do the panel bonds
+ - Luise: The only ones that need to be touched are the panel bonds. The Change can be as minimal as moving two wires.
+ - William: its not doing it, it's doing it right 
+ - Navid: You don’t even need to move wires, you can add a wire at the start and do the program the rest of the way the same.
+ - William: Okay, I could be wrong. The documentation will be a lot of work. 
+ - Cole: we have plenty of worry, this was a change that peter wanted to do
+ - Peter: This is a solvable problem so we can focus on worrying about the problems we don’t know how to solve.
+ - William: We can’t be solving problems to the end of production. We need to do this now.
+ - Peter: It depends if you want it to affect all of you hybrids of the portion you have built already 
+ - Luise: Do I have the situation with the stitch bonds correct so we don’t need to bond to the HCC-side?
+ - Peter: I think this is fine, I didn't discuss this about the barrel as the HCCs are AC coupled so it doesn't matter, if the endcap is DC coupled this is the correct order.
+ - Luise: Thank you.
+ - Dennis (in chat): In the stitch region gnd is also next to the single bonds like towards the powerboard
+### Fun with Stencils
+Presenter: Luise Poley
+- Link to Stencil Survey.
+- Carles: For slide 5, which stencils are these?
+ - Luise: This is the PB stencil list, for hybrids they all exist with glue dots, the change there is easy just remove the dots
+ - Carles: Okay
+### EndCap Powerboard Reception
+Presenter: JJ Teoh
+- Roland: The PB noise test there is no correlation between the reception sites as the noise test is not reliable enough. My recommendation is that this test is not taken seriously. Could this module be sent to Freiburg. We can see if this is a cause of shipping. I don't yet believe in this correlation. We decided to ship them out as long as we see the value is increasing. I still haven't found out which part is influencing this behaviour. We have built these PBs and have no evidence it is affecting the IV but keep your eye on it. 
+ - JJ: For now, we will use these Bronze ones. You’re saying as long as it increases, it’s probably fine?
+ - Roland: Yes. There is a QT student still looking at the distributions.
+ - Ingo: But you said this is not included in the final evaluation.
+ - Roland: For HVret, it is, for the power std, it isn’t.
+ - Ingo: So what should we do?
+ - Roland: We still need to refine the limit. We didn’t change the fw or the PB design, so it’s a bit puzzling to me.
+- Roland: For HVret, if the value “scales” (changes) between DCDC off and on, it should be fine.
+- Ingo: every PB that fails should go through you. 
+ - Roland: If you are unsure, please contact me.
+- Dennis: For the Z-turn this needs a different firmware as it has a different FPGA on it, I am not sure how easy this is to change
+ - JJ: But I don’t think the EC one will have the fw for this?
+ - Dennis: No, but Ben can add it. Post it on MM and we can iterate.
+ - JJ: if that is too much we can just buy the correct one. 
+ - Dennis: [inaudible]
+- Carles: Regarding your erratic behaviour and getting better when you test one PB, we saw this in the Z-turn, we could not even test 5 PBs at a time. It was something related to the board but we dont know what. Fixed by replacing the Z-turn with the micro-z, I dont know if what you are seeing is because of this but I would recommend changing to the micro-z
+ - JJ: They are just different boards?
+ - Carles: yes, and the fw is already available, so it’s plug-and-play. You do have to adjust some settings however.
+- Luise: I can second what carles is saying, our set up got more reliable with micro-z. You are looking at QC with this PBs, are you looking at the QC of the modules that have been built with them?
+ - Roland: No really yet, but it can be included.
+ - Luise: This could be a good QT. So we should start doing this correlation.
+- William: So that’s a perfect segway. Roland, you say there is a student doing a QT. Is it really scalable? How many tasks can we do until it is resolved.
+ - Roland: don't worry you will not have that many PBs, I do not want to wait 6 months before its solved. We are looking into it, we just don't have results yet. 
+ - William: If we were to start a new QT to compare to module performance, that could take a year. It sounds too long to me.
+ - Luise: I don’t mean to hold anything up, just to refine the cuts. It isn’t meant to delay anything.
+ - William: We will send these to celestica next week. 
+ - Luise: That’s not what I’m saying
+ - Roland: I would recommend you use these Silver ones. I think these PBs are fine. I don’t know how many are failing due to PB noise. 
+ - William: We’ll send you those five and try to get signed off.
+### AOB
+- Luise: Reminder to EC the EC production management meeting please let us know if to want to start later or earlier by the end of the week
+- Marta: I was thinking that maybe for MM, we don’t have any channel addressing module assembly. Would it make sense to have a channel for this? 
+ - Cole: I think this is a good idea. We have the e groups but they are not as easy. I will write this down and make a mattermost channel.

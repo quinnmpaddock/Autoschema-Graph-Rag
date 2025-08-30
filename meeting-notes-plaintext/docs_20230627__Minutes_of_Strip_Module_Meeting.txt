@@ -1,0 +1,88 @@
+# 27/06/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289845/
+### Introduction
+Slide 2
+- Carles: it’s just one order for production quantity of the test frames?
+ - Luise: in principle yes, but because of a design change we start with a small order to make sure everything is fine
+Slide 6
+- Ingo: do you also want prototype data, or only PPA/PPB
+ - Luise: you also need PTAT data, not sure which versions that is possible
+ - Luise: but anything we can get is goot
+Slide 5
+- Carles: so hybrid is now in PRR Part 1?
+ - Luise: only the flex QC, which would allow us to progress with ordering production flexes for the September PRR
+Decision: HV-Tab order shall be placed
+### ITSDAQ news
+- Cole not available today
+### Institute Contributions: 
+Oslo
+- Luise: do you know if the module is prototype or older?
+ - Carles: its a PPA
+ - Luise: then the config file might not work, Carles can you send the files?
+ - Carles: will have a look
+ - Luise: ideally this kind of error reporting can also go to the ITSDAQ expert list and there someone can help
+ - Havard: we only did a first try, but will do that
+Next meeting: DESY Zeuthen
+### Barrel powerboard distribution
+- Carles: for the China part of it, we should only ship them close to when they need it or small quantities so that they don’t have issues with the temporary export
+ - Luise: don’t they go to RAL?
+ - Carles: no
+ - Luise: thought would only go to 2 distribution sites
+ - Carles: the powerboards to UK should also go through CERN
+ - Luise: can’t RAL split them and ship them back to CERN
+ - Carles: that would mean some unnecessary shipment
+- Tony: storage capacity should be OK, as long as they can be stacked
+- Tony: when we receive the shipments, do we receive them, test them and then package them again for storage?
+ - Luise: because this is a priming batch, at least for the first shipments we would like to have reception tests done soon
+ - Tony: will see
+ - Vitaliy: they are reception tested on panels
+ - Tony: don’t think storage should be a problem
+ - Gerrit: agree, no problem
+- Tony: in US we will split first equally to get some stock, and then might reconsider
+- Xin: for UK/China we will have to discuss with sites
+ - Sven: RAL does not do reception testing of all UK powerboards
+ - Luise: but they do test their own?
+ - Xin: yes
+ - Luise: so we will have at least some tests, then wait for module sites to do further tests
+- Ian: do reception testing when we receive then, and then do tests again when they sit on shelves too long? That’s a lot of testing
+- Tony: timing is the other thing. Depending on how things go, we may ask for production start as early as possible and currently powerboards will arrive later. So we will not get a large stock. Need to see with Timon about the delivery
+ - Luise: also need to see about the rework
+ - Tony: so the earliest powerboards might become available is in 3 Weeks?
+ - Luise: yes
+ - Tony: hope they will become available when production starts
+ - Luise: also not sure considering the HV breakdown status if we get module production approved [during the PRR followup in July]
+ - Luise: for those that don’t already know, there were some issues with the powerboards and the first batches need some rework
+- Luise: OK
+- Xin: so for the powerboars, RAL can take them as a hub? Do you also want to know if individual sites can take them?
+ - Luise: yes
+### End-cap hybrid electrical test results
+- William: can confirm the one exception is R3 and will be on a module. Will check that if they still have large number of bad channels
+- William: and some hybrids are not shipped, so they don’t have tests
+ - Luise: yes
+ - William: and some hybrids have melted wires
+ - Luise: would be good to mention those in the PRR talk
+- Tony: do you want to have detailed comments now, or should we do this via email?
+ - Tony: (slide 14) retesting the failed hybrid once will not tell you if it is working properly. We have seen something similar with a hybrid that is close to the gain threshold, so in some tests it can pass, in others it can fail. You first have to look at the failure mode (if it is gain, we can help with analysing the data because we have done something similar)
+ - Matt: haven’t made these plots yes, but can look into this
+ - Tony: first this is to figure out the failure mode
+- Tony: the noise on every hybrid should be the same, the type does not matter. The only difference should be statistically, or something in the test was done wrong (initialization)
+ - Luise: what you probably see is that people haven’t used the correct config
+ - Tony: it’s hard to check, but you have to ask the people which configs they have used
+- Tony (slide 12) the R5H1 is a massive difference to other things we have seen. How many hybrids are in this peak?
+ - Matt: 2
+ - Tony: should check if the test was done at the same time for those, and then see if the gain swaps between 2 states. A scatter plot of gain/run (maybe per chip) would be good.
+ - William: we have started seeing this in other places where ITSDAQ has glitched and not used the correct trim files for example
+ - Tony: don’t need to ask, need to make a plot over time
+ - Tony: for thick: check if both hybrids were tested together, need to check per chip and then see if it glitched
+ - William: agree, it might be in the same run, but there is no simple way to track what happened at that time
+ - Tony: just need to see what happened. If it was just the glitch, that does not make the hybrids bad. We just need to understand what is going on.
+ - Luise: Christian, you have an R5 panel in Freiburg so it would be really good to have burn-in data from that (different hybrids in a different setup)
+ - Tony: but if this is realy, you should worry about this
+ - Luise: R5 is special (with other issues) and this might not be something to worry about this right now
+ - Mat: so when I make the plot, I want to see if the values toggle?
+ - Tony: want to see if it goes from one state to another or if it is toggling? Depending on which 5% data you chose for this, the peak might go away.
+ - Luise: at least know from run number if it was from the same test
+ - Tony: if you run the data with the code we have, you should be able to see this
+ - Matt: at very least, should see the date/time and see if it is nearly identical so we know it’s in parallel
+### AOB
+-

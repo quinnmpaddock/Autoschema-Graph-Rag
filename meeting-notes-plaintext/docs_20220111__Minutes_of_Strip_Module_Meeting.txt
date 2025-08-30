@@ -1,0 +1,97 @@
+# 11/01/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1109663/
+### Introduction
+- Tony: pulling together cluster information for US, there are things in the document that would require tests and database implementation is not there; how would this release site qualification
+ - Luise: we will release the document first and then do the SQ part, but do the procedure document firstBad channel classification should be in hybrid and module specification document, and we try to avoid duplication of information to not have issues
+ - Tony: not there, are we reviewing this now?
+ - Luise: need some data first to review this, and therefore the test procedure needs to be available (testing in the correct way
+ - …
+ - Luise: people usually haven’t commented on database implementation, so it would be good to do it now
+ - Luise: this is not the final version, just a current proposal where comments are welcome
+- Craig: why do we use long tabs when the short tabs work
+ - Marc: in the beginning it was not possible with the common short tab to reach the correct positionNeed to check that it will work with all positions; tab gets very close to sensor edge and for some of the upper modules would need a longer tab
+ - Luise: looked at R1H1 end up at same petal position as with short
+ - Marc: yes, sacrificial part is same for both tabs; it could be an issue for the module jig not the tab jig. The tab moves close to the edge of the sensor for the weld, needs to be discussed with sensor peopleFor tab bonding should be at a reasonably safe position on sensor
+ - Luise: glass sensor are in correct shape and positionMaybe do a similar test for R5 and R3 to make sure everything is fine
+ - Marc: maybe just enough to check the 3D models
+ - Sergio: short tab would be comming out at same angle and cut at same place for petal?
+ - Marc: yes, only the bonding position under the sensor is different
+ - Luise: would be good to check this for R5 and R3 for next week
+ - William: how do we decide if 5mm closer to sensor edge is an issue?
+ - Luise: check how close it is to the sensor edge should be a good indicator
+ - Ingo: the short will not be at the same position under the sensor
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 11/01/2022: EC tasks
+- 18/01/2022: Barrel tasks
+- 25/01/2022: EC tasks
+- 01/02/2022: Barrel tasks
+- R0 tool production
+- Finalising, not much progress over Christmas
+- R1 tool production
+- No progress over Christmas
+- R2 tool production
+- Work being done
+- EC PPA/prototype hybrid order
+- Flexes were shipped to Canada before Christmas, have arrived
+- Powerboard testing setup roll-out
+- Working on debugging, progress, but not stable yet
+- Endcap module thermal cycling setup
+- Working on finalising boxes, about five should be finished by the end of January
+- EC hybrid test-panel finalisation
+- No updates, need to make sure Pre-Production is covered and all the features for production are there
+- Production of bonding and testing jigs
+- There was misalignment reported between jig and test frames, but this is planned to be fixed on the frames, not on the jigs
+- Production of R0 and R1 test frames
+- Production of R2 test frames
+- Production of R3, R4 and R5 test frames
+- -> postpone until after testframe review
+- Open EDMS review for hybrid panels so that people can post comments there
+- Production of stencils
+- To be checked with Oskar
+- Production of LED bars
+- Only Zeuthen missing - will be sent to Zeuthen soon, Canada got theirs already, almost done!
+- R2�EC glass dummy sensors
+- All sent out, Canada ones missing
+- SMD tendering for EC pre-production/production hybrids
+- Tendering in progress, final investigations in progress, should proceed as planned if there are no corona cases
+### Pre-submission check of barrel HBiPCs
+- Ashley: is the fixed ID for the AMAC to be the same as we currently have?
+ - Vitaliy: yes. Didn’t have it for the first round, but got feedback for the first round that AMAC wires should be encapsulated, which is why red dot was added to mark these boards as new generation, but means AMAC ID can’t be changed, bonds were pulled to set AMAC ID and added a sticker to PB to mark ID
+ - Plan to use the same three IDs for new carriers
+- Ashley: 180 boards due to march for PPB, do we care about the flavour of the powerboards using for testing PPB hybrids?
+ - Vitaliy: in principle it should not matter - the powerboard will be different, but it shouldn’t matter
+ - Ashley: hook-up to hybrid should be same for all potential powerboard changes :)
+ - Vitaly: not completely sure, needs to be checked with powerboard people
+- Gerrit: outside dimensions of carriers did not change?
+ - Vitaliy: correct. Need to use tools for handling them, therefore make sure not to change dimensions (for panel fit and handling tools)
+ - One potential change would be to make transparent handling tools - could be useful to make visual checks easier, but not really related to board design
+### Hybrid test coupon update
+- Vitaliy: have read about something where the hygroscopic nature of polyimide was used, interesting to see that glue is as well
+ - Ash: was surprised to see glue is more relevant for this than polyimide
+ - Changes test procedure because things have to be baked before they are tested
+- Vitaliy: doesnt mean that hybrids need to be tested dry
+ - Ashley: no, would not think so
+- Luise: would this also have to be done for powerboard coupons?
+ - Ashley: yes
+ - Zhicai: also see change of up to 4% capacitance change after baking
+ - Ashley: are they epoxy adhesive for the construction of the circuits? Couldn’t find a number for epoxy, but interesting to see that it is and effect of the same orderHas to be fed back to EC as well
+ - Luise: was this done in EC?
+ - Dennis: Riccardo should know
+ - Marc: hybrids are stored in nitrogen, so should not be affected too much
+ - Luise: would be worth doing this backe-out check at least once to see if EC test coupons are affected
+### Hybrid tab cutting tool
+- Luise: have the drawings been uploaded to EDMS?
+ - Tom: no
+ - Luise: it would be good to do this
+- Ashley: PPB hybrids have no solder resist where the tabs are cut, so the force required should make cutting easier
+ - Tom: that is good
+### Python scripts for hybrids and modules
+- Luise: Please add to the Twiki DatabaseInterface page
+ - Sven: will do
+- Luise: might want to modify VI so that the GUI tells people what to focus on for the VI depending on component and stage (e.g. glue spillage after gluing)
+- Vitaliy: can get robotic accounts to have common access for everyone
+ - Sven: yes, we could, but want to trace who uploaded what
+### AOB
+- Ash: hybrids have been received at Liverpool, planning to fast-track a few hybrid arrays, plan to turn them around quickly for population, will finish QC as early as possible, return majority to US and keep some in the UK

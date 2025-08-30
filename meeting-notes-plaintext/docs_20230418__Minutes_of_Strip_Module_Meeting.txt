@@ -1,0 +1,137 @@
+# 18/04/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1253780/
+### Introduction
+Slide 2
+- Tony: should we also take PPA data?
+ - Luise: would be good to collect the data. For PRR some of the discussion we have is what to include.
+ - Tony: OK, some were not clear when PPA and PPB switched
+Slide 4
+- William: so we will upload images to the database?
+ - Luise: we are uploading to EOS
+- Ewan: making scripts to upload for EOS, but only for visual capture. What about visual inspection:
+ - Luise: will do this to EOS
+Slide 5
+- Ashley: for burn-in spares were send out. Are we still expected to look for additional spares?
+ - Luise: don’t know the life expectancy of the boards for now
+ - Ashley: ok, so we will wait.
+- Tony: we were following this up with Timon. He has some spares for his powerboard test system. They can maybe repair broken systems, and look at hot swaps
+ - Tony: but making spares is very expensive. Preference is to do repair
+- Luise: what about the Cambridge one?
+ - Bart: we do in-house repair. Need to wait if this works
+ - Tony: need to discuss if spares can be distributed to clusters, but would reduce LNBL fallback
+ - Craig: we should discuss on how long a site can be down if something fails to discuss the spares
+ - Craig: if site is allowed to be down for a week, how could the faulty system be replaced within this week
+ - Bart: the issue we had is that only some channels failed. Ideally would be good to have 1-2 spares at cluster level. During ramp-up the rate is lower, but for peak production it is much higher and would like to have a replacement in the cluster
+ - Tony: you will not get parts every week, ideally only do tests every month
+ - Tony: powerboard delivery rate exceeds module building rate
+ - Craig: should still be aware of possible lead times for parts to be able to accurately plan
+ - There is a difference between expensive with short lead time and parts that have a very long lead time
+ - Tony: could look into stocking up components that have long lead times or could become obsolete
+ - Luise: one of the problems is that we don’t know how many to order. 
+ - Bart: also waiting until something fails, might not be a good option
+ - Gerrit: there is also statistical failure (e.g. someone drops a hammer). If we have high-throughput items (like crate backplanes) where we don’t know how long they last, we should look into getting spares
+ - Luise: the problem is also about who pays for it
+ - Luise: not all sites run at the same rate, and with spares for crate backplanes we can accommodate for things
+ - Bart: what is the failure rate for parts (powerboard), e.g. also from ESD issues
+ - Dennis: have 2 failed boards
+ - Luise: would be good to collect the failure and also the failure modes
+- William: SQ is open, but GUIs are still in flux. So it’s up to the reviewers to make decisions about things that are not in GUIs
+ - Luise: if the feature is something that is part of the GUI where the sites don’t need to do development, then this should work for sign off. But all parts that are based on the sites, they need to show it
+- Tony: for hybrid burn-in, what is the status of the combination scripts?
+ - Luise: there is a follow-up discussion. There was some mis-understanding and we have now converged on having several small tests for each test mode and they are under development
+### Institute Contributions: 
+Liverpool
+- Ben: when did you look last? Should have been pushed recently
+ - Ash: not a criticism of the documentation in itself, problem is more that documentation exists, but is spread over documents, Twiki and mattermost, should probably consolidate
+- William: do you put the hybrid assembly on the hybrid panel before attaching ASICs, is that intentional or historical?
+ - Sven: historical reasons
+- William: for hybrid burn-in: I see five panels, have you made it to six?
+ - Ash: from 2021, have never had six panels to try again
+ - Ben: can we get six panels together somewhere and debug it to get six to work to ensure throughput?
+ - Sven: were at RAL, but then re-distributed
+ - Peter: there was a bug which was fixed, six panels could be tested, not all hybrids on all panels
+ - William: wondering if we learn anything from running hybrids for 100 hours
+ - Ash: need to compare data to see if it worked
+- Peter: bug was fixed on February 6th, if you use firmware since then, it should work
+ - Tony: have done it, at SCIPP, it works
+- Tony: Marcus has looked at all the data before and after burn in and it looks the same, the only change that is being seen is between first and following cycles
+- Tony: can we get information about whether flexes can be sent out?
+ - Sven: no, can’t answer right now, need to follow up offline
+Next meeting: cancelled
+### Results from wire bond ageing tests
+Slide 
+- Tony: do you want to replace the heel break requirement?
+ - Sven: tricky question: heel breaks don’t seem to matter for barrel hybrids, the really worrying thing is if the heel breaks don’t improve
+ - Craig: can we not just relax the requirement and pull after a
+ - Sven: would cause too much delay
+- Luise: is this in addition to existing QC or to replace existing QC?
+ - Sven: this would be in addition to existing QC to confirm we have healing effect
+ - Luise: and just for flex QC?
+ - Sven: this here is just for flex QC
+ - Luise: would we also want to do this for normal pull tests?
+ - Craig: need to either relax the spec or allow for a week of ageing
+- Forest: conflating two issues: bad substrate and contamination, and may not catch it if we relax spec too much
+ - Current evidence suggests that by waiting for a week there is an improvement, but wouldn’t want to relax it too much
+ - Craig: if we had hybrids with a contamination problem, which leads to bad peels and we relax heel break requirement, would we then no longer detect them when we relax this requirement?
+- Sven: that’s why we’re proposing this in addition, currently happy with cleanliness
+- Forest: good follow-up test would be to do a dedicated test with high peels and see if this is still being caught by the post-ageing
+- Luise: wouldn’t want to adjust all our procedures to generally wait for a week because it slows things down too much, but we could add an option to say: if there are too many peels initially, can wait for a week to see if things improve
+- Sven: should wait for end-cap results before we make a decision
+### PPB R0 and R3 module tests
+Slide 
+- Vitaliy: was there any glue on the sensor bias ring that would explain it?
+ - William: checked for glue on guard ring, but didn’t see anything
+ - Vitaliy: suspect it’s unconnected: could just be training 
+ - William: maybe, but it’s very fast: waiting doesn’t reduce the current, but starting ITSDAQ gets the current down very quickly
+ - Vitaly: did you do any visual inspection?
+ - William: yes, did not see any glue seepage
+ - Vitaliy: to check for glue under hybrid, look along the sensor into the gap. Physical defects during construction?
+ - William: nothing visible around the periphery of the sensor
+ - Vitaliy: front-end bonds are in the way. But before bonding, can look into the gap
+- Tony: nice to see modules behaving. There is a systematic difference between barrel and EC. Is this something to be concerned about? New EC modules seem to have higher noise. Any idea why?
+ - Dennis: don’t see why. Maybe need to look at hybrid temperatures between shunted and un-shunted
+ - Tony: temperatures would have to be very different, no?
+ - Tony: on mixed R1 it is even bigger (noise higher than at warm test). Looks like something injecting common noise
+ - Ashley: maybe want to bypass the HV on the powerboard since this is the only major connection to all channels
+ - Peter: hook-up is different on stave, maybe will see a difference there
+ - Tony: could see difference in split vs unsplit modules
+ - Dennis: is this is because of power consumption of bPol, should be different for different module types
+ - Tony: probably not critical, would just be good to follow up and understand it
+ - Vitaliy: checked the sensor and there were no defects when it was tested as a sensor
+ - William: no pinholes? and wasn't there in first 3 cycles
+ - Vitaliy: that would be an extreme possibility that would explain it: check if bond feet are off centre and could break the passivation layer
+- Luise: wasn’t there an effect in the past that if the ground bonds from hybrid to sensor boas pads are not done correctly, it would introduce defects
+ - Vitaliy: yes, if HV is not done correctly there could be punch-throughs of coupling capacitors which could introduce defects
+ - William: will check
+### HCC bond crossing
+Slide 3
+- Tony: Staves and Petals?
+ - Luise: everything that goes onto staves, should have crossed bonds
+ - Tony: what is the priority for PRR, more modules or crossed bonds?
+ - Luise: more modules
+ - Tony: then we can’t do the crossed bonds right now. All US hybrids have been build, but BNL does not have the capability to do the crossing of all modules on staved
+ - Luise: this plan was from an earlier time. If you want to load another stave without crossed bonds, that is fine
+ - Gerrit: but would end up with modules on a stave with and without crossed bonds
+ - Luise: that is what we want to avoid
+ - Tony: will look into this
+ - Luise: there is no intrinsic problem having mixed objects on a stave, as long as the configurations are done properly
+ - Peter: yes
+HCC crossed bonds are confirmed to be used from now on.
+### Descoping module weighing
+- Tony: have table up to a certain point that I can provide. Thought the glue type would be in the database
+ - Andy: glue is not directly in database and hard to track
+ - Tony: can provide a list of SE4445 parts since this is easier.
+ - Pavol: would also need True Blue/False Blue if possible
+- Andy: some are done by hand stencil, some by robot. Is there a plan to separate this?
+ - Pavol: yes
+### Early demo of a common Visual Inspection GUI
+Slide 
+- Ewan: already started conversation: regarding EOS structure, will not work with Windows at the moment. Recommended to use a Linux system
+ - Theo: thank you
+- Kenny: is there a way to rather share it with git to host it so that we can avoid deployment issues?
+ - Theo: possibly. If accessing it via a browser would solve the Windows issue
+ - Luise: idea was that for groups who have their own frameworks to have something that can easily be integrated, so that it becomes widely available
+ - Kenny: can cause issues. Maybe when it is more mature, can have a look at this
+ - Luise: idea is that defects can be added, so would be good to pull the defects list from a central place.
+ - Theo: that is a good idea
+### AOB

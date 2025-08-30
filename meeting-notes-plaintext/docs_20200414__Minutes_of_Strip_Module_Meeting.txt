@@ -1,0 +1,45 @@
+# 14/04/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/874230/
+## Actions carried over
+NONE
+## Minutes
+### Introduction (Craig & Ingo)
+- Nothing
+### Barrel powerboard update (Timon)
+- Previously had decided to have no fuses
+ - Fuse is only there in the EC at the moment
+ - More likely to blow accidentally than protect anything?
+ - Reduces reliability of the detector?
+ - What do we know about fuse reliability in our environment, have to be very sure that the fuse is more reliable than the powerboard for it to make sense
+ - The powerboard is anyway designed for high reliability already
+ - If you don’t have a fuse and you’re hoping wire-bonds fuse, potentially leaves a load of material in the tracker volume
+ - Discussion concludes no fuses
+- Does the longer HVret reference to hybrid GND potentially induce noise?
+ - It is potentially close to the CMD lines so could add a ground trace between to shield somewhat laterally
+- What is the width of the HVret reference trace?
+ - Answer = 250 um -> same as on Ash’s original powerboard
+ - This avoids common impedance coupling between HVret and other currents so route directly to hybrid LVret instead
+- Want to manufacture soon to be able to test these things?
+ - Straight to 250, hesitant to go straight for this but Timon points out that most can go to powerboard testing anyway
+ - Can also be used on hybrid panels if not okay for modules
+ - In hand middle to end of May?
+- How quickly can we see whether the changes have done what they should?
+ - Once back in labs it’s quick to get the powerboard on a module
+ - Worry is that given the issues we have seen in the past, testing on a stave will be a requirement to go forward
+ - Once we return to labs, US and UK to use barrel planning meeting to work out where/when is best placed to get modules with new powerboards on staves (in the right place) ASAP
+### Visual Inspection (Jane)
+- Delayed to next meeting
+### Wire bonding (Forest)
+- Carried similar things out on hybrids and powerboards
+ - Often (always) other potential issues that makes it difficult to do similar thing with hybrids/tabs etc.
+- This is a good standard candle that shows the procedure can work
+ - At least it shows that if something does change, it is a real effect and not a weird variation
+ - Cicorel is at least a good standard candle for looking at the range over a powerboard or hybrid
+- Often other hardware does not have enough space to do similar things anyway…
+- Are any of these things transferable to other systems?
+ - In some cases, yes (force?) in others, no (US power?)
+ - In past agreed that would not try to transfer parameters, just metrics of things going well (ie. pull tests) to maintain a good process
+### AoB
+- AUW next week - agenda to come...
+## Actions
+NONE

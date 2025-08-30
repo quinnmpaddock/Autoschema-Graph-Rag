@@ -1,0 +1,157 @@
+# 2024-04-23 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1401780/
+### Introduction
+Presenter: Luise Poley
+- Gabriele (sl. 3): It’s true there is an interesting feature of a crack running along a strip, but it’s unclear if that is the crack giving us the breakdown (there are two cracks).
+- Anne (sl. 3): We have looked into peel tests, but so far the samples did not behave as expected and we are reworking the samples. It is not clear if we do peel tests with our setup, it may not match expectations.
+ - Luise: So it’s a problem of defining a procedure that can be done?
+ - Luise: We shouldn’t not do them just because we don’t know how
+ - Bart: We are happy to do any test proposed, but we have to work a bit on the protocol to ensure reliability. It’s mainly the curing process and the substrate. We are open to suggestions. Our peel tester is in relatively good shape.
+ - Luise: I just want to make sure we can produce samples for irradiation.
+ - Bart: We’ve been using relatively large samples for peel tests, but we can make smaller ones for irradiation.
+ - Tony: I don’t know why you need to miniaturize, Sandia does whole modules.
+ - Luise: Depends on where you irradiate.
+ - Bart: We could do Birmingham.
+ - Luise: We might want gamma irradiation, then they would go to prague and that may require smaller samples.
+ - Tony: I’m concerned about the proton-beam energy. Once you get past the silicon…
+ - Bart: Are you talking about a full module?
+ - Tony: If it’s thick enough, you start to change the fluence.
+ - Bart and Tony: [Talking at the same time].
+ - Luise: Can we postpone this discussion so we can follow up and make sure these things are consistent?
+ - Luise: We should work on peel tests
+ - Anne: We will, we just don’t know how they compare to simulation
+- Luise (sl. 3): Asks about proposal on slide 3
+ - Shubham: I think we can do it.
+ - Luise: If there are no objections, consider this a request for the next modules being built.
+- Sven (sl. 9): Do you want us to ship the gel packs in the DB or just the physical gel packs?
+ - Luise: Good question. These gel packs will need new labeling, so it’s not important that you ship them in the DB, but we will ask the ASIC experts to see if they have any opinions on that. 
+- (sl. 10): Luise asks everyone involved in cold noise studies to check the agenda for a copy of the PDF with the already-started Cold Noise Paper.
+### L4 Updates: ITSDAQ/Sensors/Documentation
+ - No updates
+### Group Update: Freiburg and Dortmund
+Presenter: Roland Koppenhoefer
+- Xavi: (sl. 6), Did you use the blower before these IVs?
+ - Roland: yes, correct
+ - Xavi: You may wish to apply it again and wait for a while in dry storage
+ - Roland: If that doesn’t work, should we try longer than 30s?
+ - Xavi: yes, you can try
+- Xavi: slide 5: do you use the vacuum pen after using the ion blower?
+ - Roland: Yes
+ - Xavi: It’s always good to avoid using the vacuum pen if possible and use the envelope sheets.
+ - Roland: We tried to keep this on the sheets as long as possible and we only use the pen for the shift onto the chuck to avoid damage. 
+ - Xavi: In Vancouver, we do everything with the sheets, but we will see if you have any issues using the pen. 
+- Carles: regarding assembly of R4: did you see the same problems as the others with suction cups on the powerboards?
+ - Roland: James says no.
+ - Luise: this is an old PB, so it would be an older tool?
+ - Carles: True
+ - Luise: Something to watch out for on future modules
+ - Pete: I’m working on this and will present
+ - Carles: great, because our assembly is currently on hold until this is fixed
+### Parts for Cracking Test Modules
+Presenter: Vitaliy Fadeyev
+- Cole: This is only for barrel, right?
+ - Vitaliy: yes, the more shapes, the more difficult. Didn’t price any end-cap shapes, but could ask them
+ - Vitaliy: Miguel indicated that something curved may be possible, but not 100% sure
+- Luise: Two things. One is that we were hoping to get the stress simulations for EC modules so we could prioritize some sensor types. We are also figuring out if we can do many straight cuts to get close to the EC shape. If you could include a representative EC piece that would be great.
+ - Dennis: [Missed it]
+ - Luise: In the past, the concave side of the cut was a problem. If you want to load, you’ll need fiducials.
+ - Dennis: I wonder if it makes sense to make it shorter. For these kinds of tests, we don’t need high loading precision, but putting it on a core makes sense.
+ - Luise: It does, but the R2 is difficult.
+ - Dennis: The R3 may be the way to go?
+ - Luise: We need data on how representative sensors are
+ - Vitaliy: Are we talking about glass or silicon
+ - Luise: Glass
+ - Vitaliy: How do you check for cracks?
+ - Dennis: would expect it to work nicely because you could use light to check for cracks
+ - Vitaliy: Okay. I’m happy to get back to the company and look for more. Do you want all EC varieties or just one version? Which type?
+ - Luise: We will want to know the input from the simulation first before choosing types. The R3 is likely to be of interest though, so we could start there. [describes dimensions]
+ - Vitaliy: And for quantities? I’d imagine you would want multiple.
+ - Luise: yes, similar to barrel
+- Luise: Timon said we could use early-batch powerboards which could be replaced. We may also need to order parts ahead of time.
+ - Tony: Why do we need the capacitors? The barrel doesn’t use them for positioning.
+ - Luise: That’s right, the EC uses the caps.
+ - Tony: If you only care about the vacuum fixture, you could solder on shield boxes. You may have different curvatures, but it should be fine.
+ - Luise: Dennis, any comment on flex availability?
+ - Dennis: most difficult problem would be shield boxes and coils - coils were difficult to get out of Wuerth at a reasonable price last time; shield boxes would mean that the last powerboards would have shield boxes from a different vendor
+ - Luise: We don’t really need coils.
+ - Dennis: Depends. If they went through production, then they have parts. If we build dedicated powerboards, we can load them with shield boxes and powerboards only
+### Interposer Procedure Development at LBNL
+Presenter: Tom Johnson
+- Luise (sl. 10): Do you have a drawing for this neat jig so people can reproduce it?
+ - Tom: Not yet, but I can make one easily.
+ - Luise: Just where you connect the vacuum and stuff, that would be great.
+- Luise: Regarding shims, is this because it is very thin or not flat?
+ - Tom: The jig isn’t completely flat so the pickup tool doesn’t sit flat due to the kapton and extra glue layer. I thought I’d make an adjustable shelf.
+ - Luise: If we thought we knew the heights we need, we could make it right?
+ - Tom: Yes
+ - Bart: Would you next time maybe use a compliant shim? Do you see a benefit there? This would make sure the glass beads are pressed to actually set the height.
+ - Tom: if you wanted to get rid of the shims?
+ - Bart: The glass beads should set the height, but now it looks like the shims set the shape? How would you do this if you really wanted to use the beads to define the height?
+Big round of appreciation for Tom sharing all the details!!!
+ - Tom: At this point, I’m using the beads to hold the center of the hybrid. A lot of times they aren’t flat and dip down. So the beads still push up to maintain the gap in the middle. Tool is much wider than powerboard, so it will rock
+ - Bart: I see your point. It’s just tricky, thanks for the explanation.
+ - Tom: Kapton is soft and the beads are hard, so if you push too hard you can actually push the beads into the kapton. So you don’t want to put too much weight on them. For the feet, I’m not sure.
+- Luise: It looks like the PBs back side is quite flat. Does this straighten the PB?
+ - Tom: I don’t want to say it’s flat, it more makes the back surface smooth. No imprints from vias and whatnot.
+ - Luise: normally it has a bowed shape, and now it looks flat
+ - Tom: It is flatter in the long direction. But not completely. It takes out some of the canoeing. The bend is still in the hybrid, but not in the kapton
+ - Tony: Can you invert the next one you do to make sure it’s flat on the backside of the tool.
+ - Tom: yes, doing that right now - made a hybrid and measure flatness before and after now
+ - Tony: For hybrids it’s the flags, for PBs is the bow. It would help you answer the question.
+ - Tom: even pulling it down on vacuum doesn’t flatten them correctly, so this seems like an improvement
+ - Tony: Completely agree. We know how much it bows now and it would be good to compare since your results look flatter.
+- Luise: how close is this to what you would want to do for production. I thought you weren’t planning to use vacuum for assembly in production.
+ - Tom: I’m sorry?
+ - Luise: For big batches, you wouldn’t want to use vacuum.
+ - Tom: Like a full array?
+ - Luise: Yes
+ - Tom: This is more for individual already-assembled parts.
+ - Luise: I’m just wondering how close this could be to the final process
+ - Carl: Tom is showing a prototype that was successful. We need to have a larger discussion and now it’s too early to nail down the production process.
+ - Luise: I’m simply asking a question. I’d like to know if you don’t have a vacuum holding it down, how does this affect the shape compared to what you have now.
+ - Tom: That would be good information to see. We need to do more testing. If the manufacturer can’t do this at their end and receive them fully completed, we could try this method.
+- Tony: In the near term, please make more of these jigs if you are happy with this method. You’ll need to be able to do more than one at a time to have a decent turnaround. Is this something you can do?
+ - Tom: yes, can have more made, need more to ramp up production
+ - Tony: The next set we make will likely be bonded. So we would have to use this method in the near term. For the US, it’s 20 of these units.
+ - Tom: The SE you can cure for maybe 4-6 hours and cut it out.
+ - Tony: you can maybe turn it twice
+ - Tom: I’d have to provide five or more fixtures per site.
+ - Tony: question of whether you are doing it centrally or not - if you are doing this for everyone in the project, need 40, if it is US only, the 20, etc, but a lot of it would depend on the jig
+ - Tom: If we do that, we would need more. They are fairly simple. 
+ - Tony: don’t know if you want to make this variation with the ledge so that the glue doesn’t get sucked in
+ - Tom: It would all be porous aluminum, but you can seal off parts.
+ - Tony: should solve it - if it takes time, please don’t let that hold you up
+- Carl: I’m confused about what you’re asking. You’re now saying that many sites would start making interposers.
+ - Tony and Tom: other way around
+ - Tony: hope that for the next stave or stave side, LBNL could make them for everyone, so wanted to know how often they can be cycled and how quickly these could be made and how well this scales up
+ - Carl: You’re not asking to make more jigs and distribute them to multiple sites.
+ - Tony: no, not asking that
+ - Carl: thanks for clarification - I misunderstood
+ - Gerrit: [missed what was said]
+ - Tony: We’ll need extra parts for the radiation campaign too.
+ - Gerrit: The tools have been sent out by Tom already. What are we supposed to do with these things if we aren't going to glue hybrids to interposers?
+ - Tom: It’s so you can test this on your own and see how they work. 
+ - Vitaliy: as I remember, BNL wanted to check different interposers - you could do that with this tool
+ - Gerrit: We don’t need that tool for this. That’s an aluminum nitride which doesn’t need the same control
+ - Tony: That’s why it’s useful to have these tools so we can take existing parts and make them into interposers
+ - Gerrit: wil take it offline
+- Luise: How is the IV with this module?
+ - Shu: It looks fine, we will add them to the slides later. We want to do some cold IVs as well.
+- Shubham (sl. 11): The dead channels you see are consistent with the burn-in results and CatB ASICs. The high noise on the left side isn’t likely cold noise. It is only three channels.
+### Interposer attachment to Hybrid Flex Array
+Presenter: Sven Wonsak
+- Luise: Did you do any tests to check the evenness of glue after assembly. I’m curious if the way you do it you touch down on the glass beads. 
+ - Sven: That is something we will see tomorrow when we do thickness measurements. We know the hybrid arrays are reasonably flat within the array. The variations we see should come from the glue layers.
+ - Luise: Looking forward to the results.
+- Vitaliy: what is a weighing boat?
+ - Sven: Weighing boat is just a bowl to measure the glue.
+ - Vitaliy: so - a plastic cup for mixing?
+ - Sven: it’s really called a weighing boat
+- Vitaliy: the foam layer technique is interesting (spreading pressure)
+ - Sven: Yes, that is the idea.
+ - Vitaliy: How squishy is the foam?
+ - Sven: this one isn’t squishy (it’s packaging foam) - consider it not squishy enough, will look for something more squishy
+ - Sven: alternative would be something that has cutouts for SMD components
+ - Vitaliy: Fortunately there are many different foams on the market.
+### AOB
+- None

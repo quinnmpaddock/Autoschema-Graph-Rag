@@ -1,0 +1,63 @@
+# 09/06/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927505/
+## Minutes
+### Introduction (Craig & Ingo)
+- Nothing
+### Barrel transport frame (Craig)
+- Received new version (2.2) from Hongbo, changes: slots everywhere, suction cups moved further away from sensor edges
+- Ribbed everywhere on underside of test frame
+-> around slots in the frame, frame is now open to module (to be discussed?)
+- Need to decide which suction cup version we want to use
+- Price for mold sounds reasonable
+- Hope to reuse frames several times, about 500 should be enough for pre-production
+- Front and backplane drive price, would only need those for transport, not storage
+- Might make sense to order more molded frames and less front and back plates
+- Question: how does price for front and back plates scale with order number?
+ - Does not change much, could order smaller number initially and order more if needed
+- Finances to be worked out between Gerrit and Craig
+- Test frames and hybrid panels could be option to balance out payments over barrel community
+- Should module frame EDMS review happen at the same time? → Yes
+- Transport frames and module frames could be made in the same quantity, live as a pair during whole production. Reuse 4 times so number of modules / 4
+- After reviews will sit down and finalise numbers
+- Suction cups:
+ - Pro Nitril: can be cleaned with alcohol, no need to wait long time for them to dry
+ - con: fairly stiff
+- Question: Endcap to use molds as well? → no, since too expensive given the big number of different geometries, foam as alternative (see previous talks by Dennis on this topic)
+### Barrel powerboard tools (Tom)
+- When will design be finalised? → need to verify location of pins, Tom is missing model to compare them (only has gerber files)
+- 3D models should be send to Sven so he can compare (or he can send Tom the 3D file)
+- Would like to make 3D printed prototype to verify it fits
+- Small suction cups: are they sucking on components? → yes, larger capacitors
+- Pins should “fight” against suction cups to keep power board in position, should not lead to deviations bigger than 100µm in placement
+- Question to Sandra: for whom do you make tools? 
+ - Just US, was not foreseen to make tools for UK and China
+ - If change in plan, this needs to be discussed
+ - Is not in MOU
+- Question: can the outer pins be made longer? -> yes, should be
+### Jig grounding (Sven)
+- Instead of anodizing you can use an anti-corrosion coating (Iridating) that is conductive, has this been considered? 
+ - No experience with that, was never discussed in the past
+ - Hardness of anodizing advantage (to keep dimensional stability/toughness of coating/resistance of coating)
+ - Can anodized surface charge up? → no, there have been tests done about that and that’s not the case
+ - Can you drill into anodized surfaces? Need to tell machine shops beforehand. Can’t drill it before anodisation. When Sven discussed this with their workshop they didn’t see problem with drilling afterwards
+- Should this be standard for all tools (including endcap)? → need to talk to Marc about this, will bring this up again in tomorrow’s production meeting
+- Since tools worked so far, do we really want to change it? → could keep them as is and drill holes later if necessary 
+### RFID Software (Jan Cedric)
+- Talk includes links to buy hardware online
+- Can we get test pieces with RFID tags to start testing system? → could send out some tabs with tags on there or people buy them for themselves
+- Metal tables might decrease readability too much (if you don’t use an antenna) 
+- Does software only register hybrids or also find them in the database?
+ - Arrays already registered in database with dummy hybrids before RFID tag gets attached
+ - Once RFID tags are attached, associate it with array
+ - When hybrids arrive at assembly sites, does scanning lead to database finding the correct object? Not yet, but could be written
+ - Cedric will write this script but might take a while → he agrees to do this
+- QR code reader: is Cedric looking into this for QR codes as well? → no, but general principle should be the same, so chunks of code might be possible to get copied
+- Cedric will send link to slides around so people can buy the readers, institutes have to update their infrastructure surveys if they buy one
+- Why need to specify institute? → because database requires knowledge which institute registers it and a user can be in several institutions 
+### AoB
+- None
+## Actions
+1. Make sure EDMS review of barrel frames takes place in time
+1. Have talk in production meeting in two weeks about number of barrel test frames and transport frames to buy
+1. Get groups to buy RFID readers and update their surveys
+1. Get 3D power board model to Tom for tool check

@@ -1,0 +1,28 @@
+# 13/10/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927523/
+### Introduction (Craig & Ingo)
+- Some EDMS reviews finished yesterday
+ - HV-Tab Barrel and Endcap:
+ - Need further review from endcap: Pepe
+ - Hybrid Crate:
+ - Dennis: if no mechanical changes, he is happy
+ - Endcap tool reviews finished and approved
+- Panel and Moduleframe for endcap + Petal Common Jigs (bonding & testing)
+ - Designs need to be reviewed
+- Tool Pin Decision: 
+ - 7mm taper for barrel, endcap not sure if use 5mm taper length
+ - Need to look who orders pins for endcap (need part numbers for this!) -> offline
+### Task tracker items
+- Please see task tracker web page: 	https://indico.cern.ch/event/927522/contributions/4052501/attachments/2116697/3561815/go
+- HV tab
+ - Already discussed
+### BNL and SCIPPs suction cup investigations for module shipping
+- UK placed order for 600 silicone and 600 anti static cups to test both
+- Hole size in transport frame for suction cups were slightly off in first version, which results in them falling out
+ - Was fixed in updated version for injection moulded frames
+- If antistatic cups don’t shed or have adverse effect, they could be used
+- Baseline standard silicone cups
+ - If groups are interested, they could research impacts of anti-static cups
+### AOB
+- CraigW points out that all QC/procedural docs are late. Thanks a lot, still, to all that contributed so far! Some of them are effectively finished, some others have only minor issues - please feel encouraged to finish the docs up!
+-

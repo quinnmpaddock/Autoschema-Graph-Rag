@@ -1,0 +1,157 @@
+# 05/04/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1109675/
+### Introduction
+- Vote to not have a module meeting on 19th April
+ - Majority (5-6 out of 30) agreed to skip the meeting
+Collection of electrical tests to be sent to Jacob:
+Tony A. (through chat box): 
+Location for JAcob's module data
+Please send final module electrical data to me through CERNBox
+(https://cernbox.cern.ch/index.php/s/sH8joK6sPV5YFbo) or on
+EOS at (/eos/user/j/jajohnso/PPA_module_electrical_data)
+ASIC bond pulling:
+- Carles: send ASICs to hybrid sites in each cluster for distribution
+- Carles: for monthly checks is it OK to just test on ABCs?
+- Luise: procedure document also required HCC, but we don’t have enough rejected HCCs for that
+- Fores: when will it done on HCC
+- Luise: for batch evaluation that will be done now, for monthly pull tests when we have more chips available for this
+Update from Andover
+- Craig: do we have a feeling on what we have to do to re-evaluate the new glue? Is irradiation required or is DSC enough?
+- Luise: should start with chemical analysis to compare with old glue and if same we probably need less tests. Depending on the outcome of that, we need to plan further tests.
+- Craig: is it the same from Andover?
+- Luise: not this time
+- Vitaliy: might take a longer time now, since we also don’t have the Pixel program to piggy-back on itMaybe we should also buy our alternative glue
+- Luise: yes, but the viscosity is different so it might need more development to use it (automatic dispensing or stencil)
+- Vitaliy: yes, but should probably start looking into it
+- Luise: this could also be a good project for a qualification task in the next 3 months
+EC PPB
+- William: would it not make sense to build Priority 1 and Priority 3 modules at the same time?
+- Luise: it is important to keep in mind which steps need to be qualified as not to jeopardise it by having the module in the wrong stage
+- 
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 05/04/2022: Barrel tasks
+- 12/04/2022: EC tasks
+- 19/04/2022 : Barrel tasks 
+- 26/04/2022: Barrel tasks
+### 
+- Shipping readiness (incl import procedure)
+ - Montreal got the shipping licence to ship hybrids thorugh CERN. Still waiting for EoU statement from Adelaide to complete the licence to Australia, Vancouver is working on getting their petal and modules licenses.
+- Single Hybrid Testing Database Implementation
+ - People have successfully uploaded to the database, need to improve automisation
+ - Tony and Andy: plan to have Trim Range in the database?
+ - Bruce: produces json files, could be uploaded if people want it, mainly a time problem
+ - Need to benchmark how long adding a trim range takes to decide whether we include it in the full test
+Benchmark test length with/without trim range
+- Hybrid Burn In Software
+ - Ilona working on development, bug fixing, dummy setup being developed
+- Single Module Test Database Implementation
+ - Same as hybrids
+- Multi Module Test
+ - No news, still no volunteers for end-cap modules 
+- PPB Module for April Irradiation
+ - For end-cap modules: waiting for parts to arrive to build hybrids and powerboards and send to DESY, pre-irradiated ASICs are ready and have been shipped out
+### Institute Contributions
+IHEP
+- No comments
+Dortmund
+- No comments
+IFIC
+- Why is there a component missing on the side of the hybrid?
+ - Dennis: removed because it introduced noise in the sensor IV
+- How can I translate the channel signal to physical location?
+ - Dennis: you need the order line to check and then it goes from left to right
+- When testing with polycarbonate plate behind the back plate, see early breakdown
+ - Dennis: expected, since the backplate is coated to be conductive
+ - Ingo: top is not a problem, right?
+ - Dennis: no, but need the backside there to be able to attach the top
+ - Anyway: don’t leave the back plate on during testing
+ - D
+- Gerrit: question about the electrostatic measurement: do you also measure directly on the plastic sensor cards? They are relatively new and would be interesting to see if they are ESD safe
+ - Vitaliy: did a lot of test and they are on the edge, so Hamamatsu is currently looking into changing them
+- William: would be good to have the channel order figured out
+- Mike: for the half-moon jig we are planning to have one in Dortmund for all flavours. If this works out we will let you know
+ - Carles: we tried it but it is not possible if you want a good quantity of vacuum holes. There are a lot of different shapes
+ - Mike: a colleague is looking into it
+Next week: LBNL, TRIUMF, UU
+### Glue dispensing studies
+BNL
+- Vitaly: modules with glue over guardring, what is the breakdown voltage?
+ - Don’t know right now, had some issues with testing these modules electrically (and with thermal cycling)
+- Vitaliy: glue pattern is interesting, can it lead to trapped air bubbles?
+- Andy: have you find any variation in bondability with the different shim heights?
+ - Gerrit: no problems with wirebonding
+ - Andy: you might get some bouncing if the height is higher but the glue amount was kept constant
+ - Luise: for the 50um shim, did you intentionally reduced the glue amount?
+ - Gerrit: yes, we aimed for the target value but also asked the operators to explore the lowest allowed value
+ - Luise: has the last point targeted a lower value?
+ - Gerrit: yes
+- Sergio: it can not be a unilateral decision to drop a procedure step
+ - Gerrit: absolutely, the only statement here is that if we have to do it, it will slow down the process
+SCIPP
+- Ingo: when you say they become unreliable, do you mean the glue amount in a dot?
+ - Vitaliy: with increasing dispensing time it can happen that the dots don’t get dispensed. Lines are easier
+ - Gerrit: there is a big difference in the dispensing systems between lines and dots on how it is done
+- Luise: are powerboard and hybrid patterns the same between LS and SS modules?
+ - Vitaliy: all PPA modules used same pattern. For PPB have developed a slightly modified pattern.
+LBNL
+- Gerrit: you mention adjusting pins in the powerboard tool. This is not only difficult to do, but needs a lot of work. If we get in the future powerboards that require this, this is a no go (I would send tools back to LBNL for re-adjustment)
+ - Ian: agrees with this. When you reset the pins, need to find new shims for setting the heights
+- Luise: what’s the weight for al modules on slide 6?
+ - Ian: plot on slide 5, just used wrong name
+ - Luise: do you have made a correlation between glue weight and squeeze out?
+ - Ian: not yet
+ - Luise: and what is your glue pattern?
+ - Tom: same as SCIPP
+ - Luise: do you see an early breakdown on any of these?
+ - Ian: no
+ - Lusie: do you flatten them?
+ - Ian: yes
+ - Luise: what is the flattening process / how do you do it?
+ - Tom: just by hand on a flat surface bending it over the edge
+Discussion of all three talks:
+- Luise - go back to Gerrits talk: main differences are that you are not flattening the powerboards and use a different glue pattern
+ - Gerrit: none of the LS modules were flattened; we started doing it for the new SS modulesIt’s a very precarious process to straighten it out by hand while there are exposed bond wires
+ - Luise: do you have a picture of this particular module
+ - Gerrit: no
+ - Luise: did you do tests with glass to qualify your glue pattern?
+ - Gerrit: yes, with glass. But to do a proper check we need a dummy of the powerboard.
+ - Luise: and then the powerboard changes
+ - Gerrit: yes. We are happy to change the glue pattern, but the current powerboards are shapes so that a single strip in the centre would be squeezed out
+ - Luise: would you consider adapting your glue pattern to be closer to that of the other groups where there is less squeeze out
+ - Gerrit: yes. For the current shaped powerboards this will work, but if the powerboards become very flat there might be less support under the bondpads
+ - Luise: but this worked for the straightened powerboards
+ - Gerrit: straightening only works in the length, but not in the short width
+ - Luise: is there a way to make the results more comparable to see where there are differences (with regards to LBNL)
+ - Gerrit: we go into PPB with many more modules to build and then even more in production. Flattening will cause issues (including losses)
+ - Sandra: flattening is also depending on the person doing it and very time consuming. We might need some tools to do it consistently.
+ - Gerrit: could devise a tool that would do it but it could be batch dependant
+ - Luise: is there a plan to make the powerboards more flat?
+ - Sandra: in principle the next batch should be better
+ - Luise: we need to make a plan on how to approach this.
+ - Visual inspection tests should also include the glue seepage if there is seen something
+ - Gerrit: if you stick to those criteria (glue seepage only up to 1mm), all the module would fail
+ - Luise: it still would be good to fill out the database tests correctly to track this, and maybe also look into changing the glue pattern
+ - Gerrit: we used a shim not to loose any more modules
+ - Luise: yes, but for production shims are not good
+ - Sandra: we also tried different shims to help with module assembly
+ - Luise: might need some time using the next modules to fine tune the glue pattern
+ - Andrew: are we explicitly required to use shims?
+ - Luise: was there no need to use shims?
+ - Sven: no, the UK tools don’t need any shims
+ - Luise: yes, that should be the baseline in generalThe shims were just for these powerboard studies
+ - Gerrit: going forward, we are not going to use any shims as baseline, target same amount of glue weight as before, but I think for the modules we are building right now we are trying to flatten them out as much as we can (for PPA). We will change to the SCIPP glue pattern, but might have to use the one with only lines
+ - Luise: sounds like a plan; would propose to build few modules at a time and adjust as you go along
+ - Vitaly: do you know if there could be an air bubble with your current pattern?
+ - Gerrit: don’t recall having seen that with the glass pieces
+ - Luise: and then maybe we can get an update in a couple of weeks so that the EC groups can learn from it.
+ - Jonas: can confirm that EC glue dispensing is also struggling with the powerboards
+ - Gerrit: hybrids are also not completely flat, but have more pick-up points to straighten them. Only see glue seepage on side without pick-up but can adjust pattern to take care of it. Powerboards have not enough pick-up points.
+ - Jonas: and issue to make reliable powerboard dummies is hard
+ - Gerrit: same problem: not enough dummies, ran out of them very quickly
+### Temperature measurements during hybrid panel testing
+- Postponed to next week
+#### 
+#### AOB
+- nothing

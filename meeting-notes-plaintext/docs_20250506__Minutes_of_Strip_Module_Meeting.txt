@@ -1,0 +1,66 @@
+# 2025-05-06 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1527311/
+### Introduction
+Presenter: Cole Helling
+- 1 minute, a personal best, no questions
+### L4 Updates
+#### Production
+Presenter: Abe
+- JJJ (in chat): The first set of PBs from CERN to Toronto should leave CERN today
+- A
+- Carles: Are there any news on the interposing at CERN, how is it going?
+ - Abe: Haven’t heard anything they are waiting for feedback from DESY-Z
+ - Ingo: We provided feedback to Craig, and he’s forwarded it to the techs at CERN and Petra, and we should get more info back. We wanted to give them the feedback first. Briefly, it’s the first hybrids they made and they aren’t really ‘perfect’.
+ - Carles: not perfect but usable? 
+ - Ingo: Jury is out on that 
+- William: I saw the first column on slide 3, one of the things we discovered in Toronto is we don’t have enough module frames to build these modules on. Where do we sort out … Dennis claims he has more, but we want to know. He says he could bring them to CERN next week, but we aren’t sure how to distribute them
+ - Abe: not sure
+- Luise: Freiburg made 15 of each if you haven't received yours they should be able to send you some
+ - William: We’ve built 9, [more numbers], but we can’t get to 20 without more test frames.
+- Luise: Ingo, are you ready for more hybrids? 
+ - Ingo: I see no reason why not. We are now back from the power but. Things are not cold yet though
+ - Luise: Thank you.
+#### Publications
+Presenter: Hannah
+- No questions
+### Preseries IN R0 and R3 Modules
+Presenter: Jia Jian Teoh
+- Carles: For the possible causes of EBD, we should start trying to cross out some of them. I wonder if it would be possible to add a piece of kapton to the hybrid edge to ensure those corners don’t touch the sensor. This could help us cross out this (I don’t suspect this is the problem, but it could be). The Kapton could also help isolate the problem of the exposed metal on the edge of the hybrid. For the squeeze out, we’ve seen this and there is glue on other regions of the sensor, so I wouldn’t suspect this is causing the problem. [enumerates observations in slides for causes]. The pink foam, I wonder if there is charge built up on it. Did you check or deionize the pink foam?
+ - JJ: Last time I did deionise the pink foam together. Same as the other one, it also has some early breakdown.
+ - Carles: How do you cycle the module without the foam? Do you have something to keep the height so you can keep the cover on and pump dry air or do you expose them to ambient air in the box?
+ - JJ: They are exposed in the coldbox.
+ - Ingo: Just be careful, the modules are more stressed without the foam.
+ - Carles: I wonder if we can make pink foam with a double wide groove by the guard ring just in case we are not avoiding the guard ring with the pink foam.
+- Luise: For the glue streaks, we’ve only seen once that these were clearly associated with EBD. Normally, the presence alone doesn’t mean EBD. For Carles, EBD happens more for glue on the GR.
+ - Carles: No I was referring to on the sides of the PB and hybrid
+ - Luise: I misunderstood, sorry
+ - William: When it’s near the middle ASICs, there is a tendency for those to break down less. If it’s on the last ASIC, that means it could be close to the GR.
+ - Luise: When we glue here, we always use gauges to check the glue thickness. We found that before gluing that the gap of 120 um is not enough, so we had to go higher. That might be worth discussing next week.
+- Luise: Are these modules being assembled by new people or those with experience?
+ - William: they do put their names on the line for the ones they build. The main problem is the downtime between building modules. JJ hasn't shown the one where they failed to seat the tool properly. This can happen with less experienced people. They didn't build for 4 mo
+ - Luise: Understood thank you.
+- Navid: What is the future for these modules? Deionize and retest them?
+ - JJ: I want to know which is acceptable, with or without pink foam?
+ - William: We had several modules like this before where they broke down early and still were loaded, and they got better after loading. So something seems to break down. This is tricky for QC we need to figure out.
+- Carles: If removing the pink foam solves the early breakdown, then it’s not a problem with the module.
+ - William: The answer is they would be loaded onto petals.
+ - Carles: I wouldn’t be in favor of loading them on Preseries.
+ - William: The problem with the R3s is we have a lot of good halves.
+- Peter: Generally, do we have a method to clean the pink foam? I’m nervous about treating it with chemicals. I will blow air.
+ - William: We don’t put the face that touches the module down on everything. We have asked Celestica, whether they do it or not is another thing.
+ - Dennis: We clean it with iso before sending it out, it’s fine to do. You just have to make sure it dries off before you put it on the sensor (takes little time)
+- Luise: The question for what to do with those, we had hoped an outcome of the TF was that we could come up with some advice about what to do when a module breaks down like this. So currently, the spec is 500V or above for EBD. So we would need to come up with an agreement on what to do with this.
+ - William: but without the pink foam it will pass so we need to address this in the next two weeks.
+ - Luise: We will have to yeah.
+- Cole: We have found that when removing the foam we found that it only improved EB temporarily so there needs to be more studies into this. 
+- Cole: This chiseling is another neat way to cut the tabs?
+ - William: The cutting of the tabs has been a challenge, having an open knife in the cleanroom was unacceptable. The Chisel was not a good option so we got the guillotine. But now they are maybe going to have an open knife.
+### Ridges in Threshold Scans
+Presenter: Lukas Roscher
+- Cole: on the R2, you are adjusting the tiniest little cut so it doesn’t not make much of a problem. But if you want to see if its the HV lines you can bond the HV directly from the sensor to the test panel
+ - Ingo: but then it wont go through the HV filter. 
+ - Dennis: not sure
+- Cole: this is something that we see, would be interesting to see if we can fix it with timing
+ - Ingo: Timing wont fix it, I used to ignore it but now it fails modules so we have to pay attention.
+### AOB
+- Nothing

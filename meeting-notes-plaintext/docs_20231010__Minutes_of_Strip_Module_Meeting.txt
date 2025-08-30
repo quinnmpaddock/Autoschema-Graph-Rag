@@ -1,0 +1,139 @@
+# 10/10/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289860/
+### Introduction
+Slide 4
+- Dennis: shape changing in powerboard is not possible
+- No objections about AMAC IV proposal
+ - Cole: not sure but not objection from cold cycle development meeting
+Slide 9
+- Tony: we have been holding them at tested because thermal cycling data can’t be uploaded.It’s not just because filling out stages
+ - Luise: If you look at a lot of the LS modules, they move straight from wire-bonded or tested to at loading site or on core
+ - Tony: But they were built a long time ago. The reason why they don’t go through certain stages is because tests can’t be uploaded
+ - Luise: Perfectly good response, and hopefully this will be fixed soon
+ - Tony: Is there an indication on when soon is. We keep offering to help but don’t get a response
+ - Luise: Anyone want to reply? Let’s follow up offline Tony. There are reasons, but we should follow up and fix this.
+Slide 11
+- Ingo:is this also for modules?
+ - Luise: I don’t think we’ve done this for modules
+ - Ingo: in any case need to make sure that shipping without foam is currently only valid for hybrids
+ - Luise: Yes, you’re right, this is only for hybrids, I just didn’t put this on the slide
+- No objections about shipping proposal
+### ITSDAQ news
+- No updates today
+- Tony: last week we asked about the noise occupancy but there was no feedback. It would be good to know if it is passing at any institute
+ - Cole: don’t have any update
+ - Tony: any test we are ignoring is scarry. It probably is not a real issue, but needs to look at this
+ - Bart: most UK modules also don’t pass the NO test
+ - Tony: but it was supposed to catch bad channels
+ - Bart: there was an idea that there would be an algorithm
+ - Alex: we see that it fails every time, not just for most
+ - Luise: we see the same for EC modules
+ - Luise: idea is that this would require refining of the NO threshold. The hard part is how to define which are indications for a real issue. Would be good to see a NO distribution histogram. This could help picking the thresholds
+ - Tony: NO failure should have a designated signature which we don’t see. It looks like it is analysing it at the wrong threshold. Looks like the test is evaluating it at the wrong place. Need someone to look into the test.
+ - Luise: It sounds like you have been looking at this in detail, could you perhaps make up some slides for us all to look at?
+ - Tony: sure. It would also be good to get some plots (outputs) from other sites.
+ - Cole: to whom should I send this?
+ - Tony: Alex and I
+- Vitaliy: As far as test results go, you described it well. Do we really need to solve this with 60 people on line? Or should we use people who know the test more intimately?
+ - Tony: agree, just want something to happen
+ - Luise: Vitaliy, I think that’s what the attempt to solve this via email was. We are just trying to agree what is needed here and move forward.
+### Results from recent DESY testbeam campaign
+- Vitaliy: looks like data brings about interesting features. Slide 8 most interesting: factor 2 noise difference - high and not stable with time. 
+ - John: we repeated the test also at high voltages and got the same results
+ - Vitaliy: It’s even weirder. It’s nice that it’s reproducible, but that is weird. 
+- Vitaliy: on slide 9 the noise is derived from the middle point?
+ - John: I don’t recall which injected charge it is, but if you look to slide 8.
+ - Vitaliy: looks something is time variant and repeatable
+ - 
+- Vitaliy: slide 11 it looks like high noise on an edge channel. Maybe external noise injected and then filtered by the edge channesl? Should be filtered by shaping strips, but also seeing it in detection strips could be a HV related thing.
+ - John: It’s a good point. It’s the same HV supply that we use for other modules, which don’t show the same problem, but it’s a reasonable observation.
+ - Vitaliy: maybe changing power supply or monitoring it at each injection point might help.
+ - John: Those are good ideas.
+- Luise: For the very low current, can we be reasonably sure we irradiated the right area
+ - John: I think so, think it was for the LS but not for the SS?
+ - Jiri: I don’t remember seeing any inhomogeneity in the testframe (discoloration due to irradiation)
+ - Jiri: it is not very visible with the plastic
+- Luise: The idea is to send these modules with the high noise (slide 10) to Freiburg for Dennis to understand the noise issues, as it’s generally worrying. 
+- Luise: you were planning to test SS SE4445 modules in testbeam as well?
+ - John: I think so yeah. 
+ - Luise: only if you have the time to do it
+ - John: I agree, the R0 and R3 should be the priorities
+- Luise: for R3 and R0, can we get parts to DESY to build the module?
+ - Dennis: I don’t know, not exactly sure of the status of the parts.
+ - Luise: not sure about R0 hybrids.
+ - There are hybrids, it’s the PBs I’m not sure about.
+ - R0 & R3 shipped to DESY Zeuthen
+ - Roland: should have R0 powerboards soon
+ - Ingo: I didn’t quite recall that we would build them, but since it is important, we will be.
+### Hybrid glue weight discussion
+- Sven: slide 4: some institutes have entries with average height zero
+ - : Yes, some hybrids have not had their ….?
+ - 
+- Tony: just to make sure we agree on what we are proposing: 
+ - Pavol: yes
+- Luise: proposal: 90%of glue weight as minimum
+- Ingo: we are saying that most hybrids fulfil this and therefore we can change it to this?
+ - Pavol: yes
+ - Gerrit: this is way to complicated
+ - Luise: we took the top constraint off, so the next question is what we should use as bottom cut. From the plots (slide 3) we see there are a few outliers, but most are within the proposed limit and are bondable
+ - Ingo: Sorry, I missed that part, thank you.
+ - Gerrit: would like to make this as simple as possible: 40mg or more?
+ - Luise: If you’re only building barrel hybrids, I’m not sure
+ - Gerrit: for any barrel hybrids if you have the heights under control we should use as much glue as possible
+ - Luise: That’s the approach, yeah. 
+- Luise: for EC we need some data, but we could follow this up via email and then change the specifications
+ - Pavol: Okay
+- Gerrit: I would like to mention, if you always inspect visually how the glue is put down, then you have an idea of how uniform it is by doing some visual inspection
+ - - have 5 dots at each ASIC before putting ASICs down
+ - Luise: Good point, we will add it to the documentation
+ - William: this is not feasible for us with the pick-and-place machine in the company
+ - Luise: how do you know there is enough repeatability?
+ - William: from glue weight
+ - William: we have done 100s of hybrids without issues, but we can’t check every hybrid
+ - Geoffrey: there is a method of checking this with the machine
+### Discussion: filled glue gaps
+- Tony: they are working on the simulation. If the 3D does not show an impact, what are they working on?
+ - Luise: merging glue areas and understanding the difference to the 2D simulation
+ - Tony: Without that, you can do the pattern, but to no effect.
+- Gerrit: not positive. We already have difficulties with true blue underneath hybrid and powerboard and the patterns not always result in the patterns we expect. If we put down more glue under hybrid, it will be very tricky. It could compromise powerboard mounting.
+ - Luise: The proposal is to glue hybrids as usual, and then add more glue when gluing powerboard down
+ - Gerrit: Hybrids have relatively good control when we pick them up and place them down. The PBs have way more difficulty because they aren’t flat and have a strange shape. So it will be extremely difficult to fill the glue gap by that method. So the solution is to fill the gap afterwards, which would be more reliable. With a glue dispenser, it would require a complete retooling and we don’t want to do it by hand. We should use the simulations to find the spots that help since we can easier deposit glue on localised critical areas.
+ - Luise: think you pretty much covered all the points that make this very tricky. The questions are
+ - - how well can we control this
+ - - where are the critical locations where we need more glue
+ - Luise: maybe we need to combine it with other mitigation strategies. If simulation shows this is something to look at, we should try. But if our attempts show that we can’t do it reliable, we need to also look into other solutions
+ - Luise: it seems like a good solution on paper, but we need to look more into this
+ - Ewan (chat) : Glue gaps: are we talking barrel only? Or at least only at first…?
+ - Luise: might have to do it as well, but currently primarily
+- Sven: Gerrit pretty much covered it, but one point I want to make is that the hybrids are not well controlled in that area. We know from metrology that there is bending, so it could be really difficult to control the glue if you don’t do this manually, or you may risk glue seepage. This could contaminate the bond bads, which would cause bond failures.
+ - Luise: also ask the simulation to vary the glue height in gap and see how merging glue patterns affect it as well.
+ - Forest: I just want to add one further complication. As the glue gets thicker it becomes more likely for it to bulge out of the sides. As it gets thicker, it will tend to balloon out and go onto the pads.
+ - Luise: none of us want to do this, but this is being done because it is one of the “least bad” of the mitigation strategies that we have.
+- 
+- William: back to EC case, we shouldn’t order the PB stencils then is we need to have some different designs?
+ - Luise: Given the price tag of the stencils, we should continue with current plan for now
+ - William: Thanks
+- Pavol: is there any simulation if we can change the pattern under the sensor?
+ - Yes, if you go back to the Breakdown talks (simulation), you’ll see it.
+ - Tony: it is about a similar improvement
+ - Luise: stiffer glue improves it, but then the glue pattern has a larger impact 
+ - 
+- Tony: What material? A lot of this work you probably want to do with glass and plastic hybrids, etc. Is there a stock material we can tap into or do we need to make more parts? We are trying to see how many parts we have available, but I don’t know where we got our previous parts.
+ - Gerrit: that actually hardly works. Shape is much flatter for shim material and you need to build it up with dummy ASICs. It’s a lot of work.
+ - Tony: It is better than nothing
+ - Gerrit: We have done it in the past, so we know how difficult it is. That’s why we should look to the simulations for guidance
+ - Tony: we are going to look into this because we have finished building our modules.
+ - Forrest: is there a pool of rejected hybrids that could be used.
+ - Gerrit: I think everything got sent back
+ - Sandra: not all of them, I still have a bunch (flexes)
+ - Tony: some of the flexes were destined for tool tests. If we could also get some of the bad arrays back from the UK, that would help as well
+ - Sandra: I still have 20 flex arrays (20 times 7) that haven’t shipped since we were figuring out the customs shipments. Can we use them?
+ - Sven: I think so yes, send us a list so we can get an overview.
+- Luise: if sites are still working on site qualification or other things, they should focus on that. But if sites are finished, it would be nice if they could work on this.
+ - Gerrit: I totally agree, I was just thinking that we used to have dummy glass ASICs too. I think they were ABC130. Would they fit in the tooling?
+ - Sven: They are too small
+ - Gerrit: Too small is fine, you just need to build it up 
+ - Sven: You might compromise the tools
+ - Gerrit: No, I can almost guarantee you it will be fine. We used to have brass pieces from berkeley. There should be a significant number of patterned glass ABC130s.
+- Luise: one important part is that the glue height in the gap needs to be measured
+### AOB

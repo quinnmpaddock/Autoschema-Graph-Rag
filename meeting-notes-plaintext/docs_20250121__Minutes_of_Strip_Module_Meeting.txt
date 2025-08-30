@@ -1,0 +1,129 @@
+# 2025-01-21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1500829/
+### Introduction
+Presenter: Cole Helling
+- Luise: for HV tab sheets, we are asking folks to check these because this is the new delivery and we need to sign them off in the CERN procurement system. So please don’t just do the reception, please send an update right after.
+### L4 Updates
+#### Topic
+Presenter: Abe Tishelman-Charney
+- Vitaliy: Is there anyone who wants sensors? When would be the time to start sending out the sensors to the module AC sites. 
+ - Abe: Can’t answer that now, but we can get back to you
+ - Vitaliy: That would be good.
+- William: I asked in the fall if we were going to receive more sensors. We have the time. Sooner is better than later.
+ - Cole: excellent, then will send more sooner rather than later
+- Ingo (messages): Zeuthen would be very happy to receive more sensors - just sent a plea to the ACs :)
+- Roland (messages): Freiburg also has capabilities to store more sensors although we are not yet site qualified to assemble actual modules…
+- Marta (messages): Also Dortmund we have capabilities to store more sensors
+### Group Update
+#### Edd for Ral
+- Ash: Were those hybrids recoverable?
+ - Edd: I’m not entirely sure, but we can get back to you [missed it]
+- William: on previous slides, there was serial number of the module on the frame - do the barrel modules have identification (ours have RFIDs). We’ve had problems because we put label on covers and then exchange the covers and then they don’t match anymore
+ - Cole: isn’t the RFID under the 22 on the label?
+ - Ash: yes
+ - William: may be easier to use the RFID tag, more difficult to mix up
+#### Xin for IHEP
+- Vitaly: You called it an “electronics box”, is it actually a desiccant box? The unit that makes dry air.
+ - Xin: Actually no, we opened it. It has one side that couldn’t open anymore.
+ - Vitaliy: I think it is a desiccant system and I think the actuator failing is a known failure mode
+ - Bart: Yes, the system consists of a desiccant and a mechanism and the desiccant is fine, the mechanism is fine, it was only the hatch that didn’t open - that part failed (in several cabinets at once) and was replaced and now all is good again
+ - Xin: Yes
+ - Vitaliy: I only ask because we saw other failure modes as well.
+### HBIPC Assembly
+Presenter: Kirsten Affolder
+- Sven: The hole on the connector side looks covered by the cover. Can you still put a screw on there?
+ - Kirsten: Yes, you can. It’s not quite covered, it still fits into the shipping crates
+- William: On slide 9, the picture of the crate. How do these things work? The Hybrid test panels go in the slot?
+ - Kirsten: This is just for storing. The crate is built off this standard crate.
+ - William: Got it, thanks.
+ - Kirsten: We bought a lot of extra ones so that we can store hybrids on panels while we are waiting for bonding. The plate holds the HBIPCs.
+- Theo: For the plastic covers, are they easy to remove and attach say if you needed to rebond the IDs?
+ - Kirsten: Yes. There is epoxy. They overhang the edge of the board by about a mm. So there is a line of epoxy … we do it upside down. You can cut it with a scalpel and it will pop off
+- Ben Bruers: You said we can lower the voltage to 7V. This is probably something we could work into the hybrid testing and ITSDAQ.
+ - Ingo: It would make sense for the PBs that have issues, but I don’t know about elsewhere. It might not be representative.
+ - Vitaliy: The assumption here is that you still get 1.5V to hybrid.
+ - Ben: And the reason is that unlike with a… why don’t you need 11V like you do on the module?
+ - Vitaliy: 11V is the “usual” operating condition. 
+ - Forest: I thought that with a smaller step-down in voltage, there is less to dissipate
+ - Craig: On the module/stave, you care about the voltage drop, which is why we run it a bit higher. With shorter cables, it might be fine.
+ - Peter: Do you hit the PS limit with a full crate?
+ - General laughter
+ - Sven: ITk Week should give us four panels, so we can try that.
+ - Vitaliy: The 7V was just a one-off test, but we should check.
+- Peter P: Are those 3D-printed covers static dissipative?
+ - Kirsten: They are not
+ - Peter: I’m bothered by that. They might store charge. I don’t think it’s good practice.
+ - Vitaliy: in principle yes, but it isn’t connected to anything
+ - Cole: could get PLA - not super expensive and might be worth it
+ - Craig: I would prefer it.
+ - Vitaliy: do you want us to replace the existing ones?
+ - Ben: Dennis, the covers we use now for the EC, are those ESD safe?
+ - Dennis: no, they are not
+ - Ben: if we have ever seen anything, it hasn’t happened very often
+ - Peter: It’s the adjacent hybrids that worry me.
+ - Ben: also haven’t seen any broken hybrids
+ - Peter: I think there are things that have happened at the module level that could be consistent with ESD damage.
+ - Vitaliy: struggling to come up with an electrical path that would work. Charge is very far away from hybrids. Would need hundreds of kilovolts.
+ - Cole: may someone could make a few ES-safe PLA ones
+ - Peter: we’re also not supposed to have non-ESD safe stuff in cleanroom anyway
+ - Cole: maybe RAL can print some - SCIPP, can you send these?
+- Gerrit: This might be more of a question for Vitaliy, I am disturbed by how hot things are running on these PBs. I don’t know if we ever measured this properly on the module. For the linPol, is this according to design specs? It seems to be really hot.
+ - Fadeyev: it’s hot, wouldn’t claim that this is a precise measurement - several involved factors. Systematic bias because the system isn’t cooled (no air flow), so they look hotter than they would in a detector. Remember this from the first series of powerboards: if we test them without cooling them, they get quite hot.
+ - Gerrit: I can’t remember the last time we checked a module with the PBs fully operational. It’s more difficult because you have to spray paint them black.
+ - Ash: this would be problematic for the linPOL, because dropping an excess of 3 V across the component, so decreasing input voltage will help here to decrease power dissipation. That’s why it gets so hot. Cooling should be provided by air - not sure what else can be done. 
+ - Vitaliy: looked into this at some point, doing something like a metal plate for heat dissipation onto powerboards, but decided it was overkill
+ - Gerrit: What would be the issue from dropping the voltage?
+ - Ash: The efficiency of the buck converter. The dissipation on the converter will go up, but I’m not sure by how much.
+ - Cole: probably need to study this more to understand what’s going on
+ - Ash: linPol is the bigger concern
+ - Vitaliy: I think your issue is with the full system, and here is the HBI?
+ - Ash: I’m concerned about burn-in, in detector we have cooling
+ - Gerrit: Okay, so we are stuck with 10V on module/stave
+ - Ash: yes, keep current draw down
+- Theo: For the covers, we have this special tool to handle the PBs in the UK. Would that still fit with the new cover?
+ - Fadeyev: we have a tool people use, don’t recall if it is the same
+ - Kirsten: We did not, we just used the level.
+ - Gerrit: never used the tool
+ - Vitaliy: Some use it, so maybe we should check.
+ - Kirsten: have one, will check
+ - Craig: At the risk of sounding like a broken record, those tools are not ESD safe and the tools do go along the hybrid and could easily build up charge.
+ - Theo: if that’s the case, can we redesign the tools and make them fit and ESD safe?
+ - Cole: suggest to take this offline
+### Recurring Discussion: Module QC Chain
+Presenter: Cole Helling
+- Ben: Is there a tool around from the DB side to show that a module has had all the tests at the proper stages
+ - Luise: There are two tools, one is Kenny’s tool and there is Christian’s and Bruce’s web app which also gives summary information
+ - Ingo: Can we have the same thing in code? Something scriptable?
+ - Ben: We have that in Zeuthen?
+ - Bruce: What is this specifically?
+ - Ben: Ingo wants to have a script where you give it a serial number and it tells you if it missed/failed tests
+ - Bruce: The nice thing about a web page is that there is no need to update. If you have a way around that …
+ - Ben: Ingo wants to integrate it with our flow, so would like to do it with a command line call.
+ - Bruce: if we can call the web page from the command line - would that work?
+ - Ben: That would probably work.
+ - Bruce: We would just work out what to do.
+ - Ben: does this work for one component at a time or for lists of modules?
+ - Cole: The web page only works for one component at a time, but it has a lot of information and all the bits seem to be there. Agree very strongly that we want a web page so that people don’t use an outdated version of code.
+- William: I heard Ben asking two questions: Can we get an overview of all tests and stages? But the other one is “does it pass?” If we have a lot of tests and stages, we need some kind of yes or no. But the first step is to decide. I’m assuming we don’t have something like this.
+ - Bruce: The idea is that it is. So if folks have ideas to make it better we want to hear it.
+ - William: [missed it]
+ - Bruce: Yeah, we need to check that this is using the right version and all.
+ - Cole: good starting point for this discussion, need to get started on these visualisation tools
+- Bart: Regarding pass/fail, hopefully the non-experts can run these tests where the user can see the final verdict green/orange/red to tell us.
+ - Cole: agree, currently working on a machine which builds all of this, sorting out details with Bruce and Peter, need something that is very clearly a pass or fail
+ - Ben: In HBI we have a button that turns red or green based on the pass/fail. I haven’t activated it but it should go soon.
+ - Ingo: I asked for what has to be uploaded… with your merge tool, it’s easy to upload the tests from the merge. There is no tool for the upload though.
+ - Cole: agree, wrote my own tool, will share if there is interest, can share during the week after ITk Week
+ - Ingo: that would be great, especially if it is scriptable
+ - Cole: it’s a web page, but translatable
+ - Ben: didn’t you want to have a button for single module tests in ITSDAQ which is then uploaded?
+ - Cole: yes I wanted to, but no one else was interested
+ - Ben: upload could be automatic
+ - Peter: If everything passes, it should just upload automatically.
+ - Ben: Then we should integrate this into the tests.
+- Marta: completely agree. For the SMT, I was assuming there was a full test function.
+ - Peter: I’ve forgotten the OCS, if we put it on the feature requests, then we can put that in.
+ - Marta: that would make sense
+### AOB
+- ECR Flash talks
+- Endcap discussion decision at ITk Week

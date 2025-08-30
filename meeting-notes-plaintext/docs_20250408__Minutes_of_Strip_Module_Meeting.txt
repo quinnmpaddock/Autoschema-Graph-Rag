@@ -1,0 +1,177 @@
+# 2025-04-08 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1527307/
+### Introduction
+Presenter: Cole Helling
+- Cole to check the results of the EDMS reviews.
+### L4 Updates
+Pressenter: Abe
+- Sven: Slide 2, for the UK batch what is the plan for the DB?
+ - Abe: I’d have to check, I saw something in the DB recently and I marked (noted?) it was delivered. Is that what you mean?
+ - Sven: both, when I checked last week they hadnt been shipped to RAL so they couldnt forward to us
+ - Abe: Okay, I’ll check on that. For the CERN->RAL shipment, that may have been recent.
+ - Sven: I think they shipped before JJJ left for a few weeks, so it may be on a todo list.
+ - Abe: we can check not sure
+- Carles: Last week in the module meeting, you presented the number of modules which could be made here or there. The sites who had PBs in stock were asked to share PBs. Could I ask you to let us know how many to ship where? Otherwise we can figure it out ourselves. That would be good to know.
+ - Abe: I forgot to follow up, we decided freiburg would send them to DESY, that request should be taken care of thanks for following up. 
+ - Carles: Ah, okay, thank you.
+### Group Update: Liverpool and Sheffield
+Presenter: Theo for Sheffield
+- Carles: How did you follow up on the wirebond failures? Did you use the DB reporting?
+ - Theo: we tried to correlate with sensor batches and ASIC batches but we were not able to correlate anything
+ - Carles: I meant how did you go back to the wirebonding failures. Do you have a local [?] or did you look at the tests in the database?
+ - Theo: We have a local tool, the magic spreadsheets, that we use to track which wires had issues and whether they were repaired or failed. 
+- William: You said the weight stuff was a UK-wide thing, but I think of this as collaboration wide. Yours are quite low it seems. This is a general question, is anyone hitting these weights?
+ - Theo: The leading theory is there is a difference in wetting to the kapton meaning there are lower glue weights 
+ - William: Okay. We were failing high as much as low. But maybe with interposers there is a real trend.
+- Gerrit: Going back to the wirebonding, are these the front end?
+ - Theo: they are frontends
+ - Gerrit: Why are you repairing these at all? The risk of creating pin holes by rebonding the FE is quite large and we’ve seen this many times. In general, we don’t repair FE wirebonds.
+ - Navid: The spec is to do one repair, one chance. According to the agreed specs.
+ - Gerrit: :We can accept 1%, so that’s 25 wire bonds. Logistically, it’s a nightmare. You’ve basically been repairing all of them. 
+ - Cole: 2% on the module level
+ - Gerrit: Okay, so fifty on the module level, but repairing the FE bonds is not very nice to do.
+ - Theo: we are only doing the repair at the time of bonding, I agree we don't want to go back and bond after testing
+ - Gerrit: JUst my two cents of what I’ve been seeing. We get quite a number of issues when we try to rebond. You’re quite lucky if you can repair them at all. 
+- Vitaliy: For bonding, I understood the pinholes are created in a specific scenario when the bonder is running out of wire. If the wires have other issues, like peeling, I would imagine it’s okay to rebond. 
+ - Gerrit: we saw in the past even with the wire there is chance of pinholes
+ - Vitaliy: I’ve never seen this. I’m not advocating to always rebond. Gerrit has a point about pinholes. It’s a lot of time to give this extra TLC. 
+- Vitaliy: with the glue weights, we don’t see any change. We’ve seen maybe one module (out of many) with issues. We deposit glue on the sensor though, so perhaps we shouldn’t see any change.
+ - Gerrit: it probably has more to do with the stenciling, it doesn't matter if you deposit the amount of glue is determined by what your syringe is doing. For glueing you are putting a scraper it could be you are pulling off more glue when scraping
+ - Vitaliy: I would imagine there are several factors here. The surface is in principle a bit different, flatter, etc., which could facilitate less glue. 
+- Forrest: On missing front end bonds - where are they failing? Near corners of chips? 
+ - Theo: It was random as I recall, which was a bit annoying to correlate.
+ - Forest: Okay, so there is probably sufficient coverage
+ - Theo: The best we can say is there was contamination on the ASIC and it got dragged to the sensor.
+ - Forest: If you’re actually drawing wire out, the only contamination you usually get are wire shavings from pulling the wire through the wedge. You should be able to see them under high magnification.
+- Ewan: At rFDR, we said target glue weights would be updated. We were on the low end. Do you think you’re just unlucky? Have the target glue weights been updated since the rFDR? Supporting material submitted via Chat: Glue weight plots rFDR on slide 24: https://indico.cern.ch/event/1467810/contributions/6235712/attachments/2978665/5245975/EwanHill_2024_12_Dec_04__moduleHybridMechanicalQC__rFDRstrips__v2024-12-03-1633.pdf 
+ - Theo: That's the argument and it's probably the data from the rFDR. 
+- Luise: to confirm we did a test on this with the amount of streaking with glue coverage, and you can see the glue streaks a lot more with the kapton because it stops the curing 
+- Christoph Klein: For the streaking, I’m wondering where the breakdown is happening. I would propose, Cambridge has a near-infrared camera that could be used to see where the breakdown is happening on the sensor, to see if there is a hotspot where that is.
+ - Navid: The plan is to send EBD to Cambridge who can do some studies. 
+- Vitaliy: Did you see streaking on the edges as well? Near the GR region? That would be a sign that you have glue o n the GR.
+ - Theo: Not in that detail. I was focused more on inspecting the bulk center region, because that’s where you see it usually. We have done checks before for glue in the guard rail, and I don’t think you’d have glue in the guard ring here. 
+ - Vitaliy: Okay.
+- Vitaliy: Have you done VI of the sensor for these modules?
+ - Theo: No chipping. We had no other reasons to think these sensors would be a problem.
+ - Vitaliy: OK, just variable breakdown can appear as issues of that kind. If you’ve checked it, though, OK. 
+Presenter: Sven for Liverpool
+- Vitaliy: Nice results. I remember you got a cleaning machine for flexes, did you start using it already?
+ - Sven: It is not ready yet commissioning is end of this month
+ - Vitaliy: ah, okay. You showed some information, so I was also curious if it would remain after cleaning.
+ - Sven: we are looking forwards to this
+- Sandra: I have a question about cleaning after interposing. Is there a plan for the cleaning to happened before shipping
+ - Sven: Yes, we do this. Part of the VI is to check that it’s clean enough. This is relative of course, but we can’t spend two hours per array to ensure there is no bit of SE4445 anywhere. 
+ - Sandra: The alternative is we have to spend their time doing it. During production it would be difficult to spend that much time
+ - Sven: With the new tools, the seepage is less than what we had in the past. So cleaning is less work, but non-zero. I think the batch you currently have already went through this expert inspection, so feedback would be appreciated.
+ - Sandra: We just finished the QC cleaning pull tests and so on. I will send you a report on it. Definitely it is a little bit better but the cleaning is still a big chunk of time.
+- Sandra: There are areas where the Kapton sticks out which might cause delamination.
+ - Sven: Those are the leftovers from the interposing, they come in a similar shape to the array, we have to cut the shape out which leaves behind bits of kapton
+ - Sandra: Okay, it’s not a big deal, they stick out only a small amount, but sometimes they “chip” off.
+ - Sven: We are looking into a different design that solves this issue, but we had troubles ordering through the UK system.
+ - Sandra: Okay, thank you.
+- Geoffrey: For the cleaning, I was wondering if in the EC people are expected to have similar problems.
+ - William: we did 1800 hybrids last year without issues
+ - Sven: They weren’t interposed William
+ - Geoffrey: That was my question
+ - Sven: The interposed cleaning.
+ - William: we did 200 interposing last month and didnt see this
+ - Sven: The way hybrid arrays are made is different between B and EC.
+ - William: I agree, just saying we haven’t seen this in the EC yet.
+ - Geoffrey: the ones you have made are the same as the production method
+ - Wiliam: Nope, still waiting for the first 200 from Hamburg. So far the bare hybrids haven’t shown any contamination, neither those interposed by Dennis.
+### Hybrid Flex QC Procedure Update
+Presenter: Sven Wonsak
+- Sandra: In the last batch we received, practically every array has one hybrid that was not interposed and was detached. What is the reason for that? (in one array it was three)
+ - Sven: There are two reasons, 1 i f they manufacture cross outs. They also damage them by pushing something into them so they have a localized thickness change. The others are the ones that look fine, in the past we had to do pull tests on arrays so we cut out one of every array we cannot interpose these reliably. Everything in the pink bags are marked in the DB as failed. 
+ - Sandra: Okay
+ - Sven: For DB-related tracking purposes, we leave them together because disassembling them is a bit more work. Sorry for that.
+ - Sandra: Okay, then we can decide if we ship them all or do the disassembly ourselves.
+- Theo: What's been happening with the module metrology is we use the thickness. It looks like you are descoping this. 
+ - Sven: Yes, not now, but maybe in the future. There was a caveat on post-SMD limits for descoping. I think Liverpool is already there. It doesn’t take us too long to do it, so we may continue to do this to make sure we don’t miss any issues. We’ve seen them pass visually, but fail the measurement which causes issues.
+- Navid: Is the plan not to use the package height from metrology?
+ - Theo: That’s my followup. We could use package height. We could do a mixture of both flex and interposer. What do people think about that then?
+ - Sven: In the end, the interposer thickness doesn’t matter. For assembly purposes, the total stack is. It’s relatively easy to get this from the hybrid metrology.
+ - Navid: I thought the ASIC metrology would be more accurate as well.
+ - Theo: If we assume the ASICs to the average [missed some].
+ - Navid: You can use the total package heights.
+ - Theo: Lasers on the flex.
+ - Theo: I think it would be better
+ - Sven: Helps we decided to use the same regions on the flexes vs module
+ - Theo: Long term, whenever you get ASIC measurements, it should have the correct package height because we do this on panels.
+ - Sven: yes, even if hybrids are not interposed you get the right number from hybrid metrology
+### QT Update: Long Term Testing
+Presenter: Metea Marr
+- Cole: Slide 17, I want to highlight the usefulness of this. We were doing the sandia module. What happened purely by accident is that it caught failures. You can see on this that two chips failed which you wouldn't normally see. Side 13 you can see the same thing as a function of the defects. This is an R2, with about 50 failures which is good to see, so thank you for this.
+- William: This is a really interesting tool but a way to bury the lede! This is an irradiated module? What happened? 
+ - Cole: no it was testing fine so something during cycling, I don't want to talk about this now its been going back and forth for more testing. Don't want to discuss this now
+- Vitaliy: It looks good. I was also curious about the usage case, besides the irradiated module, will other modules be tested? I have always wanted to see a module running forever.
+ - Metea: Ideally, we’d leave one in the coldbox as long as we could, but it depends on coldbox availability. In theory, you could leave this running as long as you like. 
+ - Cole: Since a lot of endcap sites have spare – their throughput rate is much lower. We’d like to have some sites running as long-term reliability sites. Pavol’s student at Prague is picking up this work. 
+ - Luise: There are places that don’t get modules yet, who could also run these. There are also irradiated Barrel modules, where there may not be spare space/time to run them in the Barrel Cold Boxes, so they could potentially test these too.
+ - Vitaliy: It would also be great to see unirradiated modules.
+ - Luise: there was a plan to cycle some interposer modules, this has partially happened for the barrel but not for the endcap, this should be arranged
+ - Vitaliy: Right, and the other thought from the US Review, is that if people have room in their cold boxes, you could have modules being tested all the time with real modules so that it accumulates a lot of testing time. 
+- Timon: I assume this is rather close to the current QC cycles. So it doesn’t do anything with the PB?
+ - Metea: We don’t now, but we could put this in.
+ - Timon: for longer term burn in on powerboards there was some interesting results that didn't make it into the QC
+- Timon: This might be a separate category of LTT, but it would be interesting to do more stressful versions of this.
+- Luise: in the same vain, we had hoped to include the PB test that LBL developed for the long term tests, if you have someone at LBL that can add the long term monitoring of PBS it would be good to add this
+ - Timon: There is no one to follow up on this. The QC tests were developed some time ago and were never merged, or just not in there.
+ - Bruce: I think it’s getting there. Merged, but not run by default at the moment. What’s missing is when to do the current calibration. 
+ - Luise: It also could be a future QT
+ - Timon: There were tests written by Luc. I am generally worried how little we test this on modules
+ - Bruce: The current PB cycling in HBI measures things, but doesn’t do any of the cuts Luc did. The startup tests aren’t part of the normal tests. But it can easily be added to this as it’s an extra thing.
+- Alex: You mention these scripts to collect the results, could this be modified to make a stripped-down version for regular TC.
+ - Metea: yeah you could use this for TC, I have accidentally left this on
+- Cole: it will do TC and it will just start uploading them
+ - Alex: What is this PSQL database? Do we need our own account?
+ - Matea: yes but easy to do, my email is in the slides
+- Vitaliy: This DB is in vancouver at CERN?
+ - Matea: its at Vancouver
+ - Vitaliy: And who maintains it?
+ - Luise: Its someone with a permanent job at Vancouver
+ - Vitaliy: it’s backed up right?
+ - Luise: Probably
+- Bruce: But this is just a PSQL database, so it could be run locally.
+### Winter is Coming
+Presenter: Ang Li
+- Luise: when you say you tested cold, this was -35?
+ - Ang: -35, the chiller is -40 but the module is -35
+ - Luise: Okay, thank you.
+- Cole: seems like you have a plan by reducing the time to cure the glue
+- Gerrit: no because we are not building SS modules anymore, we dont have the parts. 
+ - Cole: we need to figure it out. 
+ - Gabriele: we need some dedicated components to do more
+- Luise: What is the plan for these? Are you planning to load?
+ - Gerrit: we cannot replace them. 
+ - Luise: There are SS sensors available. Is the problem the Y hybrids?
+ - Gerrit: 
+ - Navid: We have stuff, but that could delay the iSS stave.
+ - Cole: the problem is we are going to the rPRR with this.
+ - Navid: This seems to be mostly a site issue.
+ - Luise: Are there more Y hybrids in the UK?
+ - Navid: It’s something we could do
+ - Luise: Maybe we can decouple these. Send more parts so BNL can do a proof-of-principle.
+ - Navid: We can do that. Gerrit, are you happy to do this?
+ - Gerrit: No, we can’t. Let’s discuss this offline.
+- Gab: We’ve been discussing this for some weeks. The point of today’s presentation to let people know so we can come up with a plan. 
+- Steph: to fit data, we should wait for peter to test the first stave in the climate chamber to see if its reproducible down to minus 70
+- Gerrti: I dont see this as a rush job, its worrisome but there is not enough time and resources to do what ever we like at this point. 
+- Luise: Are you planning to look into the one-hour wait or are you planning to do this for the production LS modules?
+ - Gerrit: the LS modules have no issue whatsoever, so I dont think we need to change what we have now. 
+ - Luise: So if you had to change it, you would do it for the SS modules.
+ - I’m Gerrit and I won’t change anything because I think everything is stupid 
+### Interposed PB Shapes
+Presenter: Len Zaragoza
+- Luise: Is there a conclusion you draw from this? Do you consider the arrays are thicker than singular interposed?
+ - Len: I think that is the general consensus.
+ - 
+- Vitaly: They're slightly thicker by a small amount, we were happy we did not need to change the pick up tools, for the metrology they didn't even move. It's the same with flexes there can be batch to batch differences, if its small enough you don't care. We have asked for more flexes for comparison. The main outcome of this presentation is we want to use the single interposed ones again.
+ - A
+- William: No objections. Are you going to measure every batch? [more, but not a question]
+ - Vitaliy: For arrays, the process is probably more stable. For singulated interposing, there may be a bit more variation. In general, we don’t plan to do this for every PB, which would take too much effort.
+- Timon: The goal is to have each process be consistent. For arrays, Anne showed we have sufficient data to show this. The singulated ones have moved a bit over time, but seems more stable now. There are other tests to check the consistency so we can freeze the process and check only ever so often as needed. 
+- Timon: one thing we need to decide is if we can use the singulated ones. If so, do we do this as a dedicated set or just feed them in as we go? We had 450 boards at some point where tape ruined a bunch of PBs. Some went into QA, some may have gone into HBIPCs. We should look at the IDs and decide if we will use them. The boards seem usable.
+ - Cole: okay so we have have a big batch of powerboards that you are not sure if they are good? 
+ - Timon: we have some the QA is unclear, its not in the DB we never put QA in the DB. We kind of need to decide whether we want to use QA boards or not it is relatively easy to track down.
+ - Cole: we should track this down

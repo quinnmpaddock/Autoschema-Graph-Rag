@@ -1,0 +1,111 @@
+# 06/07/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1032187/ 
+### Introduction
+- Database How-To guide for Module Frame updated
+- Database How-To guide for HV-Tab Sheet created
+- Database Implementation Document for HV-Tab Sheet created
+- https://twiki.cern.ch/twiki/bin/view/Atlas/StripsDatabaseIssues: 
+- delivered R1 tools not fitting, started small mail thread to find solutions, iterating on options right now
+ - Richard Brenner reports all tools were test fitted before delivery
+ - Sites can not fit most tools even with full body weight
+ - Some mitigation checks proposed by Jonas, sites will try and report back
+ - Please can we, as a start, find a working set for Canada such that the first electrical Star tool built modules can get going?
+- Valencia cluster did not order chip trays but would like to borrow spares from other clusters for prototyping
+ - R0 and R5 chips trays, one each
+ - Freiburg can send one spare R0 set
+ - Carles will hold on to one R5 spare chip tray set
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R2 tool production
+ - Fast tracked Canada parts being anodised
+ - Rest undergoing metrology (before ano)
+ - Otherwise normal continued progress
+ - Hope to ship other parts in about 4-6 weeks depending on external company delivery times and outcomes of anodisation
+- R5 tool production
+ - Metrology update and more in last module meeting
+ - All PB pickup but one assembled, cleaned and checked. RFID tags encapsulated. Registered in DB
+ - All remaining tools back to the company to be assembled
+ - Only piece left is a PB pickup. It is already machined and at IFIC to do the metrology before anodising
+ - The company asked us for x42 5mm pins and x19 6mm Misumi pins. We don’t know what the problem is but if nobody have them, well purchase them asap company says 4 days delivery time
+ - Seems likely that the HVtab jigs were accidentally equipped with bushings
+- EC PPA/prototype hybrid order
+ - Same state as last time plus
+ - Removed AC coupling to hybrid ground caps
+ - Who can register the hybrids?
+ - Dennis will not manage in 2 weeks
+ - Canada might come to the rescue for the ones sent to Ca
+ - Sven will prepare a how to guide very soon 
+- Shipping readiness (incl import procedure)
+ - No major news
+- Barrel hybrid tendering/order
+ - Nearing completion of order
+ - Issues with ordering parts in advance
+ - Some concerns with approaching contract validity deadlines
+- EC hybrids/powerboard tendering
+ - Similar to barrel
+ - Expect bids by tomorrow midnight, will be opened a few days later
+ - Risk that there might not be enough bids?
+- Powerboard testing setup roll-out
+ - To be checked again later during the meeting
+- Endcap module thermal cycling setup
+ - Sergio is on holidays
+- US module thermal cycling setup
+ - No news on US boxes
+- EC hybrid test-panel finalisation
+ - All tested, all work
+ - Hole size change to be decided after initial tests by more sites
+ - There is enough for PPA and PPB in hand in Freiburg (30 of each type)
+ - About half is en route to Canada
+- Production of hybrid panel cover
+ - 2nd batch received, now all parts are present
+ - A few items were missing, in discussion with vendor
+ - 25% of inserts done
+ - Plan to continue with 250 per week
+ - UFT order for PP is delivered
+ - Scand about to be shipped
+ - Further groups that need covers, please fill circulated sheet and let Mohammad know
+- Production of stencils
+ - Noone present
+- Production of LED bars
+ - Changed all bars to common design
+ - New EDMS entry made
+ - Dennis thinks review is not needed
+ - Asked for quote, expect response tomorrow
+- Production of module frame cover
+ - Most items sorted and prepared for shipping
+ - Unsure of the best safe shipment method, stuff is chunky and heavy but not large enough for palette
+### Tuning channel classification criteria for the ABCStar chipset
+- Jacob would like to scan more data to find cut places for other module types
+ - Craig will send 3Pt gain txt results to Jacob	
+ - Dennis will send EC results for first hand built EC star set
+- Test at reduced HV to check for unbonded channels is one of the next steps
+### Hybrid Crate
+- Plastik support for GenesysII will not be supplied collectively
+- Metal enclosures + fans + fan-electronics will be supplied by DESY
+ - Parts for Guinea Pig sites are likely to have been sent out (holiday limbo)
+### Sensor Handling
+- Everyone please refer to Bart’s talk and take the message on sensor handling into account
+- Clean suction cups with DI water only, not with alcohol (to avoid traces on sensors)
+- Craig is working on ESD safe pickup options (taken from stave/petal loading methods)
+ - Find latest designs here: (also for EC from Luise) https://twiki.cern.ch/twiki/bin/view/Atlas/ITKstripsSTARModuleHandlingTools 
+ - Best to use non ESD plastic and spray with ESD coating?
+ - This is advice from RAL folks who optimised this
+ - RAL used an un-sprayed non-ESD version for a long time without issues
+ - If this is ok, one might also be able to go metal
+ - Carbon loaded nylon is too brittle
+ - Vitaliy has an option to print ESD safe, will supply link
+ - Here are ESD filaments we use: https://www.3dxtech.com/products/esd-safe-filaments/ 
+ - For example, CNT-loaded PLA: https://www.3dxtech.com/product/3dxstat-esd-pla/ 
+ - CNT-loaded PETG: https://www.3dxtech.com/product/3dxstat-esd-petg/ .
+### Powerboard test setup update
+- SHV should be ok, go ahead
+### Polaris Update
+- Please see slides to get the correct ordering information for Polaris:
+- How sure are we that Polaris is really Polaris?
+ - Mostly, but even if we got Epolite not polaris we would be safe for modules
+ - Will check with batch evaluations (calorimetry)
+### AOB
+- Emily (Brandeis) is working on IV-2-DB code has ready for testing
+ - Anyone ready to be a beta tester
+ - Michael V would be happy to test

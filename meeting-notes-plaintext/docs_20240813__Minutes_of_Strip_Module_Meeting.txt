@@ -1,0 +1,116 @@
+# 2024-08-13 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1444860/
+### Introduction
+Presenter: Luise Poley
+- Luise (sl 3): Is there still an option to gamma irradiate EBD modules at BNL? Abe, can you send a message? 
+ - Abe: Sure, I can send the message.
+- Luise asks if we can agree on a basic set of passing criteria for modules
+ - Everyone: Silence
+- William: On slide 9, we are going to be ordering more single flavor panels?
+ - Luise: Hybrid test panels
+ - William: Oh, okay, my mistake
+- Tony: I think it’s reasonable what you’re proposing about the TC. The first/last isn’t special, we are seeing random failure. Maybe we have to say it can’t fail more than one.
+ - Luise: So you’re saying the last test fails and the middle passes?
+ - Tony: Yes
+ - Luise: If it’s just random, could you just run it again?
+ - Tony: It’s programmed, so it’s not that easy.
+ - Cole: yheoisfjos [doesn’t get to talk]
+ - Alex: [says what Tony said but more technical]
+- [missed discussion on interposer stuff]
+- Tony: I’d suggest to change the shift, don’t change the criteria and see how many fail. Otherwise we are uploading without judgment.
+ - Luise: But you’re not saying to fail it?
+ - Tony: No, not necessarily
+- [sorry for missing so much, was taking notes alone while answering messages in important chat]
+- Bart: You’re saying just override the pass/fail flag and upload it anyways?
+ - Luise: The glue shouldn’t change
+ - Bart: Is it ignored or is it adjusted?
+ - Luise: Tony suggested we adjust. Let’s decide next week?
+ - Tony: The glue weight should be [...]
+ - Bart: ... Tony, quick question, what random failures are you talking about?
+ - Tony: We had one random IV that was bad, and unphysical. We had 3PGs fail for a single test, but nowhere else. I don’t think it’s preferable to any particular cycle. You’re going to get the tails ….[ ]
+ - Bart: … It’s fine, I just wanted to know if it was a consistent failure or random.
+ - Tony: We could say that we need to pass X/Y tests or something like that.
+ - Bart: Then you would run into the “what ifs”. If it’s truly random and a glitch.
+ - Luise: There is a QT to look at this, so we will reach out and see the progress on this.
+ - Bart: So we are not rid of people needing to eyeball this.
+ - Tony: I don’t recall anything getting progressively worse. It could be the case that we just need to look for trends.
+ - Bart: It’s true, but we haven’t had many modules that only use production grade components. The stats there are quite low.
+ - Luise: I think we all agree we need to look into this, we do need better criteria in the future, this is just to get started
+ - Alex: Is this a pass/fail criteria something we should specify when we upload or is this something that will be done on the DB side.
+ - Luise: ideally the pass fail criteria could be evaluated by the merging script, we just need criteria on how to do this 
+ - Alex: Okay, I see. So it’s going to be done in the merging script.
+ - Luise: I’m not sure about that
+ - Alex: But I think it makes sense to do that there
+### L4 Updates
+#### L4 update: ITSDAQ
+Presenter: Peter
+- Several features being moved from development branch to main branch
+ - Please remember to add your information to the ALMA 9 spreadsheet: https://docs.google.com/spreadsheets/d/1YGCG7OXOjheQAi33b3f-_joTLf6yUi3rnZIHtkuYldE/edit?gid=0#gid=0 
+- William: I looked at this spreadsheet, but I noticed you are using RockyLinux, should we do this?
+ - Peter: no not at all it should be entirely equivalent, it's just because of our team at RAL
+ - William: Okay, I just worry that there might be some small differences we don’t see.
+#### L4 update: Barrel updates
+Presenter: Navid
+- Cold Noise module built with interposers and worst case cured True Blue
+- Hint of suction cup noise on Y hybrid, but nothing bad overall
+#### L4 update: Publications
+Presenter: Hannah
+- Vienna Conference has opened Abstract Submission, please submit by October 6th
+### BNL Uploader
+Presenter: Ross Snyder
+- Karol: You have the visualization part of the app, does that work on only offline data or does it get it from the DB?
+ - Ross: believe it interacts with the database
+ - Karol: Ah, okay thanks
+- Luise: Is this open to everyone or just BNL users
+ - Ross: This is open to everyone
+ - Gab: yes, Open to everyone, it might need some changes
+### Five Amazing Facts You Didn’t Know About the Most Recent Coldjiglib Version!
+Presenter: Ankush Mitra
+- Cole: started to play with the latest version already and it caught when the power supply wasn’t turned on correctly, so it works very nicely
+ - Ankush: cool
+### Agreeing on an Interposer Assembly Procedure
+Presenter: Navid Ghorbanian
+- Luise: It looks really great. Did you monitor the weight?
+ - Navid: Do you mean the weight between hybrids and adding interposer?
+ - Luise; To get the glue on the interposer
+ - Navid: Short answer is no
+ - Luise: It would be good to see the consistency you can see.
+- Luise: You said you can use the same stencil repeatedly. Have you tried sweeping back and forth?
+ - Navid: We haven’t yet, but we can try that. I don’t have any doubt we can.
+ - Luise: If you’re cleaning the stencil in between, that’s fine.
+ - Navid: The idea is to not clean between each round
+ - Luise: If you’re planning to do that, it would be good to measure the weights.
+- Luise: I sense a preference to not use glass beads. 
+ - Navid: I think if we can get away with not using them, we should
+ - Luise: I can’t judge this from the plots alone, but I would like to see a summary plot of how the glass bead ones compare to the shimmed ones. I think just looking at the underside, you get a nicer process without beads (using shims)
+ - Navid: We could get rid of the underside by reducing the force. There should be a sweet spot there.
+ - Luise: Sounds good to me
+- Tony: Comparison we can do right now is the standard deviation - would be interesting to compare methods like that, might be useful to compare to flat hybrids (without interposers) and compare to hybrids with interposers
+ - Navid: So just like the bare hybrid array.
+ - Tony: could be we are actually making the hybrids flatter
+ - Navid: I think there is some error in the measurement, we are using calipers
+ - Tony: could be a useful comparison
+- Tony: So you’re proposing this method with having a single site using this method?
+ - Navid: have two of these, would give one to Liverpool, with the goal to have Liverpool do the interposing in production, currently being done at RAL
+ - Tony: The variation you’re seeing is pretty good, and it would be good to use some electrical pieces. It would be nice to do (I think). You’re asking how many parts need to be done, it should be more than one, pick your preferred method. The glass beads have half the std of the stencil, so I would want to see the glass beads with less weight. Even if it doesn’t look good on the back side, it doesn’t mean that it isn’t good. I would like these sooner than later.
+ - Navid: if we go ahead with both shims and beads, it’ll take longer and make the decision harder, don’t we want the best possible contact between hybrid and sensor?
+ - Tony: glass beads shouldn’t affect thermal contact
+- Karol: From the UK side, as we mentioned, we want to use this method for the next stave. So we want to start with electrical pieces soon. Optimizing the procedure for glass beads might require more studies. Tony, is there an “Acceptable” level of standard deviation?
+ - Tony: I don’t think so, standard deviations on singulated interposer objects are larger than that
+ - Navid: I think it was 11-13 [?]. With glass beads we took the tape out. It’s 11 for shim and 7 for glass beads. If we do more trials, they may improve or worsen.
+ - Luise: Your method of measurement might make it look better with the beads, so this might look better because of that.
+ - Tony: The other thing is the QC plan for interposed arrayed hybrids finalized. 
+ - Luise: The plan was to do this VI from the back and try to extract coverage from that. So far, I think there has only been one update on that.
+ - Tony: For the near term, are people using a micrometer and saying it’s okay?
+ - Navid: We could measure the outer-three hybrids. It’s kind of what we’ve been doing so we don’t waste parts while we are working out the process.
+ - Karol: Will there be a QC spec on the glue height?
+ - Luise: The statement in the past is that for array interposing, this is difficult, so we would use coverage and weighing.
+ - Karol: Okay, I was just wondering if there were variations in the height, if there were similar steps.
+ - Bart: The fear of burning through reject arrays is that we would run into issues and not be able to trial anything. We could take them out and measure them to get this information. Seems you are on the money for this now, so it seems now is the time to use the rejects to assess how good it really is.
+ - Navid: Are we saying shims or beads?
+ - Luise: Karol, two different situations, While we are developing, we do want to monitor this. During production, we don’t yet know without seeing how reliable this is.
+ - Karol: Fair
+ - Luise: I think the things we were after were the metrology. The weight and dispensing would be great to see as well. If you can show the two methods work equally well, you should be allowed to choose the method you prefer (the UK)
+ - Luise: A lot of this comes down to handling. Could you get us this data suggested by Tony? Then it’s just down to which is more convenient.
+### AOB
+- None

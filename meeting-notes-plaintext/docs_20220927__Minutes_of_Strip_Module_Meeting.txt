@@ -1,0 +1,80 @@
+# 27/09/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1191857/
+### Introduction
+- 
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 27/09/2022: Barrel
+- 04/10/2022: EC
+- 11/10/2022: Barrel
+- 18/10/2022: EC
+- Single Hybrid Testing Database Implementation
+ - 
+- Hybrid Burn In Software
+ - 
+- Multi Module Test
+ - 
+- Modules for Test Beam
+ - or build non-powerboard split module site with irradiated sensor (left side) and later add the right side with the new powerboardPowered with powerboard not on sensor
+- Powerboard bending studies
+ - 
+- Glue Studies
+ - 
+### Institute Contributions
+SCIPP
+- Nice talk with contributions from several group members
+- No questions or comments
+Next week: Prague
+### ASIC to Hybrid Assembly GUI
+- Kirsten (slide 24) where choosing the gelpack: is there a filter to choose Cat X ASICs (bad chips)? That would be useful. Or some kind of warning.
+ - Chainika: no not yet, but that can be implemented
+- Gerrit: missing - we usually assemble a series of ASICs from the gelpack and put them onto the hybrid. The GUI takes a lot of clicks to assemble multiple. Maybe do something like first and last ASIC for a bunch
+ - Chainika: yes, can think about this
+- Zhicai: what happens if the user does a mistake (assemble ASIC to the wrong position). Can this be corrected?
+ - Chainika: not at the moment, can’t disassemble from this gui
+- William: info boxes and colouring takes some time. Can this speed up with doing more ASICs in a row?
+ - Chainika: took 5-10 seconds for ASIC assemble, but gelpack takes some time to appear
+ - William: might be an issue from the database
+- JJ: slide 26 have to disassemble ASIC from gelpack first before disassembling from gelpack. If not using this GUI, do I still have to disassemble it from the gelpack?
+ - Chainika: yes
+ - Sven: ASICs will be shipped in gelpacks, so you will have to disassemble them first
+ - JJ: can I disassemble all ASICs from a gelpack?
+ - Sven: yes, that is up to you
+ - Ian: will add a step in the “assemble from fuse ID” script to do the disassembly
+### Cold box progress at IFIC
+- Soren: thank you, this will help whole community to set up their systemsWhen we were thinking that we can’t get cold enough, we have put some armor flex on top of chucks and this helped
+ - Carles: don’t know if this is realistic for a module, but we can try this
+ - Soren: we were able to reach the -35C with the armor flex
+ - Carles: we will always run with 4 modules, so will try to set the system up like that
+ - Soren: for us it was ok
+ - Carles: but you don’t have armor flex on top of module
+ - Soren: we did this and it worked
+ - Dennis: also with foam on test frame and air pocket under plexiglas this would be a better insulator than just air
+- Soren: you are not allowed to go -35C with your chiller because the bypass can’t manage this
+ - Carles: this is the chiller temperature, but not at the bypass valve
+ - Soren: the bypass will also see this temperature
+ - Soren: we went to -25C/-27C in the chiller when switching on the peltiers. This results in less current in the peltiers, which then don’t heat up as muchLower current in peltier is better to reduce heating up of the chiller
+ - Soren shows plots about waste heat as function of temperature difference
+ - Soren: it is tricky to work at low temperatures to not heat the system up
+ - Carles: it is probably time to move to the automatic control developed by the collaboration
+- Cole: (slide 7) are those the copper NTCs?
+ - Carles: not, aluminium
+- Geoffrey: are you sure the reference of the chiller (slide 2)?
+ - Carles: maybe not
+- Soren: no idea if nitrogen is getting the humidity out of the system. We use dry air and that works very well (if you have water in the chiller)
+ - Dennis: if dry air works, nitrogen will work as well
+ - Carles: are you using the commercial cover
+ - Soren: yes, but the difference to your cover is marginal
+ - Carles: assume you also found that the pressure is escaping somewhere
+ - Soren: yes, pressure in outlet is higher but don’t know why
+ - Carles: assume we will need to periodically blow with dry air
+ - Soren: we are flushing the lid with dry air. After finishing the test, we close the dry air lid outlet valve
+ - Soren: most important is to flush the system when you are cooling down since you could get air into the system
+- Priyanka: do you also close the bypass valve when you reach the minimum temperature (slide 6)?
+ - Carles: yes, when reaching the minimum we switch on the bypass valve.
+ - P: and you saw some temperature increase when you do this?
+ - Carles: don’t know in chiller
+ - Soren: the bypass is to speed up the system. With the bypass the system is not flushed with coolant, so heating up is faster.When you are cooling and you open the valve, [...] you save a bit of time
+### AOB
+- s

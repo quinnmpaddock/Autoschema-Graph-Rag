@@ -1,0 +1,148 @@
+# 31/01/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1231266/
+### Introduction
+Slide 6
+- Carles: do you mean about collecting the codes for each part?
+ - Luise: each part and the EORI numbers for all institutes
+ - Carles: we have already started collecting these information
+ - https://docs.google.com/document/d/1PIozxVuNnChd-zPmilpWK8mf2nQpLo__U1jYll8rleE/edit#heading=h.tmedvlsm22rn
+- Craig also thanks people for their work on the EC powerboards
+- William: there was a spec on the position of the hybrids on the panel, do we need this?
+ - Sven: this is only relevant when you assembly hybrids directly from the panel
+ - William/Dennis: not sure if this is still required since not many people do this
+ - Luise: we don’t know for sure 
+- William: you mention that the SQ step for burn-in/thermal cycling is currently not possible because of database?
+ - Luise: yes, there are some issues to be solved, but we wanted people to give a chance to work on the other aspects first to reduce dealy
+- William: what is about R3 powerboards?
+ - Dennis: I have a couple of variants, but want to wait for the results before making a decision about which to distribute
+ - Dennis: have 2 variants and will SMD populate them and distribute them (only small quantity)
+ - William: it sounds more likely to get all other powerboard flavours together?
+ - Dennis: likely
+- Abe: for thermal cycling we can not yet upload the merged data. Is the only other missing part the 2h leakage current test?
+ - Luise: it is not yet in ITSDAQ, but worked on
+ - Cole: can do the HV stability, plan to merge the code later this week after some more tests. This is only for single AMAC, need to talk with Bruce about multiple AMAC test
+### Institute Contributions
+Uppsala/NOTE update
+- Carles: in production, do you plan for back-up person for bonding?
+ - Geoffrey: this is something we need to look into
+- Luise: you said you can start the R1 powerboard tools in 2 weeks. Do you know how long it will take?
+ - Geoffrey: no, want to talk with them a bit more to find out the schedule
+- Uli: the R1 tools - in cluster some sites use older version, do you know when the updated tools will arrive?
+ - Geoffrey: will have to look into this and will let you know by next week
+Next meeting: Birmingham 
+### Hybrid burn in pass/fail criteria
+Slide 
+- Luise: are you planning to look at other peoples data as well?
+ - Marcus: wasn’t initially planning to do this, but could do it
+ - Vitaliy: who else has data that could be used?
+ - Luise: Toronto has run burn-in so it would be good to include some EC hybrids as well
+- William: we have been looking at something. If 5 channels in a hybrid fail 15%, should this be marked as failed?
+ - Tony: your criteria is 1% for the bad channels, we only saw 4 bad channels at total. You’d have channels from individual run, and then you’d also have cuts on frequency
+ - William: would not change the bad channel
+ - Tony: you are not failing anything, you are adding to the bad channel
+ - Luise: we currently don’t have criteria for what to analyse in burn-in tests. This is what Marcus is currently working on
+ - Tony: if you look at the trend plot, they are at the tail. It’s usually gain being slightly higher or lower than usual
+ - William: should we basing this on statistical requirements? 
+ - Vitaliy: based on these data, statistical fluctuations should not affect the results. The point of this criteria is to define cuts for these statistical data
+ - Tony: that’s the plan: look at tail and make a judgement call
+ - William: eventually we will see a hybrid that fails 15% of tests for 1% of channels, should this hybrid be rejected?
+ - Tony: if it’s one in 10,000, you’d want to fail the hybrid
+ - Vitaliy: if a channel fails 30% of time, you would suspect a bad channel
+- Vitaliy: something like 10/15% criteria, we don’t need this large amount of runs. With more data, can we shorten the run-time?
+ - Tony: no, we should just reduce the number of tests (we are currently running a lot of tests in the 100h interval). Just 1 test/hour…
+ - Vitaliy: parameters of test were not derived from data, could maybe consider reducing time and run faster
+ - Gerrit: but that violates burn-in criteria: idea was to take out infant mortality
+ - Sven: we will probably not catch infant mortality because temperature is too low
+ - Sven: we will not reduce the burn-in time with anything we will get from pre-production because of the limited amount of data
+ - Luise: yes, we want to look at more data to see what we can get
+- Tony: first 5% of tests have larger fluctuation most likely due to temperature stabilisation
+ - Sven: how long did it take to collect the first 5% of data?
+ - Tony: five hours, but chopping these out made a difference
+ - Ingo: also saw this with 130 chips, sometimes it’s a bit unreliable, even on a temperature regulated cold jig
+ - Tony: marcus tried to do media, but this didn’t help
+ - William: by how much does it change for the first 5% - that could be a good threshold
+ - Tony: what is the gain?
+ - Marcus: before, was -0.0011
+ - William: if it is twice as large as shown in slide 7, we should pay attention
+ - William: the values at 0.5 are the interesting ones, we will not be able to cut on the 0.25 values
+ - Luise: analysis looks good, please repeat for more data and more hybrid types
+ - Tony: change to 0.5% bins to get a better view
+ - Tony: we can also look at per-channel values if people are interesting
+- Luise: do you also plan to include powercycling in your analysis?
+ - Tony: we are looking a this
+ - Marcus: tests are from January 10th, which includes power cycling on every test
+ - Luise: would be interesting to see if there is a difference with or without power cycling
+ - Tony: will need to edit Bruce’s code and loop it back in
+- Luise: what you see when the noise goes one way, the gain goes in the other direction. Could you include output noise into your plots, which compensates for this?
+### PSA: in the NIC of Time
+Slide 
+- Vitaliy: remember we discussed this topic in the past. The result depends on the kind of card that is used. We even had two cards of the same model and one was fast and the other was not
+ - Cole: does this have to do with pre-fetched memory? Related to problem where you think you have the exact same network card, but you don’t
+ - Vitaliy: wasn’t clear why, but we swapped the cards and it helped
+ - Gerrit: we had the same issue. And there is no clear logic behind this
+ - Vitaliy: they are cheap, so swapping is much faster and cheaper than to think
+ - Cole: agrees, if other groups see this as well, it is cheap enough to just swap the hardware
+ - Luise: for groups, if your tests take 1h, they are too long.
+### End-cap powerboard pickup tool revision
+Slide 
+- Luise: said we would do an EDMS review?
+ - Marc: have put it on EDMS, but not sure if I can start a review
+ - Luise: we can do it. Is 1-2 weeks enough?
+ - Marc: depend on peoples time, but should be as fast as possible
+ - Luise: do you have dxf of powerboards?
+ - Marc: should be somewhere on gitlab
+- Luise: ok, we will assign reviewers. Please complete the review as soon as possible
+### Alternative Glue Trials
+- Kirsten: comment from Peter, thinks sensor was an old mechanical sensor. 
+ - Vitaliy: should have the correct passivation layer
+ - Peter: mix our glue very differently (SCIPP: mixer, TRIUMF: hand-mixing), most likely candidate
+ - Vitaliy: we haven’t seen streaking with TrueBlue in this study. We did observe some streaking in the past. There might be batch-to-batch variations or mixing variations
+ - Luise: can we find out the batch numbers?
+ - Peter: don’t think so
+ - Luise: would be good to repeat the test with same parameters to see if this is repeatable. We might have to use glue mixers
+ - Peter: yes, can repeat the test
+ - Luise: we ordered glue recently
+ - Pete: could be older glue
+- Gerrit: congratulations, its a very comprehensive study and important for high throughput sites. Did you tried to poke the streaks to see if it cures?
+ - Aware: don’t think so
+ - Kirsten: don’t think so either
+ - Gerrit: if it hardens at some point, that would be fine, but don’t want wet stuff on the sensor
+ - Aware: we still have the samples and can look at them
+ - Dennis: if there is streaking on the backside, it would also disqualify it? 
+ - Gerrit: but there we don’t see it (visuall)
+ - Gerrit: would not like to see non-cured glue on surface of sensor
+ - Luise: it can collect stuff (dust)
+ - Vitaliy: it’s small and not very high
+ - Luise: for SE4445, it has a large area coverage
+ - Luise: we can do a test and see if we can blow off particles
+ - Vitaliy: there will be always particles
+ - Vitaliy: don’t disagree, but this should not be a hard criteria
+ - Ingo: we should argue, why we would allow this, not why we wouldn’t
+ - Vitaliy: we don’t have many options
+- Tony: made modules with True Blue, did we see True Blue seep out under hybrid edges 
+ - Luise: we have build very few modules with TrueBlue, don’t remember if there is streaking
+ - Forest: could see streaking of True Blue coming out
+ - Vitaliy: we have seen this on modules (not on all). It was visible (not easily, but with a bit of play it was possible)
+ - Tony: made modules in a few places, should look
+ - Vitaliy: there might be an effect of mixing. Older modules were hand mixed, newer with machine
+ - Tony: probably all in Brookhaven and all need to go on staves
+ - Vitaliy: possible to see it, if looking at the right angle
+ - Gerrit: we usually don’t take high-res pictures of modules on a stave
+ - Gerrit: will have a look at this, but if modules are made to specification there is only very few spots where we could see streaking
+ - Luise: every site building modules should look at this and also track the glue
+### AOB
+- Luise: there was an email about purple TrueBlue when opening the package. Not sure if this is visible from just looking at the bi-pack, or only after mixing
+ - TrueBlue can expire
+ - Have a look for this, it might be important
+- Peter: are there any storage considerations for the glue?
+ - Luise: not sure, but will have to check the datasheet
+ - Gerrit: all glues can be put into a refrigerator (don’t freeze it) but not sure if this can extend the lifetime. Just don’t do this with SE4445, it does not like this
+ - Kirsten: we had 2 different batches of TrueBlue and there we have seen the different colours between the different batches. It did not seem to affect cure time or consistency.
+ - Gerrit: but colour, isn’t this just die adde by manufacturer?
+ - Luise: that is the question: is it just colour or did the glue change
+ - Kirsten: we do squeeze out the bipacks in containers and use glue in the exact ratio
+ - Luise: did you see the colour change in the separate components, or only after mixing?
+ - Kirsten: it wasn’t visible in the bipack
+ - Aware: not sure if the un-mixed components were slightly different, but the mixed glue was
+ - Gerrit: did anyone do a chemical analysis to see what causes the colours?
+ - Luise: don’t think so

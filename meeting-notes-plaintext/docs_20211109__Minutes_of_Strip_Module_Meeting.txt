@@ -1,0 +1,180 @@
+# 09/11/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1084883/
+### Introduction
+- AUW https://indico.cern.ch/event/964037/
+ - ITk Strip Modules / Production Management - Monday 14:00 CERN time
+ - ITk Strip Sensors - Tuesday 15:00 CERN time
+ - ITk Strip Power Supplies, ASICs, System Tests - Tuesday 17:30 CERN time
+ - ITk Strip General / Local Support Electronics / Test Beam - Wednesday 16:30 CERN time
+ - ITk General - Thursday 14:00 CERN time
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 23/11/2021: EC tasks
+- 30/11/2021: Barrel tasks
+- 07/12/2021: EC tasks
+- 14/12/2021: Barrel tasks
+- R0 tool production
+Focussing on new chip trays
+- R1 tool production
+Have repaired R1 tools for Vancouver and sent them out, still in transit, now fixing remaining tools
+- EC PPA/prototype hybrid order
+Have been sent out to SMD population houses to evaluate SMD population for hybrids and powerboards
+The ones that had already been sent out are expected back this week
+Had to re-order more hybrids to fulfill PPA, these are the ones currently being waited for
+- Powerboard testing setup roll-out
+Endcap: all active boards in hand and populated, not tested yet, waiting for workshop to produce carriers (unsure about time scale)
+- Hybrid crate setup, finalisation and roll-out
+End-cap: Sent out to Hamburg to be distributed to non-EU countries
+Barrel: update next week
+- EC multiple module box transport box
+	Last call for institutes who need this box to let Christian know, no more updates on EDMS
+	Review will be closed
+- Production of bonding and testing jigs
+Main batch distributed, waiting for spares and kaption foils
+Carles: tools don’t have the non-anodised hole for grounding
+Sven: testing jigs have a different grounding scheme, but bonding jigs should have the holes
+Sergio: was mentioned in review: should have holes to plug in grounding connections - should be there
+Dennis: there seem to be grounding holes in bonding jigs made in Freiburg
+Sergio: can add these holes later if needed
+- Production of R0 and R1 test frames
+	Idling until new design available
+- Production of R2 test frames
+Idling until new design available
+- Production of R3, R4 and R5 test frames
+	Idling until new design available
+- Production of hybrid panel cover
+	First batch delivered to Zeuthen, second batch to be delivered to Toronto, to be coordinated within the next few days
+	Not urgently needed for PPA in Toronto, other sites get panel covers from Zeuthen
+	Ingo: if Freiburg and Scandinavia want panel covers, please get in touch
+- Production of LED bars
+Still sitting in Freiburg, waiting for other things to be sent out, contact Dennis if they should be sent out
+- R2 EC glass dummy sensors
+	Arrived in Dortmund, planning to distribute
+	DESY to distribute R2 glass sensors to sites
+- SMD tendering for barrel pre-production/production hybrids
+	Hopefully conclusion within the next week or 2
+- Irradiated R5 module for December 2021 Testbeam
+	Sensor is currently being annealed, powerboard sitting to be tested
+	Sensors will be tested cold before sending them, sensor and PB to be sent out next week
+	R5 hybrids were glued today, currently doing metrology and everything is in spec (glue amount, x-y-positions), to be bonded tomorrow	ASICs pre-irradiated? Follow up with Craig
+	Valencia: started to use stencils to test gluing process - suspect shims were not used correctly, plan to start building more dummy modules to start setting up wirebonding programme
+	Question about testing: Ingo will send hybrids on a test panel, does that work for Valencia
+	Valencia was expecting to test on a module frame
+	To be figured out offline how parts are sent and tested
+	
+### PPB Deliveries Discussion (EC)
+Summary (when, where, how many)
+- ASICs 
+ - ABCStarV1
+ - Pre-irradiated before end of January
+ - Should have “plenty” of ABCs by the time the other ASICs become available
+ - HCCStarV1
+ - Unprobed early January, around 490
+ - Probed end of February, 490, available at Penn
+ - AMACStar
+ - Unprobed early January, around 430
+ - Probed end of February, 430, available at Penn
+- Powerboards
+ - Barrel (PBv3.1b)
+ - Requested: three batches: 
+ - Batch 1 (unprobed, would be *started* early January; LBNL)
+ - 20 fast tracked (bPol V4), could come out of previous 50 PBv3.1, can be turned into powerboards within a week after receiving chips)
+ - 100 for reliability testing (bPol V6)
+ - 180 (bPol V4) for hybrid testing
+ - Boards for community should be available within 4 weeks of receiving chips
+ - Expected to be available for community early February
+ - Batch 2 (probed, early March; LBNL)
+ - 180 (bPol V4)
+ - Boards for community should be available within 4 weeks of receiving chips
+ - Batch 3 (probed, pre-irradiated, May/June; LBNL)
+ - 390 (bPol V4) 
+ - Boards for community should be available within 6 weeks of receiving chips
+ - Will probably need ramp-up
+ - Using 50 old flexes for fast tracked batch
+ - EC (all flavours)
+ - Modules: 273 AMAC for all modules (without yields)
+ - Getting enough powerboard flexes to need 393 AMAC to populate all
+ - Hybrid panel powerboards (single testing + crates): 210 + spares 
+ - With yield 280 AMACs (for powerboards dedicated for testing)
+ - 50 with AMABv2a in hand for start of production, will be replaced throughout PPB
+ - 2 flex batches, Q4 2021 and Q1 2022
+ - SMD population in same batches
+ - AMAC and GanFet gluing and bonding in house, so more flexible
+ - Q4-2021 batch fully populated probably end January 2022
+ - Q1-2022 batch fully populated probably April 2022
+ - Big production batch Q4 2022
+- Hybrids
+ - Barrel
+ - First batch of flexes ~December 2021; at best fully SMD populated hybrids mid February at Liverpool
+ - Maybe a couple of weeks behind powerboard production
+ - EC
+ - EC first batch Q4 2021, next batch Q1 2022
+ - SMD population probably by end of January (if delivered in December 2021); or beginning of February if delivery is delayed
+ - Timeline in Freiburg: two weeks after handing over the tendering document, parts can be sent out 
+ - Not talked to Wuerth et to understand actual delivery of Q4 batch (powerboards + hybrids)
+- Sensors
+ - Barrel
+ - EC
+- Hybrid panels
+ - Barrel
+ - EC
+- Module Frames
+ - Barrel
+ - EC
+- 
+Need to combine barrel and endcap schedules together for the die distribution of the wafers
+Barrel needs 270 die from first wafer, leaves 200 die for EC
+### Endcap panel readout issues
+- Luise: might make sense to only bond one pair of hybrids per test panel to reduce risk during shipping; if hybrids are moved it might make sense to split the panels up 
+- Dennis: sent out enough panels to make sure each pair of hybrids can sit on an individual panel, so there should be enough, but hopes it shouldn’t make a difference
+- Dennis: hard to debug from slides, would be good to have a debug session
+ - William: yes, that would be good
+- Ash: resistance is probably a red herring (similar resistance for bus tapes and they work fine). Are they V0 or V1
+ - William: V0 for all hybrids, for Prototyping
+ - Ash: are you using internal counters for thresholds etc or are you using full bandwidth (GUI or command line)
+ - Ash: suggests to use command line instead of GUI to avoid bandwidth problems
+### Two-row HV tab bonding
+- Add 2-row bonding as recommendation to procedure document
+- Ben: Do you set deformation limit?
+ - Kirsten: no, use fixed deformation level that will never be reached and run for the full time
+ - Forest: sort of self-limits and set deformation
+- Ben: using bond delay before application of ultrasonic power
+ - Kirsten: 50 ms ramp time
+ - Forest: also running in step by step mode
+- Bart: what to do with qualification in terms of bond pattern?
+ - Kirsten: revise procedure document to allow more bonds
+ - We will not change the requirements. The requirement is to reach x g and we will not change how much people have to achieve, they can use the bond pattern they want to achieve it
+ - Bart: is there a trend in pull results?
+ - Kirsten: last results are from a different batch
+- Gerrit: should wait before including this in procedure document
+ - Luise: only add this as an option to use more bonds
+ - Forest: hesitation that groups might go straight to more bonds and not actually produce as high quality bonds with less number of welds
+ - Bart: propose to keep the single row of bonds for qualification and then afterwards allow groups to increase number of bonds
+ - Forest: agrees that groups should try to pass with a single row of bonds and only if that fails, discussion about how to improve this by maybe adding another row should take place
+ - Gerrit: also agrees to single row for SQ
+ - Bart: this is the most R&D like process
+ - Kirsten: lot of feedback from groups that they can’t reach the requirements with a single row, so this would help those groupsLikes the idea from Forest to allow this in certain circumstances if single row bonds fail
+ - Gerrit: groups use different waffle tools and the strength of this study depends highly on the used wedge
+- Sergio: objective is to reach HV-tabs with required bond strength and need to make sure that every institute is able to reach this
+ - Forest: see second row as insurance, not as necessary to reach the required parameters
+ - Sergio: there are clear differences between the groups and there is no single set of parameters or tools that work, so should do whatever necessary to get the tabs welded to the specification;Don’t think we should limit groups here in terms of number of welds or rows to reach this stage
+ - Luise: require that the strength of the tab is sufficient and allow people to use 2 rows to strengthen bond
+- Luise: proposal: if you reach pull strength in one row, that is good and you can use a second row to strengthen to bond, but if you don’t you are allowed to use a second row of bonds to reach the target (and explain that in your SQ document), we mainly require people to show that they reach the required strength
+### Metrology - ASIC Numbering
+- Vitaliy and Tony: would prefer not to change the HCC ID
+ - Support flipping the order of Y hybrids
+- Would updating the scheme mean people have to re-upload to the database?
+ - Sven: keep in mind it’s only a map, it doesn’t affect anything else
+- Dennis: wants to have the numbers written on the PCB used
+- Karola: currently almost no end-cap hybrids written into the database, so it doesn’t matter too much
+- No need to update things in the database - can just decide to change things going forward without updating the previous ones
+- Karola: haven’t even started making PPA hybrids yet
+- Tony: Proposed new scheme makes sense
+- Dennis: R2 is a special case where ABCs can count from 0 to 11, would like HCC numbers switched
+- Sven: proposing to change them to 2 and 3
+### AOB
+- Carles: can people please check the EDMS chip tray review?
+- Tony: were there enough comments from the US for the barrel chip tray? 
+ - No, no comments from institute which produces tools
+-

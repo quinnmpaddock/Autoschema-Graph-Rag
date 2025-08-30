@@ -1,0 +1,88 @@
+# 19/01/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/986078/
+### Introduction
+- EDMS of EC stencils and R2 ongoing, one issue found for R2, thanks to the contributors and please all help with this!
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- Production of R1 toolset Urgent
+ - Metrology machine broke, need to figure out how to check if tools are in specs
+- Production of R2 toolset Urgent
+- Production of powerboard tools for US Normal
+- Tendering process for EC hybrids and powerboards Urgent
+- Design, finalisation and roll-out of powerboard testing setups Urgent
+ - No update due to restricted lab access, will update in a month from now
+ - Power board test setup at RAL will be set up soon, anything Karol needs from that? Not really unless Craig runs into problems
+- Hybrid crate finalisation and roll-out Urgent
+ - Sven will try to progress next week, but access situation unclear, might delay things
+ - Will update after ITk week
+ - Everything has been ordered, but before roll-out it needs to get tested
+- Finalisation of panels for EC hybrid testing Urgent
+ - Test panels are in hand but not yet populated
+ - When hybrids are in hand then designs will be checked by testing hybrids on them
+ - Any estimate when first test results might be there? ~ a month
+ - Same question for test frames: same response, groups should wait with ordering those until more results are in (so probably until late February)
+- Production of LED bars for the EC Urgent
+ - No progress, next update after ITk week
+ - If anybody has experience with LED flex designs contact Dennis/Ingo/Craig to offer help
+- Supply of pins and bushings for the EC Urgent
+ - Oh no they are with Korea!
+ - Have been sent to Freiburg :) should arrive end of this week
+ - Finish this task and moves into the FR equipment task
+### Metrology and electrical test of Hybrid and Module at IHEP
+- Are there a lot of bad channels or just a few?
+ - Yes quite a lot, not sure if it’s related to the sensor or if it comes from the ASICs
+ - Where are they geographically located on the module?
+ - Always consecutive channels and on the outer areas
+ - Saw similar behaviour on Birmingham and Santa Cruz modules which was assumed to be caused by reduced interstrip resistance
+ - At that time it was found that noise depended on bias voltage, could be something to cross-check
+ - Noise was going down with time, not clear if ambient exposure helps or makes things worse
+ - Please send plots to Vitaliy so he can compare to older data
+- Sensors are only outside of dry environment for assembly, stored dry at any other time
+- Module metrology: quite a lot unrealistic numbers, is that a failure in metrology?
+ - Values below 50µm for example don’t seem realistic
+ - Yes, those are metrology failures
+ - Is metrology done with a laser? Yes
+ - Have seen in the past that laser scan on sensor is not always reliable, might want to cross-check more carefully
+ - Measured points shown are documented in metrology document
+ - Had decided to measure sensor as close to the hybrids as possible
+ - If there is glue leakage into area where height is measured one needs to take this into account of course
+ - For glue height measurement in between hybrid and power board is not required, only needed for sensor bow measurement
+ - If we realise during pre-production/site qualification that other ways of measuring things works better, we can still change things. For now we have to prove that sites can measure what we ask them to measure
+ - Won’t changes to the measurements require changes to the database?
+ - No it doesn’t since we just upload a file with measurement points
+ - Doesn’t require change to database structure itself
+### ABCStar proposed dicing requirements
+- Is dicing precision concern for chip trays?
+ - Not really, pockets in chip tray oversized by 70µm in barrel and ~30µm in endcap (with new larger chip dimensions) so no problem expected there
+- Size on slide 4, is that with curve taken into account?	
+ - Should be, but might need to cross-check with Jaya John
+ - Are ~40µm bigger than what we expected in both dimensions
+ - Will check this and get back
+- Will label include grading information (quality of chip)?
+ - Yes, should try to include this if we provide the vendor with label anyway
+- Do we track broken/trashed ASICs?
+ - Yes, everything (including hybrids, modules etc) that has chips attached to it will have to be collected and ultimately returned to CERN via a site with the correct export license
+ - Jaya John and Karo will provide a document detailing how to deal with those cases
+ - Those collections of broken/non working ASICs will have to be shipped via the database as well
+### Sensor glue volume tolerance (part II)
+- Glue has to cover area where chip could land and support well any area where one would want to bond
+- Argument against having too much glue is that if glue strips get too close together it could happen that air bubbles are formed/trapped in between them
+- Also risk of glue spillage to guard ring/bond pads increases with higher amount of glue
+- If we didn’t observe issues with Liverpool proposal, could be argument to go for that one since less glue could pose less risk
+- If we didn’t observe issues with Santa Cruz proposal it might be a more conservative/safer approach for bondabiltiy 
+- With stencil there is no way of telling where exactly glue will go when it gets compressed, glue amount pretty much the only thing we can measure
+- Least support is on the service bonds to the bus tape/test frame, seems to be working so far but needs to be monitored
+- How was the endcap stencil design done so far? 
+ - Aimed for glue thickness of 120µm +-40µm and not for a specific glue volume
+ - Vancouver also tried out stencil design and +-40µm makes it pretty much impossible to come up with a realistic design, have to aim for an more average solution
+ - This will result in some edge cases where glue might leak out or is not supporting hybrid enough 
+- Liv to calculate the numbers that would be derived from the current design, most likely not much to change
+- If we want to change coverage specs, we have to change the module specification document
+- 90% glue coverage for endcap power board could lead to glue squeezing out for larger power board types
+- For now leave it as it and change it if we see problems arising
+- New stencil design takes fill factor into account
+### Quote for making dummy glass end-cap sensors
+- Moved to next week
+### AOB
+- Nothing

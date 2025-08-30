@@ -1,0 +1,48 @@
+# 18/05/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1032180/ 
+### Introduction
+- Dennis promises to provide bond documentation for endcap hybrids at the time the hybrids are getting shipped out
+- Need drawings for metrology for endcap hybrids, module models can be used but we need to find a volunteer to sit down and make drawings out of them
+- No feedback received on last round of module drawings
+- Sergey can make hybrid drawings for the module types he was working on, Carles to check with Guillem if the same is true for him
+- Ask reviewers to give feedback about the process
+ - Bart: initially was not very clear where and to whom to comment when review is finished. The process might be a bit susceptible to fraud (someone approving a review that wasn’t approved by the reviewer
+- Jig cleaning and hybrid shipping now ready for site qualification
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R0 tool production
+- R3 tool production
+- EC PPA/prototype hybrid order
+- Shipping readiness (incl import procedure)
+- Barrel hybrid tendering/order
+- EC hybrids/powerboard tendering
+- Powerboard testing setup roll-out
+- UK/China module thermal cycling setup
+- Hybrid crate setup, finalisation and roll-out
+- EC hybrid test-panel finalisation
+- Production of stencils for the EC
+- Production of module frame cover for EC
+- EC PPA/prototype powerboard order
+All sites please purchase all the required Nexys and Genesys G2 boards NOW! (global shortage of Si parts makes unavailability, in the near future, likely - see e.g. the MicroZed board (current delivery time: 52 weeks))
+### Update polaris handling/storage
+- Would be good to store glue in dark container
+- Need to be cautious when storing glue cold, since this affects viscosity when mixing
+- No concerns about requested changes -> will be implemented, then site qualification can start
+### 
+### ESD suction cups on modules
+- Gerrit: Only clear silicone cups don’t leave remnants
+- Conclusion: don’t use ESD suction cups.
+- Karola: would be good to send an email with the recommended suction cup type to group
+ - Gerrit: highly recommends to use FIPA cups
+ - https://www.fipa.com/us/sfu-a-o-6-mm-102-006-013/
+ - Cup material: SI (Look for 102.006.013.2/17)
+### IV curve data format
+- Wafer number and sensor component number redundant, but use both to help with wrong user input
+- Use correct signs for voltage and current for raw data (as recorded by your measurement system), but plots should use “positive” signs
+- 
+### ABCStarV1 Classification (maybe next week)
+- 
+- J
+### AOB
+- None

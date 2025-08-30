@@ -1,0 +1,179 @@
+# 2025-06-10 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1557132/
+### Introduction
+Presenter: Cole
+- William: The double bonds that don't apply to industry?
+ - Cole: You weren't asked to modify anything. 
+- Ingo: can you mix into the R1 which fails with unbonded channels even though they are not unbonded
+- Luise: do you want to know now or in email.
+ - Cole: might as well now
+ - Luise: was jacob francis who did all the cuts on the barrel, we just need more data for the endcap to work out the cuts. 
+- Criag: can we kick the CERN interposing to next week?
+### CERN Interposing
+Presenter: Abhishek Sharma
+- Vitaliy: slide 9 what is the need for kapton to hold vacuum in place?
+ - Abhishek: No, this is to secure the hybrid onto the panel to prevent bouncing we saw during wirebonding. 
+ - William: We put the kapton dots on there too to make sure they are held down.
+ - Vitaliy: Ah, okay.
+Vitaliy: On slide 3, do you dispense the SE4445 as a multiple of small dots?
+ - Abhishek: yes it looks something like this ‘slide3’
+ - Vitaliy: So your simulation models how it would squeeze out after compression?
+ - Abhishek: right it reads the glue programme and applies the glue where it says
+ - Vitaliy: Did you check how consistent the spread is?
+ - Abhishek: After gluing, you want to know how it spreads?
+ - Abhishek: We found that we had a significant amount of glue seepage. On only one or two occurrences, with small stats, we had a slight underfill. But overall, the spread is uniform in all directions. Once we saw an asymmetric spread, but we could tell the tool mating wasn’t straight.
+ - Vitaliy: after glue it appears to be consistent after. 
+ - Abhishek: Right.
+ - Vitaliy; And it’s consistent on the few parts you’ve processed.
+ - Abhishek: Yes
+- Navid: One thing we’ve done, and PBs too I think, is that we used a gasket underneath the panel, and that solved our problems.
+ - William: We tried this, but the EC hybrids crinkle, so we found we needed these extra supports for bonding.
+- Luise: When you say things have improved, do you have numbers? You say that the overhang has improved, but do you have any measurements/numbers?
+ - Abhishek: We started measuring the values on our most recent values. I need to go through them. We saw what was sticking out at macro level and you would see a significant overhang. Worst case early on several hundred microns, now down to 100 um to 200um
+ - Luise: I assume there will be a future update. If you could put some numbers to these quantities, that would be very helpful.
+### Hybrid ASIC Glue Height Spec
+Presenter: Navid
+- Navid: Any disagreement?
+ - The ASIC glue thickness is now 40um.
+- Tony: [missed it]
+ - Navid [missed it]
+ - Tony: What we did was change the ASIC glue height because the thickness of the interposed hybrids were varying more. But we still need to give Liverpool a cut value so that they will reject parts outside this.
+ - Navid: The flexes are ordered to a spec. They should still use that.
+ - Tony: But the interposed height …
+ - Navid: We should follow up offline, but this is for ASICs.
+ - Tony: Okay. I just want to make sure we turn this into a spec.
+### Sensor Tabbing Descoping UK
+Presenter: Bart
+- Kirsten: Many questions. You’re doing your tabbing on the manual bonder, do you do any other work on this bonder? 
+ - Bart: only for tabbing
+ - Kirsten: No other projects?
+ - Bart: Nothing. QM is the same, This is actually the reason we have these machines. We wanted it to be untouched. QMUL is the same. 
+ - Kirsten: You put the tab wedge in the machine and do all the qualifying 
+ - Bart: We did that when qualifying. We change the tool every now and then. And there is maintenance, but that’s it.
+ - Kirsten: I would be more amenable to reducing 3 tab pulls on every sheet because the production tab pulls are so nice. Maybe 1 per sheet as long as it's 500g but I don't like the idea of tabbing a whole bunch of sensors without doing a pull test yet, because you have a good baseline. You can't catch outliers unless you're doing this measurement.
+ - Bart: The point here is that we haven’t had any outliers when doing these before and after pulls, which take a lot of time.
+ - Kirsten: Why does it take so much time?
+ - Bart: You have to cut the tab, put the halfmoon in and do all the things that include tabbing and pulling halfmoons. It's a lot of work and we never had outliers. 
+ - Kirsten: So these three on this plot, the bad ones on slide 4, the engineer adjusted the settings. What were those?
+ - Bart: Those were tests that were done, the first were part of a sensor tab bonding thing. We did some more and we found out we had a difference. The engineer had modified our settings. Going forwards we will check after sensor 
+ - Tony: So the process in the US is we put the tab in, do a number of units, more than ten, then we do one at the end. This is typically done in a day or two. 
+ - Kirsten: Right now we are tabbing at half rates 20 sensors at a time. 1 pull test before and one after and 20 in between. When we get to production we will do 40 
+ - Tony: So we’ll do less pulls
+ - Bart: But you’re changing a wedge, so you want to make sure all the settings are right by doing a pull test. But of course, if we change the wedge, we do pull tests. It just doesn’t make sense to do this when nothing else has changed.
+ - Tony: How often do you do a wedge change?
+ - Bart: The tool can do thousands of bonds. It’s hundreds (thousands?) of modules.
+ - Kirsten: With a new tool you would do a new pull test? How are you going to check if the settings are correct?
+ - Bart: Our techs know better to not change the settings. The person who did it was the service engineer. 
+ - Kirsten: How many sensors are you tabbing in a week?
+ - Bart: We need to go to 40 a week.
+ - Kirsten: Would you be happy with one per week to make sure things are okay?
+ - Bart: we could do 1 a week
+ - Tony: On a tool change once a week. Sheets ..
+ - Kirsten: You can use one of your HV-Tab sheets as a test.
+ - Bart: We could do one on Monday morning. Seems doable
+ - Navid: I would be more comfortable with once a week then whenever you run out of tabs. One per week would be my preference.
+ - Tony: We’ll be putting 40 sensors at risk at a time. That’s the worst we could have. We’d have to figure out what to do if it happens, which it hasn’t.
+ - Bart: I can agree with it once a week. The idea that parameters will change after the first tab.
+ - Kirsten: It's not the parameters that change. 
+ - Tony: You are testing every 40 parts.
+ - Bart: the risk is small
+ - William: you would remove the previous 40 sensors from production? If this happens
+ - Tony: No one has hit this problem. But it could happen eventually.
+ - William: given this data, I wouldn't go back you would find them
+- Navid: to wrap up, one pull test at the start of the week seems to be enough for QMUL and Cam to continue.
+### QT Update: Bow vs Temperature
+Presenter: Jakub Bucko
+- Luise: I’m surprised you say there was no permanent change, since we know that high temps do cause bow changes. But you didn’t go to extremes.
+ - Jakub: Yes I didn't go too high
+ - Luise: Are you planning to go higher?
+ - Jakub: I can try that I am not sure on the cold jig how to do it
+ - Luise: We have recently seen a bunch of modules that had too much bow. Interposers a while ago, but also uninterposed modules. It would be good to see what causes the increased bow, and we have ideas for tests if that’s okay.
+ - Jakub: I can do a few more tests
+ - Luise: one of the things we are wondering is if the foam isn't pushing down the module. The other one is getting warmer causing a change. This can be done with powered modules. If we hold the module very flat it can affect it. Will follow off on email. 
+- William: You said you did electrical tests, but did you power the module and perform tests?
+ - Jakub: yes full electrical test
+ - William: So you have the NTC temperatures?
+ - Jakub: I didn't check the temp of the hybrids
+ - William: It would be good to correlate to this as well. As Luise implied, we are looking into our R3s which get a lot of bow sometimes. I’ve sent an email to Prague, but I’ll include Jakub as well.
+ - 
+- Cole: with the AMAC readout problem did you manage to solve it
+ - Jakub: no
+ - Cole: I would recommend check the wirebonds on the AMAC
+### Discussion: Module Grading
+Tony
+- Navid: For the improved nominal, would the X/Y position also be important to reduce cracking as well?
+ - Tony: It depends on how much you think this is changing the stress, so there could be something in it.
+ - Luise: There are two things. As you say, the cuts were set up such that if you were more than 250 um out, you might have problems. So you would want to look at modules by flavor.
+ - Tony: And for PBs, it’s the same thing, if it shifts one way, does it cause a problem.
+ - Luise: It doesn't cause an issue, the other thing is the tab cutting, how close you cut the tabs matters The losing applies to everything else other than split modules but the tabbing also counts.
+ - Tony: Right, the thing we were thinking is that at some point, it’s dumb. Anything above 500 um feels uncomfortable and looks stupid. That’s why we suggest grade B and maybe something worse for that. The split modules would be more complicated of course. But we would assume these parts could be installed.
+ - Navid: Is there no worry about the stress on IN modules if the XY positioning is still out?
+ - Luise: Doesn’t matter.
+- Carles: Navid is saying the difference between the SE4445 and PCBs
+ - Navid: Yes
+ - Carles: Then the pattern of the SE4445, but I think on these scales, it doesn’t matter much.
+ - Tony: We are the only site that puts glue on the sensor. This would change the stress marginally. One has more headroom than the other [IN vs Interposer?].
+- Carles: How would these grade Bs be identified in the DB? It makes me nervous from the loading site perspective to be able to identify, for example, shifts in the split modules. Because if we have large shifts, we might need to pick the “right” partner half-module for loading.
+ - Navid: I think this is the key thing to keep in mind. We will need to talk to the loading community as to how to flag these in the DB.
+ - Carles: I know that the loading folks at IFIC will not look at the DB.
+ - Tony: In this case, we aren’t widening out the cut requirement on where the hybrids overlap. I think it’s 250um now. We can keep the one direction fixed and allow deviations in other directions. The logic with grade B is that it doesn’t require anything different for loading sites. I think it’s 250um.
+ - Carles: That's correct, that's what we agreed in the Valencia workshop. I misunderstood what you said. 
+ - Tony: So based on the split modules and the possible ‘wrong direction’, the limits could be asymmetric.
+- Vitaliy: for DB you can just add another field in the modules structure and fill it in for the non-grade A modules. 
+ - Tony: And if it’s not installable, you shouldn’t make it pass. Electrical tests are more tricky, but the way people speak about these failures, they seem installable and most people agree. If it’s not installable, you fail it. You can decide that if you want something passing to fail, you loop through and re-evaluate.
+- Gerrit: I am confused, we discussed a long time ago we wouldn't grade, I am happy to have graded modules to keep to one side till the end of the project. 
+ - Navid: I think that’s what I’m more in line with. I think we want to put this to one side to see how many Grade B/C modules we have and decide if we want to put them on petals/staves. It will allow us to re-evaluate this, hopefully limited, pool of modules. For stuff like the PB, due to the tooling, we should be able to make exceptions for things like that. But for things out of spec, we shouldn’t use them except for the special cases. We wouldn’t use them until we made a decision.
+ - Tony: I understand the way people are talking about it. It’s the dominant yield loss, this XY on the PB. You could change the specs if you want, I don’t care. When I mentioned it before, people said we shouldn’t do it and we should use grades instead. It thought that’s what we were doing.
+ - Gerrit: We decided that the specs would be loosened during production. By the end of this preseries, we should decide what the specs should be and put those in.
+ - Navid: I think we should discuss the PB positioning due to the loss of precision with interposing.
+ - Gerrit: Things have changed dramatically with the interposing. There are positioning problems and we are building up the statistics to see what is going on. Now we need to revisit specs. I don’t like grading. Are we going to grade stages? 
+ - Tony: If you have something failing the spec, how do you quickly gather it and keep track? That’s what we are discussing. I thought “B grade” should be something where the specs are probably too tight and we should use this to figure out what to do. If you flag them when you make them, you can track them more easily. I was just following the discussion we had at ITk Week.
+ - Gerrit: There are things like mechanical specs being off, which shouldn’t be too difficult. Electrical issues are much more complicated because installation in the Barrel takes place in a certain order. So if you hold onto your grades too long, you can impact the physics capability. If you go out of the 1% [it’s actually 2%] per segment. [repeats self].
+ - Vitaliy: I think it depends on the quantity, 
+ - Gerrit: That’s when it is randomly distributed
+ - Vitaliy: Bad channels will be randomly distributed. In the SCT days, the idea was to only use chips with no bad channels. But then we decided to grade them and set aside “B grade” chips which we ended up having to use. So something like this could happen here. Even if we won’t use them immediately. It’s a small risk we can take if we need to.
+ - Navid: So in terms of how this is going to look, B grade modules wouldn’t be used for now. We set them aside and re-evaluate.
+ - Carles: What we discussed in the Valencia meeting was that in the EC, we do want to install these items that are slightly out of spec. Namely metrology where we don’t have issues with bonding, to see if we want to move out cut.
+ - Cole: yes
+ - Carles: so in this case you want to make them clearly identifiable, this is something different from what Navid is saying
+ - Cole: We need to be careful what we say is installable. We need to define these points. I agree with Gerrit it would be nice to do this but we are at the point where we need to do this. 
+- William: I agree completely with this. The way the glue spreads assumes the hybrids are flat. But our experience is that they are crinkled. So we can’t assume the glue will spread just because the glue thickness is lower. But they all work and are bondable. 
+ - Tony: I don't disagree, I wasn't sure if this was descoping or grade B so you can put them to one side and think about it but you wont get more data to think about it. As long as they touch the temperature can only change by a degree or too. The weakest point in the argument is if you have a higher thickness under the PB and there is less coverage. We are not cutting on ASIC temperature. Its either bondable or it fails electrically. There is a reason why we put those cuts in. As Navid said earlier, if you want to change spec we can change the XY on the powerboard. 
+Presenter: Cole Helling
+- Carles: Just because you want to argue ;). For the Glue on the GR, and it is fine in the IV, do care about it?
+ - Cole: I think not
+- Luise: for general list would be good to add bow 
+ - Cole: I have this in another slide
+ - Luise: your category that includes non-loadable modules.
+ - Navid: this should be failed and sent to CERN for incineration 
+ - Cole: we are not going to agree today to go to 500um we will do something different for the endcap
+- Ewan: with the categories is there scheme prioritized based on letter
+ - Cole: not prioritized on ranking 
+- Stefania: can you define what you mean by DAQ issue
+ - Cole: That's the problem with not having enough detail. We can make up different bins. We shouldn't have this in the DB. 
+ - Stefania: DAQ issues
+ - Cole: I am making an example, we do have modules in the EndCap that fail because of noise peaks. We are failing a lot of modules because of this. What we are doing with this is putting them to one side to see what we should do with these. We are waiting for simulation to come back for consecutive channels but are waiting for 
+ - Sefania: I don't think I would want something in the detector that doesn't work out the box. 
+ - Cole: DAQ problems we need to see if is our fault or the modules fault but we need to put these to one side, really this is just a temporary stop gap
+ - Vitaliy: this is kind of related, I am wondering if you are thinking about automatic classifier or manual
+- Luise: I think the sub classification for B1 B2 might be too much. Maybe it's enough to use the component visualisation gui to see what's wrong with it.
+ - Cole: We can re-evaluate at some point 
+ - Luise: I think this would be to much sub division
+- Carles: I agree, I definitely agree this needs to be graded by hand but people have failed doing much simpler things on the database. If we can do this automatically why not. What if we just have one grade B category and from reporting we can check. From reporting we can see if this can be checked
+ - Cole: The reason I want to keep it separate is because grade B is not as bad
+- Dennis: I think we need to separate between issues that need fixing or needs a change in cuts 
+- Sven: database question, comments the DB doesn’t retain deleted comments. Stages are not good as you cant have different stages at the same time. Flags is probably the best option
+ - Vitaliy: What about adding a data field? It will sync with the previous fields. 
+ - Sven: Similar to comments, the DB doesn’t maintain a record of it. 
+ - Vitaliy: but its a field in the module structure
+ - Sven: If you change it, the DB will lose the history.
+- Vitaly: I struggle to see why one would remove it 
+ - Luise: Normal properties are not picked up by the reporting framework. Using flags can be seamlessly reported into reporting. Using a property means it cannot.
+ - Navid: For the DB and stages, these should be put in the failed module stage, based on a flag.
+- Ewan: for the future the DB is funny about what is failed and what can be moved from failed
+- Alex: I was also thinking we could put them in different batches
+- Cole: we use batches for different purposes
+ - Luise: Multiple batches will exclude them in reporting 
+- Cole: We have agreement that we need some level of grading. Next week we should focus on the metrology aspect. It is probably the one we should focus on first. Talk to wirebonding people. Focus on this next week.
+### AOB
+- none

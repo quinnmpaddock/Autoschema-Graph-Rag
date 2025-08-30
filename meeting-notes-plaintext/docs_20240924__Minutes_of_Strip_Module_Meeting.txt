@@ -1,0 +1,172 @@
+# 2024-09-24 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1457259/
+### Introduction
+Presenter: Luise Poley
+- Tony: On the [?], it looks like some of the issues have been fixed?
+ - Luise: Some have, but I couldn’t tell you which right now.
+ - Tony: Is there a way to get the change history?
+ - Luise: That is a good point, we should have a change-log.
+ - Tony: Our modules are messed up, we’ll send reports.
+- Tony: On page 5, we’re going to discuss this later right?
+ - Luise: Yes, this is just a general primer.
+### L4 Updates
+#### ITSDAQ
+Presenter: Peter Phillips
+- Andy: We needed a crossed bond setup in the past, do we still use that?
+ - Peter: That is the default 
+- Tony: In these updates, would it be possible to give a list of things you’re working on?
+ - Peter: Yes in general, the list of things that are coming is the same list as during ITk week
+ - Tony: Okay. One of the descoping topics was the NO which might be driving the test lengths in the barrel vs EC. I don’t know why, but we can run 10-12 hours in the ColdBox, which is around 20 hours for us. 
+ - Peter: the UK tests are currently running about 23 hours
+ - Tony: ours are a lot shorter and we should follow up to understand why
+ - Peter: I am at BNL next week so I can chase it up there
+#### Production Coordination
+Presenter: Abe Tishelman-Charny
+- None
+### QCD Corner: QC Descoping
+Presenter: Cole Helling
+- Karol: can you please make sure the documents get updated, because some of the documents are quite outdated
+ - Cole: we will
+ - Luise: we have been doing tha; we have been updating all the documents with every decision that has been made and maintaining a changelog, unless we forgot: could you please let us know where information is outdated?
+ - Karol: I don’t have a specific example, just wanted to make sure the documents get updated. Good to know they are.
+- Tony: this is too slow, we need to descope some of these ahead of time
+ - Luise: we are trying to cycle through all topics before the end of the year, discuss what needs to be done to descope them so that we can make the final decision before rPRR
+ - Tony: there are some which the US agrees we need to descope before rFDR: if we need to do these QC steps before the rPRR, we will not get to realistic numbers and won’t know our production rates for rPRR
+ - Cole: Tony, let’s sit down together and make a list of what should be descoped in which order (including Gab)
+### Group Updates: Scandinavian Cluster
+Presenter: Geoffrey Mullier
+- Sven: I’m not entirely certain, but I thought we required that metrology be done on metal jigs, or it affects the results.
+ - Geoffrey: I’m taking the local measure. For estimating the thickness, I have it all vacuumed down and I’m measuring locally the points around the panel to get the total package height. I know it’ll be warped a bit, but I know it’s not too bad.
+ - Sven: Okay, thanks.
+- Jaya John: For sending sensors, if it’s the half moons for the breaking studies, we haven’t always sealed them properly.
+ - Geoffrey: I want to send these out to sites who will use them
+ - Lusie: I have different comments
+- Luise: Do you need an exchange part from someone else to do more setup tests while you don’t have the ring light?
+ - Geoffrey: We have everything. All the panels on slide 12 are used for bonding and metrology setup. I was going to propose I do the verification on several different items to avoid shipping around.
+ - Luise: We would like you to compare with at least one other site to compare the results. We can make this easy and have you exchange with another hybrid site. Sorry, it’s needed.
+- Luise: For the ring light, November is probably as good as it gets. Will you need parts soon?
+ - Geoffrey: When I get the ring light, it’ll take one to two weeks. I’ll tell you then after the installation and give you the update on when we’ll be up and running.
+ - Luise: New panels are coming, so that works out.
+- Luise: What’s the problem with the tools?	
+ - Geoffrey: I have to do this all alone, so it takes a while
+ - Luise: Understood. I think this is less important than getting you set up for production. I want to see if there is anyone who needs tools …
+ - Geoffrey: I am aware, William, you will get some tools soon.
+ - Luise: Okay. No one doubts you are working a ton! ❤️
+ - Luise: For people waiting for new R1 tools, please get in touch if it’s urgent.
+### ITk Production-Quality Monitoring/Reporting
+Presenter: Ewan Hill
+- Luise: It would be great if we can make this accessible to more people and we will add this to the list of common reporting tools.
+- Luise: It would be good to make it clear to people that there are several frameworks which do some similar things (plot data for individual objects, data quality monitoring), but this would be ideal for some of the PRR plots we will need.
+ - Ewan: (added after the meeting just to these minutes) - these Reports are intended to give just a high-level summary of the production quality to see some basic details on where the failures are occuring statistically. These Reports are not meant to give the low-level details on each individual component.
+- Luise: It would be nice to let us know the difficulty in adding in new bits
+ - Ewan: I did try to write these scripts to be friendly to newcomers. Things are a bit limited, as I’m trying to use as much of “Framework A” as possible. 
+- Geoffrey: When you said it failed the cron job for root did you install root… 
+ - Luise: I suggest we follow up technical questions offline.
+- Tony: You said you didn't want to name shame, if you do find things that are wrong can you send it to the cluster manager so it can be fixed. 
+ - Ewan: yes, will do
+ - Tony: Is it possible to script these plots so that we can get a dump of plots for us to flip through all at once?
+ - Ewan: So there is already the agenda to function l reports that I have uploaded there should be hybrid and module metrology uploaded to the agenda
+ - Tony: If you can make it so that it can dump a lot of plots, that would be nice.
+ - Ewan: yes, can do that, can find a better way to dump the data. This is just a first draft
+ - Tony: Cool. If you want us to come back to you with plots we would want, we can do that too
+ - Ewan: That would be a good discussion. I just want to make sure we have decided on this framework before going further.
+ - Luise: I think that was the decision at ITk Week last year.
+- Craig: Thanks Ewan, it looks great. Looking at the data uploaded to the agenda, is the 
+ - Ewan: I believe that is the case. 
+ - Craig: For UK sites, we should work out where it was assembled, because they get HV-tabbed at QMUL.
+ - Luise: You could use the module batch (instead of home institute or current location) as a handle to get the correct institute.
+ - Ewan: Okay. I’ll look into this.
+- Andy: Will there be support to keep working on this after the QT is complete?
+ - Ewan: That is more of a question to Luise, Chufan is nearing the end of his year, the plan is to get two tests within this framework. This is intended to be the start of something moving forwards rather than the end
+ - Luise: The idea is to make this centrally maintained, so it should be manageable. 
+### Pins on Module Assembly Jigs - Reloaded
+Presenter: Vitaliy Fadeyev
+- Luise: For everyone, the reason this is being brought up is that we have seen cases similar to this in the EC, and might be causing the early breakdown we are seeing. So this is an attempt to bring it back into people’s attention. Vitaliy, did you have to exchange these pins?
+ - Vitaliy: So two things: everything is from our module work not sensor work. We replaced the pins as of last year but we didnt do all of the jigs which is why the issue recurred. In the slides (silde7) this was the replaced pins
+ - Tony: To get some of the pins out, we had to drill out from the bottom and punch them out.
+ - Vitaliy: Yes. Forest can speak more to it, but it’s difficult.
+- Forest: You had to drill out a hole in the back and punch out the pins it was annoying but not difficult
+- Luise: 
+ - Vitaliy: Custom metrology was done, it was fairly good.
+- Luise: this was to bring it back to people's mind, is this happening in the UK? Is this happening for the next tooling
+- Sven: It’s in the plans for all new jigs to have acetol pins.
+ - Luise: So this raises the question of whether or not we should do this in the EC and replace them as well.
+ - Andy: Does everyone have the same tools? Do some people have metal and some plastic?
+ - Luise: No, all the tools were made a while ago with metal pins
+- Carles: I would start changing it in some places and then do more if it improves things
+ - Luise: Yeah, okay. I think we may also want to have a look at this.
+ - Dennis: the other option would be to just order some rods and get them manufactured 
+ - Navid: We did this for our module loading jig, so we can get them in the UK, should be able to get them on the mainland
+ - Dennis: it’s about the diameter, endcap has different sizes
+ - Marc: We use 5mm pins instead of 2.5mm
+ - Dennis: And the [?] has a range
+ - Luise: Let’s follow up offline
+- Pavol: Is there a difference if the pins are anodized or bare steel pins
+ - Luise: Anodized
+ - Vitaliy: I don’t know for sure because we didn’t try it. In my mind, anodized aluminum is a hard surface. 
+ - Luise: Let’s see what we can find in the way of pins and come back to this in two weeks.
+ - From Chat (Pavol): Acetal pins from this
+### Module Planning
+Presenter: Luise Poley
+- Tony: You want the next two staves to be B grade for the FDR and Grade A for the PRR
+ - Luise: Yes
+ - Tony: okay. I don’t know if that’s happened. You said A’s for the next ones.
+ - Luise: We don’t have to use Cat A, it can be Cat B. It’s just going forward, you can use up what you have.
+ - Tony: Its fine its a question of we used the interposed hybrids we got from RAL yesterday and we used A grade because I thought that was the conclusion from ITk week
+ - Luise: It’s okay, it’s a lot. Going Cat A going forward.
+- Bart: With the UKC cluster, there is a lag between chips arriving and having assembled hybrids. We have a skew in the parts requests. The hybrids will be finished way before the modules, meaning we will have a request for more chips sooner. It means before the outcome of the rPRR is known, the hybrids for the quarter after that will need to already be built, so we need to get provisional agreement after the rFDR to dip into more parts.
+ - Luise: This has somewhat been agreed with the review office and is understood for everyone 
+ - Bart: When you look at the weekly planning, it’s scary because we will be building more modules than ever before.
+ - Luise: Yes
+ - Craig: This is a good point. I had a glance at what we said at the review office, we didn't explicitly say we would have a pause in between PRR. THe timing of the PRR would be the same as something. It's a good point to remind ourselves, and make it clear in the FDR
+ - Bart: Let me know if you need data on that, like where the hybrid lamination needs to happen, etc.
+ - Craig: It would be useful for you to send something so we can have the time scales and the numbers at hand.
+ - Luise: I know this wasn’t said explicitly, but this is part of the introduction of the rFDR and this will need to be explained anyways.
+- Sven: Since you want cat A for the RPRR staves there are concerns for using 420um hybrids. There were concerns for the rFDR stave but are there any for the rPRR?
+ - Luise: I don’t think there are any concerns, as they are within the allowed variation right?
+ - Sven: Yes, but you do need to use shims on the tools.
+ - Luise: yes
+ - Luise: That's why we have been checking people for what they are going to use for shims. We have been planning all long to use what we have
+ - Bart: Fair point Sven. We are of course up against the tooling review. It would be a good idea to have the staves split up from a tooling perspective.
+ - Sven: I would prefer not to as it causes confusion
+ - Craig: The corollary to that, is what is the split between thick and thin?
+	Sven: they should be all thin, at least the UK ones will be
+ - Luise: Did the US just use their thick hybrids?
+ - Bart: for the first stave the US has the thick ones
+ - Craig: So as long as we don’t see something crazy, like problems with the US ones, then it’s probably OK
+ - Bart; for the UK China the new production tooling will be used in the next year, Sven doesn't like it because it's confusing. 
+ - Sven: You’re way too pessimistic about tools. The metrology is the important bit. If they pass metrology, it doesn’t matter which hybrid type you’re using.
+ - Luise: In the past Bart, you just didn’t want to throw away good hybrids right? Is this still the case?
+ - Bart: That is definitely still the case
+ - Lusie: It’s more of a concern of staggering the builds to avoid confusion for sites 
+ - Bart: It’s not like Sven is suggesting I’m worried about module building, it’s about what we have to show at the review. If it’s all the same, it’s easier to build all the same.
+ - Luise: Maybe it's easiest to split between clusters, then we don't have to switch
+ - Bart: Whatever you come up with is fine.
+ - Luise: Let’s loosely plan for that and come back to it when the time is right.
+ - Sven: likes pressing buttons
+And when discussing the more complicated EC plans ….
+- Carlos: We have 50 days ahead and in particular, should I [?]. [Unable to hear what Carlos is saying] 
+ - Dennis: The PBs are already interposed.
+ - Carles: But only 5?
+ - Dennis: For the pending requests, all of them already have the Kapton stuck to them.
+ - Carles: So you just need to interpose a bunch of hybrids?
+ - Dennis: Yes, just the hybrids that are still to come. The ones we have are already interposed 
+ - Carles: Okay, we can follow up off line. Just to say, I agree with the plan. We had an internal conversation about how to boost the arrival of inteposer parts. Since the parts are coming, for example Valencia, we could start interposing them if this is helpful. We have experience with SE4445 and feel we would be useful there.
+ - Luise: One nice thing is that all the hybrids can go to Freiburg. You can get in touch with Dennis and you can sort it out between your sites.
+ - Carles: okay
+ - Dennis: I'm not against you doing it. It won’t speed up PBs, but it might hybrids
+ - Carles: to be clear we are also volunteered to make other parts if needed
+ - Luise: But that needs the tools right?
+ - Carles: yes 
+ - Luise: Since all R0/5s will be built in Valencia, we can just pack a box and send it directly. That should give you enough for three petals.
+ - Carles: okay
+- Vitaly: The idea is to release components for both interposed and un- interposed petals?
+ - Luise: Yes. But physically separated. Uninterposed in Canada and interposed in Europe. And for those sites getting started, uninterposed.
+ - Vitaly: right but component release time wise would be at the same time?
+ - Luise: Yes. It’s a big shipment of 36 hybrid panels from Montreal, if we agree on this.
+ - Vitaly: and the module building will also proceed independently of the petal results
+ - Luise: Yes, both are being assembled in parallel. We are trying to give sites the ability and option to start building without delays. If there is an issue with one of our two options, we drop the bad one and pivot all effort to the other one.
+ - Vitlay: Sounds good, I think Sergio also mentioned some comments early morning in an email, I would be hesitant to speak for him.
+ - Luise: I read them, replied, and addressed those points.
+### AOB
+- Nope

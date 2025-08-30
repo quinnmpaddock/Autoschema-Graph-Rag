@@ -1,0 +1,104 @@
+# 17/01/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1231264/
+### Introduction
+Slide 2
+- Bart: think UK can build the module, but not sure if we have an irradiated LS sensor
+ - Luise: could you please check, if not need to irradiate a sensor
+ - Bart: I’m quite sure we don’t have one. We only have SS sensors
+ - Luise: OK, then we need to find the sensor and then the UK can build the module?
+ - Bart: yes
+Slide 4
+- Tony: will send an email reminder to people for pending items. Should I chase some for a large group?
+ - Luise: sending a combined email might help
+Slide 3
+- Uli: is it conceivable to reduce the number of testbeam campaigns and make them successful, instead of a large number that is understaffed
+ - Luise: have reduced this with testbeam coordinators
+ - Luise: testbeam in March is for PRR (some module types)
+ - Luise: testbeam afterwards is to qualify new powerboard
+ - Uli: understand motivation behind testbeams
+ - Luise: currently haven’t seen an easy way to reduce number of test beams
+ - Jiri: main issue is people who analyse data, shifts can be covered
+ - John: shortening the campaigns is an option, also reducing the number of night shifts is possible
+### Institute Contributions
+Uppsala/NOTE update
+- Postponed to next week
+Next meeting: Upsala 
+### Leakage current stability test
+Slide 4
+- Vitaliy: is there a reason to calculate the voltage for every data point
+ - Cole: no. I have done it and the values are very consistent. It may not be useful and I’m happy to remove it and only do AMAC readings
+ - Vitaliy: could be a single parameter instead of one at each point
+ - Cole: we want one parameter for the set voltage. Might be interesting to record it for a little while to see if it is useful.
+ - Vitaliy: need to look at the database implementation
+ - Cole: question is if we need it in the database
+ - Vitaliy: sure, probably don’t want to edit the database structure too much
+ - Cole: probably don’t need that at all
+ - Vitaliy: are you including time staps?
+ - Cole: did not include any basic information in the list. Do you mean a timestamp for each entry?
+ - Vitaliy: yes, practically seen to be useful to check interval size
+ - Cole: can do some testing to check that the interval is stable. If we record temperature at same time, timestamp might not be too important
+ - Vitaliy: have seen some issues with this (e.g. large time gaps)
+- Vitaliy: record humidity? 
+ - Cole: adding humidity requires using influx, that means you need to tell ITSDAQ which sensor needs to be read out. Possible, but takes more work
+- Vitaliy: should think about the global parameters
+ - Cole: okay
+- Vitaliy: set voltage needs some thought
+ - Cole: set voltage is not so important. That is a parameter that is already figured out
+ - Luise: should do this at 500V (550V at power supply)
+- Luise: don’t think we need a .dat file.
+ - Cole: thats excellent news
+- Luise: don’t think we want temperature corrected current, just absolute current
+ - Cole: excellent
+- Luise: area corrected current is also not required here
+ - Luise: if it doesn’t hurt to include, can do this
+ - Cole: need to chat with Emily and Bruce how to include this mapping problem
+ - Bruce: currently thought of as part of the cold jig summary, so it may not have to be in here - by the time it goes into the database, it should all be included
+ - Cole: then that would be the second bullet point. 
+ - Bruce: might be simpler to keep all the Influx information in one place
+- Bruce: is it sufficient to only record some information at the beginning and the end instead of every 10s?
+ - Cole: it is possible more of these can be condensed, but while we don’t need what exactly we want as a pass/fail, more information would be useful to have
+ - Vitaliy: if you really want to process it correctly, need at least the temperature to be able to look at fluctuations
+ - Cole: which changes in temperature matter - do changes of half a degree matter?
+ - Vitaliy: our spec is 15% stability, which corresponds to temperature fluctuations of 1 degree Celsius (if the current stays otherwise constant)
+- Cole: sounds like some of them might be reduced at some point, but current approach is to take as much data as possible to have everything we want to analyse the data - do people agree?
+ - Luise: yez
+- Abe: at BNL setup want to look at HV stability setup soon. Was it necessary to change a lot in Emilies script?
+ - Cole: I’m writing a new small macro for the test
+ - Abe: makes sense. We would be happy to help/test this
+ - Cole: current problem is really the multi-module mapping problem, please get in touch if you have ideas
+- Bart: had a student looking at single figure of merit, but it’s complex
+ - Bart: surprised that there is no area-normalised current to compare EC values?
+ - Cole: no strong feelings
+ - Bruce: this is something that could be done once, e.g. for the figure of merit
+ - Cole: yes, can do that at the very end of the simulation
+ - Ingo: do you want to do the work once and have a single cut for the area-normalised current, or multiple cuts?
+ - Cole: if we suspect problems if we don’t normalise, can normalise. Can collect both for now
+- Luise: regarding finding a good cut: first get some data and then look at the data to find a good cut. For now, implement test without a pass/fail until we have more data
+ - Vitaliy: are you talking about database?
+ - Luise: both
+- Ingo: might be good to determine the cut for area-normalized instead of multiple cuts
+ - Luise: will have to see what data we have, also for multi-sensor modules
+ - Ingo: do they have separate sensor current readings?
+ - Luise: will have to look into this and might have to treat different EC module types differently
+ - Cole: will keep the information for now
+- Vitaliy: ideally, final decisions will depend on final data sample
+ - Cole: hopefully can share code with other people to collect data.
+ - Luise: as soon as this is complete, this should be part of the standard cold cycle anyway
+ - Vitaliy: ideally we’ll combine good and bad sensors in the sample, to establish good cuts
+### QT update: Hybrid completion test
+Slide 2
+- Luise: want to assign a goodness value. Key point is to have an easy summary of a hybrid to see if all tests are done, and what the results are. We don’t want to assign a grade to the hybrid.
+- Luise: want to see if all tests have been done and if they are within specification
+Slide 3
+- Luise: you mention also tests of children. We don’t need to include this (e.g. the ASIC test results don’t need to be in the summary)
+Slide 5
+- Luise: this is useful to look at
+- Bruce: if anyone has serial numbers in the database to look at (e.g. that also includes failures) that would be good to look at
+- Kenny: is it planned to have summary reports for all components?
+ - Sadia: I’m only doing this for hybrids and there is another student doing this for modules
+ - Vitaliy: and we have this for sensors
+ - Luise: we don’t plan to have this for all component types, e.g. not for hybrid flexes
+ - Kenny: this is something that could be generated automatically later on
+ - Luise: key currently is to look at all the test data and find out which ones are useful for a summary
+### AOB
+- No comments

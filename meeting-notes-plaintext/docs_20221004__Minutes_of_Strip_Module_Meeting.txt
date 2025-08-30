@@ -1,0 +1,195 @@
+# 04/10/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1191858/
+### 
+### Update on Module Thermal Cycling DB upload scripts
+- Luise: for to-do list don’t forget that there are EC modules with 4 hybrids (e.g. R3)
+- Luise: there is a specific QT for looking into criteria of test results and trends throughout the run
+- Tony: have you run any of this on actual data?
+ - Mo: have run some quick tests on real data to see that it works. Have not done any analysis of the data itself.
+- Luise: do you want people to run your code and report back to you, or work on the to-do list first?
+ - Mo: would be good to work on the first few points of the to-do list first
+ - Luise: yes or no?
+ - Mo: yes
+### Introduction
+Slide 3
+- Gabriella: the next LS from PPB3 depends on the results from cold noise?
+ - Luise: do you mean the next from PPB2 or from PPB3?
+ - Gabriella: is it already assigned? Does it come from the US or UK?
+ - Luise: would be good to see a summary from the results of the stave already done, then we can make a decision
+ - Luise: would have been good to know the reason for cold noise before we make a decision
+ - Carles: plan for UK was to start PPB3 with SS. From Tony’s slides it looked like the US might have planned slightly differently and it makes more sense to build the LS stave
+ - Tony: if we get approval for the next PPB2 stave, the next LS would just flow afterwards
+### Update on IRRAD investigations
+- Luise: if there a way to do a better live fluence monitoring?
+ - Dennis: not live, but they have beam monitoring to count the number of protons in the area. Only with the dosimetry of the aluminium we will get the final/actual fluence which then can be used to calibrate the rate counters
+ - Luise: can the SEU rates be used to get an idea of the fluence?
+ - Dennis: the beam monitoring is better suited and the module is at and angle so the SEU rates are different. Doubt we can get better using the SEU rates
+- Tony: sounds like it is fundamental to the bPol, not our design?
+ - Dennis: yes, I have asked about this specifically and checked with them about our design
+ - Tony: we need to report this since this is a fundamental with the bPOL (also with CMS). Would be nice to know if they have done similar tests.
+ - Dennis: tried to contact someone on the CMS side
+ - Tony: we should work on it, but should not just be our problem to solve
+ - Dennis: thing that is also happening: irradiation of linpols at the end of October, planning to piggy-back a few bPol equivalents to test as well
+ - Dennis: interest is there at CERN, planning to characterise the actual fluence/dose where the chip dies
+ - Tony: at beast, would have to change the stuffing
+ - Dennis: yes, if we would know that something would improve it would be only stuffing, not design change
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 04/10/2022: EC
+- 11/10/2022: Barrel
+- 18/10/2022: EC
+- 25/10/2022: Barrel
+- R1 tool production
+ - Problems with workshop: fitting problems
+ - Need bushings from existing tools, asked sites to sent back first sets of tools to re-use bushings
+ - Ingo: re-using bushings is not a good plan, wouldn’t want to re-use them
+ - Geoffrey: going to try to salvage what can be salvaged
+- Shipping readiness (incl import procedure)
+ - Some things going on, nothing final
+- Powerboard testing setup roll-out
+ - Effort on Zeuthen side to help with setting up powerboard test setups
+- Endcap module thermal cycling setup
+ - No news
+- EC hybrid test-panel finalisation
+ - Known problems with R5 panels, being sorted out
+ - Finalising detail questions right now
+- Production of R0 and R1 test frames
+ - 
+- Production of R2 test frames
+ - 
+- Production of R3, R4 and R5 test frames
+New test frame order for split frames submitted, waiting for them to arrive
+### Institute Contributions
+Prague
+- Luise: do you know during which process the screwdriver dropped?
+ - Pavol: after the readout
+ - Luise: if you leave the covers on or put them on when using a screwdriver it helps to protect the module
+- Carles: what is the difference between chuck_1 and chuck_1_cut?
+ - Carles: one should be the NTC on the copper side, the other on the aluminium
+ - Pavol: one is on the chuck
+ - Carles: nice to see that you can do down to -35 with 4 chucks
+- Ingo: the broken valve, was it on the box or did you bring it in?
+ - Pavol: it was on the back and from DESY
+ - Ingo: do you have an idea why it cracked?
+ - Pavol: no
+- Tony: (slide 2) module looks nice. Do you know what was different between R2 and R4 (which had some tilt)?
+ - Pavol: the amount of glue under powerboard was too high
+ - Tony: the hybrids were tilted
+ - Pavol: we did a metrology of the pick-up tools and re-did the pins. Maybe that was the issue. Setup depends on hybrid height.
+ - Tony: thought they were set before you receive them and other groups had good results
+ - Povol: hybrid tools are fixed, menant pins for powerboard tools
+- Luise: please remember to ask for Argotec to be reviewed before building anything
+Next week: Freiburg
+### Planning for upcoming CERN IRRAD campaign
+- Luise: where can we irradiate the two powerboards for the campaign?
+ - Craig: can’t be done a RAL. Oxford has an X-ray machine so we should try to get in contact with them
+ - Luise: how long does it take?
+ - Craig: a few hours to get to pre-irradiated levels
+ - Craig: it would take longer for a whole powerboard
+ - Dennis: both could go in together
+ - Luise: do we also irradiate the bPol?
+ - Craig: it would not see much because it is in a package under the shieldbox
+ - Craig: can get people in contact with Richard Placket to organise it
+- Luise: what about the powerboard for the SS?
+ - Dennis: the one in Liverpool should be v6, so can be used
+- Luise: what about the chips?
+ - Craig: all PPB chips are pre-irradiated, so can be used
+- Luise: which glue should be use
+ - Luise: which glue do you have in the UK
+ - Sven: only standard glue and true blue
+ - Luise: OK, will have a look on getting other glue and then make the final decision
+### Wirebond oscillations in magnetic fields
+- Luise: thank you, this looks great.
+- Luise: do we have access to a 2T field somewhere?
+ - Matt: not sure. There might be 1.6T at CERN but smaller
+ - Luise: would we learn anything additional from it?
+ - Matt: it would make the case stronger to measure in a 2T field
+ - Craig: if you hit resonance at 1T and things ping off, there is not much difference to 2T. But it would be nice if we can do tests in a 2T
+ - Luise: not sure if we need to do it, or want to do it in 2T
+- Vitaliy: vaguely remember that Satish was using medical magnets that were even higher
+- Vitaliy: did you see any movement in your tests? Waiting for 1s might be enough, but don’t have a feel for how long to wait
+ - Matt: had individual wirebonds separate from a module to get a feel on how long they need to break. With a 50% duty cycle, 1s was sufficient to break bonds. Not sure for a 1% duty cycle. Did not have a camera to observe the bonds
+ - Vitaliy: in your test you have a 0 - 100% amplitude
+ - Matt: yes, a square wave
+ - Vitaliy: but in a real module you would not have this, would be smaller variations
+ - Matt: in the module, there are some wires where this could be
+ - Vitaliy: frequency response on module is different, don’t have well defined pattern on module data lines
+ - Craig: that is essentially what we are testing here
+ - Vitaliy: real test with real module would be different
+ - Matt: real test with real module has external trigger that have a different scenario - square waves with 4 mA amplitude
+ - Matt: if we want to do a higher magnetic field test, could focus on these wirebonds (long data bonds), sufficiently small area
+ - Vitaliy: also frequency sweeps are nice, but for a given bond choosing the frequencies where issues are expected and stay there for longer to see if issues occur
+ - Matt: previous tests were done with cameras and telescopes, but weren’t successful enough to see much motion, don’t know the fundamental frequency enough to stay on it for extended amounts of time
+ - Vitaliy: but frequency would depend on geometry of wire-bond
+ - Matt: yes, but the peak is so narrow that you need to be right on it for a test
+- Luise: looks like there seems to be interest in higher magnetic field test
+ - Matt: would maybe be able to help if there is access to such a magnet
+ - Luise: would you help?
+ - Matt: don’t think I would have time to continue this, it would have to happen within the next 2 months
+ - Luise: can also get someone else to help with this. The code is available?
+ - Matt: yes
+### Wirebonding Cicorel Card
+- Luise: does anyone have concerns to use a different brand of cards?
+ - Dennis: would it make more sense to use a vendor that already produces a substrate?
+ - Gerrit: these are used for baseline discussions, e.g. with Hesse. Should not use other material
+ - Sven: can we agree to use the PCB for beta layout for wedge change tests and only use cicorel cards when we have to get in contact with the vendor for issues?
+ - Gerrit: that’s what I would suggest - use cicorel cards when communicating with Hesse
+ - Sam: concern here is that the cicorel cards were very bad last time and we want to avoid buying more
+ - Gerrit: seems to be a UK problem: cards seem to be fine
+ - Carles: we bought the same type of cards from a french distributor and had same issues
+ - Dennis: Delvotec uses same layout from same manufacturer, just with Delvotec logo on them
+- Forest: main reason is to have a substrate that is used by both vendors and a substrate that we can use to discuss with each other if there are issues. Have seen during SQ that some of the cards were inferior
+ - Forest: had cards that were ten years old and some sections were not great, had to use SafeWash to clean it
+ - Forest: idea to use a card from a different vendor as gold standard or after wedge changes has some validity (e.g. if there are issues with the card or sourcing the cicorel card). Doesn’t make sense to use cards as a reference that aren’t a good reference
+ - Would need to reevaluate former bond results and make sure your parameters are okay, but that should be okay
+ - Better to have a good standard reference than none
+ - Ingo: everyone in Europe had issues with the cicorel cards. They were cleaned, plasma cleaned, … but didn’t get better. We need a solution that helps
+ - Forest: should avoid everyone going in different directions
+ - Dennis: only thing everyone has access to is halfmoons
+ - Luise: there is still an open question on how reliable the halfmoons are. We don’t have batch-to-batch comparisons so far
+ - Dennis: just am concerned about using another vendor
+ - Gerrit: did anyone talk to Hesse/Delvotec about the issues with the cicorel cards
+ - Sam: yes, that was done in the UK
+ - Gerrit: could the UK vendor have sourced them from somewhere else?
+ - Sam: they have the Hesse brand on them.
+ - Sam: have a new batch of these and they work well
+ - Luise: doesn’t make sense to insist people use cicorel as a standard if cicorel isn’t a good standard
+ - Gerrit: in US we will use Cicorel cards, have a large stock
+ - Forest: yes, and they last for a long time
+ - And they cost only 30 dollars in the UK
+ - Dennis: not too happy with introducing a new vendor, but could maybe just order whole production worth of boards?
+ - Luise: are you planning to order the entire production quantity at once?
+ - Bart: do we trust the shelf life?
+ - Gerrit: should be fine if you leave them in a dessiccator in a cleanroom and potentially clean them afterwards
+ - Gerrit: pay $24 in 2021
+ - Tony: did you try to use SafeWash? Found that that solved the problem, found that plasma cleaning sometimes doesn’t work, but SafeWash doe, worth considering that validating the new cards will cost more in manpower than savings in cards
+ - Bart: when we had the bad batch, we still had to provide a lot of data to prove that it is bad
+ - Bart: we have a few cicorel cards in the UK to cover the warranty cases.
+ - Bart: suggest to use an alternative supplier for majority of pull tests and go to cheaper supplier if needed
+ - Tony: propose to try SafeWash and see if they improve
+ - Ingo: did that and they didn’t become good
+ - Bart: maybe it’s Accelonix, but they are really expensive. And if we see they are rubbish but they require even more data to prove they are bad.
+ - Sam: last quotes were 54 euros a card (left hand design), right hand design (slide) 7 euros
+ - Luise: Bart’s proposal makes sense: use the remaining cicorel cards for communication with manufacturer and use PCBs for tests
+ - Dennis: not tied into cicorel
+ - Carles: would like to get rid of cicorel cards, but would prefer to use half moons
+ - Luise: will test consistency of half moons soon
+ - Dennis: strange to test half moons for consistency, but assume everything else is consistent
+ - Forest: what is the plan for getting consistent results on these pieces, do we order a batch of PCBs?
+ - Simon: place a small order and send it to Forest for qualification
+ - Sam: receive one of the cards and do pull tests then compare with 
+ - Luise: is anyone planning on doing batch tests with these deliveries
+ - Sven: we have used cards like this and have not seen any issues
+ - Forest: you really need to re-evaluate, finding good parameters, testing standard deviation etc
+ - Sven: have done that
+ - Forest: will wait and see how this plays out
+ - Gerrit: would advice that you buy enough for the whole production and then store them properly to avoid batch to batch variation
+- Forest: can there be a report (like site qualification) on what the results are, seen by different sites, to sign off on this?
+ - Sven: for each site or for the entire UK?
+ - Forest: for each site
+ - Forest: need it from each
+ - Sven: why should we do this. Sites have already shown in the SQ process that they know how to setup their machines and they understand the process. What is the sense in doing this again.
+ - Luise: UK is going to place an order of boards and then all UK groups evaluate them. When first results are in, they should be presented. (finding a good parameter set, qualification matrix, …)
+### AOB
+-

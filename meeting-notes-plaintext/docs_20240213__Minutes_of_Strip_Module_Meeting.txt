@@ -1,0 +1,88 @@
+# 2024-02-13 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1362201/
+### Introduction
+- Vitaliy (sl. 5): I don’t see instructions from Denis in the slides. It would be helpful to get clearer instructions on what to probe. 
+ - Tony: It would be good to get clear numbers so we know where to probe.
+ - Dennis: I will update the slides
+ - Vitaliy: Much appreciated
+- Luise asked if there were objections to name shipments involving module parts with the date to make them easier to find.
+ - Resounding agreement via silence and thumbs.
+- To clarify, the issue with Toronto. Was this only Cat B or did it affect other categories?
+ - Luise: They checked and it seems restricted to the Cat B.
+ - [side note: also checked recently distributed Cat X gel pack and there was no problem]
+### L4 Updates: ITSDAQ/Sensors/Documentation
+- No Questions
+### Group Update: BNL/Brandeis
+- Bart: Thank you for the Chucky investigations. That helped us a lot to help us to avoid cracking while helping to avoid this electrical issue.
+- Luise: I was going to ask a similar question. This looks similar to the UK where the surrounding area is lower. 
+ - Bart: First it was more about the central piece sticking up too high, like 400-ish um. Which made the stress even worse when going cold. These studies helped us figure out how low to go.
+### PDB Data Quality Tools (Strips Edition)
+- Tony: This sounds great (alerting). How do we know which tests have alerts set for them and which haven’t? 
+ - Kenny: Right now, it doesn’t say, but you can go to the repository and find it in “Other Dashboards” under alerting_test_reportS [cap not an accident]
+ - Tony: For the module metrology, I could help you set up the limits for those. I don’t want to be sent alerts from all sites. But I can help you set limits and get through a few things like glue weights pretty quickly.
+- Luise: A general comment. Thank you, this is great that it exists. For everyone, there are several things such as metrology where the test doesn’t do averaging over the different points like our criteria. So based on what Kenny is doing, there is a QT looking at these specific plots so we can get the things we cut on for specific plots not covered by general parameters.
+ - Kenny: This is all for the database
+ - Luise: Yes, your script will catch things like data correctness (like units)
+- Luise: Could you open the module bow plot. How do you select institutes? I can’t find EC institutes, only a few barrel sites
+ - Kenny: This was for the UK/China cluster, so I’ll expand that.
+ - Luise: If you could make this work for different institutes, that would be great.
+ - Luise: Also, it would be necessary to specify the module type since some aspects, such as glue weight, will vary based on module type. So we need differentiation
+- Luise: Not everything is 2 sigma. Sven made a list of the various cuts. For example, the SB height is simply an upper limit. I’m not sure if you can add the different limits as well.
+- Luise: There is a difference between PPA/PPB/Production. Can you filter based on batch or generation?
+ - Kenny: Not at the moment
+ - Luise: This is important, since some sites are still uploading PPA
+ - Kenny: I will work on this
+ - Luise: Awesome, those were all my comments.
+### Database: Component Properties
+- Bart: I think properties are also used to set the HV tab sheet. Is that the same sort of implementation?
+ - Sven: I believe so, but that’s on the module level when you register the module, so it should not be a problem.
+ - Bart: If only authorities can do this, it will be difficult for the institute
+ - Sven: not an issue, as it is set later, doesn’t require institute authority level
+### Powerboard Mass Tester: What the Results Mean
+- Luise: I’ve added these slides to the Intro backup
+- Luise: You say “it’s bad if the scaling is off or it is shifted”. As a non-expert, this is very difficult to know what it means. Could you provide a table and translate it into a table, that would be great.
+ - Ben: We did put the limits in blud on the slides.
+ - Luise: You had said if the scaling is off, it’s okay.
+ - Ben: Yes, I don’t know this part too well, but I will leave it to Roland to comment more.
+ - Roland: If the scale is off, it means that sometimes we see that the entire voltage is shifted by some amount which could mean it’s a problem with the carrier. I recommend if you see it that you contact me.
+- Luise: So far, it seems that interpretation is a bit manual. This way the user can know.
+ - Ben: Yes, this is what I mean in the last slide. It is on our TODO list, but we haven’t managed to get to it just yet.
+ - Ben: We need to make sure the limits are reasonable first. I think that they are, but there are a few edge cases such as a damaged carrier board. We need to figure out how to catch this and propagate it to the user.
+- Luise: If the output could say these things, it would make it much easier for us to interpret. 
+ - Ben: Yes, we can try to implement this.
+- Luise: Whether to include tests, there is the question of this possible failure mode we have been seeing in the EC. These would be really great to as.
+- Peter (sl. 7): The value in this BER Test, one is pass and 0 is failure right? 
+ - Ben: think so, yes
+- Peter: Next slide, When you say that 1.6V is too high, is this something we have to manually look for?
+ - Ben: you shouldn’t, that’s why we really need to add this to the firmware - currently not testing for that and really need to add it
+ - Peter: Okay. So the test doesn’t even look for this. Thank you for clarifying.
+ - Ben: It’s probably not too worrying, but we should check
+- Roland: typically, the only check we need people to do is wire bonds - everything else should already have been checked in Freiburg. We are still developing firmware and there are differences between Freiburg and your setup, but in production, the only changes should be broken wirebonds
+- Cole: for the production version, can we make use of the defects section in the database and add the individual broken bits as defects to the powerboard?
+ - Ben: need to think about it, but yes, should be able to do something
+ - Cole: great, thanks
+### EndCap Hybrid Shorts
+- Vitaliy: Just to double check, you’re talking about assembled hybrids?
+ - Laurelle: yes, these are assembled, bonded and tested
+ - Vitaliy: But have they been tested before assembly?
+ - Laurelle: Freiburg can comment on this
+ - Dennis: they go through QC, but electrical QC is only happening at Wuerth and they check for shorts on all traces, but not after SMD population
+ - Dennis: not trivial to add additional electrical tests
+ - Vitaliy: So, since the power difference is sizeable, I suggest you do infrared imaging to find the hot spots easily.
+ - Laurelle: and William: Freiburg suggested to do the same thing and we’re trying to get one
+ - V: some are relatively accessible. I’ll put some links in the comments.
+- Luise: I think it’s similar Q to Freiburg. Is this just something we have to live with?
+ - Dennis: The issue is that we could do a DMM test, but then you scratch up pads which isn’t ideal for wirebonding. At the moment I am not too worried.
+ - Uli: Before we try to test for this, let’s try to find where this problem is rather than making more requirements in the QC chain. 
+ - Dennis: it’s important to identify what is wrong to see how important this is.
+ - Uli: I’m not sure it can be tested for. Is there really a short if you look with an ohmeter?
+ - William: We don’t have these in hand at the moment (at Celestica). We got useful information over the last few days and we have an infrared camera to see if we can get it to Celestica.
+- Luise: We also have one and would be happy to help.
+ - William: We can’t get the hybrids until we know how many we are buying from Celestica.
+ - Uli: How expensive is this to buy the failed hybrid?
+ - William: 100 dollars per hybrid
+ - Uli: I’m happy to pay (give you wine).
+ - William: We will get it. It won’t take weeks, probably days.
+ - Uli: once this is understood, we will see if this can be solved with a reasonable modification of QC
+### AOB:
+nada

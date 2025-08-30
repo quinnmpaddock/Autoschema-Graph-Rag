@@ -1,0 +1,106 @@
+# 15/03/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1008266/
+### Introduction
+- Question: walk us through the approval process for site quali steps:
+ - Cleanroom document was approved last week already, was too late to sent out mail
+ - By next week Tuesday people will be informed if step is now ready for attempting 
+- Usually the timeline would be: 
+ - Thursdays: announcement per mail that EDMS document was approved
+ - ACs/PM/Cluster clerks check that site quali spreadsheets match info in EDMS document
+ - Following Tuesday: announcement that step is ready for attempting
+- No comments or questions about the ITSdaq part
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+- R4 tool production
+ - Not received yet; expected this week, delivered next couple of day
+ - Then do validation
+ - Update in 2 weeks
+- R5 tool production
+ - Have received some tools
+ - Update in 2 weeks
+- US hybrid/module tool production
+ - Send part that need remachining to company -> 2-3 weeks + time for metrology
+ - Update in 3 weeks
+- US powerboard tool production
+ - Talk later
+- Powerboard testing setup roll-out
+ - Design of active board done; do internal LBL review
+ - Update in 2 weeks
+- Hybrid crate setup, finalisation and roll-out
+ - Waiting for fans
+ - Back-panel stuck in customs
+ - Update in 2 weeks
+- Production of stencils
+ - Have now prototypes
+ - Test within a week, then release for manufacture
+ - Update 2 weeks
+- Supply of miscellaneous EC tool common item
+ - Still waiting for last parts
+### US Powerboard Tools (Alessandra/Tom/Todd -> Timon)
+- Graham: there is a fairly high temperature hike below DCDC; increasing glue height will increase temperature of DCDC
+ - Timon thinks the solid copper planes in hybrid will mitigate this to a certain degree
+ - Need to look at real object
+ - Hopefully warpage of board will be fixed for PPB
+- When will it be know how much the boards are bend and how unifor it is within the batch/panel
+ - Once first panels are tested, can look at more of them
+- What’s the specification for flatness
+ - Timon not sure if it was specified
+- Will the glue stencil be adjusted for increased distance
+ - Haven’t glued a board yet, not sure if the current stencil provides enough glue to get contact
+ - Probably have to adjust 100um thick stencil to be able to get glue in a gap of 200um below shield box
+ - Increase stencil thickness and then have to reduce glue area at front side where the glue gap is smaller
+ - Glue squeeze out in shield box area is not an issue for barrel
+ - Not sure if all powerboards are same, so need some more feedback first
+ - End of powerboard gap ~200um, under front of shieldbox ~120um gap
+- Does the warpage affect wire-bonding
+ - Far away from problem region
+- Warpage caused by soldering in un-controlled manner
+ - Probably same for all PPA powerboards
+- Which parts used for site qualification
+ - Qualify with prototype components
+ - Tool can be used for V3.0c powerboards, but needs a pin to be removed
+ - Then confirm with PPA parts
+ - Hoping that for PPB warpage is better understood
+ - Designed fixture of boards to better control bending during reflow
+- Specifications for modules about glue height and glue coverage
+ - Should try to make sure glue coverage is controlled if glue height can’t be achieved due to warpage
+ - Glue robots (US) could change the glue pattern to achieve the correct glue coverage
+ - UK relies on US stencil design ...
+### Hybrid Crate Distribution (Ashley)
+- Vitaliy: custom perspex carrier new information?
+ - Is required to plug-in genesys into card guide of crate
+- Parts will be provided but it’s each site’s responsibility to assemble everything
+- Tony: does it come with bundle of software controls?
+ - Will be responsibility of Ben, yet to be released
+ - Could run into problems if we receive setup but can’t test it
+ - Should at least provide people with a plan what has to happen once they have all parts and software
+ - Uk has load that can be used for tests, US is working on one? Vitaliy: not sure about most recent panel design, do we have the latest? 
+- PCI adapters weren’t distributed yet to the EC but barrel groups should have them
+ - All EC adapters shipped to DESY Zeuthen, US parts shipped to BNL
+ - When will EC ones be shipped out? No answer, will ask again in next meeting
+- Is there a plan to have a traveling load for the EC? 
+ - Difficult because very few hybrids available, maybe half a panel available
+ - Could it be a barrel panel? Would be better to check setup with endcap hybrids to make sure we don’t overlook any problems
+ - Ideally panel should have at least two HCCs 
+ - Currently panel designs are validated anyway by testing hybrids on them
+ - Is it sufficient to send out load with not all ASICs assembled? Not clear, will come back to it
+- Is there any requirement for humidity control during burn in?
+ - No, there is enclosure to channel air flow but apart from that it is just exposed to standard cleanroom ambient humidity 
+### HV Tab Position on Petal
+- When are module loading sites supposed to cut tabs
+ - When removing the module from the test-frame for assembly, the tabs need to be cut in shape (e.g. with scalpel)
+- Pepe suggests to move the cutting line to increase area of tab that can be welded to bus-tape
+ - Nobody disagreed
+- Not sure how easy it is to cut the HV tab to the correct size
+ - Might help to use pads on test-frame as reference to know where to cut
+- Some tabs are not fully centered
+ - Should not change the tool if possible
+ - But, might be easy to change bus-tape design
+ - Need to make sure first that the module models are correct
+ - Models were made by using the tool models
+- Are tabs wire-bonded or wedge-bonded to petal and have there been thermal studies with regards to the long tabs?
+ - Only petal at Freiburg with tabs will be tested cold, so will notice if something happens
+ - Vitaly: propose to do tests just with tabs
+ - Petal HV-tabs will be tab-bonded to petal
+### AOB
+- None

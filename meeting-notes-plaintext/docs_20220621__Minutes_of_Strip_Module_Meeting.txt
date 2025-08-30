@@ -1,0 +1,84 @@
+# 21/06/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1154784/
+### Introduction
+- Temporary wires reduce to 1
+ - Ingo: agrees
+ - William: also agrees
+ - All agree.
+ - Add to document the numbers of wires for split-modules
+ - Hybrid-to-hybrid only doubled on petal
+ - Mark: might have to reverse back to 2 bonds if it shows that bonds break a lot during shipping
+ - Adendum: have to use 2 bonds when shown that they regularly break during transport
+- For fex thickness, need to be careful which flex thickness is picked.
+ - First: use average flex thickness
+ - Only if there is an issue with the module, can look at value for particular array to see if this could result in the module to be in specification
+- Vitaliy: define again what PPB3 is?
+ - Luise: PPB1 is 4 staves/ 4 petals for systems test FDR; PPB2 is staves/petals for module PRR, PPB3 is last phase where all remaining planned staves/petals could be build (but don’t have to)
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 21/06/2022: EC
+- 28/06/2022: Barrel
+- 05/07/2022: EC
+- 12/07/2022: Barrel
+old tasks
+- Barrel single module transport box - Final check of pre-prod builds
+ - Do we have enough statistics to close this task?
+ - UK and US agree we have a working system
+- US module thermal cycling setup
+ - No plans to build any more boxes, all intended boxes have been built, last one will be distributed soon
+- Shipping readiness (incl import procedure)
+ - Can close the ASIC compliance letter requirement
+- Single Hybrid Testing Database Implementation
+ - No one is aware of any problems
+ - Visualisation of uploaded data in the database seems to have issues, but it’s only the visualisation, data is there
+- Hybrid Burn In Software
+ - Ilona working on remaining issues, more information will be given on Wednesday
+- Single Module Test Database Implementation
+ - Still idea to have a module specific test in the future
+ - Bruce: any situations where we need pass/fail criteria in addition to hybrid pass/fails which would be needed to analyse individual results?
+ - Not enough end-cap modules yet to judge
+- Multi Module Test
+ - Ankush and his student are working on it
+- Modules for Test Beam
+ - R1 has been built, other PPB modules haven’t
+ - Sensors are being irradiated
+ - R0 module in IRRAD has issues
+- Glue Studies
+ - Ongoing, contacting manufacturers to get larger quantities
+### Institute Contributions
+- Freiburg
+ - Vitaly: are you also going to prototype different test frames?
+ - Uli: depends on outcome of discussion in meeting tomorrow
+ - Vitaliy: we had one occasion where a module was not readable because of test frame. Moving a module between different test frames might be a possibility
+ - Luise: one test missing is to put a high-noise module onto a petal. This should be an indicator on how much noise is caused by test frame
+ - Vitaliy: for powerboard variants, version 1 was designed by Ash and was an FR4 circuit, would it be an option to prototype with FR4?
+ - Uli: would prefer to have a final solution that is close to the final design - doesn’t help if we have an FR4 powerboard with low noise
+ - Can do it if people think it is useful - it’s faster and lower cost
+ - William: noticed annotated delivery schedule in back-up, when are R4 and R5 going to be available?
+ - Uli: R4 & R5 should come out of QC end of next week. There was a solder splash that wasn’t flagged correctly in the past and needs to be understood
+ - Want to sort out remaining issues before sending out R4 and R5 hybrids
+ - Uli: powerboards will be QCed after hybrids
+ - Carles: for powerboards, have stopped all flavours?
+ - Uli: don’t give green light for further production until all QC is done.
+ - Carles: plan is to continue with QC and not wait with un-split powerboards
+ - Uli: yes, will not stop un-split modules until experts say so
+ - Luise: this is something that will be discussed as well in the meeting tomorrow
+Next week: NBI, RAL
+### Plan for mechanical glue tests
+- Luise; are you limited to 30 samples?
+ - Mike: no, can do more. Have currently 60 aluminium plates in hand, but can get more
+ - Luise: please include polaris as comparison
+ - Luise: not sure if pre-curing times of none 20, 40 are required since currently true blue needs 75min pre-curing
+ - Luise: would be good to include samples for irradiation and for thermal cycling
+- Vitaliy: for pre-curing times keep 40mins, which is in range of what is typically used. Concur with samples for irradiation
+- Vitaliy: should be far easier to control volume than the pattern
+- Vitaliy: is the mechanical engineering department also involved in making the lab joints and are there other requirements?
+ - Mike: received lab joints from mechanical department. Will talk to them to get more.
+- Luise: could you please let us know the size of the samples so that we can organise irradiation?
+ - Mike: yes
+- Luise: from Cole’s previous tests it was shown that it is important that the glue areas are comparable
+ - Mike: have a jig to do this
+ - Vitaliy: keeping the aluminium plates parallel was important
+### AOB
+-

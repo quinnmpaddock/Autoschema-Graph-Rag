@@ -1,0 +1,137 @@
+# 22/02/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1109669/
+### Introduction
+- William: trying to swap a PPA part, challenge is that for this metrology it’s done in the middle of production at celestica. Should we make a separate one that is not used electrically?
+ - Luise: It should be a non-wire bondedThe swapping site can then use it for bonding
+ - William: we have a PPA part that can be used for this
+ - Laura: when these things are needed, do you also need to send one of your parts to another group? Could the same item used for swapping between multiple groups?
+ - Luise: yes, that is fine. It doesn’t have to go in both directions, just one object needs to be send to somewhere else
+ - Andrew: what do we do if it doesn’t match?
+ - Luise: that depends on how it looks like / which values are different
+ - Tony: the US send parts to RAL for shipping around
+ - Craig: those are the ones we are going to use
+ - William: are you going to make them into working modules?
+ - Craig: no, they were made with failed ASICs; it also gets more complicated if parts gets shipped between multiple sites
+ - Luise: there are spare prototype parts that could be used as well
+ - William: real challenge is that there are 6 different module types in EC
+ - Luise: yes, but if you have 1 R0, 1 R1 and 1 R2 to cover all sites
+ - Laura: if it can be demonstrated that metrology can be set up for one module flavour, would this be sufficient to show that you can do this for other module types you are building?
+ - Luise: yes, just in EC the shipping partners are a bit more complicated to find
+ - Carles: part not being bonded is also for modules?
+ - Luise: because if you have the fronte-end bonds you can’t construct the hybrid edge
+ - Carles: but we use fiducials
+ - Luise: than need to swap with another site that measures in this way; also the bow measurement is affected
+- Descoping Volunteering
+ - Pavel: sounds good
+ - Pavel: for sensor IV after reception there is no limit of 3 months on sensor sites
+ - Luise: let’s not discuss it here, but Lisa is also looking at IV change over time
+ - Andrew: are these topics now locked in?Did anyone mentioned descoping database interactions?
+ - Luise: not specifically
+ - Andrew: I was more thinking about how to organise things
+ - Luise: there is one step for ITSDAQ and DB interaction
+ - Laura: will get back to module ACs
+ - ITSDAQ assembly: agreed to look into it
+ - Andrew: is there a quantization on how this speeds up the process?
+ - Luise: these are the steps that we think can easily be dropped, but are also time consuming
+ - Andrew: if we drop them, we could go faster?
+ - Gerrit: would also decrease the risk?
+ - Luise: also depends on the descoping
+ - Dennis: but we have always foreseen to drop some tests, so it will probably not affect the building rate much
+ - Andrew: do we now know how many parts we build in PPA?
+ - Luise: will also include PPB; PPA: 4 petals, 4 staves; have a look where we have enough statistics during AUW to come to a conclusion, others follow later
+ - Bart: if you look at speeding up processes, would suggest to put more resources into database interactions (scripts, …). Database is in general very time consuming.
+ - Luise: we are always looking for help with this and encourage everyone to show anything they have done to the group
+ - Sergio: it would also be helpful if people that use the database a lot to point out areas where database development would help
+ - Luise: you can send these to us, it’s just hard to find anyone to do the work
+ - Luise: there are currently more people looking into this
+ - Craig: the other thing to think about would be people with longer term contracts to support maintenance of GUIs
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 22/02/2022: EC tasks
+- 01/03/2022: Barrel tasks
+- 07-11/03/2022 ITk week
+- 15/03/2022: EC tasks
+- R0 tool production
+Have arrived
+- R2 tool production
+Back from anodisation, bushings have been pressed in, now doing metrology
+- Powerboard testing setup roll-out
+Assume that some PPA powerboards will be sent out on panels and together with active boards, currently testing of R1 and R2 in good shape
+- Endcap module thermal cycling setup
+Three boxes were shipped out to Prague, Lund and Zeuthen last week, should arrive soon, four more to be shipped out when boxes come back
+- EC hybrid test-panel finalisation
+Review ongoing
+- Production of R0 and R1 test frames
+- Production of R2 test frames
+- Production of R3, R4 and R5 test frames
+Review ongoing
+- Production of stencils
+Prague company had difficulties getting frames flat, currently working with Valencia to get quote from new company
+Please check for new frames to make sure the key holes are large enough
+- Production of LED bars (all shipped, closed)
+done
+- SMD tendering for EC pre-production/production hybrids
+Checks to be done for hybrids (pick-and-place data), powerboards later, turn-around time of one month, waiting for parts to be sent out
+### Unbonded Test
+- Bart: this is extremely similar for the in bonder test. Could have a look into what was already done for that. Not bias voltage study, but other code bits are probably available.
+- Vitaliy: there are a few differences to the test Bart mentioned: this test is done with all bonds and with a biased (dark) modulesWhen developing this test might want to target lower voltages than 100V 
+ - Craig: is there a reason to do it at different voltages?
+ - Luise: only to find the best value
+ - Craig: just pick one
+ - Luise: would like to check this for all EC modules before making a decision
+ - Vitaliy: different module types with different strip lengths and noise values, would be good to have a look at it
+ - Andrew: can this not be simulated?
+ - Vitaliy: in theory there is not difference between simulation an practice
+ - Andrew: maybe we can choose from simulation or theory
+ - Gerrit: usually apply a little bit of voltage to get rid of surface depletion and then you have a sensor that works
+ - Vitaliy: noise dependency on capacitance is know in theory, but in reality the backplane capacitance can only be calculated from full depletion voltage and the interstrip capacitance is less simulatableIt would be much more practicable to do the tests then looking into simulation
+ - Gerrit: would like to have some statistics on this, but unfortunately our bonding yield is very high; might have to pull some bonds for this test
+ - Andrew: Bart, what bias was used for the in bonder test?
+ - Craig: it was unbiased in light for the bonder test
+ - Luise: let's just start collecting the data
+- Andrew: can you not just recycle the three point gain as 3 point gain?
+ - Luise: no, it’s a different test type
+- Craig: agrees to keep it as a separate test
+- William: is this the only time the voltage on a module is changed? And can this be automated?
+ - Luise: yes, IV can be set by ITSDAQ
+ - William: just to make sure this can be done by technicians
+ - Luise: also for IV through AMAC, the power supply should be controlled by ITSDAQ
+ - Craig: would make the case to power supplies should always be controlled remotely to not press the wrong button
+- Andrew: what is the number of unconnected bonds?
+ - Craig: only have to care if we hit the specification, e.g. 8 wires in a row
+ - Andrew: in if not then it would pass
+ - Vitaliy: not just unconnected tests but bad channels; need something that correlates this test with bad channel values
+ - Craig: intrinsically if it is part of full test or separately, it only depends on the database upload and the data processing involved in that. Probably easer to do it at that point than trying to implement in the full test
+ - Ingo: we have a bad channel tracing server that can do this, and this is where the checking should happen
+ - Vitaliy: I disagree
+ - Ingo: you could either do all the tests at once and analyse them, or do the analysis of tests later
+ - Vitaliy: the difference is on how this is orchestratedI thought ITSDAQ was doing this internally, or should to it internally. Then you have a complete result that will be uploaded to the database
+ - Ingo: ITSDAQ is not doing bad channel tracing
+ - Craig: it only does it test by test, not tracking it for a module. That’s what the bad channel server is designed for
+ - Ingo: this comes from Bruce, ITSDAQ will call it
+ - Ingo: I would like to have this included in the cold module test system, just put a module in there and run all tests
+ - Luise: in the cold box only run tests at full voltage. Is it not more convenient to have this test part of an IV?
+ - Dennis: test is reasonably fast that if can be done with every IV
+### End-cap wire bonding schematics
+- Luise: Sergey, until when do you want your feedback?
+ - Sergey: maybe 1 - 2 weeks
+ - William: celestica is using number 1 - 6000 for a panel, then it might be necessary to have a script for the database requirements
+ - Luise: module sites are not supposed to do the tab cutting, this is done by loading sites so this slide needs to be removed
+ - William: need to add the field shaping bonds to the module bonds
+- Carles: number of bonds to powerboard: if I count them for R0 and R5 they are differentThis should be checked
+### End-cap chip trays
+- Luise: does this mean we need new R3 chip trays for PPA?
+ - Dennis: looks like it, this would break the chips if they sit like thisMight also affect the chip trays that haven’t been re-made for PPB
+ - Luise: has anyone else who has this chip tray that has V1 ABCs in had to test?
+ - Ingo: might have some, will check
+ - Luise: Toronto has some V1 as well
+ - Dennis: is only in the R3 chip tray
+ - Ingo: can be in principle be re-machined; we did this for the R2 module jigs
+ - Dennis: easier if you can do it on the machine in which this was produce
+ - William: don’t have any V1 chips left, never did a try with real chips on the R3 chip tray
+ - William: can see if the company still exists and can re-machine the chip trays
+ - 
+### Feedback from reviewers for assembly steps (next week)
+### AOB
+- no

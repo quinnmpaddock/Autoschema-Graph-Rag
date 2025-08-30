@@ -1,0 +1,51 @@
+# 17/03/2023 - Minutes of Powerboard Meeting
+https://indico.cern.ch/event/1260564/
+- Instructions for notes: only cover major decisions, not all minor details.
+### What we know
+Luise: 4 main questions to discuss today:
+1. Change barrel PB Bill of Materials (BOM)?
+1. Schedule to populate current barrel PB flexes
+1. Longer term: change barrel PB flexes?
+1. Schedule for that
+- Use of capacitors on stilts: in general, they are difficult to solder by hand, as the legs are soldered onto the capacitors and also melt. Using reflow seems best. 
+- Send some to Penn to try out soldering there
+- Plan for first 2000 powerboards:
+ - After discussion: populate all 2000 as initially planned, but leave the shieldbox off of 150 boards.
+ - We also discussed though: [Jaya John is not sure if these 2 ideas are abandoned?]
+ - Let’s find out if we can assemble, at Epic, ~100 boards with alternative capacitors
+ - Will require to replace all capacitors of the same type
+ - Keep some unpopulated in case of further changes we want to try?
+- No clear replacement for the reverse-geometry capacitors
+- Plan to evaluate PBs with capacitors on stilts:
+ - Make some PBs with capacitors on stilts
+ - Get to SCIPP to build onto some SS modules, to test for cold noise
+- 
+- As info: the PB contract is structured as 2000 + 12000. 
+ - This contract for 14000 is already signed. The only option so far is to have a gap after the first 2000.
+ - The contract assumes no changes to the design after the first 2000. 
+ - Lead time for flexes: 7 working weeks + 1 week shipping + 1 week QC.
+### Flex questions
+- 3.0a don’t see cold noise
+ - This had through-vias on all 4 layers.
+ - Reverse-geometry capacitor is rotated compared to all the other versions. 
+ - It has much less copper than later versions.
+ - There are potential glue differences as well, being tracked down. RAL transitioned from using Polaris in Bi-packs to Polaris from bottles at some point, which probably increases the crystallisation of the glue. 
+- 3.0b and c do see cold noise
+- 3.1 seems to have even more cold noise
+- Capacitor choices: might be worth calling Murata and asking for help
+- Via discussion:
+ - Staggered vias don’t seem to be the solution for cold noise (Dennis and Peter)
+- EC powerboards have cover layer and solder mask at bottom (for stiffness)
+ - Discussed trying a small batch with cover layer and solder mask added, or stiffeners
+- We will make comparative laser vibrometer measurements of endcap powerboards.
+- Do we want to make a small barrel PB batch at Würth as a comparison? 
+ - Sounds feasible. 
+ - Do we want to change the feed-through capacitor in parallel?
+- Three paths to pursue:
+ - Add stiffener to powerboard
+ - Make barrel powerboard from Wuerth
+ - Try change of feed through capacitor
+- Measure the stiffness of barrel PBs and endcap PBs.
+ - Send some endcap PBs to Timon for this.
+- Penn has offered Godwin’s help in making modifications to powerboards.
+- For interest: a possibly relevant paper: “Effect of ultrasonic strain on p-type silicon wafers” https://iopscience.iop.org/article/10.7567/JJAP.53.07KC07

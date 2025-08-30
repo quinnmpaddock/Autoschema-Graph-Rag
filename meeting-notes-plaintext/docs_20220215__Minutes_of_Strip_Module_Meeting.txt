@@ -1,0 +1,154 @@
+# 15/02/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1109668/
+### Introduction
+- Archa Rajagopalan - reduced pull testing volunteer
+- Tony Affolder - visual inspection after each front-end row volunteer
+- Ingo: Dropping test is extreme, but could reduce to sample tests
+ - Luise: did not mention this specifically, but yes that is an option
+- Gerrit: would like to see dropping as much as we can, but don’t see how we can already look at this now at ITk week; are you proposing to take these decisions during ITk week?
+ - Luise: no, at ITk week have proposals of what to drop/reduce and what evidence for this is required (could be done with preliminary data); then make a decision at upgrade week (May)
+ - Gerrit: why not handle it through clusters?
+ - Luise: because if you do it through clusters you would have a lot of people to do the work in each cluster
+ - Sven: could also be a group of people covering a topic
+ - Gerrit: will look into this US internally to make sure all information are used
+ - Sven: and we need to make sure EC is also involved
+- Ingo: EC database registration only for PPA parts or also for prototype parts
+ - Luise: mainly for parts that are used during pre-production, but other can be assembled there as well
+- Powerboard Panel Jig:
+ - Dennis: have given it to workshop, need to follow it up
+- Follow up items:
+ - R5 panels: will be done soon
+ - Temperature correlated test data: will be done soon
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 15/02/2022: Barrel tasks
+- 22/02/2022: EC tasks
+- 01/03/2022: Barrel tasks
+- 07-11/03/2022 ITk week
+- Shipping readiness (incl import procedure)
+- Hybrid crate setup, finalisation and roll-out
+Tony: how does the scoping look?
+Ash: looks good, five out of six hybrids on a panel responding
+Beta tester from Humboldt working on setting up and documenting process
+William: do you have an endcap panel to try this with as well? Ingo: yes, since yesterday
+### New HV Tab Manufacturing
+- Gerrit: great news. Sounds like the sandwich used here is different from the sandwich made before
+ - Tony: buy material off the shelf, not each part separately
+ - Gerrit: but is it the same aluminum?
+ - Tony: yes, same material, same company, same material
+ - Gerrit: any chance to get some of the new tabs to the US?
+ - Tony: they are making 2 more sheets for us from which we get ~200 tabs that can be shared
+ - Gerrit: will want to have some for the US, Tony: not many left
+- Ashley: what is the availability of the material?
+ - Tony: got a roll of the material, which basically covers production
+ - Ashley: do you plan to do any QC on the material before shipping parts out?
+ - Tony: only sensible QC is visual inspection, no longer disagreement
+- Luise: what would be the timescale to completely switch to the new tabs?
+ - Tony: depends on when the order gets out and if we get the in-stock machine
+ - Luise: mid PPA?
+ - Tony: then the machine needs to be shipped and we need trainingIf we don’t get that machine, it takes 3-4 months
+ - Luise: we need enough material to test so that sites can look into re-evaluating their parameters
+ - Tony: once we have the system, we could make the first sheet for EC
+ - Luise: does not need to be EC design, just some tabs for the initial setup
+ - Tony: so someone should decide how we distribute the tabs from the 2 sheets we have
+ - Luise: let’s try to find a EC site to volunteer for initial tests
+- Forest: is there still cleaning required?
+ - Tony: not sure. There was a bit of dust on tabs but not clear if it was from laser or packaging. Was easily washed off with IPA
+ - Gerrit: same process as used for bus tapes - if this is done correctly, it works quite well
+ - Forest: will we have a chance to review the design changes?
+ - Tony: will a quick new design for the 2 sheets now; once the process is in house we can have a more elaborate design review
+ - Should then do a proper Engineering change request
+ - Forest: could remove some of the areas around cutouts
+ - Tony: Kirsten has same feedback as Forest
+ - Tony A: will need to be more careful with packaging these in the future
+ - Tony W: yes, learned our lesson
+- Tony W: can we get our new design very fast, please
+### End-cap frame/panel update
+- William: the R5 test panel is for hybrids?
+ - Kambiz: yes
+- Luise: R5 module frame: one of the sensor sides does not get HV when powered through the powerboard (left side)
+ - Carles: it was the ground connection on the bottom left
+ - Kambiz: that was in the very first version and was already fixed; will check it to make sure
+- EDMS review of panels and frames will be restarted, please leave your feedback there
+### Proposal for QC procedure modifications for PPB
+- Proposal: change to use new fiducials for powerboard on barrel module for metrology
+ - Everyone agrees to this
+- Tony A: do we still need to measure the slot and hole?
+ - No, just use fiducials in the future
+ - Sven: metrology document will only use fiducials and powerboard edges for groups that can’t use fiducials
+- Gerrit: what do you use for the position - the centroid?
+ - Sven: found good ways to calculate centroids of combined features, going to use that
+- Sven: is there a powerboard like this in Santa Cruz already?
+ - No a few ones to be hand-stuffed and distributed early, but not in hand
+- Tony: centroid finder gives you the area, could be a good check
+ - Sven: always have over- oder under-etching
+- Gerrit: does Timon already have bare boards? Could put them under the smartscope and take a picture
+ - Ian: if Ian can get a powerboard, he can put it under the smartscope
+- Matt: fiducials on tabs means tabs need to be there (were accidentally chopped off at some point, need to keep them there)
+ - Gerrit: need it in place, otherwise can’t locate powerboards
+ - Matt: just a word of caution to remind people we will really need this tab there in the future
+### Powerboard reception testing comments
+- Tony: heard comments from multiple people. Slides are not in order of actions you want to do things
+ - Zhicai: add links to pages
+ - Tony: if you need help on how to look into the order, we could help
+ - Tony: yes, or provide feedback on order of slides and how to improve it
+ - Zhicai: let us know if you have suggestions
+- Jacob: has the temperature test criteria been sorted out? That has caused lots of red for us
+ - Zhicai: yes, this is a threshold issue which has been sorted out, not sure if it was pushed into the firmware repo
+### LS module noise results
+- Luise: do you mean only barrel modules or also EC modules?
+ - Jacob: currently only look at barrel modules, but could also collect data for EC modules
+ - Luise: in past noise peaks were a bit more varied in position. Is there magnetic trigger data of these modules?
+ - Tony: no, don’t have this here and don’t know if LBL has done this. Can say that coil location is better controlled (also with new tools) so see more consistency
+- Tony: Asked Timon if next version of PPB powerboards would be better/different and he said no.
+- Luise: did you compare it with the prototype data? 
+- Tony: this is planned to be done
+- Craig: it is pretty consistent on what we have seen in the past with this version of the powerboard. But in some we had worst control with regards to the tools
+- Gerrit: do we consider to make a certain amount of modules with an increased glue layer?
+ - Tony: in the past it does not go very fast when going out. Only when going thin the change is significant
+ - Craig: not sure we know this for the noise peak (certain about the capacitive noise). 
+ - Tony: need to look at data points but thought powerboard is bowing away from module in DCDC area
+ - Timon: the powerboard tools could have been adjusted to compensate for this
+ - Gerrit: are you proposed to use shims to get to different heights?
+ - Luise: would be in favour of it
+ - Gerrit: PPA is the best place to do this test
+ - Luise: might be worth trying
+ - Craig: yes
+ - Gerrit: would go to 200um instead of 120um
+ - Craig: what the plot shows is very consistent peaks, not seen in past; now can look at other things
+ - Tony: would be good to have more data for these plots. Stream 1 is higher in the outer channels than what we expected from V0 ASICs and there are these structures that need to be understood
+- 
+- Craig: any chance that the slope comes from glue thickness variations?
+- Tony: our metrology is very flat and there is a bit of bow, but it’s the wrong direction (outer chips low, not high). Timon has asked about the referencing and if this could be a residual from that
+- Craig: possible, have seen something on stave
+- Tony: might be good to get some people together to discuss them
+- Timon: can the tests be run with high statistics?
+- Craig: they are high statistics
+- Luise: would be good to also go to lower glue thicknesses
+ - Gerrit: not easy to do 
+ - Ingo: feel very twitchy about looking into glue thickness this late in the project
+ - Dennis: if we find something that could be done, it might be sufficient to just change the pins on the powerboard tool
+ - Gerrit: if we want to do this, we need enough statistics. Proposal would be to do this for PPB LS modules. At BNL we could to 5 normal and 5 with increased glue height. Have to make a decision rather soon
+ - Luise: whatever you are willing to try is good
+ - Gerrit: but it would be a community decision
+ - Sandra: could probably also do something at LBNL
+ - Gerrit: have to do some prototyping with glass pieces to get glue correct
+ - Sandra: have done this in the past
+ - Luise: could one of you try higher and one group lower
+ - Sandra: will discuss it in US who does what
+- Matthew: should we upload this test as failed in database?
+ - Luise: these are high noise channels, so would they be considered too noisy?
+ - Matthew: this test should be failed. Need to look at classifiers for these casesIt also is important if this is consistent for all modules or just some
+ - Vitaliy: how does this pick-up evolve with irradiation?
+ - Vitaliy: these features are undesirable, but we might have to live with them
+ - Luise: would have to look at classifiers to see if these channels always show up in same region
+ - Matthew: would be preferable if we could freeze the classifier for PPA.
+ - Jacob: the high noise sensors on one chip might also affect other chips
+ - Tony: we still need to tune the classifier variables for PPA
+ - Luise: could also use uncovered strips for training and compare against other stream
+ - Luise: would be good to see the magnetic triggering results. UBC has started setting up a system. Would be interesting to test this with modules from other sites.
+- Action item for BNL and LBL: try out different glue thicknesses (higher and lower)
+ - Gerrit and Sandra will figure out who tries higher and who tries lower glue heights
+### AOB
+- Sergio: finally got green light to ship EC cold boxes. Uploaded documentation to EDMS and link will be sent out.

@@ -1,0 +1,238 @@
+# 2024-02-27 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1362203/
+### Introduction
+- Andy (sl. 2): I believe we uploaded the open channel search, but we have no idea about the HV Stability test
+ - Luise: This is only done in the thermal cycling
+ - Andy: Okay, so this is related to TC, thanks
+- Craig (sl. 3): When these modules were run at RAL, we did have full monitoring while they were in the climate chamber. So we should be able to see what these modules are sitting at.
+ - Luise: We got the data from Marcin about the current draw on modules.
+- Sarah (sl. 5): About the R4, we had some bonding issues. A machine issue, but it’s bonded now, so we hope to test it soon.
+ - Luise: Excellent, please let us.
+- Carles (sl. 8): I think we are also worried about the glue being too thin right? How do we catch this? With the noise values?
+ - Luise: There is still a cut on the thickness. Less than 40um should still fail
+ - Carles: But if the package height passes, it’s fine? 
+ - Luise: How would your package height be okay if you have less than 40um glue thickness?
+ - Carles: Isn’t it only a maximum?
+ - There is a minimum too.
+- Tony: I’m positive the package height is a hard requirement. The glue thickness is less important. It’s needed for support, so that’s why it’s the soft requirement. The package height is set by the tools, same with the glue. 
+ - Luise: Yes. At the point this was discussed. We didn’t have the requirement that glue could just be “more”. 
+ - Tony: I can’t recall if I did this metrology, but I’m fairly positive the package height is the hard spec and glue thickness is the weaker spec.
+ - Luise: The metrology doc currently has it the way you say it (mostly). 
+ - Tony: That is what we intended. 
+ - Luise: Okay, so now we have some confusion. We need to then make sure we agree. We should make sure it is written unambiguously in the document that the package height is the important feature, with glue secondary.
+ - Sven: We should still cut on low glue heights
+ - Ingo: We should pass it with problems then?
+ - Tony: If package height passes but glue fails, yes.
+ - Tony: It’s the average ABC height and not individual right?
+ - Ingo: Yes, that is what I recall as well.
+ - Laurelle: My understanding that if the glue height is too low, it fails. And then we look at the package height.
+ - Tony: I believe the spec on the low end is 40um right?
+ - Luise: Yes
+ - Gerrit: Why don’t you remove the max height for the glue? It doesn’t do anything.
+ - Luise: I think that’s what we are saying.
+ - Gerrit: Yes, get it out of the document.
+ - Tony: [Missed it]
+ - Craig: This was all about support. If you remove it completely, you may miss the weird cases. You should only be able to get inside package height but outside glue height if there is a thickness problem in the components.
+ - Luise: We should specify the ranges explicitly in the document.
+- Laurelle: Sometimes we see problems where the hybrid is not held down everywhere and the package height is too high at some points. 
+ - Luise: In your case, repeat your test with a better vacuum.
+ - Laurelle: That might be difficult
+ - Luise: The relevant thing is package height, but it can still fail if the glue is too low.
+ - Sven: Be careful. The case you describe is problematic. If package height is too high, you may squeeze out glue onto the guard ring.
+ - Laurelle: We are pretty sure this is hybrid bending up.
+ - Craig: your worry is vacuum during metrology rather than assembly?
+ - Laurelle: Yeah
+ - Tony: From experience, the other way around is easier. These are barrel experiences, but I’ve never had vacuum leaks during metrology. But we do during assembly.
+- Luise asks for show of hands for ITSDAQ tutorial:
+ - Count: 3 hands
+### L4 Updates: ITSDAQ/Sensors/Documentation
+- Peter: it’s very simple: if you don’t have fused IDs, then you need different bond IDs
+ - Cole: would it be possible to have more fused ID powerboards
+ - Dennis: no, that’s remaking 100s of powerboards
+ - Cole: that’s why we’re checking, then we can probably rely on different bond IDs
+ - Tony: that’s why we’re trying to find out how many failed - using bonded IDs just means managing spares
+ - Vitaliy: does this mean if we have fused AMAC IDs, we don’t need to bond bond IDs?
+ - Peter: haven’t tried it, but should be trivial to make work
+ - Vitaliy: so should we try that?
+ - Dennis: if we bond IDs, we can use either, so can use both
+ - Vitaliy: good to know, then we will proceed with bonded IDs
+- Bruce: think before Autoconfig, people used to write to AMAC, but never read from them, so the issues were masked
+ - Vitaliy: What kind of issue are you seeing?
+ - Bruce: AutoConfig would show one one of the AMACs not responding
+ - Tony: Don’t you lose two hybrids if an AMAC isn’t responding?
+ - Bruce: No the hybrids are still there, the DCDC gets turned on for all but AutoConfig checks by reading back and it will only show one.
+ - Peter: the difference is between an AMAC that can talk and an AMAC that can only listen - we now find the AMACs that can’t talk
+ - Vitaliy: As Tony said, it would be good to know the root cause of this behavior or 
+- We will continue to rely on the Bond ID for powerboards. If issues arise, report them to the ITSDAQ experts.
+### Group Update: TRIUMF/SFU/UBC
+- Vitaliy: For the streaks that you saw, we did see something similar at some point. That was traced to rare and intermittent oil drops from the dry air supply. In our case, they did not disappear. It was difficult to chase due to how rare the situation is. We put in a couple of extra filters to fix it.
+- Vitaliy: checked bond parameter optimisation before changing them on modules?
+ - Archa: I did check this at SFU.
+ - Luise: yes at TRIUMF
+ - Vitaliy: So you checked that the strength and spread looked okay?
+ - Archa: I did for these bonds
+ - Vitaliy: But did you check the performance of test bonds on test structures with new parameters?
+ - Luise: Yes
+ - Archa: For this case, we made changes to the bond wedge height, so we had to reoptimize it and these issues were seen.
+ - Luise: Yes, we verified things on test structures
+- Sarah: Our experience with Delvotech is that last time they did maintenance, it took months to get it back to where we wanted it. It’s not always ideal.
+ - Archa: Yes, we’ve also had this experience. 
+- Forest: The bow-ties on the loops, that is typically seen with the table turn method. Your second bond is not strong enough to hold for termination and the wire stays attached and goes back to the first bond point. So it’s odd that the drag rod (whatever that is) is affecting the final weld. The weld should be strong and the wire should be able to be broken with either method. So it’s suspicious unless you are doing the table-turn method. I would say that maybe it will crop back up if only the rod tension was changed.
+ - Archa: I think the parameters are also changed for these tests. But we definitely do clamp-tear not table tear
+- Celine: have also seen the bow ties if the bond threshold was set too low, wouldn’t place the second bond if it was set too low
+ - Archa: I’m not too sure about all of the changes made to fix this. Thank you for the suggestion.
+- Ben: had to recalibrate touchdown force on bonder - got a little machine to calibrate it ourselves, found that can help
+ - Forest: Since we are on the topic of touch-down. Touch-down is the pre-deformation. If you back up on the parameters, and you touch down on the point, that’s the starting point for the deformation “0 point”. Whatever deformation you set will be based on the stopping point, where you’ve pre-deformed the wire. If touch force and velocity is high, you may smash things.
+### Barrel Powerboard QA Results
+- Luise: The cycles here, they are basically normal QC cycles but more right?
+ - Timon: No, in QC we can’t run all the boards at 3A because our boards can’t handle this. The higher load also changes the temperature in the crate significantly. The ten TC are a lot more. We usually do 3.
+ - Luise: But the cycles are the same conditions, but the burnin was higher load and temperature
+- Luise: What do we do with these particular PBs if more QA is needed. IS your answer no?
+ - Timon: These are not suitable for detector, so the question is if we want to do more with these. Are we deeming them suitable after these tests? Do we not want to use them at all? Right now there is uncertainty about PB usage.
+ - Luise: I think it would be great to use these for HBIPCs if we don’t want to do more test
+ - Tony: The question is what more tests we could do. We could try reducing the temperature, but it may not be feasible. More cycles is possible, but we haven’t been seeing fatigue effects on the order of ten cycles (more like thousands). Personally, I’d think the other ones soldered this way should be as good as anything else, but we should use them last. Then these 90 boards would comes to UCSC and we make them into HBIPCs if we can. 
+ - Luise: have the rest of the PBs been through QC yet?
+ - Timon: all of the 2k we produced.
+ - Luise: and these look like other normal PBs?
+ - Timon: A couple of boards have a few more cycles on them.
+ - Tony: You saw a small difference right? 90% or so [missed part of it, sorry]
+ - Timon: yes, includes a lot of failures which aren’t failures, just outliers. We can see that on these powerboards, the soldering doesn’t look as nice as we had hoped because we gave them a lot of restrictions, so they couldn’t use their default method
+- Craig: So the proposal is to take the 90 boards that went through QA to go to HBI units. The rest go through QC and go to the side and go in only when necessary. Is that a correct assessment?
+ - Timon: Yes
+ - Craig: sounds reasonable - if we need to bring these in at the end, may need a more detailed look at solder splash and what things look like, but don’t need to discuss this now
+ - Timon: We have VI pictures. If someone wants to look through 400 pictures. 
+ - Craig: we do this if and when we want to use them
+ - Timon: It’s not on the pads. It’s not an issue for the bonding. I wanted it to look prettier. My standards are high. We gave them a whole thing about the soldering, but I don’t think it’s worth it. We should have used the normal process.
+ - Craig: It makes me hesitant to use them, but putting them to the side makes sense.
+### EndCap Hybrid Production Update: Concerns about Cat B ASICs
+- Cole: have you done visual inspection on these after you glued them down to check for visual defects after taking them out?
+ - JJ: can do
+ - William: have done VI on these, will check again
+- Luise: There has been an email conversation about how to possibly take them out of the gel packs more easily. The idea to connect them to vacuum for about 30 minutes. Kirsten noted that it was much easier. We also don’t have comparable results from the barrel so far, so it would be good to put these on hold, continue with CAT A in Toronto and see what the barrel sees with Cat B.
+ - William: Thank you. This is what we were hoping to hear. We will try this vacuum method, but we may have to prep this ahead of time for Celestica. But we will try.
+ - Tony: Kirsten figured this out with another project which had the wrong tack, would still be good to understand the difference between Cat A and Cat B
+ - William: If this appears in the Cat As, we’ll have to deal with that.
+ - Tony: The hybrids using these are thin. Sven, do we have to do reception tests on these?
+ - Sven: have done all of them, but would be good for LBL to at least do a confirmation pull test
+ - Tony: Easy enough. It’ll be a week or so before they ship, and another week of testing.
+ - Luise: For the first thin-flex hybrids, I would prefer to use Cat A so we don’t mix these issues. 
+ - Tony: Then we’ll need more Cat A. Can you give us a number?
+ - Luise: Let’s follow up offline.
+- Jaya John: We need to learn more at Toronto and other sites. Given the number of things being looked at in Celestica, I would agree that it makes sense to go back to Cat A and disentangle some of these factors. These are bigger problems than I would have expected from Cat B.
+ - Jaya John: for specific question of quantities of chips in gel packs: depends on wafer, only putting ASICs from same wafer in same gel pack, but we do have particular lots of gel packs with more ABC in the same gel pack
+ - Luise: That sounds great, thank you
+ - William; Great
+ - Jaya: first batch going out was just the first batch, which had low counts per gel pack
+- Peter: Are these in 2” or 4” packs?
+ - Jaya John: yes, they are
+ - Peter: I don’t understand why they would use different tackiness. I am wondering if we have any experience picking CatA die from this pre-irradiation lot
+ - William: made 16 hybrids with Cat A before switching to Cat B, one gel pack accidentally mixed in
+ - Peter: Or maybe we just need to look at Cat A from the same wafer. I don’t understand why the tackiness would differ. Maybe the difference is lot and not category.
+ - William: we’ve now sampled a whole batch of them and they all have the same tackiness
+ - Peter: The other thing, it would be interesting to look at the fuseIDs of chips on the hybrids that are working, so see that they are the ones you expect. 
+ - Peter: the categories shown here aren’t Cat B defects - are these really Cat B chips? 
+ - William: They are Cat B and we have checked that they match expectations exactly.
+ - Peter: have you checked every single one? Do the fuse IDs all match
+ - 
+ - JJ: They match
+ - Peter: This is bad news then. This means the probability of a mispick is small. So something has changed.
+ - William: It’s possible they were damaged or mishandled. If we do a slew of As and nothing happens, then we will have an answer.
+ - Peter: use ASICs from gel packs from the same lot
+- Geoffrey: You can just vacuum pack them tight enough to release the chips. You just have to be careful when you handle them.	
+- Vitaliy: For Jaya John, Peters comment seems to be that something could have gone wrong with the pre-irradiation. Do you have other chips irradiated at the same time? Could help us find the issue.
+ - Jaya John: yes, worth looking at, but dicing batches may be more relevant, because dicing is where they are sorted into gel packs, so if we see issues, it is more likely they would be the same wafer/dicing batch, more so than the same pre-irradiation batch
+ - Vitaliy: That’s the other hypothesis. 
+- Luise: We should probably say explicitly. The gel packs were so sticky that they needed to be pried out of the gelpack. They had to do some serious force to remove them. So additional damage could have occurred
+ - William: At Celestica, they slow down the pick-and-place from half a second to ten seconds. At Toronto we tried a vacuum pen but couldn’t get them out, so we tried harder with other chips, but those weren’t put on a hybrid. By slowing down, they were able to remove the chips, it just takes way too long.
+- Vitaliy: when trying to pick up a chip from a gel pack that is difficult to remove, 
+ - William: Metrology is good, but glue weight is problematic. We’ve had worse performance on the glue weight lately, but no evidence of gel stuck on the ASICs. 
+ - Vitaliy: okay
+### EndCap Hybrid Test Panel Finalization: Numbering on Panels
+- Dennis: The current state of the design where the numbering is [missed it]. Do you want to change the LEDs to the same mapping?
+ - Ben: That would make sense so that it is all consistent.
+ - Luise: how big of a change is this?
+ - Dennis: Just the label
+ - All good
+ - General agreement to change the labels of the LEDs to be consistent with hybrid numbers
+- William: I do have problems with this. We have used the 0-3 to assemble hybrids. This seems cosmetic to me. But we are going to have confused people. We aren’t going to stop production while we try to get this new silk screen right?
+ - Dennis: every panel, in the future, will have these new labels
+ - William: I just think it would have been nice to fix this in PPB. But I have been overruled. The last thing that I pointed out that the wire-bond numbering will change. We can write a program to fix this, but it does affect the documentation.
+ - Luise: the wirebond order will not change
+ - William: This will change the order to not be 0, 1, 2, 3, but maybe 0, 2, 3, 1
+ - Luise: That’s exactly why we have this document
+ - Dennis: The old numbering made more sense (?). This could be fixed in ITSDAQ too.
+ - William: that’s what we’re already doing now in st_system_config_dat
+ - William: These numbers only get seen when the pink foam is removed. 
+- Bruce: does this change the database numbering - maybe it doesn’t matter?
+ - William: it’s on slide 4. Top right corner. We put those hybrid positions based on the numbering scheme.
+ - Ben: But if you use the assembly script, it will wrongly assemble things. If then also associate chips to your hybrids, it will not work with what’s in ITSDAQ.
+ - Peter: if the system configuration is correct, it will do this correctly
+ - Ben: But in the sys config, it uses the stream. If this is data 1..
+ - Peter: It should still get it right.
+ - Ben: It uses IDet and not the stream?
+ - Peter: The onus is on the operator to correctly set this up in the config. AutoConfig will then correctly associate chips and hybrids.
+ - Ben: but what is used for hybrid position on the panel
+ - Luise: Yes
+ - Ben: It uses the data stream and puts that into the assembly script.
+ - Peter: So that’s the thing that needs to be fixed rather than the labeling.
+ - Ben: but that means you need to know which panel you are inserting when you are plugging in a panel 
+ - Dennis: But don’t we need this information in other places as well, or do we extrac this automatically?
+ - Ben: we may need this information
+ - Peter: Are all these stream mappings the same for a given module type:
+ - Dennis: all R0 have the same mapping, all R1 have the same mapping
+ - Peter: So we need a lookup table
+ - Ben: but then we need to know exactly which panel is which before starting autoconfig
+ - Peter: We know from autoconfig what the hybrid types are.
+ - Bruce only after you have assembled the ASICs
+ - Peter: Not the thing I’m thinking of. 
+ - Ben: This only works if nothing is wrong on the panel.
+ - Peter: This is true.
+ - Dennis: And bondID of HCC should also work already. If we ID it based on HCCID, this should work.
+ - Ingo: but at some point, someone has to tell ITSDAQ which hybrid serial number is where 
+ - Ben: Dennis is saying that we can deduce the panel type based on the hybrids.
+ - Luise: There are two options. We make this consistent between all panels, or we make a complicated lookup table. Wouldn’t it make more sense to do as Ben is suggesting?
+ - Dennis: Some panels are rotated, which is why this cannot work. Keeping the usual interpretation of starting at a corner. I’m not sure connecting this to the data steams is unnecessary.
+ - Luise: But that’s not how Ben is saying they use this.
+ - Dennis: Then the script should be changed
+ - Peter: The script is making a barrel assumption.
+ - Luise: We should reconcile this then.
+ - Bruce: Another thing ITSDAQ can do is have it output what it thinks is H0 and H1 based on stream number and that might help pick out potential mistakes.
+- Final comments:
+ - Dennis: all the scripts exist in Toronto already, should keep them consistent
+ - Luise: according to JJ, the fixes are minor
+ - Dennis: but then it doesn’t matter and we can keep things consistent
+ - Luise: there are three things we want to agree: hybrid position used in the database, ITSDAQ stream number, these would be good to get right and currently, these don’t agree, which is confusing, and can cause problems for the crucial part, which is assembling ASICs to hybrids
+ - Peter, Bruce and Dennis: better to make changes in software than in hardware
+- It is settled: the numbering will remain 0-3 on the panel in order, issues will be solved in software
+### Burn-in Interlock Discussion
+- Ben: I don’t understand why the temperature goes up so much when you’re power cycling. Is this potentially a configuration issue?
+ - Marcus: I guess it could be that it takes time for the fan to cool
+ - Ben: When I turn the burnin on, I don’t see these spikes. But maybe it’s because you start off at 40C, the behavior is different.
+ - Marcus: we did see transient spikes, but the monitoring shows it returning to equilibrium.
+ - Ben: this might require some PID work
+- Ben: What you proposed, to turn off the hybrids. I think I fully agree we should turn off the individual hybrids. I don’t think that the MR that started this could be revisited.
+ - Peter: Turning them all off is easy, but turning off one and having DAQ working at the same time is difficult. Otherwise the DAQ tests will fail anyways. It is theoretically possible, but a lot of work. 
+ - Ben: What we do in HBI, we just turn everything off and back on again. 
+ - Peter: Assuming we can pass a message, we would then need to repeat any scans taken in between the AMAC being turned off and the other process noticing it. 
+- Tony: Two things I would suggest. I don’t know if we need to power cycle. The other way to handle it is to require it measure high temps for more than a single measurement.
+ - Tony: bigger issue is: turning off monitoring when something goes wrong seems like the wrong thing to do - should keep monitoring running
+ - Ben: All people would agree I think. I think the thing up for debate is one hybrid or all hybrids
+ - Tony: yes, turn off everything, but keep the fans on, until everything is close to room temperature, then turn them off as well
+ - Ben: I don’t think it does anything. I wouldn’t worry about having the fans on full speed.
+ - Tony: Ideally, it would hit a trigger, turn everything off. Then I would suggest that after it gets to a certain temperature we turn off the fan.
+ - Ben: had implemented in the merge request that this would be implemented in Grafana and an alert could be set on it
+ - Tony: If everyone is happy with this, I’m okay with losing a full run on occasion
+- Tony: second question: it’s tripping on single measurements, when it hits a higher temperature during measurements - for three measurements in a row or so?
+ - Ben: That is reasonable - one measurement per second
+ - Tony: would that keep that from tripping here?
+ - Marcus: I’m not certain
+ - Alex: We’ve been doing the burnin for a while, and this is the first time this has happened.
+ - Tony: if you set a safety on exceeded threshold for five or more seconds, we can use that to then implement the safety
+ - Peter: I think if you are going to introduce averaging. You should consider not all measurements are equal. We need a higher threshold too probably. 
+ - Tony: for measuring every second, shouldn’t matter too much
+ - Peter: If it’s really 60C, I’m not so sure.
+ - Tony: would be good to write down what we want to do and then implement it
+ - Ben: Marcus and I can iterate offline and then propose this in a merge request
+ - Vitaliy: please include Alex
+ - Luise: please use burn-in egroup
+ - Tony: I’m assuming no one is seeing this because we do larger ranges. Do we have information yet? It would be interesting to know.

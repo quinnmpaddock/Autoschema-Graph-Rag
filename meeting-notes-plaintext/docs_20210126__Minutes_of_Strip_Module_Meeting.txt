@@ -1,0 +1,96 @@
+# 26/01/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/986079/
+### Introduction
+- ITk week agenda plan
+- Please contribute to ongoing EDMS procedural doc reviews!
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R0 tool prod
+ - Tools are now out for anodisation
+ - One CNC machine broke delaying some of the jigs
+ - Expected back in ~2 weeks, will then assemble trial parts
+- R3 tools prod
+ - Order is our (prev reported) and quoted delivery by first week April
+ - Trying to get at least parts earlier
+ - Open thing is precise metrology plan
+- R5 tool prod
+ - Lots of the tools in hand, doing metrology as xcheck before anodisation
+ - Full set expected at end of this week
+ - Send on to anodisation next week
+- US Hybrid/Module tool prod
+ - Slides
+ - Received tooling 2 weeks ago
+ - Verifying order, quick visual inspection positive
+ - Sent to metrology, but proceeding slowly due to covid unavailability
+ - Once metrology is done plan to 
+ - Clean
+ - set RFID
+ - Assemble
+ - register in DB
+ - and send out to other institutes
+- UK/China tools manufac
+ - Awaiting manufacturer feedback - DELAYED
+ - Craig and Sven will poke vendor
+- Shipping readiness incl import etc
+ - Only 3 compliance letters are missing
+ - export s of ASICS
+ - Are working through country list
+- Barrel hybrid tendering / order Production (with ties to PPA/B)
+ - Circuits are submitted (Oct) should be delivered now
+ - Graphic had QC issues with thinflex and had to redo
+ - 12th of Feb is new delivery date
+ - Uncertainties due to covid of course
+ - DuPont delivery issues remain (30+ lead time) - ne change expected
+ - Surface of thinflex is different which leads to issues with solder resist mask
+ - Other company changed to another solder resist, Ash is trying to see if similar step can be done at Grafic (however such changes are always rather involved, requiring re-tuning etc)
+ - Will see if we can adjust contract to not include the material
+- EC hybrid prod procurement
+ - Received reminders from Josh and meeting on which sample to get and specs for samples
+ - Will provide feedback to Josh
+ - Get samples in ~4 weeks
+ - Then test those samples
+ - Expect invite to tender to come out this quarter
+ - After invite expect 4-6 months additional wait times
+- EC thermal cycle setup
+ - No Sergio, will update at ITk week
+- Prod R0/1/2 testframes
+ - Felix- for R2
+ - Wants to start beginning of March
+ - First examples are produced and about to be sent (there was a QC issue)
+ - R3 and R4 are awaiting results from Freiburg, will kick off order after that in Canada
+- Prod of Hybrid panel cover
+ - First samples look fine but use non-ESD material
+ - Parts will not include press-in inserts (did not understand?), has to be done manually
+ - Will not have engraved labels
+ - York should seek out a different vendor for screws, should decrease price significantly
+ - Sticky labels should mark which type of module the cover is for
+ - Avoid stickers if possible, cut though cover to mark instead
+ - Preferably remove the scratch-protection paper from cover before sending out
+- EC common tools/items
+ - RFIDs in population
+ - Most of other things are at hand, needs to be sorted to be shipped
+ - How to avoid handling fee/taxes?
+ - Between 2-5k per site is material value
+ - Luise & Karo will figure out and get back
+ - LED strips?
+ - Will take more than 2 weeks, rather 4 weeks from today
+- EC Handling fame / foam / hybrid panel prod
+ - Hybrid foam is cut and will be sent out with the other items above
+ - Module foam is test cut and will be final cut once test frames are there
+ - Is fast work though
+### Quote for making dummy glass sensors
+- R4 by Luise & Co
+- R5 by Dordmund
+- R3 maybe by William an Co
+- Might want to adjust geometry a bit (making the sensor slightly smaller to allow loading tests as well) → postponed for later
+### Tool metrology
+- Will be checked for every single part: planarity, parallelism, distance plane to plane
+- Will check pin hole diameter by inserting bushings / trying out with positioning pins
+- Will check ASIC pocket by trying out with ASICs. Visual inspection to look for burrs.
+- Finding hole centre is more reliable, so will measure relative distances (if hard, still need to measure). Center of holes where the hybrid/sensor positioning pins can’t be checked by placing the pickup tool, need to try to measure their position by vision means of the vision machine.
+- Upload to DB will be sorted
+### Hybrids and modules in the database
+- No comments
+### AOB
+- None

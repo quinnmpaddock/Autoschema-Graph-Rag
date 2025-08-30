@@ -1,0 +1,97 @@
+# 2024-01-23 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1362198/
+### Introduction
+- Bart (sl. 4): What about thinner powerboards?
+ - Luise: They are showing more coldnoise than thicker ones, so it’s not an attractive solution. It will depend on what happens with thinner hybrids too. It’s still a possibility, but currently we think Hysol is more likely to help us out.
+- Bart (sl. 4): When we reduce the cycling max temperature, can we really guarantee that the modules won’t go above this? Wouldn’t we want to go up to +30C to see if they would be alright?
+ - We want to see what comes out of the Hysol pattern where we can do this with a stave as part of QA. 
+- Gerrit (sl. 4): The problem with the higher temperature cycling is also the glue getting pliable. So you end up baking in the stress. All modules cycled up to +40C never really recovered.
+ - Luise: I’m only talking in terms of percentage of stress according to the simulation. The high temp is responsible for about 10% of the stress.
+- Bart (still slide 4): The PPB Hybrids are definitely more “wobbly” than the production hybrids. So the production hybrids would be the choice. 
+ - Luise: Yes, Tony has said they “feel” stiffer. But if you simulate this, it doesn’t actually affect the stress.
+ - Bart: The production hybrids are definitely flatter, so the glue gets applied more evenly. Which corresponds more to what the simulation assumes.
+- Sven (more slide 4): To clarify. The production hybrids are thicker because they have more copper, nothing else. 
+ - Luise: You said the variation of the production hybrids is batch-to-batch. Is this because of the copper?
+ - Sven: Yes, variations are due to the copper in the outer layers to guarantee the vias. 
+ - Luise: Okay, so production hybrids are the “proper” worst case
+- Carles (sl. 6): The reception test consists of VI and IV right? Many people are just doing the VI, so we can only setting the flag to “Passed” after the IV right?
+ - Luise: Yes
+- Pavol (sl. 7): Could this be done with PPA modules?
+ - Luise: It should be PPB.
+ - Pavol: We have modules for that?
+ - Luise: For the EC, we need to build them first, but we can start this for the barrel already.
+ - Carles: We have the R4 that you made for us, but broke. It’s only electrically broken, so it might make a good candidate.
+ - Pavol: It will take some time, but we can try that.
+ - Luise: That would be great, thank you.
+- William: For the paper, is there somewhere where the author list is being built. You said to check if someone is missing, but so far it doesn’t have an author list.
+ - Author list is on the paper
+### L4 Updates: ITSDAQ/Sensor/Documentation
+- No updates this week. Pavol will next week.
+### Group Update: Montreal/Toronto
+- Cole (sl. 3): ITSDAQ doesn’t work with influx version 1.8 or 2? That is not correct - it works properly with version 2, please get in touch
+- Cole (sl. 3): for default configurations, please don’t use the outdated old PPB config files, please use the default config files provided by ITSDAQ
+ - Dennis: they don’t have crossed HCC bonds yet, need updating
+- Luise: For the LED flexes. I think there are some spares in Freiburg.
+ - Dennis: yes, I will send you replacements and you can send me the broken ones when it is convenient.
+ - Larelle: Thanks, I’ll send an email with the numbers
+### R3 Module Test Update
+- Ash: Slide 4: how is the HV connection made to the right side?
+ - Cole: [explains the scheme]
+ - Ash: how is the connection made to the right?
+ - Dennis: second physical connection coming out of the powerboard, buried in the testframe
+- Ash: are there 100 Ohm resistors on the output of the powerboard?
+ - Dennis: yes, 100 Ohm or 3 kOhm
+ - Ash: but are they the same value?
+ - Dennis: yes, they are the same
+ - Ash: is it in the test frame?
+ - Dennis: yes, same as on the petal, so should see the same thing on the petal
+- Vitaliy: two questions: is this the only module with two power converters?
+ - Everyone: yes
+- Vitaliy: are the two power conversion circuits exactly the same?
+ - Dennis: yes, copy and paste
+ - Vitaliy: magnetic field could indicate interactions?
+ - Dennis: could be a population issue - they are hand-populate, so there could be population issues - coil orientation has been tried in all permutations
+ - Vitaliy: did you bend the legs?
+ - Dennis: no, it’s only rotated by 180 degrees or not
+ - Vitaliy: so that could be the explanation
+ - Dennis: could see it with oscilloscope measurements
+- Luise: we should try to track down where the modules are and check the coil orientations on these and see if they show similar noise behaviour
+ - William: are we really thinking interference between the two coils could cause this?
+ - Dennis: it is possible, but the sharp turn-on at cold temperatures is weird
+ - William: but it could be interference between the two coils?
+ - Dennis: it is possible; there are things we can do, e.g. change the switching frequency
+- Dennis: did you actually measure at the centre shield box?
+ - Cole: was always in the same position, did not move between tests, was always in the same place
+ - Dennis: would be good to repeat measurements with coil over each individual shield box
+### Use of Sleeves for EndCap Modules with Wider Gap
+- Luise: To confirm, we ordered four of each for each site. Should arrive today and we can send them out right away so people can try them.
+- Vitaliy: what’s the spatial precision on these parts?
+ - Pete: I actually don’t know. I just visually looked at them.
+ - Carles: I don’t recall the name of the plastics, but the white one had machining marks and wall-thicknesses that caused issues. We tried to machine both, but one did not survive. I agree, we may want to remove the top part or we may experience collisions.
+ - Carles: I also put kapton on top of the sleeve to create a little bit of gap. 
+- Carles: using sleeves
+ - Luise: For now, we may want to try it first before we make this permanent (once we know it’s going to work.
+ - Carles: once we want to make permanent changes, we could use pins with wider diameter (sharing a picture) for permanent changes
+ - Pete: Are those made of brass
+ - Carles: Yes
+ - Pete: We are using nylon to prevent damage 
+- Pavol: have you tried to 3D print this? It might be more precise:
+ - Pete: we are considering it.
+ - Pavol: Okay, so we’ll try it.
+ - Pete: More yes
+ - Pavol: if not, happy to try it as well
+- Marta: has this now been agreed on to be a permanent modification?
+ - Luise: We are testing it on the Vancouver and Valencia petals, one each. Then we will decide if this is permanent.
+ - Marta: Okay thanks
+### Update on Concave R5 Module Tests
+- Luise: When we tested this in the past, we say steaks in the scan, like common mode noise. Has this been fixed for this module?
+ - Dennis: I didn’t have any DAQ-related issues. Independent of this soldering. I just used default configs.
+ - Luise: Okay, so if fixing the solder removed the common mode noise, that would be great. And for the high noise, this is for the narrow gap right?
+ - Dennis: Yes.
+ - Luise: So it would be good to see how this look with a wider gap to see if this is causing the issue.
+ - Dennis: There was a gap towards the outside, so I added tin and tested, added more tin and tested, but I didn’t see anything obvious.
+ - Luise: Okay, if you could show the burst.
+### Update on Monthly Pull Testing
+- Moved to next week. We finished earlier than planned.
+### AOB
+- None

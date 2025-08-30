@@ -1,0 +1,151 @@
+# 2024-02-06 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1362199/
+### Introduction
+- Carles: slide 4: for Long Strip modules with wider gap - this is for LS only
+ - Luise: We’d like to do petals and staves at the same time. You don’t need working modules for cracking studies, so we can investigate these things in parallel
+- Luise: About EC TF, this will be more clear at the end of the meeting. We don’t want to clog up the module meetings with these topics.
+Vitaliy: for the review
+ - There are reviewers that would like us to combine loading and modules. 
+ - Luise: Point 1 is when we think we could contact the review office, point 3 is what we would need to actually have a review (one of the things to be discussed with the review office)
+### L4 Updates: ITSDAQ/Sensors/Documentation
+- No updates this week
+### Group Update: DESY-Z/HU
+- No questions, everyone is very happy for about five minutes
+### Test Results from Modules with Concave Powerboards
+- Luise: Comments: We should have a discussion with the other PB experts who are not connected.
+- Luise: R4 and R5 are the same powerboard; Valencia has seen a similar result for another R5, so this is common
+- Luise: These are reworked by the Freiburg workshop because of a population problem
+- Vitaliy: Comments: You see the horizontal bands (on slide 7), they resemble packet losses
+ - Cole: They look like that, but we don’t see packet loss, and the packet loss mostly happens in physics mode and this still happens in counter mode without any declaration of timeouts.
+- Vitaliy: The noise for R4 is so high, it is unphysical; would be good to look at the S-curve shapes to see what they look like - might tell us more
+- Vitaliy: When you say probing - do you mean with a multimeter? Can you check if one of the hybrids is maybe underpowered?
+ - Cole: That’s exactly the plan
+ - Vitaliy: Should be useful
+- Emily: Can’t explain the electrical test results, but the R4 AMAC current looks a lot like the pin-hole like error mode - we see the same difference between DCDC on and DCDC off, so this looks like an unwanted discussion on the strip
+ - Cole and Emily: Check offline
+- Bruce: Regarding the SEU thing: ignore them, basically
+ - Cole: Changes slightly between restarts
+ - Cole: Probably a red herring, just wanted to make sure to mention it in case it’s useful
+ - Bruce: Clock glitches would also show up as SEUs, but the internal clocks should be in sync, but you wouldn’t expect them to be the same during power-on, so you wouldn’t expect them to be the same at power-on
+- Cole: Discuss what to do next?
+ - Luise and Cole: wait until after Dennis’ talk
+### Concave Powerboard Diagnostics
+- Vitaliy: The PBs, when they were sent out to Valencia and Vancouver, they were reception-tested right?
+ - Dennis: Yes, they were tested, but the OF tests were failing. It’s mostly oscillating when it’s just being switched on. 
+ - Vitaliy: Were the PBs used on the modules? Was it happy?
+ - Luise: We saw some reception tests were failing. But we had one where the OF test passed, so we used that. There seems to be inconsistency with this test.
+ - Vitaliy: So the cap was present and had the default value?
+ - Dennis: yes, only two powerboards exist where this was changed
+ - Vitaliy: So principle, one could solder an extra cap on top right? 
+ - Dennis: no, it’s outside the shield, so relatively easy to remove - probe output of linPOL, if you see similar unstableness, remove capacitor
+ - Dennis: This could also explain module weirdness and some strange AMAC readings. Could explain a lot, but not all of it
+- Luise: Why did we not see this before? Did something change?
+ - Dennis: I don’t know. This cap is present on R3 and R2. The way the linPol is hooked up in this node is similar in the R2. I have no idea why we don’t see it on the R2.
+ - Luise: Was the on 4.1 and 4.3 versions?
+ - Dennis: Yes. Also, the [inaudible] had other weirdness, but not necessarily high noise.
+- Luise: So if we run this OF test and it fails, it’s a good indication something is wrong before we assemble a module right?
+ - Dennis: Right. I have done this test about 100 times, and it’s possible to get a run of “good” tests. This is related to sampling.
+- Luise: You said the current goes high. How high?
+ - Dennis: The voltage is too high. I think it’s 1.5-1.6 V
+ - Luise: So no danger?
+ - Dennis: (Didn’t say no, but didn’t say yes)
+- Carles: Does the PB test simulate the load of a module? So is there any chance it would pass on the carrier but fail on the module due to these oscillations?
+ - Dennis: when the OF test is run, it’s not loading the powerboard, so this particular behaviour might change between DCDC on and off
+ - Dennis: this mighty explain some things, but may not explain all of it 
+- Vitality: The dynamic nature of the linPol. This makes me think it would be good to test the PB itself with electronic load. 
+ - Dennis: The bPol output is put on load in the tester. So the bPol output is checked. It’s difficult to check for conducted noise because the amplitudes are very small and difficult to find. You need to know what to look for. No one expected the linPOl to oscillate
+- Luise: Could you tell us exactly what you changed on Carles’ module? This was modified and should have been fine. Did you change the capacitor to 10uF?
+ - Dennis: I’m not sure if the problem was in the hand-populated ones.
+ - Luise: It was high noise, with a PB peak, but nothing like what we are seeing now.
+ - Dennis: I put the cap back and the module is not coming back to life. [missed parts of the sentence]
+- Vitaliy: It might be helpful for people with new modules to check this frequency? For the modules you are playing with Dennis, did you notice any changes in the power consumption when changing the capacitor?
+ - Dennis: no, shouldn’t change and didn’t see a power consumption change
+ - Vitaliy: Okay, thanks.
+ - Dennis: This cap is on the outside of the Pi filter, so it should see barely any ripple.
+ - Vitaliy: I’m talking about the practical consequences rather than the ideal values.
+ - Dennis: module current didn’t change between tests
+- Luise: both Cole and I saw that the powerboard draws slightly more current than usual
+ - Cole: pulling 60 mA instead of the usual 50 or so
+ - Dennis: how much powered
+ - Cole: need to check
+ - Peter: The linPol is already over current, so that may explain it.
+ - Ash: Would be interesting if the condition you’re seeing depends on load - if the load goes down, does the oscillation go down?
+ - Dennis: You mean the plots on slide 7? We can definitely do this later. After the inductor though, it’s difficult to scope it.
+ - Ash: These are quite frightening. One of the things to be checked is to look at the unbonded channels to check if the input noise shows expected noise - if it is more than 400, it would come through the power rail or the return.
+ - Dennis: I have not managed to see unbonded channels. 
+ - Ash: It would be interesting to see that. 
+ - Dennis: If so, it would indicate something. I definitely want to do different load currents. This was just 2A, but this is easy to change.
+ - Ash: Halve the load and go to regulator enabled, then turn shunts on, check all of this on oscilloscope
+ - Dennis: Yes
+- Cole: Can you make a list of all of the places to probe and check?
+ - Dennis: yes, mostly in slides, will add probe points for the linPOL thing
+- Peter: Did you change the stuffing of C11? Hot zone reverse geometry
+ - Dennis: Yes, changed
+ - Peter: Can you change that back to the old part?
+ - Dennis: no, it’s under the shield box, which is really annoying
+ - Peter: I’ll ask again, can you please change it back? It’s important in this case.
+ - Dennis: Do you expect it to change bPol or linPol?
+ - Peter: I’d expect the bouncing to be a lot worse
+ - Dennis: So you’re wondering if this affects bPol. The linPol is isolated from this.
+ - Peter: linPOL is probably a separate problem
+ - Dennis: I can definitely test this on the PB tester. On a module this is more difficult.
+ - Peter: This is a strong candidate
+- Luise: [missed it typing above]: what would we expect to be better?
+ - Dennis: What you want to target [inaudible] to target the changes.
+ - Dennis: We’d expect the ripple to be better on powerboard carrier
+ - Peter - Understand it’s not the easiest to change on a module, but worth doing
+ - Dennis: I will remove the shieldbox on this one.
+- Ash: You have to change the input from something to something?
+ - Dennis: Still some other 22 uF cap in there
+ - Ash: Input capacitor keeps regulator at a specific value
+ - Dennis: It definitely needs the capacitor. It’s just the one cap that I changed. It’s likely the resonance frequency of this one capacitor that is important.
+- Peter: Does this affect if DCDC on
+ - Dennis: difficult to say, checked by powering and by using OF, can check on another powerboard which is not fixed if the output voltage is not stable
+ - Peter: The reason I’m asking is because the capacitor you are removing is pulling it to shieldbox ground rather than board ground. I wonder if the eddy currents are at play.
+ - Dennis: 100 nano does the same island it is still there
+ - Peter: Yes, but with a different frequency characteristic.
+ - Dennis: All tests done with DCDC off, there should not be eddy currents. All linpol problems shown without DCDC on
+- Craig: Has this been discussed with Stefania et al (Did I catch the right name? Perhaps he said Stefano in relation to bPol?)
+ - Dennis: Not yet, only found yesterday
+ - Peter: Do you know if the load resistance is within tolerance?
+ - Dennis: Wanted to check, would assume so, but lots of load on linPOL
+ - Peter: And the 300mA ones in the RC filter output?
+ - Dennis: Suspected that they are not correct. Increased resistors on one powerboard but didn’t fix it. Still have to check 3kOhm on 3V line
+- Luise: Is this also a concern for the barrel?
+ - Dennis: 1uF and reverse geometry only on EC.
+ - Luise: Okay, good.
+ - Dennis: This component was a precaution added to the Pi filter because we needed more filtering. That’s why it is not so much a problem to remove now, since that was used before we started using the larger inductors on the EC PBs.
+ - Craig: So the tactic of having these caps to the SB ground, that is always been the same or did it come at the same time of the inductor change?
+ - Dennis: 1 uF used to not be there at all, but there was another 10 nF capacitor there which was against the shield box, but all the vias go into the inner layer, which go to a huge ground carrying layer in the shield box.
+ - Craig: And that’s the same in the barrel?
+ - Dennis: in barrel only 10nF or even 10pF
+ - Peter: Yes, I believe the barrel fields linPol from the noisy side. It’s a completely different hookup.
+ - Dennis: Yes, it was very noisy, so I put it on the output side rather than the noisy side of the supply. At least, I don’t see the benefit of it.
+ - Peter: We haven’t noticed any instability issues.
+ - Dennis: When I remove the capacitor, there is also none
+- Luise: Dennis to continue with powerboards. Need to build an R2 module (Vancouver this week) and R3 at DESY. Do more modules help to understand the issue?
+ - Dennis: I think what helps most is to understand if this is related to the linPol or the DCDC, which causes the other three module’s high noise.
+ - Luise: And this we do by removing the capacitor?
+ - Dennis: That’s the probing before soldering. 
+ - Luise: Carles, is this possible for Valencia?
+ - Carles: Yes
+ - Luise: Dennis, do you want to get the module to Freiburg or let Carles do it?
+ - Dennis: If the next step is opening an SB, I’d prefer to do it after I check out this module. If we don’t figure out what’s happening with this particular module, then it doesn’t matter much. We have to figure out the other three modules, since this appears to be systematic. It makes more sense if the module comes to Freiburg.
+ - Luise: Sounds good.
+ - Carles: Do you want us to probe anything before?
+ - Dennis: You can probe where the blue arrows are in the slides. Would make sense to send it over before removing capacitors
+- Vitaliy: In the context of building more modules, it would probably make sense to probe different modules of different types.
+ - Dennis: Yes
+ - Dennis: It's interesting to build at least one more R2 and R3. 
+ - Vitaly: Yes since different types.
+ - Dennis: But the schematic of these parts are exactly the same for R2-R5.
+ - Vitaliy: Yeah, and perhaps this test will help.
+ - General agreement
+- Luise: does Monday 3pm still work for a dedicated meeting for this?
+ - Vitaliy: There are meetings at this time.
+ - Luise: no, that’s at 4pm CERN time.
+ - Luise: ok, lets collect results for Monday
+- Peter: R3 schematic shows 44.5uF instead of 23.1uF
+ - Dennis: Yes, because it’s two filters. They are significantly far apart as far as traces are concerned.
+### AOB
+- Nope

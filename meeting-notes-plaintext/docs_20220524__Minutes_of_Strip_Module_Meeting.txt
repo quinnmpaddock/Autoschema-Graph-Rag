@@ -1,0 +1,171 @@
+# 24/05/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1154780/
+### Introduction
+- Sergio: is there any data in database that points to failed/problems from VI?
+ - Luise: there are VI steps uploaded. Module ACs have not seen an issue recorded there
+ - Sergio: don’t know how to approach this descoping other than use the current data to show that this VI can be descopedDo you need volunteers or do we need more data?
+ - Luise: someone should have a look at the uploaded data
+ - Bart: all for descoping the VI tests. Recently in UK/China cluster we did find issues across multiple issues where wire bonds failed. We think there might be something going on with the chips. Loose the capability of tracking back issues with ASICs.
+ - Bart: it is specifically for the wire-bonding test. We should not lose the capability of getting those records.
+- Tony: also need to discuss the design of the tab
+ - Craig: once we have a producer, there should be an EDMS review
+ - Sergio: this is only for barrel and EC is fixed?
+ - Craig: that is my understanding
+ - Bart: it looks like Tony took already a lot of comments into account when making the new design we will receive soon
+- Carles: do you have an estimation when they could arrive at a volunteer side?
+ - Sergio: could get it shipped to you in <1 week
+ - Carles volunteered for testing the HV-tabs
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 24/05/2022: Barrel
+- 31/05/2022: EC
+- 07/06/2022: Barrel
+- 14/06/2022: EC
+- R1 tool production
+ - Richard on vacation
+- Powerboard testing setup roll-out
+ - Currently no progress, Freiburg working on modules for irradiation
+- EC hybrid test-panel finalisation
+ - Bug-fixed R5s are currently being produced
+- Production of R0 and R1 test frames
+ - 
+- Production of R2 test frames
+ - 
+- Production of R3, R4 and R5 test frames
+ - 
+- Production of stencils
+ - New frames sent around for evaluation, waiting for their production
+- PPB Module for April Irradiation
+ - R0 is in Freiburg and being put on the modified frame
+ - SS module will be moved to new frame with hole tomorrow and can be shipped afterwards
+- Shipping readiness (incl import procedure)
+ - Will have discussion about sensor and halfmoon distribution on Thursday
+- Single Hybrid Testing Database Implementation
+ - 
+- Hybrid Burn In Software
+ - Lots of good news
+- Single Module Test Database Implementation
+ - QT focused on making test uploads convenient no longer working on it, need to find replacement
+- Multi Module Test
+ - Lots of updates, Mo working on file format
+- Modules for Test Beam
+ - Freiburg working on R1
+### Institute Contributions
+ - 
+Next meeting: ? 
+### End-cap hybrid stencil modifications
+- Ingo: how close to the hybrid edge were they placed?
+ - Urmila: 1-2mm
+ - Peter: don’t have an actual measurement
+ - Ingo: placed them for R0 3mm away and that was not close enough
+ - Peter: photos are good representation and we didn’t see much glue seepage. But hard to evaluate with dummy hybrids
+ - Ingo: would be interesting to see with electrical sensors if the guard ring is affected or not
+ - Luise: no early breakdowns so far
+ - Pavol: dummy hybrids look more flexible than real hybrids. Should be better with real hybrids
+ - Luise: brown hybrids (slide 3) are shim material and close to real hybrids in terms of flexibility
+ - Peter: believe that they are actually electrical hybrids
+- Carles: not volunteering for designing, certainly can order in Spain (money should be discussed offline). And test the stencils. Would like to have old real R0star hybrids.
+- Pavol: would like to test more
+- Luise: if nobody else wants to do it, would know someone
+- Ingo: can provide plenty of plastic sensor dummies
+- Marc: for modifying stencils, if I can get the hole sizes etc could do it as well
+- Luise: Tynan also volunteered, if required.
+ - Marc: perfectly happy with this. Could contact me if help is required
+### BNL module test results
+- Tony: is the pattern only on the stream with hybrid or without hybrid?
+ - Craig: these are all stream 0 (under the hybrid)
+ - Tony: that this is not handling (module pick up)
+ - Craig: if you are thinking charge up of sensor surface than we would see HV dependance
+ - Vitaliy: I would like to see data to conclude that
+ - Dave: will send the data
+ - Vitaliy: cern box has data, would be better to have text files
+- Craig: previously, regions of noise from sensor depended a lot on high voltage, so that should be a good criterion
+ - Vitaliy: were dependent on HV for ABC130, for ABCstar only mildly depended
+- Luise: is there a difference between top and bottom wire-bond row in terms of noise (odd or even channels)?
+ - Utsav: didn’t look at that so far
+ - Luise: would be curious to see if there is an effect from e.g. condensation on bands that could be different for different bond rows
+- Craig: to summarise: has only been seen on short strip modules, only under hybrids, not correlated to DCDC-box, around where the AMAC sits
+ - Utsa: yes, there is no correlation where these noise peaks are
+ - Dave: with this version of DAQ we don’t know the strip order?
+ - Stefania: in contact with Bruce and Peter about the numbering
+ - Craig: still think 800-900 should be the powerboard DC/DC
+ - Dave: what’s the difference between SS and LS PPA modules 
+ - Utsav: it’s also not in every module
+ - Dave: could be condensation (suggested by Vitaliy/Peter).
+ - Could be condensation from air trapped in air bubbles
+ - Craig: trapped humidity should turn on at different temperature??? But temperature at -10 would be chiller temperature and could correspond to 0 degrees on module, so it could fit
+ - Craig: we see it turning on at -10C, so should be ~0C on the glue layer?
+ - Vitaliy: why are you attracted to 0C? It should be dry air
+ - Craig: thinking if there are bubbles in glue with humidity and a 10C difference between chuck and module
+ - Vitaliy: at least with our modules, we tuned the glue locations to avoid bubbles at SCIPP
+- Craig: what’s happening on stream 0, slide 14, looks like problems at chip edges?
+ - Utsav: maybe bounce back from unbonded channels
+ - Dave: probably ground bounds from unbonded channels - charge has to go somewhere
+ - sdds
+- Vitaliy: did you rerun the strobe delay before testing at cold temperatures?
+ - Utsdav: yes we did
+ - Vitaliy: would be good to check the S-curves for one of the noisy channels
+ - Utsav: should be available on the CENbox
+ - Vitaliy: earlier in talk you commented on reverse coil location. In my mind the orientation was stable unless for 2 special modules
+ - Craig: orientation was consistent within a powerboard batch, but not between batches
+ - Vitaliy: for 2 special modules, the coil orientation mattered to reduce the noise bumps
+ - Craig: PPA1 modules were the bad way round. PP2 modules were correct orientation (maybe)?
+ - Vitaliy: at face value, PP2 modules and Frank-modules had same orientation?
+ - Craig: there was also a layout change
+- Luise: was any of the glue baked out before using it?
+ - Dave: not here
+ - Vitaliy: don’t think for this batch
+ - Gerrit: not by us
+ - Luise: should look into correlation between baked out and not baked out glue
+ - Gerrit: used same stash of glue for all modules (other US sites as well)
+ - Gerrit: need to figure out what is going on here, especially with regards to the upcoming reviews (very soon)
+ - Dave: going to test the condensation theory
+- Ash: one of the confusing things is inconsistency of parts: different powerboards, different coil orientations etc, makes it difficult to disentangle
+ - Craig: LS and SS from PPA is identical stuff
+ - Ash: should be better going forward, where all modules will be built the same way, need those results to understand things better
+ - Craig: noise under stream 0 doesn’t seem associated with DCDC converter
+ - Ash: we know that the bPol switches faster at lower temperatures, but doesn’t make sense that they are randomly distributed
+ - Craig: current hypothesis: something from the assembly
+ - Dave: it is obviously something correlated with gluing since you don’t see it in the away strips. There also seems to be a difference between the sites building the module
+ - Andy: can you find out the glue heights and masses for those?
+ - Dave: ours are thinner
+ - Andy: do you have the data from the metrology
+ - Gerrit: all results in database, from there can deduce gap. Glue amount is more difficult because gluing two hybrids at same time
+ - Tony: any inconsistency should be in the powerboard
+ - Andy: that would suggest it’s not the glue gap and mass?
+ - Tony: on hybrids, it would be hard. Only on points away from ASICs, where there is no glue support and the hybrids are bend. Powerboard is highly twisted.
+ - Andy: is there any chance this is cause by thermal cycling?
+ - Dave: it only shows up when you go cold, so you have to thermal cycle it
+ - Craig: do you have any module that is not thermally cycled but are on a stave
+ - Dave: these modules are not on a stave
+ - Craig: in some way we thought that module thermal cycling can be more stressful than thermal cycling on stave
+- Luise: do you only see this high noise in channels covered by the powerboard?
+ - Dave: yes, we do see peaks where there is no powerboard
+ - Craig: think if my numbering is correct, leftmost peak (slide 17) is in channels not under the powerboard
+- Luise: did you do visual inspection of the glue after thermal cycling if there is anything visible?
+ - Stefania: yes, and it looked the same to me
+- Dave: will be interesting to see what happens when other groups start thermal cycling
+- Sergio: did you respect 2 degrees per minute or did you go faster? 30 minutes for 75 degrees, so about 2.5 degrees per minute
+- Andy: do you see these peaks at the first time you test cold?
+ - Utsav: yes
+- Vitaliy: could this be affected by the glue not curing completely until irradiation?
+ - Do you remember dose for complete curing?
+ - Luise: no, bu can look it up
+ - Vitaliy: could look it up and X-ray the module to cure the uncured glue in the module to see if that helps: “radiation cures everything”
+ - Dave: source being used for Ganfets right now, could try
+### PPA sensor reception and HV tabbing experience
+- Luise: would be good to use the damaged sensors for PPA modules. For R5 storing them and testing after 1 month sounds good. If they still fail afterwards, return them
+ - Vitaliy: what do you want the sensor QC sites to do then?
+ - Luise: apply recovery methods
+ - Vitaliy: don’t think the QC sites have the bandwidth to do this, while also doing sensor QC
+ - Vitaliy: interesting to see that two sensors show the same breakdown
+ - Carles: they were both also tested in the probe station
+- Vitaliy: for the edge issue: this should not happen in production, we should reject sensors with that level of defect
+- Bart: recommend to bake out the sensors: 160 degrees for at least 16 hours
+ - If sensors can be recovered, this will recover them
+### Glue study plans
+- Luise: not going to go through the entire talk. Need volunteers to help with glue studies.
+ 
+### AOB
+-

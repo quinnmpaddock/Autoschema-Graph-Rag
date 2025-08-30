@@ -1,0 +1,158 @@
+# 22/11/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1191865/
+### Introduction
+Slide 4
+- Tony: what does try mean?
+ - Luise: put an HCC on a bondable surface and then cross the bonds that would usually be straight. Then look how easy it is to change the bonds
+- Dennis: we had already crossed wirebonds in EC modules
+ - William: for Celestica they will just charge a bit more money for making this change
+- Forest: don’t see what pads need crossing in the link, just assuming its two adjacent bonds. It should be much trouble to do
+ - Dennis: it is the short side towards the hybrid
+ - Forest: if I can get a map, I would volunteer to swap it
+ - Ashley: when we get the opportunity, we will have a look at Liverpool. Will get a diagram send out.
+ - Ashley: people don’t necessarily see the crossing as an issue and for barrel we have a large number of hybrids in house.
+ - Sven: for EC there are no production hybrids, so the layout could be changed. While for barrel we already have a large quantity of hybrids in hand.
+ - Dennis: yes, but there are more flavours
+ - Luise; this is currently still under discussion
+ - Ashley: would need a date for decision (before Christmas) since we need to start getting hybrids populated
+- Dennis: if you need the swap-over, you need different HCC register settings
+ - Ashley: to adjust the dealy?
+ - Dennis: yes
+Slide 5
+- Ian: if you receive a part and it fails reception, do you upload the data to the previous stage?
+ - Luise: yes, we will make sure this is possible
+Slide 6
+- Andy: I don’t think the UK/China cluster has any LS sensors
+- Sandra: LBNL could potentially build one
+ - Tony: it’s about the timescale
+ - Sandra: we don’t have X-hybrids ready, but can build them very fast
+ - Sandra: ASICs have been delivered
+ - Sandra: have true blue, but don’t have SE4445 but it is on order
+ - Gabriella: did you ask BNL?
+ - Luise: we shipped a bunch to SCIPP
+ - Tony: yes, if we have to components we can get this done
+ - Tony: it is all possible
+ - Sandra: if I can get the SE4445 we can do it
+ - Sandra: I have some LS sensors as well
+- Gabriella: are the UK modules already been shipped?
+ - Luise: no
+ - Gabriella: Sandra, can you receive them? Are you affected by the strikes?
+ - Sandra: no
+- Luise: can the UK start the process?
+ - Andy: nobody from UK that can do this is in meeting, but can organise it
+- Theo: how many prototype modules have been tested for cold noise?
+ - Luise: very few?
+ - Tony: 35
+ - Andy: on staves
+ - Theo: and none showed cold noise?
+ - Tony: one at Birmingham shows cold noise
+ - Theo: still have 2 prototype modules which we could test
+ - Tony: but they did test modules on stave to ~-35C
+ - Luise; if prototypes don’t have cold noise, it could tell us which change causes the cold noise
+ - Ashley: there is something that did change and Peter P. is following this up: strip bias capacitors have been removed
+ - Luise: if this is the cause, it is difficult to fix?
+ - Ashley: no, it is easy to ask the assembly house to fit them
+ - Ashley: if the prototype modules do have the capacitors, test them and if they don’t have cold noise, remove the capacitors and re-do the test to see if there is a change
+ - Ashley: we know that when the capacitors were removed there was a change in noise
+ - Andy: were they taken off for EC as well?
+ - Ashley: yes, that was done to allow precision current measurement through AMAC
+ - Tony: if you send us a picture where they are, we could try to retrofit them
+ - Ashley: Peter is already looking into this, but I can provide info about that
+Slide 8
+- Carles: agrees to start with polaris
+- Andy: do you expect the cold noise to be the same for all EC module types
+ - Luise: R2, R4/R5 are more like LS modules
+ - Andy: and it would not be something based on gap between hybrid and powerboard…
+ - Luise: can’t increase statistics right now due to limited number of parts. Hybrids and Powerboards.
+ - Theo: you don’t build R3 because of parts?
+ - Luise: we will build R3 as soon as the first institute that can build them is qualified
+- Tony: if there going to be guidance about glue mixing?
+ - Luise: yes, but it needs some more testing
+- Tony: heated vs not-heated pre-cure?
+ - Luise: wait for UK to see if one of the two options has more cold noise in already assembled UK institutes
+ - Luise: heated pre-cure has some advantages (glas transition temperature, easier to handle). Unless cold noise is worse for this, that would be the preferred option
+ - Andy: expect results ready by Thursday for this
+ - Andy: room temperature curing: 70-75 min for true blue
+- Ingo: in slides mention at which point to change stages and which tests are at which stage. Will this be reflected there?
+ - Luise: (shares flow diagram) It is kind of already in there
+ - Ingo: but the diagram does not say which site should set the stage to where
+ - Andy: and when a module is at a loading site, it should only be marked as such after all tests in the “Finished Module” stage is passed
+ - Andy: maybe change the name to reflect this
+### Institute Contributions
+Toronto
+- Luise: regarding the test frame, you moved a module to the new test frame?
+ - William: we moved one module to a V1.2 testframe but can’t bias the sensor, the other module was mosed to V1.3 frame
+ - Luise: would be good to send these results to the module list
+- Carles: (slide 8) you mention that you put the plexiglass inbetwee. Please remember that it becomes conductive at a certain voltage
+- Carles (slide 2) don’t have final numbers in hand, but some numbers should be different
+ - William: yes, forgot to add them yesterday
+Next week: Lund
+### Sensor failures during module reception
+- Luise: we don’t have a good compilation of reception test IVs. What is worrying are the sensors without visible marks that fail reception. We need to understand this
+- Forest: looks like there are cases where debris disappears in following pictures. When we pull sensors out, we try to keep the sensors in the same orientation and when we see dust/debris we try to blow it off as not to put it back into the envelope (including the sheets)
+ - Stephanie: yes, we do this and we also keep track of which side of the cards are used
+- William: we are starting to look at these, but it will take some time to do the test of all the sensors we have received
+- Luise: we will try to use the current shipment to compile the data for the sensor community
+- Michael: for VI that we have done, there is debris but most of it gets off. It looks light/shiny but I don’t know where it comes from. Sensor edge?
+ - Andy: would the dash not be fairly deep to affect the sensor through the passivation
+ - Tony: and it needs to be at the right location
+ - Andy: not have seen many issues in UK
+ - Gerrit: very easy to damage the oxide on these sensors, very easy to damage them
+ - Andy: would scratches on the surface cause the early breakdowns?
+ - Gerrit: edge is the most sensitive, unsure what these would cause, a lot of sensors start behaving weird
+ - Luise: for now, the most important thing is to collect statistics and we know that batches behave differently
+- Andy: so these were tested at Vancouver, send to CERN and returned and then they failed
+ - Luise: yes
+ - Andy: could the debris/damage be from the reception site?
+ - Luise: could, but the boxes were not opened before they have been returned 
+ - Luise; they were kept in dry storage for a while, but did not recover
+ - Gerrit (even though Carles was called): some look like metal slivers, which is worrying. 
+ - Gerrit: something else to check: inside of envelope, see if debris collects there
+- Carles: what was used to take the IVs (test frames?). You could maybe get some from the plastic sheets. Putting sensors on test frames and back into envelopes is a lot of handling
+ - Luise: should be safe, they were tested on same sensor QC setup. 
+ - Carles: so it is more gentle to the sensors. But if you introduce the pink foam, you will be more exposed to catching dir
+### Summary of hybrid flex cleaning in Toronto
+- Ingo: what you are talking on slide 2 is before cleaning?
+ - William: yes
+- Forest: jigwash is probably the best cleaner for all contamination that I have seen. 
+ - Guess for why they didn’t see any improvement: some ionic contamination that doesn’t easily come off
+- Forest: in past, had a lot of issues with barrel hybrids but it has improved with experience. Had some instances where one side has passed hybrids while they failed at our site, so decided to do general cleaning for everything and it made a huge difference.
+ - Some solution should be found for cleaning either at Celestica or UoT
+- Luise: (slide 3) it looks like they tried a lot of things. Do they need a combination of things?
+ - Forest: don’t know what Vigon is, but my impression is that jigwash is a detergent that can remove water-soluable things. Also don’t know their method
+ - William: they used an Ultrasonic bath; and Vigon is Zestron
+ - Sandra: this is what we do: safewash, toothbrush and rinse
+ - Sandra: toothbrush needs to be soft to not damage the hybrid
+- Kirsten: what does Freiburd to for cleaning?
+ - Uli: clean with Zestron. Have used toothbrush at times, but normally use ultrasonic bath first with Zestron, then with water. Afterwards blow-dry
+ - Sandra: think about building something for the blow-drying
+ - Luise: ideally need to find a combination of things to see which work
+- Luise: also need to look at aging of surfaces make bonding worse
+ - Gerrit: could you define old?
+ - William: >1 year
+ - Gerrit: but it is ENIG with gold, that should be fine. Only organic contamination from normal air would be an issue.
+ - William: Celestica did some tests and found that the gold thickness is within specification
+ - Gerrit: washing has to be done in a controlled way: bath has to be cleaned all the time and re-cleaned, otherwise you just re-contaminate. That’s why cleaning individually is not good
+- Tony: in bond document you look for cleanliness, bond parameters and surface quality. Are there pull-tests from other sites for comparison?
+ - William: yes (slide 5)
+ - Tony: then this would mean the material is good and the base material is not the issue (only cleanliness)
+ - 
+### (barrel) Powerboard Bonding Issues
+Slide :
+- Kirsten: see suction cup marks all the time, no amount of cleaning solves it, McMaster description says it’s not non-marking
+ - Kirsten: when marks are observed, get Q-tip with acetone and swipe the pad, that helps with bonding
+ - Kirsten: helps if you avoid the suction cup area
+ - Sven: it’s also in the center of the the ring
+- Gerrit: that true blue module has too much glue
+ - Sven: no, doesn’t have too much glue, it’s just being pushed out by the powerboard shape
+ - Gerrit: suction cups are bad, because contaminant actually outgasses out of the suction cups, got new suction cups, and they have the same issue
+ - Gerrit: it’s a problem, because we don’t have a replacement for these suction cups, currently resorting to acetone
+ - Gerrit: when loading modules on a stave, all modules received from elsewhere exhibit this problem, makes it difficult to bond them, requires cleaning of bond pads with acetone
+- Ingo: are we worried about these cups being made from vinyl?
+ - Gerrit: tested all of these, vinyl were the worst
+- Andy: this is deposition from the pick-up tool and not transfer of debri?
+ - Gerrit: yes. Cleaning of the tool does not seem to help
+Start ageing tests of hybrids and modules
+### AOB
+Please have a look at spreadsheet:
+https://docs.google.com/spreadsheets/d/1sSEB_VRWsBqrSCVbS5qogU0YjNTa4Nm1Ym0IvTKlQPI/edit#gid=0

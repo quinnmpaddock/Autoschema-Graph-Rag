@@ -1,0 +1,134 @@
+# 2024-10-01 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1457260/
+### Introduction
+Presenter: Luise Poley
+- Bart (sl. 3): For the ASICs for future staves, what do you want to know from the clusters?
+ - Luise: For the first few staves, there is the question of the non-pre-irradiated Cat A ASICs. We are trying to locate them and working with Jaya John. Are these first staves for the rFDR?
+ - Luise: Also includes SS for December. This is for the first modules post rFDR.
+ - Bart: I would then request we store ASICs, Cat A and B and then decide. I could see this helping prevent delays due to shipping.
+ - Luise: That may come out of the discussion next week. Just wait til next week.
+ - Bart: Okay, I’m just getting a tad nervous.
+ - Luise: We won’t postpone this too long.
+ - Bart: The distribution of ASICs shouldn’t matter too much.
+ - Luise: Understood.
+ - Gerrit: We fully agree with Bart.
+- Sven (sl. 7): We aren’t the only one using this glue in the DB. It might be good to not remove them, but just add those entries in addition to what we have.
+ - Luise: yes, I would label them as “True Blue Relevant” or something. But point taken. 
+- Tony (sl. 8): For the shipping notifications, we are finding many shipments that are not accepted after quite some time. Is there a way to poke recipients as a database request or should we be checking the completeness ourselves?
+ - Luise: This has been added to the list of reporting, and should be asked (again) to the DB experts.
+- Vitaliy: For the near term SE4445 shipments, soon means when?
+ - Luise: Order was placed two weeks ago, so they should arrive this week or next and be sent out soon. They should go to Vancouver first, but I don’t know.
+ - Vitaliy: If it’s possible to check on the destinations, that would be great.
+ - Luise: Bernd takes care of those.
+### L4 Updates
+#### Publications
+- See Hannah’s Minutes contribution
+### QCD: descope retesting after three months
+- violent, albeit quiet agreement
+### Group Update: LBNL & SCIPP
+Presenter: Yoshi Fujikake
+- Luise: For the R32 register you showed, it looks like before you used the value for xHCC, and now it’s for uncrossed HCCs (slide 8). The two on the right are for xHCC, but the 1 you replaced nearby is odd.
+ - Alex: I’m not sure why it works, but it should be crossed.
+ - Luise: It would be good to check, it is surprising that it works.
+- William: We had some where bonds weren’t crossed, and it worked. But we’ve also seen this with crossed bonds.
+ - Luise: We should follow up on this, as it’s surprising why this works.
+ - Forest: I can confirm wirebonds are crossed.
+- Cole: regarding ITSDAQ branch: you switched to this branch because for IV scans, ITSDAQ tried to read AMAC IDs from the chips which caused timeout problems. This has been observed for some endcap modules as well, so please be aware this could be a problem, please check and report
+ - Tony: I think we’re running a lot of the barrel stability tests. Are there any plots of the summary? We have seen that they are really stable. That way 
+ - Cole: there is a qualification task done by Judith Kull working on this and yes, the data is very boring, because not much is happening, HV stability seems to be good
+ - Tony: could she share the data she has?
+ - Cole: we will share it
+- Forest: For the wirebonds, we found some of the chips had glue not really reaching the FE far enough. So we saw a similar failure pattern to what Archa showed a few weeks back where consistently a few bonds inwards of the chips showed issue. The solution was to run a bead of UV epoxy and cure it.
+ - Gerrit: But it should never happen. The glue pattern should be shifted, and needs to be closer to the edge of the chip, that’s why we use a slightly too high amount of glue everywhere to ensure proper support. We find we need to adjust glue patterns to make sure we have enough support
+ - Luise: could you show what you find to make sure everyone is aware of where adjustments are needed?
+ - Gerrit: have not adjusted anything yet
+ - Tony: On staves
+ - Gerrit: No, on modules
+ - Tony: But the problem is from module to Core.
+ - Gerrit: No, it is on test panels. I agree with you that it gets much worse when it all happens on the stave.
+ - Tony: We bond modules to frame all the time and saw no issue in performance, just on stave.
+ - Gerrit: I looked at modules yesterday, and there is more bounce than in the past. And glue patterns are likely the result. Since everything is super critical, you have to check the gluing patterns after interposing
+ - Luise: Thanks for bringing this up. If you find a good solution, let us know.
+ - Gerrit: will do.
+### Eight Surprising Problems with R3 Modules at Testbeam - The Fifth One Will Surprise You!
+Presenter: Lennart Huth
+- Luise: When you say R3 pre-irradiated, does this mean irradiated sensors?
+ - Lennart: Sorry, I mean it has not been irradiated yet.
+- Cole: thanks, this
+- Luise: You also had this R3 module with irradiated sensors, did that break?
+ - Lennart: Yes, but John is around. I think that’s the R3 you see on the slide 
+ - John: There were two, and one broke. The one on slide 10 is the one that survived.
+ - Luise: And one has mystery high noise?
+ - John: That’s right 
+ - Lennart: LHS is a little bit higher noise. We need to make sure it’s our setup and not something systematic 
+ - Luise: Has this one been tested in the DESY CB already?
+ - Lennart: not yet
+ - Luise: Great if you can put both in coldbox and see what they do over the next two weeks, then we talk again 
+ - Lennart: The CB is currently occupied, but it’s on my agenda. I would like to wait for another module so we can do them both at once. Agreed though, we need to figure this out.
+ - Luise: OK
+- Luise: For debugging – have you shared actual ROOT files of the data taken with the experts? Usually can tell if it’s a timing issue or something else 
+ - Lennart: You mean the ones at high threshold (slide 11)?
+ - Luise: yes
+ - Lennart: Not yet, but I’m going to draft an email to summarize the issues.
+ - Luise: Very much appreciated. I guess we’ll wait for the update 
+- William: Do you happen to know the color of the testframe?
+ - Lennart: Foam was pinkish.
+ - William: The frame itself.
+ - Lennart: need to check 
+ - William: We’ve seen differences in the grounding of the metal under the sensor on the left side. There are three different versions of this frame. We haven’t seen any problems in the CB, but I wonder if that is a problem when the module is vertical.
+ - Lennart: Don't have a number here, but can look it up
+ - William: I saw something recently that might have had strange ground, but I should check. 
+ - Lennart: I’ll let you know.
+ - William: thanks 
+- Lennart (in the chat): Ingo was so kind to check: It is a red module frame
+### QT Update: Module Bow
+Presenter: Jakub Bucko
+- Cole: impressive to see you could 3D print a vacuum jig
+- Bart: Please send me an email so I have your email address so I can update you on a similar study. We’ve done extensive studies of the bow on the testframe, so we can discuss offline if you like.
+ - Jakub: OK 
+- Vitaliy: could you include measurement points on ASICs and hybrids, please? (it seems like it is currently only on sensors, it would be nice to have them on ASICs and hybrids and the powerboard, too) 
+ - Jakub: I do want to include points on the flexes. Do you mean on the chips?
+ - Vitaliy: I think both the flexes and the ASICs.
+ - Jakub: should be possible
+ - Vitaliy: I think that might be useful. Hybrids aren’t as flat, but the reason for the question is that it may be useful to know if there is a permanent deformation on other parts of the module. In principle, if you can look at the different effects simultaneously, that would be helpful.
+ - Jakub: yes, can do
+- Luise: When you say you go to +40C, this is unpowered? Are you just increasing the temp?
+ - Jakub: [missed it]
+ - Luise: That’s great and what we were hoping for. I was wondering if you could do a round unpowered. Do +30C on the chuck, unpowered, see if that deforms it, then do it powered and check again.
+ - Jakub: I’m not fully sure what you mean.
+ - Luise: [repeats above]
+ - Jakub: Okay.
+ - Luise: We know that when it gets too warm, and you heat the chuck too much, it deforms and it would be good to see how this works together.
+### Tracking Interposed Modules in the Database
+Presenter: Luise Poley
+- No response to whether everyone was fine using batches for interposers
+- Gerrit: So the batches seem to be the proper way of doing this. Manual updating of a lot of components needed? What does that mean?
+ - Luise: It means you will have a lot of HV-tabbed sensors at BNL that already in batches already, right? 
+ - Gerrit: That’s a batch. So in principle the scripts I use (Sven’s?), you just run a script on this and it will fix things right?
+ - Luise: If you consider that very little work, it’s not a disadvantage. It means you need to get the serial number of modules that have been interposed and run the script on them 
+ - Gerrit: Okay, good. Thanks!
+- Tony: It seems like the batch is the way to go so it’s easier to collect things.
+ - Luise: Yes
+- Bart: Once this batch business is settled, can we get rid of laboriously adding interposeres to the hybrids? 
+ - Luise: That is the next question. We could do the same for hybrids since they go in batches well.
+ - Bart: That would be lovely! 
+ - Luise: Right?! It’s almost like we thought this through 
+ - Bart: This is good! (lots of happy comments) Who is interested in non-interposed modules?
+ - Luise: Independent of how you feel about endcap non-interposed modules, we still need to show the yield comparison for the review office 
+ - Bart: Okay
+- Luise: Slide 13. Any arguments to the next bullet point?
+ - No objections!
+- Jaya John: This sounds like a good way to identify hybrids with Cat B ASICs. On another topic, for batches to mark interposers, you know that it is limited to 1000 items. I think we will have more than 1k. 
+ - Luise: I wasn’t aware of that. I thought we had a request to not limit them. There was also a plan to have production batches with more granularity (eg production-2025, production-2026)... We should follow up on that. 
+- Vitaliy: Do you have suggested batch names? Or will this be decided later?
+ - Luise: For which batches? Interposers?
+ - Vitaliy: Interposer batches 
+ - Luise: We would add an “i” in the front for “Interposers”
+ - Vitaliy: OK 
+ - Luise: There are still two things to follow up on with the DB developers. I would say give us a week or two to finalize this proposal. 
+ - Vitaliy: Okay.
+ - Luise: Yes, please don’t update now!
+- Tony: We’re trying to check against the inventory tools. But I want to make sure we don’t wipe out anything.
+ - Luise: Yes, we’ve just added PPC. Noted! 
+### AOB
+- None

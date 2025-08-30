@@ -1,0 +1,141 @@
+# 13/06/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289843/
+### Introduction
+Slide 3
+- Andy: is it clear what inputs are needed, e.g. compared to barrel?
+ - Luise: fairly clear (no cold noise) and agreed on with Review Office
+Slide 4
+- William: is this going to be similar to the cold noise task force or more of a comity
+ - Andy: they are open meetings, but first meeting was a selected group
+ - Andy: meetings are on indico and open
+Slide 6
+- Craig: to confirm when you mean leave the AMAC powered, is this also for the DCDC?
+ - Luise: thought it was DCDC off
+ - Craig: when DCDC is off, that is the largest temperature gradient
+ - Luise: OK, leave the DCDC on
+- Carles: how many of these things are already implemented in software, and which need to be done manually?
+ - Luise: there will be a cold jig update later today, maybe discuss it there
+ - Carles: if things are not there, should we do them manually to continue?
+ - Luise: depends on what is already there, and it depends on what you can do in your lab
+ - Carles: and slow turn-on of hybrids, is this implemented?
+ - Luise: think it’s not there
+- William: there are people sitting there that are experts, and others sitting there that are not. If we don’t have automation, we might need to stop cold cycling.
+ - Luise: to be discussed later
+Slide 9
+- No objections about peli case shipments
+Slide 10
+- Bruce: is this not what the comments field is for?
+ - Luise; the comments field is used also for other things
+ - Carles: would prefer to only use one field
+ - Luise: not all groups use the comments field
+ - Sadia: if comments is used, this is also used in the hybrid summary field
+ - Kenny: could also use flags, so only certain options are available
+ - Bruce: have tried to avoid this because it restricts the kinds of reasons that could be used for failures, which is open ended for visual inspection
+- Luise: looks like this proposal is rejected.
+Slide 11
+- Tony: thinks this is great, still need the UK for the sensors. X hybrids seem to be OK. Forgot the powerboard pickup tools (discussed also with Zhicai about only attaching shield boxes)
+- Bart: have the numbers, but surprised that we haven’t submitted them already
+- Bart: will send them
+- Carles: will groups use parts that are available?
+- Tony: have a problem with the Y hybrids, need to think about what to do here
+- Carles: need to think about dummy parts
+- Tony: will discuss this; need to ask about the sensors and the powerboards
+- Carles: will the UK also stick to the option of dummy parts?
+- Bart: would like to use real parts as much as possible
+Slide 12
+- William: we are making R3s in next week or two and we have offered Freiburg to replace our bottom parts ourselves. 
+ - Uli: will check
+ - William: yes, that would be good. If we can get a bottom as soon as possible, that would be nice
+ - Luise: yours is a special case for fast tracking. We are trying to get it done
+Slide 13
+- Tony: we are working on this, but are running into time-out issues. Are there instructions?
+ - Ben: are you using the GUI?
+ - Bruce: can you report on what you are trying to do and what you are seeing
+ - Tony: will do this. We see time-out errors (e.g. when running 6 panels)
+ - Luise: would be good to send it to the burn-in list so that everyone is informed
+### ITSDAQ news
+Slide 
+- Tony: there was the statement about the physics mode, is this fixed?
+ - Cole: it’s still under investigation to understand what it is causing
+ - Tony: what should we do?
+ - Cole: for now, if you see issues please report them back (including the status dump)
+ - Peter: as far as I am aware, this all comes down to timing and using the correct config files. Don’t think there is anything broken in firmware
+ - Cole: agree that it looks like a setting failure and we are sitting at the edge of the configuration
+ - Tony: but we are doing testbeam data. Not sure why we see this when running 6 panels
+ - Bruce: we need information about which configs you are using. Plese contact the experts (slide 4)
+- Luise: would it be worth showing what we do for the EC?
+ - Peter: maybe by then someone has done it already
+ - Luise; if what I am doing is correct (Peter, Bruce?), then can report on this
+ - Peter: what we have in our cold box is working, but we need to look further into this and then we will provide a standard config file that will be available in ITSDAQ software
+ - Bruce: can we do this on the ITSDAQ experts list please so that all experts are involved
+### Institute Contributions: 
+Next meeting: Dortmund
+### Barrel module PRR follow-ups
+- Tony: is there a status on the magnet test?
+ - Matt: no change, have prioritized module going to CERN
+ - Tony: but the magnet is ready now?
+ - Matt: it is ready, but the person to turn it on has to travel to here, so not completely easy
+### ColdJig update
+Slide 17
+- Peter: reference in cycle to -550 is misleading and should be -350V
+ - Bruce: similarly, was considering splitting the IV off from the test
+ - Ankush: yes, will do this
+ - Cole: for the cold turn on, do we shunted and unshunted back-to-back?
+ - Luise: thought we would do it in the next cycle to reduce the time, but back-to-back would also be possible. Depends which is preferred and good to save time
+Slide 21
+- Luise: about how to change procedure and documentation; we were discussing this in module meetings, then send a summary to the mail lists and change the procedure. We thought this would be sufficient, but could find a different method.
+ - Ankush: sometimes there have been comments (e.g. the recent HV cycling between temperature cycles); as long as we have an official procedure that we follow, this is good
+ - Luise: we all hope there will be no more changes
+Slide 17
+- Tony: this is useful. For tests that we are doing right now, could you provide a list about what is implemented/available?
+- Ankush: can make a version of what is currently available
+- Tony: e.g. additional information about how to do things (e.g. the HV cycling) and also point to code?
+ - Ankush: the code should only be in the master branch (and maybe at some point in a python library)
+ - Tony: master branch is not being developed? So all the code in master branch is working?
+ - Ankush: yes, we’re strict about it: only working things go into master
+ - Abraham in chat: https://gitlab.cern.ch/ColdJigDCS/coldjiglib2
+ - Ankush: and I also inform about releases in MatterMost
+ - Tony: maybe also add release info in Coles slides (backup)
+Slide 13
+- William: slide 13: have reported issues with the R3 module on ports higher than 0. Is this related to the number of AMACs?
+ - Dennis: fairly certain this is a version issue
+ - Dennis: Cole might also know how this works
+ - Peter in chat: e->ConfigureVariable(10049,0xffff)
+ - Dennis: but this only works if you only test R3 module, not mixed
+ - Peter: then need to know what the things would be for production?
+ - Dennis: for production we don’t need to worry about this
+ - William: when will this start?
+ - Dennis: it is related to the test frame
+ - Need the new test frames - will be fixed on new frames
+- William: with things not being automated, when will the automation be ready and how long should we stop testing modules until this is solved?
+ - Luise: for all, we have seen issues with R3 (high temperature)
+ - Peter: the main focus is to parallelize AMAC IVs. Still waiting for access to test this. Then will ask other groups to test this. Once this is confirmed, will be merged. After that will work on HV raming (earliest end of next week).
+ - William: was my next question: we always have to ramp each module individually, but we need this automated
+ - Peter: think I know what is going wrong and how to fix it
+ - Luise: need something to check the module temperature and have something that will turn it off if the temperature is going too high
+ - William: will discuss this further
+Slide 
+- Luise: would it be possible to include cold noise channels as defect into the ITSDAQ defect list?
+ - Bruce: what is cold noise channel:
+ - Luise: depends on warm-cold measurement ratio
+ - Bruce: think this should be possible
+### Hybrid Summary Test
+- Luise: for every assembled hybrid this test would be run in future and then the summary would be uploaded, so that this can be used for easier checking hybrids.
+ - Luise: it would be good that all hybrid sites could check this since they will have to use it
+- Sven: is there a pass/fail criteria in you summary test?
+ - Sadia: if a crucial test is failed or something is missing
+ - Luise: something to think about and maybe re-visit in the future
+- Luise: what is the current plan?
+ - Sadia: would recommend for groups to try this
+ - Sven: without the script being on git, we might need another source of the script
+ - Luise: is it already set up in the database?
+ - Sadia: yes
+- William: did we ever have hybrids with broken ASICs?
+ - Sadia: have not seen this,
+ - Tony: saw one
+ - William: did you go ahead and test it?
+- Sven: is an ASIC that can’t be read out also added to the broken ASIC test?
+ - Sadia: no
+ - Sadia: the script checks looks into the metrology test and if a chip is missing, it does this
+### AOB
+- —

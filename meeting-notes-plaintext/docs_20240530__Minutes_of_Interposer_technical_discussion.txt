@@ -1,0 +1,70 @@
+# 2024-05-30 - Minutes of Interposer technical discussion
+https://indico.cern.ch/event/1420622/
+### Introduction
+- Follow-ups from last week:
+- SCIPP: tests for low coverage
+- Tom: glass bead usage 
+- Tom: instructions for powerboard alignment
+- Loading sites: plenty of expired SE4445, which is probably still good to use
+ - Viscosity change observed, i.e. problematic for dispensing methods relying on viscosity
+ - SE4445 found to be usable even three years after expiration, if components are mixed well
+ - Question from Vitaliy: Source? 
+ - Luise: loading sites gave input. They do see viscosity changes.
+ - Vitaliy: Is there a study with this data
+ - Luise: Yes. No proper study, hope we can do one
+#### US Updates:
+- Anne: continuing interposing single powerboard effort
+ - Investigating options to maintain holes in powerboards to be used for alignment
+ - Luise: any news from Amtech discussions?
+ - Anne: getting quotes from Amtech to get the SMD populated arrays out of Amtech, then need to sort out process on LBL side
+#### UK/C Updates:
+Contribution from Karol Krizka
+- Karol: do we think the glue oozing out is a problem?
+ - Luise: we don’t quite know - would be good to know if it impacts adhesion to True Blue, and we don’t know what happens if it goes onto the sensor - SE4445 on the sensor causes early breakdown, but we don’t know if that is the glue or if the oozing out can cause the same problem
+ - Sandra: Tom has seen something similar, it oozes out, but he usually just cleans it up - it’s easy to remove (the glue)
+ - Sven: did you see the residue only on the interposer or also on the flex?
+ - Sandra: only on the interposer
+- Follow up: does SE4445 residue on bond pads a cause bonding problems,
+- Follow up: does SE4445 residue on interposer cause adhesion problems
+- Aluminum plates too soft on the book press?
+ - Karol: Need custom centre inserts anyway
+ - Bart: significant impact on cost
+- Bart: RAL continuing at pace (see update from Tuesday), 
+ - Liverpool also continuing tests
+ - Birmingham shown today
+ - shear/peel tests need glue mixer (outgassing) to prevent variability in results, hoping to get mixer like Dennis’
+#### End-cap Updates:
+- Luise: use design for R0, R3 hybrids?
+ - Ben: working on making these designs as well
+ - Pete: excellent, if you have stencil designs, we can try
+ - Ben: dxf okay?
+ - Pete: perfect
+#### Database setup:
+- Theo: interposer child is a dummy or a real object?
+ - Luise: Populate with a dummy, in future attach to arrays anyway
+- No objections against starting like that and refine further when needed
+#### Any other Business
+- Karol: has anyone checked what happens if you try to attach True Blue to SE4445 without an additional interposer?
+ - Anne: they just didn’t stick very well
+ - Karol: we tried to just attach a blob of SE4445 to a blob of True Blue and they stuck like normal
+ - Tom: we stenciled SE4445 onto True Blue and the SE4445 basically just contracted - no wetting, surface tension was terrible
+ - Karol: we used big blobs, so different situation
+ - Tom: don’t have a picture, but wouldn’t be hard to recreate
+- Bart: glass beads used successfully in US in other contexts but UK doesn’t have this context, would be nice to see the application where it was used in-detector successfully to resolve argument where UK doesn’t see necessity
+ - Tom: we’ve been using it extensively on pixels, there is a presentation from SLAC, will dig that up
+ - Bart: that would be amazing! Would be good to see for which applications it is useful
+- Luise: residue affecting adhesion or bondability- anyone planning to look into these?
+ - Bart: willing but has to come out of something else. Should solve this with the engineering of process
+ - Sandra: what kind of test proposing? Deliberately make samples with contamination?
+ - Luise: yes put SE4445 on bond pads
+ - Tom: cover bond pads, pull SE4445 off them, then wirebond (worst case)
+ - Luise: put around bond pads then let creep, but more reliably put directly on bond pads as long as can clean off the SE4445 itself
+ - Kirsten: can we agree on whether to clean the pad or not?
+ - Kirsten: If doesn’t bond, clean with IPA and try again
+ - Luise: Second step of the test
+ - LBL will do these tests
+- Bart: suggest topical meeting. SE4445 behavior- adhesion to different surfaces, pressure required different for Al, kapton
+ - Luise: after ITk week specific meeting for adhesion
+- Bart: need to agree on a QA/QC programme
+ - Luise: discussion at ITk Week
+Next Interposer meeting will be a topical meeting: surface preparation and adhesion

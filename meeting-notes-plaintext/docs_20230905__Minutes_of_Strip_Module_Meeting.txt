@@ -1,0 +1,142 @@
+# 05/09/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289855/
+### Introduction
+Slide 2
+- Vitaliy volunteered to bring a module to ITk week
+Slide 3
+- Ingo: were discussing also lowest possible temperature and ramping rate
+ - Luise: remember that Dave showed a plot about the stave cycling and it was very similar to modules
+ - Ingo: temperatures and gradient would be good to know
+ - Luise: will pass it forward to task force
+Slide 4
+- Ingo: at time of simulation we had a backup of harder glue at corners of module. Might be something to check with simulations if that could help
+ - Luise: is currently on list of things to check, but loading community does not want to use 2 glues
+ - Ingo: at least a full pattern with SE4445 showed good in past simulations, that might work as well
+- Ingo: if you fill pattern in old simulations it showed that straight lines are not good. Better to break them
+ - Vitaliy: gap filling would extend the coverage
+ - Ingo: any straight-ish lines along the lattice was increasing stress. Wobbly lines or dots were fine
+ - Tony: that is not what we see in the simulations right now
+ - Tony: currently max stress is between powerboard and hybrids
+- Tony: module assembly on hold means what we already agreed on before?
+ - Luise: yes
+Slide 8
+- Carles: have people been already assigned for the different flavours of powerboard stencils?
+- Luise: yes
+### ITSDAQ news
+- No update today
+### QT report: Check for unbonded channels
+Slide 
+- Luise: in past there was a discussion to do this test on the wire-bonder. For most module types the normal classification is fine, but not if they have very short strips. This test is important for R1 and SS modules.
+And this test can be used after shipping to test for unbonded bonds
+- Luise: was the plan to have this as a macro in ITSDAQ and produce a json file that can be uploaded?
+ - James: yes
+### Update on HCC delay settings
+Slide …
+- Ingo: temperature is this die or environment temperature?
+ - Paul: believe it is chuck temperature
+Slide: Combined
+- William: understand temperature dependance. We did explore 2, 3, 4 as delays, but we found that same version of hybrid behaves differently (all at room temperature)
+ - Paul: that might indicate that you are near an edge and see process variation
+ - William: so you say we should be at the centre of a green square, which is where we started but then got told to choose something slightly different
+ - Paul: we want to be able to pick values and use the same values consistently, but this is unlikely to work
+ - William: but its the same hybrid layout. Does the wire-bond variation and process variation make the difference?
+ - Paul: yes
+- Bruce: this is for the ABC Delay, it’s not just the HCC, it’s process variations for all ABCs and the HCC
+ - William: we can change a setting in the ABCs as well?
+ - Paul: no, there is no control in the ABCs
+ - Paul: have to be careful about what we mean: ABCstar delays is what ASIC designers call input delays
+ - Paul: there are changes in the HCC that change the reception delay from ABC channels, and there are delays that change several things at once
+ - Since we’re changing all ABC values synchronously, convolution of all individual ASICs as well
+Last slide
+- Luise: is there something you want from the module community?
+ - Bruce: expects a digital test that was written in the past
+ - Bruce: would be good to run those test
+ - Luise; have done so and compared against good settings that can be used to run chips and there were differences between the results
+ - Bruce: would be good to get the results and find out why it did not work
+ - Paul: Bruce, in your test you also involve additional things that make me nervous. These additional things are not “orthogonal” 
+ - Paul: would be good to sit together and come up with a procedure for the scans that does as good of a job at isolation as possible and do them in the correct sequence
+- Luise: what should people do that want to test their parts but they don’t work. Could you recommend some settings that work? Do they need to change the input delay settings?
+ - Paul: yes. We can pick a scan at this point and run that. While it may not be optimal, it should get working results for now
+- William: is there a prescription on what to do? Do we run it on top of autoconfig?
+ - Bruce: do you mean reading the default configuration?
+ - Luise: that and finding good settings
+ - Bruce: it changes the LDO voltage which potentially changes the time, and should not cause delays
+ - Peter: we have settings that are hard coded in autoconfig (for barrel) and vast majority should work.
+ - Luise: we also did these tests at hybrid panels and have seen that hybrids did not work there while they work on a module
+ - Peter: hybrids are hotter in burn-in, so you would expect the distribution to be skewed. There should be a distribution that should work in these conditions (while modules run much colder)
+ - Luise: how do we get to this point? Just run the digital scan?
+ - Bruce: the current digital scan should not change anything and just turns them back (think all bugs are fixed)
+ - Bruce: and believe order of tests is set up correct with each scan being a 1D scan. It does not try to set anything
+- Peter: correct phase depends on ITSDAQ phase setting. Believe there is a hardcoded reset. First thing to confirm is that o-phase is set to 0. Then compare plots and they should be the same
+ - Luise: that was done for the shown plots
+ - Peter: reset of O-phase is not yet in merged, but should be there soon
+### QT report: uploading module test data
+Slide 
+- Luise: there are new tests: H0 and H1 tests did not exist in the past. Did you just declare them?
+ - Hao: when we want to create the summary, we just check all the tests of the modules (and associated hybrids)
+ - The labels are not random, they are actually from the tests
+ - Luise: tests still get uploaded to the hybrids and you just link them here?
+ - Hao: yes
+- William: this NO test still fails/always fails. Will we get NO tests at some point that don’t fail?
+ - Cole: this is unrelated
+ - Hao: this is also something that we can easily see with the summary test
+- Luise: people need to try this and then provide feedback before they can tell you anything
+- Luise: with regards the run-numbers, it might be necessary to combine different run-numbers is e.g. ITSDAQ crashes
+ - Hao: we normally don’t make the run numbers in the test
+ - Hao: currently we strictly make the number of tests shown in the summary based on a single run number. But we could also make this flexible if there are multiple run numbers for the same test
+- Matt: is there any leaning on single test summary compared to all test summary? I think all test summary might be easier to get an overview. Would propose to support only one version
+ - Luise: to me, it looks nice to have this general overview and link everything to there
+ - Matt: we are happy to keep doing this, or just remove properties (leave them blank)
+ - Matt: what is the way forward? merge this into production database scripts and send an email?
+- Vitaliy: trying to understand how this is related to Mo’s script.
+ - Matt: think it is similar, but think Mo’s script is making a list of all tests, not necessary doing the linking like this test
+ - Bruce: there will also be different things doing similar things. Mo’s script does merging for burn-in (should be uploaded) and does a summary.
+ - Bruce: Mo’s script also merges hybrid data into modules for cold test setup. We should decide on a way. The module summary test then should also look at the cold jig test
+ - Vitaliy: that was my question. The summary (for multiple tests) should be done in the right way (e.g. tests done at different temperatures).
+ - Bruce: that is what the summary test should be
+ - Luise: future coldjig tests will have the environment data merged into the test data
+ - Vitaliy: if you need to read the test to get the data, that would require some additional work
+ - Bruce: definitely prefers the all test summary, including cold jig and all information
+ - Luise: should this test merge individual cold tests or all test data from thermal cycling combined?
+ - Vitaliy: would be helpful to have more structure here
+ - Matt: thought about the structure. Could also use objects to do this, then testruns and visualisation don’t work so well
+ - Luise: but in the future the merged test data should also be uploaded (similar to burn in merged files) so could link to those in the future
+ - Matt: one of the properties we thought about was the temperature (e.g. from getting this directly through filtering test runs)
+ - Vitaliy: cycle number might also be good
+ - Luise: do you mean split warm and cold tests from thermal cycling?
+- Luise: looks like implementation for full test could be done. Might be worth setting this up for modules now so that people can test this and then cold cycle test summary comes later.
+### Cold Jig Update
+Slide 13
+- Luise: merging script does not necessarily need the stability test. Could just upload the IV test and the stabilisation test without merging. That should not stop things from being uploaded
+Slide 14
+- Tony: so you say the 12th July version has the IV scans in it?
+ - Ankush: doesn’t mean if you do it, it’ll run the IV scan - it will ask ITSDAQ to run the IV scan
+ - Tony: so the version we have with test runs will be unshunted?
+- Tony: for the merging, basically this was not our experience. We had to edit the files to get it working
+ - Jacob: had to use the control panel because merging wasn’t working
+ - Jacob: can’t do it for cold jig data that are split between different runs
+ - Tony: data as currently produced doesn’t seem to be merged by the merging script
+ - Vitaliy: run number which was supposed to be obtained from Influx wasn’t actually there - still needs to be made more robust
+ - Tony: happy to test and provide feedback
+- Tony: how to run IV tests and cycle at the same time, it’s impossible to combine with manual cycling?
+ - Luise: why is it impossible to go cold, run an IV and then run the cold test?
+ - Tony: you would have to go to the temperatures, run the IVs, run the cycle, then manually run the IV again
+ - Unsure if IV tests are being handed over correctly
+ - Luise: as long as you can do the sequence
+- Luise: Ankush, you said that you can get the cold jig to tell ITSDAQ to run an IV. 
+ - Ankush: coldjig will just tell ITSDAQ to just run the IV. My understanding is that the IV macro is not ready?
+ - Luise: AMAC IV macro is ready. Is it ready for multiple modules?
+ - Peter: there is an experimental branch <volume not good enough to understand him>
+ - Peter: think Karol has made a development branch but it is not using a good wrapper. Need to tidy this up.
+ - Peter: the AMAC IV is monitored by the tests so we know at which point of the cycles the modules fail
+ - Luise: is coldjig just telling ITSDAQ to run the IV?
+ - Peter: yes
+ - Luise: so it sounds like this is almost ready
+ - Peter: still needs debugging
+ - Peter: have a setup here to confirm it works
+ - Luise: would it help if we get feedback from someone else?
+ - Peter: need to get feedback from Karol since he made the script
+- Luise: aim to have discussion at module session during ITk week.
+### Endcap Module Metrology: R0-R5. Preliminary analysis before PRR [postponed]
+### AOB
+-

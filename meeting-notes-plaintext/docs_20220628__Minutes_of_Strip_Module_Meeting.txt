@@ -1,0 +1,87 @@
+# 28/06/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1154785/
+### Introduction
+- Everyone is shocked and no one has comments
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 28/06/2022: Barrel
+- 05/07/2022: EC
+- 12/07/2022: Barrel
+- 19/07/2022: EC
+- Powerboard bending studies
+ - No one connected
+### Institute Contributions
+- NBI
+ - postponed
+- RAL
+ - Nobody connected
+Next week: NBI and RAL?
+### Update to channel classification criteria
+- Luise: (final table for cuts) not sure if we can propose absolute cuts for EC noise/gain. Need test data for all module types. Good to look into this, but too early to make final cuts.
+ - Jacob: unbonded cut was very large in ITSDAQ
+ - Luise: if normal criteria are applied, powerboard peaks are not caught. If these peaks are not flagged as high noise, isn’t this then an OK channel?
+ - Jacob: depends on how a good channel is defined. Would those peaks be accepted?
+ - Luise: maybe need module specific cuts (for type)? Would ITSDAQ support this?
+ - Jacob: can do this from inside the config. Was under the impression we only want a single set of cuts for all modules.
+ - Luise: don’t know if we need this, but might have to
+ - Vitaliy: we had this feature when the work started, but conclusion was that we can’t flag outside channels otherwise modules would fail. It’s harder to identify a peak if it is broad, which would require a special algorithm. Could certainly implement a hard high noise cut, but identifying the peak would require extra work
+ - Luise: I think Bruce was concerned about an interactive algorithm in ITSDAQ
+ - Bruce: in principle we can do different criteria for different hybrids/modules
+ - Luise: would an iterative process a problem? Finding a baseline for the module and then identifying deviations?
+ - Bruce: that is what it is doing at the moment. Parameters for that might need adjustment. It excludes individual channels and peaks to a certain degree. Excluding peaks would be a possibility, but not sure if it would be useful
+ - Vitaliy: there are several ways of identifying peaks
+ - Luise: with the cold noise issues, it would be good to identify where the peaks are (not just from the powerboard)
+ - Vitaliy: cold noise peaks are also not as smooth, so would be good to look at that
+ - Jacob: (shows a cold noise plot after analysis) it does catch high noise channels for a cold noise module, but not necessarily the channels close to baseline
+ - Luise: this is done with the iterative algorithm?
+ - Jacob: yes
+ - Luise: shows that this method is good to find local features. Would be good to use this
+ - William: with proper powerboard design would be get rid of the peaks? And if there are still peaks, we would have to accept modules with those peaks
+ - Jacob: see a similar feature that is not based on powerboard
+ - William: but when classifying a module, we need to be able to accept known peaks in the powerboard region
+ - Luise: with new powerboards and correct coil orientation, the peaks should disappear. And if there is an issue with the powerboard, we want to find this.
+ - Luise: what would be the next step?
+ - Jacob: look into RMS cuts and make choices that would not affect end strips with higher noise (due to glue) and apply a second cut after iterative process to catch channels with very high noise
+ - Luise: would it be possible to tune to a known peak for a particular module type and then use a module geometry specific cut?
+ - Vitaliy: next step for what?
+ - Luise: the RMS based cut. Finding a good cut for barrel module that can be translated to EC modules
+ - Vitaliy: broad peaks would not necessarily be found with better cuts. If you want to find peaks better, need a better algorithm for the peak finding.For EC modules, cuts need to be tuned with data
+ - Luise: could also use a baseline value for cuts
+- Vitaliy: would be nice to identify a person to look into EC data. Jacob would be available to help, but someone else should learn the methods and look into other module types.
+ - Luise: we are discussing 2 QT tasks which are more related to cold box, but could look into this as well
+- Luise: the broad peak might be a good test case for any future analysis to find this feature
+- Bruce: should I pull the new cuts into ITSDAQ?
+ - Luise: with barrel being at a point this point that would be good
+### Summary of June testbeam at DESY
+- Luise: thank you to everyone who helped with this.
+- Vitaliy: looks like noise was a bit high on slide 4 compared to lab based setup?
+ - Jiri: have noise occupancy on slide 14 with R2 being slightly worse
+ - Vitaliy: for future would be good to keep track of noise of module in beam and also to keep track of annealing at all steps
+ - Jiri: for grounding, we have limited abilities in terms of grounding in test beam hall
+ - Vitaliy: would be nice to have an assessment to know how much worse the noise in the test beam system is
+ - Luise: R2 when testing in lab is ~800ENC, but could bring it down to 700ENC when using ideal conditions. Need to look into figuring out how to reduce noise in testbeam
+ - 
+- SS module: Bart to discuss it in UK meeting
+- R2: should be PPB - Prague or Vancouver. Vancouver could to it, but Prague might want to test their own module in testbeam. Will discuss internally in Prague and also depending on timescale (August or September)
+ - Luise: should be for August
+ - Jiri: August testbeam would be R2 and SS
+ - Jiri: will discuss internally
+ - Luise: if we want pre-irradiated chips for those modules, would need to do pre-irradiation in Prague, but not a requirement
+ - Jiri: not necessary for test-beam.
+ - Jiri: if collaboration thinks we need pre-irradiated chipt, we could do it
+ - Luise: don’t think it will be interested for this
+ - Jiri: R2 and SS from pre-irradiated sensors though, so no further irradiation of module
+- Jiri: if we want another irradiation at IRRAD, should book it now
+ - Luise: would be good, especially when we want to change the glue
+ - Jiri: should send some notes to me and I can make an official application
+### AOB
+- Luise: people who have empty gel packs should send them to Penn, for chip re-distribution of HCCs
+ - William: we have some empty gel-packs and will send them to Penn
+- William: with one ASIC yesterday we had a chip melting the VDD bond wire. Were replaced and melted again. Looked at hybrid for shorts and anything else. Has anyone else seen anything like this?
+ - Luise: is this an ASIC problem or with this particular hybrid flex? If it is an ASIC problem, should be shown there. And if this is a flex issue, should be shipped to Freiburg for further testing
+ - Gerrit: if something like this happens, would probably have to toss the component
+ - Uli: could we worth to risk one ASIC and replace it to see if it was a feature of the hybrid or the ASIC.
+ - Ashley: do we know if it is a power rail that is fused?
+ - William: problem is with pad in middle of ABC called AVDD
+ - Ashley: sounds like an analogue regulator output. Would be good to check the hybrid for a short

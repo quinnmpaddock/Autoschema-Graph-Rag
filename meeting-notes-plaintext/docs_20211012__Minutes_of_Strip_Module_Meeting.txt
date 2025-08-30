@@ -1,0 +1,68 @@
+# 12/10/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1082611/
+### Introduction
+- 
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R2�EC glass dummy sensors
+- EC PPA/prototype hybrid order
+- Endcap module thermal cycling setup
+- Hybrid crate setup, finalisation and roll-out
+- EC multiple module box transport box
+- SMD tendering for barrel pre-production/production hybrids
+- 
+### End-cap test frame use for IV curves
+- Where are these pads?
+ - In corners of frame, for sensor/module IV without powerboard
+ - Pink foam will disturb the bonds when attached, so need to be careful
+- William: pink foam on hybrid test panel are very close to hybrid/bondpads
+ - Because foam is pressing on tabs, there is no other way
+ - William: do we want the the foam to press on tabs? Might need a template to help with the screwing
+ - Marc: there are some additional holes in test panel and plexiglas to help with alignment
+ - William: will have to look into developing a tool to do the hybrid panel assembly
+- Jonas: what about pushing on areas of hybrids that have no sensitive bits?
+ - Close to ASIC backside, not recommended
+- Karola: what about shipping sensors with HV bonds?
+ - Dennis: can custom-make foam for this case → yes please for Toronto
+ - Jonas: probably also for Upsala
+- Jonas: when can we get module test frames?
+ - Dennis: send email to Freiburg to ask for them
+- Ashley: who does brass inserts?
+ - Dennis: population done in house for this batch. For production should be done by responsible institute.
+- Is there a plan to have the 1MOhm on the frames?
+ - Dennis: depending on how institutes do it during pre-production, will need feedback
+ - Craig: worried about having to choose correct cable when switching between sensor and module testing
+ - Dennis: not sure if it is a problem if it is in series for the module testing, since there is already a 10MOhm resistor, but need to be aware of the voltage loss in the resistorWould only be an issue with the single module test setup, not with the coldbox
+### Pull testing document discussion
+- Simon: has anyone struggled to get the 30Degrees
+ - Karola: it was hard to show in the pictures that +/-2 is hard to prove
+ - Simon: should be able to get something acceptable without tricks; it’s all about trust and good feedback
+- Gerit: Forest, in your experience how far is the angle influenced by different wedges (e.g. new wedge)?
+ - Forest: haven’t looked into it, but my feeling is that it doesn’t change; certainly haven’t seen any noticeable variations between wedges used so far
+- Tony: if we target a correct value, the uncertainties will add to it, so we should monitor it
+ - Forest: should be good to periodically take pictures
+- Bart: Why don’t we have to do this during production? Could do it at end of life of a wedge.
+ - Tony: need to get some experience to get a handle on it
+- Bart: have experienced some variability in Chicorel cards lately
+ - Forest: realities of life; only burned through one pack of cards in years and they were goodThis is a good example why we can’t say that parameters stay always the same.
+ - Kirsten: shipped cards to Scandinavia and US; tested before shipment and they were good
+ - Bart: some new cards from manufacturer were also bad
+ - Tony: looks like there is something wrong with the standard candle at the moment; at some point everyone should be able to pull 11/12g otherwise this would indicate the parameters or something else is wrong
+ - Bart: don’t assume at the moment that the Cicorel cards are the best 
+ - Tony: cicorel cards and sensors should be best, other objects should show less pull strength due to how they are produced
+ - Bart: sensor is a very good indicator
+ - Gerit: should not move away from Cicorel, since this is used by Hesse
+ - Tony: for SQ people should move on to sensors if they are waiting for good cicorel cards
+- Forest: can we all agree to go back to +/-2 Degrees?
+ - Bart: agrees
+ - Gerit: agrees
+ - Forest: agrees
+ - Simon: agrees
+ - William: didn’t object to 5Degrees, will talk with company that does the bonding
+ - Marc: 2 Degrees are fine
+ - How strict are we with pictures not being perfectly perpendicular
+- Forest: in some pictures have seen reflection of look on substrate -> picture angledGroups should try to get it as good as possible
+Decision: changing angle variation back to +/-2 Degrees
+### AOB
+- no

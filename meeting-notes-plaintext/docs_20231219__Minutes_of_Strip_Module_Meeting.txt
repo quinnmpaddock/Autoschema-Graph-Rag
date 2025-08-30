@@ -1,0 +1,79 @@
+# 2023-12-19 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1348479/
+### Introduction
+- No questions
+### News from ITSDAQ/News from Sensors
+- No questions
+### Summary of the Recent Testbeam Campaign
+- Luise: Were you able to collect data from the R0 before it broke or did it kill the data taking?
+ - Yajun: It was very noisy
+ - John: It was noisy, but we did take data for it.
+ - Luise: Mostly, we need to know if you need a new R0 with an irradiated sensor.
+ - John: We will have a go at analyzing the data first, but it seems likely.
+ - Luise: Just let us know.
+- Luise: For the R3, it seems you have a desync issue. Will you have to run another campaign for this?
+ - Yajun: Until we can fully reconstruct the desynched data, we don’t know, but probably yes.
+ - Luise: (Expressed great appreciation to the TB people.)
+- Carles: Are you sure these wirebonds broke at TB and not during transport?
+ - Yajun: checked wires before we installed it in the cold box, checked, then used it in cold box and wires broke
+ - Carles: How much worse is the setup in terms of temperature gradient (for the wirebonds)?
+ - Yajun: temperature gradient in testbeam cold box is about cooling by 60 degrees in 30 minutes
+ - Carles: Not bad (for the rate). It’s not clear why the TB box is worse than the TC box.
+ - Ingo: but it gets much colder
+ - Sergio: and it’s much less controlled: gradient is much steeper initially and then stabilizes later on
+- William: With the 14 R3s we built, a few of our wires to the frame broke. It might be cooling, but it can be many things.
+- Vitaliy: break in R0: looks like it split the sensor in two pieces - did you notice any early signs during earlier tests? (high current, sections of low noise)
+ - Yajun: No, I do not think we did. We were monitoring the current and it looked reasonable for us.
+ - Vitaliy: what was the current?
+ - Yajun: At 500V, it was around 330 uA.
+ - Vitaliy: That's cold, right?
+ - Yajun: but irradiated
+ - Vitaliy: Yes. But you are talking about the cold tests right?
+ - Yajun: Yes, -45C.
+ - Vitaliy: And you performed an IV scan?
+ - Yajun: No
+ - Vitaliy: you said you monitor the current - do you have a grafana display or something?
+ - Yajun: No, we did not have that.
+- Cole: there are several things coming out of this campaign which need to be highlighted for the next testbeam: should have IVs, monitoring, need to solve desynchronisation, need IVs
+- Vitaliy: would be good to do a post mortem
+### R4/R5 Modules: Wider Gap?
+- Sergio: I was wondering if we could do more of these wirebonding tests. Perhaps some rejected PB flexes to test with cores for practice? Otherwise, we’ll have very low statistics. (Lots of talk along these lines)
+ - Luise: There are a few rejected flexes, but we need to split these up with all of the tests we want to do with rejected objects. One is the pin adjustment. We will check with Freiburg, but we need to be careful how we use them.
+- Sergio: We need to check this with both the R4 and R5 right?
+ - Luise: They are very very similar. So the R4 alone should be fine.
+ - Sergio: But maybe we should try as many as we can 
+ - Luise: Sure
+- Carles: For the second point in slide 7. To make it clear, are you buying the sleeves and then trying them? Then find equivalent sleeves for Europe?
+ - Luise: I want to try the vacuum pattern issue first, then we will buy a set. If there is a problem, we will buy some and distribute them.
+- Sergio: The vacuum shouldn’t be a problem right? There should be enough room.
+ - Luise: There may be a problem with the edge. We should check it out.
+ - Ingo: It’s also the grooves which could pose a problem.
+- Vitaliy: Regarding the sleeves. Ours were made in-house by LBL (Tom Johnson). In case this helps
+ - Luise: sounds good
+### AMAC Readings: How Many is Too Many?
+- Luise: it would be good to test the threshold for throwing off the VBD algorithm - maybe pick a curve with early breakdown and add random modifications and find a good threshold for where it throws off the algorithm
+ - Cole: good idea, will look into it
+- Alex: for our cold box, takes about 40 minutes to go down (for four modules), so it is pretty significant, so it would be very helpful to reduce it
+- Alex: slide 3: these times seem long
+ - Cole: that’s because of the mandatory wait time of 10 V for 10 s, that’s what dominates it
+ - Alex: wasn’t there a discussion to reduce the time to 10V per second?
+ - Cole: yes, being investigated is not so cheap, needs further discussion next year
+ - Alex: sounds good
+- Alex: is there a place in the code where this can be changed so that other people can test it as well?
+ - Cole: yes, can’t be changed in the GUI, but can be changed in the code
+- Tony: it’s a good idea, but it will probably need adjusting the breakdown mechanism calculation so that it’s more robust for the AMAC
+ - Vitaliy: just to confirm: we do believe the algorithm needs to be tuned for cold data anyway and need to tune it
+### Outcomes of Module PRR
+- Sergio (Slide 24): Our simulation team is in direct contact with the reviewers. I think it’s not properly explained by us how the simulation is being done. This solid model is used in parts of the simulation. This is probably something less relevant than it may seem in the report. 
+ - Luise: That’s a pattern for some of these recommendations. Some of these are things we are already doing.
+- Bart (slide 3): Did we not agree that “all” mitigations should be employed to get enough head room?
+ - Luise: The headroom discussion is ongoing. We know from simulation that changing to Hysol and changing the pattern gives us a 50% reduction in the stress, which alone may buy us enough headroom. So this implies we will probably not need to combine all of the mitigations, but just a small subset.
+ - Bart: You mentioned the gap for LS modules. Is that a change or is this quite trivial that it’s not considered a change?
+ - Luise: It’s trivial, sorry for the confusion. If we can say that we are making small changes, then we will try for that. This way we don’t need to redo tooling, retrain people, etc.
+ - Bart: For the UK China cluster, the tools are on hold until we know the final design (so we don’t have to rework them). 
+ - Luise: Yes, if we can start with the existing tool sets, we can ..
+ - Bart: This can cause problems. It leaves us more room for things to go wrong.
+ - Luise: It’s tricky, but allowing some sites to start earlier can be very advantageous.
+- Sergio: (Thanks Luise for slides)
+### AOB
+None

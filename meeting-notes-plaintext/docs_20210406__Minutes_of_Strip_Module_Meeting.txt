@@ -1,0 +1,104 @@
+# 06/04/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1008269/ 
+### Introduction
+- Several procedural docs became ready for review, will open up on EDSM these days
+- Next Module meeting will be DB focussed, please send requests for content
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R2 tool production
+ - Parts coming available, more slowly than we would like due to covid
+ - Components from Freiburg have arrived
+- US hybrid/module tool production
+ - Re-machined tooling expected back next week
+- US powerboard tool production
+ - No news
+- Barrel hybrid tendering/order
+ - No news
+- Endcap module thermal cycling setup
+ - Slow progress due to covid
+ - In production of cooling piping currently, all material present
+ - Still no order for the jigs that will go out, central workshop is delayed heavily
+ - Slow but some progress also on carpentry department
+ - We continue to push, specially for the external jigs
+- UK/China module thermal cycling setup
+ - Electronics: pi-plates arrived
+ - All parts in hand
+ - S/W going ahead
+- EC hybrid test-panel finalisation
+ - No news
+ - Waiting for first hybrids being tested on the panels
+- Production of bonding and testing jigs
+ - Some details were recently confirmed by Oskar via email
+ - Expect delivery in less than 2 month
+- Production of R2 test frames
+ - R2 Hybrid is installed on frame, test imminent
+ - Dennis will prepare a twiki summarising the testing status
+- Production of stencils
+ - See talk
+- Production of LED bars for the EC
+ - Tynan updated designs on EDMS
+ - Need review
+- Supply of miscellaneous EC tool common items
+ - Zeuthen parts were sent
+ - Freiburg components were brought to workshop, R0 tools finalisation imminent
+ - Task can be closed!
+- Production of module frame cover
+ - Not called?
+- EC PPA/prototype powerboard order
+ - No update yet
+### Endcap Stencil Test
+- Looks very good
+- We will test with the next tools coming available (R1), then next week we see and likely pull the trigger on production
+- Issue with bubbles?
+ - None in the later tests, some bubbles present when beginning the dev, but practise made them go away
+### Visual Inspection Setups
+- Can you iterate on the purpose again?
+ - Fast and reliable alternative to microscope-stitching
+ - At RAL for reception documentation of all received modules
+- How big is the field of view?
+ - Will eat all modules, likely also hybrid panels
+- You can improve by focus stacking software, but open issue is change of magnification when changing focus
+ - Would be a great thing for a summer student maybe
+ - Parallelity between camera focus plane and module is tricky
+ - With a good lens (nifty fifty) one can get everything into the depth of focus
+ - However planarity between cam and module brings certain areas out of focus
+- There might be a risk of people relying on the photo and not doing a proper visual inspection with a microscope
+ - Might be less risky to take pics with a mobile, then not too much detail, so HAVE to check with microscope
+ - We should be able to trust our sites to do the required visual inspection steps, there will be check lists
+ - discussion...
+- Having these pics would make it easier to find out where a potential damage happened and avoid it in future
+### Barrel Powerboard Gluing Tool Update
+- The method shown would be implemented in PPA to get the bent PBs more flat
+- Tool for PB prod is made which should reduce bendyness in PPB PBs
+- Hints in the past that field leakage from PB to sensor is related quite strongly to height. If we have flatter PBs in PPB, we might find higher noise… will see and cross that bridge when we get there
+- Is glue pattern stencil planned to be updated?
+ - No, we see no need
+- Where did coverage requirement come from?
+ - Thermal simulations
+ - Those simulations might not be precise enough to argue for stencil design change
+ - Only important thing is the board not shutting down due to overheating
+- The sensor in current layout already has large temperature gradient if glue layer under power board gets changed, gradient could get even worse
+- More glue under DCDC could increase gradient because more heat might get transferred into sensor
+- For pre-prod A coverage sufficient to prevent thermal runaway
+- Other things under investigation (like linpol performance) might have bigger impact
+- Warpage that might take us out of spec should only be a problem in pre-prod A and we might want to account for it in the QC specs (aka allowing more wiggle room during that time - NOT as a change in the document, just explaining this to the community)
+- If we are worried about temperature gradients we should measure it, have equipment in hand to do so
+- Dry air flow might change temperature significantly due to convection inside shield box
+- Conclusion: 
+ - we have a way forward for pre-prod A, sites might have to manually bend the boards according to the photos shown by Thomas
+ - Less warpage in new version should mitigate the problem for pre-prod B and production
+- A tool to control that bending better (simple stop or even controlled bend radius) would probably be called for (3D printer?)
+### Hybrid glue specs/requirements (Might move to QA/QC Meeting)
+- The current glue specs already define the upper bound as “flexible”:
+ - The minimum glue amount per hybrid calculated from the tolerance band (N_ABCStar times (4.20+/-0.25) + N_HCCStar times (1.5+/-0.1)) will be seen as a binding criteria in the QC. More glue than the maximum amount calculated from the tolerance band is not recommended, but if the chips are bondable to the hybrid without adjustment to the bonding program, this will be tolerated.
+- We should work to this spec and report issues with these specs in this meeting. All the experience collected during prototyping, PPA and PPB will be used to update the specs for production. This is one of the reasons for spending this amount of time and money on it :)
+- Vitaliy shares a slide:
+- Sarah comments that the candian experience is based on FR4 dummy hybrids, so there needs to be some added grain of salt wrt the the precision of the results
+- Sarah comments also that the tendency in the groups seems to be going more in the direction of better coverage (away from 5 separate dots and in the direction of more coverage), but being on the upper edge as central value has the danger to actually cause bad leakage
+- Changing specs now seems like a bad idea
+ - Craig explains how the glue weight bounds were obtained, is pretty well motivated
+### AOB
+- Review process for site qualification has begun
+ - Sites: please take this up and collect the material to get qualified
+ - Reviewers: please respond to supplied material quickly

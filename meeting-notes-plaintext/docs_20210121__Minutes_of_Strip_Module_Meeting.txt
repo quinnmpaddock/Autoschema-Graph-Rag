@@ -1,0 +1,38 @@
+# 05/01/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/986072/ 
+### Introduction
+- None
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R2 tools
+- Barrel US tools
+- EC hybrid orders
+ - Postponed to next week
+- EC cold box
+- UK/Cn cold box
+- US cold box
+ - Relevant US folks still on break
+ - Small snag with coolant piping, solved by BNL tech (home grown swagelok connectors)
+- Soft/Firmware
+ - Not discussed still, need to figure what the task really is…
+- EC Hybrid panel covers
+- Hybrid crate setup
+- R2 test frames Prod
+ - Waiting for ok from Freiburg
+- UK Powerboard tool prod
+ - All in Liv just need vac cups inserted
+- Production of the common jigs required in the EC Urgent
+- Production of stencils for the EC Urgent
+### LBNL Module Testing Results
+- We failed to take notes this week due to lively discussion...
+### Sensor bow measurements
+- We failed to take notes this week due to lively discussion...
+### Sensor glue volume tolerance
+- We failed to take notes this week due to lively discussion...
+### HV-tabbing studies
+- Next week
+### Metrology and Electrical Test at IHEP (next week?)
+- Next week
+### AOB
+- None

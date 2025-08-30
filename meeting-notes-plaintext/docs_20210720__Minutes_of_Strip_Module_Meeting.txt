@@ -1,0 +1,42 @@
+# 20/07/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1054922/
+### Introduction
+- For assembly SQ, people can use prototype tools if they can show the correct assembly procedure and that the assembled parts are within specification
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R2 tool production
+- R4 tool production
+- R5 tool production
+- EC PPA/prototype hybrid order
+- Shipping readiness (incl import procedure)
+- Barrel hybrid tendering/order
+- EC hybrids/powerboard tendering
+- US module thermal cycling setup
+- Production of bonding and testing jigs
+- Production of R0 and R1 test frames
+- Production of R2 test frames
+- Production of R3, R4 and R5 test frames
+- Production of stencils
+ - Will be shipped as soon as parts are ready
+- Production of LED bars
+- 
+### Planning for first tool-built EC modules
+- Would it be good to have a time ordered list and remind people 1 week in advance that items should arrive/be shipped?
+ - Yes, will try to find an old spreadsheet and update it
+- Some items are “lost” in shipping, especially if items are meant to arrive in time
+ - Not sure how to solve this
+ - Try to ship items as soon as they are available
+- Do powerboards also need to be shipped via CERN?
+ - Should be possible to ship them directly from Germany to Canada
+### Automatic Module Glue Deposition
+- Did you check flatness of plate for robot? Could cause uneven glue distribution?
+ - Haven’t seen this.
+ - More important that the jig is horizontal, since the module jig defines the flatness
+ - RAL has almost identical system, have not seen any issues either
+- Glue volume control not done mathematically, but by test?
+ - Do pre-dispensing on glass; watch volume to drop an if it is within target, do glue dispensing
+ - Look into how to improve this, especially because of changes in glue over time
+ - Even with manual dispensing, don’t recall to have done it better than 10%
+### AOB
+- Luise: talked about what to order from Andover, have attached quote for the correct Polaris (including pre-heating)

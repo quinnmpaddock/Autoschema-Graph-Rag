@@ -1,0 +1,119 @@
+# 14/06/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1154783/
+### Introduction
+- Document review
+ - Electrical tests
+ - Module SQ overview document
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 14/06/2022: Barrel
+- 21/06/2022: EC
+- 28/06/2022: Barrel
+- 05/07/2022: EC
+- R1 tool production
+ - No commentsCarles: all tools produced, organise swap with sites
+- Powerboard testing setup roll-out
+ - No updates for today
+- Endcap module thermal cycling setup
+ - Special meeting for EC cold boxes (hands-on sessions)
+- EC hybrid test-panel finalisation
+ - 
+- Production of R0 and R1 test frames
+ - 
+- Production of R2 test frames
+ - 
+- Production of R3, R4 and R5 test frames
+ - R3: first indications at 2 sites seem to show that noise issue is related to powerboard, not module frame
+- Production of stencils
+ - Freiburg stencils tested and needed rework (frame); dowel holes are not large enough and slightly misplacedRe-machining not feasible
+ - Stencils also miss extra glue dots for additional glue
+ - New frames produced in prague, waiting for new stencils to be assembled
+ - (Uli prepare slides for next week)
+ - Vancouver has started with re-design of stencil, put order in for first prototypes already
+ - William: good results with current stencils, do we need to use the new stencils for the added dots?Freiburg has same question
+ - Change based on report by Urmila about EC stencil experience
+	
+### Institute Contributions
+- SCIPP
+ - William: found a hybrid that was held wrong on module after 4 hours. Was the glue left on the sensor?
+ - Vitaliy: removed the glue, but was a lot of work
+ - Tony: “chiselling it off”
+ - William: only put in one panel for hybrid burn-in crate
+ - Matthew: proceeded cautiously for now, but will run more panels in the future
+ - Vitaliy: also need more burn-in powerboards
+ - Ingo: good that you found the bugs and hardcoded issues. Would be good to upload to git
+ - Matthew: now, just changed the hardcoded to new hardcoded
+ - Will do a merge request so that the differences will be visible for the code developers to fix the issue
+- UBC
+ - Bob: biggest difference to Toronto is that we don’t have an issue to get the chiller down to -35C, if we use a thermal load we get to -30C. Do you use the Julabo pipes?
+ - Cole: use pipes
+ - Bob: very important to not lose cooling through pipes
+ - Cole: ours are well insulated
+ - Andrew: what chiller temperature can you get?
+ - Cole: can get it down to -40 in chiller
+ - Andrew: chillers in UK have a special switch when you want to go to very cold temperatures
+ - Ben: takes quite a while to cool down the entire heatmass in system (over night)
+- QMUL
+ - - no speaker present-
+Next week: Freiburg, NBI
+### IV test comparison 
+- Vitaliy: lot of interesting data
+ - Elizaveta: would be good to check that the criteria are good
+- Tony: not sure if 50% criteria/cut is good enough
+ - Elizaveta: if sensor fails comparison, it still might be within specification, there is just a significant change between the tests
+ - Vitaliy: cut selection is something that needs to be looked at in more detail
+ - Gerrit: shape differences are usually a bad sign
+- Ingo: this is manly to look into dropping tests, but it looks like you are looking more into long term analysis
+ - Vitaliy: it requires some more thought also about testing of sensor
+- Ingo: what would be the impact if dropping the IV after tabbing when the sensor fails at a later stage?
+ - Gerrit: we have some sensors that fial the IV test after shipping
+ - Elizaveta: not fail the IV test, just fail the comparison
+ - Andrew: is there a danger that groups measure the IV differently and therefore the IV is affected?
+ - Andrew: is it always that the sensor IV after tabbing is worse than at a sensor probing site?
+ - Bart: do you think this is because of the test frame?
+ - Andrew: not, there could be a difference in how the IVs are done
+ - Tony: if the breakdown is different, you worry, but if it is the same a small change in shape would not be an issue
+ - Vitaly: in case of differences, it would be good to look what is happening (shipment, test setups, …)
+ - Elizaveta: currently allow that sensor get better, but worsening has harsher criteria
+- Carles: you propose to remove the IV after HV-tabbing. This is the most adventurous task for the sensor and I had issues. Would propose to do an IV if an issue was observed at the visual inspection after tabbing
+ - Tony: for us, would propose to remove the IV before tabbing (for our workflow)
+ - Carles: yes, but we also want to gain data from the shipping (reception IV)
+ - Bart: might need different methods for different clusters. Don’t think that one solution would fit all clusters 
+- Michael: what about tests with spikes?
+ - Bart: this should be a passed test. If there are several, we would re-test the sensor
+- Gerrit: what about the descoping, when do we make a decision?
+ - Sven: agree that we need more statistic from sensor sites
+ - Ingo: even for the HV-tabbing, if we work for several hours before noticing that there is an issue with the sensor in 10% of time, it is worth it to do the test
+ - Gerrit: if we test later, we will loose the information what damaged a sensor (hv-tabbing or module assembly?)
+ - Ingo: agree, would be good to get more data first
+### Hybrid Burn-In GUI
+- No comments in this meeting, detailed meeting next week
+### Celestica Hybrid Assembly Experience
+- Dennis: can’t give a date for R4 and R5 right now
+- Dennis: there are some spares for now, for PPB2 we have all flexes in hand, they should arrive whenever you need them and are allowed to use them
+- Sven: was the solder splash already noted in hybrid flex QC?
+ - Sven: hybrid should not be used for assembly
+ - William: can we get a replacement?
+ - Sven: should be covered by yield?
+ - Dennis: need all 9 hybrids for now
+ - Carles: this hybrid shouldn’t have been marked as good and counted in the first place
+- Carles: is the cleanliness dependent of flex flavour?
+ - Ashley: is it envisaged that Freiburg will do hybrid cleaning?
+ - Dennis: yes, we clean after SMD population
+ - Ashley: and then continue with pull testing?
+ - Dennis: yes. We can not trus the SMD company to comply with our cleanliness standards
+ - Ashley: do you do pull test on coupons prior to circuit assembly?
+ - Dennis: we have some taken out before SMD assembly
+ - Ashley: would be good to see if degradation is caused by SMD assembly
+- Fiducial change: not clear if the squares/circles moved
+ - Dennis: for bonding used F and +, but they did not change
+- Dennis: for R2/R3 the repeater bonds don’t need to be crossed any more
+- 
+### AOB
+- Carles: there is an email chain about the laser cut tabs. Was proposed to produce the EC HV-tabs with the current parameters. Do we want to change the parameters similar to the barrel tabs?
+ - Carles: there is a production with EC shaped tabs. Some of the previous barrel tabs were not bondable because of the fabrication parameters. Asked company to change the parameters for next production. Vlado said, he would keep the EC parameters as well so that they are usable for module
+ - Sven: do the new parameters work?
+ - Carles: they use different parameters across the sheet
+ - Discuss this offline
+-

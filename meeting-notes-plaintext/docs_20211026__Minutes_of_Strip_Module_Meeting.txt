@@ -1,0 +1,150 @@
+# 26/10/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1084881/
+### Introduction
+- Please provide feedback to EDMS reviews
+- Please provide feedback to SQ survey
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R0 tool production
+Freiburg working on making more R0 tools
+Toronto happily making modules
+- R1 tool production
+Finalising tools for Vancouver, expect tools to be sent out on Friday
+PB pickup tool returned to workshop to be fixed
+- EC PPA/prototype hybrid order
+	Out for SMD population, should arrive this week
+	Toronto waiting for missing flavours to start PPA
+- Endcap module thermal cycling setup
+	Big progress with cold boxes, help from Prague and Dortmund
+	Need help to assemble jigs and box
+	Only peltier elements for four boxes in hand, last to arrived in January 2022
+	First boxes expected end of January
+- Hybrid crate setup, finalisation and roll-out
+No one there
+- EC hybrid test-panel finalisation
+	Maybe four weeks
+- EC multiple module box transport box
+	Please participate in EDMS review und please let Christian know if you need the box for site qualification
+- Production of bonding and testing jigs
+	Still missing spare jigs and foils
+	Suggestion from Sergio to use alternative blind plugs for test jigs, if anyone hasn’t used them yet
+- Production of R0 and R1 test frames
+	Adding a temperature sensor to module test frame
+		Discuss next week
+- Production of R2 test frames
+- Production of R3, R4 and R5 test frames
+Waiting for answers from Kambiz
+- Production of LED bars
+	Spares have been made, not sent out yet
+- R2�EC glass dummy sensors
+Ready and waiting to be shipped
+- SMD tendering for barrel pre-production/production hybrids
+	Covered in slides later on
+### Construction of an R5 module for the December testbeam
+- William: have hybrid with V0 ASICs
+ - Hybrid will be on top of PPA building
+ - Toronto is happy to build it, but not finished with prototyping program
+ - Craig: need to know what week to target for irradiation at Oxford
+- Module:
+ - Carles: need to have hybrid test setup commissioned first; wire bonding will take some time (not done before). What is the timeline to finish the module assembly?
+ - Luise: testbeam is in December 13th, module should be ready and tested earlier and should be at DESY at ~ 6th Decemberhybrid could be build by mid November, irradiation takes ~2-3 days + setup timeAlso need to consider transport of irradiated material
+ - Sensor is irradiated, therefore need to be tested cold (-30C/-40C)
+ - Need to check if can be done at Valencia
+- Vitaliy would like to know the wafer number 
+ - Irradiated at Ljubljana
+ - VPX32482 W062, W070.
+ - Vitaliy: sensors irradiated early in program, remembers that initial presented IVs were not good
+- William: hybrids should be on a panel for irradiation?
+ - Craig: should be on a module frame with a powerboard
+ - William: will ship them on a test panel
+ - Need to be V1 ASICs
+ - Dennis: test panel probably better
+ - Craig: OK, just will not irradiate powerboard at same time, but no issue
+- Luise: will follow up on who builds hybrids by email
+### 
+### PPB Part availability and Discussion
+Summary (when, where, how many)
+- ASICs 
+ - ABCStarV1
+ - Pre-irradiated before end of January
+ - Should have “plenty” of ABCs by the time the other ASICs become available
+ - HCCStarV1
+ - Unprobed early January, around 490
+ - Probed end of February, 490, available at Penn
+ - AMACStar
+ - Unprobed early January, around 430
+ - Probed end of February, 430, available at Penn
+- Powerboards
+ - Barrel (PBv3.1b)
+ - Requested: three batches: 
+ - Batch 1 (unprobed, would be *started* early January; LBNL)
+ - 20 fast tracked (bPol V4), could come out of previous 50 PBv3.1, can be turned into powerboards within a week after receiving chips)
+ - 100 for reliability testing (bPol V6)
+ - 180 (bPol V4) for hybrid testing
+ - Boards for community should be available within 4 weeks of receiving chips
+ - Expected to be available for community early February
+ - Batch 2 (probed, early March; LBNL)
+ - 180 (bPol V4)
+ - Boards for community should be available within 4 weeks of receiving chips
+ - Batch 3 (probed, pre-irradiated, May/June; LBNL)
+ - 390 (bPol V4) 
+ - Boards for community should be available within 6 weeks of receiving chips
+ - Will probably need ramp-up
+ - Using 50 old flexes for fast tracked batch
+ - EC (all flavours)
+ - 
+- Hybrids
+ - Barrel
+ - First batch of flexes ~December 2021; at best fully SMD populated hybrids mid February at Liverpool
+ - Maybe a couple of weeks behind powerboard production
+ - EC
+- Sensors
+ - Barrel
+ - EC
+- Hybrid panels
+ - Barrel
+ - EC
+- Module Frames
+ - Barrel
+ - EC
+- 
+- ASICs
+ - Status of qualification wafer (Wafer #3) not fully decided
+ - PPB approximately 1440 HCC, 940 AMAC
+- Craig: bare minimum for systems test: 3LS, 4SS, 4 Petals
+ - Start with un-irradiated chips, but as soon as available use irradiated chips
+ - Original plan was to use pre-irradiated chips everywhere, had to be adjusted to fit schedule
+- Numbers are currently being revisited after Schedule Task force: numbers of staves and petals to be built in PPB mainly to ensure sites are ready to build and can be reduced if needed, no concrete agreement on how many modules/staves/petals are needed for PRR and for PPB
+- Craig: should we hold back ABCstars from pre-irradiation so that we have some ASICs available in case they get stuck in irradiation
+- Powerboards (barrel):
+- Could the 50 existing boards be used for fast tracking? Yes, planned to use primarily for first 20 powerboards
+- If 300 AMACs would use unprobed AMACs, how does that impact the yield? Don’t know, have to hope it’ll be the same as V2 AMAC
+ - Tony: usually ~95% good chips (Paul: 96%)
+- Timon: could use super glue instead of silver epoxy glue so that the AMAC can be replaced, could just glue second AMAC on top of first ASIC
+- Vitaliy: can we increase the 180 to 200? Not easy to increase to 200, need to understand end-cap needs first. Would be convenient to assemble all HBiPCs at the same time, man power stress
+- Timon: have also ~60 HBiPCs currently available at LBNL (just not same chip version)
+- PB reliability testing: When is the personpower limit solved?
+ - Probably in summer 2022 (after batch 1 and 2)
+ - Currently part of batch1 to have them in hand, when there is time to do the test
+ - Craig: Need to be done by PRR
+ - Timon: what does the test entail?
+ - Don’t have a test system to do all previous discussed tests (voltage transients)
+ - Need a fixed plan on what to do for the reliability test
+- Dennis: need also to know how many panel powerboards are required
+ - Currently have ~40-50
+ - Ideally not do another production run
+- Gerrit: with a flex delivery at the end of February, there are about 10 QC steps to be done for all of these - how does that affect the time?
+- Question whether we want to fast-track items similar to ASICs: instead of full QC, might fast track a few with light touch QC with the rest of the flexes going through full QC
+- Timon: do panel powerboards need a HV-mux?
+ - Ashley: not used in panel
+ - Timon: are the parts worth it to not place them on those powerboards, considering the loss of flexibility up until they are assembled onto the carrier?
+ - Forest: would be less work to not have to pot them as well
+ - Tony: loss of flexibility would not be ideal, and HV-mux does not have to be potted
+- Would be good to have a global spreadsheet of PPB (and maybe production) requirements for number of parts
+ - Module ACs, Production management, global support (petal/stave assembly)
+ - Planned for Upgrade Week
+### ITSDAQ and web-application (maybe next week)¶
+- Postponed to next week or QA/QC meeting
+### AOB
+- Ben: ETA on next delivery of HV tab sheets? Neither Tony nor Bart present,

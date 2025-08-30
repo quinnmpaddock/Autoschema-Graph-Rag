@@ -1,0 +1,115 @@
+2025-08-02 14:48:58,212 - __main__ - INFO - ✓ triple_nodes: import-TEST/ATLAS-docs/triples_csv/triple_nodes_docs_from_json_without_emb_with_numeric_id.csv - Valid (6 columns)
+2025-08-02 14:48:58,213 - __main__ - INFO - ✓ triple_edges: import-TEST/ATLAS-docs/triples_csv/triple_edges_docs_from_json_without_emb_with_numeric_id.csv - Valid (7 columns)
+2025-08-02 14:48:58,213 - __main__ - INFO - ✓ text_nodes: import-TEST/ATLAS-docs/triples_csv/text_nodes_docs_from_json_with_numeric_id.csv - Valid (4 columns)
+2025-08-02 14:48:58,213 - __main__ - INFO - ✓ text_edges: import-TEST/ATLAS-docs/triples_csv/text_edges_docs_from_json.csv - Valid (3 columns)
+2025-08-02 14:48:58,213 - __main__ - INFO - ✓ concept_nodes: import-TEST/ATLAS-docs/concept_csv/concept_nodes_docs_from_json_with_concept.csv - Valid (3 columns)
+2025-08-02 14:48:58,213 - __main__ - INFO - ✓ concept_edges: import-TEST/ATLAS-docs/concept_csv/concept_edges_docs_from_json_with_concept.csv - Valid (4 columns)
+2025-08-02 14:48:58,217 - __main__ - INFO - Connected to Neo4j at bolt://localhost:7687
+2025-08-02 14:49:00,463 - __main__ - ERROR - Error importing nodes with label 'Node': {code: Neo.TransientError.General.DatabaseUnavailable} {message: The database is not currently available to serve your request, refer to the database logs for more details. Retrying your request at a later time may succeed.}
+2025-08-02 14:49:00,463 - __main__ - ERROR - Import failed: {code: Neo.TransientError.General.DatabaseUnavailable} {message: The database is not currently available to serve your request, refer to the database logs for more details. Retrying your request at a later time may succeed.}
+2025-08-02 14:49:00,463 - __main__ - INFO - Neo4j connection closed
+2025-08-02 14:57:17,337 - __main__ - INFO - ✓ triple_nodes: import-TEST/ATLAS-docs/triples_csv/triple_nodes_docs_from_json_without_emb_with_numeric_id.csv - Valid (6 columns)
+2025-08-02 14:57:17,337 - __main__ - INFO - ✓ triple_edges: import-TEST/ATLAS-docs/triples_csv/triple_edges_docs_from_json_without_emb_with_numeric_id.csv - Valid (7 columns)
+2025-08-02 14:57:17,337 - __main__ - INFO - ✓ text_nodes: import-TEST/ATLAS-docs/triples_csv/text_nodes_docs_from_json_with_numeric_id.csv - Valid (4 columns)
+2025-08-02 14:57:17,337 - __main__ - INFO - ✓ text_edges: import-TEST/ATLAS-docs/triples_csv/text_edges_docs_from_json.csv - Valid (3 columns)
+2025-08-02 14:57:17,337 - __main__ - INFO - ✓ concept_nodes: import-TEST/ATLAS-docs/concept_csv/concept_nodes_docs_from_json_with_concept.csv - Valid (3 columns)
+2025-08-02 14:57:17,337 - __main__ - INFO - ✓ concept_edges: import-TEST/ATLAS-docs/concept_csv/concept_edges_docs_from_json_with_concept.csv - Valid (4 columns)
+2025-08-02 14:57:17,343 - __main__ - INFO - Connected to Neo4j at bolt://localhost:7687
+2025-08-02 14:57:17,669 - __main__ - INFO - Imported 46 nodes with label 'Node'
+2025-08-02 14:57:17,669 - __main__ - INFO - Processed 46 nodes from triple_nodes
+2025-08-02 14:57:17,704 - __main__ - INFO - Imported 1 nodes with label 'Text'
+2025-08-02 14:57:17,704 - __main__ - INFO - Processed 1 nodes from text_nodes
+2025-08-02 14:57:17,777 - __main__ - INFO - Imported 158 nodes with label 'Concept'
+2025-08-02 14:57:17,777 - __main__ - INFO - Processed 158 nodes from concept_nodes
+2025-08-02 14:57:17,876 - __main__ - INFO - Constraints and indexes created
+2025-08-02 14:57:17,986 - __main__ - INFO - Imported 41 relationships of type 'Relation' (Node->Node)
+2025-08-02 14:57:17,986 - __main__ - INFO - Processed 41 edges from triple_edges
+2025-08-02 14:57:18,034 - __main__ - INFO - Imported 0 relationships of type 'Source' (Node->Node)
+2025-08-02 14:57:18,034 - __main__ - INFO - Processed 46 edges from text_edges
+2025-08-02 14:57:18,101 - __main__ - INFO - Imported 0 relationships of type 'Concept' (Node->Node)
+2025-08-02 14:57:18,101 - __main__ - INFO - Processed 199 edges from concept_edges
+2025-08-02 14:57:18,174 - __main__ - INFO - Import completed in 0.84s
+2025-08-02 14:57:18,174 - __main__ - INFO - Final stats: {
+  "total_nodes": 206,
+  "total_relationships": 41,
+  "labels": {
+    "_GraphConfig": 1,
+    "Node": 46,
+    "Text": 1,
+    "Concept": 158
+  },
+  "relationship_types": {
+    "Relation": 41
+  }
+}
+2025-08-02 14:57:18,174 - __main__ - INFO - Neo4j connection closed
+2025-08-03 17:23:33,806 - __main__ - INFO - ✓ triple_nodes: triple_nodes_docs_from_json_without_emb_with_numeric_id.csv - Valid (6 columns)
+2025-08-03 17:23:33,806 - __main__ - INFO - ✓ text_nodes: text_nodes_docs_from_json_with_numeric_id.csv - Valid (4 columns)
+2025-08-03 17:23:33,806 - __main__ - INFO - ✓ concept_nodes: concept_nodes_docs_from_json_with_concept.csv - Valid (3 columns)
+2025-08-03 17:23:33,806 - __main__ - INFO - ✓ triple_edges: triple_edges_docs_from_json_without_emb_with_numeric_id.csv - Valid (7 columns)
+2025-08-03 17:23:33,806 - __main__ - INFO - ✓ text_edges: text_edges_docs_from_json.csv - Valid (3 columns)
+2025-08-03 17:23:33,806 - __main__ - INFO - ✓ concept_edges: concept_edges_docs_from_json_with_concept.csv - Valid (4 columns)
+2025-08-03 17:24:00,253 - __main__ - INFO - ✓ triple_nodes: triple_nodes_docs_from_json_without_emb_with_numeric_id.csv - Valid (6 columns)
+2025-08-03 17:24:00,253 - __main__ - INFO - ✓ text_nodes: text_nodes_docs_from_json_with_numeric_id.csv - Valid (4 columns)
+2025-08-03 17:24:00,253 - __main__ - INFO - ✓ concept_nodes: concept_nodes_docs_from_json_with_concept.csv - Valid (3 columns)
+2025-08-03 17:24:00,253 - __main__ - INFO - ✓ triple_edges: triple_edges_docs_from_json_without_emb_with_numeric_id.csv - Valid (7 columns)
+2025-08-03 17:24:00,253 - __main__ - INFO - ✓ text_edges: text_edges_docs_from_json.csv - Valid (3 columns)
+2025-08-03 17:24:00,253 - __main__ - INFO - ✓ concept_edges: concept_edges_docs_from_json_with_concept.csv - Valid (4 columns)
+2025-08-03 17:24:00,261 - __main__ - ERROR - Import failed: {code: Neo.ClientError.Security.Unauthorized} {message: The client is unauthorized due to authentication failure.}
+2025-08-03 17:24:34,403 - __main__ - INFO - ✓ triple_nodes: triple_nodes_docs_from_json_without_emb_with_numeric_id.csv - Valid (6 columns)
+2025-08-03 17:24:34,403 - __main__ - INFO - ✓ text_nodes: text_nodes_docs_from_json_with_numeric_id.csv - Valid (4 columns)
+2025-08-03 17:24:34,403 - __main__ - INFO - ✓ concept_nodes: concept_nodes_docs_from_json_with_concept.csv - Valid (3 columns)
+2025-08-03 17:24:34,403 - __main__ - INFO - ✓ triple_edges: triple_edges_docs_from_json_without_emb_with_numeric_id.csv - Valid (7 columns)
+2025-08-03 17:24:34,403 - __main__ - INFO - ✓ text_edges: text_edges_docs_from_json.csv - Valid (3 columns)
+2025-08-03 17:24:34,403 - __main__ - INFO - ✓ concept_edges: concept_edges_docs_from_json_with_concept.csv - Valid (4 columns)
+2025-08-03 17:24:34,564 - __main__ - INFO - Initial database stats: {'nodes': 1, 'relationships': 0, 'labels': {'_GraphConfig': 1}, 'relationship_types': {}}
+2025-08-03 17:24:34,565 - __main__ - INFO - Database clearing disabled in configuration
+2025-08-03 17:24:34,843 - neo4j.notifications - INFO - Received notification from DBMS server: {severity: INFORMATION} {code: Neo.ClientNotification.Schema.IndexOrConstraintAlreadyExists} {category: SCHEMA} {title: `CREATE RANGE INDEX IF NOT EXISTS FOR (e:Node) ON (e.name)` has no effect.} {description: `RANGE INDEX constraint_bcaf404a FOR (e:Node) ON (e.name)` already exists.} {position: None} for query: 'CREATE INDEX IF NOT EXISTS FOR (n:Node) ON (n.name)'
+2025-08-03 17:24:34,850 - neo4j.notifications - INFO - Received notification from DBMS server: {severity: INFORMATION} {code: Neo.ClientNotification.Schema.IndexOrConstraintAlreadyExists} {category: SCHEMA} {title: `CREATE RANGE INDEX IF NOT EXISTS FOR (e:Text) ON (e.text_id)` has no effect.} {description: `RANGE INDEX constraint_1f4708f1 FOR (e:Text) ON (e.text_id)` already exists.} {position: None} for query: 'CREATE INDEX IF NOT EXISTS FOR (n:Text) ON (n.text_id)'
+2025-08-03 17:24:34,855 - neo4j.notifications - INFO - Received notification from DBMS server: {severity: INFORMATION} {code: Neo.ClientNotification.Schema.IndexOrConstraintAlreadyExists} {category: SCHEMA} {title: `CREATE RANGE INDEX IF NOT EXISTS FOR (e:Concept) ON (e.concept_id)` has no effect.} {description: `RANGE INDEX constraint_8b89937b FOR (e:Concept) ON (e.concept_id)` already exists.} {position: None} for query: 'CREATE INDEX IF NOT EXISTS FOR (n:Concept) ON (n.concept_id)'
+2025-08-03 17:24:34,869 - __main__ - INFO - All constraints and indexes ready
+2025-08-03 17:24:34,869 - __main__ - INFO - Starting node imports...
+2025-08-03 17:24:35,095 - __main__ - INFO - Starting relationship imports...
+2025-08-03 17:24:35,723 - __main__ - INFO - Import completed in 1.32s
+2025-08-03 17:24:35,723 - __main__ - INFO - Final stats: {
+  "nodes": 152,
+  "relationships": 0,
+  "labels": {
+    "_GraphConfig": 1,
+    "Node": 45,
+    "Concept": 157
+  },
+  "relationship_types": {
+    "Relation": 49
+  }
+}
+2025-08-07 17:05:18,936 - __main__ - INFO - ✓ triple_nodes: triple_nodes_docs_from_json_without_emb_with_numeric_id.csv - Valid (6 columns)
+2025-08-07 17:05:18,937 - __main__ - INFO - ✓ text_nodes: text_nodes_docs_from_json_with_numeric_id.csv - Valid (4 columns)
+2025-08-07 17:05:18,937 - __main__ - INFO - ✓ concept_nodes: concept_nodes_docs_from_json_with_concept.csv - Valid (3 columns)
+2025-08-07 17:05:18,937 - __main__ - INFO - ✓ triple_edges: triple_edges_docs_from_json_without_emb_with_numeric_id.csv - Valid (7 columns)
+2025-08-07 17:05:18,937 - __main__ - INFO - ✓ text_edges: text_edges_docs_from_json.csv - Valid (3 columns)
+2025-08-07 17:05:18,937 - __main__ - INFO - ✓ concept_edges: concept_edges_docs_from_json_with_concept.csv - Valid (4 columns)
+2025-08-07 17:05:19,126 - __main__ - INFO - Initial database stats: {'nodes': 1, 'relationships': 0, 'labels': {'_GraphConfig': 1}, 'relationship_types': {}}
+2025-08-07 17:05:19,126 - __main__ - INFO - Database clearing disabled in configuration
+2025-08-07 17:05:19,268 - neo4j.notifications - INFO - Received notification from DBMS server: {severity: INFORMATION} {code: Neo.ClientNotification.Schema.IndexOrConstraintAlreadyExists} {category: SCHEMA} {title: `CREATE RANGE INDEX IF NOT EXISTS FOR (e:Node) ON (e.name)` has no effect.} {description: `RANGE INDEX constraint_bcaf404a FOR (e:Node) ON (e.name)` already exists.} {position: None} for query: 'CREATE INDEX IF NOT EXISTS FOR (n:Node) ON (n.name)'
+2025-08-07 17:05:19,281 - neo4j.notifications - INFO - Received notification from DBMS server: {severity: INFORMATION} {code: Neo.ClientNotification.Schema.IndexOrConstraintAlreadyExists} {category: SCHEMA} {title: `CREATE RANGE INDEX IF NOT EXISTS FOR (e:Text) ON (e.text_id)` has no effect.} {description: `RANGE INDEX constraint_1f4708f1 FOR (e:Text) ON (e.text_id)` already exists.} {position: None} for query: 'CREATE INDEX IF NOT EXISTS FOR (n:Text) ON (n.text_id)'
+2025-08-07 17:05:19,293 - neo4j.notifications - INFO - Received notification from DBMS server: {severity: INFORMATION} {code: Neo.ClientNotification.Schema.IndexOrConstraintAlreadyExists} {category: SCHEMA} {title: `CREATE RANGE INDEX IF NOT EXISTS FOR (e:Concept) ON (e.concept_id)` has no effect.} {description: `RANGE INDEX constraint_8b89937b FOR (e:Concept) ON (e.concept_id)` already exists.} {position: None} for query: 'CREATE INDEX IF NOT EXISTS FOR (n:Concept) ON (n.concept_id)'
+2025-08-07 17:05:19,318 - __main__ - INFO - All constraints and indexes ready
+2025-08-07 17:05:19,319 - __main__ - INFO - Starting node imports...
+2025-08-07 17:05:19,723 - __main__ - INFO - Starting relationship imports...
+2025-08-07 17:05:21,647 - __main__ - INFO - Import completed in 2.71s
+2025-08-07 17:05:21,647 - __main__ - INFO - Final stats: {
+  "nodes": 1,
+  "relationships": 0,
+  "labels": {
+    "_GraphConfig": 1,
+    "Node": 46,
+    "Text": 1,
+    "Concept": 158
+  },
+  "relationship_types": {
+    "Relation": 41,
+    "Source": 46,
+    "Concept": 196
+  }
+}

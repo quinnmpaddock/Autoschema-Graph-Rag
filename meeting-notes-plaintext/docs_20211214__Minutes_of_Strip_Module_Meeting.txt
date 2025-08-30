@@ -1,0 +1,114 @@
+# 14/12/2021 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1084888/
+### Introduction
+- No disagreement to change the number of wire bonds from powerboard to module frame: procedure document will be updated
+- Will Flags propagate back to already existing components?
+ - Vitaliy: yes
+ - Vitaliy: handling flags is tricky, need to specify all flags every timeLuise: need to follow up in the database
+- Jeff (Penn): HCC will be shipped in database now, please send email and location to Jeff to get them in the database
+ - If possible, compare readout fuse ID with expected one and let jeff know if they are different
+ - jeff.dandoy@cern.ch
+ - “Email jeff.dandoy@cern.ch with a list of HCCStarV0 chips (either Serial Numbers, eFuse IDs, or Wafer Names + Chip Positions) and the institution to be "shipped" to. Additionally, if possible please cross-check the readout eFuseID with the expected, particularly for die positions 6 through 13.”
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 14/12/2021: Barrel tasks
+- 11/01/2021: EC tasks
+- 18/01/2021: Barrel tasks
+- Shipping readiness (incl import procedure)
+ - Is anyone able to send modules to CERN?
+ - Craig: any specific case?
+ - Luise: if it is necessary to ship parts through CERN, it would be good if this is possible
+- Irradiated R5 module for December 2021 Testbeam
+- Question from Sergio: noise results were extremely low, even without biasing, is that expected?
+ - Dennis: saw a similar thing for R0module: noise for unbiased sensor went down after irradiation
+ - Vitaliy: need to check the IVs again - they didn’t make sensor before annealing
+### Controlled demolition: The tails from the Crypt [Silicon].
+- Does the width of scratch has an impact?
+ - Andrew: there is a specification how many strips a scratch is allowed to affec
+ - Andrew: width of scratch depends on force used to do it
+ - Luise: would be interesting to measure the scratches and come up with a classification
+ - Vitaliy: can try to measure it
+ - Luise: look for better classifications of scratches, if they are an issue or not
+ - Vitaliy: concern on big sensor is width and length (material can be dragged between strips)
+### Toronto Hybrid Feedback
+Panel foam attachment
+- William: would prefer inserts in panel as well, but don’t think it works with the current panel layout
+ - Dennis: panels are very dense in terms of usage and this is not easy to do
+ - Luise: would it not be possible to just add SMD nuts to the screw holes that are already used for holding the foam in place?
+ - Dennis: no, these holes are also used for other purposes.	
+- L
+- Visual Inspection showed debris
+ - William: probably from over-handling of panes for now, but not expected during productionExtra steps could increase risk of damage
+ - Luise: currently is required to do a picture of the full panel
+ - William: is it more risky to take a picture of the panel without the foam, than doing it with foam but missing some bonds
+ITSDAQ data upload
+- William: expected ITSDAQ to upload measurements automatically, but probably not happening soon; need to find a way to do this manually
+- Luise: better to just upload results to hybrids directly, not to the panel
+- Ashely: for EC don’t make use of HCC ID?
+ - Luise: we do, but currently HCCs are not in database
+ - Luise: would be good to have some visual indicator which hybrid is where on the panel without electrical readout
+ - Matthew G: currently tests don’t exist in database, how uploaded?
+ - William: added as comments to panel (pdf upload)
+- 
+- Question: do we accept hybrids with known flaws, or do we only accept good parts?
+ - William: there was one ASIC, but it didn’t prevend us from doing the testHad no spare parts to replace the ASIC
+ - William: still no replacement parts for PPAOnly saw 2 problems, maybe something changed during shipping
+ - William: have only exactly the number of ASICs for PPA
+ - Luise: would be possible to get category B ASICS
+ - William: still there is no rework, would have to make a whole new hybrid
+ - Andy: one failed ASIC preventing tests is worrying
+ - Ashley: Did you check the chip?
+ - William: yes, didn’t see any issues
+- Ashley: intermittent issues are concerning (something working at one site and not at another)
+ - Dennis: probably because we are running at a small phase space of settings
+ - Ashley: Were all the passives assembled in Industry?
+ - Dennis: yes
+ - Ashley: might be something with the end termination????
+- 
+### Metrology results and implications
+- Ash: underlying issue is being addressed: removing solder resist from cutting area to make cutting easier and mitigate issue
+- Ash: need to wait and see what happens with PPB hybrids
+- Andy: Were you able to wirebond all the hybrids okay or did any of the rotations cause any problems?
+ - Vitaliy: yes, all were wirebondable
+ - Kirsten: for the very rotated one: no problem finding them and bonding
+- Craig: Are our specs unnecessarily tight?
+ - Sven: keep in mind the specs weren’t made to ensure bondability, but to ensure small wire bonding angles
+- Craig: on stave side, have seen tape misplaced by millimetres and things are still bondable
+ - Ash: keep in mind the density of wirebonds
+- Vitaliy: also if shift in X becomes large and glue is applied to back of hybrid, it could result in glue on the guard ring
+- Andy: worst case hybrid: was metrology needed to see this problem or could you see the problem by naked eye?
+ - Forest: rotation was visible
+- Andy: Can we do it by eye instead of metrology?
+ - Vitaly: can’t see a 200um shift
+ - Matthew: it’s only a 10min program
+- Luise: is the solder resist also removed from the tabs for EC?
+ - Dennis: not sure
+ - Ashley: remembers in review that it was removed
+ - Forest: even missing solder resist would push the hybrid onto the 
+- Andy: Did you have a good vacuum connection on the panel jig?
+ - Forest: no indication there wasn’t
+- Sven: slide 3: powerboard placement seems very similar to the hybrid placement and they don’t have tabs, so maybe it is not just the tab cutting?
+ - Vitaly: part of worry was that there could be an issue with the hybrid jigBias was felt more than the allowed tolerance
+- Ashley: Does the bias change with the order in which the tabs are cut?
+ - Forest: probably, but we have always cut the tabs in the same order
+ - Ashley: maybe do the cutting diagonally since there are 4 tabs
+ - Forest: do you mean the tabs on the array
+ - Vitaly: there is a hole between the tabs
+ - Ashley: might be interesting to look into cutting this diagonally
+ - Craig: done tests at RAL a while a go and it’s quite tricky; if cutting the tab with the hole first and then the tab with the slot works better than the other way around
+- William: this depends on the existence of the 5mm pins, don’t have them in the end-cap
+ - Vitaliy: how do you align them?
+ - William: with three pins
+ - William: why are there these 3 large pins?
+ - Forest: use them since the default pins are a bit too tight to do it
+ - Luise: can cut off the tabs for EC and re-align the hybrid afterwards
+- Any comments from the UK:
+ - Glasgow received two panels of hybrids and they all worked
+ - Seems to be the common experience in the UK
+ - Dennis: running in small area of working phase space, probably a problem of running out of the phase space
+- Ash: were all the hybrid flexes populated in industry or by hand?
+ - Dennis: in industry
+ - Ash: would be interesting to look at termination and see if we are on edge somewhere
+### AOB
+-

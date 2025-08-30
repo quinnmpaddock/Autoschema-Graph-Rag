@@ -1,0 +1,45 @@
+{
+  "nodes": {
+    "base-python-env": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753726247,
+        "narHash": "sha256-yiJfs6f1JCmoD5g/PViuiaTbyj894GNE8ojmnl8W/lk=",
+        "path": "/home/quinn/CODE_PROJECTS/dev-flakes/python",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/quinn/CODE_PROJECTS/dev-flakes/python",
+        "type": "path"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1756536218,
+        "narHash": "sha256-ynQxPVN2FIPheUgTFhv01gYLbaiSOS7NgWJPm9LF9D0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "a918bb3594dd243c2f8534b3be01b3cb4ed35fd1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "base-python-env": "base-python-env",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

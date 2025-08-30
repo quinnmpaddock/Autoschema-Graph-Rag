@@ -1,0 +1,100 @@
+# 10/01/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1231263/
+### Introduction
+Slide 5 Powerboard Verification
+- Carles: should make some powerboard verification in Valencia as well?
+ - Luise: discussed this before Christmas and there was a plan to also do one at IFIC. Will add this to the slides
+- William: build all hybrids in panels and can test all of them. 
+- William: looked at R3 module frame, and the noise looks worse
+ - Luise: issue there is to know if this is caused by the powerboard. Would like to re-do it with the new powerboards
+ - William: OK
+ - Dennis: do you already test with the green R3 hybrid panels?
+ - William: yes, they work but some traces are too narrow (as already discussed with you)
+ - JJ: did not test with R5
+- Luise: do we need any more tests, or can we start the review?
+ - Dennis: would like to test the phasespace to see if there are changes
+ - William: have shipped the R5 already away
+Slide 7
+- Bruce: same thing on barrel, will just not flag errors and put data the wrong way around
+ - Dannis: might be different between FMC-IB an FMC-DP, but not obvious why
+ - Luise: if you are not mapping correctly, you noise might be higher
+ - Craig: as sanity check could also use AMAC to only turn one one hybrid
+ - Bruce: there is also an ABC-ID check in ITSDAQ, but not a default
+ - Dennis: in EC all HCC have bonded IDs, so can clearly see which one is where
+ - Luise: should use new powerboards to confirm the mapping.
+ - Peter: is supposed to be the same by design. Don’t know why there is the difference between the readout boards
+ - Craig: would have noticed this with single HCC modules (LS).
+ - Luise: might also mix different test-frame versions, module frame version, …
+ - Dennis: this stuff was stable between all of them
+Slide 10
+- Tony: if people were following this scheme, should people update their procedures?
+- Sven: don’t expect people to retro-actively change the results, but going forward people should update this 
+- Bruce: this also comes into the electrical tests and from generating configs automatically.
+Slide 12
+- Carles: how were the numbers calculated?
+ - Luise: numbers take into account how much of the strips are covered for nominal. 
+### Institute Contributions
+Next week: Upsala
+### Module metrology follow-up
+Slide 5
+- Vitaliy: Do we need to ask the stave/integration people about any issues/limits here?
+ - Luise: sure, we could use their input
+ - Craig: the number in the metrology document is the current best limit that we got from the people
+ - Gerrit: we are looking at stackups and clearances right now and probably discuss it in the loading meeting tomorrow
+- Ingo: for EC, this was also driven by first (or second) disk where the design has some constraints
+Slide 6
+- Ingo: missing the definition where something is measured
+ - Ingo: under ABC is just where we measure
+ - Luise: only care about average glue height under ABCs
+Slide 7
+- Tony: will look at plots for noise, but don’t think we have a hybrid with very low glue height
+ - Gerrit: think we had a couple of vacuum failures over the last year and will look at that
+ - Tony: don’t have this in the database so far
+ - Tony: only recall one hybrid with failed vacuum in the database
+- Tony: could we have a table with the limits: pass, pass with problems, …
+- Tony: for X we haven’t decided on a final number?
+ - Luise: have to look at EC for sensor overhang before we can decide between 200 and 300
+### Hybrid metrology descoping
+- Sven: may need lower limit on glue height due to UV curing, otherwise curing won’t work
+ - Luise; what should that be?
+ - Luise: 60?
+ - Tony: the ones below 60 where we had vacuum failure and they had vacuum leaks. They should not be used in the long term
+ - Tony: should 60 be the average or individual chips
+ - Luise: propose to have a limit from 60 to 160 for each ASIC individually, and also look at the total package height
+ - Laura: for lower limit not accept this, for higher glue height can look at total package height
+ - William: concerned about HCC areas: might be more related to uneven hybrids than actual HCC glue heights
+ - Laura: if glue below 60, reject
+ - Gerrit: if glue is below 60, the glue will also start seeping out onto the bond pads
+ - William: when we do metrology, we struggle to get the glue thickness correct if the hybrid flex is particularly “wrinkly”
+ - Laura: HCCs from Toronto are most of the time above 120, so low glue height not very worrying, only concern is about ABCs, but they’re fine
+ - 
+- Ingo: would be good to check some cases where hybrids are high to look at ASIC temperature
+ - Tony: you never see that
+- Ewan: did we officially change from 100 to 200, or was that just the barrel?
+ - Luise: last plots were only for the barrel, so wanted to check the EC hybrids as well.
+ - Laura: they are most of the time between +/-100
+ - William: using +/-200 will help (it is very time consuming to get the pick-and place to the exact target)
+ - Pavol: is there an issue with the tools?
+ - Sven: the tools have enough clearance to allow this
+ - Ingo: and if the tools smash the wire-bonds, they would fail the electrical test
+- If it glue is >160, but total package height is within specification, test passes
+- If 60 < glue height < 160: pass
+- If glue is <60, fail
+### UofT hybrid metrology update
+- Ewan: new DB upload tools have plotting, which will help catching those issues earlier
+### End-cap tooling conflicts with hybrids and powerboards
+Slide 3
+- Carles: we already cut a different pedestal on the tool. Maybe this is not a problem any more?
+ - Mark: can check again and this was the obvious issue.
+- Luise: is this for all design variants?
+ - Mark: yes.
+ - Luise: still have some time before the new powerboards arrive, so should start to redesign
+ - Mark: should only be moving the pin and maybe reducing the diameter. But then we need to machine it
+ - Luise: can the tool be modified?
+ - Mark: for one pin, you can’t move it because of the close proximity of the pin that does not work
+ - Luise: might also think about replacing the pins with something less rigid to press down on resistor
+ - Mark: but they are not well hight controlled, so would not recommend this.
+ - Mark: would also like to re-use as many parts as possible from the old tools to make it easier
+- Mark: also found some offsets in the R3 stencils
+- Please get in touch if you want to try new stencils
+### AOB

@@ -1,0 +1,27 @@
+# 21/01/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/874218/
+## Actions carried over
+1. Write QC document for coils (Timon/Carl/Satish)
+## Watching brief
+Item | Responsible | Next update expected
+HV tab bonding | Jens | 03/02/2020
+Hybrid crate roll-out | Ash | 03/02/2020
+Module thermal cycling roll-out | Dave/Ankush/Sergio | 03/02/2020
+Powerboard mass tester roll-out | Timon/Karol | 03/02/2020
+Barrel hybrid tendering | Bart/Ash | 03/02/2020
+Barrel powerboard tendering | Carl/Timon | 03/02/2020
+EC hybrid/powerboard tendering | Uli/Kambiz/Dennis | 03/02/2020
+EC tooling design/roll-out | Marc | 03/02/2020
+Barrel tooling design finalisation/roll-out | Sven | 03/02/2020
+- People listed as responsible will be contacted periodically by Craig & Ingo for updates (certainly on the date listed, if not before!)
+- Updates could be verbal, email or slides in a meeting
+## 
+## Minutes
+### Introduction (Craig & Ingo)
+- 
+### Tutorial: uploading test results to the database (Luise)
+- 
+### AoB
+- 
+## Actions
+1.

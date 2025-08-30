@@ -1,0 +1,74 @@
+# 31/03/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/874228/
+## Actions carried over
+1. Look at list of open tasks for working from home period (All)
+1. Check R0 tooling drawings (All)
+## Minutes
+### Introduction (Craig & Ingo)
+- Check R0 tooling drawings NOW
+ - EDMS link sent out by Karola last week
+### Barrel Tooling Changes (Sven)
+- RFID tags
+ - EC may go for a slightly different size option
+ - As long as Ash/Sven know that is the plan they can procure the right amount (just barrel or barrel+EC)
+- ESD protection addition
+ - Worries about handling of tools with this extra provision
+ - Include the provision but discuss details of use in future
+ - Would a banana be better for when tools need to be moved around a lot (rather than a screw)
+ - Some discussion, for now leave screw option but people remain unconvinced that ESD connection is something that is needed anyway
+ - Ash points out it is coming from industrial standards but in our ESD safe cleanrooms could well be overkill
+- For the EC Marc will put together some slides based on ongoing review for tomorrow and/or next week
+### ATLAS Remote Environment Monitoring System (Ben)
+- Reliability/stability of the system is often the tricky bit for all of this
+ - Try and learn from stability lessons learnt elsewhere in ITk
+- Discussion about all the different systems that are out there and not reinventing the wheel
+ - In the past Luise setup a summary Twiki to try to link to everything available out there
+ - Luise will resent that link around and everyone should look and update it with links to their system if not currently covered, then those without systems and pick their favourite from the list!
+### Polaris: to bi-pak or not to bi-pak (Luise)
+- Do we care about glue streaks?
+ - Not seen any effect in module testing during ABC130
+ - But that doesn’t preclude effects being there!
+- Other points in discussion
+ - Bi-pak mixing felt to lead to bubbles more readily
+- Milkiness from mixing ratio
+ - Epolite seems to become milky from wrong ratio
+ - Polaris does not seem to do this
+- Whether you use bi-paks or bottles, should keep samples of every glue mixture used
+- In past seemed difficult to get bottles rather than bi-paks
+ - Company said not a problem, just need to do via quote (bottles not visible online)
+ - Need to check that this can be done from Europe as well as US
+- Company have also said they could improve tolerance on the bi-paks
+- Batch tracking numbers are printed on bi-paks (and bottles!)
+ - Same batch number as when made a few years ago
+ - Does not pertain to the bi-paks, just the raw resin/hardener input
+- If glue is being used for multiple hybrids/powerboards, bottles allow you to make more glue at once
+ - Can make lots more to reduce error in ratio
+ - Mixing on mechanical system
+ - That’s probably the best you can possibly do
+ - BUT if it hardens quickly, does it help
+- Glue is cheaper in bottles than bi-paks and don’t really know anything about bi-paks
+- Note that most of the glue qualification was done using bi-paks!!
+ - Danger is that don’t necessarily see variations when using bi-paks
+- Company suggests that they deliberately use excess hardener to ensure curing
+- How much time is needed for the whole process when using bottles?
+ - Need a machine and not everyone has this
+ - 4 or 5 hybrid gluings becomes more useful, 1 hybrid doesn’t really make sense
+ - Mixing by hand with bottles takes a few minutes
+ - Don’t need to require a glue mixer but need to degas the glue if mixing done by hand
+- Not clear that we can come to a conclusion on this during this discussion
+ - Seems that weighing is the best way to get the right ratio at the moment
+ - Moving away from bi-paks is not a small decision and has ramifications for sites that don’t have glue mixing equipment etc.
+ - Difficult to know how to understand effects of trapped moisture/air bubbles on a full detector system, note that such things have been bought up by FDR reviews
+ - Need to pull together this information with that from local supports and build a project-wide response
+ - Need to balance with cost (financial and time)
+ - Thinky mixer is O(10,000)
+- Discussion stopped at this point
+ - More studies should be done
+ - Decision to be made once we don’t have to guess!
+ - Try and setup general discussion in future including local support
+### AoB
+- None
+## Actions
+1. Check R0 tooling drawings (All)
+1. Send around environmental monitoring twiki (Luise)
+ - Update the twiki if necessary (All)

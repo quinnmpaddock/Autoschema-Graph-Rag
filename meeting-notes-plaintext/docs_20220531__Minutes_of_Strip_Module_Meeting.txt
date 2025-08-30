@@ -1,0 +1,148 @@
+# 31/05/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1154781/
+### Introduction
+- Dortmund: is considering to volunteer for the VI descoping
+- Forest: would like not to be volunteered for bonding test descoping
+- Module powerboard bonds: double bonds
+ - Andy: done on panel?
+ - Luise: not really
+ - Craig: it is to avoid issues
+ - Forest: there is enough space for them and there are some other bonds on barrel
+ - William: is this also done for the bonds to the stave/petal
+ - Craig: yes
+ - Luise: this needs to be adjusted in the module bond documentation
+ - Carles: what about the stitch bonds? Are they also doubled?
+ - Craig: yes
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 31/05/2022: EC
+- 07/06/2022: Barrel
+- 14/06/2022: EC
+- 21/06/2022: Barrel
+- R1 tool production
+ - Tools have been produced, need to get in touch with sites to sort out distribution
+- R2 tool production
+ - Done! Close task
+ - PPB chip trays were also produced in Freiburg and have been sent out
+- Endcap module thermal cycling setup
+ - No news
+- PPB Module for April Irradiation
+ - Barrel SS module broke, trying to build another module but need ASICs to arrive on time
+ - R0 has been transferred, but not bonded yet
+Closed Tasks:
+- R4 tool production
+ - All tools done (Nigel Hessey, 30/05/2022)
+- R0 tool production
+ - All spare tools send out! No further actions needed (Marc Hauser, 30/05/2022)
+### Institute Contributions
+- Sheffield
+ - Forest: confused by statement that it might be different with new wedge at new height
+ - Dengfeng: new wedge it’s height might be different
+ - Forest: shouldn’t be: should be same height and same length, there shouldn’t be any changes, what can happen is that the rotation of the screw against the wedge (the set screw) lifts the wedge slightly 
+ - Forest: important to check that while exchanging the wedge, the height remains the same 	
+ - Sven: would the height search before running the program not take care of this?
+ - Forest: at one point, found that there were more peels, thought we needed a new wedge and noticed that the wedge crept up far enough to make a difference
+ - Andy: think that 2 or 3 groups in UK have seen bonding issues with some ASICs in certain geographical locations
+ - Bart: it’s more nuanced: had issues with a few particular hybrids
+ - Forest: first few hybrids had weird things happen as well
+ - Luise: said that there was an early breakdown a few times in the UK, are you looking at this?
+ - Andrew: in Glasgow we had one
+ - Bart: had one as well, which was traced back to a sensor that was not very good, other was a soft breakdown after bonding (breakdown between 200-300V); had it in vacuum oven to mitigate humidity issues
+ - Andy: happened in Glasgow as well
+ - Vitaliy: and you don’t see any visual signs?
+ - Andy: no
+ - Vitaliy: early breakdown (30-40V) sounds like a chip
+ - Andy: did not see anything
+ - Luise: sounds like for most it is understood, but not for all of them. Need to have a look at this
+ - Bart: hard to register in database, since IV is good up to a point
+ - Luise: have a failed module stage
+ - Andy: but there is not feature to mark in the database to say what the failure mode is
+ - Luise: use the component comment field to describe it.
+
+Next meeting: Argotech, SCIPP 
+### Next round of glue studies
+- Bart: we had a go with true blue and it needs more pre-curing time, but then cures much faster
+ - Luise: that is good, need to be summarised in slides
+ - Theo: Sheffield has seen this as well
+- Step 1: Vancouver has volunteered to do the tests, Prague will do the gamma irradiation
+- Step 2: 
+ - Theo: we have to build another PPA module to see what happens (quite soon)
+ - Luise: if the PPA module is not required for a stave, could be done
+ - Luise: would like to have 3 modules with the different candidates build at the same site
+- Step 3: Prague volunteered for gamma irradiation
+ - Bart: there is potential to do shear testing. Can we glue aluminium to half moon?
+ - Luise: would probably break the half moon first
+ - Bart: our HV-tab pull tester works that way (half moons glued to plates)
+ - Vitaliy: complication is to make lapb joints well (controlled target thickness). If your plate on the back of half moon, this can probably work
+ - Bart: target would be to glue something to the sensor top surface instead of aluminium
+ - Vitaliy: it probably just depends on the design
+ - Bart: there is in principle nothing wrong with glueing something onto the sensor surface
+ - Luise: we want to check how well this behaves with gamma irradiation. You also want to get something that is strong enough to get a results for the glue, not breaking the substrate (half moon)
+- Step 4: 
+ - Dennis: true blue can be bought in Germany with Thorlabs
+ - Vitaliy: who will organize the studies?
+ - Luise: yes, we will start with step 1 and then look into getting volunteers for step 2. Each measurement has the potential to disqualify a glue when they fail.Volunteers are welcome at any point.
+ - But mainly: Sven, Luise and Cole
+- Andy: do we have to show any irradiated module type and what do we need for PRR?
+ - (slide 12): might be unlikely to have an irradiated module for
+ - Andy: and you would need all of this for PRR?
+ - Luise: not sure if we can get this done
+### Database Web GUIs
+- Luise: is it possible to send you an email with requests?
+ - Kenny: looking at making stage moving part of another step
+ - Luise: this is about some stages that should be changes when e.g. a module is assembled where some stages need to be changed automatically
+- Sven: when you set a shipment to received, do you also have the checkbox?
+ - Kenny: that is not yet implemented
+- Luise: this is also quite useful for looking at database results for descoping comparisons
+ - Kenny: could probably also scale it up to have this available for multiple institutes (test visualisation)
+### Barrel module metrology/analysis software
+- Luise: for thickness of components from different generations, would you be able to get this from the database?
+ - Theo: if this would interface with the database, otherwise would just specify the hybrid type and get it from a look-up list
+- Bart: not using fiducials for metrology, is support for edges given in the software?
+ - Theo: maybe have to take additional steps 
+ - Sven: common data first doesn’t require that the data is based on fiducials, so would recommend against doing it
+ - Bart: but how would this be done in reality?
+ - Sven: change the specs file, should then use a different python file which uses different nominal positions
+ - Sven: option to have a toggle switch in the GUI saying that measurements are based on edges or on fiducials?
+ - Ian: main thing is to translate metrology requirements into measurements in a spec file and then making sure the right file is used
+- Kenny: how useful is the comparison part and would you like this in the web app?
+ - Theo: could be something interesting for metrology similar to IV
+ - Kenny: but you compare with specs here, which currently isn’t in the webApp. Would need something more
+ - Theo: difference is what the webApp does is different than the python scripts
+ - Ian: also comparison uses the pickle files, not the json/common file
+### Module testbeam plans
+- Dennis: would not rule out start of irradiation at 8th (I would travel to CERN on the 6th for assembly on 7th and move stuff in on 8th).
+ - Jiri: would try to get everything ready for installation on 8th
+- Sven: if ASICs arrive tomorrow, module should be ready on time
+- Dennis: should be able to do cables by Monday, should be able to build cables by mid next week
+- Jiri: did anyone sort out the DESY paperwork for the R1 module to be brought to DESY?
+ - Sergio: doesn’t know, can check with Marcel
+ - Jiri: can send the document to Sergio as well
+- Dennis: can we start irradiation on the 8th, do we get the module out a week or two later for the testbeam?
+ - Jiri: yes, if it is all on the CERN area, seems to be okay
+ - Dennis: IRRAD might be the problem - can we get it out within a week after irradiation
+ - Jiri: should be
+- John: not sure if the irradiation would start at 8th, even if we have the modules ready on that day
+- Jiri: do you think the R5 module (irradiated sensor) would be ready for the test beam?
+ - Luise: if you only bias ½ of the module, the noise was reasonable
+ - Sergio: discussed via email that the module would come to DESY, still doing that?
+ - Everyone: yes
+ - Luise: there is a R1 module available
+ - Luise: in UK there is also an irradiated SS sensor, that could be made into a module in the UK
+ - Luise: do you need an un-irradiated EC module?
+ - Jiri: if we have a EC module that does not go onto a petal, we could do that
+ - Luise: currently, all PPA modules should go onto a petal, but we could send you one
+ - Jiri: if everything goes smoothly, we would have some time to test something else
+ - John: would be quite useful to have an un-irradiated module
+ - Luise: there is a prototype R2 module that should go to Freiburg, but it could be used for the test beam
+ - John: is it a pre-production sensor?
+ - Luise: yes
+- Jiri: we have August and November campaign, just need to think about the DUTs
+ - Luise: for August, we should have more irradiated EC modules of all geometries
+ - Luise: for November, we should try to get a irradiated module from the new glue trial for that
+ - Jiri: need a new CPE box, but then we could irradiate them quickly
+ - John: then we would also need neutron irradiation
+ - Luise: Vlado said that is no problem
+### AOB
+-

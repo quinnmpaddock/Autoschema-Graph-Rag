@@ -1,0 +1,141 @@
+# 08/02/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1109667/
+### Introduction
+- <missing some parts>
+- If possible, groups are encouraged to mix less glue (as long as the ratio stays the same)
+- New polaris glue: need to follow up on which tests required for the new glue mixture
+- True Blue comes in small bi-packs; need to look if larger packaging is possible
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 08/02/2022: EC tasks
+- 15/02/2022: Barrel tasks
+- 22/02/2022: EC tasks
+- 01/03/2022: Barrel tasks
+- R2 tool production
+	Tools were anodised, but sent to Hamburg, not Zeuthen now waiting for the anodised tools to be sent
+- R4 tool production
+	Waiting for delivery of Mizumi pins and bushings
+- Powerboard testing setup roll-out
+	Slow progress, today test of R2 powerboards, still debugging
+- Endcap module thermal cycling setup
+Waiting for DESY to certify cold boxes with “CE” before they can be sent out, working on it
+- EC hybrid test-panel finalisation
+Talk later
+- Production of R0 and R1 test frames
+- Production of R2 test frames
+- Production of R3, R4 and R5 test frames
+	No updates
+- Production of stencils
+	Company is struggling with remanufacturing of stencil frames
+- SMD tendering for EC pre-production/production hybrids
+We have a winner, but there are communication problems and need to follow up
+### EC test frame / panel updates
+- Postponed to next week
+### Barrel Hybrid Panel and Module Frame Changes
+- All happy with V2.1 module frame
+### Prototype Module Building at Prague and IFIC
+- R5 Module used R4 powerboard for legacy reason: in past only one powerboard type for R4 & R5
+- Mark metrology test as failed
+ - If there are points out of specification, the test needs to be marked as failed
+ - Tony: then every single hybrid fails
+ - Matthew: there are some additional requirements for certain points in the metrology procedure document
+ - Luise: this is one of the points that need to be discussed when data from all groups become available
+ - Gerrit: also need to look into how to get flexes more flat
+ - Luise: when discussed this in past we would like to compare this with bonding results e.g. if there is too little glue do bonds fail
+- Suction cups: what was the problem?
+ - Carles: They were misplaced. After removing and putting them back in it was OK
+ - Pavol: But one was not possible to put back in the hole in one specific location (all big suction cups were a bit problematic)
+ - Marc: but this is what is needed for the height differences in the powerboard
+- Marc: don’t understand the marks from the foam on the sensor, especially the corner
+ - Pavol: foam was a little bit moved, maybe that caused thisExactly where the edges of the foam are, the smudges end
+ - Carles: have seen something similar, but not to such a high degree
+ - Pavol: cleanliness of foam might be the issue
+ - Gerrit: did you clean the foam before putting it onto the sensor
+ - Pavol: not sure
+ - Gerrit: foam could have similar issues than suction cups that become smudgy when cleaning with iso-propanol
+ - Pavol: foam probably not cleaned
+ - Jiri: can try to clean it, but it is a fairly uniform distribution so maybe degradation of foamWill this affect the sensor?
+ - Carles: point is not to clean the foam with iso-propanol
+ - Gerrit: could put Kapton tape over foam to protect sensor
+ - Jiri: if this is something also seen by other groups, a solution must be found
+ - Marc: it also depends on how the foam was handled (this is a fairly new frame)
+ - Luise: seen same thing
+ - Jonas: seen it as well
+ - Pavol: have also older version of foam (without HV holes) and observed it
+ - Marc: always handled foam with gloves and hardly saw any residues on sensor
+ - Marc: frame should not be touched a lot and stored dry
+ - Gerrit: and dark to protect from UV light
+ - Forest: have you tried cleaning the residue off the sensor?
+ - Gerrit: noooooo
+ - Forest: can the sensor be cleaned with a Q-tip and acetone?
+ - Gerrit: relatively safe is just try a dry Q-tip, but would not recommend any solvents on sensor
+ - Tony: doing this as a one off on a mechanical would be good
+ - Gerrit: for barrel when having issue with suction cups, did a lot of tests with half-moons. Might be worth trying this
+ - Luise: Dennis, did you look into this?
+ - Dennis: so far only have seen major contamination when the foam was touched before putting it on sensor
+ - Marc: even scratching sensor with foam was possible when there was dust, but required lots of force
+ - Dennis: have old modules with foam that could be investigated
+ - Marc: straight line on edge does not really match the cut-out in foam and is puzzling
+ - Dennis: in worst case would have to use Kapton to cover foam
+ - Luise: even if it does not impact the sensor, having large amounts of dust on sensor is not good
+ - Gerrit: modules go into high irradiation environment, so any foreign materials get irradiated and need to be tested
+ - Luise: could it be correlated on how much the screw is turned. Maybe look into a correlation
+ - Dennis: there is also a difference between real sensors and mechanicals and we only tested on real sensorsCan have a look into the screwing
+Need to collect info on how bad the deposition is for mechanical/good sensors with how much force put on the foam and then decide if we can make this work
+- Luise: do we have pull-test results from initial hybrid badges to compare with IFIC results?
+ - Pavol: put values in bonding qualification document
+ - Carles: don’t know how systematic the pull test results were
+ - Uli: will have to check with Riccardo to get pull test results
+ - Luise: would be good to compare
+ - Ingo: or if this happened during transport
+ - Ashley: how old are the circuits and how have they been stored?
+ - Dennis: 1.5 years
+ - William: stored dry and in dark
+ - William: prague sensors were made in Toronto and not reported a bond issues
+ - Ashley: we have seen issues with peel when hybrids are stored for a long time (peel rate increases); need to study this further
+ - Dennis: circuits might be even older
+ - Gerrit: plasma cleaning seems to help, which indicates it could be an organic contamination
+ - Tony: for thinflex we just cleaned with safewash and that recovered the peels
+ - Ashley: it looks like there is some ageing effect of hybrids, but during production the shelf life of circuits should be shorter
+- Gerrit: cleaning of waffle tools -> are there comments from bond experts? They fill up much faster with HV tabs than expected
+ - Forest: looked into cleaning a while back, but it was not really worth it
+ - Gerrit: putting NaOH in ultrasonic bath could be a safety issue for sites, so would not do it
+ - Forst: waffle tools are also cheap enough
+ - William: we had supply chain issues with 4 months lead time
+ - Gerrit: there is always a bit of lead time with those
+ - Bart: can confirm that last time we had 4 months lead time
+ - Luise: if you can’t order them, cleaning might be the only option
+ - Gerrit: next time when ordering we just need to get more than required
+ - Forest: if you do clean, need a picture setup to check quality of cleaning and that cleaning does not damage the wedge
+ - Carles: looks good after cleaning and shear tests are good as well
+ - Gerrit: has anyone tried the ceramic tools?
+ - Carles: they are very expensive and only build for special order
+- Forest: springiness is a problem for wire bonding, but depending on how springy the board is you might not have enough overtravel
+- Carles: will need to follow up offline on the issue with pick-up tool collision with SMD components
+ - William: will have a look at it with our tools when we build the parts
+ - Gerrit: just grind the pin off
+ - Ashley: looks like end termination resistor of multi-drop bus
+### EC PPA hybrid update/ HCC fuseID duplication
+- Luise: please mark these hybrids somehow so that we can keep track of those
+- Luise: it’s a bit scary to reduce the amount of foam with the first good hybrid shipmentIf you want to try this, please do it with a small amount of hybrids
+ - William: can send a prototype panel with a shock watch as a test
+- Dennis: can send instructions on how to fix the R5 panel
+### ASIC configurations for hybrid testing
+- Note: mapping will be more complicated in the future where barrel use HCCStarV1 links 1 to 10, but ASIC bond ID 0 to 9
+### AOB
+- Luise: Pisa meeting is coming up and if people would like to submit abstracts with ITK data, these needs to go through the ITk speaker committee and/or the module ACs
+- Luise: would follow up to fix more R5 panels (or order new) what is the status of that?
+ - Dennis: not ordered new. Would be good to know how many are required in the near future
+- Luise: Vitaliy, wanted to send email for storage of temperature correlated test data
+ - Vitaliy: will create cernbox for it soon
+- Tony: we are 2 weeks away for PPB hybrids, ASICs are also 2 weeks out so we would like to ask for PPB parts nowAlso would like to request PPB sensors for first 2 staves
+ - Luise: you have done all the site qualification documents so far that are available (need to see what to do about the powerboard reception)
+ - Tony: have done all powerboard test
+ - Luise: will check for PPB that all information are there and then do this
+ - Tony: for modules we haven’t uploaded the test date (still working on understanding the noise); we are slightly higher than what Craig has shown in the past, but need data to compare against
+ - Gerrit: if we get sensors only after we have done PPA, sensors need to go through the process. Why can’t we get the sensors that we need to start working on the IV tabbing?
+ - Tony: need to finish PPA tabbing first before asking for PPB parts
+ - Luise: Tony asked for all parts, not just sensors. Gerrit, if you ask for sensors only, we can look into this
+ - Tony: all three US sites want all the the parts for PPB; sensors would be good as well; Gerrit hasn’t done full PPA complement of sensors because they haven’t finished all SQ steps
+ - Luise: if you want to get PPB sensors for HV tabbing, you should finis PPA sensor tabbing first

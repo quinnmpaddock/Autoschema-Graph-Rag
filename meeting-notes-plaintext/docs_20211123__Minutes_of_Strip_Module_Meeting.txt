@@ -1,0 +1,113 @@
+# 23/11/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1084885/
+### Introduction
+- Experience with reworked R1 tools (Thursday, 25/11/2021)
+- “Cleanup” of TWiki page https://twiki.cern.ch/twiki/bin/view/Atlas/ITkStrips
+- Summary of ITk Strip General session from AUW: everyone needs to be working towards the start of PPB when HCC/AMAC become available
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 23/11/2021: EC tasks
+- 30/11/2021: Barrel tasks
+- 07/12/2021: EC tasks
+- 14/12/2021: Barrel tasks
+- 11/01/2021: EC tasks
+- R0 tool production
+Remaining tools have been started in the machine shop, work in progress
+Toronto needs spares to set up procedures
+- R1 tool production (postponed)
+- R2 tool production
+Tools sent out, please send feedback.
+Pins in PB pickup tools at wrong height, people need to be aware and reset pins
+Barrel experience: re-setting the pins at the correct height is harder than expected
+Ingo: may need to take out pins, widen holes and then glue them into place, need to see what happens
+Toronto: made a model to match the powerboard and used that to adjust pins, that could help
+Should re-set the pins on actual powerboards instead of models. Dennis: don’t have a jig that can help reference the powerboard directly. Ingo: would have to use the module jig and shim material. Dennis: but then you could shim the glue process directly. Craig: not the powerboard pickup jig? Dennis: no, there is a gap. Craig: that is different in the barrel.
+Luise: shimming would need module jig + glue thickness shim + glass sensor + powerboard
+Carles: manual process: taking out pins and sanding down pins to correct height
+- R4 tool production
+Local TRIUMF R4 tools within spec, no further feedback
+- EC PPA/prototype hybrid order
+	Not returned from SMD population, Uli to check with Kambiz
+	Toronto: need hybrids in January to make Pre-Production hybrids, especially R2 and R4, estimate to get them before end of November seems late
+	Uli will check where delays are and will report back
+- SMD tendering for EC pre-production/production hybrids
+	Tendering in progress, two further companies identified, working with companies
+	Uli: tender will be pushed to start of new year, right after Christmas break, tender expected to finish on the 25th of January, expected to yield 1-2 candidates
+	Working on transfer of funding
+	Bart: are you hoping to work with companies you’ve worked with before?
+	Not much experience out there for flex population, cost will be to give them panels and see if they can do it
+- Shipping readiness (incl import procedure)
+	No news from US about moving chips, waiting for update
+	Currently: making list of parts that will go through CERN and how much work this will be to organise central person to organise distribution
+- Powerboard testing setup roll-out
+	Dennis in process of understanding how to make system work with end-cap powerboards
+	Closer, but will need more work
+	Jigs stuck in workshop
+	Progress, but still work to be done
+	Sven: is there a difference between barrel powerboards and R0 powerboards?
+	Dennis: Shouldn’t be, but it’s currently not working and needs a lot of time to debug
+- Endcap module thermal cycling setup
+	Slides from Sergio
+	Looks like modules can be left powered while cooling down (great news!)
+- Hybrid crate setup, finalisation and roll-out
+No update
+- EC hybrid test-panel finalisation
+Kambiz included requested changes: resistors and NTCs on two test frames
+Enough panels in hand for start of PPB? Yes, 30 per type
+- EC multiple module box transport box
+Should be finished, no remaining comments in EDMS
+No volunteers yet for shipping trials
+Sites will build their own boxes
+Task will be closed
+- Production of bonding and testing jigs
+Need to sort out the kapton foils, some shipped to european sites today, foils for outside Europe to be shipped tomorrow
+Question: thickness of foils? 50 um
+- Production of R0 and R1 test frames
+- Production of R2 test frames
+- Production of R3, R4 and R5 test frames
+Design changes for test frames in progress, waiting for design updates, need to schedule a review for all of them together when done
+Canada still waiting for response from Kambiz for R3-R5 frames
+- Production of hybrid panel cover
+Task done -> close?
+- Production of stencils
+To be discussed later
+- Production of LED bars
+No updates
+- R2�EC glass dummy sensors
+About to be received and distributed
+- Irradiated R5 module for December 2021 Testbeam
+Sensors sent out to IFIC (after annealing) and cooled
+Waiting for hybrids from DESY, other hybrids on panels tested
+### End-cap stencil re-order
+- Postponed to Thursday 25/11/2021 production planning meeting
+### Status of DB interfaces
+- Groups have to use the sensor QC algorithm for breakdown calculation, but while it is highly recommended to use the standard scripts for DB upload, this can be done with own scripts if groups want to do this
+- Encourage all groups to provide links to any DB interface programs they have developed for the whole collaboration
+ - TWiki page: https://twiki.cern.ch/twiki/bin/view/Main/DatabaseInterfaces
+- Sergio: could this be used for other activities (e.g. EOS)?
+ - Luise: yes
+- William: Are ASIC gel packs in the database?
+ - Luise: not now, but there is a QT working on it
+### Updates to QC/procedure documents (carried over from AUW)
+- Agreement to not include new fiducials on hybrids in new endcap module/hybrid drawings
+- Visual Inspection: have option to say “other” if there is a defect that is not on the list
+### Burn-in Crate Results
+- Test hybrids without fans
+- William: is there something different for 6 hybrid panel tests?
+ - Ashley: Itsdaq is hard-coded more towards stave tests and therefore needs some further development
+ - Dennis: had to do this in the past for petals, but was only 2 numbers in software to do this
+ - Ashley: firmware had to be updated to match downlink; currently not easily seeing how to go to 6 panels
+- Dennis: one thing is to readout all of them at the same time. Is there a plan to cycle through the hybrids to test the different physics modes?
+ - Ashley: needs to be discussed in the futureAt the moment just working on signing the crate off
+- Gerrit: have all hardware in US; what is the best way forward to test hybrids in crate?
+ - Ashley: targeting to test at least 1 hybrid panel to allow to test each of the 6 slots in the crateHave done this in the past as well.TWiki will be updated with instructions, once the issues have been resolved
+ - Gerrit: focussing on 6 panel is not an issue for single panel test
+ - Ashley: it is probably better to wait until issues have been resolved without having to take care of firmware/hardware update
+ - Ashely: look into creating at TWiki page with minimum requirements to test a single panel
+### Discussion of SQ feedback
+- Feedback directly added to slides
+- Postpone discussion points to next meeting
+- 
+### AOB
+- c

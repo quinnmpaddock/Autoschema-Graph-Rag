@@ -1,0 +1,87 @@
+# 14/07/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927510/
+## Minutes
+### Introduction (Craig & Ingo)
+- An ITk-wide task tracker is becoming available (hosted at CERN), for the module group this would include tasks such as jiig production, hybrid design, tendering, cold jig roll-out etc.
+ - Each task will have connected responsible institutes/people
+ - Completion date and “next update” date will be included and used to track tasks
+ - Will be careful that updates on these tasks does not take over whole meeting but will need to find a balance
+- The statusing process for the last three months is complete
+ - In discussion with PMO to allow everyone to see the schedule including “summary views” which allow people to easily see the important milestones
+ - Watch this space!
+- Float from ~100 days reduced by 60 days, certain groups have accumulated way more delay than that, how does that fit together?
+ - Not all items that were delayed are on critical path
+ - For example: sensors are still arriving (even though testing might be delayed)
+- We know not all sites will be ready for qualification in time, but that’s not fully encoded in the schedule at this point
+- Craig will show review milestones/schedule next week so people can get a better idea of how realistic current goals are
+### EDMS (Craig)
+- No comments
+### EC tooling discussion (Marc, Tynan, Pablo & William)
+- Have pins been ordered already?
+ - Marc is waiting for a final decision, stopped all purchasing plans until then
+- Comment: designs online since June, not much time for review
+ - Note designs for R0 toolset have been online for much longer
+ - Marc asked for comments and a review of them multiple times and only very few people reacted (need increased EDMS involvement from the community!) 
+- Reviewing new changes could take longer than just one or two weeks, how much time for EDMS review?
+ - Significant changes will need longer (2+ weeks) than minor (1 week)
+ - These times may be optimistic as may be delayed if we have to spend lots of time chasing people for approvals
+- Tricky to say when pre-production A starts exactly, general plan was when ABCstar ASICs come back (diced ASICs expected beginning of September!)
+ - In January pre-production B should start (defined by when tendered hybrids and HCCStar/AMAC arrive)
+ - Particularly tricky for endcap since no star modules have been built yet!!
+ - After tools are available, probably need at least a month to get used to them and make prototypes 
+ - Safest thing (in terms of schedule) would be to get EDMS review done with pins and slotted holes (no bushings) 
+ - At same time test bushings and get them fitted afterwards, but this would lead to a loss in precision according to spanish company
+- Important to understand timing of different plans
+- Question: do we take risk to spend more money now to test out different plans or try out one plan that might then cost us time because it doesn’t work 
+- Endcap has way fewer uses than barrel (since fewer modules per type build at each site)
+- Main worry schedule, not money → strongly in favour of kicking off as quickly as possible by approving drawings and get them out for manufacture with pin solution and relaxed tolerances and see if it works. 
+ - If it doesn’t work bushings can get brought into the game if necessary
+ - Modification of adding bushing would require tools to get taken away from sites which would stop any production as well
+ - Expectation is that pins and holes/slots will work but wear is the main worry
+- Changes in tolerances don’t need to get changed in the solid model, is only attached to drawing in separate information sheet
+- Harder anodization helps because even if you have to re-ream the hole you don’t get down to the bare aluminium (50 um anodisation layer)
+ - Also matches experience from the past which were generally not hard anodised
+- To end discussion:	
+ - Driving issues are schedule items 
+ - Have to push through getting manufacturing started with standard pin solution based on current drawings
+ - To get approved in the next week or so
+ - Marc will have to replace some drawings that already got small modifications in that case
+ - Craig will end current approval process
+ - New review with one week deadline will get started once updated models uploaded
+ - After that: push out to manufacture
+ - In parallel look into bushing solution
+- If that’s the way we want to go we will have to continue the order of pins
+- Where in the timeline would people have time to make 2D drawings with tolerances? When would that be reviewed?
+ - All models have gone through EDMS review before, 2D drawings should be started right away (aka now)
+ - If no significant comments are made for 3D drawings, kick off 2D drawing review immediately after 3D review is finished
+ - Give another week then for the review of the 2D drawings 
+- To sum up: after Marc has uploaded version of drawings we want to go with:
+ - One week to review 3D drawings (review completion targeting 24th July)
+ - Start 2D drawings in parallel
+ - Start 2D drawing review as soon ad 3D review is done
+ - Finish that review after a week (review completion targeting 31st July, 7th August may be more realistic)
+ - WILL NEED QUICK RESPONSES ON EDMS - THE MORE CRAIG/INGO HAVE TO CHASE, THE MORE DELAY THIS WILL INCUR!!!
+ - Get first tools to all groups by mid-September (assuming 4-6 week production)
+ - This still may be quite optimistic if we don’t push quickly
+ - Bushes to be investigated in parallel as backup solution
+ - Discussion towards end of the year about whether to continue with preproduction tools through production
+ - Rework or new tools with bushings or keep as is to be discussed
+### Practical EC tooling review (Carles & Pablo)
+- Timeline less optimistic compared to Craig’s 
+- Company assumes tools could be done by November
+- Seems matching with Toronto’s timeline where full tool production could take ~1-2 months according to first quotes
+- Zeuthen technician ran into the same problem, would prefer the 90 degree connectors as well
+ - Preference because they use glue robot
+ - DESY HH uses same robot and does not see any problems
+ - Ingo therefore withdraws his comment
+ - Will discuss offline to come to a final conclusion
+- Can this be modified easily in drawings?
+ - Marc will need dimensions for this, but in principle it can be done
+ - Will discuss offline
+ - Will be changed for all tools
+- Why are straight ones preferable?
+ - With 90 degree one the tube is getting pretty close to the hybrid/power board
+### AoB
+- Barrel transport boxes?
+ - Did we decide to go into production? Yes, Hongbo has put out order (~40 days until delivery)
+- Will ping company for dummy hybrid order (EC) to see if we can get delivery update

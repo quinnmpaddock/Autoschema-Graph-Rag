@@ -1,0 +1,100 @@
+# 22/06/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1032185/ 
+### Introduction
+- The following steps are now ready for site qualification
+ - 8.7 Hybrid Visual Inspection (https://docs.google.com/spreadsheets/d/1Q0h-2y5_ygFjxDJdadmUOBPMrxGN9phIQMnX_nUDEA0/edit#gid=1389349516)
+ - 6.3 Powerboard Visual Inspection (https://docs.google.com/spreadsheets/d/1Q0h-2y5_ygFjxDJdadmUOBPMrxGN9phIQMnX_nUDEA0/edit#gid=2079540660)
+ - 3.1 Sensor Reception Testing (https://docs.google.com/spreadsheets/d/1Q0h-2y5_ygFjxDJdadmUOBPMrxGN9phIQMnX_nUDEA0/edit#gid=1915254925)
+ - 8.3 Hybrid Assembly (https://docs.google.com/spreadsheets/d/1Q0h-2y5_ygFjxDJdadmUOBPMrxGN9phIQMnX_nUDEA0/edit#gid=1389349516)
+ - 13.3 Bond Pulling QC (https://docs.google.com/spreadsheets/d/1Q0h-2y5_ygFjxDJdadmUOBPMrxGN9phIQMnX_nUDEA0/edit#gid=0)
+- Issue with procuring RFID tags
+ - For module test frames allow to use QR codes instead for now
+ - Please use the DB generated QR code once you registered the tool
+ - This is only a temporary mitigation to continue with frame prod where this part is currently unavailable, once part is back, we will stuff new frames with RFIDs again (will we “fix” older ones? -> assume sites can choose to keep QR sticker or move to RFID for the “mitigation frames”)
+ - Hybrids will continue to use RFIDs (QR code is not a viable mitigation here)
+### Powerboard site qualification
+- Handovers from PB sites to industry and modules sites well understood?
+ - Jacob doc is the “hybrid QC” equivalent, does not define the exact test but points to Timons QC doc
+ - Also defines what is to be done at reception at module sites
+- PB site QC needs to ensure docs are ready that have all the relevant “QC target parameters” included (you have to know what “good” means)
+- Warpage? / metrology?
+ - Currently in parts as comments in the QC doc, will be addressed
+- Maybe add a visit as well, as we originally planned?
+- Agreement on Timon’s proposal
+ - Please finalise QC doc
+ - Timon points out roll out of testing system + doc has to also be done asap
+ - Then announce ready for review
+- We have to then plan release of parts etc planning
+ - Electrical PB reception testing begins to be requirement for module sites only from PPB (we do NOT require el tests of PBs at module sites for PPA)
+ - However of course if you have test equipment DO test!
+ - Timon would like to test testing equipment at sites, so please always leave at least one PB on the reception panel until able to test PBs
+ - Yes, this is also a requirement
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R2 tool production
+ - All parts machined
+ - Significant fraction metrologised (hehe)
+ - About to send out “fast track/trial order” to anodisation shop
+ - This first set will go to Ca following metrology confirmation asap 
+ - Once trial successful rest of parts will go for anodisation as well
+ - Then final metrology
+ - Then send out
+ - Anodisation expected to take ~one to two weeks
+- R5 tool production
+ - most tools in hand at IFIC (registered in DQ and RFID tag attached)
+ - found some combinations of tools that don't fit -> look into fixing it
+ - other tools be produced in 3 batches
+ - powerboard pick-up tool: company not able to assemble them, needs to be done at IFIC (need also check fitting with jigs)
+ - Please provide up to date shipping info here https://docs.google.com/spreadsheets/d/1QdbWKPLVTP1uK6mV2fKNJh7lo0UFF-Fhqb8GB_p4pVY/edit#gid=0 
+- Shipping readiness (incl import procedure)
+- Barrel hybrid tendering/order
+ - Procurement should finally move more in next two weeks
+ - Have about 170 thinflex hybrids
+ - Will finish QC on them
+ - Will attempt to use this set also to qualify material for production as a backup for DuPont
+ - SMD scarcity - have sufficient for PPB, will keep a close eye on prod volumes
+ - DuPond material for PPB is secured, however for prod we need to keep an eye
+- Powerboard testing setup roll-out
+ - Testing of boards that arrived progressing well
+ - Will gather list of items required for sites
+ - Should be able to have a good idea when it can be sent out in 2 weeks
+- UK/China module thermal cycling setup
+ - All UK ColdJigs delivered
+ - Sheffield has already tested electronics
+ - waiting to hear from other UK institutes
+ - IHEP ColdJig
+ - Received their chiller from RAL
+ - Discovered it was faulty and was sent back for repairs last week
+ - In the meantime have quote and delivery estimates for shipping crates
+ - 3 crates for £350 and 3-5 days for delivery
+ - once chiller returns (waiting for company to respond with return ETA), we will run end-to-end test before packing equipment for shipping (estimate 1 week)
+ - S/W
+ - V2 released
+- Production of R0 and R1 test frames
+ - Waiting for test with first R0/1 modules
+ - These will be the ones in Ca
+ - These are for production, so have a bit of lee room
+- Production of R2 test frames
+ - See above
+- Production of R3, R4 and R5 test frames
+ - See above
+ - Purchase order for R3 and R5 is out, once design verified we give the go ahead
+- Production of hybrid panel cover
+- Production of stencils
+### EDMS Status and PPA
+- What is the next step on the way to make modules? Module loading sites are twitching
+ - Modules currently cannot be built until all 26 steps are done
+ - We might soon have to mitigate to release modules earlier
+ - This would have to be somewhat aligned with the SQ process for module mounting
+- Might make sense to send parts even before sites fully qualified (when they approach qualification) to mitigate shipping delay
+### Wire-bond pull tests in database
+- For numbering
+ - ASIC backend, will program one ASIC and replicate, which makes wires start at 1 again
+- Discussion about technical feasibility of implementation for numbering
+ - Will have tool (mapping program) to help translate
+- 
+### [moved to next week] HV tabbing and SQ requirements
+### [moved to next week] R5 tooling metrology
+### AOB
+-

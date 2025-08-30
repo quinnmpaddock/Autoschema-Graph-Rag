@@ -1,0 +1,134 @@
+# 30/03/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1008268/
+### Introduction
+- 13th April will be a module meeting focussing on Database
+- AMAC / PB design update from Craig (can you add this Craig?)
+- EC hybrid thickness risk added to risk register
+- Pull-Test will be implemented as described in procedure document
+ - Please leave comments there if changes are required
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R3 tool production
+ - All alum parts received, only few returned for rework (1%), 2 weeks faster than hoped for!
+ - Anodized ⅓ of parts, some shape changes in grooved tab tools (anodisation seems to get thicker near grooves?)
+ - Like to discuss this with other tool makers and see if we can get grooved module jigs anodised elsewhere?
+ - Pins for hybrids are rather shallow (1-2mm), are they too low? Maybe pins should not be pushed all the way down?
+ - Yes, they should not be pushed all the way down
+ - Bushings problematic, large bushings sit very loosely. Holes are correct. We will likely need to use some glue to fix those
+ - RFid DB entry script available, but not sure how “prod ready” it is? Seems there is only R0 prepared for. Who can help there?
+ - Looking like able to finalise in about 3 weeks
+ - William will call for discussion round meeting to address the above questions
+- R4 tool production
+ - Waiting for parts to get sent back
+ - Some of the pins were fitting rather loosely as well
+- R5 tool production
+ - All tools in hand
+ - Measured all of them, all that was analysed is in tolerances
+ - Cleaned most of them
+ - Will receive them back, then register and do functional tests
+- UK/China hybrid/module tool production
+ - Most issues resolved in rework and tools back in Liverpool
+ - Chip trays did not get fixed, now fixed in local workshop in Liverpool
+ - Fixed one design issue that was not caught in EDMS review
+ - Will be shipped out over easter
+- US powerboard tool production
+ - Relevant folks not connected, move to next week
+- EC PPA/prototype hybrid order
+ - Hybrids being tested, SMD stuffed, some already done, some tests outstanding
+ - Will send out as soon as design is validated (once hybrid was operated), no reliable “ready by date” available
+- Shipping readiness (incl import procedure)
+ - No news
+ - UK export issues for ASICs solved
+- Powerboard testing setup roll-out
+ - Snag hit - parts have 2-3 month delivery lead time. Looking for exchange parts, now down to one part
+ - When done with part exchange will upload to EDMS
+ - Once submitted the 30 boards have a 2 week turnaround time for PCB prod and stuffing
+ - EC will use same design, will submit EC order once barrel goes out for order
+ - Hope the exchange parts will suffice for all
+ - Barrel will order some part of the EC if not all in exchange for powerboard test crate, Karol and Dennis will iterate on the exact numbers to be ordered for EC
+- US module thermal cycling setup
+ - Will have 3 setups in the end, missing one FMC DP
+ - SCIPP and Berkeley waiting for Ankush’s software
+- Hybrid crate setup, finalisation and roll-out
+ - Most electronics now shipped to US, Ca, UK. Awaiting one delivery address for Europe - will send to Zeuthen
+ - Rest of burn in setup arrived from Liverpool in Zeuthen and is being unpacked for testing of thermal control
+- Production of hybrid panel cover for EC
+ - Issues finding supplier of threaded inserts (rather flat), now got offer from UK (25k pieces, will have 4k spares)
+ - ESD safe acrylic - getting quotes
+ - Some extra work with procurement locally due to high monetary amount
+ - How long till finalised?
+ - Several parallel timelines, not before 5 weeks from now
+ - Test frames need those inserts as well. Please contact Dennis once delivery received
+- Production of stencils
+ - Postponed to next week with a full talk
+- Supply of miscellaneous EC tool common items
+ - Open only for last remains of bushing, still waiting for delivery, scheduled to arrive today, still holding breath
+Discussion:
+TonyA asks
+- when first electrical end-cap modules could be expected
+- what's holding up the production
+We will have to make clear how these modules will be built (somehow, whatever, as quickly as possible or carefully, within spec, following all the procedures)
+There should be a discussion about these questions at e.g. AUW about
+- can we skip stuff or 
+- do we need to do everything as in production and
+- what will then delay things
+To stress: all prototyping modules in the endcap will be semi-electrical, all electrical modules in the end-cap are part of PP-A (in planning)
+### Endcap Stencil Test - Postponed
+- 
+### Sensor reception procedures: Pending Questions
+- Visual Inspection: require a minimum resolution?
+ - Sufficient to see issues/chips on sensor, but not necessarily all p-stop
+ - Could be good to think about a recommended resolution
+ - Full picture of sensor might not be useful, probably better to do visual inspection with microscope and report issues with a detailed picture
+- Do we need to upload pictures of humidity indicators to shipment checklist?
+ - Taking a picture and upload it to database might not be very useful
+ - What to do if a person is color-blind?
+ - Could still take a picture and have someone else look at it.
+- IV test requirements same as for sensors (700V, stability test) ?
+ - Andy: what is the failure mode of an IV test at reception
+ - Craig: not sure if we ever compared IV measurements at different institutes easily to use it as failure criterium, but need to check breakdown voltage and sensor stability
+ - Vitaliy: would still be good to look at cross-comparison of tests
+ - Should use Pre-Production to look at data and define cuts for failures
+ - There might be difference between batches; should also look at sensor QC tests
+ - Should try to do tests as close to sensor community tests as possible
+ - Andy: should the IV be done directly after unpacking it or stored it first dry?
+ - Craig: have stored it in dry storage in the past
+ - Need to have a something written in procedure document (looking at good practice document)
+ - Short stability test is useful to quantify if a sensor is trainable
+- Add “Good practices for sensor IV tests” to EDMS?
+- Sensor storage: repeat IV if sensor is stored for more than 3 months?
+ - Only need to test before using if it was stored for more than 3 months
+- If you ship sensors to yourself, you don’t have to do a reception test
+- When does a sensor become a module?
+ - When the HV-Tab is attached / when it is attached to module frame
+ - Use sensor reception procedure for test
+- Richard: would be good if sensor testing sites could only send sensors when they are needed by module assembly sites
+ - Gerritt agrees
+ - Vitaliy: this is too much storage required at sensor test sites
+ - Need to consider that all sensors need to be reception tested and also tested after storing them for more than 3 months at module sites (in module test frame)
+ - US should look at storage requirements to see what they need
+### Weighing QC Discussion Results
+- Please record time spent for a given weighing step as input for the decision after PP on potentially dropping individual weighing steps
+- Find slides with a “weighing and DB entry” summary/tutorial in agenda
+- Run number here is what?
+ - If you have an erratic weighing you increment this number from 1 to 2 etc
+- Please update the scale model used in your lab in the inventory survey if you updated your scales or if you have not yet uploaded this information for your site
+ - Reminder: the link to the infrastructure surveys for each site can be found on the site qualification twiki: https://twiki.cern.ch/twiki/bin/viewauth/Atlas/ITKStripSiteQualification 
+ - It is crucial for planning reasons that people keep this survey up to date!
+ - Second reminder: DO NOT FILL OUT A NEW SURVEY! The links on the twiki lead you to an editable version of your survey. Change the information in there, scroll all the way to the bottom and click “save”
+### Metrology and what it means for Site Qualification
+- Should we be shimming for site qualification (and if not and the module fails, do you still pass site qualification)?
+- Or shim to produce a module to be within specification, but not following the proper assembly procedure
+- Craig: if toolset was designed for different hybrid thickness, then adding a permanent shim to tool is fine. But not using variable shims to compensate for natural thickness variations of parts.Then qualify with correct preproduction parts to ensure modules can be assembled within specification.
+- Andy: should we use out of spec components to make in-spec modules by tuning the assembly process?
+ - Craig: to show that procedure is correct, modules could be out of specs
+- Geritt: have a document to show why to use shims (and which thickness) for which items
+ - Only when using a standard shim for a known design fault.
+- For metrology qualification a part exchange is required
+ - Part exchange has to be done by PPB, but is not a limiting factor for passing site qualification
+ - Can be an issue when directly comparing measurements by trying to have them agree exactly
+ - Should start this as soon as possible
+- Need statistic about metrology (position of hybrid/powerboard on module) and might potentially loosen this in the future if is becomes obvious that the targets are too tight
+### AOB
+-

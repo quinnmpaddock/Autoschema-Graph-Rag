@@ -1,0 +1,123 @@
+# 12/04/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1109676/
+### Introduction
+- Discussion about whether the powerboard attachments is needed or not and whether calibration can be done elsewhere
+-> everyone agrees to drop the step
+- Question: do we just ship modules instead of frames with modules?
+-> yes
+- Dennis: do we just drop the RFID tag then?
+-> should still be there if people want to use it
+- Tony: should I start rewrite QC overview doc now?
+-> yes please
+Tony: do we want to wait until after descoping?
+Luise: descoping will take a while, shoudn’t wait for it to finish - should have a working version and then modify as needed
+- Will send around a spreadsheet for people to enter their PCIe expansion cards and test duration
+-> Tony saw issues with data loss, too
+-> William: are we going to try and fix ITSDAQ or try and fix the hardware?
+-> Sven: plan is to use PCIe cards that work
+-> William: means a lot of cards to replace
+-> Dennis: there could be a software solution
+-> Luise: let’s see how widespread this problem is and then see what we need to do to fix it
+-> Dennis: need to include CPU in survey
+-> Luise: need to include test duration for test that finish and don’t have error messages
+- 
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 12/04/2022: EC tasks
+- 19/04/2022 : Barrel tasks 
+- 26/04/2022: Barrel tasks
+- 03/05/2022: EC tasks
+- R0 tool production
+ - Only need to send out spare R0 tools
+ - PPB chip trays will be produced soon
+- R2 tool production
+ - Dennis sent PPB chip trays to Freiburg, had bushings inserted, only need to be cleaned and will then be shipped out
+- R4 tool production
+ - All tools shipped out
+- Powerboard testing setup roll-out
+ - R3, R4 and R5 test carriers submitted for production
+- Endcap module thermal cycling setup
+ - No news
+- EC hybrid test-panel finalisation
+ - Bug-fixed R5 in workshop for population, will be sent out with hybrids for PPB
+ - Otherwise not much change
+- Production of module test frames
+ - In workshop for population, should cover entire pre-production
+ - For all module types
+ - Resistor changed to improve noise on split frames
+ - Submitting two versions of R4 to check for noise issues
+-> no need to plan PPA modules 
+- Production of stencils
+ - Prague re-machined some frames. Looked good. IFIC accepted to test them. Jiri to send them out by the end of this week.
+- PPB Module for April Irradiation
+ - Hybrids sent to DESY, AMAC arrived in Freiburg, powerboard will be sent out soon
+ - Jiri: are the chips still working? Dennis: yes, at least one AMAC
+ - Carles: any plan for who will build the R0? Ingo: should be able to build it in Zeuthen. Can’t promise hybrid will be at correct height, but it looks okay
+ - Sensor was sent to Ljubljana for irradiation
+ - Barrel module to be built in Liverpool: Powerboard sent to England, stuck in RAL, AMACs sent to LBNL to assemble powerboards
+ - Liverpool needs one SS sensor from Queen Mary
+### Institute Contributions
+LBNL
+- Vitaliy Slide 8: what is the width of the noise spike? How much was the noise reduced for the modules?
+ - Shuo: we haven’t checked reason for narrow bond
+ - Vitaliy: might be a touchdown with the vacuum pick-up tool that was not grounded
+ - Shuo: there is a criteria for bad channels, the narrow bump did not fail
+ - Vitaliy: are all criteria for failed module channels implemented?
+ - Noise was reduced by ~50ENC for the shimmed module and variation of powerboard noise has been reduced
+ - Luise: please prepare a summary of the PB vs noise results
+- Bart (HV-tab bonding): we have seen the same issue as well and had tweaked the bond parameters to avoid this
+ - Gerrit: but the tools are different
+ - Bart: yes, but when reducing US and increase bondforce we didn’t see this again.
+ - Ian: will pass it on to technician
+UU
+- Luise: please feed back the R1 shorted panel to Freiburg what the issue is, so that they can look at the design
+ - Dennis: most likely the connector
+ - Dennis: don’t have this specific type left, but can replace with new type
+ - Richard and Dennis to figure out best way to exchange broken powerboards and panel
+- William: surprised that the bonding is so fast compared to Celestica
+ - Richard: only when it went smooth (2 hybrids in 4 minutes)
+TRIUMF
+- Vitaly: during 130 era also other modules shows reduction in time
+ - Gerrit: did you ever blast a module with UV?
+ - Vitaliy: yes, we cured 2 modules with this
+- Carles: the problem with not taking IVs through the left side of frames is worse with tabbed sensors
+ - Luise: if you have an HV-tabbed sensor, with correct bonds it can be tested
+ - Luise: the issue is with a missing trace for the edge connection
+ - Dennis: you bond the tab to where the tab goes, on the right side you bond by the powerboard
+- Bart: how worried are you about the HV tabs?
+ - Luise: very, we are also looking into how to attach a tab to an already assembled module
+ - Bart: no idea why this happened
+ - Luise: were from a different batch
+ - Bart: found the same where there are variations between batches that are not obvious
+ - Forest: when evaluating non-destructively you have to be very precise with the angle, otherwise it will tear the tab off
+Next meeting: DESY - H 
+### Temperature measurements during hybrid panel testing
+- Luise: what exactly do you want people to send you?
+ - Jacob: use barrel LS and SS data from cold box and fit noise/gain to temperature measurements
+- Luise: for the unbonded cut this should be done at lower voltage. Are you doing this?
+ - Jacob: haven’t looked at this for now
+- Luise: have you checked with ITSDAQ developers to raise the cut?
+ - Dennis: more a question to ASIC people on how high it can be before ASIC fails
+### Evaluate end-cap foam design
+- Luise: does this mean we need new screws?
+ - Dennis: yes, will need longer screws. Will check which standard lengths we have
+- Ingo: are you concerned about foam availability?
+ - Dennis: have to buy quite a bit anyway (minimum order 0.2 m^3), has lasted until nowCompany is in German and material should be reasonably well available
+ - Ingo: might want to find storage space
+- Carles: about closing up the window: would keep it as open as possible for nitrogen flow
+ - Dennis: not talking about the sensor part, only removing openings for wire-bond head
+- Carles: was playing with hybrid panels and don’t like that the cover and foam have the same size. When removing the cover, sometimes the foam comes off with it. Would be great to make the foam larger
+ - Dennis: could also consider to glue the foam to the perspex cover
+ - Shouldn’t impact current foam order
+- Ingo: will this have an impact on the multi-module transport box?
+ - Christian: will effectively add 8 mm to the thickness of the module
+ - Dennis: yes, this is were getting thicker by more than 2mm will be an issue
+ - Ingo: not sure how soft the peli foam is
+ - Christian: if we do it as we did in the past and just remove a bit of hard foam in the box and replace it with softer material, it should work
+ - Dennis: could also increase foam even more
+ - Christian: 2mm increase is good, 3mm would probably be too much
+### Status of end-cap coldbox software
+- Postponed to next meeting
+### AOB
+- n

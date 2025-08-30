@@ -1,0 +1,39 @@
+# 21/11/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1346253/
+### Introduction
+Slide 3
+- Timon: For Wuerth based PB modules, does anyone know who builds them?
+ - Craig: Probably SCIPP and LBL
+ - Sandra: Not decided exactly, but probably SCIPP and LBL
+ - Craig: Think there was a discussion to also wait for thinner hybrid results
+ - Sandra: There is also a part shortage (sensors)
+In general, the discussion highlighted that we don’t have an exact date for these builds and that parts, people, and time are needed to complete this. SCIPP and LBNL will likely perform the builds, but further discussion and planning is required.
+### News from ITSDAQ/News from sensors
+ITSDAQ
+- Nghia: Autoconfig for panel, we had 4 hybrid on panel 
+ - Cole: R2 with 2 physical hybrid but 4 screens
+ - Nghia: …
+ - Cole: it’s not per hybrid but per HCC. It requires the HCC lines. There is no other way to do this
+The question was getting to the point that on an R2 panel, there are only two physical hybrids, yet four lines are required in the ITSDAQ configuration. This is not a bug, or at least, not the “bug”. The lines are not for modules (as the name suggests), nor hybrids, but HCCs. While work to reduce the amount of effort on the part of users continues, we can safely call this “small potatoes”.
+### Institute contribution: Freiburg and Dortmund
+Freiburg
+- – no questions
+Slide 
+- Cole (slide irradiation): Are the values correct or are they factor 10 too high??
+ - Marta: No, the numbers are correct. A lot of them were breaking.
+After a private discussion, it appears that the units involved on this slide were in Newtons, not in MPa. A correction to this has been asked for to make sure that it is clear for posterity. Glue does not get 10x stronger after irradiation.
+### Strip Module Powerboard QC Routine
+Slide 
+- Cole: 2-3 min per AMAC, is it possible to make this parallel?
+ - Luc: yes, should be possible
+- Cole: Do you foresee any particular parameters that might be caught as result of the testing (e.g. hotter PTAT or NTC could be an indicator for delamination)
+ - Luc: a lot of the tests follow that if one quantity does not work a bond is probably broken
+ - Timon: yes, broken bonds are the most likely cause for issues. Besides this, we don’t yet know because we don’t have extensive testing on modules. We need some experience/data. From powerboard testing points, the biggest issues could be temperature fluctuations (maybe already seen at wafer probing???). It would be good to do tests and upload them to the database
+ - Cole: Right now, thermal cycling should be set in stone for a while, but once this is all fixed, we could add extra tests like this. That could be done without significantly increasing the measurement time.
+ - Timon: Something that would be nice is to read the power supply current. Is every site already setting this up?
+ - Cole: Every site should set up LV and HV automation already.
+ - Luc: At our site at least LV was not read
+ - Cole: where it gets tricky is if you gang together power supplies. If there are site specific issues, we can discuss this offline.
+This test seems like an excellent candidate to add to thermal cycling. As we are just about to release a version of the coldjiglib and ITSDAQ compatible with each other (that is relatively complicated as is), we will possibly consider adding this test in the coming months, just not today. These are definitely not things you can just insert without very careful planning, as there are numerous calibrations.
+### AOB
+- None, nada, zip. Go home folks

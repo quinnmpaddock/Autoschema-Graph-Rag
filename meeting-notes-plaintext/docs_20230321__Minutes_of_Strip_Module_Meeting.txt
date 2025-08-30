@@ -1,0 +1,166 @@
+# 21/03/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1253776/
+### Introduction
+Slide 4
+- Tony (item 1): modules for cycling to death are build at LBL and SCIPP and both sites boxes are completely occupied for ~2 weeks. If other groups want to start earlier, need to look at shipping items
+- Tony: and doing the metrology would require to do a custom program
+ - Luise: idea was to start as early as possible for as long as possible. Haven’t heard of other sites
+ - Tony: only RAL and Brookhaven could help. Maybe Birmingham?
+ - Luise: redistribution to Brookhaven sounds like a good ide
+ - Tony: also depends on required metrology
+ - Luise: bare minimum was pre & post cycling metrology. During cycling, only want to look at peel of hybrids, so a very simple custom program should be sufficient
+ - Tony: need to look at height. The scope needs to be agreed upon before we start
+ - Luise: intermediate steps to look at delamination (if it happens) would be nice, but pre and post are the most important.
+ - Luise: we can provide some information on what we want
+ - Tony: would be also good to look at UK if they want to join
+ - Luise: if Matt want’s to do the test of irradiated modules, would be an opportunity to ship more
+ - Matt: irradiated modules will be shipped this week
+ - Bart: does the 2.5C/min be important?
+ - Luise: no
+ - Tony: might not be able to tune this
+ - Bart: if only concerned about peel (without electrical readout) we can probably help more
+ - Bart: what do we want to see from the test? Is it destructive (QA) or do we want to do a long term QC
+ - Luise: there are some data in Tony’s slides later
+ - Luise: could maybe do it with a program where we don’t have readout at every cycle
+ - Bart: for UK, the 2.5C/min will take a bit more time to get it working. We could do 100 cycles with intermediate cycles as fast as the system can go
+ - Tony: we do 3C/min, but not really faster
+ - Luise: 3C/min should be OK, but worried if it is much faster
+- Any: for this long test, do we want to know if peel is related to number of cycles or temperature?
+ - Luise: that’s what I’m worried about when cycling too fast
+ - Tony: we are somewhere at 3 - 3.5C/min 
+ - Tony: the speed of the cycle has nothing to do with how long it takes, since we don’t trust the control to run overnight (unmonitored)
+ - Tony: Brookhaven might be close to get this working. But then also need to look at when we want to do the metrology
+ - Any: and how many modules are you talking about doing?
+ - Tony: that is another question.
+Slide 5
+- Tony: we are populating the other 1850 powerboards to be ready after module PRR
+- Craig: conclusion was to do the 1850 anyway and get that moving and get it through LBL procurement, so we will not wait
+ - Luise: we will not wait, but if we see in the next 2 days that the new capacitors help, should we not make the change?
+ - Craig: would be hesitant to do the change without further discussion/investigation first
+ - Luise: depends on how long the procurement takes, we might be able to do the change
+ - Craig: sure, as long as it does not delay the procurement
+Slide 6
+- Theo: For those who have already uploaded the glue information, should they update the information?
+ - Luise: only the glue forward is important, but if you can change it for past glues that would be nice
+- Andy: Is this the only way to track the glue?
+ - Luise: yes
+ - Andy: many need to look at something for reporting
+- Bart: can we abbreviate the glue names?
+ - Luise: TB, SE, SB, …
+ - Bart: yes
+ - Luise: yes, we will update the slides with this
+ - Tony: does that mean we don’t have to do it for modules we have already build?
+ - Luise: it would be great if you can update it for PPB2 modules
+ - Luise: for now it is only glue samples
+ - Theo: Polaris + and Sylgard?
+ - Luise: they will not be used in production, so no
+Slide 7
+- Theo: how far in history do you want to go?
+ - Luise: think we can limit it to PPB
+ - Bart: PPA might be good as well, since these are the same sensors
+ - Luise: would also be interesting to see if sensors had an earlier breakdown (still >500)
+### Institute Contributions: 
+IFIC
+- Tony: in the exchange there was a tilt. Do you believe this is because of the optical system?
+ - Carlos: yes. Tilt is due to bad repeatability of our measurements
+- Tony: where was the module sitting in?
+ - Carlos: in the very first slope of the graph (slide 14)
+- Luise (regarding fiducials): the fiducials were moved for PPB. When you say alternatives, what do you mean?
+ - Carlos: alternative surfaces to measure the glue height
+ - Peter Speers: use whatever is the closest cold surface to measure the height. Its a point that is near by the ASIC close to the original measurement position
+ - Carlos: if the hybrid is in the proper position, it should be possible
+ - Luise: we are looking at your module, so please let us know where we should measure
+- Tony: can you give us the offset we should use for the Toronto module to do the comparison
+ - Carlos: you want to see the offset calculation?
+ - Tony: can you do the offset to the data used for the comparison with the Toronto module to help with the site qualificaiton
+Next meeting: Montreal
+### Results from first mitigation modules
+Slide 19
+- Gabriella: similar table for trueBlue: is it all white?
+ - Tony: yes
+- Matt: you define cold noise from the ratio plot?
+ - Tony: yes. We didn’t make the ratio plots, but you can also see it by eye
+ - Tony: we didn’t run the calculation
+- Matt: mentioned that IVs looked strange for SE4445 - but were technically in spec, should the spec change?
+ - Tony: don’t know it the spec should change, but it is included in the sensor testing system
+ - Vitaliy: sounds like an extremely dangerous idea to change the current mid production
+ - Tony: when we accept sensors in a certain way, should we change the specs for modules?
+ - Vitaliy: could do if we had a reason
+ - Craig: if in production we see modules with IV similar to these SE4445 modules (significant change between sensor and module IV), would we accept them?
+ - Tony: depends on the number of modules that have these issues
+ - Luise: we should have a dedicated follow-up on this since we don’t have module IVs after bonding for a long time
+ - Tony: AMAC IV is not yet implemented in ITSDAQ
+ - Tony: we should make this a priority
+ - Tony: LBL also has seen some modules with weird IV
+ - Luise: would be good to get an update on those next week
+- William: is this the end of SE4445 since TrueBlue works
+ - Luise: so far, none of these really fails the specs even though they are a bit worse than TrueBlue. For now we keep both options to gain statistic and make the decision before production
+ - Tony: we were hoping to get one of the modules with the higher IV into the testbeam
+ - Craig: should put 17 into the testbeam
+ - Tony: but this would be a failed module and we can’t fully run it
+- Luise: looked like they were all pass, but some fail.
+ - Tony: they fail because you can’t bias them (not enough current)
+ - Luise: they would pass warm, but fail cold?
+ - Tony: yes, but don’t know it this happens consistently and we can’t monitor the current cold
+ - Luise: could you re-test this cold to confirm it?
+ - Tony: we can put it back into the bypass and test it but not do electrical test, but doing this would cost some time
+ - Luise; there were some that were high at -20 and improved at -30. Would be interesting to see if this is repeatable
+ - Tony: we see this above the bleed. But we don’t know if it goes above compliance if that affects the other modules in the test box
+ - Luise: would be good to test where this comes from
+- Craig: are all the TrueBlue modules true TrueBlue, or are some gray?
+ - Tony: it’s a mix of both, but some are gray
+ - Tony: didn’t align to that when looking at bad parts
+ - Craig: if we have one that is a particular grey TrueBlue, it would be good to get this into the irradiation
+ - Tony: will look to get this done
+ - Theo: is grey restricted to a batch?
+ - Luise; no, its across several batches and most new glue is gray
+ - Tony/Kirsten: newest glue we have is blue
+ - Kirsten: we did not use grey glue
+ - Tony: but maybe LBL has
+- Sven: what is this weird edge on the sensor?
+ - Kirsten: just a shadow
+ - Vitaliy: just an illumination issue
+### Hybrid Flex Accelerated Ageing
+- Luise: currently only known to work for barrel, should not just adapt it to end-cap
+ - Sven: relies on sufficient cleanliness after SMD population, need to check for end-cap flexes
+ - Luise: agreed
+- William: what are we trying to achieve with aged surfaces?
+ - Sven: checking how long we can store hybrids before the surfaces become unbondable
+ - William: makes sense, since we will store flexes for 6-12 months
+ - Sven: good to see
+- Craig: does this suggest we should relax the heel break requirement?
+ - Sven: need more data, but also from other sites, even a week of storage helps
+ - William: a week after what - there is quite some time between production and delivery?
+ - Sven: doesn’t matter, any ageing strengthens the heel break when bonds are left on surface
+ - Craig: this is putting a bond down and pulling it a week later, not leaving surfaces for a week?
+ - Sven: yes, need surface metal migration
+- Tony: happy to repeat studies, just waiting for hybrid flexes
+- Tony: is this a known effect?
+ - Luise: yes, this is known and that’s why you do initial pull tests: if you have heel breaks, you can assume that the microwelds happened properly for the bonds to strengthen over time
+ - Forest: yes, it is known and looks very good
+- Luise: we probably want to wait for another site to confirm before making a decision?
+ - Sven: yes, would be good to confirm
+ - Ash: sitting on a lot of hybrids waiting to be released
+ - Forest: important statement is that hybrids need to be delivered clean for this to work
+ - Luise: still have the initial pull tests to see if the surface quality is bad
+ - Sven: yes, but initial peel rate isn’t a good indicator
+ - Luise: would probably see it as low pull strength
+ - Forest: if we can show that we don’t need good heel break rates initially, can focus more on pull strengths and avoid over-deforming bonds
+- Sven: collect more data (more barrel sites and end-cap hybrid sites) and re-evaluate in a month or so
+### EC Powerboard Tool Change Idea
+- Luise; we used to have adjustable tools which was a bit messy, but for powerboard tools we need to adjust them. It would be good to try this at one tool and Marc is not here, but it would be nice to maybe discuss it next week.
+ - Gerrit: the set screws in the past were very accurate. It still was a nightmare to set them properly.
+ - Bart seconds this
+ - Carles: but never glued these in place
+- Sven: we’d only set pins once for the entire batch nowadays, so hopefully less work? Need to give people time to think about it
+- Tony: you’d have to set them once per batch, so hopefully not too much work. Remember experiences from the past that screws wouldn’t stay set, need to be careful about how to do this
+ - Gerrit: quantity is also a concern - we now have tons of tools and adjusting anything would be a problem
+ - Gerrit: most tools for the US have also been made
+ - Sandra: more to be made, need to discuss this
+ - Gerrit: don’t think we want to open this can of worms again
+- Sven: please go back to tooling designers and check
+- Luise: for EC, this could be reasonable since we have less tools. Also makes sense to wait for first results
+### Module charge-up observations and plan forward (postponed to next week)
+- 
+### AOB
+-

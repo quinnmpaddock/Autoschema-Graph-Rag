@@ -1,0 +1,55 @@
+# 16/06/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927506/
+## Minutes
+### Introduction (Craig & Ingo)
+- EDMS review of barrel transport frames, test frames and box plates has been kicked off and will end this Friday
+ - Output of that will lead to a discussion in the next production planning meeting as to the number of parts to be ordered for pre-production A
+- A process is on-going to understand when pre-production A may be able to start
+ - Initially will look at when we could start from the point of view of hybrid, powerboard, tool etc. availability
+ - This will motivate schedule statussing and site readiness discussions
+ - If you have a request to fill in this spreadsheet please do so by Monday
+ - Summary will be made and discussed at next production meeting
+- Uli brings up the topic of hybrid planarity
+ - EC has 50um, barrel has IPC spec which leads to 700um or so
+ - Ash points out that as soon as you start diverging from IPC spec things will start getting expensive
+ - Also, most deviation comes from the SMD attachment, not before, possibly due to unbalanced build
+ - Shipping can also easily bend the hybrids
+ - Biggest worry is the ability of the vacuum to suck down the hybrids both on the jig and on the bridge tool during the assembly process
+ - Can this be measured as part of hybrid QC
+ - Not done at the moment
+ - Cannot be done in arrays due to retaining tabs
+ - Tricky to do with current metrology jigs as well
+ - Technical discussion on how/if to measure delayed for the future, proposal to drop the 50um additional spec from the EC procurement and drop back to the IPC spec
+ - Email Uli ***THIS WEEK*** with Craig and Ingo in CC if you disagree
+### 
+### PCB Panelisation Discussion (Timon et al.)
+- Failures based on TC need to be discussed on a case-by-case basis between us and the vendor
+- PB vendor is willing to share data on their own test coupons
+- Radiation is certainly outside their scope but something like thermal cycling can be iterated with the vendor
+ - For radiation the TC is required
+- TC also useful for micro-sections to have a look at layer registration?
+ - Should be done by the vendor already as standard
+ - All down to trust though, have had circuits passed by the vendor which didn’t seem to pass Class-2 due to via registration when investigated at LBL!
+- (Peter G) always need to ask question what do we learn from our test coupons that we don’t already learn from the vendor
+ - Originally came from CERN/Alan to catch two things that not necessarily caught by vendor test coupons
+ - Thermal cycling to reflow temperatures (via cracking etc.)
+ - Metalisation changes with temperature
+- There is always a danger that all the test coupon testing is a lot of work and need to make sure you are gaining something
+- Why have two coupons?
+ - Two coupons allow you to separate random local failures of a single coupon from “array wide” issues that would be seen on both test coupons
+ - Preference to keep both coupons on each array for this reason
+- EoS currently has 80 vias on the test coupon for testing
+ - (Craig) seems a small number to me given the importance of the EoS board
+ - The EoS boards themselves are only cycled once whilst the TC can be used to investigate cracking vias etc. with thermal cycling
+ - Space becomes an issue for the EoS though
+ - To be discussed?
+- How much should we coordinate the powerboard and hybrid reactions to TC failures etc.
+ - We should develop a joint document, doesn’t have to be identical but makes sense to share as much as possible
+- How much of a lead should we take from CERN reviewers?
+ - From FDR, the two test coupon per array process was well received so would suggest we develop this initially
+ - No need to contact reviewers unless we decide on a massive divergence from what was shown at FDR (which we don’t think will happen)
+### 
+### Cleanrooms and silicon detectors (Gerrit)
+- Delayed to next week (sorry Gerrit)
+### AoB
+- None

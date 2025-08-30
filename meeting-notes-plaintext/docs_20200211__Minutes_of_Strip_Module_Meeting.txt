@@ -1,0 +1,75 @@
+# 11/02/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/874221/
+## Actions carried over
+NONE
+## Watching brief
+Item | Responsible | Next update expected
+HV tab bonding | Jens | 27/02/2020
+Hybrid crate roll-out | Ash | 02/03/2020
+Module thermal cycling roll-out | Dave/Ankush/Sergio | 02/03/2020
+Powerboard mass tester roll-out | Timon/Karol | 02/03/2020
+Barrel hybrid tendering | Bart/Ash | 17/02/2020
+Barrel powerboard tendering | Carl/Timon | 28/02/2020
+EC hybrid/powerboard tendering | Uli/Kambiz/Dennis | 17/02/2020
+EC tooling design/roll-out | Marc | 02/03/2020
+Barrel tooling design finalisation/roll-out | Sven | 29/02/2020
+- People listed as responsible will be contacted periodically by Craig & Ingo for updates (certainly on the date listed, if not before!)
+- Updates could be verbal, email or slides in a meeting
+## 
+## Minutes
+### Introduction (Craig & Ingo)
+- Nothing to report
+### DCDC coils (Satish)
+- Are the QC boundaries acceptable from a powerboard performance point of view?
+ - Satish thinks they are but there doesn’t seem to be any data to back this up
+ - Specs defined more by what is possible with available wire rather than being led by ATLAS performance specs
+- How many samples will be tested?
+ - 10 samples from each 1/50 of production
+ - 500 coils total
+- How was the quantity evaluated?
+ - EC 10,000 makes sense after discussion with production management
+ - 16,000 for barrel makes sense to Dennis but looks like overhead is slightly different
+ - The risk of yield numbers changing slightly is why typically PRR is the point that large numbers get bought - it is an understood risk to buy everything now
+### Status of powerboard test crate (Christian)
+- No questions
+### Barrel module frame and hybrid panel finalisation (Sven)
+- Clearance okay on module transport frame for RFID?
+ - Should be okay
+ - If necessary, Craig/Ash will iterate to make sure everything fits together
+- Can be tricky to keep track of all the diodes when placing the sensor/module in the frame
+ - Worry that moving them in would make them work
+ - Could think about removing them along one side or the other?
+ - Gerrit likes the security of all 4 sides
+- High voltage connector
+ - Can we change the high voltage to be on a separate connector?
+ - Discussion of pros/cons
+ - Pros = one connector, backward compatability
+ - Cons = custom cable, H&S
+ - Conclude to keep the single connector and look at providing a breakout board to commercial HV options (eg. LEMO) if people prefer that to home-made cables
+- Mini display port labelling
+ - Labels are provided on the transport frames - silk screen on PCB is hidden by transport frame
+ - Labels to be included on the PCB silk screen in case of running without transport frame in place (not recommended procedure!)
+### Barrel transport frame (Gerrit)
+- Ribbing was added (optimised?) by the injection moulding company
+ - For the next version Hongbo will discuss with them to see if we can optimise the ribbing a bit more to improve planarity
+- Suction cup “hole” dimensions to be updated (mistake by Craig)
+ - Updated versions will be uploaded to EDMS for discussion
+ - Will include discussion of specified suction cups
+- Assembly of box with threaded back-plane trickier without screw guidance, risk of sensor moving around whilst you are assembling
+ - Craig forgot that when assembling the box the transport frame is already screwed in place!!
+ - Generally seems to make the assembly nicer
+- Sticking suction cups
+ - Smaller suction cups and correct sized holes do help
+ - Need to investigate the other materials available
+ - From ITk week, don’t clean with isoprop, just DI water, seems isoprop makes surface stickier
+- How do you use the humidity indicators and dessicant with this box, looks like bag volume and sensor volume connection can be blocked by vacuum sealing
+ - SCIPP looking at side pocket solution
+ - Also N2 flushed sealing rather than vacuum could be an option
+### AoB
+- BPOL v4 vs. v5 (we previously committed to v4 for preproduction but could consider v5 if schedule does not change any more - comment from BCP reviewer)
+ - Craig speaks in support of v4 for reasons of schedule risk and previous commitment
+ - US agrees with commitment to v4 and would keep baseline as v4 with a few v5 (100) for validation, Dennis doesn’t really care but is happy to stick to v4
+ - We will push back on review to stick with v4 for preproduction
+ - There is risk to coupling preproduction to v5 schedule and we have already committed (deliberately) to v4
+### Actions
+NONE

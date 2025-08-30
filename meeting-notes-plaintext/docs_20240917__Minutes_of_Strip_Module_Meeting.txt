@@ -1,0 +1,77 @@
+# 2024-09-17 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1455634/
+### Introduction
+Presenter: Cole Helling
+- Sven: Liverpool would like to move the date on their group update, as it doesn’t work for us.
+ - Cole: Sure thing, we’ll let you know once we’ve moved it
+- Bart: How do we make sure we get more recent surfaces to use for bond-pull tests?
+ - Cole: We can get these products in to try get fresh products to people
+- Carles: There was a e-group for the component request, so people can email directly to there: atlas-upgrade-itk-components-requests@cern.ch
+### L4 Updates
+#### Production
+Presenter: Abraham
+- No questions or comments
+#### Publications
+Presenter: Hannah
+- Abe: The module bow and TC paper is one of the three TC papers we were going to put out?
+ - Cole and Hannah: No it's a small paper
+- Andy: do you have more information the interposer meeting
+ - Hannah: What kind of information?
+ - Andy: Could you get them to send this to me and Sergio
+ - Hannah: Yeah, but this is Anne’s work for a conference, writing up what has been done.
+### Updated Metrology Drawings
+Presenter: Michal Dzubera
+- No questions or comments
+- Geoffrey (after the call for questions/comments):I was a bit late to ask a question on the Metrology, but would it be possible to have the output not necessarily as a drawing but a direct collection of positions with the references as they are expected as a dictionary or other?
+### ASIC Bonding: 5 Easy Tips to Maximizing your Relationship Between You and Your Chips
+Presenter: Archa Rajagopalan
+- Vitaliy: This smells like not an ASIC issue, but more an ASIC-support issue, have you checked your ASIC glue pattern?
+ - Archa: I haven’t correlated where the issues are with the glue pattern. But it also shows up when bonding on the ASIC jig, so it’s unlikely to be the glue pattern.
+ - Vitaly: It is a different setup, but it may suffer from the same issues.
+ - Archa: Also with the double-sided tape as well? Maybe …
+ - Vitaly: it could be more than one issue but i would strongly suggest checking the glue pattern, if the glue doesn't go to the edges you should see bonding issues on the edges. 
+ - Archa: that makes sense
+- Forest: In bond foot comparison, is the first bond source or destination?
+ - Archa: Source.
+ - Forest: It looks like you may have a different tail setting.
+ - Archa: We have been trying different parameters for the different rows.
+ - Forest: Okay.
+ - Archa: So the first row may have different parameters.
+ - Forest: Okay, that’s not … okay [laughing]. Let me just state then that from the pictures that don’t represent what is happening, I’d say you didn’t have sufficient tails. Generally, if you see this on every chip for hybrids, I would take at least one more and go through and put more UV epoxy at the corner of each chip, cure it and see if that fixes your issue. It does sound like it could be a support issue. Just make sure the parameters are the same. Sufficient tail is important when you get into low-support regions. The cantilever from the chip where the glue stops, the bonding will fall off at 12-15 bond-pads at one pad in. If the glue is too far back, you’ll see it.
+ - Archa: that makes sense
+- Bart: You use different patterns along the rows, do you see correlated patterns over the rows?
+ - Archa: No, we just kinda see it in the same area. We’ve seen this over the past nine months or so, so it’s gone through different parameter changes and persists after changes. 
+ - Bart: We have seen the same thing with problems in the same area across the 4 rows even when it was supporters. I never got to the bottom of the problem because the problem was so rare. Your bonder is Delvotec? I think the Delvotec changes bond settings while you are bonding which might be affecting your bonding. You can maybe switch this off.
+ - Archa: I believe it’s off, but I’ll check
+ - Scott: It's off. 
+ - Bart: How do you get to the high deformation because it should switch off when it gets to a certain level.
+ - Scott: That’s what we have turned off
+ - Bart: You can see that the chips on the edge had higher deformation.
+ - Archa: We have the setting where it follows a hard cutoff that turns off. I’m not entirely sure.
+ - Bart: Can you show the deformation vs channel number?
+ - Archa: I don't have those plots.
+ - Bart: I think you had them in a different slide. You can see that towards the edge the deformation feature is activating here.
+- Carles: I think you set a threshold where it finishes the wirebond if it goes higher than your setting. So this is showing that in some cases it deforms more than the normal bonds. This happened to us long before due to bad support. As Vitaliy pointed out. Basically, after different optimizations, it was the tail length and that got rid of the problems. Removing the BPC and using the time helped us, but we still had some peels and it was only after increasing the tail that it solved the issue.
+ - Archa: So you found turning off the BPC that helped?
+ - Carles: yes
+ - Archa: Okay. 
+ - Carles: by this method, when it deforms, it stops the bond, so it doesn’t push it enough. It was something that helped, but it was the tail.
+ - Archa: Okay, maybe we should try and see if turning the BPC help. If it was a support issue wouldn’t the BPC help? If it is a support issue what can we do to help with this?
+ - Carles: If I were you, I would take new ASICs and glue it to a stiff surface. 
+- Geoffrey: You said you used double-sided tape and you still saw peels right? Have you verified the cleanliness of your pickup tool? I’m assuming you have a small rubber tip that touches near the edges, possibly contaminating each surface.
+ - Archa: Even if we don’t pick it up near the bonding pad?
+ - Geoffrey: How do you put them in the pocket?
+ - Archa: we only pick them up further away, not on these bond bads.
+ - Geoffry: So your suction cup doesnt ever go any higher?
+- Forest: I forgot what I was going to say, on deformation, turning off deformation control, I assume what you’re doing is controlling the time which is what people were doing in the 80s. So definitely use the deformation control.
+ - Archa: Thanks everyone
+### Outcome of Updated Barrel Tooling Review
+Presenter: Sven Wonsak
+- Bart: The stepped hole in the PB tool which is there to prevent the small suction cups from getting sucked in. We have an outstanding order for the suction cups. Is the US interested in getting any of these suction cups?
+ - Sven: The PB tools are in a separate EDMS doc since they are designed by LBNL and not Liverpool
+- Sandra: Where can I find the EDMS drawing numbers? Can we get that?
+ - Sven: The powerboard tools or?
+ - Sandra: For the hybrid.
+ - Sven: It’s on the title slide
+### AOB
+- Nada

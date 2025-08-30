@@ -1,0 +1,53 @@
+# 16/08/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1154793/
+### Introduction
+- Carles: how should confirm that have a FMC-DP:
+ - Luise: Send an email
+### Summary of cold noise discussion
+- Vitaliy: comment to waveforms: can the scope to a fourier transformation?
+ - Ashley: yes, but currently don’t have access to cleanroom
+ - Vitaliy: and data saved were just screenshots?
+ - Ashley: yes
+- Everything comes to a screeching halt when the Liverpool cleanroom isn’t accessible.
+- Gerrit: is there any way to actually affect the rise and fall times of the Buck converter? Is there any control over it?
+ - Ashley: believe it is set by the chip itself (MOSFET inside of chip)
+ - Ash: might be something we can do, leave it with Ash - there may be something we can do about it
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 16/08/2022: EC
+- 23/08/2022: Barrel
+- 30/08/2022: EC
+- 06/09/2022: Barrel
+- R1 tool production
+ - Geoffrey: contact Uppsala if you need your R1 tools, they are ready now
+ - Luise: only if they want their first set replaced or if they want the full production quantity?
+ - Geoffrey: should be full quantity, but please get in touch
+ - Carles: do you need the tools that were first sent out back?
+ - Geoffrey: needs to be discussed on an individual basis
+ - Sven: please send an e-mail to the list
+- Endcap module thermal cycling setup
+ - No news
+- Modules for Test Beam
+ - TRIUMF: R2 module glued, to be bonded today
+ - Cambridge: SS module is being assembled
+ - Regarding other modules: 
+ - R1 was built, analysis ongoing,
+ - R3 and R4: planned for end of November, need to pay attention to make sure they are assembled on time given powerboard re-design, sensors are irradiated and in hand, now waiting for powerboards
+- Glue Studies
+ - Dedicated talk today
+ - Waiting for polaris+ for the lab joint test, but started with other glues
+ - Chemical analysis shows chlorine in all glue samples (5% in polaris, 2-3% in other glues)
+### Institute Contributions
+- 
+Next week: 
+### Update on glue studies: sensor tests
+- Vitaly: what is the thermal cycling?
+ - Luise: we are going to do the same thermal cycling that we did for previous glues: -30 to +40 in same rate as before and also look at accelerated temperature change
+ - Luise: do rapid changes to see if that causes stress, also stay at high temperature (40C) to look for longterm effects
+ - Vitaliy: are you irradiating with gammas?
+ - Luise: yes, only irradiate with gammas so no annealing
+ - Vitaliy: do you measure strip capacitance, since this affects strip noise?
+ - Jack: plot shows all the measurements we take
+ - Vitlaliy: this is not the strip capacitance, it is the coupling capacitance. They have different effects on the noise
+ - Jack: can figure out how to do this.

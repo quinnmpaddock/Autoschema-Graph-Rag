@@ -1,0 +1,215 @@
+# 2025-06-17 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1557980/
+### Introduction
+Presenter: Cole
+- Navid: does this include the endcap as well?
+ - Cole: Will follow up with Theo
+- Hannah: Lund would be happy to take on the Wonkey modules
+ - Cole: That would be amazing, follow up offline 
+### L4 Updates
+#### Publications
+Presenter: Hannah Herde
+- No questions
+### Early Breakdown got you Down? Try These Easy Steps
+Presenter: Pavol Federic
+- Pete Speers: On slide 9 [doesn’t matter], for long term storage, is it okay to put it back in an envelope, or is it better to leave it on the frame?
+ - Pavel: If it’s already a module, it should stay on the test frame. 
+ - Pete: for a sensor?
+ - Pavel: yes then its safe to be in the envelope
+ - Vitaliy: You don’t have to put it back. The air circulation is better on the frame, so I don’t think it’s necessary.
+ - Pavel: It depends on if people do the IV on the probe station, or with the test frame. Easier if it’s already bonded to the VI on the test frame 
+- Luise: For the pink foam, we see a lot more evidence if the module has EB warm it wont have EB when the foam is removed, there has been some work to make sure the pink foam does not cross the border on the guard band, this has shown to significantly improve EB. There will be a talk about this at some point 
+ - Pavol: Yes please check the talk on Pink Foam. It’s also important not to set modules on the black foam of the CB, as it’s not ESD safe. 
+- Bart: Coming back to the packing sheets, deionising is recommended. They are really sticky especially early on so putting them back in the envelope might not be the best idea. Your recommendation was to put EB modules straight into dry storage and not deionise first?
+ - Pavol: The first thing is always to repeat the IV, and then it's one or two weeks in dry storage.
+ - Bart: We prefer to start with the deionization. It takes less time to just deionize and put in storage. It’s a good combination.
+- Christoph: Keeping on the test frame or not I would recommend keeping on the frame unless you need the frame for another sensor. The reason is because of bonding, there is a finite amount of time you can bond them to the frame, this also adds additional handling steps. If you can do deionisation this also doesn't hurt, always a good thing to do before putting them into dry storage. 
+- From the chat:
+ - 
+### EndCap Powerboard Stencils
+Presenter: Pavol
+- William: Has this analysis been done for the hybrid stencils? We also have this problem … or should it be?
+ - Pavol: Yes we can, it was not checked yet
+ - William: Okay, just PBs then.
+- William: For the 70um theoretical height, it’s hard to control this due to the flexibility of the flexes. This should be checked for glue on the GR.
+ - Pavol: You suggest also checking hybrid stencil?
+ - Luise: the idea is to have a look first and check if you can and are willing to do it. 
+- Roland: This is now the green light that we can order these PB stencils? 
+ - Cole: there isn't anything from stopping us from ordering them
+ - Luise: can this also go on EDMS please
+- Carles: I would really like to order the hybrid and PB stencils together. Does anyone have need for R0or R5 stencils, otherwise I will wait till we get the green light on hybrid stencils
+- Rolan: Yes, please let us know if you urgently need stencils and we can cover this. 
+### EndCap PB Coil Tests
+Presenter: Uri Epstein
+- Timon: From the physical setup, I didn’t understand how you locate the pickup coil. Do you move it by hand til you find a maximum?
+ - Uri: Yes, we hover over the shield box until we see the maximum reading on the oscilloscope 
+ - Timon: How reproducible is this?
+ - Uri: Maybe Luise can answer this
+ - Timon: You have error bars in your plots, but what are those errors? Are those from the scope?
+ - Uri: It was the small ticks on the scope.
+ - Luise: We have studied this very systematically. We have had different people measure this and moving it around you do wind up with the same value. If you have a good idea for how to measure this let us know we find this the best way to find this. 
+ - Timon: It’s just that when I tried this before, the SB does stop quite a bit and it’s flimsy towards the plane you try to pick it up. If you have it at a fixed position.
+ - Luise: slide 3: we always consider the distance, it's always the same position in Z and the angle is the same every time. 
+- Vitaliy: It’s an interesting study. Couple of comments. On slide 5 - you mentioned there’s a lack of correlation. I would not be completely sure of that. I think that conclusion is based on the single point in the bottom. If you remove it, then the correlation appears much stronger. So it might be much more. All the high noise peaks are from R4 on the right hand side. {Missed it - something about two sides of modules and the capacitor test} Perhaps you have EM pick up noise as well as the common mode noise. It would be more difficult to assess just the pickup 
+ - Uri: To the first comment, I completely agree. We hope to expand this with more data. We aren’t ruling out correlation, but it isn’t clear yet.
+ - Luise: If you look at some of the other data, we currently don’t see big changes in field pick up in the noise, or the other way around, so that’s why it says “might suggest lack of correlation” we fully agree. For the capacitor test, we can try this if we have a bad module. Maybe Cole? 
+ - Vitaliy: Sounds good, thanks.
+- William: This is the right half of the R4 module; the crown loop is on the other side of the shield box. 
+ - Luise: Correct
+ - William: Yes, so noise is typically on the left half of the module rather than the right half, Vitaliy. 
+ - Cole: This can definitely be tested at Freiburg
+ - Dennis: Is it then the same scale?
+ - William: Yes, it may not be quantitative. But you would see a difference and you could still see correlation.
+ - Dennis: means most likely (didn't get that)
+ - William: Okay, fair enough. So it’s not just these 100 strips near the PB.
+### Barrel Barrel Singulated Interposing QC
+Presenter: Anne Fortman
+- Cole: Speak now or forever hold your peace if you have a problem with this. {Gives time for mute button}. No disagreement! 
+- Navid also agrees! 
+- Strategy accepted as presented! 
+### Batch-Related IV Degradation in Module TC
+Presenter: Botho Paschen
+- Vitaliy: It wasn’t mentioned, but there are obvious followup steps in progress. The working hypothesis is that it’s a peculiar batch. To confirm, LBNL will start using sensors from a different batch. It looks like the issue is that after exposure to HV, some sensors can have earlier breakdown. It’s intermittent meaning that a second IV causes it to disappear. There may be some code that allows you to not only ramp up once, but twice during cold cycling. That may improve stability. Xavi showed this at some point. In this case, if this is the cause, ramping twice may be the easiest thing to do. From past studies, deionization doesn’t solve this. Baking does, but you can’t really do this for modules, and not everyone has an oven. [Vitaliy exhausted his word count for a comment]
+ - 
+- Timon: Vitaliy partially answered this. One thing that would be good, given how long it takes to get to this stage of testing, do you think it is possible to identify this at the sensor IV level? Could we qualify a batch like that?
+ - Vitaliy: If it’s the same phenomenon, the issue is that this test is 40 hours, so we can only sample it rather than do this for all sensors. It does indicate some batches are more affected than others, but it’s not easy to pick up at the sensor level. It’s possible that you don’t need 40 hours, but we never did a study on the impact of the duration of sensor HV Stability testing.
+ - Timon: We wanted to run two sensors from this batch to cross check. I’m not sure how the batches were distributed, but it would be nice to get a green flag saying “go ahead” on this batch.
+ - Vitaliy: for many batches, we can flag them, we cannot just throw away 3% of the batches
+ - Timon: That’s a different issue. Until we understand, we have to figure out which modules we know we can put on staves.
+ - Vitaliy: I suspect you can do it 
+ - Timon: Feels like a Window’s solution.
+ - Vitaliy: if you run repeat IVs it can run . If you ramp down and start ramping again it can cause this then if you run again it goes away
+ - Timon: Warm or cold?
+ - Vitaliy: Sensors only run warm, Yoshi runs cold.
+- Luise: When you saw this issue, you baked them out and the issue was gone. I would be interested in Botho, if you could check which sensors have had this done in the past. If it was recovered, does it behave differently than when it is a module?
+ - Vitaliy: We didn’t assume. We saw baking does solve the issue. The second IV after stability (and baking) worked for multiple sensors
+ - Luise: My question is though that we assumed it was cured forever. That’s what I’m curious about.
+ - Vitaly: we also re-tested a few months later and it was the same. 
+ - Luise: Just want to check
+ - Vitaliy: we can select for these sensors. The other thing that happened here, not obvious, is that it took some time to discover this phenomenon. We didn’t test IV after stability then and missed this.
+ - Luise: we should diagnose if this is the same issue
+- William: Sorry to see this is happening in the barrel. Vitaliy, you said there could be a large number (a third?) that we can map this to batches of EC sensors. Perhaps we have a batch of R3 sensors that have this feature?
+ - Vitaliy: in principle yes. I will have to go through a lot of data. 
+ - William: Okay, for sure we can try another ramp up afterwards. When Botho shows this, it reminds me of the need to have a fix for when one module causes issues with the HV channels of other modules.
+ - Vitaliy: At the sensor level, it’s more difficult to identify this. At the batch level, this is more feasible, but I’ll need to do a lot of work there.
+ - Navid: Peter is working on this, and he’s having problems with it as well, but I don’t have a time scale.
+- Tony: I would suggest checking if they are all from the same sensor batch. The UK is seeing some of this, so you can check as well. We’ve only had one batch coming to one site, which is why we did these cross checks. If the phenomenology is the same (only cold, degrading with cycles, etc.). It’s not random and has a particular topology. Vitaliy is going to measure the long term stability and see if we see the same thing.
+- Sandra: We sent all the sensors we had from that batch to UCSC and we’ll see what happens. There were some tabbed and IV scans done (envelopes). The thing is we started to prepare new sensors for IV scans from another batch. Is there something we need to do before assembling a module? Or do we just build. 
+ - Vitaliy: DId you already select the sensors for it? 
+ - Sandra: yes we already scanned today then we will HV tab. 
+ - Vitaliy: We can HV tab them, I will double check to see if we can answer Luise’s question as well. I’ll let you know.
+ - Gerrit: Hold on - this throws a wrench in module production. Is it serious enough to stop production and come up with a solution? I need to know if we are stopping. 
+ - Sandra: We saw six modules with this problem.
+ - Gerrit: this has affected one of your batches, Tony should decide what to do, one batch is affected. 
+ - Tony: Just keep building 
+ - Cole: Agrees
+ - Sandra: Since we were discussing various checks, I was wondering if we could do something simple that could help.
+ - Gerrit: So we keep going
+ - Vitaly: if repeat ramp solves the issue that will be the end of it, if not we will have to do repeated checks
+ - Ingo: This is doing repeat IV. You do IV, test, repeat, etc. What is the real thing we should be doing?
+ - Vitaly: can I show a slide? 
+- Luise: We have been testing our local endcap at 50% leakage rate. If you want we could build with these modules first.
+ - Cole: Seems reasonable to me. 
+ - Vitaliy: I think it’s a batch-related thing, so even 20% is enough.
+ - Tony: So far, it’s 100%. Every module from that batch has this symptom. 
+ - Sandra: yes
+- Vitaliy’s slide: Strip sensor acceptance test 
+- 
+ - Vitaliy describes trends between different IVs for sensors in this batch. 
+- Vitaliy’s warning essentially boils down “to run IV twice in a row for a given cycle. (Same for the ramp-ups to 350 V after changing the temperature.) So basically ramp up->down->up.”
+ - Via Chat from Vitaliy: Software needs to allow these double-IVs. Botho has a version for it, but this version should probably propagate to the major branch. 
+### Discussion: Module Grading
+Presenter: Cole
+- Luise: This is only if it is a metrology failure that doesn’t make it unusable.
+ - Cole: Yes, we do have to define hard criteria for failure. We cannot change the shield box height. 
+ - Luise: inconsequential failures 
+ - Cole: We have not decided the numbers for the selection yet 
+- Sandra: For instance, if the PB is a little bit over the guard rail (GR), but no glue that we can see, and the TC is fine … the metrology failed. Is that considered?
+- Cole: we have not yet got to the spec but we need to decide on these 
+- Gerrit: I am still against it, if there is no problem for a certain out of spec thing then change the specification
+ - Cole: because people are asking for this, we cant decide on the spec right now
+ - Gerrit: can this be a cluster decision
+ - Cole: We can’t do that
+ - Gerrit: Not all members of the collaboration are informed. Please pass this through the cluster managers. 
+ - Ingo: this is a proposal to do this then we can go to the clusters and ITk weeks to decide then
+ - Gerrit: But that’s why we moved to clusters, so we can share information more easily 
+ - Cole: That would be great if it worked. 
+- Theo: Are we talking about this because sites are out of spec or…? 
+ - Cole: We do need some amount of grading to account for modules just outside of spec
+ - Timon: What are you going to do with the grade
+ - Cole: we need to create a buffer zone to decide what to do with them
+ - Timon: ok
+- Vitaly: what do we do with bad modules, I thought the plan was to keep them until the end of the project anyway 
+ - Cole: you can keep them
+ - Vitaliy: Any grade is better than no module in the system. 
+ - Navid: That’s what the grading is for, how to characterize these modules. To say what we think is wrong with these modules.
+ - Dennis: I would second Navid. It’s important to understand what kind of failure mode a module has. If we order more test frames, we can keep some promising modules on test frames.
+- Vitaliy: For test frames, we are working on a Barrel solution for how to store them. At our nominal yields, it’s a significant collection. We aren’t ready to show it now. Collecting grade B at the end, there was a similar comment. For the Barrel, the last modules are the innermost location, which should be the preferred location for these kinds of modules.
+ - Cole: my hope is with the grading we have characterised where we want to put the bad modules
+Presenter: Tony A 
+- Bart: It’s more relevant which end is the problem?
+- Tony: yeah not in Y because it's just a rotation, the X could be a problem because of glue on the guardring
+ - Bart: It’s more about where the pivot point is.
+ - Tony: I agree, but even at 400 um, the stretch on the tape is larger. It doesn’t really impact bonding. These are the considerations we have to think about.
+- Luise: nice analysis, do you have the data to see if the data has changed over time? Could you fold this into there?
+ - Tony: We have the scatter. One problem we have is the time from the plots are the creation of the module, and not the test. So we don’t get the assembly dates.
+ - Ewan: I do have these in time related, there was nothing that jumped out to me
+ - Tony: That’s right. I can share your plots. Ewan and I looked and they had the right time stamp and there wasn’t a correlation.
+ - Luise: the statement now is this is as good as its going to be, that would make it easier to decide what the cuts should be
+ - Tony: Yeah, PBX is the only thing that might change. We still don’t locally have the pins for the location tool. It’s conceivable that we’ll make it better. The other ones shouldn’t change. Looking at the history, they are slightly better. The flat tails we see are handling variation at the 1-3% level. It’s conceivable it differs between sites. Trying to see a 3% tail is difficult though.
+ - Luise: Worth checking
+ - Tony: Is cutting the tail worth doing? 
+ - Gerrit: It cannot be flat tail
+ - Tony: Granted. But it looks like mostly gaussian with a flat-ish tail [then shows it]
+- Theo: Did you also look at these plots binned by the institute?
+ - Tony: I haven't we could do this by hand on the test stream thing, atm there is a bug that ewan is going through its only showing half the modules. As of now I can only tell you about the US. There is more powerboard X at LBNL they have adjusted to it so it will probably go down. I don't recall BNL having any. 
+ - Sandra: [murmurs agreement]
+ - Sandra: Yours also work right?
+ - Tony: Yes. In our case, we end up with more rotations. So there are some site differences. Most of the hybrid fails are coming from the UK and not the US (don’t think we have any), but the plots show it’s consistent.
+ - Navid: We do have a problem removing the stencil.
+ - Tony: LBL hasn’t had many problems with it releasing.
+ - Gerrit: I think this was asked by Sandra, these modules are fine right?
+ - Tony: For all these displacements, only one has an electrical failure, and IV. The glue was off by 2mm, so it’s nothing to do with location.
+ - Gerrit: Modules bond fine, test fine, are they on staves?
+ - Tony: Not yet. They are being held at LBNL. It might be that they have less support. Is it \pm 1mm?
+ - Sandra: Our case, the y was our 500um.
+ - Tony: I don't know what the logic is here, the largest yield loss has changed because of interposers
+ - Gerrit: If you change the tolerances here, and they would pass. If there are any glue issues here, that would be obvious. If they don’t bond on the stave, well we will see that later. But otherwise, it seems fine.
+- Tony: yes the test frame is harder to bond 
+ - Gerrit: my take from this is changing the tolerance to 400 or 500 this will not change anything 
+ - Tony: I don't know which way this should go, what does the negative mean?
+ - Cole: it seems we need to ask do we want different spec for the barrel and the endcap, the endcap will have different requirements. 
+ - Gerrit we are running out of modules for the staves.
+ - Luise: the different spec changes makes sense
+- Theo: For the out-of-spec modules, do we need to start committing some of these to stave testings
+ - Cole: the way I see this is we want to get them on staves soon, unless bonding shows its problematic
+- Sandra: The PBx being a little over the GR is pretty safe because the way the stencil works is that the glue is really far away and stays away from the GR. The bonding to the hybrid, it can go a little bit of an angle because the pads are larger. It’s something we understand why (alignment tool problem).
+- Sven: I would strongly disagree with that statement, the glue stencils go quite close to the edges increases the chance of glue on the guardring, the other thing is there is a 1mm gap between the hybrid and PB you could end up with them on top of each other
+ - Sandra: In our case, this happened only once, and it’s further out.
+- Gerrit: Proof is in the pudding. Gluing PBs on the Hybrid … doesn’t matter what the spec is. We have many violations that we’ve seen don’t affect the yields.
+ - Sven: For at least two sites, you and UCSC. That doesn’t matter because you don’t apply the glue with stencils. If you use a robot, you are blind to that problem.
+ - Sven: [Don’t glue parts on top of each other]
+- Sandra: just to be sure its just the PB that goes over 
+ - Cole: this is taken care of by control over glue
+- Dennis: For EC vs Barrel specs, we need some special treatment. We should try to come up with the same baseline spec. If there is no reason to make them different, we shouldn’t wait. There are always situations where the specs..
+- Vitaly: I was also wondering about the convergence in the EC. I guess different specs would be motivated by different geometry. What would be the process to converge?
+- Cole: I would agree with dennis that there should increase the spec slightly the endcap should be able to accommodate then call everything grade B
+- Cole: I think it would be worth knowing if there is one site that has these issues
+- Tony: yes we could look
+- Cole: if we wanted to get general agreement today we couldn't go to 500 today
+- Navid: I don’t think we are in a position where we need to change this spec. There are many modules we think are okay, but we should probably try to make this decision before the end of Preseries so we can look back and say these are okay.
+ - Tony: That’s what I was thinking.
+ - Navid: So, it’s past 5pm now, and there are a lot of hands. I’m wondering how much we should continue this discussion.
+ - Gerrit: It’s important that we keep on loading staves.
+ - Tony: You have enough modules.
+ - Gerrit: We have enough for this one, but not the next one.
+ - Tony: You’ll have them.
+ - Gerrit: The advantage is that if you take these modules with the wider cut, and they work on a stave, that’s another reason for not failing them.
+ - Tony: If you hold them til the end, that would be a problem. We would need more storage.
+ - Navid: We will aim to make a decision before ‘the end’. It’s too early to make a massive cut change.
+ - Tony: We’ll get another factor of two in the coming weeks. Unless Ewan’s fix to the monitoring tool works, I’m basically asking him to make plots per site and digging that.
+ - Craig: One thing to say here is that, in my mind, the rPRR would somehow be approved not just with the wider community, but also the review office. Whether it’s a grading or a number making it to Preseries staves, I was hoping to have this for the rPRR. If we’re talking about holding off to the end of Preseries, I would be worried. I would like to see a small fraction make it to staves. 
+ - Tony: If you want to do that, we should push them onto one stave.
+ - Craig: My feeling is a lot of this discussion, no one is expecting there are any issues here. There is a process, and we don’t want to skip that. But holding them to the end of preseries, we end up shooting ourselves in the foot. Perhaps we can agree that for the next stave.
+ - Navid: The easiest way is to grade these modules, then put them onto a stave.
+- Agreement: build staves (US and UK if possible), with modules out of spec in XY, up to 500um. Observe.

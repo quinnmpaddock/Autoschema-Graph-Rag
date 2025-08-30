@@ -1,0 +1,51 @@
+# 08/09/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927518/
+### Introduction (Craig & Ingo)
+- none
+### Task tracker items
+- Adhesives tech. finalisation, procurement-- Same status as last week: will have a presentation on Sep 15
+- US hybrid/module tool production
+ - Holding prod till bushing idea cleared
+ - -- 2weeks till next report
+- US powerboard tool production-- EDMS review of default tools passed
+ - Holding prod until bushing idea is decided upon
+ - 2 weeks till next report
+- Barrel PPA hybrid order-- Due to a possible conflict of interest in the contacting of companies who might possibly be involved in the currently 'live' tender this will not proceed until the tender is closed (1st Sept).-- Note that the consultation and evaluation process for the tender is completed on the 21st Sept. After which the contract issuing phase will start. Need to understand from the UKRI SBS when we are able to engage with suppliers should we need an interim order. However the claim is that the contract should be in place for mid-Oct, with regular hybrid deliveries following promptly.
+ - How short with PPA hybrids are we? 
+ - What about adjustment to new ASIC sizes?
+- EC PPA/prototype hybrid order-- ready to submit for 2nd EDMS round -- report again when Kambiz is back
+- EC hybrid test-panel finalisation-- Marc including it into tools-- design looks quite final, when Dennis is back pin down
+- EC module test frame finalisation-- see above, re-report in 2 weeks
+- Finalisation of barrel hybrid panel-- No change regarding expected delivery date of 20/10/2020.-- As per the module test frames, once tested and verified to be good the design files will then be released for use by US colleagues.-- re-report beginning of Oct
+- Barrel module testframe finalisation-- An order for 50 off frames has been placed with expected delivery of 08/09/2020.-- Once circuits are verified to be good I will then generally release the design files for use by US colleagues.-- re-report beginning of Oct
+### Toronto Tool Update
+- When would common parts arrive from Fr?
+ - Delayed in order process, no response currently, maybe delayed due to summer break, will inquire
+### R2Star fast tracked at DESY
+- Was R0Star recently tested in the same setup?
+ - No not yet, did these tests yesterday so will be coming up
+- Is this input noise in line with other noisy results?
+ - Looks like it but very large fluctuations
+- We could remove some FE bonds to check the bare hybrid noise
+ - Good idea lets do that
+- HCC repeater issue is likely not the source of the noise
+- HV ground - re-check that HV and LV ground is tied on the frame
+- Marc will check and send an R0Star to HH to allow the comparisons in the same setup
+### Test of modified barrel tools with COTS pins and bushings
+- Positive findings on initial modified toolset
+- EDMS for drawings with modifications about to be uploaded
+ - Watch: intellectual property rules of Liverpool uni for drawing modifications
+ - To be sorted out offline
+- How to proceed?
+ - Proposal:
+ - US builds with bushings
+ - UK stick with anodized and change to bushing or retrofit for production if need indicated
+ - Retrofit works as shown in talk
+ - change EC drawings as well? 
+ - Marc foresees a few days of work for him
+ - Removing the slotted hole makes the machining much easier
+ - Removes making holes
+### Hybrid flatness issue
+- To be moved to next week
+### AOB
+- none

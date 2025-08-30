@@ -1,0 +1,37 @@
+# 07/04/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/874229/
+## Actions carried over
+None
+## Minutes
+### Introduction (Craig & Ingo)
+- Upgrade week still happening remotely
+ - Sensors/ASICs/modules will be on the Wednesday
+### EC tooling update (Marc)
+- EC sites, please check the number of tools (at least R0!!) are correct so production things can start happening
+ - https://docs.google.com/spreadsheets/d/1QdbWKPLVTP1uK6mV2fKNJh7lo0UFF-Fhqb8GB_p4pVY/edit#gid=0
+- Freiburg to do QC on all the tools?
+ - Useful to do centrally but risks lots of shipping
+ - Going through one setup gets better consistency
+ - Some fabrication companies can provide CMM measurements anyway
+ - Inspection QC drawings could (should?) be made in similar way to the barrel
+ - For now, decision to baseline with tool QC being done at institutes local to the manufacture
+### DAQ boards and chip availability (Craig)
+- FMC-IB - Dortmund (Felix) volunteered
+- Single panel adapter (Ingo to find out if DESY-Z can do it)
+- People agree with the chip distribution suggested in slides:
+ - Note, AMAC 50:50 LBL:Freiburg
+ - HCC distribution to match ABC with excess held somewhere central for preproduction A
+### Storage humidity discussion (Karola)
+- Short discussion, result of which is that we change specification to 10% for all components
+ - Ingo happy, as long as we do not move above 10%!!
+### Clean room environmental conditions monitor system (Vicente)
+- Request to add details to Luise’s twiki
+ - https://twiki.cern.ch/twiki/bin/viewauth/Atlas/StripUpgradeCleanroom
+- Can any common software be done for all these options?
+### Database tutorial part 4: shipping (Luise)
+- Everyone asked to ship something through the database as a test
+### AoB
+- None
+## Actions
+1. Everybody look at shipping something in the database - see Luise’s slides (all)
+1. Look into if your institute can help with buying/assembling uncovered DAQ boards - see Craig’s slides (all)

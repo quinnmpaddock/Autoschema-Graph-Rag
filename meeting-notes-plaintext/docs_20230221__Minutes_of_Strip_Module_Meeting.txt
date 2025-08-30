@@ -1,0 +1,102 @@
+# 21/02/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1253772/
+### Introduction
+- No more volunteers for ageing tests showed up
+- Carles: False blue in DB?
+- Luise: No
+- C: what about the few modules for tests?
+- L: Just reference in module information that it is false-blue but don’t need to track batches, so the glue won’t be in DB
+### Institute Contributions: UBC
+- Wiliam: 4 cycles with 4 chucks but 1 module. Didn’t stop at the end because it was not implemented by that time. 
+ - Cole: entering a delay/sleep is very easy
+ - William: using ethylene-glycol, were using manually set temperature, not 
+ - Cole: you only went to -30C
+ - W: yes
+ - Cole: big difference. As many time to go to -30 as fro -30 to -35
+- Carles: IFIC also looking into it and will help
+ - Cole: Urmila already sent some results
+- Cole: Prague is also looking into it
+ - Pavol: looking into it as well, will contribute
+- Cole: any other end-cap sites? Would be very much appreciated, even manually
+- Tony: we should all be using the same constants, since we’re all using the same thermistors?
+ - Cole: All using the same NTCs. Original calibration can’t be right. Only calibrated in a narrow range
+ - Tony: should confirm if everyone is using the same parts and if everyone is, should all be using the same constants
+ - Cole: recommend every site runs their own calibration. Dipping the NTC.
+ - Tony: should confirm
+- Tony: are you doing calibrations in the cycles you’re doing for the other temperatures?
+ - Cole: Sometimes yes. Sometimes problems, buggy communication
+ - Tony: don’t you have to do the calibration on each up and down cycle?
+ - Cole: should be stored as long as ITSDAQ isn’t restarted?
+ - Tony: do we need recalibration warm and cold?
+ - Cole: question for ITSDAQ experts
+- Cole: when running AMAC calibration, measured IV doesn’t make sense (either hundreds of nA pre-calibration, or tens of nA post-calibration)
+ - Abe: shared current values that were measured at some point and seemed sensible, can check offline
+- Abe to send the procedure for the calibration
+- Luise: low current for the Peltiers seems to work better?
+- Cole: yes. Currently experimenting with asymmetric currents for cooling / heating
+Next meeting: LBNL & Adelaide
+### Outcomes of debugging marathon
+- Carles: how is the connection of the miniDP cables in the coldbox in EC? Done by the feed-through?
+- Peter: yes
+- Tony: what about barrel coldboxes? Plastic?
+- Peter: yes (?)
+- Luise: would like to know whether there’s any change
+- Vitaliy: can use the end metal connector instead of peeling the plastic?
+- Peter: if feed-through connector, OK but difficult if not
+- Vitaliy: At testframe level?
+- Peter: No, you will violate the shield
+- For the testing with FMC-DP
+- Craig: we don’t have a big amount of FMC-DP in hand, but expect 26 soon
+- William: We were going to change these 3 delays. Hold on?
+- Luise: still figuring out the correct way to do it.
+- Tony: (confusion about a different 4th delay)
+ - Paul: This is the “data delay”, the delay in the HCC on the Input Channel inputs, it is also affected by this and needs to be adjusted
+- Initial values were old and arbitrary that worked sometime?
+- Dennis: Craig found one point and I found the other point working the best 
+- Phase space discussion:
+- We need to cross check the means of the bits (as in the delay achieved to the bit setting for the 4 delay and the ABC input phase). 
+ - Ash will probe and check what is needed to keep the relative phases the same.
+- EC frames: collecting feedback on EDMS 
+- William: PB testing: PB panels available? R0,1,2 now working and next could come in carrier cards.
+- JJ: during debugging, used a crate. Did you find a problem of not being able to talk with AMAC?
+- Luise: all panels just work. 
+- Peter: we didn’t spend time calibrating, so maybe didn’t catch this.
+- Dennis: can write but not read?
+- JJ: only calibration failed. And seems that the calibration changes over time and needs recalibration
+- Ash: version of AMAC?
+- JJ: V2
+- Peter: Steffania reported something similar for the barrel
+- Paul: two issues: 1-loss of communication 2- change in calibration. For 2) how much is changing?
+- JJ: well, the temperature it returns is very high value around 60ºC and if I recalibrate it comes back to normal.
+- Nghia: can JJ send the error messages? 
+- Dennis: You don’t have same version of AMAC (star and V2) [green vs purple boards?]
+- Luise: please, report to the itdsaq expert list
+- Luise: another burn-in debugging meeting next week or so?
+- Peter: wed/thu next week will meet some experts in UK. We can set a meeting after that.
+### Shunted tests in cold cycling
+- Craig/Ash: leave AMAC on when cooling down and then turn on the DCDC.
+- Ingo: we put on extreme mechanical stress and simulations showed that they can actually break
+- Paul: better control delta T by changing the turn-on
+- Craig: adjust turn-on procedure to avoid big temp gradient. 3 low-power modes released sequentially
+- Paul: we can always use the shunts to ramp up perhaps even more slowly
+- Luise: new command for turning on?
+- Craig: can convert the current command 
+- Dennis: the biggest problem is that we need to configure HCC in between to give clock to the ABCs
+- Peter: I need to think about that
+- Peter: what if we emergency power off everything? Risk of breaking modules?
+- Vitaliy: what is the procedure when turning it on regarding HV?
+- Turning LV on, turn HV-switch on, then ramp up.
+- Vitaly: Interlock on sensor current? Yes, ok, interlock fired when problems with the R1?
+- Cole: not in place at the moment
+- To implement in the coldjig software the turn-on sequence. To document in the cold cycling procedures the sequence. In the meantime, circulate which commands are needed to do the sequence manually
+- Andy: discussion in the UK long ago, test first warm. Is it still valid? → Yes, part of the warm test
+- Craig/Luise: We want to leave the AMAC on when cooling. The question is when ramp down the HV because we want the AMAC being turned off-on. We can ramp the sensor down before cooling or when reaching cold temp. 
+- Tony: we’d like in every cycle. Shunted full test, turn shunt off and go to the full cycle. Give comparison of shunted/not shunted for every cycle. Would that be ok? Anything more extreme needed?
+- Luise: if you want to take more data OK, but not standard procedure
+- From chat (Craig):
+ - slide 3 here shows a start-up sequence on a module and how that procedure steps in current draw https://indico.cern.ch/event/932643/contributions/3956337/attachments/2078631/3490995/200724_AMAConModules.pdf 
+ - and slide 4 here shows that my memory is wrong and (at least uncooled on an Al block) the increase and decrease of hybrid NTCs has a similar time constant on the way up as down (at least on old ABC130 modules!) https://indico.cern.ch/event/668881/contributions/2753070/attachments/1542850/2420287/AMAC_PDR.pdf
+- (discussion on how many full tests to run shunted)
+- Luise: need to define a bare minimum. Proposal: at the end of 1st cycle and beginning of last cycle. Can be included in the default testing sequence (putting an option of doing each in easy cycle or minimum). 
+- Bruce/Abe: we will need more flags but yes, should be possible.
+### AOB

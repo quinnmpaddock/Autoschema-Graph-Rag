@@ -1,0 +1,131 @@
+# 2024-01-09 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1362175/
+### Introduction
+- William (sl. 5): Just to check, these versions are dated back to 2022 right?
+ - Luise: Yes
+- Carles (sl. 5): Related to stencils, I tried to put the R5 PB on and found a problem with the pin. It would be nice if someone who also has this received also has this issue.
+ - Luise: Yes, this has happened to us with the R4 as well.
+ - Pete Spears: This has been figured out as an issue with the drawings where the hole size was slightly wrong. I can send you the proper files
+- Bart (sl. 7): Regarding pinholes, as a word of warning, the number of pinholes we see in QC is very very low. So be careful. If you see tens or even up to a hundred pinholes, this isn’t real since pinholes are very rare.
+ - Vitaliy: Agrees mostly
+ - Emily: Not all of these things are pinholes, but there are many things similar to this that would be identified as pinholes
+ - Vitaliy: What you just described are pinholes.
+ - Luise: Clarifying that there is some weirdness and it’s not always pinholes.
+ - Peter: You should already have seen weirdness in the IV.
+ - Vitaliy: I guess that it should be reminded that we already studied the performance with pinholes. What we looked at before was the impact on the channel’s “health”. It’s not like a disaster or anything. This test can test if something bad is happening during assembly.
+- Cole (clarifying): The first two bullet points on sl7 show 50-200 counts. Those are reading counts and not number of pinholes.
+- Sven (sl. 8): This feature of retroactive test uploading is not yet ready - missing option to select which stage to upload to. It’s just being discussed. We hope it won’t take long before it’s ready.
+- Hannah: Is it worth submitting TC to death results separately? 
+ - Luise: This is being written up by Abe (to death results)
+ - Abe: If the study fits in the topic of the conference, then sure that makes sense. Though it would be a little redundant, it doesn’t bother me either way.
+ - Luise: We will discuss this during the office hours today.
+### News from ITSDAQ/News from Sensors
+- Nothing
+### Group Update: Scandinavia
+- No questions
+### Barrel Hybrid Plans and Status
+- Luise: How thick are all of these?
+ - Ash: The X-type are coming in at around 360 (?) um. 
+ - Luise: This is the one that has reduced copper everywhere?
+ - Ash: Only on the outer layers. These were prototypes. We expect that if the circuits we’d have a 10um difference in thickness (for the thinner ones).
+ - Luise: For the surface roughness, I think there is a reasonable outcome they had with changed bond parameters.
+ - Tony: That was for ASICs
+ - Luise: Ahhhhhhh (exactly that many h’s)
+ - Ash: [missed stuff]
+ - Luise: Is there a way to look at these hybrids and see what we can use or do they just have to be tossed?
+ - Ash: We’ll need to look at them to determine this.
+- Sven: The most straightforward way would be to retest all hybrids at Liverpool. That’s millions of wires to pull. So if we don’t want to use the circuits, we’d rather not do this.
+ - Luise: It would save a lot on circuits right?
+ - Ash: But then all we have is the glue right?
+ - Sven: Are we suggesting we use two different flexes for SS modules?
+ - Craig: if we could use them, would probably want to use them instead of needing to build up new inventory
+ - Tony: From simulation, changing the thickness of the copper is a 3rd order effect for LS modules. We’re reducing it by roughly 60% according to the simulation.
+ - Tony: changing the copper content of flexes results in much smaller stress reduction than even the wider gap
+ - Ash: At the moment, my preference is to change to the thinned copper from a bondability point of view.
+ - Tony: But you’re going thinner copper because it’s required to get the finish we require?
+ - Ash: yes, it’s a different plating process, which makes it easier to control
+ - Tony: Okay
+ - Ash: The question is if we utilize what we have at the moment and then switch to something else later. Would rather
+ - Luise: It sounds convincing to switch to this process in the future, but we should also use hybrids in hand
+ - Craig: yes, has big cost and schedule implications
+ - Ash: We can get the circuits quite quickly (order months)
+ - Tony: What’s the total difference in the thickness
+ - Ash: 410 to about 370 (40 um or so).
+ - Tony: The tooling will take us months. That is what will drive this. Changing the stiffness will change bonding a lot as well. The electrical performance is not the issue. 
+ - Ash: The circuits we have in hand have had no problems
+ - Tony: This is not a hybrid problem, it’s a module problem.
+ - Forest: Isn’t it like this in the EC?
+ - Tony: Yes, and they have a lot of problems (?)
+ - William: end-cap actually has an issue with bonding	
+- Sven: The hybrids we are talking about here are thin 4-layer
+ - Luise: We are discussing more than one thing. Ash, you’ve convinced us the outer layers should be changed, but we need to see how much this is worth doing with all of the other things that need to be done.
+ - Ash: I agree.
+ - Tony: but if you reduce the copper across all four layers, it’s going to change everything - it makes the hybrid floppier, changes the thickness etc
+ - Ash: We have two batches of circuits available next month and we will wait.
+ - Tony: Yes.
+ - Ash: need to talk to company, whether it is easier to change process in all layers or just on outer layers
+ - Tony: this amount of change shouldn’t change the thickness so much
+- Sandra: I wanted to say that we are happy to do the extra testing. When do you think we will receive something to test.
+ - Ash: probably towards the end of February
+ - Sven: Which are you talking about?
+ - Sandra: The flexes you have in hand, the ones with surface problems.
+ - Sven: You have already seen the US share of all of those, so you have to do the bonding on them anyways.
+ - Sandra: Yes, they are done.
+ - Sven: Ash, can you change to the final slide. You have received three batches of SMD loaded flexes. 
+ - Sandra: Some okay, happy to help
+- Andy: Are we concerned going to a thinner hybrid will cause problems with gluing and the thinner hybrids?
+ - Craig: It’s certainly a potential concerned. We agreed that once we had the X/Y circuits, (only outer-layer thinned), then we would have some feedback. The difficulty is how then to make a decision of thinning the inner layers.
+- Andy: Is there a potential we would have different flexes on LS modules in the detector?
+ - Luise: Between LS and SS?
+ - Andy: LS and LS
+ - Luise: That’s what we are discussing. Regarding tools, timelines, etc.
+ - Andy: I just mean generally
+ - Craig: shouldn’t be an issue for the relatively small material changes we’re talking about, mostly a tooling and production change which needs to be balanced
+ - 
+- Luise: What’s the main motivation for thinning the inner layers as well?
+ - Ash: To reduce the copper as much as possible
+ - Luise: But, if this is just for the stress reduction, and simulation says it doesn’t matter much, from a process point of view, it would only be about the surface qualify?
+ - Sven: I don’t know if you looked at slide 3, but each copper layer gets thinned by only 5 um. It’s the outer layers that get really thinned since they were artificially increased.
+ - Luise: I’m just trying to reduce any unnecessary changes. If we can only change the outer layers, it is easier (like the batch of hybrids arriving soon). If we find that these work, then these could be production hybrids. I think this would be preferred all things being equal (3-layer is a last resort).
+ - Ash: [inaudible mostly]
+ - Craig: Agrees with it though
+ - Luise: So as soon as we have the new circuits in hand and they all look great, then these would be ramped up for production. So for the time where we don’t have these in hand, the question is if we can use existing ones in the mean time.
+ - Ash: The company has some on the production line, time is expected around months, but not more than a couple of months.
+ - Luise: It would be good to know how quickly we can get the outer-thinned hybrids
+ - Craig: and how fast can they produce them - nominal 3*448 flexes per month, but can Liverpool QC them as fast as we need them
+ - Sven: From the liverpool side, the answer is yes to both of them. Ash talked with Graphic last year and they said they could deliver three batches a month with a little reshuffling in the UK.
+- Sandra: So the current ones we have (before xmas), they look much better. Those are already 30-40 um thinner
+ - Sven: the new hybrids haven’t been distributed yet - what you have are the ones which were just a thinner 
+ - Sandra: So this is an additional modification to the tooling.
+ - Luise: The other ones were just a thinner batch. But it was the same build. Ash and Sven, do you know how the thinner batch compares to this?
+ - Sven: On average, the production circuits are 420 \pm 10%. As agreed. The new thinned outer layers are 370 \pm 10%. But we only have two batches that are unpopulated.
+ - Luise: The new tools were made for 40um thinner right?
+ - Craig: I thought production went thicker.
+ - Sven: EDMS is for 420um. 
+ - Craig: The change Sandra remembers is the change between pre-production to production where we went from nominal to 420um.
+ - Sandra: Okay.
+To summarise:
+- Changing the plating for the outer layers is something we will most likely want to do (unless there are other issues) to improve the surface quality for bonding
+- This will reduce the thickness to 370-380 microns, so we should prepare for that
+- Reducing the copper further would not affect the thickness much, but could affect stiffness (and maybe electrical performance) and is not expected to benefit the stress/cracking problem, so this would mainly be pursued if the company foresees issues with different plating processes in outer and inner layers (Ash will check)
+- Going back to a three-layer-build is very much disfavoured and would be a very last resort in case it is absolutely necessary
+- Open question whether the time scale for decision vs delivery times and production start will make it necessary to start with the existing (thicker) production flexes first
+### Updating Breakdown Detection Algorithm
+- Luise: In addition to the cold question, we also have the idea to reduce the number of readings. We think that these can be combined. One of the methods would be the smoothing in particular.
+ - Emily: Yes, I would like to see some data taken with fewer points. I can guess what it will do to the data, but we should see it first.
+ - Luise: We could also simulate it with the existing data. Just add extra noise on top of the readings you have.
+ - Emily: I have written a local script that picks out the individual counts, maybe the standard deviation?
+ - Luise: This data exists in the database
+ - Emily: what would you want to reduce it to?
+ - Cole: will share data from December
+ - Luise: rough count reduction plan was 200 readings
+- Tony: All this looks great. If you’re thinking of using v2, I would consider widening the requirement. You might miss the start of a real breakdown by one point, but that’s fine.
+ - Emily: Good point, was trying to get first point, but agree, it’s likely not important.
+ - Tony: Hammering the point home with a repeat
+ - Tony: even in the cold, would be just above passing
+- Gabriele: Maybe instead of using these fixed values, we should consider a number of sigmas above the RMS so that we are insensitive to some of these features.
+ - Emily: Yeah, and we do see that the RMS is dependent on breakdown.
+ - Tony: It would scale to different temperatures too. You might want it wider for warm. So there’s a scale factor from temperature that you might expect.
+ - Gabriele: there is a definition of breakdown, but we could just do sigma over RMS
+### In Case You Missed It: PRR Follow-up
+- Have a look! (it’s not as bad as you think)

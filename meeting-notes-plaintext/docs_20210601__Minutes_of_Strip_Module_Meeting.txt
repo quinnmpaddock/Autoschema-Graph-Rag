@@ -1,0 +1,79 @@
+# 01/06/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1032182/ 
+### Introduction
+- New steps released for SQ
+ - X, Y, Z
+- Next up
+ - A, B, C
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R0 tool production
+ - Progress with metrology
+ - Test glueing of hybrids worked well with randomly picked tools
+ - about time scales, facing issues with metrology
+ - issues with keyence wrt temperature control (temperature in cleanroom not controlled enough currently, keyence affected (loses calibration) by less than +-1°C variations)
+ - Discussion about when to release tools
+ - Discussion also about in or out of spec
+ - They can measure it but it takes a long time
+ - There will be a report by Freiburg next week to see what sub set of tools can already be sent to other sites
+- R3 tool production
+ - Working on DB upload RFID tool tag
+ - Worried on adding errors due to current manual nature of RFID scanning
+ - Sven copied RFID into text file
+ - Working on DB upload of metrology data as well
+ - Hybrids built with each toolset and they were in spec :)
+ - Some people have to learn using the tools
+ - Some pins needed to be re-optimised
+ - Mech modules maybe already by end of week
+- EC PPA/prototype hybrid order
+ - Some progress
+ - RFID addition to DB ongoing
+ - Unsure how long this will take
+ - Cleaning open
+ - Would hope to ship within 2 weeks
+- Shipping readiness (incl import procedure)
+ - This is just a reminder also tracked in prod planning meet
+- Barrel hybrid tendering/order
+ - Converging on hybrid tender specs
+ - Contract to be signed in coming weeks
+ - Sorting out 
+ - DuPont non availability details
+ - Test coupon adjustments
+- EC hybrids/powerboard tendering
+ - No news on prod tender, Uli is on holiday
+ - Dennis will check with Kambiz if all Fr changes were made and the tender docs are now in CERN hands
+- Endcap module thermal cycling setup
+ - See slides
+ - Holdup: external jig firm bailed, new company contacted
+- Hybrid crate setup, finalisation and roll-out
+ - Final tweaks done, working on small subset to be sent to beta sites
+ - All parts machined for first crate, will be tested this week, then one more week to prepare parts for the beta sites
+ - No news from the fan company, will now go for the fans at triple price
+ - Fans used, for order of beta test sites:https://noctua.at/de/nf-a6x25-pwm/specification 
+- EC hybrid test-panel finalisation
+ - New silk screen being iterated, closing on finalisation
+ - Should arrive on EDMS this week
+- EC multiple module box transport box
+ - Expected to circulate a mech star module, but repairs of HH bonder required, will add delay for shipping test
+ - All parts for final shipping test available
+- Production of the common jigs required in the EC
+ - Work progressing according to plan, no speed bumps hit
+- Production of stencils for the EC
+ - Stencil files to be added to dedicated folder in EDMS
+ - Old ones have to be removed from previous location
+ - New files to be immediately approved on upload
+ - Marc will sort this with Craig
+- EC PPA/prototype powerboard order
+ - Population details clarified with company
+ - Cost estimate to arrive tomorrow
+ - Company is preparing population
+All sites please purchase all the required Nexys and Genesys G2 boards NOW! (global shortage of Si parts makes unavailability, in the near future, likely - see e.g. the MicroZed board (current delivery time: 52 weeks))
+### Reclassification for the ABCStarv1 wafers probed by Carleton
+- Test fixes recovered a lot of ASICs in the maps, please use updated probing maps
+### End-cap coldbox PCB
+- Lund will check if they can include the humidity sensors in their order and deliver to sites
+### AMAC current measurement & referencing caps
+- Dave postponed to next week
+### AOB
+- n

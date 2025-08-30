@@ -1,0 +1,146 @@
+# 28/03/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1253777/
+### Introduction
+- Vitaliy: for PRR, do you want to do any practice talk sessions?
+ - Luise: will send emails, but probably not need to do practice talks. But slides should be available 2 weeks before review
+ Module PRR
+- Tony: how do we track deliverables? Some are more important than others, so how to we prioritize?
+ - Luise: hoped the priorities were clear, but how do you want this to be known?
+ - Tony: not clear
+ - Luise: we have a list from ITk week, and can make one to have it more accessible
+ - Craig: is it worth to go through the list at the beginning of each module meeting?
+ - Luise: might take up too much time
+Bow
+- Peter: is this just the ambient temperature [bow]
+ - Luise: just the ambient temperature
+ - Vitaliy: and when the loading sites measure shape, do they do it before or after mounting?
+ - Luise: by default they don’t measure it before mounting
+ - Vitaliy: do they measure it after loading? When do they do it?
+ - Luise: they measure after loading
+ - Vitaliy: then this should be dominated by the loading?
+ - Luise: if the module was bend, they could maybe measure something
+ - Theo: is the change just in the json, or also the common data format?
+ - Sven/Luise: just the json
+Testbeam
+- Next testbeam beginning of June
+- William: is the testbeam module in addition to the 6.5 petals?
+ - Luise: ideally it’s in addition to that
+ - William: we could in theory build it, but we don’t have enough hybrids for that
+- Tony: did Vitaliy & co let you know about sensors in irradiation?
+ - Luise: yes
+Glue
+- Carles: do we still want to make the few first SE4445 modules?
+ - Luise: the R0? Probably not
+ - Carles: then TrueBlue or False Blue?
+ - Luise: might want to swap SE4445 for False Blue
+ - Carles: should I just order some TrueBlue?
+ - Luise: yes
+- Craig: might want to wait for at least one other side to confirm the results from SE4445 before we make a decision. With two sites independently seeing similar things we can consider dropping SE4445. And doing this sooner or later would be good
+ - Luise: can we drop SE4445 now?
+ - Craig: yes
+ - Tony: all but one SE4445 do stenceling, and adding a robot will not do anything
+ - Bart: there should be 5 UK SE4445 modules + testbeam module from cold noise investigation already
+ - Craig: at least one of those was irradiated in Sandia and there was a hot channel
+ - Bart: and one build for testbeam was not good (hard to tune)
+ - Decision: not use SE4445 any more
+- Tony: think we shouldn’t do Polaris as base benchmark. Data does not give any more information and should just focus on difference between TrueBlue and FalseBlue
+ - Luise: how certain are you that FalseBlue will be worse than Polaris in EC?
+ - Tony: pretty certain. 
+ - Luise: number of polaris modules we want to build is very small (2 per type). We do have another one assembled and should test it to confirm this.
+ - Luise: it is still useful as baseline compared to old powerboards
+ - Tony: making the transfer does take some time, so should try to focus on newer glues
+### Institute Contributions: 
+Montreal
+- Vitaliy: how many hybrid panels do you have in a single box?
+ - Vitaliy: assume shipping hybrids in a panel, how many do fit inside a peli box?
+ - Hoang: 6
+ - Vitaliy: what is the sice of the box? Maybe it makes sense to get a larger box
+ - Carles: they then need to be distributed, so this would be more complicated
+ - Luise: for sensors we already pre-label boxes when they need to be split. Could label the peli boxes and then the shipment could be split
+ - Sergio: this is only related to the shipments to CERN? In canada, can ship one peli box at a time?
+ - Luise: Melbourne is a problem, because it’s long distance
+ - Vitaliy: but small quantities overall
+ - Carles: sent a link 
+ - Hoang: would be good if you could send the peli box back
+ - Carles: but more complicated for Australia
+ - Sergio: if we send multiple peli boxes to CERN, is there a reason to restrict to 6?
+ - Hoang: can discuss this
+ - Luise: logistics require some follow up discussions in the future
+ - Luise: for burn-in, do we need a follow up meeting?
+ - William: for burn-in, we only test 2-3 panels a time and we need to have the hybrids delivered
+ - Luise: at the moment due to lack of pwerboards we have a bit more time to distribute the hybrids
+ - William: but the GUI development is very slow and not certain that it will be ready in 2 weeks when the tests need to be done
+ - Hoang: agreed
+ - Hoang: and hybrids need to be shipped to Valencia for preparation
+ - Ben: maybe can have a dedicated chat and sort out problems?
+ - Ben: there are still a couple of things missing that could be because of differences between cold jig and burn in developers.
+ - Bruce: is this still pointing to another version of ITSDAQ than the master version?
+ - Ben: it is pointing to the masterversion to ITSDAQ. I have used the coldjig communication version and have been using it, but ITSDAQ uses something slightly differently. Can migrate fairly easily, but need to have also cold jig focus on one.
+ - Bruce: document is wrong, intention is to []?
+ - Ben: crash is need to read all the way to the bottom, not stop at the top, And there are ITSDAQ options to get more information
+ - Hoang: is there a current solution?
+ - Ben: no, need to follow recommendation from Bruce and get through it line by line
+Next meeting: IHEP
+### Module charge-up observations and plan forward
+Slide 
+- Vitaliy: however fun it is to study them, it is better not to have them and use the de-ionizers on parts before picking up the sensors. And any de-ionizer will remove static charge within seconds
+- Vitaliy: and a module in a frame can get statics because it is not actually grounded
+- Andy: in your example the sensor would fail because of the number of lumpt, but if it only has one would it pass?
+ - Luise: have a requirement of not more than 8 consecutive bad channels, so it would fail
+### Update about SE4445 modules built at LBL
+- 
+### Web app overview
+- Sven: how does the web app deal with component stages
+ - Kenny: if it’s in the correct stage it doesn’t change the stage, if it’s not, it moves it to the correct stage
+ - Sven: issue with institute authorities
+ - Kenny: yes, known problem
+ - Sven: could there be a prompt asking whether we really want to change stage?
+ - Luise: have done some discussion in the past where stage changes should only happen when all tests are upload. Is this stage change part in development?
+ - Kenny: plan to work on this
+- Luise: do you want information about missing interfaces?
+ - Kenny: yes, can do something. If it is something more complicated analysis, can have a look into how to merge them into the webapp
+- Luise: If people want to modify existing functions, are you happy with them working on the code themselves?
+ - Kenny: yep, effort welcome
+ - Can also tell me what you want and I’ll work on it, but that might take longer
+### Required EC coldbox modification
+- Sergio: how many of these temperature fuses do you have?
+ - Soeren: have ordered 200. Need 6 in total and will add some spares
+- Carles: about the permanent screw: it won’t work if you change the module type from small to big
+ - Soeren: but how often do you have to do that? Easy to do, hex head, relatively easy to exchange, haven’t had a chance to test with modules much
+- Carles: other concern: suggestion is to leave the screw in place, then take out module and leave the screw in place, right?
+ - Soreen: yes, remove the cup just possible with one hand
+ - Carles: removing modules from chuck is difficult because screws are stuck in foam, but if you say it’s fine, we’re fine with it
+- Carles: can we use screws from soft aluminium so the screw would loose the thread, not the chuck
+ - Soeren: might be a possibility, but haven’t seen that the pink foam sticks to the pins
+ - Carles: see this issue with the pink foam all the time
+ - Sergio: if you have kapton around corners of pink foam, might create a gap and cause worse temperature performance
+ - Carles: it’s a tiny amount or carton to keep it in place
+ - Soeren: bubbles in the foil?
+ - Carles: Sergio is worried about leaving somethin in the interface area of the module and this is not the case
+- Cole: thermal fuse: where are you planning to have it located?
+ - Soeren: 1 connector in cold box for every chuck, contacts are for peltiers and just have to plug them in directly in between
+ - Cole: is the fuse going to be in contact with the copper chuck? Or the aluminium?
+ - Soeren: no, just laying in the cold box
+ - Cole: then how is the fuse going to hit 66 degrees?
+ - Soeren: it is really to protect the whole cold box from getting lost, based on one case in the past
+ - Cole: agree with using the fuses, but not certain that they will see 66C from just air/convection
+ - Soeren: foam is allowed to get to 70 degrees, can stay at 7 degrees for 
+ - Cole: will discuss it more offline
+### Adapting Barrel metrology software tools for the Endcap geometry
+- Sven: used this script in the part and it always produced a folder that contains results and plots, which makes batch uploads les convenient, could they all go into one folder for batch upload
+ - Theo: sure, get in touch
+- William (slide 13): we have been working on DB upload for us. Is there anything in this common data format that is not in the database to do the analysis?
+ - William: it’s about the common format. Is there more information in teh common file than in the database data?
+ - Theo: have to upload common format to database as attachment anyway
+ - Theo: yes, it’s required
+ - Sven: there is a difference between what is uploaded and what is in the raw data file, so that re-analysis can be done and a lot of position information is lost in the upload
+ - Theo: examples here
+- Luise: does you script automatically pull which flex batch and thickness will be used?
+ - Theo: if we have to, it could be done but at the moment we don’t
+ - Luise: at the moment there is a chance that people use the wrong flex batch when looking up the information for the hybrid
+ - Theo: would prefer if we don’t have to, but it is something that could probably be done
+- Luise: you propose to migrate to this. Will it be continually maintained?
+ - Theo: yes, and people can leave comments
+### End-cap module delay setting scan (Postponed to next week)
+### AOB
+-

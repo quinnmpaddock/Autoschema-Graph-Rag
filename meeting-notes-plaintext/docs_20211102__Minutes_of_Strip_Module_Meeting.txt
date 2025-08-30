@@ -1,0 +1,185 @@
+# 02/11/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1084882/
+### Introduction
+- Carles introduced new TWiki page for parts that have to be purchased by institutes: 
+https://twiki.cern.ch/twiki/bin/viewauth/Atlas/PartsToBeBoughtByEachInstitute
+- 
+- Open EDMS reviews:
+ - Barrel Tools Drawings (PPB modification)
+ - https://edms.cern.ch/document/AT2-IS-DF-0025/3.4.1
+ - Module IV (QC)	
+ - https://edms.cern.ch/document/AT2-IS-EP-0119/1	
+ - Powerboard Reception Test Guide
+ - https://edms.cern.ch/document/AT2-IS-EP-0116/1
+ - Powerboard Production Procedures
+ - https://edms.cern.ch/document/AT2-IS-EP-0089/2
+ - EC multiple module transport box
+ - https://edms.cern.ch/document/AT2-IS-ED-0018/2
+ - Endcap Star hybrids test panels
+ - https://edms.cern.ch/document/2218120/2
+ - Petal ChipTrays V2
+ - https://edms.cern.ch/document/2648523/1
+- Old EDMS reviews:
+ - Barrel Powerboard Tools (Bushings)
+ - https://edms.cern.ch/document/2422455/2.5
+ - Endcap Powerboard-on-Sensor Stencils
+ - https://edms.cern.ch/document/2591748/1.1
+ - 
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- Would like to start sorting task tracker items by barrel and endcap: one week only endcap tasks, other week only barrel tasks
+ - Starting to sort now:
+ - 23/11/2021: EC tasks
+ - 30/11/2021: Barrel tasks
+ - ...
+- New task for irradiated R5 module at December test beam
+ - Hybrids assembly: Ingo (DESY Zeuthen)
+ - ASICs (V1): Craig -> shipped
+ - Hybrid irradiation at RAL: Craig
+ - Powerboard:
+ - Sensor: annealing at Freiburg (Dennis), then shipping to IFIC
+ - Module assembled: IFIC (Urmila, Carles)
+- R2 tool production
+ - Problems with module assembly jig: landing pads are not at the correct height, need re-machining, so the best option is to send out re-machined module jigs (with blank landing pads) for now and make a new set of module jigs afterwards
+- R4 tool production
+ - First five sets have been sent out and should arrive soon: each R4 site should have one set soon, rest to be manufactured until January
+- Shipping readiness (incl import procedure)
+ - Problems encountered for first AMAC wafer: shipment routes through CERN and Penn
+ - “It’s sort of a confused mess” (Paul)
+ - Uncertainty with the dicing vendor - assumed faster dicing time than possible, now looking into second vendor, which may need longer turn-around time, but might be able to stick to it, currently being worked out
+ - Die should go through CERN
+- UK/China module thermal cycling setup
+ - Cold jig arrived in Beijing last week, everything is delivered
+ - TASK CLOSED!
+- Production of stencils
+ - Exported from Prague, glue stencils and frames sent out
+- SMD tendering for EC pre-production/production hybrids
+ - Sent out test PCBs to companies to see if they are able to do this, allowed to contact only companies deemed competent (can’t name names right now) - in the process of selecting companies, can be restricted to a smaller tender
+### (end-cap) hybrid changes for PPB
+- Luise: did fiducial change
+ - Kambiz: no, have not changed; just added some fiducials
+ - Luise: were wondering for module metrology
+ - Kambiz: outline has not changed and positions and orientations of fiducials are still the same
+- Sergio: why do we need the fiducials around the HCCs?
+ - Kambiz: not enough space for the previous fiducials around the HCCs, therefore had to change the HCC fiducials
+- William: is there a way to check the fiducials and positions to identify which have changed, because pick-and-place machine has been set up
+ - Kambiz: simplest way would be to compare top layer in Gerber files
+ - Kambiz: should only have new fiducials added, old ones should still be there
+ - Kambiz: as long as you use ASICs integrated in ABC footprint, should be fine
+- Sergio: does that mean we don’t need to change the module drawings?
+ - Marc: might want to update the HCCs? 
+ - Sergio: want right size for ASICs, but may not need to update hybrids
+ - Marc: yes, only use updated ASIC size
+- Sven: Need to redo hybrid metrology drawings to accommodate the new HCC
+ - Need to find people to do this
+ - Sergey might update his, may need to find someone to take over 
+### PPB Deliveries Discussion (EC)
+Didn’t have slides ready, postponed to next week
+Summary (when, where, how many)
+- ASICs 
+ - ABCStarV1
+ - Pre-irradiated before end of January
+ - Should have “plenty” of ABCs by the time the other ASICs become available
+ - HCCStarV1
+ - Unprobed early January, around 490
+ - Probed end of February, 490, available at Penn
+ - AMACStar
+ - Unprobed early January, around 430
+ - Probed end of February, 430, available at Penn
+- Powerboards
+ - Barrel (PBv3.1b)
+ - Requested: three batches: 
+ - Batch 1 (unprobed, would be *started* early January; LBNL)
+ - 20 fast tracked (bPol V4), could come out of previous 50 PBv3.1, can be turned into powerboards within a week after receiving chips)
+ - 100 for reliability testing (bPol V6)
+ - 180 (bPol V4) for hybrid testing
+ - Boards for community should be available within 4 weeks of receiving chips
+ - Expected to be available for community early February
+ - Batch 2 (probed, early March; LBNL)
+ - 180 (bPol V4)
+ - Boards for community should be available within 4 weeks of receiving chips
+ - Batch 3 (probed, pre-irradiated, May/June; LBNL)
+ - 390 (bPol V4) 
+ - Boards for community should be available within 6 weeks of receiving chips
+ - Will probably need ramp-up
+ - Using 50 old flexes for fast tracked batch
+ - EC (all flavours)
+ - 
+- Hybrids
+ - Barrel
+ - First batch of flexes ~December 2021; at best fully SMD populated hybrids mid February at Liverpool
+ - Maybe a couple of weeks behind powerboard production
+ - EC
+- Sensors
+ - Barrel
+ - EC
+- Hybrid panels
+ - Barrel
+ - EC
+- Module Frames
+ - Barrel
+ - EC
+- 
+- Ashley: How to qualify the 640MBit?
+ - Tony: current plan to make a module and put it on to a stave 
+ - barrel:first PPB stave
+ - Enough parts to do a module at each site
+ - Ashley: maybe first trial to put a hybrid directly onto a stave
+ - Craig: nevertheless, leave a PPA stave/petal position empty (furthest away from EOS) as backup for this test
+ - Craig: that would be unprobed chips on a stave -> change of scope of PPBAlso having a 640MBit module at each site requires more planning
+- Luise: what would be the corresponding EC?
+ - Dennis: use the single sided loaded petal in hand and test a PPB hybrid on the backside
+EC powerboard discussion (in particular for AMACs) next week
+### Experience with Barrel Powerboard Tools (maybe 23/11/2021)
+- Karol: found that powerboards are much thinner than spec’ed (400 um), problem is that the flatness is not constant over the powerboard length, therefore should use the powerboard to adjust thickness and not a shim
+ - Matt: the powerboard in hand seemed very thing (330 um), so not a good one to use to set ins
+ - Sven: different versions of powerboards also have different thicknesses
+ - Craig: depends on batch - some were thinner
+- Craig: how do we proceed here: do we adjust the powerboard for every batch that comes in or do we adjust to the nominal and hope it’s robust enough
+ - Sandra: suggests to discuss with Tom Johnson
+ - Karol: sounds like we need to agree on how to glue the powerboard
+- Luise: two decoupled questions: insufficient glue volume and robustness of gluing
+ - Craig agrees
+ - Luise: can’t really say if glue pattern is robust against thickness variations if the fill factor is too low
+ - Need a new stencil as soon as possible during PPA to see if the process works with varying thicknesses
+- Luise: do we have powerboard thickness information?
+ - Karol: on a batch level
+ - Previous plan: use powerboard thickness per batch to adjust metrology
+- Follow up: powerboard thickness at positions used for module metrology (on batch base) 
+- Make a new stencil design for barrel powerboard stencils as soon as possible
+### AOB
+### EC testframe discussion (instead of 09/11/2021)
+- Idea: need to measure temperature of sensor to scale IV; have temperature measurement as good as possible to do the scaling
+- Suggestion from last discussion: add a temperature sensor to the EC testframe, since there is a temperature gradient to a measurement on the jigHas not to be be done for barrel
+- Can this design change be done?
+ - Dennis: can be done in new design
+- William: would this has to be done on already commissioned test systems?Temperature gradient is not very large
+ - Luise: new sensor on frame does not have to be usedTemperature effect on leakage current is larger than you would expect (10-20% for a few degrees)
+ - Not using this would not be a fail
+ - William: only looking for failures of sensors, not really for 10-20% changes in leakage current
+- Andrew: in barrel measure temperature of sensor, but where is it done?
+ - What is the spec to get it done to be as close as the sensor sites
+ - Luise: QC sites measure on the jig, but the sensor there sits directly on the jig
+ - Luise: there is a requirement to explain differences in measured currents between sensor QC site and module site
+ - Tony: if you don’t actively cool, any temperature in the box is fine
+ - Luise: there is a requirement for the temperature at which the sensor needs to be measured
+ - Andrew: is there no humidity control?
+ - Luise: that is separate, and has to be <10%
+ - Bart: not all sensor QC sites use a chuck (e.g. Cambridge); not sure if they measure temperature accurately to +/-0.5C
+ - Craig: probably overthink this
+ - Sensor reception is not there to confirm sensor behaves as during QC, it should only find gross issues (e.g. earlier breakdown) so precise position of temperature sensor is not a massive issue
+- Luise: need to separate discussions: 1) is is possible to have a temperature sensor on the module frame? 2) are the requirements for the IV too strict?
+ - Craig: agrees that the temperature sensor is fineShould look at the EDMS documents for reception
+- Vitaliy: temperature sensor on test frame might help for groups that haven’t developed a test setup
+ - <shares some slides of IVs>
+ - Issues are obvious due to a large increase of current (~<100nA changes to >2uA)
+ - Craig: so this change is what we should look for, but a 10-20% change compared to the sensor QC is not much of an issue
+ - Luise: also question what happens before & after the HV-tab attachmentIf want to do good comparisons, need good temperature monitoring
+ - Tony: is nice to have temperature correction, most important thing is to have one at all
+- Andy: Current IV test for module test only requires temperature correction only for the one point, not all measurement points
+ - Sven: test currently in database is only work in progress until the procedure document has been approved and is fully implemented
+- Jonas: does it add any significant cost or delay?
+ - Dennis: only an NTC, so not really a cost increase; and no delay for future frames
+ - Jonas: no reason not to include it
+Task: Dennis to include a temperature sensor on the EC module frames

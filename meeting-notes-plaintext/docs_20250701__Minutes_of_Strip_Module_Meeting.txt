@@ -1,0 +1,72 @@
+# 2025-07-01 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1557982/
+### HVStability Update
+Presenter: Judith Kull
+- Luise: This is great, for long term, the data is enough to set initial criteria. For longer term trends, from the sensor community are there any long term trends?
+ - Bart: We see very few failures on HVS. I would say we do not regularly do repeated tests, but Vitaliy may do IVs. We do 40 hours over the weekend since sometimes 24 hours is not enough to spot the trend. We’ve done 100s of hours, and although trends are not always visible at the 24-hour level, they often are 40-50 hours.
+ - Vitaliy: We have experienced this as well. I
+ - Luise: I don’t think it’s reasonable for most sites to run HVS for 40 hours, but maybe it’s worth trying this in a ColdBox that has spare capacity.
+ - Cole: agrees that it is a good idea.
+### Introduction
+Presenter: Cole Helling
+- Agreement on grade B being added as a flag
+- Carles: Is there any plan for Grade C? 
+ - Cole: we do not have a definition for grade C, next week we will discuss what to do with EB grading
+- Luise: This is only if its not stitched hybrid are
+ - Cole: for the endcap we will have to get a better definition on certain modules. 
+### L4 Updates
+- None
+### QT Closeout: ITSCRACK
+Presenter: Abdullah Seyed
+- Cole: this could be re-tooled to detect anomalous S curves
+- Abullah: You could also use it to analyse strobe test results. Any project that could use this I would be happy to help to get working.
+### Sensor Breakdown in ColdBox Cold HV Exposure Tests
+Presenter: Botho Paschen
+- Cole: I have had similar concerns with dry air being able to induce this. In the EndCap all our tubes are metal but all of yours are plastic.
+ - Botho: yes maybe we need to ground the tubes and this could improve this
+ - Cole: you can use a infrared ESD gun thing that might be interesting to look at
+- Vitaliy: I don’t know if grounded tubes make a difference, but JJ did show quite a significant potential in his studies. Given the clear results from Botho, I’m suspicious about dry air flow and would suggest that even if tubes are grounded to keep them away from the modules. I think it could be a generic feature we may want to avoid.
+ - Gerrit: Why would it only happen while cold?
+ - Vitaliy: I think it may happen both cold and warm, but it’s more pronounced when cold because charges are less mobile. And the constant influence from dry air affects it more when cold.
+ - Gerrit: another simplistic explanation is your dry air is not dry
+ - Vitaliy: I think he measured that it was quite dry.
+ - Gerrit: We saw that in the past, the module get cold and it's easy to have ice build up even if they are coming up very dry. Dave did a lot of studies with dry air into this. 
+ - Vitaliy: I thought it was studied and the dew point was fine. I think SCIPP has a higher DP than LBNL or BNL [?], so we looked using a camera with bare chucks to see if we found any ice.
+- Dennis: Some dry air systems have a switch over from two drying units. Maybe during the switching you introduce more humidity briefly.
+ - Cole: They do have this system at LBNL isn't it?
+ - Botho: yes that's true
+ - Dennis: not sure how you would check for this.
+ - Cole: You can notice this but it normally shows up as dryer air. The other interesting thing is in the endcap we blow air directly into the module frames
+ - Botho: we did once have this problem where we put in not as dry air from overloading the drying system. We have now separated these circuits so we assume we are getting the most dry air as we can.
+- Sandra: Because of this, we installed a second system to make sure we have plenty of dry air.
+- Cole: sorry missed this 
+- Peter in chat: I have to go now, but here's my question. Rather than to focus upon the dry air, if we suspect a contribution from reduced charge mobility at lower temperatures, would it not be valid to extend the ramp times to compensate (eg 20s delay after each 10s ramp, something like that). It would seem valid to me to allow different ramp specs for temperatures which differ by ~50C.
+### Update: CERN Interposing
+Presenter: Carles Solaz Contell
+- Luise: For the hybrid you showed on sl. 18, top pic, do you know how much distance there is to the edge?
+ - Carles: I didn't measure anything, don't have a calibrated microscope. Difficult to say. 
+ - Luise: This would help us with problems in the stitch area.
+- Luise: Another you showed insufficient coverage, is there too little glue or did the squeezing not work properly 
+ - Carles: I don’t have this information. Sergio might know.
+ - Craig: On this one specifically, I don’t know. I can say the other one where the hybrid looked bowed under the kapton (sl. 9), Abi showed something similar and they worked out where that came from. It’s that their tools don’t fit as well into the assembly tool as they expected, so they think this is caught now.
+ - Luise: Do they do any QC? Do they weigh the glue or measure the height?
+ - Craig: they calibrate the glue whenever they deposit, can’t remember whether they weigh each time. They do VI and some of these would have been failed at VI
+ - Luise: I guess I’m wondering why the one that looked like it ran out of glue (sl. 16) wasn’t rejected.
+ - Carles: I guess the R5 needs the partner to be tested so that might be why it was rejected.
+ - Craig: I think this was one of the early hybrids they did and they were worried about the handling from removing and redoing the interposer. We had a meeting last week with Abi, and since these were made, a number of improvements have been made. They realized they weren’t leaving the vacuum longer. They also worked more on the glue calibration by doing repeated tests. It looks better now. In terms of overhang, they have started cutting their own Kapton. So the ears that come from cutting and cause alignment issues should be solved. They are also sizing it down slightly so that it also doesn’t cause alignment issues. 
+ - Dennis: for this picture slide16, this is from missing dots from dispensing. 
+ - Carles: In general, are people happy with us using the ones marked in red for modules? So we can learn what is bad and what is not? 
+ - Craig: it's good to use them to learn, I am worried about using a bad one on the cycling to death module. I wouldn't use some of these even for cycle to death modules.
+ - Cole: yes we should use the kind of bad ones that we won't use properly for cycle to death
+ - Dennis: Yes
+ - Carles: What should we do about trimming?
+ - Navid: I don’t recall any instances of people needing to trim. I would use it, but if you can trim it, trim it.
+ - Carles: If there is no experience that says we need to cut it, I would leave it.
+ - Luise: Probably a good test object?
+ - Ingo: Even if we trim it and find out we need to trim it. We couldn’t do it.
+ - Carles: It depends on how often you would need to do it.
+ - Ingo: it would have to be supper rarely 
+ - Navid: it depends on if you’re expecting to see it or not.
+ - Ingo: If we see it in production, we can’t solve it by cutting it off at the module site.
+### AOB
+- No

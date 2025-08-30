@@ -1,0 +1,81 @@
+# 07/07/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927509/
+## Minutes
+### Introduction (Craig & Ingo)
+- US plan for playing with bushings has been uploaded for reference, expect more over the next few weeks
+- Will talk about EC using bushings or not in next week’s meeting.
+ - Craig and Ingo will contact people to prepare some input presentations
+ - Pointed out that remachining to retrofit bushings should be possible (but obviously cost a bit)
+ - Ideally would like to avoid remachining at a later stage since that might require collecting and re-distributing tools from various sites
+### Bond pulling summary (Wire-bond QC group)
+- Current table extremely barrel focussed 
+ - Need to include endcap case!
+- Can’t design any “array jig” for the endcap right now since we don’t know the final vendor and related to that don’t know the final array size 
+- Only UK hybrid arrays are tested at Liverpool, US arrays have to be tested in US
+- Seems right now we would be pull testing a lot, should maybe think about defining something in the order of “testing once per X” with X to be defined (per # of arrays, weeks, months etc)
+- For assembly sites, 100 pulls per array is a final sanity check (substrate and machine tested separately already) so descoped to every few weeks
+ - Based on time rather than number of arrays to take different production rates into account (currently once per month)
+- No objections to power board plans (Forest to contact Timon to make sure there’s nothing that got overlooked)
+- Sensors: was discussed a while back that we’ll have some kind of central receiving site where sensor lot gets tested
+ - Problem for some endcap sensors: not all sensor QC sites have wirebonder/pull tester
+ - Solution: use database to ensure sensors are tested but doesn’t have to happen at sensor QC site, can also be at module assembly site
+- Same for ASIC wafers (pull test per dicing batch, tracking that this happens through database batch QA/QC function)
+### Waffle tools (Scott)
+- How many bonds were put per row to get results?
+ - Round 4 bonds
+ - Square 2 bonds
+- Bart’s experience with standard wedge showed concerning results wrt to bond force needed (could potentially damage things)
+- Bond force for waffle wedge higher, but larger area distributes that force
+- Could be advantage of waffle wedge by distributing pressure over larger area
+- Question: do we have access to deformation profile?
+ - There is a distinct difference for each wedge, but no damage was seen for any of them
+ - Had to keep overdriving it to get repeatable bond force
+- Is overdrive = overtravel? 
+ - once machine finds pad, machine drives it a bit further to ensure proper contact 
+ - seems to be called overtravel on Hesse, overdrive on delvotec
+- Reason for relatively big numbers: bonding done on back side of halfmoons which were sitting on cleanroom wipe which is rather spongy and gives quite a bit
+### Split module and database things (Luise & Sven)
+- When do half modules get serial numbers? What if it fails afterwards?
+ - Hybrids from same panel should be kept together
+ - Hybrids from one panel used to make one module
+ - If half fails, use serial number of HCC carrying module
+ - This would mean we might end up with a set of 2 hybrids that would not immediately get used for another module to avoid mixing sets
+- Current plan is serial number counts up, so introducing specified numbers at start of 7 digit chain would complicate things
+- Would serial number be set manually?
+ - Depends on if we have a GUI for assembly or not
+ - If yes → automatically
+- Would this interfere with automatic assignment of serial numbers for barrel modules?
+ - There is the option to override serial numbers, could for the endcap have script that overrides the standard one
+ - Currently only institute authorities can change serial numbers, have to change/check this
+- You always build pairs of modules, so you should only mix halves of non-working pairs and in other cases always try to make one module out of one tested hybrid panel
+ - This means if one half fails, put working half aside until you have another case where one half fails 
+- Make list of (optional) trackable items? (bonder used, tool used, etc)
+ - No objection, so take this as a yes
+- Have to agree on tooling numbering scheme: strict scheme or just assign institute identifier and keep rest free
+ - Where are serial numbers assigned?
+ - Production site or reception site?
+ - Probably best after metrology is done on them
+- Whole idea is to avoid that people can accidentally assemble modules with wrong tools (in the database, not reality)
+- Can people with more rights toggle their access rights?
+ - No
+ - Could create two accounts in that case (one with one without super rights)
+- Consensus: serial number not institute specific but producer specific (so ab would encode manufacturer)
+- Adding local name as property to tools would be helpful for sites in order to identify their tools
+- Drawing number and manufacturer are already properties of tools but this does not necessarily affect ITk serial number
+- Tools have RFID tag, since people need to read out RFID of hybrids anyway, not much additional effort to read out tool tag as well
+### EC transport box and frames (Dennis & Kambiz)
+- Once hybrids are approved, what’s the next step?
+ - In MS we ask for similar samples and not final design hybrids
+ - There are not going to be any final design hybrids at this stage
+- Are there any orders outside of MS?
+ - Kambiz preferred option would be to order small amount (20-40 hybrids) of each vendor
+ - Would also allow for quicker check of vendor’s quality
+- This would only be for pre-prod A!
+- For pre-production B only final designs from winner of MS
+- Need to have schedule and numbers for production meeting for pre-production A
+- Need to make sure people fill out table with numbers needed and give us schedule of order times
+ - https://docs.google.com/spreadsheets/d/1vKhicJ7CacqfUdRG9leoHsMcm_T7qT8jOGw2VEgfYeU/edit#gid=464877338
+- Pre-prod A has rather small numbers, numbers ordered might be more than we need
+- Also need hybrids for prototyping, but since we don’t have real sensors for prototyping, these would have to be build with mechanical sensors
+- Hope review done by end of July so we submit final design of all flavours for production
+- People to look at slides about transport frames so we can discuss on Thursday who will produce what

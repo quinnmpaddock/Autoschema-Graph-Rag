@@ -1,0 +1,159 @@
+# 01/02/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1109666/
+### Introduction
+- At end of session
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 01/02/2022: Barrel tasks
+- 08/02/2022: EC tasks
+- 15/02/2022: Barrel tasks
+- 22/02/2022: EC tasks
+- Shipping readiness (incl import procedure)
+- Hybrid crate setup, finalisation and roll-out
+### Powerboard document review/SQ preparations
+- Implemented changes from the EDMS review in the document. Pay attention to the bold red texts on the safety
+- Craig: HV powersupply using Keithley 2410, but would require switching between setups, therefore allow standalone supplies that can only go to 500V
+- Craig: any strong feelings between 500V and 550V?
+ - William: there is a price break between them
+ - Bart: everybody might have a preferred power supply, so support could be an issue
+ - Is there an issue with not testing to 550V?
+ - No, since it is tested at least once to that voltage
+- Andy: is there a known failure mode between 500V and 550V?
+ - Bart: if powerboard is only release when it passes the 550V test at manufacturing site, it should be fineOnly components or HV-mux could be wrong, but it’s extremely unlikely that they could get damaged during transport
+ - Dennis: only maybe a lose wire-bond that shorts something
+ - Dennis: problem is that a powerboard in operation sees 550V, not testing to that is not standard process
+ - But the 500V test is only at reception, the powerboard is tested to 550V at reception
+ - Craig: and we test modules to 550V, only at reception not
+- Summary: powerboard reception testing to 500V is acceptable, since it gets tested to 550V at other stages of the process
+### Adjusting pins on powerboard pickup tools
+- Ingo: thanks, that looks very useful, looks like a very good method
+- Carles: good to see the process is fast!
+ - Peter: yes, once setup is figured out, adjusting the tools is fine
+ - Carles: when trying to adjust R5, they are glued, so it might be more difficult
+- Matt Kurth: Pin powerboard touchdown locations touches down on powerboard areas with different thicknesses (of the flex), should one then use different aluminium blocks?
+ - Peter: depending on how big the differences are, would make different height aluminium blocks
+ - Matt: about 15 um, Peter: that’s pretty large, might require multiple blocks
+ - Peter: how did you adjust for that? Matt: put it on the powerboard with pins touching and glued pins in place
+ - Matt: this method needs an oven though
+ - Peter: some of the tools are press fit, but don’t have access to all tool types. With press fit using an existing powerboard to adjust the tool could be difficult.
+ - Matt: barrel tool pins just slide in and out, that makes it easier
+- Matt: thought LBL was going to do metrology on some of the tools, could use that data?
+- Peter: could be useful
+### First hybrids assembled at NOTE
+- Luise: about more rejects: only had a small number, so probably notWould recommend to save reject ASICs for wire-bond optimization and bonding trials
+ - Richard: what would you recommend for front-end programming then?
+ - Luise: do it on real ASICs 
+ - Richard: prototypes?
+ - Luise: yes, use them for programming
+- William: are you using the ATLAS jigs inside the pick-and place machine?
+ - Richard: no, don’t fit into our machine. But also the jigs used at Toronto does not work
+ - William: we see the same hybrid bow issue; don’t think that all the hybrids can be flattened by hand
+ - Richard: if leakage in pick-and-place is big, we stop the process, but for small leakage can’t see it
+- Luise: do you have enough patterned silicone ASICs?
+ - Richard: they are a different program since the pattern is not exactly the same as with real chips
+### Introduction
+- Single module testing header information:
+ - Vitaliy: powerboard settings that are for module tests should be included somewhere
+ - Luise: what settings?
+ - Vitaliy: it is configured, so these
+ - Dennis: the only thing that could change on the powerboard would be when it is re-calibrated or when it is set to a different output voltage. Other parts shouldn’t affect the modules
+ - Timon: but the voltage is not checked as part of QC
+ - Dennis: it would have to be set manually at the moment
+ - Luise: is this stored somewhere else?
+ - Timon: it needs to be checked at the module
+ - Dennis: it’s about register settings
+ - Andy: how would it get into the dat file?
+ - Dennis: ITSDAQ can read the settings from the database
+ - Dennis: it also depends on where the module is tested (in coldbox full calibration chain can be tested, but not in single module test system [missing DAC])
+ - Andy: how does this data gets into the form that a local institute reads the data?
+ - Luise: started discussing it with ITSDAQ expertes: if local influxDB, ITSDAQ can read it, but if not it needs local input
+ - Vitaly: did you mean environmental temperature? Should be store the hybrid temperature anywhere?
+ - Luise: idea would be to have this automated as much as possible, but there should be a backup option for manual input
+ - Andy: is there a plan today to do it?
+ - Luise: no, but there are ideas on how to do it
+ - Andy: would this be required for the SQ?
+ - Luise: yes
+ - Andy: is there a specification for the environment?
+ - Luise: yes, in the procedure document
+ - Andy: is this a rolling temperature/humidity measurement or a one off by hand?
+ - Luise: not easy to say without ITSDAQ experts, but have to make it as easy as possible with a one-off
+ - Vitaliy: did we decide if this would be a test for the module or the hybrid in the database
+ - Luise: so far not decided
+ - Vitaly: might be able to force values into a header but unnatural to have module test data uploaded to a hybrid
+- Unbonded test:
+ - Vitaly: could see how this is optional and understand how noise values can be different between module types
+ - Gerrit: how long does the test take?
+ - Vitaliy: should be similar to a 3pT gain test
+ - Gerrit: would make it mandatory
+ - Luise: can’t do this now
+ - Sven: not every institute can have a module test in the wire-bonder
+ - Vitaly: would not necessarily be done during bonding, but should be done during module test
+ - Andy: would this test be mandatory during cold-box test?
+ - Luise: probably
+ - Vitaliy: should be mandatory in cold box; if you do single module test then should be part of sequence
+ - Luise: don’t plan to make single module testing mandatory for sites that don’t want to do it; but it makes sense to make this test mandatory at some point
+ - Andy: single module test was not necessary for cold test, would it be used for finding something that went wrong in the cold box test?
+ - Gerrit: not, cold box can be run warm
+ - Craig: it was always thought that groups can use a single module test system to debug modules that have shown issues. PPA/PPB is most single module test, not cold box, but it was not intended to use single module test systems as part of QC chainNeed to define what this document needs to cover in the current process
+ - Ingo: Proposal: if no cold-box test need to do all tests in single module test, otherwise go with cold-box test
+ - Luise: also what about module reception testing?
+ - Craig: is a bit in a grey area; electrical module testing is mainly done at loading sites, guess would be to have a separate document for this
+ - Luise: reception test is currently written as a full test sequence at room temperature
+ - Luise: is this test defined in ITSDAQ?
+ - Craig: no, it's a standard 3point Gain at low bias voltage with additional cuts; there is code that looks into this for the wire-bond visual inspection replacement; there are beginnings of it
+ - Bart: test in wire-bonder is not a 3 point gain, something more simple (threshold scan)
+ - Craig: if we can show the burst test works in dark box, that would be good
+ - Vitaliy: do we have working R0 with STAR chipsets to find parameters for all module types
+ - Dennis: opens are easy, but need to look into shorted channels
+ - Bart: just looked at open, since shortened bonds was too tricky to find
+ - Craig: can see it in 3 point gain
+ - Bart: but not in single burst test
+ - Luise: could run it as a 3 point gain at low bias voltage, but needs the analysis code to find the unbonded channels
+ - Dennis: does it have to be low voltage?
+ - Luise: if fully biased R0 a unbonded noise is fairly close to a normal channel noise
+ - Gerrit: this test also has to be added to cold box test
+ - Luise: does it only have to be added to every test, or only just once?
+ - Gerrit: only just once
+- Single hybrid testing:
+ - Tony: no specification that need to be met for testing
+ - Luise: this is intended, idea was to decouple to show that you can do the test even with a bad object
+ - Tony: how/when do you want us to show that the electrical parts are working
+ - Luise: if a hybrid is working, why would it be bad?
+ - Vitaliy: a part of the reason why hybrids work well is the ESD protection structure
+- NTC readout:
+ - Craig: read-out of NTCs of powerboard and hybrid via AMAC; should be clear from instructions
+- R5 panels:
+ - William: have already fully populated R5 panels and no intention to remove hybrids
+ - Dennis: had intentionally send enough panels to only use one position, should have enough to move hybrids over
+ - William: have tested all hybrids
+ - Dennis: but not physics mode
+ - William: had no intention to moving them since it’s already paid with the company and would require a lot of work to do it in our institute
+ - Dennis: should have enough R5 panels to cover near future, but not full PPB
+ - Luise: might need to order a new batch of R5 panels
+ - William: need to know how many R5 panels we need to build, but can wait until we have all the panels in house before building them
+- Sensor low isolation problem:
+ - Vitaliy: may need to look for these special sensors, probably not a high number available
+ - Gerrit to Vitaliy: this sounds like trapped charge in oxide, does not clear when wire-bonding to ground of pre-amps?
+ - Vitaliy: this was observed before from a pick-up issue. Typically goes away on timescale of months and not form just wire-bonding. UV light helps on bare devices.Can look at it with assembled modules. Trapped charge from improper ESD pick-up is one reason, have also seen a batch of sensors with a different issue (p-stop)
+ - Luise: would be good to find these sensors and ship to module assembly sites for test
+ - Vitaliy: depends on value of interstrip capacitance and can get high noiseShould be able to find some sensors of this kind (fraction is low). Issue is that we need to go through an approval/clearing process with vendor since they could request the sensors back.
+ - Luise: this is more of a long-term plan
+ - Gerrit: as we are moving into pre-production and production you will always find corner-cases. Should not start a new project
+ - Luise: slightly different situation between endcap and barrel, since not all EC sensors get tested and could end up in production chain. This can cause problems and has been observed, so it is worth investigating it
+ - Gerrit: depends on how much time it takes and how much resources it takes. If this is included in the yield factors, those modules should be rejected
+ - Luise: yes, but if this can be recovered it would be good improve the yield
+ - Xavi: we don’t have many of them, but could run some stip tests to find them and build 1 or 2 modules (e.g. at TRIUMF)
+ - Vitaliy: that could work. Idea of mixing production parts into module chain now sounds attractive to gain experience with them.
+ - Luise: there could be sensors out there with this issue and it should be reported
+ - Gerrit: what is the UV light you need?
+ - Bart: think quite hard
+ - Vitaliy: yes, but one group used near visible
+ - Xavi: currently used 400nm
+ - Bart: recommend to look at spectrum
+ - Vitaliy: Vancouver used powerful LEDs
+ - https://indico.cern.ch/event/1118802/contributions/4698386/attachments/2378256/4065172/20220126_VancouverUVSetup_v3.pdf
+ - Gerrit: could also use curing station from 3D laser printing
+ - Luise: in barrel you should not be surprised by this since all sensors are tested
+### AOB
+-

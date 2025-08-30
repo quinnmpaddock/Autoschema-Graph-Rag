@@ -1,0 +1,205 @@
+# 2024-04-08 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1401767/
+### Introduction
+Presenter: Luise Poley
+- Tony: Does this update the procedure docs mean that all the software is in the final state. Or is it just writing down our intentions?
+ - Cole: The software is never 100% final, but it is now quite mature. It is our current understanding of the QC.
+ - Tony: So will this be the final version of the thermal cycling?
+ - Cole: There are still a few things that are coming to the TC, but I’ve added comments where I expect there to be changes. 
+- Ben (sl. 5): Even though the test is not in the DB, you can still use it though - you can upload all the other tests, this test being missing doesn’t cause issues with upload
+- Anne (sl. 6): I’m not seeing the uncertainty for the continuous glue-line. We have built 3 modules. SCIPP had one that filled the glue-gap and have seen that it eliminates cold noise. Those have filled in the gap. It doesn’t seem to have fixed it.
+ - Luise: The ones you built only had it in a relatively small area.
+ - Anne: The location changed. It was a few ASICs-wide-area of CN with False Blue. It was in slightly different locations due to some glue seepage. But we still saw CN (a lot of it)
+ - Luise: Normally, since FB shows so much CN, having it look like Polaris is an improvement. Even if it doesn’t get rid of all of it.
+ - Anne: I’m not sure what you mean by “normal”
+ - Luise: It isn’t as bad as it normally is with FB. So we shouldn’t rule out that it can help, at least with gap filling.
+ - Anne: It’s not something we can do reliably.
+- Shubam: I was under the impression that filling in the glue gap, it doesn’t help with stress does it?
+ - Luise: According to the simulation, filling it the gap does help.
+ - Shubam: And the continuous glue-line?
+ - Luise: We think it should help a little, but need the simulation
+- Sergio (sl. 10): Regarding this, my view is that there doesn’t seem to be an obvious reason not to move to the wider gap with the concave PBs. The question is if those PBs are reliable. If you want to move back to the straight PBs, then there is a disadvantage with a wide-gap. So I think this is still tied to the latest batches of the concave PBs, but otherwise, I think we should probably move there.
+ - Luise: Yes, the question is for new tools?
+ - Ingo: Making tools is a lot of effort, time, and money.
+ - Luise: You mean for wider gaps?
+ - Ingo: Yes, even using the spacers, this adds extra things.
+ - Luise: These spacers would be permanently placed on the jigs. So we will hopefully not need new tools.
+ - Sergio: yes, that was my point. The idea was not to have new tools. 
+ - Ingo: I just mean it’s not a no-brainer, it has a cost. 
+ - Luise: I think this decision should come out of the HVEBTF to see if there is an advantage. So this discussion will happen again. If there is an improvement, we’ll have to go with this.
+### L4 Updates: ITSDAQ/Sensors/Documentation
+Just a verbal update from Cole: Matt Warren has released a new fw version to allow petal/stave testers to use the ITSDCS loop in 10GB mode. Please provide feedback if you experience issues.
+- Tony: I just wanted to ask about testing again. There are two other outstanding things, the merging script
+ - Cole: procedure documents have instructions for how to do the merging
+ - Tony: and it is ready?
+ - Cole: yes, merging may change, specifically for environmental data
+ - Cole: Mo has been working on this and it will be updated soon
+ - Tony: so you say we can merge data with information in the document and upload to database?
+ - Cole: yes
+- Tony: we agreed on making changes to cuts on 3point gains because currently we are getting too many bad channel flags - these aren’t there yet, can we get these soon? N sigma cuts, module type specific maximum noise, 
+ - Currently, all tests fail in the database, so do we just manually change the parameters manually before we change and upload data?
+ - Bruce: need to check the merge request
+ - Cole: will follow up
+ - Tony: problem is that the test data is correct, but the derived values are wrong
+- Tony: we’re also not doing anything with hybrid Noise Occupancy, it’s still wrong, right?
+ - Cole: Peter has been working on this, but other things take priority
+- Decision: continue to ignore hybrid test Noise Occupancy, if it fails, until fixed
+- Alex: one problem for the noise measurement is to find the right hybrid type and the right noise cut, which is difficult to do, so we could split the merge request in to: one for the type specific maximum and one for N sigma, so we could split them up and have an N sigma cut first
+ - Cole: let’s follow up offline
+- Tony: please let us know when it’s done
+### Group Update: IFIC + Prague/Argotech
+Presenter: Jakub for Prague/Argotech
+- Carles: Regarding the HYTs, you said you only got 2% RH, but that isn’t enough to run the TC is it?
+ - Jakub: It was enough, the DP was -50C.
+ - Carles: We have these sensors as well and they suffer the same problem (degradation). So it’s about what we can do with an offset before replacing existing ones. It’s been a major problem at IFIC too.
+ - Jakub: We are looking into this to find a way to re-calibrate them.
+ - Ingo: For the re-hygration, this offset may come from VOCs and not from being dry. So it’s not something we can’t easily fix. Someone at Prague showed this is constant.
+ - Carles: This is the way to go. We should likely have a calibration file so we can 
+- Luise: I had a comment about the pickup tool for PB gluing. I think we may want a dedication discussion on this. Could you collect your information and reply to the relevant email?
+ - Jakub: yes, okay.
+ - Luise: What is causing this isn’t quite clear, so we’d like to figure this out.
+Presenter: Carles for IFIC
+- Cole (sl. 3): When did you start having issues with the Caen and ITSDAQ?
+ - Carles: two months ago or so
+ - Cole: shouldn’t happen - I use the same PS and haven’t seen the issue - please contact experts
+- William (sl. 3): I had a question about the micro-Z. Dennis said he has a couple, is that our full set of spares?
+ - Carles: I bought mine.
+ - William: okay, can just buy one
+- William (sl. 4): Why can’t you just use the HV switches on the PB?
+ - Carles: this is for sensors ad HV tabbed sensors and if you want to take an IV after gluing
+ - William: So this doesn’t have hybrids yet (not bonded at least yet)
+- Roland: regarding bonding script: what is the work flow: if a bond fails, do you enter the data manually or does it gets its data from the wirebonder?
+ - Carles: It’s manual. It only collects the data that the operator puts in the GUI. Then it does the DB work for you.
+ - Roland: will contact you for more details
+ - Carles: What you are asking for is what I’m also interested in. Our techs only look at the output files and understand if there are unbonded channels. But the shorts, bonds touching, are more difficult to see by eye.
+- Alex: For the Caen issue, what is the problem?
+ - Carles: During the cycling, once you are at the target temp, ITSDAQ must ramp up the HV. This is not happening in our case. The test starts, but at 0V. 
+ - Alex: okay, but is that just during testing? Is the AMAC IV working?
+ - Carles: The AMAC IV is working, but it’s only during the tests.
+ - Alex: does this happen every time?
+ - Urmila: yes. I understand from Cole that this should not happen. So we will report back the issue.
+ - Carles: let’s follow up offline.
+### Thin Flexes: Test Results
+Presenter: Shubham Gupta
+- Tony (sl. 3): The package height is just the package height. Should be independent of the hybrid thickness - you only need the hybrid thickness for the glue thickness
+ - Shubham: I think this is just the glue height between the hybrid and the ASIC, so the hybrid thickness does not matter. 
+ - Tony: But the package height is just a subtraction. The hybrid thickness only comes into the module overall thickness.
+ - Shubham: I included this.
+ - Tony: the hybrid thickness should only affect the module metrology
+- Sven (sl. 3): which analysis script do you use for these plots? Ian’s scripts?
+ - Shubham: yes. I think in the current script, there are a number of campaigns. The thickness was changed.
+- Vitaliy (sl. 4): To double check, you use CAT B ASICs for these hybrids? 
+ - Shubhham: yes
+ - Vitaliy: then number of bad channels makes sense and good to see you checked against probing results!
+- William: On slide five, you said there was one ASIC that died? Maybe slide 4. Is it a dead channel or dead ASIC?
+ - Shubham: one dead channel that occurred in chip 8
+ - William: So you placed about 60 of these asics and only a few bad channels?
+ - Shubham: correct
+ - William: we placed about 1000 and we got 3 dead ASICs turn up
+- Luise: Do you have the noise average for the different streams? I’d like to compare it to normal noise, and it looks normal so far.
+ - Shubham: The NO still fails, but I’m not sure we have them.
+ - Luise: It looks like it’s around 800 ENC. That’s what we’d expect. Could you add the average noise and how many are out of spec.
+- Peter S: What sort of pre-curing did you do?
+ - Shubham: mixed it for 2-3 minutes, then waited at room temperature for 75 minutes
+ - Peter: Great, thanks.
+- Luise: The question is if we are happy to use these for the second stave side unless anyone is worried about this? We should use these for the first interposers. Is anyone concerned with this?
+ - Tony: I think it’s fine. There is no sign it’s different. Knowing what we’ve seen so far, we should build the next stave
+ - Luise: Yes
+ - Tony: in this model, in the US, that SCIPP and LBL will both make two panels of hybrids to make 8 modules. We’ll get started when we can. It’s a priority since we don’t have anything else.
+ - Luise: And if you have enough, it should be the interposer modules as well.
+- Ashley: Unless told otherwise, these hybrids will be the default build, it’s great to see that these are working
+ - Everyone is in violent agreement
+### Update on Interposer Investigations (UK/C)
+Presenter: Bart Hommels
+- Luise: We passed your request onto the simulation people. They will get back to us as soon as they can to compare numbers.
+ - Bart: great
+- Luise: Did you prepare the kapton?
+ - Bart: For the mechanical prototypes, the kapton wasn’t even cleaned, but it was reasonably clean. I haven’t had a yes/no on if/how it was cleaned though. The sheets were cleaned with IPA and then scored. You should be able to see it on slide 8. 
+- Luise: Do you know what is next for this module?
+ - Bart: It’s being cycled as we speak. We want to see if we can go lower (-45C). Otherwise, it’s up for any test is most useful.
+ - Luise: I would be interested in seeing the NTC temperatures compared to the chuck, and then keep cycling it longer to see if the temperatures change to check for delamination.
+ - Bart: We hope to run some metrology between various cycles to look for this. The temps are a good indicator too.
+ - Luise: And yes, confirming the bow is not changing would also be great.
+ - Bart: We will also do this with our cracking studies.
+- Peter: On slide 13, when you show these hybrids being held. Is this how they were cured as well?
+ - Bart: yes
+ - Peter: Thank you, amazing
+- Tony: can you share more details about the method of scoring?
+ - Bart: Yes
+ - Tony: I made a Google Doc and drive file to collect this. I can share it and if you could sync with it, that would be great. We don’t yet know if we even need scoring, since the adhesion looks pretty good, so we need a metric to define what is “good enough”.
+ - Bart: This was done with 125um foils, so I think we should repeat them with the proper thickness. This was just an exploratory test to see if we could do it.
+ - Tony: could it be a circle?
+ - Bart: could vary and see the difference
+ - Gerrit: The kapton foil is the easy part. You can buy it pre-treated on the surface. The problem is if we need to do this for hybrids and powerboards. Doing that manually is very difficult and inconsistent. 
+ - Tony: And it would need to be loaded. But if the cleaning is enough, then this is a lot simpler.
+ - Bart: You can gain a lot by scoring, but if we don’t have to, then why would we? More tests will bear this out.
+ - Tony: With thermal stress, I don’t think we’ve ever seen delamination no matter what we did. 
+- Luise: For the technical details, we should discuss this here, sorry Cole.
+ - Tony: one question would be what size of interposer? Most people would really hate oversized.
+ - Luise: This was an email discussion, perhaps someone can summarize this in a few slides and present at the next module meeting.
+ - Tony: Oversizing it helps control the gluing, but keeping it the same size helps with tools. This will take time, and in this meeting, it will take two hours just to discuss this.
+ - Luise: This will depend on how the flex sites will assemble these. For the question of undersized, we can try this in trials.
+ - Bart: We decided to oversize just for this module based on experience for the mechanicals. But it’s not painless, with a roller, you easily lose alignment. 
+ - Luise: As Gerrit says, oversized kapton layers could clash with the tools. Could someone perhaps prepare this so we could decide what tests we want to do.
+ - Gerrit: I understand the schedule pressure we are under, but this is a new kind of R&D. This comes in two stages; playing around, which is what you’re doing now, then we work on a final design choice. I don’t think trying to constrain this now is optimal.
+ - Luise: Since we need to build a few representative pieces, we should sort out some of these general details first and then build something that is close to final.
+ - Tony: Since this is proof-of-principle, what Bart has done is fine. What LBL is doing is loading with glass beads, cleaned kapton. This should give us something to compare.
+- Need to write down what our preferred baseline is right now
+### Dummy Materials for Module Assembly Tests
+Presenter: Vitaliy Fadeyev
+- Jaya John: We probably have enough CAT X to use for the mechanical parts
+ - Vitaliy:This should be useful
+- Sarah Heim: We will face a bunch of personnel changes during production, and we’ve had a problem without having a lot of mechanical parts. For the EC, I was the one who ordered the dummy hybrids a long time ago. The quality was so poor that it didn’t work well and we found they act differently on the glue, so they don’t translate well with studies. I would stress the need to use these for training and optimisation
+- Gerrit: Making something like the snake pattern would take redesigns. Can’t you just ask HPK to make sensors without implants?
+ - Vitaliy: these would be mechanical sensors from Hammatsu without implants. It is doable, but too much.
+ - Gerrit: we can stitch them together
+ - Vitaliy: How
+ - Gerrit: Wirebonds
+ - Vitaliy: This is not quite easy
+ - Gerrit: it would also have the advantage that we would have the correct surfaces and geometry
+ - Vitaliy: The high-quality of HPK is attractive. The other reason is to not confuse them with another order. They are quite busy doing their current job, so extra is going to be difficult.
+	Gerrit: so this would be made somewhere else?
+Vitaliy: yes, e.g. CNM 
+Luise: they have made glass ASICs with heater spirals for us in the past
+ - Vitlaiy: they can do real sensors as well, they don’t want high volume, but in this case it’s low volume. There are other small-scale foundries we can explore if people think this is a good idea.
+ - Gerrit: The Hammatsu production has finished?
+ - Vitaliy: has been going on for three years and will continue to go on, it is occupying their full bandwidth, it’s a big job and we don’t want to add more sensors
+ - Gerrit: But you could also just sacrifice a batch. 
+ - Vitaliy: We are now trying to finish the last order, which needs to be placed in advance. 
+ - Gerrit: understand, but we will burn through parts soon anyway
+ - Vitaliy: Which is what my idea is designed to help with
+- Luise: I think it would be good to get this started. Could you (or us) get in touch with CNM. Maybe we start with barrel and see what that looks like, then see what we can do for the EC?
+ - Vitaliy: What would be good to get out of this meeting is if it is a good idea. If people agree, then the next thing is to contact possible venders and elevate this. It’s ultimately a PM issue.
+ - Luise: I think it would be good to start the process and see what it costs. For hybrids and PBs, in the barrel, we likely have a lot of thick hybrids to use. We could ask the simulation people to get us a recommendation for a similar material. We want to make sure we get the shieldbox area (stiffness wise) mechanically similar. 
+ - Luise: For the EC, we need input on what geometeries are the most critical. If we get feedback on the most stress-prone modules, we can start with that as a more realistic option to make progress.
+ - Vitaliy: I think limiting the number of variants might be helpful. The question is how much it will satisfy the EC requirements. Dicing would still need to be figured out to get the proper geometries. 
+ - Luise: It would be good to understand if we do need the curved edges. 
+- Tony: I think for the PBs, we’ll need something with an SB on it to demonstrate the process properly. We’ll have to figure out component needs. I’m not sure of the limit on HVmuxes.
+ - Tony: For the sensors, the wetting quality of different materials seems to matter, do we need an oxide layer to do this properly?
+ - Vitaliy: I think it would be preferable. I don’t know exactly, but ideally we would have the exact same surface. 
+ - Tony: But HPK oxide is smoother than other oxide, so ideally we’d want oxide and ideally from HPK, but there are considerations
+ - Bart: didn’t we go for passivation on the last round of mechanicals?
+ - Tony: yes, that was Hammatsu and that is why we were able to do it.
+ - Bart: Do they put something on the oxide?
+ - Vitaliy: top layers were different, they were scratched even by envelope sheets, so we changed to real oxide layer
+ - Tony: So if we go to CNM, it’ll be slightly different, but we will want the oxide layer.
+ - Vitaliy: yes, we would have to have a passivation layer on top
+- Decision: This seems like a good idea. We should start doing the initial search to make this happen.
+- Things to chase to build dummy modules
+ - Barrel sensors: manufacturer: cost
+ - Barrel hybrids: use production flexes
+ - Barrel powerboards: understand which parts would be a problem
+ - End-cap parts: understand which module geometries are most crucial from simulation
+ - Understand if curved geometries can be approximated with straight cuts
+### Glue Test Plan at LBL for Interposer Materials
+Talk moved to next week, but discussion occurred.
+Presenter: Anne Fortman
+- Agreement to start building a module with the following configuration
+ - LS module
+ - 100 um SE4445 with glass beads
+ - 50 um kapton tape
+ - Same size of kapton and flex
+ - Nominal gap
+ - True Blue on Sensor
+ - Cat B ABC chips
+ - Kapton preparation: ???

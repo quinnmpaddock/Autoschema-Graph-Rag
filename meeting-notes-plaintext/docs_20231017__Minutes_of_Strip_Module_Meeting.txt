@@ -1,0 +1,156 @@
+# 17/10/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289861/
+### Introduction
+Slide 2
+- Hannah: or if you know the coil orientation already, please let us know that
+- Carles: why should this done by the loading sites? High-res pictures should be linked to VI tests
+ - Luise: because right now they are not uploaded to the VI tests
+ - Carles: we link them
+ - Luise: yes, but it would require to look at lot of pictures. If groups have the individual pictures, that would work as well
+ - Carles: for us we don’t have the petal images visible from the outside
+ - Luise: in that case individual pictures are also fine
+ - 
+Slide 4
+- Luise: would be good to make a table to get an overview for the different LS modules
+ - Tony: not a big table for comparisons: all ABC settings are same, in US no heated pre-curing, in US have three methods of glue dispensing for hybrid-to-sensor with none shown cold noise
+ - Luise: It could be different batches of ASICs
+ - Craig: Maybe wait for thursday where Navid will present the full setting
+ - Bart: Early Cambridge modules, at the time the retrieval of the DB wasn’t so great, so they may have been measured with a default config
+Slide 5
+- Ashley: just to clarify, the prototypes are just manufacturer test pieces to confirm the plating process is under control. These are not hybrids.
+ - Luise: Sorry, test pieces are being made. Sorry about that.
+- Craig: On the 2mm sleeves, how much wiggle room is there for the HV tabs at the moment
+ - Sven: That has nothing to do with the gap
+ - Craig: but it does if you are shifting the sensor on the assembly jig
+ - Sven: Not enough
+ - Bart: Yes, not enough
+ - Sven: I don’t know if we planned more than a mm or so
+ - Craig: I don’t know if we’ll need to run without the HV tab to do this
+ - Luise: Are there any volunteers to do this? 
+Slide 7
+- Tony: are these the numbers that are not in batches or are these flagged?
+ - Luise: These are the ones that are in batches 
+ - Tony: can we get a list with the module part numbers? That would be a lot easier.
+ - Luise: Yes
+### News from ITSDAQ/News from sensors
+ITSDAQ
+- No questions
+### Institute contribution: Prague + Valencia
+Prague
+Slide 2
+- Tony: (non coldbox question): On powerboard slides, those are in the free state, not vacuumed down right?
+ - Pavol: They are vacuumed down
+ - Tony: I find it hard to believe you have that level of variation
+ - Pavol: I saw no vacuum leaks
+ - Tony: Then the thing to do would be to check with callipers. If it’s a company making it, I don’t think they could have that kind of variation
+ - Pavol: If you look at color scale, there are brighter areas with probably more copper and darker areas
+ - Tony: Are you saying it’s thicker in some areas and thinner in others? The pins [in the tool] can be set individually, so it should not matte for this
+ - Pavol: we can not set up the pins one-by-one during production
+ - Tony: It should be set to a blank PB assuming it’s flat. That’s what we do. Setting it to an absolute true is the problem
+ - Pavol: But in production we can’t set the pins all the time for each powerboard.
+ - Tony: Are you saying that the individual point varies that much or the entire PB?
+ - Pavol: there are areas where pins are with various powerboard differences. The question is if the powerboards are show always the same values or if there are powerboard to powerboard variations for which we can’t compensate
+ - Tony: OKay, but I would assume that the substrate would be the same if vacuumed down. The variation might occasionally be different, but you should only have to set the pins once, which take out the variations. 
+ - Tony: the issue will be for metrology, where a constant powerboard thickness is subtracted [to calculate the glue thickness] and with this much variations the calculated values are wrong
+ - Luise: If you look at the variations, it varies by 20um or so, they are relatively comparable
+ - Luise: Let’s wait for the concave PBs, but hopefully …
+ - Ewan: Would be interesting to know which institutes are setting their pins one-by-one (which we do at UofT).
+ - Carles: we set all pins uniform to the theoretical height
+ - Pete: same at TRIUMF and SFU
+IFIC
+- Dennis: I don’t know why you want to replace the AMACs. AMACv2a is fine.
+ - Carles: good, didn’t know this.
+ - Luise: No I think this is when we didn’t know if the software could handle the v2a, and we were short on R0s. If we have enough and the test can handle v2a, then all should be fine
+ - Dennis: there should be more R0 coming very soon
+### Update on glue delamination tests
+- Vitaliy: if you are going to continue the study, I would also be interested in cure times of 10min. With our automatic dispensers we can’t go to long curing times because of the glue viscosity
+ - Archa: Yeah, we can look into it. We are a bit limited on the sensors, but we’ve been reusing them, so we should be able to try. We will push down to 10min
+ - Peter: it gets too viscous for us for stencilling. But I would give it a go
+- Luise (slide 5): Two things: for this one, these results are conclusive that FB is not the glue to be used in the EC. Are there people who think this is inconclusive and further tests should be performed?
+ - Dennis: I find the shorter curing time quite interesting, but I don’t see a reason not to use TrueBlue
+ - Luise: Sorry, I think these are separate questions. If we go to shorter times and see that it is better, do we still consider FB?
+ - Dennis: if the peeling issue goes away with shorter curing times, we might still consider it
+ - Luise: Archa and Pete, are you happy to do these shorter cure time tests?
+ - Archa and Pete: Yes
+- Luise: Last slide: Mix of things that would be good to understand the effects. The dot pattern is to see how reliable the glue pattern is and it could be a mitigation strategy (for HV breakdown). Other tests are based on other ideas from various groups
+ - Pavol: I have question about TB. Was it in bipax?
+ - Archa: TB was in bipax
+ - Archa: We mix it in the bipax, squeeze some out in stencil, cure more in bipax and then squeeze that out for the next test
+### Update on end-cap powerboard testing
+Slide 7
+- Carles: seems you have a new R0 powerboard panel.
+ - Ben: So this panel is actually from Freiburg, they just sent me the picture. 
+ - Dennis: this is the panel that is ready to be sent out. Next stop is Zeuthen, but then it will travel to wherever needed
+ - Carles: where should I send the second panel? If anyone is interested, please get in touch
+ - Luise: not many R0 sites
+ - Carles: it’s the PPA panel so more for development
+- Timon: Looks nice Ben. Dennis, have you already tested reasonable quantities of production Bpols?
+ - Dennis: Yes, about 50
+ - Timon: Because we keep observing failures at the 1% rate.
+ - Roland: haven’t seen any so far, but still in process of learning
+- William: is this a PPA or PPB panel that will be sent around
+ - Dennis: the picture you see is PPB
+ - Carles: but we only offer PPA
+ - William: we are interested in a PPB panel
+ - Luise: you could take the panel from Carles and it should work with your tester
+ - Carles: But William was worried about returning it [export licence].
+ - William: the ones Carles has are for PPB/Production?
+ - Dennis: no
+ - William: than we wait for those from Dennis
+### Noise problem in irradiated modules
+Slide 3/4
+- Luise: What does R50 do?
+ - Dennis: This is the HV feedback resistance value. 
+Slide 5
+- Timon: did you check the input nodes with a scope?
+ - Dennis: No
+ - Timon: It could be oscillating. It would be interesting to scope it.
+ - Dennis: haven’t had time to do this, but I’m pretty sure this is what is happening
+Slide X
+- Mitch: The scope shots would be interesting. This is a more complicated system than an AMAC by itself; do we know if powerboards themselves look the same as powerboards on modules?
+ - Timon: we wouldn’t see AC, we only do DC as a slow measurement. If something is oscillating we would only see it from the opamp being pushed out of range. Not sure if it is pushed up or pulled down.
+ - Mitch: Yeah, it’s probably not able to handle the feedback, which will pull it up. If there isn’t enough voltage range at the amp, it gets pulled lower and lower. So there are these “not so permissible” regions that can create oscillations. Not much to say, but I agree that we should take a look at it with a scope and look at the wave shape.
+ - Dennis: with a sensor attached, it is hard to get a nice clean current with all the environment light. But will try to do it
+ - Timon: Do you have both sides of the HVret?
+ - Dennis: have both bonded to the board. There are 1nF at the legs
+ - Timon: I mean the x and y side
+ - Dennis: all bonded to the board
+ - Timon: You could solder a wire to the cap and get that out of the system, perhaps that could be a source of additional noise
+ - Dennis: can try
+ - Timon: I was discussing this with Ian at some point, because we were comparing IVs from the PS and AMAC. Sometimes in these cases this is fed back into the AMAC, which could cause a systematic effect.
+ - Dennis: don’t think the problem is that we drive it at the edge of the range, we’re actually in the range.
+ - Mitch: You’re expecting nice sine waves. 
+ - Dennis: most likely yes
+ - Mitch: if it is feeding an oscillation it is hard to say
+ - Timon: Dennis, can you add a diagram of exactly how you have this set up?
+ - Denis: shows a diagram (AMACv2)
+ - Timon in chat: Crosschecked caps: similar to EC, one cap to GND on HVref and one cap to GND on HVref
+ - Dennis: have the LS module in as well right now, all look the same, different capacitors don’t seem to change it
+- William: This is interesting. We saw a module that got noisy between -20 and -30. So it seems like the AMAC autoranged.
+ - Dennis: possibly, yes, if the current is high enough
+ - William: I’m wondering what we are trying to accomplish with this autoranging
+ - Dennis: proper way to handle this is to find a good setting after IV tests and then leave it there, could just set it to a defined value
+ - Mitch: I agree, this makes a lot of sense. There’s a high risk leaving it there.
+ - Dennis: issue is if you use interlock function, it reduces the range 
+ - William: That’s what I was more interested in, how we will operate the detector. Is this a simple change in ITSDAQ? Or can you show us how to “trick” it?
+ - Dennis: teach people to trick it to try on the R3 module
+- JJ: If I just disable the AMAC measuring when doing the test, will this be sufficient so that ITSDAQ doesn’t change the range?
+ - Dennis: problem is if ITSDAQ knows there is an AMAC and with autoconfig it knows it exists, it will do current measurements between tests
+ - JJ: Thanks 
+ - Peter: The gain is not going to autorange unless you have several uA. 
+- Mitch: Isn’t the cutoff of the power done because we are in a thermal runaway situation or where the sensor suddenly needs high current. This will cause shutoff right?
+ - Dennnis: but in the beginning of detector operation, the sensor current is still close to zero
+ - Mitch: But if it isn’t there, do you have an immediate emergency if you suddenly go to 200uA? 
+ - Dennis: not unusable, 
+ - Luise and Dennis: need to tell the interlock people
+- Luise: what’s the plan forward
+ - Dennis: when current measurement is done, set to known value, should covr 99% of cases
+### DESY glue robot status
+- Luise: You may have noticed that the stencils have now been updated to have the dots close to the edge for better support.
+ - Kunlin: yes, we can look into this
+ - Luise: you only build a small number of pre-production parts, so you might want to start looking into this as soon as possible
+- Vitaliy: Regarding the different glue batches, I’m actually not convinced you are seeing the expiration date. It seems like you are seeing batch-to-batch variability
+ - Sarah: we agree. And it also does not fully add up, so we will do more measurements with other batches to get more insight
+ - Vitaliy: It would certainly be great to collect more data.
+### AOB
+-

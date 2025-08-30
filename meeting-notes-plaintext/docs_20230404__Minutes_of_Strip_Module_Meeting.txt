@@ -1,0 +1,85 @@
+# 04/04/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1253778/
+### Introduction
+Slide 5
+- Gerrit: no interested in implementing this
+ - Luise: would it be OK, if this is optional?
+ - Gerrit: yes
+ - William: thought option 1 was already been done at Cambridge? New tabs are much betters, so not sure there is much to trace
+ - Luise: haven’t seen enough sheet-to-sheet variation to make tracing useful
+ - Vitaliy: similar, not seen shee-to-sheet variation so tracking is not very important
+- Show of hands if people want tracking: no
+- Objections to make it optional: no
+Slide 6
+- Vitaliy: what does Bruce think about this?
+ - Bruce: it should just work. It has been building on CIO already. Haven’t managed to test it, but think some people have already done this.
+ - Bruce: if you run Centos7, you will have to change at some point
+ - Luise: any plan to do this at RAL soon?
+ - Bruce: eventually, not sure when. 
+ - Bruce: in general, any linux should work (people are using Ubuntu). 
+ - Bruce: we know that centos works, so if you use something else it is your responsibility to maintain this
+ - Gerrit: problem with new linux versions (from experience) is that it does not always work with all hardware. Centos7 had many mainstream things missing, don’t know how this would be with Alma
+ - Bruce: it’s always been RedHat
+ - Gerrit: RedHat is not mainstream any more for many years
+ - Luise: Alma should be just Centos with a new label
+ - Gerrit: advice anyone to do this soon, on a machine that is not essential for your work so that it does not affect your abilities
+ - Luise: would be good to have a few sites to test it first, then can recommend for all sites
+ - Archa: Alma is online a while and not aware of people having issues
+ - Dennis: that is Alma 8.
+ - Dennis: itsdaq might not be the main issue, since we maintain it, but other devices/software
+### Institute Contributions: 
+IHEP
+- Luise: the SOP looks interesting, would it be possible to use this for other sites as well?
+ - Xin: yes, it can be used for other sites as well
+ - Shudong: it currently is quite customised, so it would take some time to modify it for other sites
+ - Luise: but should be similar for other barrel sites
+ - Zijun: if you are interested, get in touch and we’ll help
+- Ben: for burn-in crate I have also seen that it is a bit difficult to remove panels from the bottom slot. For EC its a bit easier because a tool can be put in to help with the removal. It might be a good idea to avoid slot 5
+- Ben: and what is the issue with Grafana?
+ - Zijun: not sure, issue reported by student, didn’t see issue myself
+ - Ben: and have you been testing the GUI?
+ - Zijun: not yet
+ - Ben: are you planning to?
+ - Zijun: yes
+ - Ben: Montreal group has used it during burn-in and they have not had issues. If you want to test it as well, we would be interested in your experience and help
+Next meeting: SFU
+### QT update: Unbonded test
+Slide 
+- Luise: in past, unbonded test was something that could be run on wire-bonder. That is not the scope for this test. It is supposed to be part of a standard module test (e.g. during IV test).
+### End-cap module delay setting scan
+- William: how many hybrids did you try this on? When we tried many hybrids, 1 or 2 were performing differently
+ - Archa: only tried it on one of each module type
+ - William: good start, but we need to understand the issue
+ - Luise: we had some that were more towards the edge
+ - William: next time, we will test this
+ - Luise: if we go to crossed bonds (not yet decided) we will release a new set of delay settings/config files for EC with new delay settings from Archa that should work for all hybrid types
+- Jaya John: thank you for doing all these tests
+### Qt Update: module quality cuts
+Slide 2
+- Luise: a lot of modules have had weird configurations. People should send you data that are more likely good.
+ - Luise: for now, it might be better to focus on the data people send, instead of data in the database that could have other issues
+- Vitaliy: R1 features the shortest strips in the system, therefore they have the smallest capacitance and therefore the smallest noise for those strips. Its not surprising that you can have an overlap in un-bonded and bonded noise distributions
+ - Luise: that is also why we have the task from James looking at unbonded channels
+ - Sten: also looked at low-bias voltage tests to find un-bonded channels
+- Hannah: Sten has a great plot of noise compared to strip length
+ - Slide 12: R1 is the only one where you see overlap of bonded and unbonded channels, for the others these are nicely separated
+ - Vitaliy: there is also a plot of noise 
+- Luise shares a slide with the noise vs input capacitance
+ - Luise: would be good to update this plot with your new results
+ - Sten: yes, could also look at doing this for different powerboard versions
+- Kenny: if these kind of plots/reporting is useful, could we add this to the web-app for reporting?
+ - Sten: yes, that would be possible. I’m open of sharing this
+ - Luise: this particular one is to find thresholds for module tests (to define the channel criteria) for all module types. Hopefully, this will not be needed throughout the production, only now
+ - Kenny: if this is something to monitor, we can build something
+- Bruce: haven’t heard anything about ITSDAQ integration, please keep me in the loop!
+ - Sten and Hannah: haven’t started to look into integration, that’s why we haven’t communicated yet
+ - Bruce: what kind of code and where it would go
+ - Sten: understanding is that it would be similar to barrel
+ - Bruce: there was a comment about adding code from Nathan earlier, which should already be there
+ - Sten: yes, should already be there
+### AOB
+- Powerboar tool change:
+- Carles: not sure we want this change, since we are close to production
+- Luise: similar conclusion after a discussion with Freiburg for new tools. If individual sites want this modification, they could do this themselves on their own risk
+- Alessandra: don’t have an answer at this point
+- Sven: think UK is also discussing this internally

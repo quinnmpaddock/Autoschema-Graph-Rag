@@ -1,0 +1,94 @@
+# 2024-07-30 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1431652/
+### Introduction
+Presenter: Luise Poley
+- Sven (sl. 2): Does this mean the CN meeting this week is canceled?
+ - Luise: Yes, he probably went on vacation beforehand, we’ll fix that.
+- William (sl. 10): I don’t object, but having two specs and which is inside and which is outside might be asking a lot. It will cause confusion
+ - Luise: It's mostly for barrel sites that need that tight cut, we'll make it clear in the documents, that's the best we can do.
+ - William: Our documents are already complicated … but yeah, we should try.
+ - Luise: we can aim for 150 everywhere, hard cut will be 400.
+### L4 Updates
+#### Sensors
+Presenter: Xavi
+- Luise: For the later ones in your list, the [? went fast], we don’t usually ask sites to check for those. We don’t expect them to show up afterwards, so it doesn’t need to be checked again.
+ - Xavi: It’s your decision if you want to keep it or not.
+ - Luise: you can mark it as Sensor QC so they don’t have to check after that.
+- Luise: For the scratch, you say that things shouldn’t be more than 8 consecutive strips, but one that you show as a pass is more than 8 strips. Is it that you only fail it if it’s deeper? What's the recommendation?
+ - Xavi: It’s difficult to define. It shouldn’t be long and deep. I’m not exactly sure what to say. These are the samples in sensor production.
+ - Luise: Okay, probably with checking if they were already there when sensor QC was passed, then we’ll assume if they have scratches like this and pass, then 
+ - Vitaliy: One tricky point is to judge the depth. It’s all shallow here, so you can’t measure how deep the scratch is. If the strip metal is being dragged, that’s a way to tell. It’s not perfect, as it might still pass the strip tests. But on slide 13, you can see on the bottom that there is a deep and wide scratch with metal being dragged along. This is one feature that may help people.
+ - Luise: thanks Vitaliy, Xavi, could you perhaps add
+ - Xavi: yes will add some comments
+- William: Thanks for suggesting those categories Luise. The difference between a shallow and deep scratch … I appreciate the work from the sensor QC folks, but I’m worried about adding this to 20 more people/sites.
+ - Luise: this is the sensor QC sites and they are required to do this as part of their QC steps, so it's not a new thing.
+ - William: But if we get a new feature during module assembly, we’ll want to classify them and if people need to do this during assembly, it’s a lot more work.
+ - Luise: this was the site qualification for each site that was required to pass site qualification
+ - William: Half of those people have left now.
+ - Vitaliy: You mention an interesting idea. Can I suggest you show these slides to your people and see what they think about it? 
+ - William: I’m already busy talking to them about the inside/outside tabs, and I’m not sure it’s realistic to have to keep explaining this to new people as they come into the project.
+ - Vitaliy: Just to get the feedback about how these slides should be structured so we can make this better for techs.
+ - Willian: I can try to make a more digested version of this, but people may not read this thoroughly.
+- Uli: in our reception tests, there are some sensors which need prolonged exposure to deionisation (an hour or so) to be recovered - not sure if these are sensors we could use for production
+ - Xavi: One hour?
+ - Uli: Yes
+ - Xavi: It would be good to know the equipment. In general, the sensor community spends no longer than 10-20 minutes.
+ - Uli: I’m just worried that sensors that take more than these 10 minutes, like an hour, make a module that is more prone to HV problems. 
+ - Xavi: don’t remember right now, but at some point the sensor community checked the performance of recovered sensors, and in general, we see that sensors are still good after a year or so
+ - Vitaliy: That’s correct. We had several tests from different sites to show the recovery is stable. Many of them were stuck charge, and once released, you’d need to do something to bring it back.
+ - Uli: I agree with the stuck charge, we can try to recover these sensors later, some are and they are good
+ - Vitaliy: Xavi is correct, we’ve done a long recovery campaign and haven’t seen that sensors spontaneously go bad.
+ - Uli: even a sensor that need 2.5 hours under the blower, it is still a good sensor even after this treatment
+ - Ingo: At the March ITk Week, it was said that we wait 20 minutes or so and if it fails it fails.
+ - Xavi: yes, it is unusual and strange if you still see a need for recovery after 20 minutes, normally we don’t need more than 20 minutes
+ - Luise: Uli could you show a few slides to show what you are doing for your deionising procedure 
+ - Uli: Can do, yeah.
+ - Luise: One of the things we’ve always wanted to do is to compare sensors which have and haven’t been recovered and put it in the database so we can get a full picture of the differences. Just make sure to mark them.
+- Ingo: I wanted to ask for the chips. In the previous instruction, if the chip doesn't reach the metal we pass it, we have had lots of chips that are in the order of 50um, should we fail those?
+ - Xavi: Yes. I’ve been talking with [? didn’t catch this] and some of your chips are above 40um. In general, the specs say 40um. Probably we can discuss if there are effects of smaller/larger sizes and make an exception. But if it reaches the metal, it’s something like 70-80um.
+ - Ingo: You recommend doing an IV in that case and not just fail it?
+ - Xavi: if it's in the limit maybe it's good to run an IV and we can maybe excuse them
+- Vitaliy: for the scratch pad: we do indeed not need to check every scratch pad, but if people are in doubt whether they received the correct sensor, the scratch pad can be used to check if the sensor is the correct one labeled in the package
+ - Also: Geoffrey, still waiting for you to confirm that the sensors you have can be sent back
+ - Geoffrey: We’ll send the stuff around. I had problems finding bags large enough.
+ - Vitaliy: I’m happy to send you bags if that helps.
+#### ITSDAQ
+Presenter: Bruce Gallop
+- Cole: we have switched to Alma but haven't done any testing with it yet
+ - Luise: we have found that Alma isn't a problem for ITSDAQ but it is unstable
+ - Bruce: So should I push the merge request to allow people to use CentOS7?
+ - Luise: for us it's been very useful to use this as a backup option as its allowed us to continue our work without delays
+ - Cole: could we have a very last tag of ITSDAQ that can be used with CentOS7?
+ - Bruce: If people are using it we should just support it
+ - Bruce: how long should this keep going because we should be moving away from Centos 7
+ - Luise: in the past we have made surveys to see what people think, how much they need vs how long. Will send around a survey
+- Everybody is very happy and agrees, people are dancing in the streets
+- Sven: a while ago, Cole showed a way to organize output files better, is that going to happen?
+ - Bruce: that is part of the hybrid burp-in merge request, which is maybe not the right place to store it, but if people want it, it should maybe be something that ITSDAQ should do anyway, need to find out where it should happen
+ - Cole: I plan to present something on this next week 
+ - Bruce: it’s not a part of the merging its in the background
+#### Barrel-Module Specific
+Presenter: Navid Ghorbanian
+- No questions
+### No Group Updates
+### Interposed Powerboard Status Update
+Presenter: Zhirong Zhang (Stella)
+- Cole: For the OF issue we see here, is this related to what we see on petals?
+ - Dennis: i do not see it is a very transient thing not a static thing
+- Luise: Can we test for this in the future? Is there a way to include this in PB testing?
+ - Stella; Its implemented in all the basic tests
+ - Luise: So if there is ESD damage without this particular problem we wouldn’t have found it?
+ - Stella: we don't have a procedure that checks for ESD damage for the linPOL it is in the basic tests
+- Luise: Roland, is this maybe something that would be relevant to EC PBs as well?
+ - Dennis: In general, it’s a good idea to bond ground first 
+ - Luise2: is this being done for the EC PB
+ - Dennis: AMAC is always bonded first to ground, but not necessarily to PB.
+### Preparation of Descoping Discussion at ITk Week
+Presenter: Gabriele D’Amen
+- Luise: The idea is to ask other clusters to go through the same exercise and identify the areas your site could benefit the most from descoping.
+- Luise: These would be specifically if we should drop tests, do tests on a batch basis, threshold reduction, or reduction of the process itself. An example is with TC, where some clusters may benefit from going to a fewer number of cycles. Our plan is to collate the information from the clusters and cover it at ITk week. Let’s aim for 2 weeks before.
+- Luise: One thing we’ve tried to point out is that we need to collect the full QC for modules before going to rFDR with interposers, so descoping is unlikely to happen before then. But the plan is to present this to them in November.
+ - Gab: I think the main point is when we want to change these thing, some things we need to make sure we can drop them with interposers some things we can already drop them
+ - Luise: Yes, HV-tabbing is an excellent example of something we can drop independently of the interposer assembly
+### AOB
+- Happy happy happy

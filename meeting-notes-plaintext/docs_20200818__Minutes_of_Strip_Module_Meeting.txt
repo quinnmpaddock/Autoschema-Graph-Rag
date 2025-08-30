@@ -1,0 +1,73 @@
+# 18/08/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/927515/
+## Minutes
+### Introduction (Craig & Ingo)
+- 31st August new delivery date for EC dummy hybrids
+### EDMS update and task tracker (Craig)
+- Reminder coming on Friday before the update is a bit tight, can it be longer?
+ - Yes, will increase the reminder to 7 days before update is due
+### EDMS: EC tools (Marc)
+- Machine tooling tolerances etc.
+ - There is meant to be another step of reviewing the drawings with tolerances
+ - Where should these tolerances come from?
+ - R5 drawings on EDMS (not officially reviewed)
+ - Barrel tool drawings on EDMS
+- R5 drawings still include old (now wrong) pins (G7 instead of the F7 we agreed upon)
+ - To be updated 
+ - Pablo on holiday, Carles will check if somebody else can do it now or when it could be done
+- Review R5 kicked off as soon as that’s done and use them as reference for all other tool sets
+- If we change heights depending on hybrid thickness (see discussion coming from Kambiz talk), we should wait for this
+ - Hybrid thickness should not impact tolerances/precision but drawings and therefore numbers itself
+- Marc will wait for Kambiz’ answer wrt hybrid thickness and then upload drawings back to EDMS
+ - Will try to upload them by end of this week (will be gone next week)
+### EDMS: EC hybrids (Kambiz)
+- Re: Revisit routing of RSTB from HCCStar to ensure trace doesn't pass under nearby SMD pads. Why was this commented?
+ - Reply Ash: it's good for longevity of hybrids, not a strict requirement but recommended
+- Discussion on layer order and stack-up changes:
+ - Would stack-up changes affect the tendering process? No, as at market survey stage there is the ability to react to prototypes to change final stack-up
+ - Prototype of all of these have been made and seemed to work
+ - Worry is impedance control on internal signals - need to check these things and spy on the signals to see what they look like
+ - Worry is also cross-talk between diff lines, no space to move far away from one another but need tests to confirm/deny whether it works
+- Is current stackup same as barrel? 
+ - No it's not
+- Thickness being targeted
+ - Does this thin stack-up limit you to one manufacture? Yes, seems to only be one manufacturer at the moment
+ - Standard stack-up improves the portability of the design and avoids tying into a single company, other companies can do stack-up but ends up with different thicknesses
+ - Probably end up splitting order over two companies (over different rings) so the tooling can be made accordingly (would result in different thickness in different rings but that’s not an issue as long as thickness within one type consistent)
+- If we don’t think things are wrong should make prototypes like this and then change in production
+ - Leave stack-up as it is
+- LDO connections:
+ - On current modules:
+ - R0, R2 have separated LDOs (R0 noise okay, R2 not yet made)
+ - Rest have common LDOs which maps to the noise excess Dennis has seen (R1, R3, R4 & R5)
+ - Updated on all designs to have individual lines and capacitors for each ASIC
+ - Need to push the prototype R2 ASAP, 2 week turnaround to be discussed at DESY (Sarah H to discuss and get back to us ASAP)
+- Mail from Dennis about his measurements: 
+"I just managed to compete the new R0 and apart from somewhat obvious features (biasing again only up to 250V and somehow one chip was lost from the process hybrids -> module), the noise looks like expected, i.e. definitely compatible with the first R0Star build. Therefore I didn't send it to Craig now, as there is nothing fancy to understand, except maybe why one chip is behaving weird now, but I think this is not very urgent to understand.
+I also did one more test with the other modules, as there is this one difference between R0 and most of the other hybrids in that the VDDD is shorted on the other modules. But "luckily" on R4H0 these shorting traces were missing together with the traces bringing power into the ABC, which i "fixed" by wirebonding directly on the capacitors. So I took the opportunity and removed every second of the VDDD bonds and thus removing the short from ABC to ABC while keeping decoupling for each of the ABC, albeit only on one side and not both of the long bondpad. Sadly this didn't fix the noise problem either. But at least with ATLAS18R0 we have now a sensor from the new batch which does not show this excess noise."
+- Updated designs already on EDMS
+ - Review will be kicked off to end 28th August
+ - Should allow Kambiz to put out prototype orders by the end of the week
+- When will be know the thickness of the final hybrids at each radius
+ - We will have to wait and see for the market survey and tendering process
+ - This will be decided when go for tendering
+ - What do we do about tools? Produce tools for one thickness and then shave off for specific hybrid types - target 300um and make it fit or reproduce
+ - Range could be 270um up to 400um
+ - Should make tools to the Wurth specification for PPA and then adapt as we learn more
+ - Kambiz to confirm number with Wurth
+- Panels for testing?
+ - EDMS review should be done ASAP once hybrids are sorted
+ - Haven’t been done in parallel to hybrids to avoid snowing us down
+ - Panel production should anyway be quicker than hybrids but will need to get hybrid panels on EDMS ASAP
+### EDMS: EC powerboards (Dennis)
+- He has implemented changes in R0/1 and R2 powerboard, and might be able to finish R3 and R4/5 during the trainride, so hopefully he can upload the new version to edms either this evening or tomorrow
+- He will also add a file to EDMS with the original comments with his replies
+### Hybrid crate BERT (Craig)
+- Postponed
+- Summary: BERT okay so far, need new f/w from Matt (currently on holiday) to do the full BERT test to sign-off before manufacture, should take a few days once we have the firmware to fully sign it off
+### AoB
+- Power board reception test to be added to QC survey checklist?
+ - Agreed upon by all, has been added now
+- (Graham) Any worries with chip temperatures as powerboard is not fully modelled for LinPOL etc.?
+ - Powerboard testers (Karol) haven’t seen anything to worry them about LinPOL temperatures
+ - Karol to look at more thermal images and report

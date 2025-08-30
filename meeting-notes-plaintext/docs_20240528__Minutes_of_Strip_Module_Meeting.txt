@@ -1,0 +1,130 @@
+# 2024-05-28 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1401785/
+### Introduction
+Presenter: Luise Poley
+- Pavol (sl. 6): You can remove the question mark after Prague.
+ - Luise: Can do.
+- Andy (sl. 13/14): What’s the remit on a pixel conference [not sure I heard that right]
+ - Luise: I’m not sure if the speakers committee is submitting the usual talks. But they probably accept general talks about instrumentation
+ - Andy: There was one for the DB, is that right Vitaliy?
+ - Vitaliy: yes, we sometimes present there and I usually treat it as a generic semiconductor conference (with emphasis on pixels).
+### L4 Updates: ITSDAQ/Sensors/Documentation
+Presenter: Xavi
+- Vitaliy: It’s a nice study. Looking by type and reception sites is a useful view, one other possibility is to look by sensor-QC site, that might be of interest as well.
+ - Xavi: because you want to see the impact of the distribution path?
+ - Vitaliy: The comment is, in principle, sensor testing should be quite reliable regardless of where it happens, but it’s not fool-proof. I recall a feature where the wire-bond can be placed off-center of the bond pad, and that can damage the passivation and cause a bad IV. That should be something people check for when they have a bad result. It’s not common, but worth checking for such trends at QC sites.
+ - Xavi: We found this problem at TRIUMF a while ago. We don’t include them with production sensors.
+ - Vitaliy: just an example; there could be other features
+- Vitaliy: sample size is now large enough that we can look into development and trends over time
+ - Xavi: will look into it
+Presenter: Cole 
+- Everything is 100% clear
+### Group Updates: IHEP + RAL
+Presenter: Navid (RAL)
+- Vitaliy: curious how you are interposing them
+ - Navid: We are using a similar solution for production hybrids. We are just applying a shim to get to the glue thickness we need.
+ - Vitaliy: So you have an interposer sheet vacuumed down on the tool?
+ - Navid: yes, vacuumed with a regulator to keep the Kapton flat.
+ - Vitaliy: is your regulator like a cleanroom tissue?
+ - Navid: no, it’s standard pressure regulator
+ - Vitaliy: You mean vacuum-pressure regulator.
+ - Navid: yes, this is how we limit amount of vacuum
+- Vitaliy: and how do you deposit the SE4445?
+ - Navid: use the same stencils that we use to glue hybrids onto modules
+ - Vitaliy: So you stencil it on the back of the hybrid?
+ - Navid: yes, stenciled on back of hybrid
+- Tony: is it singulated at that point or is it a big sheet that is singulated later?
+ - Navid: It has sharp knives that will cut the pattern in one shot. Takes about 10 seconds.
+ - Tony: But are they singulated at the end or are they still in an array?
+ - Navid: Depends on the pattern, should be able to make it an array still. Just need a DXF file.
+ - Tony: Do you know the precision?
+ - Navid: I don’t know about the precision. For what we are doing, it’s pretty accurate. Not a number, but it seems pretty good. I will find out.
+ - Tony: would be good to know - don’t know yet precision of placement
+ - Navid: Okay
+- Andy: Is that the representative weight you need for these?
+ - Navid: don’t know, it depends on which stencil pattern we use - thicker layers will need more weight to spread it out
+ - Andy: Okay, thanks
+- Luise: It looks like you aren’t targeting much coverage?
+ - Navid: it’s an oversight with the design. We went with 100um thick stencil. We can try a wider cutout or a thicker stencil to get more coverage. This was a proof-of-principle thing.
+- Tony: With the T-Shirt printer, you couldn’t use glass beads, because of the mesh?
+ - Navid: It’s something we can test. If we can achieve it without beads, then we probably should try it. I don’t see a reason why we’d use them going forward.
+ - Tony: will be different if you use it with a larger area
+ - Tony: How many areas did you measure the thickness in?
+ - Navid: I measured all along the hybrid. The only concern I have is that if the tool bowed, then we couldn’t maintain the proper thickness. If we go to 300um, then we may need to apply more force. It requires some 	investigation
+- Vitaliy: When you try to get the coverage, it would be useful to see if SE4445 makes full contact. In our peel trials, we had worse peel when we deposited glue on the hybrid side vs kapton side.
+ - Navid: So try it on the kapton side?
+ - Vitaliy: if you can, that might be better - maybe worth checking
+ - Navid: checked there, there were no bubbles
+ - Vitaliy: when you modify the process, that would be useful to check
+Presenter: Weiguo Lu
+- Luise: For the glue tests you’re doing, did you see problems? Are you building dummies to practice or was there a problem?
+ - Weiguo: We just got the real parts from CERN, so we are testing.
+- Luise: Normally the recommended pre-cure time is longer, at least 45 minutes or so. It helps give the glue more viscosity. 8-12 minutes sounds really short, which could explain the glue patterns you are seeing. 
+ - Weiguo: Thank you.
+### Tracing Bad Channels Through Assembly
+Presenter: Marcus Wong
+- Tony: just a few statements
+ - Bad channel criteria using probing might not quite work, seems to affect 1 out of ten Cat B chips or so
+ - Will run this again with the criteria for Nsigma, might make these go away
+ - Seems like a lot of them are right on the edge, especially for gain, might be that they might disappear when we use the Nsigma
+ - Need to look at the edge channels in thermal cycling and need to see if they disappear with the new Nsigma criterion
+- William: We found most of our issues went away when we went with A-grade chips. [missed question]
+ - Tony: Yes, we can do the tests. On A-grade, those showed failed tests and sigma-like cuts. When we did HBI, we caught the edges of the criteria. Having channels show up in burnin is by design, but they don’t seem to be bad.
+ - William: so it’ll improve when we change this into a module and change the load
+ - Tony: yes, but Alex would know better
+- William: on slide 8 or 9. The gap in the gain. It seems like it is going up and down. Those are temperatures I’m assuming. Is that right?
+ - Marcus: yes, you notice in general that it goes up and down, but some of them are “doubles” - had to start and stop multiple times, because we don’t run over night, so there were two under same conditions
+ - William: So the pairs are correlated to temperatures.
+ - Alex: these are the shunted tests at the end of TC.
+### QT Update – Plotting and Analysis for Module Sites
+Presenter: Katie Walkingshaw Pass
+- Cole: How does this work out for EC modules?
+ - Katie: Right now, only doing barrel modules, not end-cap modules yet, would end-cap modules be interested too?
+ - Cole: yes, please include the end-cap as well - let us know if you need information
+ - Katie: Will look into it
+- Xavi: Regarding slide 3, for the IVs. This is very useful to see the comparison. It would be good to implement the threshold. In general, it’s good to compare the plots, but if you want to see if one or all is failing, what we do for sensors (and modules) is we use an algorithm in the DB to analyze the data. Maybe you can implement this?
+ - Katie: Can you point me to that code?
+ - Xavi: will do
+- Luise: Where is this going to live in the future? Is it in the webApp summary page?
+ - Katie: yes, that’s the plan
+- Luise: We discussed a few more features for the normal ITSDAQ plots, target noise, maximum noise, etc. Are you looking into that?
+ - Katie: Yes, this would be really useful to add to the plotting.
+ - Luise: That is what we would like.
+ - Katie: Is this in the ITSDAQ code?
+ - Alex: There is an open MR for this.
+- Alex: Regarding the cuts, I’m guessing you want to use the values used in ITSDAQ?
+ - Katie: Yes, I suppose that these could be added as a dashed line.
+ - Alex: This should be relatively simple. For the chip-dependent cuts, [didn’t understand that bit]
+ - Katie: Is there like a target spread value that they should be within?
+ - Alex: Yes, but it depends. It’s in the code
+ - Luise: Alex, can you send Katie your presentation about a summary for ITSDAQ cuts?
+ - Alex: will do
+### Discussions for barrel/UKC tooling order
+Presenter: Bart Hommels
+- Luise: The decision in favor of wide-gap can be made much earlier than against. Since it’s compatible with the UK loading tools, it’s fine. (The US is less okay). So we can always decide to go with a wide-gap.
+ - Bart: Thank you.
+- Tony: In the US, we have our plates made with the nominal thickness (no interposers). We can either replace the plates or plug-fill and re-drill (it rhymes). Other than the tooling, the thing we are not certain about is bonding and clearance. It’s fine for a one-off test, but we need to look at the pictures to see how it works. We don’t have the final layout of the tapes.
+- Tony: We need to shim either way. If you’re using interposers that is.
+ - Bart: Correct.
+ - Tony: We understood that we would only use the thin ones. The finish isn’t as good on the thicker ones. We could try to interpose them, since they are all here. Do we need to ship them to you for interposing?
+ - Bart: It would be difficult logistically. We have realized that the hybrids you got have lower-quality surface finish. Liverpool is looking into this in the UK. It looks like a large fraction of what we have here is okay to use.
+ - Tony: would need to go through the arrays, check surface quality and check which ones can be used - bond tests at LBNL were fine with aging, so they all pass
+ - Tony: the tools will need shimming anyway, so could make the decision right now?
+ - Bart: You were thinking about the landing strips rather than the landing feet.
+ - Tony: You can do this either way, you can shim while building hybrids. If you don’t want shimming, you’ll have to remake these tools. 
+ - Bart: at some point, we will have to decide - the sooner, the better
+ - Tony: It doesn’t help with the prototyping. It will slow it down if you only have one tool.
+ - Bart: As soon as we know what we want, we want to hit production.
+ - Tony: I don’t know if plug-fill will work, but that’s what we are planning on right now. Otherwise we will have to shim. It’s not an insignificant amount of work.
+ - Bart: I think if we decide on wide-gap, we can build the plates (a lot of machining). Then the thickness can be chosen with the landing feet heights. No need to delay both sets of tools at the same time.
+ - Luise: So you only want to shim once and get to the point where you don’t need to shim for the thinner hybrids? And what Tony is suggesting is a way to get to production sooner?
+ - Bart: Essentially yes, if we can decide on wide-gap now, we can move forward with this.
+ - Luise: When you say decide the wide-gap, what is the decision that needs to be made?
+ - Luise: I’m wondering if there is something we should prioritize so we can make this decision. 
+ - Tony: All it tells you is the Hysol experience and nothing about interposers. We’d need to remake our plates. I’ll follow up to see what we can or can’t do. For wide-gap, there is nothing that will give us new information other than a confirmation of how a Hysol stave performs. 
+ - Bart: If we make it and there are no problems, then that may become the baseline.
+ - Tony: I don’t disagree, but that’s July before you can have a confirmation.
+ - Bart: The assembly data is something that would be an input into this discussion.
+ - Tony: first week of July at best
+### AOB
+- None

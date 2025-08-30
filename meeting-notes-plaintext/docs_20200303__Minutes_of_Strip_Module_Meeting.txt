@@ -1,0 +1,64 @@
+# 03/03/20 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/874224/
+## Actions carried over
+NONE
+## Watching brief
+Item | Responsible | Next update expected
+HV tab bonding | Jens | 27/02/2020
+Hybrid crate roll-out | Ash | 02/03/2020
+Module thermal cycling roll-out | Dave/Ankush/Sergio | 02/03/2020
+Powerboard mass tester roll-out | Timon/Karol | 02/03/2020
+Barrel hybrid tendering | Bart/Ash | 17/02/2020
+Barrel powerboard tendering | Carl/Timon | 28/02/2020
+EC hybrid/powerboard tendering | Uli/Kambiz/Dennis | 17/02/2020
+EC tooling design/roll-out | Marc | 02/03/2020
+Barrel tooling design finalisation/roll-out | Sven | 29/02/2020
+- People listed as responsible will be contacted periodically by Craig & Ingo for updates (certainly on the date listed, if not before!)
+- Updates could be verbal, email or slides in a meeting
+## Minutes
+### Introduction (Craig & Ingo)
+- LS support FDR went well
+ - No report available yet
+ - Couple of module related follow-ups expected
+ - Design changes from stave noise studies
+ - Recommendation to make 2(ish) full petals before preproduction
+- AUW agenda sent around by Tony
+ - Slightly different this year due to AAR
+ - Modules on Wednesday
+ - Attendance may be limited by Covid-19
+ - Session movement unlikely but agendas within sessions can be setup to help remote attendance wherever possible
+- Powerboard meeting
+ - Quick meeting had on Friday with designers
+ - Primarily to ascertain what components (if any) may limit us due to lack of availability
+ - Generally availability good but will need to check again in April (particularly regarding HV-MUX)
+### Glue in the database (Matt)
+- How to deal with glue syringes?
+ - Same way, child created every time you glue a hybrid with the syringe
+- Need to keep track of every glue step as meant to keep sample everytime
+ - Sample stored at each step is also a child of the parent packet
+- Does this have to be a child or can it just be a comment?
+ - Could be similar to the jig and just write down the glue batch
+- Is there a specification/request from the module community for this?
+ - Yes, we need this as we have to store and track glue
+ - Unfortunately glue packs currently don’t have identifiers on them
+ - Will need to put our own identifiers
+ - Can that be provided by the database?
+ - Whether children or comments or properties left up to database team
+- Agreed that glue should be defined by brand throughout
+### Tab bonding to the petal (Sarah & Martin)
+- Forest
+ - All US baths are expected to negatively affect aluminium, no matter what the frequency
+ - Can we still use SWAJ if there are already modules mounted?
+ - Ingo thinks: well, we really should not need to clean when we keep petals/stave clean (NEVER not use gloves EVER again please)
+ - Sergio thinks we shouldn’t expect tapes would be clean during the whole process. Need to envision some kind of cleaning.
+ - but still obviously strictly avoid contaminations from e.g. handling without gloves
+ - Best cleaning substance we know is SWAJ, use of acetone is discouraged isoprop only does not work but might be used after using acetone. Sergio would like to evaluate plasma cleaning as an alternative.
+ - We need more stats to get more reliable pull test results
+ - Need to find out the minimum distance between adjacent tab bonds
+ - Should use the sacrificial area of the bustape after cutting it after cocuring for tests (glued to some support structure)
+### Sensor defect impacts (Matt & Nathan)
+- Nothing noted down (sorry!)
+### AoB
+- None
+## Actions
+NONE

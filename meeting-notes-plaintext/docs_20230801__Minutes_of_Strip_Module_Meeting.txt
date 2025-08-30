@@ -1,0 +1,106 @@
+# 01/08/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1289849/
+### ITSDAQ news
+- No slides, lots of updates ongoing
+- Few bugs, 
+ - Wait till next week to update to ITSDAQ (hv mapping)
+ - AMAC IV will work but may be error
+ - If seen please contact the experts
+- Next week will show how autoconfig works
+- Ben - tested this, works very well thanks. Is AC ready to be added to burn in GUI yet? Most things work well for the barrel, but a mix of endcap types is causing issues. Need to test it out Peter and Bruce will be able to answer more on the use for burn in
+- Will - Does it use the fuse ids or reading the DB records?
+- Cole - It reads the DB, but doesn’t create
+- Tony - From the intro, F/W is being recommended. Should we do this?
+- Cole - Definitely recommend to do this
+- Cole - For 4 R3 in the box issue, there are no specific port requirements with FMC DP. Didn't need the update on the software but just correct CCR codes
+- Will - We got it to work. Thanks to all those involved
+### Institute Contributions: Celestica
+Slides on Electrical Testing:
+- Cole in chat: ‘I think that is the FMC-DP ADC Calibration’
+- Vitaliy
+ - ET readout, except for 1 module others are happy. Ddi you look at the number of bad cons channels? For all of them
+ - No
+ - I think it would be good to do 
+ - slide 6 you are showing good module but not clear if it’s really good
+ - On slide 4, on RHS youtube R3029? Current looks really low
+ - Scales in microamps, others are different
+ - Showed data at FT, then some at cold. Were others done cold?
+ - No
+ - My hypothesis that when IV are dont cold breakdown can change exp with ones with glue on guard ring
+ - To clarify 4 of 13 definitely have, some may but no sure
+ - On slide 15, different currents when cold, think the rough about is 0 because its cold. If you measure something it indicates something
+ - Tony it could be an artefact of the AMAC current?
+ - Craig - Can't trust the 0’s but maybe the relative 0’s
+ - Craig - Looks like the contact is opening and closing at different temperatures
+ - Vitality only if sensor is high when cold
+ - Will - we have poked at the HV tab for disconnection but we don’t say anything
+ - If HV off when no more than 2000e noise?
+ - Tony - Did you test? I thought it was 
+ - Will thought it was 15,000
+ - How is the HV Bond on? Tab bonded to the sensor
+ - Tony - Not sure if 0V is different for disconnected for noise
+ - Will we can try to set to 0 and check the noise
+ - Vitaliy - may have a point. Disconnected will have 0,3v as a built in bias
+ - How are the HV tabs connected to the frame? 3 bonds to each 
+ - Look at both sides of the wb for the hv tabs
+ - Will - Does this explain JJ results (slide 12)
+ - Cole - Not sure, looks like 2 instance of ITSDAQ talking and 1 is not calibrated
+ - Craig - Can look at the ITSDAQ root files scan by scan and see if there is anything funky going on 
+ - Tony - Bart has plots like this. Anyone else?
+ - Tony - if this is HV on and off, it will eventually break the sensors
+ - Craig - on slide 8, Bottom RIght CCR 1 is port 1-2 CCR2 is port 3-5
+ - 
+### Post-cracking module inspection
+- Tony - Glue layer was purposely made 20um thicker
+- No Questions
+### Barrel (Bare) Hybrid Flex QC
+- Sandra - we also found in the US, exp for pull test, with high failure. Ageing tests o the same that failed we get 50% fails
+ - Sven - Only want to focus on VI issues
+ - Yes but we see correlation with pull test and visual issues
+ - Oth
+- Sandra: some defects are really hard to see. If we change the classification, might have to re-do the inspection. Did not see this before
+ - Ashley: have been back in touch with manufacturer and wait for their QC report about failure
+ - Ashley: most recent batch received last week was good (similar to received circuits in the past). Hope that things are back on track [since they restarted production]
+ - Sandra: that is the hope we all have
+- William: haven’t seen barrel coupons, but Freiburg has done a good job in weeding out issues
+ - Sven: currently not have the equipment at Liverpool to do images of each defect, but will be recorded in database
+ - William: hard to do the re-alignment in the wire bonder, second Sandras comment about better
+- Vitaliy: how do you do the adjustment
+ - Sven: easy to do
+ - Tony: can be done, but how do you record this
+ - Sven: can’t do notification of single wire numbers
+ - William: can you just take them aside?
+ - Sven: yes, but then we will run out of circuits
+ - Tony: it depends on number of circuits and how much time it takes to modify the bond programs
+ - Ashely: see what the next batches will be like, but have concern that the 1% defect rate is beyond the manufacturer capability. Randomly distributed issues and keep a unique log of that. At moment don’t see a reason to bin them, they are usable and just require a bit more effort for the wire-bonding
+ - Tony: depends on the price of a single circuit
+ - Ashley: while we are not at full production rate, we have to see where it goes. Concern is that we pick up issues that we have not reported in the past.
+ - Forest: if it is visible on bonder, we avoid this.
+ - Forest: we scan through chip positions and wires and avoid visible issues (can’t guarantee that we get all)
+ - Ashley: that is similar to what we do here
+ - Ashley: issues during pre-production were minimal
+- Forest: need to maintain some level of feedback to manufacturer
+ - Forest: for single point pads with plating holes, would be worried about bonding to something that has a defect that could potentially get worse with time
+ - Forest: for things that are easily cleaned, hope that this is caught by distribution site and need a mechanism on who is doing the cleaning
+ - Forest: it takes more time or more cost, there will be some defects no matter what. We probably have to do some inspection.
+ - Forest: for logging, agreeing with taking pictures and interfacing with databases is not easy. Need a simple text code on how to get the information to the wire bonder (we have a paper traveller where issues for the wire-bonder are noted [wire numbers] ).
+ - Hybrid Number, chip number, row number, right middle left
+ - Forest: need to find a way on how to get data to everyone
+ - Sven: can get overview
+ - Sven: can highlight the hybrids with issues by putting a permanent-marker dot on the tab with the pull test area
+ - Sven: can mark holes on single pads as fail if holes have significant size
+ - Forest: will send an example on how we do this. Would be good to have a diagram no how to do the numbering
+- Kirsten: for tracking things, if a blob is spotted and passed with problems and then passed to hybrid assembly site; would like to have some kind of physical marker 
+### Introduction
+Slide 
+- No comments
+### AOB
+- Marcus gives a very quick update on burn-in
+ - Merging script would fail summary test when a single burn-in test failed for whatever reason (e.g. a blip)
+ - Made an update in the script for this on the pass/fail criteria of the burn-in test
+ - If other people see this (from running Mo’s merging script), please give feedback
+ - Tony: Need to fix this before uploading burn-in data to the database before building modules
+ - Bruce: would it be sensible to upload it anyway?
+ - Tony: can, but can’t be easily fixed afterwards. Right now every single part would be failed
+ - Bruce: is it particularly NO or other tests as well?
+ - Tony: also other test. Example: trim does not load (response curve fails)

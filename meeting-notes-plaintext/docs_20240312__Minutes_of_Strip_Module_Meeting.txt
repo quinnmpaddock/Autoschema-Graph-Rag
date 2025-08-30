@@ -1,0 +1,202 @@
+# 2024-03-12 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1362205/
+### Introduction
+- Craig (sl. 3): I think it’s even further than what you’re saying in terms of the schedule. This would likely be an FDR and pre-production. And it could be longer than 6 months.
+ - Luise: Yes, we will likely have to meet with reviewers
+ - Bart: What are the main drivers behind this lengthy timescale? Why so long?
+ - Luise: At the very least, we need an irradiation campaign. We have a lot of experience here, but this is a new design. We would need to build a significant number of modules. 
+ - Luise: This is not fast
+- William (sl. 6): This is a good start. We have looked at a number of these, and it seems to be likely that the flex is not flat, giving you a negative measurement. So just knowing the thickness will not cure that.
+ - Luise: It's the other way round. If the flex thickness was correct, 
+ - William: Then you would say “Curled up flex” and move on. How do we know for sure?
+ - Luise: We should tape down and fix the flexes in place better
+ - William: I’m not entirely sure
+ - Luise: I think this is a first step in having better data. Do people doing metrology analysis use the DB for the flex thickness.
+ - Tony: I haven’t experienced this problem, so I’m not sure what we’re trying to improve. It’s not because of the flex to flex variation, but rather the point to point differences. The EC might be different.
+ - Luise: You mean flexes on the same sheet?
+ - Tony: Flexes vs flexes in general. I’m not seeing variations from batch to batch. I typically see problems at PB_2. When looking at differences, it looked more like a local issue rather than a thickness issue.
+ - Luise: So currently, there is a default thickness being used. It doesn’t distinguish between Pre-production or production flexes. It’s not perfect, but the idea is to include that as a starting point
+ - Tony: So you’re looking at production vs pre-production? There is a number that should be used, from the metrology doc.
+ - Sven: Which common tool?
+ - Luise: The web app
+ - Sven: The one from Ian on Git has just been updated two days ago with production numbers, including the different thicknesses for thick and thin.
+ - Luise: In general?
+ - Sven: Yes, in general. There was something wrong in the document.
+ - Tony: We need to edit that default, but I thought this was a standard thing. It was the responsibility of the person to use the right number, has this not been happening?
+ - Luise: The web app uses Ian’s code, so this should be correct. We will follow up on this offline.
+### L4 updates: ITSDAQ/Sensors/Documentation
+- Cole mentioned that there is still an active MR for the TC merging script. He will look at this very soon and once merged, Cole will send around the proper set of commands to re-run and upload the TC data.
+### End-cap Powerboard Investigation
+- Vitaliy: I wanted to confirm a few things, since we do have similar symptoms with the Wuerth PBs. For the linpol issue, you replaced C2?
+ - Dennis: yes, this is the capacitor which is not available on barrel powerboards, so this doesn’t affect the barrel
+ - Vitaliy: C2 not C20?
+ - Dennis: I’m probing at C20, but I replaced C2.
+ - Vitaliy: If I understood correctly, the issue with the large ripple is that C8 and /or C7 seem to have via problems. So you have basically connected the upper nodes to ground.
+ - Dennis: no, removed C7 and C8 and put just 1 uF in there
+ - Vitaliy: But you had to lift the shieldbox?
+ - Dennis: yes, all of these require a removed shieldbox, shieldbox back in place and test again
+ - Vitaliy: Would it work to add that same cap outside of the shieldbox?
+ - Dennis: maybe, if this is really the cause, you could solder a capacitor to the input of [something]
+ - Vitaliy: Okay, and just for my own understanding, I’m not 100% clear. If vias are bad, why would the cap replacement help?
+ - Dennis: It wouldn't, that’s the point. First checks were just to make sure population was correct. Even going to different bPOL version didn’t change ripple on output
+ - Vitaliy: But, if you replace these caps and use 1uF, why would that work if the vias are still connected?
+ - Dennis: only producing a similar problem as broken vias by removing parts from the flex, producing a similar signature
+ - Vitaliy: Ah, Okay. So you’ve recreated the issue.
+ - Dennis: Yes, and I can recreate the original problems seen on the bad PBs.
+- Luise: Question 1: hang on, we are just exchanging a capacitor in the hope it will be better?
+ - Dennis: I don’t know. I don’t want to do this as a rework step for populated PBs. We essentially have 40 petals worth of PBs with the 1uF cap now. I would not touch these unless we see a significant problem, which we do not see at this moment. Maybe they stay. After looking at a large number of PBs, we decided if we move to 10uF on the next round.
+ - Dennis: If 1uF is not a problem
+ - Luise: sounds greatt
+- Luise: Question 2: bPOL just changes when going cold? Is that behaviour the same on barrel powerboards?
+ - Dennis: This is a very particular problem with the R3s. If I look at the R3s, we should not see a difference in the ripple.
+ - Luise: We are still trying to understand what is going wrong when going cold.
+ - Dennis: I think I did scope it, and didn’t see anything obvious.
+- Tony: For the lessons learned. There was perhaps a batch problem in the layup?
+ - Dennis: yes, think it’s a layup problem
+ - Tony: asking about Wuerth powerboards - can we check something to see if they have the same problem? Maybe with the coupons?
+ - Dennis: They delaminated on their own, with gas inside that swelled when heated. Heating up ten times like would happen in reflow can cause the vias to break. The way it is breaking is likely more delicate.
+ - Tony: but that means you saw it visually and during reflow cycles
+ - Dennis: We saw this visually and with resistance measurements
+ - Tony: To follow up to see if we are seeing this in the same parts. I’m not sure if the barrel ones had coupons.
+ - Dennis: Yes, they did
+ - Luise: We asked someone to try and find it
+ - Tony: so we could do the tests – and you think they were the whole batch?
+ - Dennis: Yes. One interesting question for the barrel side is there were two different flavors submitted, and I think they were on different panels (so technically two batches).
+ - Tony: we don’t know, the other variant has two modules that worked and two that didn’t
+ - Dennis: okay
+- Craig: Going back to the 1 to 10 cap change. Can you remind me why you have that C2 where the barrel doesn’t?
+ - Dennis: comes from split module noise investigations: one of the first changes was to add more capacitance, specially, different values, and found this reduces noise. Makes sense, because increases the effectiveness of the pi-filter. Increasing the inductance also made it better, so made both better in parallel
+ - Craig: Okay. And C2 is outside the shieldbox.
+ - Dennis: Yes. It’s technically reworkable, but if we don’t see more problems, we shouldn’t change it. I’ve only see this problem on the bad batches.
+ - Craig: So hypothetically, if it needs to be removed or changed, removal is the easy part.
+ - Dennis: not as easy as it seems
+ - Craig: What size is C2?
+ - Dennis: problem is it’s connected to the ground plane
+ - Craig: technically possible, but not easy, just better than inside shield box
+ - Dennis: technically possible even on module
+- Alex: I was just confused when comparing this to the barrel schematic. The numbers are a bit different
+ - Dennis: used geometric location of C2, because makes sense to have it closer to the shield box, and place the other one further away
+ - Alex: Okay
+### Interposers for Modules: Technical Questions
+- Slide 6
+ - Vitaliy: It’s a nice table. With silicon, it’s semi-conductive. So for the purpose of clarity, it would still probably require grounding. Carbon fiber may dissipate signals based on previous studies. I would prefer not to investigate these issues and instead use a different material. Ceramic may be fine. I circulated an email regarding glass wafers with similar CTE which could also be candidates
+ - Anne: Yes, okay, thanks for bringing that up.
+ - Sergio: Regarding what Vitaliy said, it makes sense. It’s important to remember our clearance. I’m thinking that ceramics, such as those suggested to use in the EC, could be quite tricky.
+ - Vitaliy: yes, we should remember to keep the thickness under control, could also use other materials
+ - Dennis: Fr4 should be relatively easy to get thin sheets, but some of these other materials may not be so easy
+ - Luise: There is a discussion on this at the end. Sergio. You said the interposer can’t be larger than 300um, but the word from integration is that we should have 400um additional headroom. That’s the hard cutoff
+ - Sergio: So 300um interposer with 100um glue. We also want the EC to stay below this 400um as well for clearance.
+ - Ashley: Wrt to the interposer, if we assume these will be assembled in house, how will we do the profiling of the polyamide. For carbon fiber and FR4, this also has to be produced by a company.
+ - Luise: This will be discussed later.
+- Slide 8
+ - Sven: Would you do this before ASIC gluing and wirebonding?
+ - Anne: Definitely before wirebonding, and likely before chips
+ - Sven: are there concerns about the wirebonding? SE4445 is soft, so the flex may not be stiff enough
+ - Luise: Recall that we built modules with SE4445 and they were fine. In general, it seems like SE4445 is still bondable. We’ve considered this, and it doesn’t seem to be a huge concern
+ - Sven: We wirebonded ASIC to sensor. But now we want ASIC to hybrid. So the hybrid flex is slightly compliant now. That makes it bouncy.
+ - Carl: It just has to be tested. It’s a good point, but it should be tested.
+- Slide 10
+ - Luise: I think it would be good to mention that the simulation says that what you get from a stiff interposer and TB, is about 60%, which is also what is predicted from Hysol on the stave. It’s not the obvious reduction you get from SE4445, so this is a “less safe option” compared to SE4445
+ - Vitaliy: I’m still thinking about Sven’s question. The thickness of SE4445 is important. Has the thickness been simulated?
+ - Luise: It is something we have requested so we can aid the decision
+ - Anne: There were some basic checks, and it so far looks like it doesn’t make a large difference what the thickness of SE4445 is, but it will be looked into further.
+- Slide 11:
+ - Vitaliy: One more question about SE4445. Are we assuming it’s loaded or not?
+ - Dennis: it’s always loaded, that is how it is sold
+ - Luise: We are assuming we will use glass beads to control the thickness, so additional loading
+ - Vitaliy: thermal simulations, on the slides already, very good
+- Slide 13:
+ - Dennis: For the adhesion tests, what you showed was essentially a pull test for shear. The major contribution would be peel due to CTE mismatch. What we need to do is make sure it doesn’t fall apart after irradiation
+ - Carl: device shown by Anne is a peel - could also set up shear test, but peel is probably weaker, and we need to figure out what is acceptable, because it is soft, and it will peel
+ - Craig: Isn’t the thermal cycling of the unit going to basically be a peel in terms of SE4445
+ - Carl: Perhaps a superposition of peel and sheer. 
+ - Dennis: The better test is larger temperature swings
+ - Luise: We had a similar discussion when we discussed SE4445 on modules. So that could be our starting point. Cycle 100 times and check the performance
+ - Sergio: we have done quite some extreme tests of SE4445 on klapton and they worked
+ - Carl: That’s the key point. A module has a large area and PBs have a small area, so we have to be careful
+ - Dennis: and staves and petals are stiff
+ - Sergio: yes, sure. I’m not saying we shouldn’t do it.
+ - Dennis: Yes, I’m not so worried about irradiation
+ - Abe: Where do wide-gap modules fit into this plan. Will we still test this in parallel?
+ - Anne: We would not stop the wide-gap module tests, my impression is that we would still consider this
+ - Luise: We will still continue these (Hysol petals/staves) in parallel
+ - Sergio: we are currently not considering interposers our baseline solution, but we need to understand what we are gaining from Hysol, and want to continue Hysol loading, interposers are in parallel
+ - Abe: Okay, that is clear. thanks
+ - Luise: I think we also need to discuss the order. We need to agree on the material and thickness, as well as use of SE4445. This has to go back to the simulation people. We also need to get the thickness decided and go back to the thermal simulation to make sure it doesn’t kill our headroom for thermal performance. We have a lot of this already, especially if we go with thin kapton. We will want to pick a few materials and thicknesses to tune the process. We also need to do the adhesion tests since SE4445 tends not to stick as well. We also then need to check the noise and perform QA tests along with irradiations. What we are hoping to get out of this today is material, thickness, etc.
+ - Geoffrey: The assembly, when would would the interposer layer be put in?
+ - Anne: This would depend on the configuration we decide on.
+ - G: there was a lot of information, but I am considering how to approach industry. Adding a new step is difficult since we have a contract. That is my concern. I don’t know what Williams position is on this
+ - Luise; the thing being proposed is that all that changes is that you will receive thicker flexes.This has challenges, but we hope we can avoid assembly sites needing to do this. It’s a whole discussion on its own
+ - Geoffrey: Then I am happy.
+ - Sergio: Going back to Vitaliy’s comments on materials. It makes sense to favor electrically insulating materials. Maybe we can agree on this now. The ceramics to me sound like a good idea if it’s thin enough. We have that hard limit on the thickness. I would follow Vitaliy’s advice in avoiding certain materials that could change the capacitive load
+ - Luise: Electrostatic charge up on kapton is worth considering. Are we worried about something ESD unsafe this close to the sensor
+ - Vitaliy: It shouldn’t touch the sensor right? And people should use ion blowers
+ - Carl: The back of the PB is pyrolux (?). It’s a material that can also charge up. The bus tape is kapton, which can also charge up. So it seems like we are already handling this.
+ - Luise: the bus tape is below the sensor, so it matters less. If you upbraid something ESD unsafe, it could cause an issue, it’s not quite what we already work with, and it’s on top of the sensor
+ - Carl: Worth considering for sure. We have a variety of interventions to keep in mind
+ - Dennis: everything non-conductive will pose ESD problems, so need to think of that
+- Dennis: for additional materials, we could also consider mylar, if we consider also quartz glass, it falls between FR4 and silicon and build the simulation around that
+ - Sergio: that’s a good idea
+ - Vitaliy: I don’t recall if mylar is radiation hard, so we should check on this
+ - Dennis; yes,
+ - Vitaliy: I also mentioned [?] material, which should be checked too
+ - Luise: Could we perhaps stick to things we already know are radiation hard?
+ - Vitaliy: In some cases, we can look this up, so we don’t need a campaign.
+ - Luise: Yes, if we already can know it’s rad-hard, then that would be much better
+- Which materials do we want to use 
+- Things to consider for simulation people:
+ - Mylar, kapton, ceramic
+ - Dennis: Mylar and kapton can be treated as very similar. The important part is the thickness and how that impacts thermal performance. I would also like to understand how the thickness of the SE4445 affects the stress. 
+ - Luise: There is a simulation meeting tomorrow. So we would want to simulate the full range of thicknesses
+ - Sergio: Did we not already check this in simulation. Anything less than 50um of silicon was not very effective
+ - Luise: We just need the full thickness range
+ - Tony: don’t need both at the same time
+ - Luise: To be clear, not all combinations. We don’t want 300um kapton, we don’t want 50um silicon, etc. It would be good to see if there is a max/min thickness of SE4445 that matters and will fit in with assembly.
+ - Tony: Part of today’s conversation should be what thicknesses we would consider for each material. I think we just need a few concrete thoughts about what is usable, but I don’t think we need all possibilities.
+ - Luise: the simulation people have asked us for the exact materials
+ - Tony: they don’t want to look it up. They want the properties explicitly
+ - Bart: We should focus on the qualified materials and not simulate unworkable materials
+ - Tony: The properties of the ceramic are second order. We want to get something we can make/buy and produce easily. We don’t want certain materials. 
+ - Carl: On the ceramic material, we’ve worked a lot with a company that can lap ceramic to various thickness. We sent them an inquiry about the minimum practical thickness. FR4: minimum thickness: 125 um, For alumina: 250 um, for glass: 100 um, several materials readily available
+ - Tony: For the simulation, we just need to pick something. What we do know is 250-300um is reasonable, but we can’t go thicker. I suggest we do a ceramic at 250-300um. For sensors, I don’t know for cutting. 100-150um is very brittle. If we push that up, it might be safer
+ - Carl: For ceramic, it would need to be laser cut. We’d need to find out if the laser cutting can shock the ceramic
+ - Sergio: especially end-cap geometries
+ - Carl: You can cut any shape usually
+ - Bart: just had some shims made and they cut 250 um without any problems
+ - Carl: Okay, that’s great
+ - Bart: They could supply 250um material, but we would probably crack it
+ - Tony: that means we are already near the max thickness we can use. I would like to avoid very thin silicon
+ - Vitaliy: already decided not to use silicon
+ - Tony: With glass we could go thinner
+ - Carl: The reason we started with silicon is because it has the same CTE. For kapton, we need it to be thin. Once we get materials with different CTE, we need to look at the simulation. I don’t think we should write off silicon
+ - Vitaliy: Unless you want to investigate a whole host of possible problems, I would drop it right now
+ - Luise: Dennis, do you have a minimum FR4 thickness in mind?
+ - Dennis: We should rely on the simulation to understand what will work and not 
+ - Carl: 100um of FR4 is like the kapton solution. It’s going to be soft and there won’t be a stress balance. I would argue that if you go to 100um of FR4 you are essentially on the left (sl. 3). FR4 is a composite. Kapton is a better choice as I see it. For the right (sl. 3), I don’t think you’re at 100um of FR4.
+ - Dennis: yes, it would be kapton-like
+ - Carl: If you go to the left (sl3) with a thick interposer with dramatically different CTE than silicon, we will get the same problem we are facing now with thermal mismatch. 
+ - Vitaliy: This is why I was suggesting specialty glass, which as the same CTE as silicon
+ - Carl: Yes, I think this is a good suggestion and should look at it.
+ - Sergio: and what we don’t like about kapton is just adhesion right? We can get it in a variety of thickness from commercial sources. To me, this seems like a good solution.
+ - Dennis: I agree that it is also the most promising. But other materials must be considered of course.
+ - Bart: Did you conclude anything on the activation of FR4?
+ - Dennis: same problem as glass
+ - Bart: Which is high?
+ - Luise: It is one of the things that needs to be checked
+ - Bart: The PB might be a bit more sensitive to the thermal performance. Is there any interest in using different interposers for PBs and hybrids.
+ - Luise: It is worth considering, but we really do not want to do this if it can be avoided. But it’s an option on the table
+ - Bart: I would like to limit it to what is doable and obtainable. 
+ - Luise: I think we said this a few times, but we are considering other materials besides kapton since the adhesion isn’t great. 
+- 
+- Mylar, kapton (thin) - essentially the same
+- Ceramic (thick) - alumina or aluminium nitride, nothing with beryllium, 
+- [FR4: 100 um or Roger material: https://rogerscorp.com/advanced-electronics-solutions/ro4000-series-laminates - same class of material, less attractive than alternatives)
+- Pyrex or a glass with matched silicon CTE - thick enough for handling, to be confirmed, probably 300 um: Options: 1) Corning 7740 ("Pyrex"), 2) MEMpax.
+### AOB
+- Pavol: Is there going to be simulation for the EC?
+ - Luise: It’s on the list
+- Tony: Are we going to have a list of who will get involved?
+ - Luise: I think that discussion will happen a little later
+ - Sergio: yeah, I think we should let people digest this
+- Sergio: I believe that we will focus mostly on Hysol loading for the loading discussions at ITk week and modules will discuss the interposers.
+ - Luise: exactly

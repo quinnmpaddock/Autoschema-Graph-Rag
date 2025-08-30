@@ -1,0 +1,55 @@
+# 2024-01-16 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1362197/
+### Introduction
+- Bart (sl. 3): Are these mainly mechanicals or are you studying CN as well?
+ - Luise: These are electrical as well.
+ - Bart: can we use reject sensors for these?
+ - Craig: We have to be a bit careful.
+ - Bart: We don’t have enough rejects to populate all of these staves. Maybe 10-20%
+ - Dennis: using sensors with mechanical damage might facilitate breaking
+ - Craig: We need to look at this case-by-case. The review office wants to make sure we have the statistics to be confident. We do need to be careful with sensors, but we need a balance. I would be keen to go through rejected sensors on a case-by-case basis.
+ - Luise: I suggest we make a list of what we want from these sensors. They should be able to be biased up to 550V or so, etc. 
+ - Craig: We should put a cut on what leakage current we are willing to tolerate.
+- Tony (sl. 3):: Do we know how many of the hybrids we order?
+ - Ash: 448 (or so) of the X/Y, which should head out soon after excellent QC.
+ - Tony: When do we order more since we are still waiting for cracking studies
+ - Ash: If we place an order now, the turnaround time is 40 working days (2 months-ish).
+ - Tony: So the total turnaround is 3-4 months?
+ - Ash: Yes
+- Ingo (sl. 4): [missed beginning] Do we continue with any PPA?
+ - Luise: Only if they have the large coils
+ - Ingo: Okay, so no then.
+- Sven (sl. 5): Just to make sure, Marek said it would be implemented in the next upload to the DB, but I don’t know if that is already active.
+ - Luise: Thank you Sven 
+- Fabio (sl. 7): I sent an email expressing interest about the first workshop. When will we know if we got accepted to present at this workshop?
+ - Luise: Did you submit an abstract?
+ - Fabio: I sent an email to you and would like to know when I will get an answer.
+ - Luise: Let’s take this offline, I did not see the email, sorry about that.
+- Xin: Just to remind you, the BTTB is actually has a postponed deadline by two weeks
+### L4 Updates: ITSDAQ/Sensors/Documentation
+- Tony: Is there a list of open items? We still need the thermal cycling finalized. Need the merging of data
+ - Cole: working on it
+ - Tony: what about handover between Coldjig and software
+ - Cole: work on interlocks? Later in the meeting
+ - Tony: yes, need interlocks to be running overnight
+ - Cole: let’s have a dedicated discussion
+- Carles: firmware repository - so, the latest firmware will appear twice?
+ - Cole: yes, will show up twice, with the label “latest”
+ - Matt: and, if the latest version is known to be bad, will move the “latest” back to the last known good version
+- Abe: regarding interlocks: still need to test the HV off function
+ - Cole: yes, but we know that HV off exists and works, the scary thing to test is temperature, and that has been solved.
+### Group Update: BNL/Brandeis
+- No Show, but Cole forgot to send a reminder and will assume blame :).
+### HV Mux Review Update
+- Vitaliy : Wondering. You seem to see different patterns between irradiated devices and devices you are testing.
+ - Bart: yes, mounted on a different PCB, probably handled differently,
+ - Don’t have MOSFETs, so no punchthrough expected, they work through different mechanisms, which should make them insensitive to ESD discharge. Can’t exclude that there was an ESD event, but it is unlikely
+ - Vitaliy: There were no metal tweezers or some other non-ESD safe possibility causing the issue?
+ - Bart: We only used ESD safe tools. I’m not sure what happened in the BNL setup
+- JJ: We have seen four out of twenty six fail during the PPB module building at Toronto. I’m wondering if the PB reception test can detect such a failure so that we don’t use these PBs.
+ - Bart: I’m quite sure that the HV test is part of the protocol. How exactly it works I am not sure.
+ - Luise: Just to confirm, it is tested as part of powerboard reception testing
+### Coldjig S/W Development: ATLAS QT Report
+- No Questions
+### AOB
+- Nothin’

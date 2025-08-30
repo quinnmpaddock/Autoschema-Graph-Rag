@@ -1,0 +1,60 @@
+# 2025-01-14 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1497535/
+### Introduction
+Presenter: Cole Helling
+- No questions … at least Cole couldn’t hear any due to headphone issues
+### L4 Updates
+#### Topic ITSDAQ: everything that’s changed in the last few months
+Presenter: Peter Philips:
+- Tony: Are you linking this to the agenda so I can share it?
+ - Peter: Yes I will and also add the bits I forgot to add regarding bad channels.
+ - Tony: I think the noise occupancy makes sense to me it just needs to be a failed chanel so masked off
+ - Peter: Of the 3 out of 4 they do fail. 
+ - Tony: we should make sure they get masked off	
+- Tony: For IV scans, we’re seeing some negative current values. I wasn’t sure if it was related to what you’re talking about or not.
+ - Peter: I am not on the mattermost, I have seen the occasional negative IV. It occurred to me while putting files together there may be something going on there, check when the DAQ was last updated.
+ - Tony: I’ll try to get you connected to that channel.
+ - Peter: for example if the design reister was 18ohms you would expect a tolerance of 15% but I can see there are examples of 50 % so it's not physical. I don't think people want to understand it further, we might want to go back to default values
+ - Tony: Okay. What we’re seeing is that with DCDC off it is negative but normal (positive) when DCDC off.
+ - Peter: Our scans are done with DCDC on and something with DCDC off?
+ - Tony: I wasn’t sure if it was linked to this.
+ - Alex: We just reported in ITSDAQ Talk.
+ - Peter: I will look later, I am aware of it have seen it on at least one of the staves here
+- Luise: For the folder structure. Maybe it’s just me, but when I go through results, I usually go through results. Would it be possible to add to the folder name the SN of the component? That way we can say which belongs to which?
+ - Peter: We can discuss offline, first instinct, that's not a good idea, because it will produce a large number of folders that we do not need. You can do a pattern match for files with 
+ - Cole: You can use Linux find to look for files of a particular serial number
+ - Luise: it would be convenient because when you scroll maybe I am overthinking this
+ - Peter: We would also have to be careful if we have JaneDoes
+ - Luise: if you scroll though and you see jane doe but you might miss something
+ - Peter: Hmmm
+- Cole: I’m sure folks are interested in testing our SAFE_MODE, but I suspect this is not yet available in coldjiglib. We should probably send the commands to people so they can test this standalone.
+ - Peter: Munier is already working on this
+ - Ankush: what peter said
+- Cole: I ran master recently and it did give me the OOS errors right after an IV, but it seemed to correct itself shortly after. Was this fixed with a buffer flush or am I perhaps seeing a different problem?
+ - Peter: There is a buffer flush that I added
+ - Cole: It seems to still be fixing at the chips
+ - Peter: It shouldn't be doing that
+ - Cole: I did have to restart so that could be the reason
+### QCD Corner
+Presenter: Cole Helling
+- No one opposes monthly pull tests being descoped
+- William: for those topics that still require data we have lots of data on X/Y position and ASIC tilt 
+ - Cole: i have seen the data you have lots of it and its great
+ - William: I assume the barrel is the same but will be site by site basis
+ - Cole: We wanted to keep this and continue with interposers to make sure it doesn’t 
+ - William: that is true we have 11000 non interposed but only 40 non interposed so 
+ - Cole: we don't need the same amount for interposed
+- Tony: What is the number we need for the data?
+ - Cole: 4 petals and 4 staves
+ - Tony: These would have to be array interposed?
+ - Cole: Yes 
+ - Cole: if you have a lots of non interposed and interposed data that should be enough data
+ - Tony: They should be similar but the one to look out for will be the PB as we are now using the edge instead of the hole
+- Ewan: with regards to descoping site by site or cluster by cluster what is the process?
+ - Cole: You do exactly what you need to do, send me an email with the data or point me to it. 
+ - Ewan: just making sure we won't have 
+- William: Assuming for the flex QC you will want some consumers?
+ - Cole: there is lots about flex QC i am not aware of so yes 
+### Discussion Start Point: Module QC Chain
+Presenter: Cole Helling
+- No questions

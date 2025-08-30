@@ -1,0 +1,154 @@
+# 2024-11-05 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1474317/
+### Introduction
+Presenter: Luise
+- Karol (sl. 5): We have one of these in BHM, do you want us to start a spreadsheet? 
+ - Luise: If we get more than one, we’ll start a spreadsheet :).
+- Sergio (sl. 6): I don’t know if we are, but I’m wondering if the number 2 is for loading sites and 1 is for building sites. Do you really want to retire if this is the case? I would still think it’s helpful
+ - Luise: Yes, we definitely should check with loading sites, but this was meant for module sites. If loading sites use it, we’ll keep it. This is just step 1 of the investigation.
+ - Sergio: I don’t know if there is a VI step when changing. I don’t know if this applies
+- Theo: I would suggest that if electrical testing doesn’t use it, neither should VI.
+ - Luise: So in favor of retirement?
+ - Theo: Yes
+- Ross: I have no opinion on it, but we do use it.
+- Luise: If you really need this, please reach out soon before it’s too late! We will contact the loading community to see how they use this test.
+- Tony (sl. 8): In a number of cases, there were tests we found something wrong with in the past, but only another test was uploaded and the original wasn’t deleted. Should we delete these?
+ - Luise: Yes 
+- Tony: Some things are only slightly off from the PPA/PPB parts. I think some are post-TC up to 40 C and I don’t know how we’re going to dig those out. It’s mixed in and the glue will be different. Other random changes where the adjustments look wrong. But it’s not an order of magnitude.
+ - Luise: I think we need to take this offline and find a good way to deal with it since it’s hard to make a general recommendation.
+ - Tony: Sounds good, I just wanted to make sure folks knew.
+ - Luise: I would hope the site that uploaded would have a better idea, so we should talk to them directly.
+ - Tony: Is it possible to output something outside of a certain band? I think it plots out a lot of histograms and it’s painful. I don’t know if it can put things outside of a good band.
+ - Luise: If you go to the reporting app (link in the chat), you should be able to filter on the results and extract what you want.
+ - Tony: Okay, thanks
+ - Luise: Ewan will give a talk soon
+- Pavol: About deleted tests, I thought we should just take the last test uploaded and ignore the previous ones.
+ - Luise: If you leave the previous one, you still have bad data in there and you get those points that wash out the good data on slide 8. So we’d prefer you delete the old ones that are bad.
+ - Luise: If you test repeatedly and things change, it might make sense, but if the data isn’t supposed to be there, it should be deleted.
+### L4 Updates
+#### ITSDAQ
+Presenter: Peter Phillips
+- Luise: Is the Category information included in any of the test data?
+ - Peter: Not yet. We think that is a reporting matter rather than tracking, but it is on the screen and will be obvious to people. If there is consensus, it could be added as a comment.
+- JJ: The IV fix works for R3 or it needs a different update?
+ - Peter: it should work subject to 
+- Cole: we ran into the same problem: Centos no longer worked because the C++ compiler was too old, so it was good for us to be forced to update
+#### Production
+Presenter: Abe Tishelman-Charny
+- No questions
+### QCD Corner: Episode 6
+Presenter: Cole
+- Proposal for how to handle failed wires in the database
+ - Sven: don’t we have these fields already?
+ - Luise: for modules yes, for hybrids we didn’t have all of them
+ - Laurelle: we were missing the total number of repaired wires
+ - Sven: why not just make a new field?
+ - Luise: either work, this is just to try and keep the tests the same
+ - Laurelle: we may also be missing total number of repaired wires for modules
+ - Sven: Kenny pointed out that using dictionaries is a pain fo reporting, so we should probably use integers instead
+ - Cole: we will reach out to people and assess preferences
+- Hybrid metrology:
+ - Karol: regarding x-y-position: which data do you need, just show that the assembled hybrids are in spec?
+ - Cole: consistency: can we show consistent position reliability
+ - Karol: our technicians always say that there was never an ASIC they can’t bond, so why do we even need this
+ - Tony: I think that it’s part of the descoping, we continue to measure XY and see if it changed. If it doesn’t change, then we can leverage the old data to say it isn’t needed. But the question is do we reject parts that have this failing. I propose we take the XY measurements and don’t fail it.
+ - Karol: To clarify, do we keep taking the data during production or just to monitor now?
+ - Tony: just to monitor things now to understand if they are different and if we understand what’s happening. Then we would stop. Locally, we would still continue.
+ - Karol: when I think of descoping for production and I think monitoring at this stage will be kept
+ - Cole: Tony’s proposal makes sense
+- Theo: regarding ASIC tilt: does this affect the CDF file of how many measurements are taken or do we need to still do the same amount of measurements
+ - Sven: we get it for free, you need to measure the same amount of points
+ - Cole: I think some sites get this for free and some sites need to do extra measurements
+- Sven: for the xy-measurement: there are not only requirements from wire bonding (and some of the ground bonds are already very short), there are also constraints from tooling: if the ASICs are positioned on the edge, it may be difficult
+ - Luise: The question in the past was if we wanted to measure drift. I think the consensus was that it was too much effort to do this in production. The statement I think was that if you can bond it, it’s fine. So the alignment check is covered by the inability to bond. It’s a bit roundabout, but that would be the QC. I thought this was reasonable.
+ - Sven: in extreme cases, you might be able to bond, but it may not work, but it will be obvious from visual inspection if something is misaligned, so you should still do the VI and that should be enough
+ - Karol: For Sven, you said there are markings for VI to see if things are in the right place, could you share pictures?
+ - Sven: it is the size if the pad, so if you see a lot of gold pad around the ABC, and for the HCC, it sits in the middle of a big pad 
+- Tony: That’s great. I want to see if we agreed to not cut on X/Y.
+ - Luise: 250 should be safe, why would you not cut on it?
+ - Tony: People say it doesn’t matter. We didn’t want to have some pathological problem, but this is me speaking for people who aren’t here.
+ - Luise: That’s why it was chosen, have things changed?
+ - Tony: Local experience, no. partially they wanted to get rid of it because if they get rid of the XY.
+- Luise: The idea was to build the first 100 or so parts. Did we agree on that?
+ - So after rFDR, wait until we have assembled about 100 hybrids and then go for actual descoping
+ - Theo: passed with problems is criminally underused, which might be the option to tune
+ - Cole: yes, this might be the option
+Everyone: ASIC tilt is descoped now!
+Module metrology
+- Ingo: this will be a problem for split modules: if the hybrids overhang too much, these will interfere on petals
+ - Luise: yes, we should exempt split modules from descoping, we do need the x position on split modules
+ - Sergio: wouldn’t you know from test frames?
+ - Luise: no, there is a lot more space between split modules on test frames
+ - Cole: alright, we may need to exempt these then
+- Andy: Sorry, what is the plan?
+ - Cole: yes, the plan is to collect the data for the iPPC batch and then evaluate the QC data
+ - Andy: so continue as usual for now, got it
+### Group Update: IFIC & Prague
+Our sympathy goes out to the folks in Valencia.
+Presenter: Jakub Bucko
+- Cole: regarding timeout, this doesn’t look like an OS system to me, it looks like a problem in physics mode, maybe reach out to the ITSDAQ experts
+ - Tony: for us, it was a test frame problem
+ - Cole: try maybe with something known to work
+ - Jakub: tested with R2, R4 and barrel module, they all showed the same problem, so unlikely to be a module problem
+ - Cole: good job
+### Updated EndCap Module Metrology Drawings
+Presenter: Michal Dzubera
+- Marta: What about the pins?
+ - Luise: That discussion will be next week
+- Sergio: You are showing two examples of R2 and R4. On the R2 you are showing everything based on the physical corner as the origin. The R4 is basically the fiducial center. In the R2 example, the R2 is not 0.0, but shifted.
+ - Michal: the file contains both coordinate systems, it is marked in the corner of each side
+ - Luise: end-cap sites use both, that’s why this document contains both coordinate systems
+### Discussion: Powerboard Alignment Holes
+- Luise: we need to agree on a short term solution and a long term solution
+- Sven: From my perspective, using the Kirsten method for now is fine, but it’s not a production method
+ - Bart: And this method is?
+ - Sven: Hand-taped shims. If you remember, we’re supposed to clean the tools all the time and this can affect things severely. I think we should go for a more stable method for tools
+ - Bart: It’s also that the PCB hole is related to the PCB artwork. But now we are going to use the edges, so then there is the interposer and SE4445 residue on the sides that can affect alignment. From experience, when you have an interposer and PB edge not perfectly aligned, along with flatness problems, it’s not so unambiguous on how to align the PBs with taped-on shims.
+ - Luise: Bart, I think this goes into the discussion about whether the edges can be used in the long term.
+ - Bart: I don’t think we should keep DIY-ing it even for the demonstrations not going into the experiment.
+ - Tony: If you want to do holes you’ll need to drill. Tom showed the method. Kirsten added an extra point because of the slot. I’d say “look at the data”. The way we changed the XY requirements, we are well within it. It did widen, but we should just use the data.
+ - Bart: I’d be happy to look at the data if you can point it out to me.
+ - Tony: It’s in the DB. It’s just two points that you can use Kenny’s tool. For the 30 parts we made, they are in spec.
+ - Luise: We are trying to compile this information, but there is currently a bug in reporting. We hope to have this fixed by next week.
+ - Bart: I’m not saying it’s … I just have no knowledge. Even if I were capable of extracting the data, I couldn’t always tell what was done.
+ - Luise: We want to get people to agree in the short term so we can at least know what we are comparing against.
+ - Sven: So for pushing the PB to one side of the slot. There are two risks: Wire Bonding shouldn’t matter. There isn’t a lot of movement. But there is the glue stencil which isn’t aligned. There is a 200um difference which could make the difference between glue on the GR or not, so we should be careful with this choice.
+ - Luise: Is this longer term or short?
+ - Sven: You can just modify the stencil and move things a bit to buy you a safety margin.
+- Luise: I think it’s understood that having the hole would be preferable in the long term, but we’ll need Timon and LBNL in the room for that. For the short term, Sven, are you saying we should make new stencils?
+ - Sven: Not necessarily, I think it works at the moment. If we push the PB to one side it might buy us some safety. Not a lot (200um)
+ - Luise: Could help with the GR
+ - Sven: You just need to be very clear which direction you push
+ - Luise: can someone maybe make a drawing so it’s clear which edge and we can put it in the documentation so it lives somewhere?
+ - Forest: Wrt to the stencils and glue under the PB, I thought it aligned to the pickup tool and the glue didn’t move, coming out from the same place. If glue is coming out from the PB, I think it would be in the same place.
+ - Sven: The glue doesn’t but the PB does and it might affect that.
+ - Forest: So we should make sure it doesn’t go near the edge.
+ - Sven: It’s a guess really, I haven’t tried it with measurements … but it’s something to consider when we change things.
+- Luise: Short term we should aim to push away from the sensor edge. For a longer term solution, if there is any possibility to get the hole back, may need new tooling and a stencil design to be safe. Does that summarize preferences?
+ - Tony: Not for us, as we have a solution that has worked for 50+ modules and I wouldn’t want to change it for a problem we don’t have.
+ - Luise: But for those who do have issues, we can have them adjust the tools to accommodate.
+ - Forest: One more complication, if we do return to the hole, if the TB squeezes up through the hole, the PB would be locked in place and might negate the advantages of the interposer.
+ - Luise: Perhaps. I’m not sure how much of a concern that is at this point.
+- Theo: How regularly are you cleaning your tools Tony? It might be possible to cause alignment issues.
+ - Tony: I think they are cleaned every time we use them. We’ve made multiples. In the near term, we aren't talking about doubling. If we put pins in, we’d want to do this at some point. Tom and Todd are the ones who did this drawing, but we’ll have to check. I think this is a worry about a theoretical problem that isn’t happening.
+ - Luise: We have been looking at data, and we do see that some sites are struggling with this.
+ - Tony: I understand. People should say something about this. If it’s moving 25-50um, it shouldn’t matter. We had one rotation and it didn’t do anything. But people should look at their data as they do it.
+ - Luise: I can’t quite demand it yet with reporting, but point taken.
+ - Sven: If we change the design, we should do this really soon. Ideally decide next week when more people are available. The UK has produced a bunch of tools not yet distributed, so it’s a good time to do this before that. Otherwise we might have issues.
+ - Tony: Tom is here. Can he say if adding pins is a problem or not?
+ - Bart: From a tooling clash point of view, adding low profile pins should do. But our workshop is closed and will be moving into a new building. If the modifications have to be done, we’d be looking at delays in tool distribution with holidays.
+ - Tom: I have a slightly better method with thin metal shims touching the edge of the PB and they are glued on so you can clean without moving anything. All the pins on the existing PB tools will land elsewhere, so I don’t know if that will affect things. For modification, there is no reason we can’t put pins in existing holes on existing tools
+ - Tony: Can you get the drawing for that?
+ - Tom: Sure, it’s just the existing drawing with three more holes
+ - Tony: Yeah, I’d just like to see it. I want to avoid having to take pins out
+ - Luise: The question is if the pins are low enough to just leave them in.
+ - Tom: Should be no problem
+ - Bart: Drawing with dimensions might get the shop to be friendly and get this started.
+ - Luise: And if you can share the improved method as well, that would be great.
+- Theo: good to watch out for interposer overhand
+ - Luise: [missed it, hand cramp]
+ - Tony: there is a certain amount of overhang that won’t affect things
+ - Luise: Yes, a minimal amount of allowed overhang
+- Luise: We need metrology data to see what is currently happening. Pushing the edge for the short term, tool modification for next week. All agreed? Great!
+### AOB
+- None

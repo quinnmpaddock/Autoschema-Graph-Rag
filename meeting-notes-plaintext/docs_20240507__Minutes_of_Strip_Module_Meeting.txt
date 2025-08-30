@@ -1,0 +1,64 @@
+# 2024-05-07 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1401782/
+### Introduction
+Presenter: Cole Helling
+- Page 4, interposer:
+ - Bart Hommels: glass beads not to be default solution
+ - Dennis Sperlich: 0.2% of glass beads is too low
+ - Karol Krizka: use of different diameter of glass beads
+No real disagreement regarding the proposed interposer build, only that glass beads may not be strictly necessary, the fill ratio might need to be quite a bit higher (~1% or so), and we may have a range of diameters for glass beads to deal with.
+- Page 8, last chance to comment on end-cap module test frames on EDMS: https://edms.cern.ch/document/2218122/7
+### L4 Updates: ITSDAQ/Sensors/Documentation
+- None Today
+### Group Update: Scandinavian Cluster
+Presenter: Geoffrey Mullier
+- No Questions
+### Birmingham Interposer Test Update
+Presenter: Karol Krizka
+- Pete Speers: The way you initially cut the kapton, what did you use to make the kapton shape?
+ - Karol: I think just scissors or scalpel. We’ll discuss how industry will do it in a later slide
+- Shubham: I think there is some seepage near the HCC. I think we also saw this for the LS modules and the reason Tom gave was because of extra weight, which might be the cause of the seepage.
+- Pavol: This is the same module with the suction cups?
+ - Karol: yes
+- Vitaliy: Did you use dionizers before picking it up?
+ - Karol: No, but we did after we saw the noise to see if it helps.
+ - Vitaliy: It’s the right step, but it will take longer. It’s easier to do it before you pick up.
+- Vitaliy: It’s worth running this by Ashley, because I think the power is separate between the first five and last five chips.
+ - Karol: My understanding is it has to do with the HCC tab, but I didn’t have time to fully understand it. It would be good to see if other sites building SS modules have this.
+ - [This is with regards to higher noise on half the chips while shunted]
+- Sven (sl. 18): Do you have an idea why you have a reasonably large spread at the same x location? There is a 10-30um spread.
+ - Karol: One thing to point out was how the data was taken. We used a smart scope. With kapton, that’s not very good, so we took a marker to give something to focus on. There could be uncertainty from this. I’ll follow up with the technicians.
+- Vitaliy: For the interposer array, what was the method to pre-dice?
+ - Karol: For this order, it looks like they did a laser cut.
+ - Vitaliy: So they are cutting them and perhaps clearing it…
+- Vitaliy: I would not wipe off the suction cup marks. I don’t think those are responsible for the extra noise. That is caused by trapped charge.
+- Gerrit (in comments): Do not try to clean sensors! Ever!
+### Interposer Work at SCIPP
+Presenter: Kirsten Affolder
+- Carl: Did you say how you measured the peel force?
+ - Kirsten: We have a hand-held force gauge and peeled at 90 degrees.
+ - Carl: So you held it in your hand?
+ - Kirsten: Yes, we use it for HV-tab pulls too
+ - Carl: You pulled vertically 90 degrees from the table?
+ - Kirsten: Yes, straight up.
+ - Carl: And the two columns (sl. 7).
+ - Kirsten: There were two samples of each type. Unsanded and sanded.
+ - Carl: We were seeing nearly 100g numbers.
+ - Vitaly: There are more slides
+- Tony: Slide 8, this was the method Tom used too right?
+ - Kirsten: Yes
+- Sandra (sl. 12): About the tools, we are going to fabricate more of them. This will be 2-3 weeks though. If we want to do it this month, we should get started.
+- Cole: Does the color of the ScotchBrite Matter?
+ - Vitaliy: It actually does, it’s more like steel wool for the maroon ones.
+- Cole: With the kapton-on-kapton peel tests, did it preferentially stick to the sanded/unsanded side?
+ - Kirsten and Tony: It isn’t clear. It is something we are looking at, but it doesn’t appear to have a preference.
+- Peter: On the curing time, it may be worth looking at longer cure times, like 2 weeks, to see if there is any change. For the reinforcement, is that just masking tape?
+ - Kirsten: Yes, it’s a double-sided tape.
+### ColdBox Update: Interlocks (Next week)
+Presenter: Ankush Mitra
+### Revised Burn-in Fan Baseboard
+Presenter: Ben Bruers
+- Page 7, result of discussion: USB should be safe, follow up email by Cole
+A preference has been agreed-upon to remove the pin on the HBI setup and power it using USB. Ash says the Genysis board is designed to control via USB and can protect against thermal runaway. Ben Crick says this method should be fine with Celestica. We will follow up offline to see if this solution works for all.
+### AOB
+None

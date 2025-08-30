@@ -1,0 +1,105 @@
+# 03/08/21 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1054924/
+### Introduction
+- What is keeping people up on qualifying for the bond pulling?
+ - If it is the test parts (failed ASICs, sensor half-moons, flex test coupons, HV-tabs), we need to make sure they get send around ASAP
+ - For the pull-test QC, only required to do tests on cicorel cards
+- For metrology SQ
+ - EC will need “real” parts to avoid issues with wrong optical measurements
+- Need a discussion about the module glue amount
+ - Not clear which values were agreed upon in January meeting and values in EDMS document for module assembly
+- Need to make sure minutes gets released to collaboration and decisions are clearly tracked and highlighted
+- Glue volume discussion:
+ - There are minutes from the relevant meeting 2021-01-19
+ - https://indico.cern.ch/event/986078/attachments/2192794/3706479/19_01_21%20-%20Minutes%20of%20Strip%20Module%20Meeting.pdf 
+ - We agree to go with 147 +/- 20 mg
+ - We will have to check if UK stencils need to be adjusted
+ - Get data from PPA with the current barrel stancil about fill factor/achieved glue weight; use this data to design the PPB stencils for the new hybrid geometry
+- Need to decide on the process of releasing PPA module parts
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R0 tool production
+ - Spares are not out but all sites should have received R0 tools
+ - Toronto tools are still in transit, DHL lead time is 26 days, and delivery is sill in that frame
+ - Rework for spare parts are in progress in workshop
+- R1 tool production
+ - Remove bushings, reinsert - this might help fit
+ - Otherwise if time allows ship tools back to Richard for rework / re-fit
+ - Richard will follow up to chase missing parts
+- R2 tool production
+ - How will re-reaming be done? Not sure
+ - This is what destroyed the R4 tools, so need to plan it carefully
+ - Will try to use precise CNC machine that built the tools
+ - If we cannot will fall back to careful artisan work
+- R3 tool production
+ - Some tools do not seal well, silicone from R5 is great, might go same route
+ - Essentially done
+ - Everything that was planned to send was sent
+- R5 tool production
+ - Tools have arrived at sites
+ - Very carefully packaged
+ - Look very good
+ - Initial tests from Toronto look great
+- Powerboard testing setup roll-out
+ - EC ones submitted
+ - EC also received the FPGA replacement boards
+ - LBNL work ongoing with high prio
+- Hybrid crate setup, finalisation and roll-out
+ - Fans arrived yesterday
+ - Carl Beichert awaiting feedback from beta sites before work is started for CNC-ing
+ - Simple copy and paste instructions on how to bring up the setup would be great on the twiki
+ - Ash will check and add info
+ - https://twiki.cern.ch/twiki/bin/viewauth/Atlas/HybridBurnInCrate 
+- EC PPA/prototype powerboard order
+ - completed
+- Shipping readiness (incl import procedure)
+- Barrel hybrid tendering/order
+ - received quotation for pre-production circuits at Liverpool
+ - everything looks OK and material is available
+ - production time <35days, need to sign off documents to start
+ - bare circuits might be in hand in September, not sure about contract for SMD population
+- EC hybrids/powerboard tendering
+ - In negotiations between companies and CERN
+ - Companies asked questions, CERN is providing answers
+ - Material availability is BIG unknown which will impact schedule / timeline
+- Endcap module thermal cycling setup
+ - Sergio will give update in 2 weeks (just back from holidays)
+- UK/China module thermal cycling setup
+ - Upgraded Birmingham ColdJig to be returned today.
+ - In addition, Birmingham will be taking one of our spare chillers.
+ - Order for IHEP shipping crate gone out.
+ - When Craig Sawyer returns from leave, we will arrange the collection and shipping of the IHEP ColdJig
+- EC hybrid test-panel finalisation
+ - waiting for first EC electrical modules and results from those tests
+- EC multiple module box transport box
+ - Box loaded today with mechanical R2Star to be shipped to Valencia
+ - Then back to Zeuthen
+ - This is to be the final test before final sign off
+ - Planned to finalised in 3 weeks (due to vacations)
+- Production of bonding and testing jigs
+ - Ready to be shipped this Friday
+- Production of R0 and R1 test frames
+ - waiting for first EC electrical modules and results from those tests
+ - In parallel iterating with company for manufacturability 
+- Production of R2 test frames
+ - waiting for first EC electrical modules and results from those tests
+ - Have to go through CERN tender so pre-order of SMD cannot be done
+- Production of R3, R4 and R5 test frames
+ - waiting for first EC electrical modules and results from those tests
+ - In parallel iterating with company for manufacturability 
+ - Also buying SMD parts already (due to long lead times)
+ - Company is awaiting final go after first module tests
+- Production of stencils
+ - Postpone to next week
+- Production of LED bars
+ - First set sent to Ca
+ - Remaining parts to be delivered after Dennis holiday
+ - Week before ITk week
+- Production of module frame cover
+ - 
+### AOB
+- Polaris glue mixing ratio from company (100:15) is different than what we use (100:9)
+ - Company confirms that it only affects pot life and cure time
+ - Decision: stay with what we use
+ -

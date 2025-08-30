@@ -1,0 +1,55 @@
+# 2025-03-04 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1513180/
+### Introduction
+Presenter: Navid Ghorbanian
+- William: Do you have any place where this is defined? 
+ - Navid: This is a start to the conversation.
+ - William: I assume this is for modules?
+ - Navid: Yes
+ - Geoffrey: So it’s all aspects of grounding for module building?
+ - Navid: Yes
+ - Luise: Would it be possible to see what the UK has been discussing? Would it be possible to cover that?
+ - Navid: Yes
+### Group Update: Birmingham and Glasgow
+Presenter: Katie Walkingshaw Pass
+- Vitaliy: For the unusual IVs, does it make sense to maybe change the module frame? That could help
+ - Katie: We’ll give that a go, thanks
+- Peter: For suction cup noise, it’s interesting because we store in dry compressed air as well. And the last three you sent needed treatment. Do you ship them in dry air or N2?
+ - K: Dry air
+ - Andy: The last 20 modules we’ve seen have had no breakdown or suction cup noise.
+ - Bart: A working model would be that the suction cup could rub during transport to build up the extra noise. Deionization or high humidity could cure it. Ultra dry conditions could slow down the charge transfer.
+ - Peter? It’s also hard to dry the region under the cups
+ - Bart: True
+- Luise: Are you okay with doing all the dicing yourself?
+ - Andy: We will have to check, but probably not. 
+ - Luise: Could you let us know what ratio you would like?
+ - Andy: Okay, I’ll get back to you.
+- William: Does anyone here know about the UK DHL? Are these in Pelicases?
+ - Andy: Traditionally we send via DHL and things go well, but there was a recent issue where they were shipping the cases without boxes. Some damage occurred. It seemed to have been better than in the past.
+ - PWP: The last few from Glasgow were properly packed. Two sensors were rotated to the point where they struck the guide components. Two required rebonding and two screws fell out of them.
+### QT Update: HCC Timing Studies
+Presenter: Lukas Roscher
+- 
+- Alex: I tried your gitlab link, but couldn’t access it, could you make that available so other sites can try it? Is it ready for that?
+ - Lukas: Right now no, because we are seeing some timeout issues. But in the next week or two, I think it would make sense.
+ - Alex: Can you remind me which settings you are scanning.
+ - Lukas, Mostly the settings in R32: LCB, RClk, BC, PRLP
+ - Alex: From what I understand, we have the 0xee for the Ophase, is this one of the values?
+ - Lukas: No, that isn’t included in the scan yet. We don’t know if it’s necessary or not yet.
+ - Alex: We’ve also had to check that for different modules.
+ - Lukas: We’ll see how easy that is to include. For the git, I tried to add all active ATLAS physicists, but I will fix it.
+- William: Thanks for this. On finding islands, I guess this goes to future studies to understand why these gaps show up. But will we find out why there are gaps in these plots?
+ - Bruce: On the right plot? The important thing is that it’s a virtual register where you have 2 coarse and 4 fine delays, so this is an artificial gap. 
+ - William: That’s the kinda thing I want to know.
+ - Lukas: Yes, for sure. This is just to get the first working version.
+ - William: And then sometimes you get timeouts. You’re on the right track.
+- Luise: I think we don’t currently store the settings in these scans. I was wondering since we are running these scans, I was wondering if we could upload this and possibly pull this from the DB
+ - Bruce: We need to figure out what we want. I’m starting to set up a digital test “test” for the DB. I think it would be possible if this extended that rather than started from scratch. Then we could work out how to integrate it.
+### AOB
+- Tony: Can I confirm what the sequence is we should be trying for the burnin?
+ - Cole: It should be 24 hours
+ - Peter: We have 20 hours in the non-GUI burnin and 24 in the GUI
+ - Cole: Okay, then I need to make sure it’s consistent between the two. I’ll follow up with Ben then.
+- Tony: Can we go to 20 tests then?
+ - Cole: Yes
+From the Chat

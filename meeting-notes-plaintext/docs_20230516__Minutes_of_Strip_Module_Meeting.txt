@@ -1,0 +1,118 @@
+# 16/05/2023 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1253784/
+### Introduction
+Slide 2
+- Tony: isn’t it hybrid pull test month?
+ - Luise: yes
+Slide 7
+- Vitaliy: puzzled by the pre-curing time. Do we have to wait for 75min before using the glue?
+ - Luise: this is mainly for stencil
+ - Peter: the cleanroom temperature also has an impact on the pre-curing time
+Slide 9
+- Tony: does this mean the AMAC IV is now working in the cold box?
+ - Cole: it’s not 
+ - Andy: Peter said you can’t parallelize AMAC IVs in cold box right now
+ - Tony: is this something that is currently being worked on?
+ - Andy: not sure if Peter is working on this
+ - Stefania: have a presentation later, parallelization is currently missing, idea is to have Emily working on this
+ - Abe: tried to implement this, have an open merge request (draft)
+ - Tony: there are also auto-ranging issues. Does this have to be turned off?
+ - Abe: will cover it in talk
+ - Stefania: offsets are dependent on feedback resistors that are chose, but lets wait for the presentation
+### Institute Contributions: 
+BNL
+- William (slide 19): looks like when currents go up and start cycle again, current goes down. We have observed something similar and have seen noisy channels, maybe it’s something similar
+ - Abe: have to check this specific ITSDAQ test
+ - William: also saw that the leakage current goes down with ITSDAQ testing, didn’t see glue on guard ring
+ - Abe: don’t know if this particular module has glue on guardring
+- Vitaly: it’s nice that you take IV by bypassing the powerboard, but the shape still looks weird. Might have to investigate further
+- Luise: IV’s on modules should go to -550V just to check for early breakdown up to 500V
+- Luise: what to do post thermal cycling: bow measurement would be good to check if it has changes, and also look for delamination. Normal programs don’t work, but maybe it would be possible to make an easy program for this
+- Luise: if you have 3rd box, it would be really interesting to see when the modules break (if you can go to 100 cycles, that would be great)
+ - Abe: after getting to 100, what do we want to use the box for (e.g. cycle our own modules)
+ - Luise: would be nice to continue this test
+ - Gerrit: not possible, because we also need the box for other thing
+- Luise: we have a cold IV as part of the thermal cycling procedure
+ - Abe: no idea if this is in the software
+ - Luise: not in the software, but it is in the plan
+ - Abe: sure, if that was agreed on we can do it
+- William: with the bypassed powerboard, do you have to change to bonds?
+ - Abe: you need rebonding
+ - Gerrit: it’s the same bondwire that is used when doing IV through moduleframe
+ - Gerrit: it’s also different when the powerboard is powered or not (in therms of grounding)
+- Vitaliy: two issues with IV called: shape and magnitude of current. Both could be explained with a light leak in the cold box
+- Bart: do you have high voltage on during the whole cycle?
+ - Abe: yes
+ - Luise: plan is to have HV on during the whole cycle
+ - Bart: but then you introduce a testmode that will not occur in ATLAS
+ - Bart: in that case we might have to discuss this
+ - Luise: why would it be a problem if the HV is kept on? Do you want to check for transients?
+ - Bart: when a module is on the frame, we can do a faster IV than 1V/s when the sensor is on the frame, and then we can go a lot faster and the time penalty is not a problem
+ - Luise: but the ramprate is based on recommendation from sensors;
+ - Bart: for IV you want the current to settle, but here this is less important since you only look for a breakdown
+ - Luise: so the 10V/10s is just for precision?
+ - Bart: yes, but if you are not interested in the precision current, then this is something that we can follow up with the sensor people
+ - Sergio: you mean on the testframe?
+Next meeting: NBI
+### Transition to Production for barrel
+Slide 
+- Tony: do you want all the prototype stuff back as well?
+ - Luise: yes, everything
+- Ashley: what do you recommend for the assembled flexes?
+ - Luise: assembled flexes should stay with the sites since they are required
+ - Luise: at the end we might have to see what to do about them, but everything that has dual use items will have to go back to CERN
+ - Andy: for UK, everything with ASICs goes to RAL
+ - Ashley: but what about with the bare flexes?
+- Gerrit: we are using leftovers from PPA for training purposes, we will only have real parts to work with?
+ - Luise: do you use rejected ASICs?
+ - Gerrit: we also use old hybrids, old ASICs. There are no other spare parts that we could use for this.
+ - Luise: there are more CatX ASICs at CERN. They would be better used for this than PPB ASIC
+ - Ashley: the bigger problem is that all the hybrids we get are good circuits. The level of bad circuits is very small.
+ - Luise: we are not asking people to send the flexes back
+ - Luise: flexes can stay, ASICs have to be shipped back
+ - Luise: there are CatX ASICs at CERN that can be used
+ - Tony: there are some at SCIPP, but something else has to be done to ship them
+ - Luise: and CatX ASICs have to be shared across the whole collaboration, so they are only shipped on request
+- Vitaliy: hybrid thickness difference
+- D
+- Andy (slide 11): metrology failed, so any point on any metrology failed?
+ - Luise: average glue height too low/too high
+ - Luise: for position its any point
+ - Tony: might need to look at the position part again, especially at the edge measured hybrid
+ - Bart: there was a bit a rush to build PPB module, and edge based measurements get difficult with TrueBlue. Parts are in the right place, just the metrology if wrong
+ - Andy: what are we based the electrical test on?
+ - Luise: bad channel classification (3PT gain), current cuts are all implemente in ITSDAQ
+- Tony: how do you want people to sign up for these deliverables?
+ - Tony: e.g. Jacob can work with Bruce on high noise cut
+ - Luise: cold cycling part is very important. Cole is working on the HV stability test
+ - Luise: main contact for database stuff is Bruce
+ - Bruce: Karol is also working on things
+ - Luise: there is also a description on how to do the cold turn on in the procedure document
+- Bruce: is it sensible to do a hard cold turn in and for the normal cold cycle do a soft test
+ - Peter: probably need a hard test to see if things break
+ - Andy: discussion that first ever IV is probably in cold box; is this being worked on?
+ - Luise; thought there is an additional warm module characterization
+ - Peter: blocks will be coded, then it’s up to the coldjig controller to use them in the right sequence
+- Sergio: would like to thank everyone on behalf of Craig and myself for all the hard work that has been done for the PRR
+### Low strip isolation
+Slide 
+- Luise: for tracking recovery, does it make sense to just clone the sensor test or do we need anything else for modules?
+ - Vitaliy: the sensor test is just a lot of information about the different recovery methods. How you would practically use this in reporting, you would use test results before and after (with timestamps)
+### Hybrid Crate Interlock Discussion
+Slide 
+- Sven: how is the database credentials added to ITSDAQ?
+ - Bruce: something that needs to be worked on
+- Luise: by when do you want response to open topics?
+- Nghia: support idea for interlock, its great that this is something that is being developed for ITSDAQ
+ - Ben: what already exists is highlighted in blue (slide 6)
+- Ashley: expect the interlock to be autonomous, grafana alert is only to inform the user
+ - Ashley: PID controller loop has already a 50C limit, AMAC monitoring is for that purpose and it would be good to have it implemented
+ - Ben: timescale wise we will work on this
+ - Ashley: have seen on mattermost that people have seen temperatures >50C in crate, so this needs to be sorted for production hybrids
+ - Peter: expect to be done towards the end of the week
+ - Ash: worried about arrival of production hybrids
+- Nghia: GUI is working with latest version of ITSDAQ, but when checking it is the version from 5th of May
+ - Ben: yes, will update it
+### Monthly pull test discussion
+- Moved to next week
+### AOB

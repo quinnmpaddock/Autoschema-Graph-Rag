@@ -1,0 +1,130 @@
+# 08/11/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1191863/
+### Stave test results
+- Luise: how cold did you go?
+ - Dave: -35 coolant temperature
+ - Luise: and because you went into breakdown, there are no dat?
+ - Dave: correct, and there were other constraints
+- Dave: this does not need to be studied at stave level, module level would be good
+ - Ingo: at sensor level. Are they all ATLAS18 sensors?
+ - Bart: can safely assume they are
+ - Gerrit: probably ATLAS17LS, not sure if we had the 18 already
+ - Dave: should check
+ - Gerrit: this stave was not in high humidity, it was in cleanroom 40-45%
+ - Ingo: for sensors, that’s high
+ - Gerrit: staves can be kept like that for weeks
+ - Dennis: for integration, that would be years
+- Dave: for shipping, aiming to try and achieve 20 % humidity, but 10% don’t really seem possible at this point
+- Ingo: from what we know now, we can’t just leave things out in the open - it will break stuff
+- Bart: Vitaliy’s study showed that you can run things at higher humidity for a while, as long as you dry them out for a while afterwards, so need to assume that drying out takes longer than an hour
+ - Dave: and you don’t bias it during recovery?
+ - Bart: no, sensors have hysteresis, wouldn’t bias them until reliably dried out
+ - Presume it is recoverable, but has to be dried out without biasing
+ - Dave: had some recovery over night, but not full recovery
+ - Gerrit: agrees that it is not good to bias something that is wet,
+ - Bart: if you transport things reasonably dry, they are probably recoverable
+ - Ingo: may need intermediate option where things can be tested at intermediate voltage to prevent breakdown, but communication can still be tested
+ - Bart: strip tests are being run at -150 V too
+- Gerrit: it is important to track the humidity, also during shipping, and if humidity was triggered, need to store dry
+- Dennis: can not store dry for extended periods
+- Ingo: should try
+- d
+### Introduction
+Slide 4
+- Bart: had plan to build a stave, but would some of the UK modules be used for irradiation studies and not end up on the stave?
+- Luise: we have to see which combinations are working and will be worth to irradiate. Will discuss at AUW next week
+- Bart: there is a limited number of SS modules which we need to take into account
+- Luise: for systems test, we need more LS stave and don’t necessarily build a SS stave
+- Bart: would it be viable to build a LS stave with a good candidate?
+- Luise: need to wait for the results
+- Bart: we have some availability to build things
+- Luise: will need to look into good candidates first
+Slide 5
+- Carles: What is the strategy to upload data to the hybrid? How are results distinguished
+- Luise: there is a on-module stage
+- Luise: there is also a plan in looking of uploading data to the module
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- R1 tool production
+- Powerboard testing setup roll-out
+ - Set up in Zeuthen by Dennis for R1 powerboat system
+- EC hybrid test-panel finalisation
+- Production of R0 and R1 test frames, Production of R2 test frames, Production of R3, R4 and R5 test frames
+- Powerboard bending studies
+- Shipping readiness (incl import procedure)
+- Production of stencils
+- Hybrid Burn In Software
+- Multi Module Test
+- Glue Studies
+- Modules for Test Beam
+- Single Hybrid Testing Database Implementation
+- Single Module Test Database Implementation
+### Institute Contributions
+Desy-HH
+- Sven: it shouldn’t matter whether hybrids are on the high side, the tool tolerances are stricter than the tolerances on the hybrid, so you need two bad coincidences overlapping to cause a problem
+ - Petar: well, we see it happen
+ - Sven: yes, it can happen
+- Carles: for the hybrid that is too high, is it within specification?
+ - Peter: yes
+ - Carles: we used hybrids that were outside of the specification
+- Luise: for PB_5, this was added to get an information of the glue height under the shield box, since in the past we had no other option of measuring the glue height there. If this bends up a lot, we have to re-think this
+ - Peter: it would not be too difficult to add a glue dot there to improve the situation
+ - Luise: worth trying
+Next week: UofT
+### Fiducials on PPB end-cap hybrids
+- Luise: Question for Freiburg: why did they change?
+ - Dennis: no space for large fiducials
+ - Luise: okay, but they won’t change again?
+ - Dennis: no, plan to stay the same
+- Warning for end-cap sites: PPB hybrids will look different
+### Studies on new stencils with extra dots
+- William: you say support is much superior, can you quantify this? Celestica had no issues with the modules without this additional glue dots
+ - Carles: can only quantify it by pushing the hybrid with tweezers. From other experience, we have seen that bonds in this area stuck, but could easily be removed
+ - Carles: regarding lifetime, those bonds would probably have a much shorter lifetime
+ - William: tools already have some variation and hybrid heights vary, so difficult to pin down a height and distance to guard ring
+ - Carles: on slide 5 you see how the glue dots look like (and the height)
+### Outcomes of Flex QC review
+Slide 7:
+- Ingo: there are two things: doing the cleaning at all, and also doing it in the timeframe that is required for assembly
+ - Luise: you mean in terms or the cleaning process itself, and the technician availability to do it
+ - Ingo: yes, also which equipment is required
+ - Uli: regarding the manpower issue, this is also true for the hybrid assembly sites which have not planned for cleaning
+ - Ingo: first look at the technical issue, then look at the personpower issue
+ - William: support this. Will collect some slides with our experience
+- Carles: what about the coupons for modules sites that don’t produce hybrids? Where are they cleaned?
+ - Dennis: if they are tested for QC, they have to be cleaned
+ - Marc: get cleaned together with flex sheets
+ - Carles: do the module sites also need to clean the coupons?
+ - Marc: comes down to handling, if they stay clean during traveling, you may not need to clean them again afterwards
+ - Dennis: and if the process is anyway that you need to clean hybrids, then you should clean the coupons in the same way
+ - Carles: do you clean hybrids at module sites even if they don’t assemble hybrids?
+ - Dennis: it would make sense not to clean the coupons
+ - Luise: difference is that coupons need to be clean in any way for the QC while hybrids don’t necessarily have to
+ - Dennis: also: amount of work needed to clean hybrids is much more than for cleaning hybrids
+ - William: so then what is the difference between hybrids and coupons?
+ - Dennis: yes, that is true. Alternatively coupons travel in the same way as the hybrids
+ - Marc: in the end, it needs an ultrasonic bath and air gun
+ - Luise: barrel brushes instead of ultrasonnic
+ - Marc: that involves even more personpower
+- Luise: we will send around the cleaning procedures, please give feedback
+Slide 8:
+- Luise: would like to do our own ageing study on surfaces that show higher peel rates
+- William: has the CERN bondlab documents this? Celestica has not encountered this with any of their other customers. 10g are 10g.
+ - Luise: CERN has send a document a couple of hours ago. Their main concern is long term reliability
+ - William: maybe need to look into ISO standards for long term reliability as well
+- Bart: was there any discussion about the hybrid flexibility?
+ - Sven: we can’t do anything about it
+ - Bart: we used to have hybrids that had an okay flatness, but nowadays it just got worse
+ - Ash: not sure how to address this - probably something at the assembly house
+ - Bart: did we change assembly houses?
+ - Ash: no, but we should follow up with them if something changed, but guess that things like reflow profile didn’t change
+ - Bart: if there is anything to be done to get it in the same shape as before, that would be great
+ - Sven: there’s also shipping and handling and some of the issue may be on our side
+ - Ash: anecdotal evidence that shipping may be an issue
+ - Ash: leave this with us and see if we can do something similar
+ - Sven: we could maybe look into some pre-bending tool similar to powerboard bending tool
+ - Gerrit: would like to emphasise that the bending along the length is not a problem, but the bend along the short edge is the problem, and especially when you build several hybrids in parallel, the vacuum loss causes problem
+ - Sven: want to look into making a jig to pre-bend in a defined way, don’t want to overdo it
+### AOB
+No meeting next week

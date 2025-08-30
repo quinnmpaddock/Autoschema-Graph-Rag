@@ -1,0 +1,81 @@
+# 2024-08-27 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1442750/
+### Introduction
+Presenter: Luise Poley
+- Ingo (sl. 3): This is the R3 we’ve already built? 
+ - Luise: The one with interposers
+ - Ingo: We don’t have any interposer parts
+ - Luise: Okay, we will follow up
+ - Sarah: We have the interposer parts for the R2, I think we would be able to do this.
+ - Luise: Please try, we can assemble alternatives if we have to, but we have to hurry. It needs to go to CERN then LBNL. It’s possible to do this in Canada, which is closer, but we need to decide soon.
+ - Ingo: It might be that the parts snuck by me, but I haven’t seen anything like it.
+ - Roland: You don’t have any Ingo. There will be no R3 hybrids until Dennis is back in early September.
+- Anne (sl. 5): At LBNL, the module QC temp has been -50C on the chuck for every interposed module we’ve made. For ten cycles. How much longer would you want it to go? What would we expect to see?
+ - Luise: That is great to hear, firstly. There are two effects. These problems become more pronounced the longer they are at this cold temperature. The recommendation is to hold it for about an hour so it could react to the temperature. The extended TC is about 100 cycles, so it would be good if we could do that as well.
+- Bart (sl. 6): Any word on what the breakdown is like? Is it 100V, 200V (soft or hard)?
+ - Luise: 2 around 300 V or so. 1 is really puzzling because its breakdown moves around almost daily 
+ - Bart: Right. What have you tried in terms of recovery?
+ - Luise: All of it - dry storage, ionization… One recovers; one gets worse again
+ - Bart: The infrared camera may help, but I’m not sure what you would learn from it.
+ - Luise: yes, that’s the next step. One seems to be related to a scratch. The others are more mysterious 
+ - Bart: Yeah, I’m not sure if UV is an option, Gamma seems a bit drastic.
+ - Luise: This is the BNL study that is checking to see if irradiation with gammas helps.
+### L4 Updates
+- No commentary
+### Interposer QC Discussion
+Presenter: Luise Poley
+- Vitaliy: Are we going to monitor the thickness of the interposer itself?
+ - Luise: The Kapton? We didn’t plan to do so, we could as part of the initial phase
+ - Sven: It depends on the connection method you use. If you’re working with glass beads, then the polyimide plays a role, but if you use stencils, you are more independent. 
+ - Luise: Vitaliy, are you thinking of a reception test when you receive the Kapton sheets?
+ - Vitaliy: Yes, when you get a layer and test it, I’m wandering if it’s worth checking just to be sure we have the right “thing”. I’m not thinking of a test per-PB/Hybrid, but rather the sheet just to make sure we have the right stuff.
+ - Luise: Perhaps a spot check?
+ - Sven: We’d have to test every array of polyimide, because we get it by rolls. It’s often an industry standard thickness. Seems like a big overhead.
+ - Bart: Can we see what the specifications are for the product we buy, instead of going overboard with this?
+ - Vitaliy: that doesn’t make sense. If you get a stack of sheets, maybe once per stack? Sometimes there are issues and you get the wrong stuff. 
+- Gerrit: Vitaliy, you’re looking for something that is way off, so in principle, a micrometer should be sufficient.
+ - Vitaliy: Yeah, yeah. I think you’re experience with Al-nitride, you have {something} thickness 
+ - Gerrit: Yeah, but the kapton usually just comes off a roll after manufacturing
+ - Vitaliy: It could be that I’m over thinking things.
+ - Gerrit; You’re thinking about getting something totally out of whack, like twice the thickness or so. We can do that quickly on each sheet by slipping it into the jaws of a micrometer.
+ - Vitaliy: 
+- Gerrit: I had a question about weighing. Is the idea that the arrays are weighed before and after interposing to get an idea of how much glue is deposited?
+ - Luise: For single options, we’d want to weigh the single simulated flexes that have been interposed. We want to collect the information early on and correlate weight, thickness, and coverage. Then, long-term, we can take a picture of the backside and gauge just from the coverage 
+ - Gerrit: Okay, I was just wondering that since weighing individual components doesn’t help. It is nice to have the confirmation right now, but it doesn’t feed into the actual arrays.
+ - Luise: It’s more for if there are limits on good coverage definition, (or list of problems), then we can get a relationship between weight, coverage, and problems 
+- Gerrit: For interposed arrays, are the thicknesses of those arrays being recorded after interposing?
+ - Luise: Do records for early production and then hopefully find they are really consistent and we don’t have to do it during production 
+ - Gerrit: Okay, because it’s crucial as we put these things together that we have a good indication of the thickness, especially in production. If they are suddenly thicker, that would cause glue to go everywhere.
+ - Luise: There will definitely be more questions about when/how we’ll descope this 
+- Luise: Is anyone actually looking into the coverage. Is this going to converge soon?
+ - Hannah: Sven sent me a dataset, and it was a disaster. I had to individually tune each one. I couldn’t find any settings that would work across different thresholds. Even with local thresholds, I could only do about 25% of them. With Pixels, it was nowhere near as bad. I don’t think there is enough contrast, the flex is a different color.
+ - Luise: Is anyone else looking into this?
+- Tony: Luise, is it clear if what the work needing to be done in the US is clear?
+ - Luise: When they arrive, there’s a pull test then a VI. For the weighing, coverage, and thickness, I would assume this is done at the interposer site.
+ - Sven: We can’t outsource this to LBNL. Pull testing is something we want to descope anyways. On the array level, we do pull tests anyways for material properties. For coverage, we can scan them before and LBL can do the same. We can store them. Thickness is likely part of the interposing, so Liverpool would do that. I’m not sure we can, since the thickness goes into the total metrology.
+ - Tony: Does that mean we should just do a second VI to make sure nothing comes up and do a pull test if we want.
+ - Luise and Sven: yes
+ - Sandra: So LBNL doesn't do the thickness?
+ - Sven: We already said no, on the arrays, I think we will do it. It’s easy enough to use the smart scope. You may repeat measurements if you want.
+ - Sandra: I was just referring to the last paragraph of slide 5. Should we still do it for the first ones we receive or rely on your measurements? 
+ - Sven: The slides are more meant for interposing sites. It’s a little trickier where we interpose them and send them. We’ll do the measurements to make sure things are under control before we send them to you. If we convince ourselves everything is nice, we can drop it.
+ - Gerrit: Considering the pace we are working at right now, it would be good if the module building sites cross check some of these parameters to avoid surprises.
+ - Sandra: Yeah, sure we can do something like that.
+ - Sven: to rephrase it, it’s the hybrid assembly sites that do this, and these aren’t necessarily module assembly sites.
+ - Luise: We will start implementing this in the DB. It will be the bare minimum, and if you think more data is needed, let us know.
+ - Official call: Any one who can look into the coverage measurements?
+### EndCap Module Metrology Update (Moved to Next Week?)
+Presenter: Michal Dzubera
+### Module Bow Paper
+Presenter: Luise Poley
+- Paper attached to the Agenda, last chance to comment
+### Is Your FPGA Breaking Up With You? Take the Test and Find Out
+Presenter: Marcus Wong
+- Ingo: When you noticed the PID isn’t working via FPGA errors, aren’t you checking the environment in influx?
+ - Marcus: need to double check, but it may be a case of not having looked at the time
+ - Ingo: Okay, but maybe it’s worth implementing a telegram grafana alert when something gets too hot.
+ - Alex: think we have that
+ - Cole: Grafana also allows you to do this via email or mattermost channel
+- Cole: So interestingly, a similar issue happened in modules for a while, it was a bug in ITSDAQ in the IV programme, where it tried to read from chips when they were off and that caused problems
+### AOB
+- None

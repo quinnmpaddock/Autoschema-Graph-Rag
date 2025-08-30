@@ -1,0 +1,74 @@
+# 09/08/2022 - Minutes of Strip Module Meeting
+https://indico.cern.ch/event/1154792/
+### Introduction
+- Forest: review for HV tab will only be for a week, but nobody has received new tabs. It would be good to receive the tabs before the review closes.
+ - Luise: this review is just for the geometry, not the tab themselves
+ - Next step will be to make these new tabs and check their performance so that we can then sign off on the actual tabs afterwards
+### Task tracker items
+Updates to tasks - see task tracker link in agenda
+And also task tracker for updates
+- 09/08/2022: Barrel
+- 16/08/2022: EC
+- 23/08/2022: Barrel
+- 30/08/2022: EC
+- Shipping readiness
+ - No updates
+- Powerboard reception test rollout
+ - No news
+- Hybrid tests in the database
+ - No news
+- Hybrid burn-in software
+ - Testing an R5 panel, working on getting things to work for the end-cap
+- Multi-module tests in the database
+ - Postponed to later
+- Modules for testbeam
+ - SS module being built in Cambridge
+ - R2 module being built in TRIUMF, sensor has been shipped, expected on Friday
+- Powerboard bending studies
+ - First results looked promising, need to continue
+ - Testing pre-bent powerboards was interrupted by stop on PPB2 modules
+ - To be continued 
+### Institute Contributions
+- SFU
+ - Vitaliy: which support is being used for the sensor and was is used to measure the height?
+ - Archa: using the module assembly jig to support the module, measurement system (optical focusing)
+ - Vitaliy: module assembly jig?
+ - Archa: yes
+ - Vitaliy: did you practice assembly?
+ - Archa: yes, during prototyping
+ - Vitaliy: do you have any other practicing?
+ - Arch: no
+ - Luise: modules tested at Triumf and there they were within specification, not repeat measurement at SFU and try to get the same results
+ - Vitaliy: when you assemble, do you only do metrology? Are there any other measurements?
+ - Luise: do you mean other modules?
+ - Vitaliy: not, other data for the modules?
+ - Luise: position, location?
+ - Archa: we only do visual inspection and metrology
+Next week: 
+ - 
+### Barrel bond maps
+- Forest: need to avoid people having to look in lots of different places for documentation, therefore appendix would be good
+ - Shouldn’t be in the documentation
+ - Forest: where should it be then?
+ - Dennis: a dedicated debugging Twiki page
+ - Sven: doesn’t all have to be in the documents and shouldn’t all be in the production documents
+- Sven: is it okay to not number wires consecutively?
+ - Forest: sounds good
+- Forest: for double signal bonds between hybrid and powerboard: specify direction (powerboard to hybrid), which is just enough space to place all these bonds, otherwise it’s almost impossible to fit them there
+ - Sven: maybe don’t want the destination bond on the powerboard because you may need to avoid components on the powerboard
+ - Everyone agrees
+### A couple of technical things with HBiPC assemblies
+- No comments
+### Module tests in the database
+- Vitaliy: one major cumbersome point is to figure out which hybrid is which and belongs to which module. It can be done, but is confusing. Can json files from module tests als include the module name? Can be an issue when all test results are in same directory.
+- Vitaliy: module test result that reference to the hybrid test result? Would this need a json file in the ITSDAQ results that connects them together?
+- Luise: this is a first start to discuss this. Any comments are welcome.
+- Luise: will need to discuss about the implementation. The “summary” json file sounds good, but would need to be created at the end of the test to also allow adding environment data (e.g. by running an additional script)
+- Luise: file name is a more general ITSDAQ feedback that might have to be discussed in a separate meeting.
+ - Vitaliy: it would be helpful
+- Luise: for module evaluation it would be a post-test script that needs database interaction, so it makes sense. In general we want to separate ITSDAQ and the database.
+ - Vitaliy: which part would require database interaction? Hybrid-module relationship?
+ - Luise: if you want the hybrid identity, you would need to query the database to get this. Then ITSDAQ would have to look this up in the database, which we want to avoid.But a separate script that creates the “summary” json file would already need database access.
+ - Vitaliy: when you set up your config files, this already required database interaction (if done automatically)
+### AOB
+- Luise: reminder - switch from database file upload for metrology and pull testing as attachments instead of test property will happen at end of August. Please make sure you have your scripts ready.
